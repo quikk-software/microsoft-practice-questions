@@ -4,6 +4,7 @@ import path from "path";
 import crypto from "crypto";
 import type { ExamConfig, Question } from "@/lib/types";
 import type {
+  AiSettingsRecord,
   AttemptSummary,
   ContentChunk,
   ContentUnit,
@@ -18,6 +19,7 @@ import type {
 
 const DATA_DIR = path.join(process.cwd(), "data", "exams");
 const ATTEMPTS_DIR = path.join(process.cwd(), "data", "attempts");
+const AI_SETTINGS_DIR = path.join(process.cwd(), "data", "ai-settings");
 
 function questionsDir(slug: string) {
   return path.join(DATA_DIR, slug, "questions");
@@ -274,6 +276,31 @@ export class FsRepository implements DataRepository {
 
   async hasContentChunks(examSlug: string): Promise<boolean> {
     return fs.existsSync(this.embeddingsPath(examSlug));
+  }
+
+  // ---- BYOK: AI-Einstellungen als Datei pro User (Dev-Modus) ----
+
+  private aiSettingsPath(userId: string) {
+    // userId ist bei uns eine UUID bzw. "dev-user" — trotzdem defensiv säubern
+    return path.join(AI_SETTINGS_DIR, `${userId.replace(/[^a-zA-Z0-9-]/g, "_")}.json`);
+  }
+
+  async getAiSettings(userId: string): Promise<AiSettingsRecord | null> {
+    const p = this.aiSettingsPath(userId);
+    if (!fs.existsSync(p)) return null;
+    return JSON.parse(fs.readFileSync(p, "utf-8")) as AiSettingsRecord;
+  }
+
+  async saveAiSettings(userId: string, record: AiSettingsRecord): Promise<void> {
+    fs.mkdirSync(AI_SETTINGS_DIR, { recursive: true });
+    fs.writeFileSync(
+      this.aiSettingsPath(userId),
+      JSON.stringify(record, null, 2)
+    );
+  }
+
+  async deleteAiSettings(userId: string): Promise<void> {
+    fs.rmSync(this.aiSettingsPath(userId), { force: true });
   }
 
   async saveAttempt(

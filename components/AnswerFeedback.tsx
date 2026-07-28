@@ -221,6 +221,8 @@ export function AiExplanation({
   const [sources, setSources] = useState<ExplainSource[]>([]);
   const [stage, setStage] = useState<string | null>(null);
   const [stageDetail, setStageDetail] = useState<string | null>(null);
+  const [errorCode, setErrorCode] = useState<string | null>(null);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [state, setState] = useState<"idle" | "streaming" | "done" | "error">(
     "idle"
   );
@@ -231,13 +233,25 @@ export function AiExplanation({
     setSources([]);
     setStage(null);
     setStageDetail(null);
+    setErrorCode(null);
+    setErrorMessage(null);
     try {
       const res = await fetch("/api/explain", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ examSlug: slug, questionId, answer }),
       });
-      if (!res.ok || !res.body) throw new Error(await res.text());
+      if (!res.ok) {
+        const body = (await res.json().catch(() => null)) as {
+          error?: string;
+          code?: string;
+        } | null;
+        setErrorCode(body?.code ?? null);
+        setErrorMessage(body?.error ?? null);
+        setState("error");
+        return;
+      }
+      if (!res.body) throw new Error("Leere Antwort");
 
       // NDJSON-Events: status | sources | text | done | error
       const reader = res.body.getReader();
@@ -301,15 +315,37 @@ export function AiExplanation({
           Von AI erklären lassen
         </button>
       )}
-      {state === "error" && (
-        <p className="text-sm text-red-600">
-          Erklärung fehlgeschlagen — ist der <code>OPENAI_API_KEY</code> in{" "}
-          <code>.env.local</code> gesetzt?{" "}
-          <button onClick={explain} className="underline">
-            Erneut versuchen
-          </button>
-        </p>
-      )}
+      {state === "error" &&
+        (errorCode === "unauthenticated" ? (
+          <p className="rounded-lg border border-brand-300 bg-brand-50 px-4 py-3 text-sm text-brand-900 dark:border-brand-800 dark:bg-brand-950/40 dark:text-brand-200">
+            AI-Erklärungen gibt es mit eigenem AI-Key —{" "}
+            <a href="/login" className="font-semibold underline">
+              melde dich an
+            </a>{" "}
+            (oder{" "}
+            <a href="/register" className="font-semibold underline">
+              registriere dich kostenlos
+            </a>
+            ), um deinen Key zu hinterlegen.
+          </p>
+        ) : errorCode === "no-ai-settings" ? (
+          <p className="rounded-lg border border-brand-300 bg-brand-50 px-4 py-3 text-sm text-brand-900 dark:border-brand-800 dark:bg-brand-950/40 dark:text-brand-200">
+            Du hast noch keinen AI-Key hinterlegt. Wähle in den{" "}
+            <a href="/settings" className="font-semibold underline">
+              AI-Einstellungen
+            </a>{" "}
+            Anbieter, Modell und Key (Bring your own Key) — danach funktionieren
+            die Erklärungen sofort.
+          </p>
+        ) : (
+          <p className="text-sm text-red-600">
+            Erklärung fehlgeschlagen
+            {errorMessage ? `: ${errorMessage}` : ""}.{" "}
+            <button onClick={explain} className="underline">
+              Erneut versuchen
+            </button>
+          </p>
+        ))}
       {(state === "streaming" || state === "done") && (
         <div className="rounded-lg border border-brand-200 bg-brand-50/60 p-4 text-sm leading-relaxed dark:border-brand-900 dark:bg-brand-950/30">
           {state === "streaming" && text === "" && (

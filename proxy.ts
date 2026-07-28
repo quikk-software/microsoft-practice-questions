@@ -8,7 +8,7 @@ import { createServerClient } from "@supabase/ssr";
 // 2. Bei AUTH_DRIVER=supabase: Session-Refresh nach dem @supabase/ssr-Muster
 //    (abgelaufene Access-Tokens werden per Cookie erneuert).
 
-const PROTECTED_PREFIXES = ["/admin", "/my"];
+const PROTECTED_PREFIXES = ["/admin", "/my", "/settings"];
 
 function isProtected(pathname: string): boolean {
   return PROTECTED_PREFIXES.some(
@@ -92,6 +92,7 @@ export const config = {
   matcher: [
     "/admin/:path*",
     "/my/:path*",
+    "/settings/:path*",
     "/login",
     "/register",
     "/reset-password",

@@ -12,6 +12,8 @@
     "seed": "node --env-file=.env.local scripts/seed.mjs"
   },
   "dependencies": {
+    "@ai-sdk/anthropic": "^4.0.23",
+    "@ai-sdk/mistral": "^4.0.16",
     "@ai-sdk/openai": "^4.0.20",
     "@supabase/ssr": "^0.12.3",
     "@supabase/supabase-js": "^2.110.8",

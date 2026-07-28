@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { ClipboardList, LogIn, LogOut } from "lucide-react";
+import { ClipboardList, LogIn, LogOut, Settings2 } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
 
 // Schlanke Kopfzeile. Den User holt das Server-Layout (app/layout.tsx) über
@@ -53,6 +53,14 @@ export function SiteHeader({ user, authEnabled }: Props) {
             >
               <ClipboardList className="h-4 w-4" aria-hidden />
               Meine Prüfungen
+            </Link>
+            <Link
+              href="/settings"
+              title="AI-Einstellungen (Bring your own Key)"
+              className="inline-flex items-center gap-1.5 text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
+            >
+              <Settings2 className="h-4 w-4" aria-hidden />
+              <span className="hidden md:inline">AI-Setup</span>
             </Link>
             <span
               className="hidden max-w-48 truncate text-zinc-400 sm:inline"

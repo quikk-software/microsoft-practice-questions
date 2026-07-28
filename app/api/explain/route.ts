@@ -1,6 +1,8 @@
-import { openai } from "@ai-sdk/openai";
 import { streamText } from "ai";
+import { getAuthService } from "@/lib/auth";
 import { getRepository } from "@/lib/data";
+import { decryptApiKey } from "@/lib/ai/crypto";
+import { getProvider } from "@/lib/ai/providers";
 import { retrieve } from "@/lib/rag";
 import type { Answer, Question } from "@/lib/types";
 
@@ -69,12 +71,39 @@ function describeQuestion(q: Question): string {
 //   {type:"text", delta:"..."}                                 Erklärungs-Text
 //   {type:"done"} | {type:"error", message}
 export async function POST(req: Request) {
-  if (!process.env.OPENAI_API_KEY) {
-    return new Response(
-      "OPENAI_API_KEY ist nicht gesetzt (.env.local)",
-      { status: 500 }
+  // BYOK: Erklärungen laufen auf dem Key des angemeldeten Users
+  const user = await getAuthService().getCurrentUser();
+  if (!user) {
+    return Response.json(
+      {
+        error: "AI-Erklärungen gibt es nur mit Login.",
+        code: "unauthenticated",
+      },
+      { status: 401 }
     );
   }
+  const settings = await getRepository().getAiSettings(user.id);
+  if (!settings) {
+    return Response.json(
+      {
+        error: "Kein AI-Key hinterlegt — bitte in den AI-Einstellungen konfigurieren.",
+        code: "no-ai-settings",
+      },
+      { status: 428 }
+    );
+  }
+  const provider = getProvider(settings.provider);
+  if (!provider) {
+    return Response.json(
+      { error: `Unbekannter Anbieter: ${settings.provider}`, code: "invalid-provider" },
+      { status: 400 }
+    );
+  }
+  const userModel = provider.createModel(
+    settings.model,
+    decryptApiKey(settings.apiKeyEncrypted)
+  );
+
   const body = (await req.json()) as ExplainRequest;
   const question = await getRepository().getQuestion(
     body.examSlug,
@@ -123,14 +152,14 @@ export async function POST(req: Request) {
           });
         }
 
-        // Phase 2: Antwort-Generierung
+        // Phase 2: Antwort-Generierung (auf dem Key des Users)
         send({
           type: "status",
           stage: "generate",
           detail:
             hits.length > 0
-              ? `Erklärung wird generiert (${hits.length} Quellen als Kontext) …`
-              : "Erklärung wird generiert …",
+              ? `Erklärung wird generiert mit ${provider.label} ${settings.model} (${hits.length} Quellen als Kontext) …`
+              : `Erklärung wird generiert mit ${provider.label} ${settings.model} …`,
         });
 
         const contextBlock =
@@ -147,8 +176,7 @@ export async function POST(req: Request) {
             : "";
 
         const result = streamText({
-          // Modell bei Bedarf per Env übersteuern (OPENAI_EXPLAIN_MODEL)
-          model: openai(process.env.OPENAI_EXPLAIN_MODEL ?? "gpt-5.1"),
+          model: userModel,
           system: [
             "Du bist ein Trainer für Microsoft-Zertifizierungsprüfungen (aktuell: AB-900, Copilot and Agent Administration Fundamentals).",
             "Erkläre auf Deutsch, präzise und lernorientiert. Beziehe dich konkret auf die Microsoft-365-/Copilot-/Purview-Konzepte hinter der Frage.",

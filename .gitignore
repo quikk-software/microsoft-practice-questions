@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Lokale User-Daten (fs-Treiber)
+/data/attempts/
+/data/ai-settings/

@@ -2,6 +2,7 @@ import "server-only";
 import type { SupabaseClient } from "@supabase/supabase-js";
 import type { ExamConfig, Question } from "@/lib/types";
 import type {
+  AiSettingsRecord,
   AttemptSummary,
   ContentChunk,
   ContentUnit,
@@ -238,6 +239,53 @@ export class SupabaseRepository implements DataRepository {
       }))
     );
     if (insertError) fail("replaceContentUnits/insert", insertError);
+  }
+
+  // ---- BYOK: ai_settings ----
+
+  async getAiSettings(userId: string): Promise<AiSettingsRecord | null> {
+    const { data, error } = await this.supabase
+      .from("ai_settings")
+      .select("provider, model, api_key_encrypted, api_key_hint")
+      .eq("user_id", userId)
+      .maybeSingle();
+    if (error) fail("getAiSettings", error);
+    if (!data) return null;
+    const row = data as {
+      provider: string;
+      model: string;
+      api_key_encrypted: string;
+      api_key_hint: string;
+    };
+    return {
+      provider: row.provider,
+      model: row.model,
+      apiKeyEncrypted: row.api_key_encrypted,
+      apiKeyHint: row.api_key_hint,
+    };
+  }
+
+  async saveAiSettings(userId: string, record: AiSettingsRecord): Promise<void> {
+    const { error } = await this.supabase.from("ai_settings").upsert(
+      {
+        user_id: userId,
+        provider: record.provider,
+        model: record.model,
+        api_key_encrypted: record.apiKeyEncrypted,
+        api_key_hint: record.apiKeyHint,
+        updated_at: new Date().toISOString(),
+      },
+      { onConflict: "user_id" }
+    );
+    if (error) fail("saveAiSettings", error);
+  }
+
+  async deleteAiSettings(userId: string): Promise<void> {
+    const { error } = await this.supabase
+      .from("ai_settings")
+      .delete()
+      .eq("user_id", userId);
+    if (error) fail("deleteAiSettings", error);
   }
 
   // ---- RAG: content_chunks (pgvector) ----

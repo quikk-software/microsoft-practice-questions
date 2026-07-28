@@ -42,6 +42,14 @@ export interface RetrievedChunk {
   similarity: number;
 }
 
+/** BYOK: AI-Einstellungen eines Users; der Key liegt nur verschlüsselt vor */
+export interface AiSettingsRecord {
+  provider: string;
+  model: string;
+  apiKeyEncrypted: string;
+  apiKeyHint: string;
+}
+
 export interface AttemptSummary {
   id: string;
   userId: string;
@@ -84,6 +92,11 @@ export interface DataRepository {
     k: number
   ): Promise<RetrievedChunk[]>;
   hasContentChunks(examSlug: string): Promise<boolean>;
+
+  // BYOK: AI-Einstellungen pro User
+  getAiSettings(userId: string): Promise<AiSettingsRecord | null>;
+  saveAiSettings(userId: string, record: AiSettingsRecord): Promise<void>;
+  deleteAiSettings(userId: string): Promise<void>;
 
   // Prüfungs-Verlauf (nur mit Login; Fs-Treiber speichert lokal)
   saveAttempt(
