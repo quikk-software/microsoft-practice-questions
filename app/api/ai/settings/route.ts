@@ -21,19 +21,40 @@ async function requireUser() {
   return { user, denied: null };
 }
 
+/** Server-Fehler nie als nackter 500 — immer mit verständlicher Beschreibung. */
+function serverError(e: unknown): NextResponse {
+  const message = e instanceof Error ? e.message : "Unbekannter Fehler";
+  const tableMissing =
+    /ai_settings/.test(message) &&
+    /could not find|does not exist|schema cache/i.test(message);
+  return NextResponse.json(
+    {
+      error: tableMissing
+        ? "Die Tabelle ai_settings fehlt — bitte die Migration supabase/migrations/0002_ai_settings.sql im Supabase SQL Editor ausführen."
+        : message,
+      code: tableMissing ? "migration-missing" : "server-error",
+    },
+    { status: 500 }
+  );
+}
+
 export async function GET() {
   const { user, denied } = await requireUser();
   if (denied) return denied;
-  const settings = await getRepository().getAiSettings(user.id);
-  return NextResponse.json(
-    settings
-      ? {
-          provider: settings.provider,
-          model: settings.model,
-          apiKeyHint: settings.apiKeyHint,
-        }
-      : null
-  );
+  try {
+    const settings = await getRepository().getAiSettings(user.id);
+    return NextResponse.json(
+      settings
+        ? {
+            provider: settings.provider,
+            model: settings.model,
+            apiKeyHint: settings.apiKeyHint,
+          }
+        : null
+    );
+  } catch (e) {
+    return serverError(e);
+  }
 }
 
 interface PutBody {
@@ -62,19 +83,23 @@ export async function PUT(req: Request) {
   }
 
   const repo = getRepository();
-  const existing = await repo.getAiSettings(user.id);
-
-  // Key: neu mitgeschickt ODER vorhandenen weiterverwenden (nur bei gleichem Anbieter)
   let plainKey: string;
-  if (body.apiKey && body.apiKey.trim()) {
-    plainKey = body.apiKey.trim();
-  } else if (existing && existing.provider === provider.id) {
-    plainKey = decryptApiKey(existing.apiKeyEncrypted);
-  } else {
-    return NextResponse.json(
-      { error: "Bitte einen API-Key angeben.", code: "missing-key" },
-      { status: 400 }
-    );
+  try {
+    const existing = await repo.getAiSettings(user.id);
+
+    // Key: neu mitgeschickt ODER vorhandenen weiterverwenden (nur bei gleichem Anbieter)
+    if (body.apiKey && body.apiKey.trim()) {
+      plainKey = body.apiKey.trim();
+    } else if (existing && existing.provider === provider.id) {
+      plainKey = decryptApiKey(existing.apiKeyEncrypted);
+    } else {
+      return NextResponse.json(
+        { error: "Bitte einen API-Key angeben.", code: "missing-key" },
+        { status: 400 }
+      );
+    }
+  } catch (e) {
+    return serverError(e);
   }
 
   // Key-Validierung = Live-Modell-Liste abrufen
@@ -99,12 +124,16 @@ export async function PUT(req: Request) {
     );
   }
 
-  await repo.saveAiSettings(user.id, {
-    provider: provider.id,
-    model: body.model,
-    apiKeyEncrypted: encryptApiKey(plainKey),
-    apiKeyHint: keyHint(plainKey),
-  });
+  try {
+    await repo.saveAiSettings(user.id, {
+      provider: provider.id,
+      model: body.model,
+      apiKeyEncrypted: encryptApiKey(plainKey),
+      apiKeyHint: keyHint(plainKey),
+    });
+  } catch (e) {
+    return serverError(e);
+  }
 
   return NextResponse.json({
     ok: true,
@@ -117,6 +146,10 @@ export async function PUT(req: Request) {
 export async function DELETE() {
   const { user, denied } = await requireUser();
   if (denied) return denied;
-  await getRepository().deleteAiSettings(user.id);
-  return NextResponse.json({ ok: true });
+  try {
+    await getRepository().deleteAiSettings(user.id);
+    return NextResponse.json({ ok: true });
+  } catch (e) {
+    return serverError(e);
+  }
 }

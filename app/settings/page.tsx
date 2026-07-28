@@ -16,7 +16,11 @@ export default async function SettingsPage() {
   const user = await getAuthService().getCurrentUser();
   if (!user) redirect("/login?next=/settings");
 
-  const settings = await getRepository().getAiSettings(user.id);
+  // Fehlende Migration/Tabelle darf die Seite nicht crashen — der Speichern-Flow
+  // liefert dann die konkrete Fehlermeldung.
+  const settings = await getRepository()
+    .getAiSettings(user.id)
+    .catch(() => null);
 
   return (
     <main className="mx-auto w-full max-w-2xl px-6 py-12">

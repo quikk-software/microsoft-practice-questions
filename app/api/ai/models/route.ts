@@ -31,7 +31,11 @@ export async function POST(req: Request) {
 
   let apiKey = body.apiKey?.trim();
   if (!apiKey) {
-    const settings = await getRepository().getAiSettings(user.id);
+    // Gespeicherten Key nutzen; DB-Fehler (z. B. fehlende Migration) hier nicht
+    // fatal werden lassen — dann greift unten "missing-key".
+    const settings = await getRepository()
+      .getAiSettings(user.id)
+      .catch(() => null);
     if (settings && settings.provider === provider.id) {
       apiKey = decryptApiKey(settings.apiKeyEncrypted);
     }

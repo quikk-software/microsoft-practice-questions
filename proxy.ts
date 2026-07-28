@@ -89,12 +89,12 @@ export async function proxy(request: NextRequest) {
 }
 
 export const config = {
+  // WICHTIG: Der Proxy muss auf allen Seiten/APIs laufen, damit der
+  // Session-Refresh die rotierten Tokens überall in die Cookies schreiben kann.
+  // Läuft er nur auf einzelnen Routen, rotiert Supabase das Refresh-Token bei
+  // RSC-Reads (die keine Cookies schreiben dürfen) ins Leere -> Logout nach
+  // Ablauf des Access-Tokens. Ausgenommen: statische Assets & Metadaten.
   matcher: [
-    "/admin/:path*",
-    "/my/:path*",
-    "/settings/:path*",
-    "/login",
-    "/register",
-    "/reset-password",
+    "/((?!_next/static|_next/image|favicon\\.ico|robots\\.txt|sitemap\\.xml|.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico)$).*)",
   ],
 };

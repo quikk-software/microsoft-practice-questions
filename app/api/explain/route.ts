@@ -82,7 +82,9 @@ export async function POST(req: Request) {
       { status: 401 }
     );
   }
-  const settings = await getRepository().getAiSettings(user.id);
+  const settings = await getRepository()
+    .getAiSettings(user.id)
+    .catch(() => null);
   if (!settings) {
     return Response.json(
       {

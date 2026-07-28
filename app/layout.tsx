@@ -65,7 +65,7 @@ export default async function RootLayout({
           }}
         />
         <SiteHeader
-          user={user ? { email: user.email } : null}
+          user={user ? { email: user.email, role: user.role } : null}
           authEnabled={isAuthEnabled()}
         />
         {children}
