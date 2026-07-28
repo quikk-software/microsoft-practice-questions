@@ -1,0 +1,938 @@
+[
+  {
+    "id": "csvc-001",
+    "type": "single-choice",
+    "skillArea": "core",
+    "topic": "Microsoft 365 architecture",
+    "difficulty": "easy",
+    "prompt": "Which component of the Microsoft 365 architecture connects data across services through a unified RESTful API and powers Copilot's contextual intelligence?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Microsoft Entra ID"
+      },
+      {
+        "id": "b",
+        "text": "Microsoft Graph"
+      },
+      {
+        "id": "c",
+        "text": "Microsoft Purview"
+      },
+      {
+        "id": "d",
+        "text": "Microsoft Defender XDR"
+      }
+    ],
+    "correct": "b",
+    "explanation": "Microsoft Graph bildet die Datenschicht der Microsoft-365-Architektur: eine RESTful API, die Daten über alle Dienste hinweg verbindet und die kontextuelle Intelligenz von Copilot speist. Entra ID ist die Identitätsschicht, Purview und Defender XDR gehören zur Sicherheits- und Compliance-Schicht.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/introduction-microsoft-365-core-services-admin-control/2-explore-microsoft-365-ecosystem",
+    "source": {
+      "title": "Explore the Microsoft 365 ecosystem and core service components",
+      "url": "https://learn.microsoft.com/en-us/training/modules/introduction-microsoft-365-core-services-admin-control/2-explore-microsoft-365-ecosystem",
+      "quote": "Microsoft Graph connects data across services, enabling insights and automation, and powering Copilot’s contextual intelligence."
+    }
+  },
+  {
+    "id": "csvc-002",
+    "type": "single-choice",
+    "skillArea": "core",
+    "topic": "OneDrive features",
+    "difficulty": "easy",
+    "prompt": "What is the purpose of Known Folder Move (KFM) in OneDrive?",
+    "options": [
+      {
+        "id": "a",
+        "text": "It redirects important Windows folders such as Desktop, Documents, and Pictures to OneDrive so they are backed up and synced across devices."
+      },
+      {
+        "id": "b",
+        "text": "It moves SharePoint document libraries into a user's personal OneDrive storage."
+      },
+      {
+        "id": "c",
+        "text": "It generates sharing links with expiration dates for external collaborators."
+      },
+      {
+        "id": "d",
+        "text": "It increases each user's OneDrive storage quota beyond 1 TB."
+      }
+    ],
+    "correct": "a",
+    "explanation": "Known Folder Move leitet die wichtigen Windows-Ordner Desktop, Dokumente und Bilder nach OneDrive um, sodass deren Inhalte automatisch in die Cloud gesichert, geräteübergreifend synchronisiert und durch die Sicherheits- und Compliance-Funktionen von Microsoft 365 geschützt werden.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/introduction-microsoft-365-core-services-admin-control/2-explore-microsoft-365-ecosystem",
+    "source": {
+      "title": "Explore the Microsoft 365 ecosystem and core service components",
+      "url": "https://learn.microsoft.com/en-us/training/modules/introduction-microsoft-365-core-services-admin-control/2-explore-microsoft-365-ecosystem",
+      "quote": "In OneDrive, Known Folder Move (KFM) is a feature that allows users to redirect their important Windows folders, such as Desktop, Documents, and Pictures, to their OneDrive storage. KFM ensures that the contents of these folders are automatically backed up to the cloud, synchronized across devices, and protected by Microsoft 365’s security and compliance features."
+    }
+  },
+  {
+    "id": "csvc-003",
+    "type": "single-choice",
+    "skillArea": "core",
+    "topic": "Teams integration",
+    "difficulty": "medium",
+    "prompt": "A user creates a new team in Microsoft Teams. Which resources are automatically provisioned along with the team?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A SharePoint site and an Exchange group mailbox"
+      },
+      {
+        "id": "b",
+        "text": "A communication site and a resource mailbox"
+      },
+      {
+        "id": "c",
+        "text": "A personal OneDrive folder and a distribution list"
+      },
+      {
+        "id": "d",
+        "text": "A shared mailbox and a retention policy"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Teams baut auf Microsoft 365 Groups und SharePoint auf: Jedes neu erstellte Team stellt automatisch eine SharePoint-Site und ein Exchange-Gruppenpostfach bereit. Communication Sites, Ressourcenpostfächer oder Verteilerlisten werden dabei nicht angelegt.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/introduction-microsoft-365-core-services-admin-control/2-explore-microsoft-365-ecosystem",
+    "source": {
+      "title": "Explore the Microsoft 365 ecosystem and core service components",
+      "url": "https://learn.microsoft.com/en-us/training/modules/introduction-microsoft-365-core-services-admin-control/2-explore-microsoft-365-ecosystem",
+      "quote": "Teams is built on top of Microsoft 365 Groups and SharePoint, meaning every team created in Teams also provisions a SharePoint site and an Exchange group mailbox."
+    }
+  },
+  {
+    "id": "csvc-004",
+    "type": "matching",
+    "skillArea": "core",
+    "topic": "Architecture layers",
+    "difficulty": "medium",
+    "prompt": "Match each layer of the Microsoft 365 architecture to the component or capability that operates in it.",
+    "left": [
+      {
+        "id": "l1",
+        "text": "Identity layer"
+      },
+      {
+        "id": "l2",
+        "text": "Data layer"
+      },
+      {
+        "id": "l3",
+        "text": "Intelligence layer"
+      },
+      {
+        "id": "l4",
+        "text": "Security and compliance layer"
+      }
+    ],
+    "right": [
+      {
+        "id": "r1",
+        "text": "Copilot and AI-powered agents delivering personalized assistance and automation"
+      },
+      {
+        "id": "r2",
+        "text": "Microsoft Entra ID providing authentication and conditional access"
+      },
+      {
+        "id": "r3",
+        "text": "Unified tools for DLP, eDiscovery, retention, and auditing"
+      },
+      {
+        "id": "r4",
+        "text": "Microsoft Graph connecting data across services"
+      }
+    ],
+    "correct": {
+      "l1": "r2",
+      "l2": "r4",
+      "l3": "r1",
+      "l4": "r3"
+    },
+    "explanation": "Die Microsoft-365-Architektur ist geschichtet: Microsoft Entra ID bildet die Identitätsschicht, Microsoft Graph die Datenschicht, Copilot und KI-Agenten die Intelligence-Schicht, und DLP, eDiscovery, Aufbewahrung und Auditing gehören zur Sicherheits- und Compliance-Schicht.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/introduction-microsoft-365-core-services-admin-control/2-explore-microsoft-365-ecosystem",
+    "source": {
+      "title": "Explore the Microsoft 365 ecosystem and core service components",
+      "url": "https://learn.microsoft.com/en-us/training/modules/introduction-microsoft-365-core-services-admin-control/2-explore-microsoft-365-ecosystem",
+      "quote": "Microsoft Graph connects data across services, enabling insights and automation, and powering Copilot’s contextual intelligence. Copilot and AI-powered agents utilize data and signals from across Microsoft 365 to deliver personalized assistance, recommendations, and automation. Unified tools for data loss prevention (DLP), eDiscovery, retention, and auditing."
+    }
+  },
+  {
+    "id": "csvc-005",
+    "type": "yes-no",
+    "skillArea": "core",
+    "topic": "Copilot and agents",
+    "difficulty": "medium",
+    "prompt": "For each of the following statements about Copilot and agents in Microsoft 365, select Yes if the statement is true. Otherwise, select No.",
+    "statements": [
+      {
+        "id": "s1",
+        "text": "Copilot can access and return organizational data that the requesting user is not authorized to view.",
+        "correct": false
+      },
+      {
+        "id": "s2",
+        "text": "Organizations can build custom agents for unique business scenarios using Microsoft Copilot Studio.",
+        "correct": true
+      },
+      {
+        "id": "s3",
+        "text": "Copilot uses Microsoft Graph to tailor its responses to each user's role, recent activity, and organizational context.",
+        "correct": true
+      }
+    ],
+    "explanation": "Microsoft Graph respektiert die integrierten Sicherheits- und Compliance-Kontrollen: Copilot greift nur auf Daten zu, die der Nutzer sehen darf (rollenbasierter Zugriff, Vertraulichkeitsbezeichnungen, Conditional Access). Eigene Agents lassen sich mit Copilot Studio erstellen, und Copilot personalisiert Antworten über Microsoft Graph.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/introduction-microsoft-365-core-services-admin-control/2-explore-microsoft-365-ecosystem",
+    "source": {
+      "title": "Explore the Microsoft 365 ecosystem and core service components",
+      "url": "https://learn.microsoft.com/en-us/training/modules/introduction-microsoft-365-core-services-admin-control/2-explore-microsoft-365-ecosystem",
+      "quote": "In turn, Microsoft Graph respects Microsoft 365’s built-in security and compliance controls, ensuring that Copilot only accesses and returns data the user is authorized to view. Organizations can build custom agents using Microsoft Copilot Studio, enabling automation and support for unique business scenarios. By utilizing Microsoft Graph, Copilot tailors its responses and recommendations to each user’s role, recent activity, and organizational context."
+    }
+  },
+  {
+    "id": "csvc-006",
+    "type": "single-choice",
+    "skillArea": "core",
+    "topic": "Service health monitoring",
+    "difficulty": "easy",
+    "prompt": "Users report intermittent problems accessing Exchange Online. Which tool in the Microsoft 365 admin center provides real-time visibility into incidents, advisories, and planned maintenance events?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Message center"
+      },
+      {
+        "id": "b",
+        "text": "Service Health Dashboard"
+      },
+      {
+        "id": "c",
+        "text": "Usage reports"
+      },
+      {
+        "id": "d",
+        "text": "Org settings"
+      }
+    ],
+    "correct": "b",
+    "explanation": "Das Service Health Dashboard zeigt in Echtzeit den Status der Microsoft-365-Dienste, inklusive Incidents, Advisories und geplanter Wartung. Das Message Center informiert dagegen über neue Features und Deprecations, Usage Reports zeigen Nutzungsstatistiken.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/introduction-microsoft-365-core-services-admin-control/3-explore-microsoft-365-admin-center",
+    "source": {
+      "title": "Explore the Microsoft 365 admin center and key admin tools",
+      "url": "https://learn.microsoft.com/en-us/training/modules/introduction-microsoft-365-core-services-admin-control/3-explore-microsoft-365-admin-center",
+      "quote": "The Service Health Dashboard provides real-time visibility into the status of Microsoft 365 services. It displays incidents, advisories, and planned maintenance events, along with detailed descriptions and resolution timelines."
+    }
+  },
+  {
+    "id": "csvc-007",
+    "type": "single-choice",
+    "skillArea": "core",
+    "topic": "Admin centers",
+    "difficulty": "medium",
+    "prompt": "You need to configure OneDrive sync behavior, sharing permissions, and storage limits for your organization. Which admin center should you use?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A dedicated OneDrive admin center"
+      },
+      {
+        "id": "b",
+        "text": "The SharePoint admin center"
+      },
+      {
+        "id": "c",
+        "text": "The Teams admin center"
+      },
+      {
+        "id": "d",
+        "text": "The Exchange admin center"
+      }
+    ],
+    "correct": "b",
+    "explanation": "OneDrive-Einstellungen wie Sync-Verhalten, Freigabeberechtigungen, Speicherlimits, Aufbewahrungsrichtlinien und Gerätezugriff werden im SharePoint admin center verwaltet — ein eigenes OneDrive admin center gibt es dafür nicht.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/introduction-microsoft-365-core-services-admin-control/3-explore-microsoft-365-admin-center",
+    "source": {
+      "title": "Explore the Microsoft 365 admin center and key admin tools",
+      "url": "https://learn.microsoft.com/en-us/training/modules/introduction-microsoft-365-core-services-admin-control/3-explore-microsoft-365-admin-center",
+      "quote": "OneDrive settings are managed within the SharePoint admin center. These settings include controls for sync behavior, sharing permissions, storage limits, retention policies, and device access."
+    }
+  },
+  {
+    "id": "csvc-008",
+    "type": "multiple-choice",
+    "skillArea": "core",
+    "topic": "License management",
+    "difficulty": "medium",
+    "prompt": "Your organization plans to use group-based licensing in the Microsoft 365 admin center. Which two limitations should you consider? Each correct answer presents a complete solution.",
+    "options": [
+      {
+        "id": "a",
+        "text": "A maximum of 20 groups can be used per assignment."
+      },
+      {
+        "id": "b",
+        "text": "Nested groups are not supported."
+      },
+      {
+        "id": "c",
+        "text": "Licenses can only be assigned to distribution lists."
+      },
+      {
+        "id": "d",
+        "text": "Group-based licensing requires every user to have an E5 license."
+      },
+      {
+        "id": "e",
+        "text": "Licenses can only be assigned through PowerShell."
+      }
+    ],
+    "correct": [
+      "a",
+      "b"
+    ],
+    "explanation": "Gruppenbasierte Lizenzierung hat zwei zentrale Einschränkungen: maximal 20 Gruppen pro Zuweisung und keine Unterstützung für verschachtelte Gruppen. Zusätzlich muss für jeden Nutzer ein Standort (Usage Location) gesetzt sein. Die übrigen Aussagen sind frei erfunden.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/introduction-microsoft-365-core-services-admin-control/3-explore-microsoft-365-admin-center",
+    "source": {
+      "title": "Explore the Microsoft 365 admin center and key admin tools",
+      "url": "https://learn.microsoft.com/en-us/training/modules/introduction-microsoft-365-core-services-admin-control/3-explore-microsoft-365-admin-center",
+      "quote": "However, group-based licensing has limitations, such as a maximum of 20 groups per assignment and no support for nested groups. Admins must also ensure that each user has a location set, as licensing enforcement depends on this attribute."
+    }
+  },
+  {
+    "id": "csvc-009",
+    "type": "yes-no",
+    "skillArea": "core",
+    "topic": "Microsoft 365 admin center",
+    "difficulty": "easy",
+    "prompt": "For each of the following statements about the Microsoft 365 admin center, select Yes if the statement is true. Otherwise, select No.",
+    "statements": [
+      {
+        "id": "s1",
+        "text": "The Microsoft 365 admin center is role-aware, so the features and settings you see depend on your assigned admin roles.",
+        "correct": true
+      },
+      {
+        "id": "s2",
+        "text": "The Message Center provides updates on new features, deprecations, and configuration recommendations.",
+        "correct": true
+      },
+      {
+        "id": "s3",
+        "text": "The Microsoft 365 admin center is a desktop application that must be installed on each administrator's workstation.",
+        "correct": false
+      }
+    ],
+    "explanation": "Das Microsoft 365 admin center ist ein webbasiertes Portal (admin.microsoft.com), keine Desktop-Anwendung. Es ist rollenbewusst — die sichtbaren Funktionen hängen von den zugewiesenen Admin-Rollen ab — und das Message Center informiert über neue Features, Deprecations und Konfigurationsempfehlungen.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/introduction-microsoft-365-core-services-admin-control/3-explore-microsoft-365-admin-center",
+    "source": {
+      "title": "Explore the Microsoft 365 admin center and key admin tools",
+      "url": "https://learn.microsoft.com/en-us/training/modules/introduction-microsoft-365-core-services-admin-control/3-explore-microsoft-365-admin-center",
+      "quote": "It’s role-aware, meaning the features and settings you see depend on your assigned admin roles, such as Global Admin, Exchange Admin, Teams Admin, and so on. The Message Center complements these tools by providing updates on new features, deprecations, and configuration recommendations. The Microsoft 365 admin center is a web-based portal accessible at https://admin.microsoft.com."
+    }
+  },
+  {
+    "id": "csvc-010",
+    "type": "ordering",
+    "skillArea": "core",
+    "topic": "Service outage response",
+    "difficulty": "medium",
+    "prompt": "Users report that they cannot access email, and you suspect a service outage. Place the following steps of the recommended response process in the correct order.",
+    "items": [
+      {
+        "id": "i1",
+        "text": "Check the Service Health Dashboard in the Microsoft 365 admin center for an active incident"
+      },
+      {
+        "id": "i2",
+        "text": "Subscribe to incident updates and notify users through Teams"
+      },
+      {
+        "id": "i3",
+        "text": "Use Exchange Online PowerShell to verify mail flow and rule out internal configuration issues"
+      },
+      {
+        "id": "i4",
+        "text": "Send a follow-up message to users and update internal documentation after the incident is resolved"
+      }
+    ],
+    "correctOrder": [
+      "i1",
+      "i2",
+      "i3",
+      "i4"
+    ],
+    "explanation": "Das Szenario aus dem Lerninhalt: Zuerst im Service Health Dashboard prüfen, ob ein Incident vorliegt, dann Updates abonnieren und Nutzer über Teams informieren, parallel per Exchange Online PowerShell interne Ursachen ausschließen, und nach der Behebung eine Abschlussmeldung senden und die Dokumentation aktualisieren.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/introduction-microsoft-365-core-services-admin-control/3-explore-microsoft-365-admin-center",
+    "source": {
+      "title": "Explore the Microsoft 365 admin center and key admin tools",
+      "url": "https://learn.microsoft.com/en-us/training/modules/introduction-microsoft-365-core-services-admin-control/3-explore-microsoft-365-admin-center",
+      "quote": "The admin logs into the Microsoft 365 admin center and checks the Service Health Dashboard, which shows an Exchange Online incident. They subscribe to updates, notify users through Teams, and monitor the Message Center for resolution timelines. Meanwhile, they use Exchange Online PowerShell to verify mail flow and confirm that no internal configurations are causing the issue."
+    }
+  },
+  {
+    "id": "csvc-011",
+    "type": "single-choice",
+    "skillArea": "core",
+    "topic": "Exchange mailbox types",
+    "difficulty": "easy",
+    "prompt": "Your helpdesk team needs to collectively read and respond to email sent to support@contoso.com from a common mailbox. What should you create in Exchange Online?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A shared mailbox"
+      },
+      {
+        "id": "b",
+        "text": "A distribution list"
+      },
+      {
+        "id": "c",
+        "text": "A resource mailbox"
+      },
+      {
+        "id": "d",
+        "text": "A user mailbox for each team member"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Ein freigegebenes Postfach (shared mailbox) ist genau für Szenarien wie support@contoso.com gedacht: Mehrere Nutzer greifen auf eine gemeinsame Adresse zu und beantworten E-Mails daraus. Eine Verteilerliste leitet Mails nur an mehrere Empfänger weiter, ein Ressourcenpostfach dient der Raum- und Gerätebuchung.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/introduction-microsoft-365-core-services-admin-control/4-examine-exchange-teams-sharepoint",
+    "source": {
+      "title": "Examine Microsoft Exchange, Teams, and SharePoint",
+      "url": "https://learn.microsoft.com/en-us/training/modules/introduction-microsoft-365-core-services-admin-control/4-examine-exchange-teams-sharepoint",
+      "quote": "Shared mailboxes are designed for scenarios where multiple users need access to a common email address, such as support@contoso.com or info@contoso.com."
+    }
+  },
+  {
+    "id": "csvc-012",
+    "type": "single-choice",
+    "skillArea": "core",
+    "topic": "Exchange compliance",
+    "difficulty": "hard",
+    "prompt": "During an internal investigation, you must preserve all email content in an executive's mailbox, including deleted items and original versions of modified messages, so it remains accessible for legal discovery. What should you configure?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A retention policy that retains deleted emails for 30 days"
+      },
+      {
+        "id": "b",
+        "text": "Litigation hold on the mailbox"
+      },
+      {
+        "id": "c",
+        "text": "A transport rule that encrypts outbound messages"
+      },
+      {
+        "id": "d",
+        "text": "A DLP policy that blocks external sharing of sensitive data"
+      }
+    ],
+    "correct": "b",
+    "explanation": "Litigation Hold bewahrt sämtliche Postfachinhalte — einschließlich gelöschter Elemente und ursprünglicher Versionen — für die rechtliche Beweissicherung (Legal Discovery) auf. Eine Aufbewahrungsrichtlinie steuert nur die Lebensdauer von Nachrichten, Transport-Regeln und DLP adressieren Mailfluss bzw. Datenabfluss, nicht die Beweissicherung.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/introduction-microsoft-365-core-services-admin-control/4-examine-exchange-teams-sharepoint",
+    "source": {
+      "title": "Examine Microsoft Exchange, Teams, and SharePoint",
+      "url": "https://learn.microsoft.com/en-us/training/modules/introduction-microsoft-365-core-services-admin-control/4-examine-exchange-teams-sharepoint",
+      "quote": "Litigation hold preserves all email content in a mailbox, including deleted items and original versions, for legal discovery purposes."
+    }
+  },
+  {
+    "id": "csvc-013",
+    "type": "multiple-choice",
+    "skillArea": "core",
+    "topic": "Mail flow rules",
+    "difficulty": "medium",
+    "prompt": "You need to enforce organizational email policies in Exchange Online. Which two tasks can you accomplish with transport rules (mail flow rules)? Each correct answer presents a complete solution.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Block emails that contain executable attachments"
+      },
+      {
+        "id": "b",
+        "text": "Append disclaimers to outbound messages"
+      },
+      {
+        "id": "c",
+        "text": "Provision user mailboxes automatically"
+      },
+      {
+        "id": "d",
+        "text": "Enforce device compliance requirements"
+      },
+      {
+        "id": "e",
+        "text": "Assign Microsoft 365 licenses to users"
+      }
+    ],
+    "correct": [
+      "a",
+      "b"
+    ],
+    "explanation": "Transport-Regeln inspizieren Inhalt, Header und Anhänge von E-Mails und können z. B. Nachrichten mit ausführbaren Anhängen blockieren, sensible Mails verschlüsseln oder Disclaimer an ausgehende Mails anhängen. Postfach-Provisionierung erfolgt über die Lizenzzuweisung, Gerätecompliance über Intune, Lizenzen über das Admin Center.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/introduction-microsoft-365-core-services-admin-control/4-examine-exchange-teams-sharepoint",
+    "source": {
+      "title": "Examine Microsoft Exchange, Teams, and SharePoint",
+      "url": "https://learn.microsoft.com/en-us/training/modules/introduction-microsoft-365-core-services-admin-control/4-examine-exchange-teams-sharepoint",
+      "quote": "Transport rules (also known as mail flow rules) allow administrators to inspect email content, headers, and attachments to enforce organizational policies. These rules can block or encrypt sensitive emails, redirect messages, or append disclaimers. For example, a transport rule can be created to block emails with executable attachments for all users, reducing the risk of malware infections."
+    }
+  },
+  {
+    "id": "csvc-014",
+    "type": "yes-no",
+    "skillArea": "core",
+    "topic": "Mailbox provisioning",
+    "difficulty": "easy",
+    "prompt": "For each of the following statements about mailboxes in Exchange Online, select Yes if the statement is true. Otherwise, select No.",
+    "statements": [
+      {
+        "id": "s1",
+        "text": "Assigning an Exchange Online license to a user automatically triggers the provisioning of the user's mailbox.",
+        "correct": true
+      },
+      {
+        "id": "s2",
+        "text": "A shared mailbox always requires its own separate Exchange Online license.",
+        "correct": false
+      },
+      {
+        "id": "s3",
+        "text": "A resource mailbox can be configured to automatically accept or decline meeting requests based on availability.",
+        "correct": true
+      }
+    ],
+    "explanation": "Die Lizenzzuweisung löst die automatische Postfach-Bereitstellung aus, und Ressourcenpostfächer (z. B. für Konferenzräume) können Buchungsanfragen automatisch annehmen oder ablehnen. Freigegebene Postfächer benötigen keine eigene Lizenz — außer wenn Nutzer über mobile Geräte darauf zugreifen.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/introduction-microsoft-365-core-services-admin-control/4-examine-exchange-teams-sharepoint",
+    "source": {
+      "title": "Examine Microsoft Exchange, Teams, and SharePoint",
+      "url": "https://learn.microsoft.com/en-us/training/modules/introduction-microsoft-365-core-services-admin-control/4-examine-exchange-teams-sharepoint",
+      "quote": "Every user who needs email access must have a mailbox, which is automatically provisioned when a user is assigned an Exchange Online license. These mailboxes don’t require a separate license unless users access them with mobile devices. These mailboxes can be configured to automatically accept or decline meeting requests based on availability, enforce booking policies, and send automated responses."
+    }
+  },
+  {
+    "id": "csvc-015",
+    "type": "dropdown",
+    "skillArea": "core",
+    "topic": "SharePoint site types",
+    "difficulty": "easy",
+    "prompt": "Complete the statement by selecting the correct options.",
+    "textParts": [
+      "In SharePoint Online, ",
+      " are linked to Microsoft 365 Groups and designed for collaborative work, while ",
+      " are intended for broadcasting information to a wide audience, such as company news or policies."
+    ],
+    "blanks": [
+      {
+        "id": "b1",
+        "options": [
+          {
+            "id": "o1",
+            "text": "team sites"
+          },
+          {
+            "id": "o2",
+            "text": "communication sites"
+          },
+          {
+            "id": "o3",
+            "text": "document centers"
+          }
+        ],
+        "correct": "o1"
+      },
+      {
+        "id": "b2",
+        "options": [
+          {
+            "id": "o1",
+            "text": "communication sites"
+          },
+          {
+            "id": "o2",
+            "text": "team sites"
+          },
+          {
+            "id": "o3",
+            "text": "custom lists"
+          }
+        ],
+        "correct": "o1"
+      }
+    ],
+    "explanation": "Team Sites sind für gruppenbasierte Zusammenarbeit gedacht und automatisch mit Microsoft 365 Groups verknüpft; Communication Sites dienen dazu, Informationen wie Unternehmensnews, Richtlinien oder Schulungsmaterialien an ein breites Publikum zu verteilen.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/introduction-microsoft-365-core-services-admin-control/4-examine-exchange-teams-sharepoint",
+    "source": {
+      "title": "Examine Microsoft Exchange, Teams, and SharePoint",
+      "url": "https://learn.microsoft.com/en-us/training/modules/introduction-microsoft-365-core-services-admin-control/4-examine-exchange-teams-sharepoint",
+      "quote": "Team sites are designed for group collaboration and are automatically linked to Microsoft 365 Groups. Communication sites are intended for broadcasting information to a wide audience, such as company news, policies, or training materials."
+    }
+  },
+  {
+    "id": "csvc-016",
+    "type": "single-choice",
+    "skillArea": "core",
+    "topic": "BYOD app protection",
+    "difficulty": "hard",
+    "prompt": "Your organization allows employees to use personal, unenrolled iOS and Android devices. You must prevent users from copying content from corporate email in Outlook into personal apps and block access to Teams from jailbroken devices. The solution must not require full device enrollment. What should you configure?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Device compliance policies in Microsoft Intune"
+      },
+      {
+        "id": "b",
+        "text": "App protection policies"
+      },
+      {
+        "id": "c",
+        "text": "A conditional access policy that requires hybrid Azure AD joined devices"
+      },
+      {
+        "id": "d",
+        "text": "Sensitivity labels in Microsoft Purview"
+      }
+    ],
+    "correct": "b",
+    "explanation": "App-Schutzrichtlinien wirken auf App-Ebene und erfordern keine vollständige Geräteregistrierung — ideal für BYOD. Sie können Kopieren/Einfügen in persönliche Apps unterbinden und den Zugriff von gerooteten oder jailbroken Geräten blockieren. Gerätecompliance-Richtlinien und Hybrid-Join setzen verwaltete Geräte voraus, Vertraulichkeitsbezeichnungen klassifizieren Inhalte.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/introduction-microsoft-365-core-services-admin-control/5-establish-security-foundations",
+    "source": {
+      "title": "Establish security, identity, and compliance foundations",
+      "url": "https://learn.microsoft.com/en-us/training/modules/introduction-microsoft-365-core-services-admin-control/5-establish-security-foundations",
+      "quote": "App protection policies are designed to secure corporate data within applications, especially on unmanaged or bring-your-own devices (BYOD). Unlike device compliance policies, app protection policies operate at the app level and don’t require full device enrollment. The policy could prevent users from copying content from corporate emails into personal apps and block access to Teams if the device is jailbroken."
+    }
+  },
+  {
+    "id": "csvc-017",
+    "type": "multiple-choice",
+    "skillArea": "core",
+    "topic": "Device compliance",
+    "difficulty": "medium",
+    "prompt": "You are defining device compliance policies in Microsoft Intune. Which two requirements can such a policy enforce? Each correct answer presents a complete solution.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Require device encryption, such as BitLocker for Windows"
+      },
+      {
+        "id": "b",
+        "text": "Require a minimum operating system version"
+      },
+      {
+        "id": "c",
+        "text": "Append disclaimers to outbound email"
+      },
+      {
+        "id": "d",
+        "text": "Automatically provision SharePoint team sites"
+      },
+      {
+        "id": "e",
+        "text": "Assign admin roles to users"
+      }
+    ],
+    "correct": [
+      "a",
+      "b"
+    ],
+    "explanation": "Gerätecompliance-Richtlinien in Intune definieren Mindest-Sicherheitsstandards wie Verschlüsselung (z. B. BitLocker), Antivirenschutz, Firewall-Status, Mindest-Betriebssystemversion und Kennwortkomplexität. E-Mail-Disclaimer sind Sache von Transport-Regeln, Site-Provisionierung und Rollenzuweisung gehören nicht zur Gerätecompliance.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/introduction-microsoft-365-core-services-admin-control/5-establish-security-foundations",
+    "source": {
+      "title": "Establish security, identity, and compliance foundations",
+      "url": "https://learn.microsoft.com/en-us/training/modules/introduction-microsoft-365-core-services-admin-control/5-establish-security-foundations",
+      "quote": "These policies are configured in Microsoft Intune and define the minimum security standards a device must meet to be considered trustworthy. Common requirements include encryption (for example, BitLocker for Windows), antivirus protection, firewall status, minimum OS version, and password complexity."
+    }
+  },
+  {
+    "id": "csvc-018",
+    "type": "yes-no",
+    "skillArea": "core",
+    "topic": "Conditional access",
+    "difficulty": "hard",
+    "prompt": "For each of the following statements about conditional access and related controls in Microsoft 365, select Yes if the statement is true. Otherwise, select No.",
+    "statements": [
+      {
+        "id": "s1",
+        "text": "Conditional access policies in Microsoft Entra ID can evaluate whether a device is compliant or hybrid Azure AD joined before granting access.",
+        "correct": true
+      },
+      {
+        "id": "s2",
+        "text": "Session controls enforced through Microsoft Defender for Cloud Apps can restrict actions such as downloading files or printing documents during an active session.",
+        "correct": true
+      },
+      {
+        "id": "s3",
+        "text": "Sign-in risk evaluation can only block access; it cannot require MFA or prompt a password reset.",
+        "correct": false
+      }
+    ],
+    "explanation": "Conditional Access wertet u. a. Gerätezustand (compliant, hybrid joined) aus, und Sitzungssteuerungen über Microsoft Defender for Cloud Apps können Downloads, Kopieren oder Drucken während einer aktiven Sitzung einschränken. Bei riskanten Anmeldungen kann die Richtlinie neben dem Blockieren auch MFA erzwingen oder eine Kennwortzurücksetzung verlangen — die dritte Aussage ist daher falsch.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/introduction-microsoft-365-core-services-admin-control/5-establish-security-foundations",
+    "source": {
+      "title": "Establish security, identity, and compliance foundations",
+      "url": "https://learn.microsoft.com/en-us/training/modules/introduction-microsoft-365-core-services-admin-control/5-establish-security-foundations",
+      "quote": "These policies are configured in Microsoft Entra ID and can evaluate whether a device is compliant, hybrid Azure AD joined, or managed by Intune. These controls are enforced through Microsoft Defender for Cloud Apps and can restrict activities such as downloading files, copying data, or printing documents. Based on the assessed risk level, conditional access policies can enforce actions such as requiring MFA, blocking access, or prompting a password reset."
+    }
+  },
+  {
+    "id": "csvc-019",
+    "type": "matching",
+    "skillArea": "core",
+    "topic": "Security tools",
+    "difficulty": "hard",
+    "prompt": "Match each Microsoft 365 tool to the security capability it provides.",
+    "left": [
+      {
+        "id": "l1",
+        "text": "Microsoft Intune"
+      },
+      {
+        "id": "l2",
+        "text": "Microsoft Entra ID"
+      },
+      {
+        "id": "l3",
+        "text": "Microsoft Purview"
+      },
+      {
+        "id": "l4",
+        "text": "Microsoft Defender for Cloud Apps"
+      }
+    ],
+    "right": [
+      {
+        "id": "r1",
+        "text": "Enforces session controls, such as blocking file downloads during an active session"
+      },
+      {
+        "id": "r2",
+        "text": "Defines device compliance policies, such as encryption and minimum OS version"
+      },
+      {
+        "id": "r3",
+        "text": "Evaluates sign-in signals and enforces conditional access policies"
+      },
+      {
+        "id": "r4",
+        "text": "Provides sensitivity labels and DLP policies for content protection"
+      }
+    ],
+    "correct": {
+      "l1": "r2",
+      "l2": "r3",
+      "l3": "r4",
+      "l4": "r1"
+    },
+    "explanation": "Intune definiert Gerätecompliance-Richtlinien, Microsoft Entra ID wertet Anmeldesignale aus und setzt Conditional Access durch, Microsoft Purview liefert Vertraulichkeitsbezeichnungen und DLP-Richtlinien zum Inhaltsschutz, und Microsoft Defender for Cloud Apps erzwingt Sitzungssteuerungen wie das Blockieren von Downloads.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/introduction-microsoft-365-core-services-admin-control/5-establish-security-foundations",
+    "source": {
+      "title": "Establish security, identity, and compliance foundations",
+      "url": "https://learn.microsoft.com/en-us/training/modules/introduction-microsoft-365-core-services-admin-control/5-establish-security-foundations",
+      "quote": "The primary tools that Microsoft 365 admins use to configure baseline policies for device access, conditional access, and content protection include Microsoft Entra, Microsoft Purview, and Microsoft Intune. These controls are enforced through Microsoft Defender for Cloud Apps and can restrict activities such as downloading files, copying data, or printing documents. Sensitivity labels are a core feature of Microsoft Purview Information Protection."
+    }
+  },
+  {
+    "id": "csvc-020",
+    "type": "dropdown",
+    "skillArea": "core",
+    "topic": "Content protection",
+    "difficulty": "medium",
+    "prompt": "Complete the statement by selecting the correct options.",
+    "textParts": [
+      "To classify documents and automatically apply encryption and watermarks, an administrator configures ",
+      ". To detect and block the sharing of sensitive information such as credit card numbers, the administrator configures ",
+      "."
+    ],
+    "blanks": [
+      {
+        "id": "b1",
+        "options": [
+          {
+            "id": "o1",
+            "text": "sensitivity labels"
+          },
+          {
+            "id": "o2",
+            "text": "retention policies"
+          },
+          {
+            "id": "o3",
+            "text": "transport rules"
+          }
+        ],
+        "correct": "o1"
+      },
+      {
+        "id": "b2",
+        "options": [
+          {
+            "id": "o1",
+            "text": "DLP policies"
+          },
+          {
+            "id": "o2",
+            "text": "meeting policies"
+          },
+          {
+            "id": "o3",
+            "text": "app protection policies"
+          }
+        ],
+        "correct": "o1"
+      }
+    ],
+    "explanation": "Vertraulichkeitsbezeichnungen (Sensitivity Labels) aus Microsoft Purview Information Protection klassifizieren Inhalte und können Verschlüsselung, Wasserzeichen und Zugriffsbeschränkungen anwenden. DLP-Richtlinien erkennen sensible Datentypen wie Kreditkartennummern per Inhaltsprüfung und blockieren deren Weitergabe.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/introduction-microsoft-365-core-services-admin-control/5-establish-security-foundations",
+    "source": {
+      "title": "Establish security, identity, and compliance foundations",
+      "url": "https://learn.microsoft.com/en-us/training/modules/introduction-microsoft-365-core-services-admin-control/5-establish-security-foundations",
+      "quote": "Labels can apply encryption, restrict access to specific groups, and add visual markings such as headers, footers, and watermarks. DLP policies monitor and control the sharing of sensitive information. They use content inspection to detect data types such as credit card numbers, health records, or government identification."
+    }
+  },
+  {
+    "id": "csvc-021",
+    "type": "single-choice",
+    "skillArea": "core",
+    "topic": "Least privilege",
+    "difficulty": "medium",
+    "prompt": "A helpdesk technician needs to reset user passwords but must not be able to manage compliance policies or other tenant-wide settings. Following the principle of least privilege, what should you do?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Assign the Global Administrator role to the technician"
+      },
+      {
+        "id": "b",
+        "text": "Assign a role limited to the technician's tasks, such as the Helpdesk Admin role"
+      },
+      {
+        "id": "c",
+        "text": "Add the technician to the Organization Management role group in Exchange Online"
+      },
+      {
+        "id": "d",
+        "text": "Assign the Compliance Admin role to the technician"
+      }
+    ],
+    "correct": "b",
+    "explanation": "Das Prinzip der geringsten Berechtigung (least privilege) bedeutet, nur die tatsächlich benötigten Rechte zu vergeben — z. B. eine Helpdesk-Admin-Rolle zum Zurücksetzen von Kennwörtern. Global Administrator, Organization Management oder Compliance Admin würden deutlich mehr Rechte gewähren als nötig.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/introduction-microsoft-365-core-services-admin-control/6-assign-admin-roles",
+    "source": {
+      "title": "Assign admin roles using Role-Based Access Control",
+      "url": "https://learn.microsoft.com/en-us/training/modules/introduction-microsoft-365-core-services-admin-control/6-assign-admin-roles",
+      "quote": "RBAC in Microsoft 365 is built around the principle of least privilege, which means users and admins are granted only the access they need—nothing more, nothing less. For example, a helpdesk technician might be given the ability to reset passwords but not to manage compliance policies or access sensitive data."
+    }
+  },
+  {
+    "id": "csvc-022",
+    "type": "single-choice",
+    "skillArea": "core",
+    "topic": "Custom roles",
+    "difficulty": "hard",
+    "prompt": "A contractor needs read-only access to user profiles, but must not be able to modify any settings. None of the built-in admin roles matches this requirement precisely. What should you do?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Assign the User Admin role and instruct the contractor not to change anything"
+      },
+      {
+        "id": "b",
+        "text": "Create a custom role in Microsoft Entra ID with only the required read permissions and scope it appropriately"
+      },
+      {
+        "id": "c",
+        "text": "Temporarily assign the Global Administrator role and revoke it after the contract ends"
+      },
+      {
+        "id": "d",
+        "text": "Add the contractor to a Microsoft 365 group that owns a SharePoint site"
+      }
+    ],
+    "correct": "b",
+    "explanation": "Wenn integrierte Rollen zu breit sind, ist eine benutzerdefinierte Rolle in Microsoft Entra ID die richtige Lösung: Man wählt nur die benötigten Leseberechtigungen aus und begrenzt den Geltungsbereich (Scope). Breitere Rollen zuzuweisen und auf Wohlverhalten zu hoffen verletzt das Least-Privilege-Prinzip.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/introduction-microsoft-365-core-services-admin-control/6-assign-admin-roles",
+    "source": {
+      "title": "Assign admin roles using Role-Based Access Control",
+      "url": "https://learn.microsoft.com/en-us/training/modules/introduction-microsoft-365-core-services-admin-control/6-assign-admin-roles",
+      "quote": "For instance, you might have a contractor who needs read-only access to user profiles but shouldn’t be able to modify any settings. By creating a custom role in Microsoft Entra ID, you can select only the permissions required for the contractor’s tasks. Custom roles can also be scoped to specific groups, departments, or resources, further limiting their impact."
+    }
+  },
+  {
+    "id": "csvc-023",
+    "type": "multiple-choice",
+    "skillArea": "core",
+    "topic": "Secure delegation",
+    "difficulty": "easy",
+    "prompt": "Which two practices are recommended for delegating administrative responsibilities securely in Microsoft 365? Each correct answer presents a complete solution.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Assign roles to security groups instead of individual users"
+      },
+      {
+        "id": "b",
+        "text": "Regularly review role assignments to remove unnecessary or outdated permissions"
+      },
+      {
+        "id": "c",
+        "text": "Assign the Global Administrator role to all IT staff for flexibility"
+      },
+      {
+        "id": "d",
+        "text": "Keep temporarily elevated permissions in place permanently in case they are needed again"
+      }
+    ],
+    "correct": [
+      "a",
+      "b"
+    ],
+    "explanation": "Empfohlen sind gruppenbasierte Rollenzuweisungen (Berechtigungen werden beim Verlassen der Gruppe automatisch entzogen) und regelmäßige Überprüfungen der Rollenzuweisungen gegen Privilege Creep. Global Administrator soll sparsam vergeben werden, und temporär erhöhte Rechte sind nach Abschluss der Aufgabe sofort zu entziehen.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/introduction-microsoft-365-core-services-admin-control/6-assign-admin-roles",
+    "source": {
+      "title": "Assign admin roles using Role-Based Access Control",
+      "url": "https://learn.microsoft.com/en-us/training/modules/introduction-microsoft-365-core-services-admin-control/6-assign-admin-roles",
+      "quote": "Assigning roles to security groups rather than individuals streamlines management and reduces the risk of orphaned permissions. Scheduled reviews of role assignments help identify and remove unnecessary or outdated permissions."
+    }
+  },
+  {
+    "id": "csvc-024",
+    "type": "ordering",
+    "skillArea": "core",
+    "topic": "Custom role creation",
+    "difficulty": "hard",
+    "prompt": "You need to create a custom admin role for the Marketing department so its members can manage only their own Teams channels. Place the following steps in the correct order.",
+    "items": [
+      {
+        "id": "i1",
+        "text": "Define the exact permissions required for the role in Microsoft Entra ID"
+      },
+      {
+        "id": "i2",
+        "text": "Assign a scope that limits the role to the Marketing group"
+      },
+      {
+        "id": "i3",
+        "text": "Assign the role to the appropriate users or groups"
+      },
+      {
+        "id": "i4",
+        "text": "Regularly review and audit the role assignments"
+      }
+    ],
+    "correctOrder": [
+      "i1",
+      "i2",
+      "i3",
+      "i4"
+    ],
+    "explanation": "Der Prozess für benutzerdefinierte Rollen: zuerst die benötigten Berechtigungen definieren, dann den Geltungsbereich (Scope) auf die betreffende Gruppe oder Abteilung begrenzen, anschließend Nutzer oder Gruppen zuweisen und danach die Zuweisungen fortlaufend überprüfen und auditieren.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/introduction-microsoft-365-core-services-admin-control/6-assign-admin-roles",
+    "source": {
+      "title": "Assign admin roles using Role-Based Access Control",
+      "url": "https://learn.microsoft.com/en-us/training/modules/introduction-microsoft-365-core-services-admin-control/6-assign-admin-roles",
+      "quote": "The process of creating custom roles involves defining the necessary permissions, assigning a scope, and then adding users or groups. Scheduled reviews of role assignments help identify and remove unnecessary or outdated permissions."
+    }
+  }
+]

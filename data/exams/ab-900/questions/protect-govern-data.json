@@ -1,0 +1,951 @@
+[
+  {
+    "id": "govd-001",
+    "type": "single-choice",
+    "skillArea": "governance",
+    "topic": "Microsoft Purview purpose",
+    "difficulty": "easy",
+    "prompt": "What is the primary purpose of Microsoft Purview?",
+    "options": [
+      {
+        "id": "a",
+        "text": "To provide a unified, cloud-based platform for data governance, information protection, and compliance management across Microsoft 365 and other environments"
+      },
+      {
+        "id": "b",
+        "text": "To manage user authentication, password policies, and multifactor authentication for Microsoft 365 tenants"
+      },
+      {
+        "id": "c",
+        "text": "To monitor network performance and troubleshoot connectivity issues in hybrid infrastructures"
+      },
+      {
+        "id": "d",
+        "text": "To deploy and update Microsoft 365 desktop applications on managed devices"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Microsoft Purview ist Microsofts einheitliche, cloudbasierte Plattform für Data Governance, Informationsschutz und Compliance-Management über Microsoft 365 hinaus. Authentifizierung, Netzwerk-Monitoring und App-Deployment gehören nicht zu Purview.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/protect-govern-data-microsoft-365/2-introduction-microsoft-purview",
+    "source": {
+      "title": "Introduction to Microsoft Purview and data governance",
+      "url": "https://learn.microsoft.com/en-us/training/modules/protect-govern-data-microsoft-365/2-introduction-microsoft-purview",
+      "quote": "Microsoft Purview is a cloud-based data governance and compliance platform. It provides a centralized suite of tools to help organizations manage their data across Microsoft 365 and other cloud or hybrid environments."
+    }
+  },
+  {
+    "id": "govd-002",
+    "type": "single-choice",
+    "skillArea": "governance",
+    "topic": "Exact data match",
+    "difficulty": "medium",
+    "prompt": "Your HR team uploads a CSV file containing all employee ID numbers to Microsoft Purview. You need to detect when any of these exact IDs appear in documents or emails, while avoiding false positives from numbers that merely look similar. Which classification method should you use?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A trainable classifier"
+      },
+      {
+        "id": "b",
+        "text": "Exact data match (EDM)"
+      },
+      {
+        "id": "c",
+        "text": "A regular expression pattern"
+      },
+      {
+        "id": "d",
+        "text": "A retention label"
+      }
+    ],
+    "correct": "b",
+    "explanation": "EDM vergleicht Inhalte mit einer sicheren, von der Organisation bereitgestellten Werteliste und schlägt nur bei exakten Treffern an — das reduziert False Positives. Regex prüft nur das Format, trainierbare Klassifizierer erkennen Dokumenttypen, und Retention Labels steuern Aufbewahrung, nicht Erkennung.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/protect-govern-data-microsoft-365/2-introduction-microsoft-purview",
+    "source": {
+      "title": "Introduction to Microsoft Purview and data governance",
+      "url": "https://learn.microsoft.com/en-us/training/modules/protect-govern-data-microsoft-365/2-introduction-microsoft-purview",
+      "quote": "EDM offers greater precision than pattern-based tools like regular expressions (regex) in scenarios where identifying specific, known sensitive data is critical. While regex is useful for detecting general patterns in text, EDM reduces false positives by matching against a secure, predefined dataset."
+    }
+  },
+  {
+    "id": "govd-003",
+    "type": "single-choice",
+    "skillArea": "governance",
+    "topic": "Retention policies",
+    "difficulty": "medium",
+    "prompt": "Your organization wants to delete all Microsoft Teams chat messages older than 90 days across the entire organization, without requiring users to tag individual items. What should you configure in Microsoft Purview?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A retention label that users apply manually in Teams"
+      },
+      {
+        "id": "b",
+        "text": "A sensitivity label with encryption"
+      },
+      {
+        "id": "c",
+        "text": "A location-based retention policy targeting Teams"
+      },
+      {
+        "id": "d",
+        "text": "A Data Loss Prevention (DLP) policy"
+      }
+    ],
+    "correct": "c",
+    "explanation": "Retention Policies sind standortbasiert (location-based): Man wählt die Ziel-Dienste aus, und Purview wendet die Regel auf alle Inhalte an — ohne dass einzelne Elemente gelabelt werden müssen. Retention Labels gelten pro Element, Sensitivity Labels und DLP steuern Schutz bzw. Datenabfluss, nicht Aufbewahrung.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/protect-govern-data-microsoft-365/2-introduction-microsoft-purview",
+    "source": {
+      "title": "Introduction to Microsoft Purview and data governance",
+      "url": "https://learn.microsoft.com/en-us/training/modules/protect-govern-data-microsoft-365/2-introduction-microsoft-purview",
+      "quote": "For example, consider the scenario in which you configure a retention policy to delete all Teams chat messages older than 90 days across the organization. This policy applies regardless of whether a label is present and doesn't require user interaction."
+    }
+  },
+  {
+    "id": "govd-004",
+    "type": "single-choice",
+    "skillArea": "governance",
+    "topic": "Activity Explorer",
+    "difficulty": "easy",
+    "prompt": "Which Microsoft Purview tool provides a consolidated, chronological view of user actions with sensitive data, such as labeling, downloading, and external sharing, even when no policy violation was triggered?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Activity Explorer"
+      },
+      {
+        "id": "b",
+        "text": "Compliance Manager"
+      },
+      {
+        "id": "c",
+        "text": "Communication Compliance"
+      },
+      {
+        "id": "d",
+        "text": "Data Loss Prevention (DLP)"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Activity Explorer ist das zentrale Untersuchungs- und Visualisierungstool in Purview und zeigt Nutzeraktivitäten als forensische Zeitleiste — auch ohne Richtlinienverstoß. Compliance Manager bewertet die Compliance-Lage, Communication Compliance überwacht Kommunikation, DLP setzt Richtlinien durch.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/protect-govern-data-microsoft-365/3-identify-respond-data-risks",
+    "source": {
+      "title": "Identify and respond to data risks with Microsoft Purview",
+      "url": "https://learn.microsoft.com/en-us/training/modules/protect-govern-data-microsoft-365/3-identify-respond-data-risks",
+      "quote": "Activity Explorer in Microsoft Purview is a centralized investigation and visualization tool. It helps compliance and security analysts understand user actions and correlate them with policy matches, risk events, or data sensitivity classifications. It acts like a forensic timeline of what users did with sensitive data across emails, file shares, downloads, labeling, policy violations, and more."
+    }
+  },
+  {
+    "id": "govd-005",
+    "type": "single-choice",
+    "skillArea": "governance",
+    "topic": "Insider Risk Management",
+    "difficulty": "medium",
+    "prompt": "An employee submits a resignation notice and shortly afterward begins exporting customer lists to a personal device. You need a Microsoft Purview feature that combines HR signals with behavioral thresholds to elevate the risk score and trigger an investigation. Which feature should you use?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Data Explorer"
+      },
+      {
+        "id": "b",
+        "text": "Compliance Manager"
+      },
+      {
+        "id": "c",
+        "text": "Insider Risk Management"
+      },
+      {
+        "id": "d",
+        "text": "Content Search"
+      }
+    ],
+    "correct": "c",
+    "explanation": "Insider Risk Management kombiniert Verhaltens-Baselines und Schwellenwerte mit HR-Signalen wie Kündigungen — genau diese Kombination erhöht den Risikoscore und rechtfertigt eine Untersuchung. Data Explorer lokalisiert sensible Daten, Compliance Manager misst Compliance, Content Search dient der Inhaltssuche.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/protect-govern-data-microsoft-365/3-identify-respond-data-risks",
+    "source": {
+      "title": "Identify and respond to data risks with Microsoft Purview",
+      "url": "https://learn.microsoft.com/en-us/training/modules/protect-govern-data-microsoft-365/3-identify-respond-data-risks",
+      "quote": "For example, if an employee submits a resignation and is suddenly exporting customer lists to a personal device, the combination of those two signals elevates the risk score and justifies further investigation."
+    }
+  },
+  {
+    "id": "govd-006",
+    "type": "single-choice",
+    "skillArea": "governance",
+    "topic": "Compliance Manager",
+    "difficulty": "medium",
+    "prompt": "Your organization must demonstrate progress toward GDPR compliance to stakeholders. You need a tool that provides prebuilt regulatory assessments, tracks improvement actions, and quantifies your compliance posture with a score. Which Microsoft Purview tool should you use?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Activity Explorer"
+      },
+      {
+        "id": "b",
+        "text": "Compliance Manager"
+      },
+      {
+        "id": "c",
+        "text": "eDiscovery (Premium)"
+      },
+      {
+        "id": "d",
+        "text": "Insider Risk Management"
+      }
+    ],
+    "correct": "b",
+    "explanation": "Compliance Manager bietet vorgefertigte Assessments für Regularien wie GDPR, verwaltet Improvement Actions mit Verantwortlichen und quantifiziert die Compliance-Lage über den Compliance Score. Die anderen Tools dienen der Aktivitätsanalyse, Rechtsermittlung bzw. Insider-Risiko-Erkennung.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/protect-govern-data-microsoft-365/4-examine-compliance-ai-data-discovery",
+    "source": {
+      "title": "Examine compliance, AI data discovery, and eDiscovery",
+      "url": "https://learn.microsoft.com/en-us/training/modules/protect-govern-data-microsoft-365/4-examine-compliance-ai-data-discovery",
+      "quote": "A key feature of Compliance Manager is the Compliance Score, which quantifies how well your organization meets regulatory requirements. This score is more than just a number; it’s a strategic tool for prioritizing remediation efforts and demonstrating progress to stakeholders."
+    }
+  },
+  {
+    "id": "govd-007",
+    "type": "single-choice",
+    "skillArea": "governance",
+    "topic": "eDiscovery editions",
+    "difficulty": "hard",
+    "prompt": "A compliance officer must manage a complex legal case: place a hold on a departing employee's mailbox and OneDrive, organize collected content into review sets, identify near-duplicate documents, and redact sensitive passages before export. Which Microsoft Purview capability meets all these requirements?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Content Search"
+      },
+      {
+        "id": "b",
+        "text": "eDiscovery (Standard)"
+      },
+      {
+        "id": "c",
+        "text": "eDiscovery (Premium)"
+      },
+      {
+        "id": "d",
+        "text": "Data Explorer"
+      }
+    ],
+    "correct": "c",
+    "explanation": "eDiscovery (Premium) ergänzt die Basisfunktionen (Suche, Export, Legal Hold) um Case Management, Review Sets, Analytics wie Near-Duplicate-Erkennung und Redaction. eDiscovery (Standard) bietet nur Suche, Export und Legal Hold; Content Search und Data Explorer haben weder Review Sets noch Redaction.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/protect-govern-data-microsoft-365/4-examine-compliance-ai-data-discovery",
+    "source": {
+      "title": "Examine compliance, AI data discovery, and eDiscovery",
+      "url": "https://learn.microsoft.com/en-us/training/modules/protect-govern-data-microsoft-365/4-examine-compliance-ai-data-discovery",
+      "quote": "eDiscovery (Standard) provides essential tools for searching and exporting content, and placing legal holds to prevent data deletion. eDiscovery (Premium) enhances these capabilities with case management, analytics (such as identifying near-duplicate documents and common themes), and redaction features."
+    }
+  },
+  {
+    "id": "govd-008",
+    "type": "single-choice",
+    "skillArea": "governance",
+    "topic": "Oversharing definition",
+    "difficulty": "easy",
+    "prompt": "A user shares an internal project plan in SharePoint using the \"Anyone with the link\" option, and the document is later opened by external vendors. What is this situation an example of?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Data lifecycle management"
+      },
+      {
+        "id": "b",
+        "text": "Oversharing"
+      },
+      {
+        "id": "c",
+        "text": "Shadow AI usage"
+      },
+      {
+        "id": "d",
+        "text": "Communication compliance violation"
+      }
+    ],
+    "correct": "b",
+    "explanation": "Oversharing liegt vor, wenn Nutzer breiteren Zugriff auf SharePoint-Inhalte gewähren als beabsichtigt — etwa über \"Anyone with the link\", wodurch jeder mit dem Link zugreifen kann. Shadow AI betrifft ungenehmigte KI-Tools, DLM die Aufbewahrung, Communication Compliance die Kommunikationsüberwachung.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/protect-govern-data-microsoft-365/5-explore-data-access-governance",
+    "source": {
+      "title": "Explore oversharing and data access governance in SharePoint",
+      "url": "https://learn.microsoft.com/en-us/training/modules/protect-govern-data-microsoft-365/5-explore-data-access-governance",
+      "quote": "Oversharing occurs when users grant broader access to SharePoint content than is appropriate or intended."
+    }
+  },
+  {
+    "id": "govd-009",
+    "type": "single-choice",
+    "skillArea": "governance",
+    "topic": "SharePoint Advanced Management",
+    "difficulty": "hard",
+    "prompt": "Your finance team's SharePoint site contains highly sensitive data. You need to ensure the site can only be accessed from Intune-managed devices, receive alerts when sites go unused for a defined period, and prompt site owners to periodically review permissions. Which solution provides these capabilities?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Data Access Governance (DAG) reports"
+      },
+      {
+        "id": "b",
+        "text": "SharePoint Advanced Management (SAM)"
+      },
+      {
+        "id": "c",
+        "text": "Microsoft Purview Data Explorer"
+      },
+      {
+        "id": "d",
+        "text": "The default sharing reports in the SharePoint Admin Center"
+      }
+    ],
+    "correct": "b",
+    "explanation": "SAM ist ein kostenpflichtiges Add-on mit Restricted Site Access (z. B. nur Intune-verwaltete Geräte), Inactivity Alerts, Site Access Reviews und Conditional-Access-Integration. DAG-Reports und Sharing-Reports identifizieren Risiken, erzwingen aber keine gerätebasierten Zugriffsbeschränkungen; Data Explorer lokalisiert sensible Daten.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/protect-govern-data-microsoft-365/5-explore-data-access-governance",
+    "source": {
+      "title": "Explore oversharing and data access governance in SharePoint",
+      "url": "https://learn.microsoft.com/en-us/training/modules/protect-govern-data-microsoft-365/5-explore-data-access-governance",
+      "quote": "SAM enables admins to restrict access to sites containing sensitive data, ensuring that only authorized users and compliant devices can connect. For example, a finance team’s SharePoint site might be configured to allow access only from devices managed by Intune, reducing the risk of data leaks from unmanaged endpoints."
+    }
+  },
+  {
+    "id": "govd-010",
+    "type": "single-choice",
+    "skillArea": "governance",
+    "topic": "Copilot permissions",
+    "difficulty": "easy",
+    "prompt": "A user is concerned that Microsoft 365 Copilot might expose confidential HR files they don't have permission to view. Which security principle addresses this concern?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Copilot encrypts all files before accessing them, regardless of permissions"
+      },
+      {
+        "id": "b",
+        "text": "Copilot only accesses data the signed-in user is already permitted to see"
+      },
+      {
+        "id": "c",
+        "text": "Copilot requires a separate administrator approval for every file it reads"
+      },
+      {
+        "id": "d",
+        "text": "Copilot stores all retrieved data in an isolated external service"
+      }
+    ],
+    "correct": "b",
+    "explanation": "Copilot erbt die Zugriffsrechte des angemeldeten Nutzers und greift über Microsoft Graph nur auf Inhalte zu, die dieser Nutzer ohnehin öffnen dürfte. Es gibt weder eine generelle Vorab-Verschlüsselung noch Admin-Freigaben pro Datei, und Daten verlassen den Tenant nicht.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/protect-govern-data-microsoft-365/6-explore-data-protection-copilot",
+    "source": {
+      "title": "Explore data protection in Microsoft 365 Copilot",
+      "url": "https://learn.microsoft.com/en-us/training/modules/protect-govern-data-microsoft-365/6-explore-data-protection-copilot",
+      "quote": "Copilot inherits the same access controls and restrictions as the authenticated user. Its data retrieval mechanisms operate through Microsoft Graph, which serves as the API layer supporting all Microsoft 365 services."
+    }
+  },
+  {
+    "id": "govd-011",
+    "type": "multiple-choice",
+    "skillArea": "governance",
+    "topic": "Sensitivity label capabilities",
+    "difficulty": "easy",
+    "prompt": "Which three actions can a sensitivity label in Microsoft Purview enforce on a document? Each correct answer presents a complete solution.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Enforce encryption that restricts who can open the document"
+      },
+      {
+        "id": "b",
+        "text": "Apply visual markings such as headers, footers, and watermarks"
+      },
+      {
+        "id": "c",
+        "text": "Block external sharing of the content"
+      },
+      {
+        "id": "d",
+        "text": "Monitor network bandwidth usage for the document"
+      },
+      {
+        "id": "e",
+        "text": "Automatically translate the document into other languages"
+      }
+    ],
+    "correct": [
+      "a",
+      "b",
+      "c"
+    ],
+    "explanation": "Sensitivity Labels können Verschlüsselung erzwingen (über Azure Rights Management), visuelle Markierungen wie Header und Wasserzeichen anbringen und externes Teilen sowie Kopieren/Drucken einschränken. Netzwerk-Monitoring und Übersetzung gehören nicht zu den Label-Funktionen.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/protect-govern-data-microsoft-365/2-introduction-microsoft-purview",
+    "source": {
+      "title": "Introduction to Microsoft Purview and data governance",
+      "url": "https://learn.microsoft.com/en-us/training/modules/protect-govern-data-microsoft-365/2-introduction-microsoft-purview",
+      "quote": "These labels allow you to classify and protect data based on its sensitivity level. Once a label is applied, it can enforce encryption, restrict access, add visual markings (like headers/watermarks), and control external sharing."
+    }
+  },
+  {
+    "id": "govd-012",
+    "type": "multiple-choice",
+    "skillArea": "governance",
+    "topic": "DLP policy actions",
+    "difficulty": "medium",
+    "prompt": "Your organization is designing Microsoft Purview DLP policies. Which three response actions can a DLP policy take when a user handles sensitive data in a potentially risky way? Each correct answer presents a complete solution.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Block the action entirely"
+      },
+      {
+        "id": "b",
+        "text": "Allow the action after the user provides a business justification"
+      },
+      {
+        "id": "c",
+        "text": "Allow the action and log it for review"
+      },
+      {
+        "id": "d",
+        "text": "Permanently delete the user's account"
+      },
+      {
+        "id": "e",
+        "text": "Automatically reformat the affected device"
+      }
+    ],
+    "correct": [
+      "a",
+      "b",
+      "c"
+    ],
+    "explanation": "Purview DLP unterstützt flexible Aktionen: komplett blockieren, mit Business-Begründung zulassen (die für Audits protokolliert wird) oder zulassen und für die Überprüfung protokollieren. Kontolöschung oder Geräteformatierung sind keine DLP-Aktionen.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/protect-govern-data-microsoft-365/3-identify-respond-data-risks",
+    "source": {
+      "title": "Identify and respond to data risks with Microsoft Purview",
+      "url": "https://learn.microsoft.com/en-us/training/modules/protect-govern-data-microsoft-365/3-identify-respond-data-risks",
+      "quote": "A key benefit of Purview DLP is that it supports flexible actions. You can allow actions with user justification, block them entirely, or allow and log for review."
+    }
+  },
+  {
+    "id": "govd-013",
+    "type": "multiple-choice",
+    "skillArea": "governance",
+    "topic": "Preventing oversharing",
+    "difficulty": "medium",
+    "prompt": "You need to reduce the risk of oversharing in your organization's SharePoint environment. Which three measures should you implement? Each correct answer presents part of the solution.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Apply sensitivity labels with encryption so only authorized users can open sensitive files"
+      },
+      {
+        "id": "b",
+        "text": "Set organization-wide sharing limits that disable anonymous links"
+      },
+      {
+        "id": "c",
+        "text": "Educate users with prompts and tooltips, and configure automated alerts for high-risk sharing"
+      },
+      {
+        "id": "d",
+        "text": "Grant all users Edit access by default to simplify collaboration"
+      },
+      {
+        "id": "e",
+        "text": "Give external guest users full site access instead of file-level access"
+      }
+    ],
+    "correct": [
+      "a",
+      "b",
+      "c"
+    ],
+    "explanation": "Die Unit nennt genau diese Best Practices: Sensitivity Labels mit Verschlüsselung, organisationsweite Sharing-Limits (z. B. anonyme Links deaktivieren) sowie Nutzerschulung kombiniert mit automatisierten Alerts. Standardmäßiger Edit-Zugriff und voller Site-Zugriff für Gäste sind typische Oversharing-Szenarien, keine Gegenmaßnahmen.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/protect-govern-data-microsoft-365/5-explore-data-access-governance",
+    "source": {
+      "title": "Explore oversharing and data access governance in SharePoint",
+      "url": "https://learn.microsoft.com/en-us/training/modules/protect-govern-data-microsoft-365/5-explore-data-access-governance",
+      "quote": "Preventing oversharing in SharePoint requires a combination of technical controls, user education, and process discipline. Sensitivity labels with encryption are a powerful tool for limiting who can open or download shared files. By setting organization-wide sharing limits in the SharePoint Admin Center, admins can disable anonymous links and enforce stricter sharing policies."
+    }
+  },
+  {
+    "id": "govd-014",
+    "type": "multiple-choice",
+    "skillArea": "governance",
+    "topic": "DSPM for AI capabilities",
+    "difficulty": "hard",
+    "prompt": "Your organization is adopting Microsoft 365 Copilot and other AI tools. Which three capabilities does Microsoft Purview Data Security Posture Management (DSPM) provide for AI-related scenarios? Each correct answer presents a complete solution.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Discover AI-generated content and apply sensitivity labels to it"
+      },
+      {
+        "id": "b",
+        "text": "Detect how AI tools interact with sensitive data and recommend protective actions"
+      },
+      {
+        "id": "c",
+        "text": "Monitor data access patterns to identify shadow AI usage"
+      },
+      {
+        "id": "d",
+        "text": "Automatically delete all AI-generated content from Microsoft 365"
+      },
+      {
+        "id": "e",
+        "text": "Block every instance of AI activity across the organization"
+      }
+    ],
+    "correct": [
+      "a",
+      "b",
+      "c"
+    ],
+    "explanation": "DSPM erkennt KI-generierte Inhalte und versieht sie mit passenden Sensitivity Labels, macht KI-Interaktionen mit sensiblen Daten sichtbar und deckt Shadow-AI-Nutzung (ungenehmigte KI-Tools) auf. DSPM löscht keine KI-Inhalte pauschal und blockiert nicht sämtliche KI-Aktivitäten — Ziel ist Balance aus Produktivität und Schutz.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/protect-govern-data-microsoft-365/4-examine-compliance-ai-data-discovery",
+    "source": {
+      "title": "Examine compliance, AI data discovery, and eDiscovery",
+      "url": "https://learn.microsoft.com/en-us/training/modules/protect-govern-data-microsoft-365/4-examine-compliance-ai-data-discovery",
+      "quote": "DSPM extends data security visibility into AI interactions—enabling admins to understand how AI apps and agents access, process, and generate content using organizational data. This unified approach helps organizations confidently adopt AI while maintaining strong security, compliance, and governance practices."
+    }
+  },
+  {
+    "id": "govd-015",
+    "type": "yes-no",
+    "skillArea": "governance",
+    "topic": "Copilot data access",
+    "difficulty": "easy",
+    "prompt": "For each of the following statements about Microsoft 365 Copilot, select Yes if the statement is true. Otherwise, select No.",
+    "statements": [
+      {
+        "id": "s1",
+        "text": "Copilot can access documents that the signed-in user does not have permission to open.",
+        "correct": false
+      },
+      {
+        "id": "s2",
+        "text": "Copilot retrieves data through Microsoft Graph using the identity and permissions of the signed-in user.",
+        "correct": true
+      },
+      {
+        "id": "s3",
+        "text": "Copilot transmits organizational data outside the tenant to non-Microsoft services.",
+        "correct": false
+      }
+    ],
+    "explanation": "Copilot darf nur sehen, was der Nutzer bereits sehen darf, und greift ausschließlich über Microsoft Graph mit der Identität des angemeldeten Nutzers auf Daten zu. Es arbeitet innerhalb der Purview-Compliance-Grenzen und überträgt keine Daten außerhalb des Tenants oder an Nicht-Microsoft-Dienste.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/protect-govern-data-microsoft-365/6-explore-data-protection-copilot",
+    "source": {
+      "title": "Explore data protection in Microsoft 365 Copilot",
+      "url": "https://learn.microsoft.com/en-us/training/modules/protect-govern-data-microsoft-365/6-explore-data-protection-copilot",
+      "quote": "Copilot operates entirely within Microsoft Purview compliance boundaries—your organization’s data protection framework—so it doesn’t transmit data outside your tenant or to non-Microsoft services. It accesses data through Microsoft Graph, using the identity and permissions of the currently signed-in user."
+    }
+  },
+  {
+    "id": "govd-016",
+    "type": "yes-no",
+    "skillArea": "governance",
+    "topic": "Data classification methods",
+    "difficulty": "medium",
+    "prompt": "For each of the following statements about data classification in Microsoft Purview, select Yes if the statement is true. Otherwise, select No.",
+    "statements": [
+      {
+        "id": "s1",
+        "text": "Building a custom trainable classifier requires uploading at least 50 sample documents.",
+        "correct": true
+      },
+      {
+        "id": "s2",
+        "text": "Exact data match (EDM) detects sensitive data by matching general text patterns, such as regular expressions.",
+        "correct": false
+      },
+      {
+        "id": "s3",
+        "text": "Predefined sensitive information types are recognized using regex patterns, checksums, keyword evidence, and confidence scoring.",
+        "correct": true
+      }
+    ],
+    "explanation": "Custom Trainable Classifiers benötigen mindestens 50 Beispieldokumente. EDM arbeitet gerade nicht mit Mustern, sondern vergleicht mit exakten Werten aus einer sicheren Liste der Organisation. Sensitive Information Types kombinieren Regex, Prüfsummen, Keyword-Evidenz und Confidence Scoring.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/protect-govern-data-microsoft-365/2-introduction-microsoft-purview",
+    "source": {
+      "title": "Introduction to Microsoft Purview and data governance",
+      "url": "https://learn.microsoft.com/en-us/training/modules/protect-govern-data-microsoft-365/2-introduction-microsoft-purview",
+      "quote": "You can also build custom classifiers by uploading at least 50 sample documents. Purview learns the characteristics of those documents and applies classification when it sees new documents with similar structure or content."
+    }
+  },
+  {
+    "id": "govd-017",
+    "type": "yes-no",
+    "skillArea": "governance",
+    "topic": "Communication Compliance",
+    "difficulty": "medium",
+    "prompt": "For each of the following statements about Communication Compliance in Microsoft Purview, select Yes if the statement is true. Otherwise, select No.",
+    "statements": [
+      {
+        "id": "s1",
+        "text": "Communication Compliance can monitor emails, Teams messages, Yammer posts, and Copilot chat prompts.",
+        "correct": true
+      },
+      {
+        "id": "s2",
+        "text": "Communication Compliance relies exclusively on keyword matching and does not use machine learning classifiers.",
+        "correct": false
+      },
+      {
+        "id": "s3",
+        "text": "Flagged messages are presented in a reviewer dashboard where analysts can dismiss, escalate, or notify HR or legal teams.",
+        "correct": true
+      }
+    ],
+    "explanation": "Communication Compliance überwacht E-Mails, Teams, Yammer und sogar Copilot-Chat-Prompts. Es kombiniert Muster-Erkennung (Regex, Keyword-Wörterbücher) mit Machine-Learning-Klassifizierern — nicht nur Keywords. Geflaggte Nachrichten landen im Reviewer-Dashboard für kontextbezogene Entscheidungen.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/protect-govern-data-microsoft-365/3-identify-respond-data-risks",
+    "source": {
+      "title": "Identify and respond to data risks with Microsoft Purview",
+      "url": "https://learn.microsoft.com/en-us/training/modules/protect-govern-data-microsoft-365/3-identify-respond-data-risks",
+      "quote": "Communication Compliance in Microsoft Purview helps you monitor user communications—such as emails, Teams messages, Yammer posts, and even Copilot chat prompts—for content that violates corporate policies or regulatory requirements. This feature is particularly useful for detecting harassment, abusive language, insider trading, data leaks, and other types of inappropriate or risky communication behavior."
+    }
+  },
+  {
+    "id": "govd-018",
+    "type": "yes-no",
+    "skillArea": "governance",
+    "topic": "DAG reports and SAM",
+    "difficulty": "hard",
+    "prompt": "For each of the following statements about SharePoint data access governance, select Yes if the statement is true. Otherwise, select No.",
+    "statements": [
+      {
+        "id": "s1",
+        "text": "Data Access Governance (DAG) reports can flag sites whose owners are inactive.",
+        "correct": true
+      },
+      {
+        "id": "s2",
+        "text": "DAG reports automatically remediate oversharing by revoking guest access without admin involvement.",
+        "correct": false
+      },
+      {
+        "id": "s3",
+        "text": "SharePoint Advanced Management (SAM) is a paid add-on that provides features beyond native SharePoint capabilities.",
+        "correct": true
+      }
+    ],
+    "explanation": "DAG-Reports identifizieren u. a. Sites mit inaktiven Ownern, mit sensiblem Inhalt und übermäßigem Sharing oder ohne Sensitivity Labels. Sie sind aber nur eine \"Roadmap\" — die Remediation (z. B. Gastzugriff entziehen) führen Admins selbst durch. SAM ist ein kostenpflichtiges Add-on mit erweiterten Governance-Funktionen.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/protect-govern-data-microsoft-365/5-explore-data-access-governance",
+    "source": {
+      "title": "Explore oversharing and data access governance in SharePoint",
+      "url": "https://learn.microsoft.com/en-us/training/modules/protect-govern-data-microsoft-365/5-explore-data-access-governance",
+      "quote": "Sites without active owners pose a governance risk, since there might be no one responsible for managing access. DAG reports can flag these sites, allowing admins to assign new owners or restrict access until proper oversight is established."
+    }
+  },
+  {
+    "id": "govd-019",
+    "type": "ordering",
+    "skillArea": "governance",
+    "topic": "EDM workflow",
+    "difficulty": "medium",
+    "prompt": "Your organization wants to use exact data match (EDM) in Microsoft Purview to detect specific employee ID numbers in content. Place the steps of the EDM workflow in the correct order.",
+    "items": [
+      {
+        "id": "i1",
+        "text": "Define a schema for the sensitive data"
+      },
+      {
+        "id": "i2",
+        "text": "Create a rule package"
+      },
+      {
+        "id": "i3",
+        "text": "Hash and upload the source data"
+      },
+      {
+        "id": "i4",
+        "text": "Validate the classifier"
+      }
+    ],
+    "correctOrder": [
+      "i1",
+      "i2",
+      "i3",
+      "i4"
+    ],
+    "explanation": "Der EDM-Workflow umfasst laut Unit: Schema definieren, Rule Package erstellen, Quelldaten hashen und hochladen, und abschließend den Classifier validieren. Verwaltet wird das über das Purview-Portal oder PowerShell.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/protect-govern-data-microsoft-365/2-introduction-microsoft-purview",
+    "source": {
+      "title": "Introduction to Microsoft Purview and data governance",
+      "url": "https://learn.microsoft.com/en-us/training/modules/protect-govern-data-microsoft-365/2-introduction-microsoft-purview",
+      "quote": "The EDM workflow involves defining a schema, creating a rule package, hashing and uploading the source data, and validating the classifier, all of which can be managed through the Microsoft Purview portal or PowerShell."
+    }
+  },
+  {
+    "id": "govd-020",
+    "type": "ordering",
+    "skillArea": "governance",
+    "topic": "Copilot data retrieval",
+    "difficulty": "hard",
+    "prompt": "A user asks Microsoft 365 Copilot to summarize a recent meeting. Place the steps of Copilot's data retrieval process in the correct order.",
+    "items": [
+      {
+        "id": "i1",
+        "text": "The user submits a prompt to Copilot"
+      },
+      {
+        "id": "i2",
+        "text": "Copilot formulates a query against Microsoft Graph"
+      },
+      {
+        "id": "i3",
+        "text": "Graph enforces authentication and authorization checks using the user's OAuth token"
+      },
+      {
+        "id": "i4",
+        "text": "Graph filters and ranks results using semantic understanding and contextual signals"
+      },
+      {
+        "id": "i5",
+        "text": "Copilot generates a response that includes references to the source content"
+      }
+    ],
+    "correctOrder": [
+      "i1",
+      "i2",
+      "i3",
+      "i4",
+      "i5"
+    ],
+    "explanation": "Copilot greift ausschließlich über Microsoft Graph auf Daten zu: Nach dem Prompt formuliert Copilot eine Graph-Abfrage, Graph prüft mit dem OAuth-Token des Nutzers die Berechtigungen, verfeinert die Ergebnisse semantisch und kontextbezogen, und Copilot erstellt die Antwort mit Quellenverweisen für Transparenz.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/protect-govern-data-microsoft-365/6-explore-data-protection-copilot",
+    "source": {
+      "title": "Explore data protection in Microsoft 365 Copilot",
+      "url": "https://learn.microsoft.com/en-us/training/modules/protect-govern-data-microsoft-365/6-explore-data-protection-copilot",
+      "quote": "When Copilot processes a user request—such as “Summarize all recent project updates”—it does so by querying Microsoft Graph using the user’s OAuth token. This token enforces authentication and authorization rules based on that user's identity and role. Graph also adds intelligence to queries, allowing Copilot to filter and rank results using context, such as document recency, user activity, and relationship graphs."
+    }
+  },
+  {
+    "id": "govd-021",
+    "type": "matching",
+    "skillArea": "governance",
+    "topic": "Purview feature overview",
+    "difficulty": "easy",
+    "prompt": "Match each Microsoft Purview feature to its description.",
+    "left": [
+      {
+        "id": "l1",
+        "text": "Information Protection"
+      },
+      {
+        "id": "l2",
+        "text": "Data Loss Prevention (DLP)"
+      },
+      {
+        "id": "l3",
+        "text": "Insider Risk Management"
+      },
+      {
+        "id": "l4",
+        "text": "Data Lifecycle Management (DLM)"
+      }
+    ],
+    "right": [
+      {
+        "id": "r1",
+        "text": "Classifies, labels, and encrypts sensitive data across emails, documents, and collaboration platforms"
+      },
+      {
+        "id": "r2",
+        "text": "Prevents accidental or intentional sharing of sensitive information by scanning content for predefined patterns"
+      },
+      {
+        "id": "r3",
+        "text": "Uses behavioral analytics to detect and mitigate internal threats such as data leaks or policy violations"
+      },
+      {
+        "id": "r4",
+        "text": "Automates retention, archiving, and deletion of data based on business, legal, or regulatory requirements"
+      }
+    ],
+    "correct": {
+      "l1": "r1",
+      "l2": "r2",
+      "l3": "r3",
+      "l4": "r4"
+    },
+    "explanation": "Information Protection klassifiziert, labelt und verschlüsselt sensible Daten; DLP verhindert das Teilen sensibler Informationen durch Inhaltsscans; Insider Risk Management erkennt interne Bedrohungen per Verhaltensanalyse; DLM automatisiert Aufbewahrung, Archivierung und Löschung.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/protect-govern-data-microsoft-365/2-introduction-microsoft-purview",
+    "source": {
+      "title": "Introduction to Microsoft Purview and data governance",
+      "url": "https://learn.microsoft.com/en-us/training/modules/protect-govern-data-microsoft-365/2-introduction-microsoft-purview",
+      "quote": "Information Protection in Microsoft Purview empowers organizations to classify, label, and encrypt sensitive data across emails, documents, and collaboration platforms."
+    }
+  },
+  {
+    "id": "govd-022",
+    "type": "matching",
+    "skillArea": "governance",
+    "topic": "Compliance tools",
+    "difficulty": "medium",
+    "prompt": "Match each Microsoft Purview compliance tool to the task it is best suited for.",
+    "left": [
+      {
+        "id": "l1",
+        "text": "Compliance Manager"
+      },
+      {
+        "id": "l2",
+        "text": "Data Explorer"
+      },
+      {
+        "id": "l3",
+        "text": "DSPM for AI"
+      },
+      {
+        "id": "l4",
+        "text": "eDiscovery"
+      }
+    ],
+    "right": [
+      {
+        "id": "r1",
+        "text": "Assess regulatory compliance posture using assessments, improvement actions, and a compliance score"
+      },
+      {
+        "id": "r2",
+        "text": "Discover where sensitive information types are stored across SharePoint, Teams, and OneDrive"
+      },
+      {
+        "id": "r3",
+        "text": "Gain visibility into how AI tools access, process, and generate content using organizational data"
+      },
+      {
+        "id": "r4",
+        "text": "Search, preserve, and export content for legal investigations, including placing legal holds"
+      }
+    ],
+    "correct": {
+      "l1": "r1",
+      "l2": "r2",
+      "l3": "r3",
+      "l4": "r4"
+    },
+    "explanation": "Compliance Manager bewertet die Compliance-Lage mit Assessments und Score; Data Explorer lokalisiert sensible Datentypen über Speicherorte hinweg; DSPM for AI macht KI-Interaktionen mit Unternehmensdaten sichtbar; eDiscovery unterstützt rechtliche Untersuchungen inklusive Legal Hold.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/protect-govern-data-microsoft-365/4-examine-compliance-ai-data-discovery",
+    "source": {
+      "title": "Examine compliance, AI data discovery, and eDiscovery",
+      "url": "https://learn.microsoft.com/en-us/training/modules/protect-govern-data-microsoft-365/4-examine-compliance-ai-data-discovery",
+      "quote": "Microsoft Purview Compliance Manager, Data Explorer, DSPM for AI, and eDiscovery are essential resources for proactively managing risk, supporting governance, and maintaining trust. These tools enable organizations to assess compliance posture, locate sensitive and AI-impacted data, and perform content discovery and legal hold using advanced compliance and discovery capabilities."
+    }
+  },
+  {
+    "id": "govd-023",
+    "type": "dropdown",
+    "skillArea": "governance",
+    "topic": "Retention labels vs policies",
+    "difficulty": "easy",
+    "prompt": "Complete the sentence by selecting the correct options.",
+    "textParts": [
+      "In Microsoft Purview data lifecycle management, a ",
+      " defines retention behavior for specific content items and can be applied manually or automatically, while a ",
+      " is location-based and applies rules across selected services such as Exchange or SharePoint without labeling each item."
+    ],
+    "blanks": [
+      {
+        "id": "b1",
+        "options": [
+          {
+            "id": "o1",
+            "text": "retention label"
+          },
+          {
+            "id": "o2",
+            "text": "retention policy"
+          },
+          {
+            "id": "o3",
+            "text": "sensitivity label"
+          }
+        ],
+        "correct": "o1"
+      },
+      {
+        "id": "b2",
+        "options": [
+          {
+            "id": "o1",
+            "text": "retention label"
+          },
+          {
+            "id": "o2",
+            "text": "retention policy"
+          },
+          {
+            "id": "o3",
+            "text": "DLP policy"
+          }
+        ],
+        "correct": "o2"
+      }
+    ],
+    "explanation": "Retention Labels definieren das Aufbewahrungsverhalten für einzelne Inhalte und werden manuell oder automatisch angewendet. Retention Policies sind dagegen standortbasiert: Man wählt Ziel-Dienste aus, und die Regel gilt dort für alle Inhalte — ohne einzelne Labels.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/protect-govern-data-microsoft-365/2-introduction-microsoft-purview",
+    "source": {
+      "title": "Introduction to Microsoft Purview and data governance",
+      "url": "https://learn.microsoft.com/en-us/training/modules/protect-govern-data-microsoft-365/2-introduction-microsoft-purview",
+      "quote": "Unlike retention labels, retention policies are location-based, meaning you select the target services (such as SharePoint, Exchange) and let Purview manage content across them."
+    }
+  },
+  {
+    "id": "govd-024",
+    "type": "dropdown",
+    "skillArea": "governance",
+    "topic": "Copilot policy enforcement",
+    "difficulty": "hard",
+    "prompt": "Complete the sentence by selecting the correct options.",
+    "textParts": [
+      "To prevent Microsoft 365 Copilot from processing documents labeled \"Highly Confidential\", an organization can configure ",
+      " policies in Microsoft Purview. If a user's Copilot prompt violates such a policy, Purview logs the activity and can ",
+      "."
+    ],
+    "blanks": [
+      {
+        "id": "b1",
+        "options": [
+          {
+            "id": "o1",
+            "text": "Data Loss Prevention (DLP)"
+          },
+          {
+            "id": "o2",
+            "text": "retention"
+          },
+          {
+            "id": "o3",
+            "text": "site access review"
+          }
+        ],
+        "correct": "o1"
+      },
+      {
+        "id": "b2",
+        "options": [
+          {
+            "id": "o1",
+            "text": "issue warnings or block the action entirely"
+          },
+          {
+            "id": "o2",
+            "text": "permanently delete the labeled documents"
+          },
+          {
+            "id": "o3",
+            "text": "disable Copilot for the entire tenant"
+          }
+        ],
+        "correct": "o1"
+      }
+    ],
+    "explanation": "Über DLP-Richtlinien in Purview lässt sich einschränken, dass Copilot bestimmte gelabelte Dokumente verarbeitet oder anzeigt. Bei einem Verstoß protokolliert Purview die Aktivität und kann Warnungen ausgeben oder die Aktion komplett blockieren — Dokumente werden nicht gelöscht und Copilot nicht tenantweit deaktiviert.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/protect-govern-data-microsoft-365/3-identify-respond-data-risks",
+    "source": {
+      "title": "Identify and respond to data risks with Microsoft Purview",
+      "url": "https://learn.microsoft.com/en-us/training/modules/protect-govern-data-microsoft-365/3-identify-respond-data-risks",
+      "quote": "Microsoft Purview enables organizations to configure Data Loss Prevention (DLP) policies that restrict Copilot from processing or displaying certain labeled documents. If a user tries to use Copilot in a way that violates these policies, Purview logs the activity and can issue warnings or block the action entirely."
+    }
+  }
+]

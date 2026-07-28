@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+/* Dark Mode per Klasse auf <html> (Toggle im Header), nicht per OS-Präferenz.
+   Default ist Light; .dark wird vor dem ersten Paint aus localStorage gesetzt. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #ffffff;
+  --foreground: #0d0a0a;
+  color-scheme: light;
+}
+
+.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sora);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* Brand-Palette nach strategic-it.de: Orange #F19720 auf Schwarz/Weiß/Grau */
+@theme {
+  --color-brand-50: #fef8ee;
+  --color-brand-100: #fdeed7;
+  --color-brand-200: #fadaae;
+  --color-brand-300: #f7c07a;
+  --color-brand-400: #f4a944;
+  --color-brand-500: #f19720;
+  --color-brand-600: #dd7f14;
+  --color-brand-700: #b76313;
+  --color-brand-800: #934e17;
+  --color-brand-900: #784116;
+  --color-brand-950: #411f09;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sora), "Sora", Arial, Helvetica, sans-serif;
+}
+
+/* Tailwind v4 setzt bei Buttons cursor: default — für klickbare Elemente zurück auf pointer */
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled),
+  label:has(input:not(:disabled)),
+  select:not(:disabled) {
+    cursor: pointer;
+  }
+}

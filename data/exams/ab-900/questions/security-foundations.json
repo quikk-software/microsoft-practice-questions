@@ -1,0 +1,949 @@
+[
+  {
+    "id": "secf-001",
+    "type": "single-choice",
+    "skillArea": "core",
+    "topic": "Zero Trust principles",
+    "difficulty": "easy",
+    "prompt": "Which principle of the Zero Trust security model requires that every access request is authenticated and authorized using all available contextual signals, such as identity attributes, device health, location, and risk level?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Verify explicitly"
+      },
+      {
+        "id": "b",
+        "text": "Assume breach"
+      },
+      {
+        "id": "c",
+        "text": "Least privilege access"
+      },
+      {
+        "id": "d",
+        "text": "Perimeter-based trust"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Das Prinzip 'Verify explicitly' verlangt, dass jede Zugriffsanfrage anhand aller verfügbaren Kontextsignale (Identität, Gerätezustand, Standort, Risiko) authentifiziert und autorisiert wird. 'Assume breach' betrifft die Eindämmung von Angriffen, 'Least privilege access' die Minimierung von Berechtigungen — und perimeterbasiertes Vertrauen ist genau das Modell, das Zero Trust ablöst.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/2-analyze-zero-trust-security-model",
+    "source": {
+      "title": "Analyze the Zero Trust security model",
+      "url": "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/2-analyze-zero-trust-security-model",
+      "quote": "The Verify explicitly principle is the cornerstone of the Zero Trust model. It requires that every access request, whether from a user, device, or application, is authenticated and authorized using all available contextual signals. This principle includes identity attributes, device health, location, user behavior, and risk level."
+    }
+  },
+  {
+    "id": "secf-002",
+    "type": "single-choice",
+    "skillArea": "core",
+    "topic": "Least privilege access",
+    "difficulty": "medium",
+    "prompt": "Your organization wants helpdesk technicians to be able to reset user passwords without gaining access to user mailboxes. Which Microsoft 365 capability should you use?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Assign the Password Administrator role using Role-Based Access Control (RBAC)"
+      },
+      {
+        "id": "b",
+        "text": "Grant the technicians permanent Global Administrator rights"
+      },
+      {
+        "id": "c",
+        "text": "Apply a Conditional Access session control to the technicians"
+      },
+      {
+        "id": "d",
+        "text": "Apply a sensitivity label to the technicians' accounts"
+      }
+    ],
+    "correct": "a",
+    "explanation": "RBAC erlaubt die Zuweisung von Rollen mit vordefinierten Berechtigungen — die Unit nennt genau dieses Beispiel: Ein Helpdesk-Techniker erhält die Rolle 'Password Administrator', die Passwort-Resets erlaubt, aber keinen Postfachzugriff. Global Administrator würde das Least-Privilege-Prinzip verletzen; Session Controls und Sensitivity Labels steuern keine Admin-Berechtigungen.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/2-analyze-zero-trust-security-model",
+    "source": {
+      "title": "Analyze the Zero Trust security model",
+      "url": "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/2-analyze-zero-trust-security-model",
+      "quote": "RBAC allows administrators to assign roles with predefined permissions. For instance, a helpdesk technician might be granted the Password Administrator role, which allows password resets but not access to user mailboxes."
+    }
+  },
+  {
+    "id": "secf-003",
+    "type": "single-choice",
+    "skillArea": "core",
+    "topic": "Anti-malware protection",
+    "difficulty": "easy",
+    "prompt": "What is the purpose of Zero-hour Auto Purge (ZAP) in Microsoft 365?",
+    "options": [
+      {
+        "id": "a",
+        "text": "It retroactively removes malicious messages from mailboxes after new threats are identified"
+      },
+      {
+        "id": "b",
+        "text": "It rewrites URLs in email messages and scans them when they are selected"
+      },
+      {
+        "id": "c",
+        "text": "It blocks sign-ins from high-risk geographic locations"
+      },
+      {
+        "id": "d",
+        "text": "It automatically encrypts documents that contain sensitive data"
+      }
+    ],
+    "correct": "a",
+    "explanation": "ZAP entfernt schädliche Nachrichten rückwirkend aus Postfächern, wenn eine Bedrohung erst nach der Zustellung erkannt wird (z. B. durch ein Definitionsupdate). Das Umschreiben und Scannen von URLs übernimmt Safe Links, Standortblockierung ist Conditional Access, und automatische Verschlüsselung leisten Sensitivity Labels.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/4-examine-threat-protection-intelligence",
+    "source": {
+      "title": "Examine threat protection and intelligence in Microsoft 365",
+      "url": "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/4-examine-threat-protection-intelligence",
+      "quote": "Zero-hour Auto Purge (ZAP) is a powerful tool that retroactively removes malicious messages from mailboxes after new threats are identified. For instance, if malware is initially undetected but later recognized through a definition update, ZAP automatically purges it from all affected mailboxes."
+    }
+  },
+  {
+    "id": "secf-004",
+    "type": "single-choice",
+    "skillArea": "core",
+    "topic": "Safe Links",
+    "difficulty": "medium",
+    "prompt": "A user receives an email containing a link to a SharePoint document. After delivery, an attacker replaces the linked content with malware. Which Microsoft 365 feature protects the user by scanning the URL at the time it is selected?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Safe Links"
+      },
+      {
+        "id": "b",
+        "text": "Connection filtering"
+      },
+      {
+        "id": "c",
+        "text": "Spoof intelligence"
+      },
+      {
+        "id": "d",
+        "text": "Common attachment filter"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Safe Links schreibt URLs in Nachrichten um und scannt sie zum Zeitpunkt des Klicks — so werden auch Links blockiert, deren Ziel erst nach der Zustellung bösartig wurde. Connection filtering blockiert bekannte bösartige IP-Adressen, Spoof Intelligence erkennt Absender-Spoofing, und der Common Attachment Filter blockiert ausführbare Dateianhänge.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/4-examine-threat-protection-intelligence",
+    "source": {
+      "title": "Examine threat protection and intelligence in Microsoft 365",
+      "url": "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/4-examine-threat-protection-intelligence",
+      "quote": "Safe Links is another critical feature, rewriting URLs in messages and scanning them at the time of selection. For example, if a user receives a link to a SharePoint document that is later replaced with malware, Safe Links scans the URL in real time and blocks access, protecting users from evolving threats."
+    }
+  },
+  {
+    "id": "secf-005",
+    "type": "single-choice",
+    "skillArea": "core",
+    "topic": "Threat intelligence tools",
+    "difficulty": "easy",
+    "prompt": "Which Microsoft 365 threat intelligence tool provides a curated library of reports written by Microsoft security researchers, including mappings to the MITRE ATT&CK framework and recommended remediation steps?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Threat Analytics"
+      },
+      {
+        "id": "b",
+        "text": "Threat Explorer"
+      },
+      {
+        "id": "c",
+        "text": "Microsoft Secure Score"
+      },
+      {
+        "id": "d",
+        "text": "Endpoint Analytics"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Threat Analytics ist eine kuratierte Bibliothek von Threat-Intelligence-Berichten mit MITRE-ATT&CK-Zuordnungen und Empfehlungen zur Abwehr. Threat Explorer dient der Echtzeit-Untersuchung von E-Mail-Bedrohungen, Secure Score misst die Sicherheitslage, und Endpoint Analytics liefert Einblicke in Geräteleistung und -konfiguration.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/4-examine-threat-protection-intelligence",
+    "source": {
+      "title": "Examine threat protection and intelligence in Microsoft 365",
+      "url": "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/4-examine-threat-protection-intelligence",
+      "quote": "Threat Analytics is a curated library of threat intelligence reports written by Microsoft’s security researchers. Each report in Threat Analytics includes detailed descriptions of attacker behavior, mappings to the MITRE ATT&CK framework, and recommended remediation steps."
+    }
+  },
+  {
+    "id": "secf-006",
+    "type": "single-choice",
+    "skillArea": "core",
+    "topic": "Hybrid authentication",
+    "difficulty": "hard",
+    "prompt": "Your organization has a hybrid identity setup. Compliance requirements prohibit storing password hashes in the cloud, and user credentials must be validated against on-premises Active Directory in real time. You want to avoid deploying and maintaining federation infrastructure. Which authentication method should you use?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Pass-through authentication (PTA)"
+      },
+      {
+        "id": "b",
+        "text": "Password hash synchronization (PHS)"
+      },
+      {
+        "id": "c",
+        "text": "Federation authentication with AD FS"
+      },
+      {
+        "id": "d",
+        "text": "Certificate-based authentication (CBA)"
+      }
+    ],
+    "correct": "a",
+    "explanation": "PTA validiert Passwörter in Echtzeit über einen Authentifizierungs-Agent direkt gegen das lokale Active Directory — Passwörter werden nie in der Cloud gespeichert. PHS synchronisiert Passwort-Hashes in die Cloud (verstößt gegen die Compliance-Vorgabe), Federation erfordert zusätzliche AD-FS-Infrastruktur, und CBA ist eine Anmeldemethode, kein Hybrid-Validierungsverfahren.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/5-explore-identity-authentication",
+    "source": {
+      "title": "Explore identity and authentication in Microsoft 365",
+      "url": "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/5-explore-identity-authentication",
+      "quote": "On-premises passwords are never stored in the cloud in any form. PTA is ideal for organizations that must authenticate users against their on-premises directory or that have compliance requirements prohibiting password hashes from being stored in the cloud."
+    }
+  },
+  {
+    "id": "secf-007",
+    "type": "single-choice",
+    "skillArea": "core",
+    "topic": "Self-service password reset",
+    "difficulty": "easy",
+    "prompt": "What is the purpose of Self-Service Password Reset (SSPR) in Microsoft 365?",
+    "options": [
+      {
+        "id": "a",
+        "text": "It allows users to securely reset their own passwords without contacting the helpdesk"
+      },
+      {
+        "id": "b",
+        "text": "It synchronizes password hashes from on-premises Active Directory to the cloud"
+      },
+      {
+        "id": "c",
+        "text": "It enforces multifactor authentication for all sign-ins"
+      },
+      {
+        "id": "d",
+        "text": "It detects risky sign-ins using machine learning"
+      }
+    ],
+    "correct": "a",
+    "explanation": "SSPR ermöglicht es Benutzern, ihr Passwort nach Identitätsprüfung über registrierte Methoden (z. B. Telefonnummer oder Authenticator-App) selbst zurückzusetzen — das spart Zeit und Support-Kosten. Hash-Synchronisierung ist PHS, MFA-Erzwingung erfolgt über Richtlinien, und riskante Anmeldungen erkennt Microsoft Entra Identity Protection.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/5-explore-identity-authentication",
+    "source": {
+      "title": "Explore identity and authentication in Microsoft 365",
+      "url": "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/5-explore-identity-authentication",
+      "quote": "SSPR allows users to securely reset their own passwords without contacting the helpdesk. Doing so saves time and reduces support costs."
+    }
+  },
+  {
+    "id": "secf-008",
+    "type": "single-choice",
+    "skillArea": "core",
+    "topic": "Group types",
+    "difficulty": "medium",
+    "prompt": "You need a group that can be used to assign edit permissions to a budget SharePoint site and that can also receive monthly financial update emails sent to all its members. Which group type should you create?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Mail-enabled security group"
+      },
+      {
+        "id": "b",
+        "text": "Distribution group"
+      },
+      {
+        "id": "c",
+        "text": "Security group"
+      },
+      {
+        "id": "d",
+        "text": "Dynamic group with manual membership"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Mail-enabled Security Groups kombinieren beides: Sie können Berechtigungen auf Ressourcen wie SharePoint-Sites zuweisen und gleichzeitig als E-Mail-Verteilerliste dienen — die Unit nennt genau das Beispiel 'Finance Managers'. Distribution Groups können keine Berechtigungen zuweisen, reine Security Groups empfangen keine E-Mails, und dynamische Gruppen erlauben keine manuelle Mitgliederpflege.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/6-manage-access-permissions",
+    "source": {
+      "title": "Manage access and permissions in Microsoft 365",
+      "url": "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/6-manage-access-permissions",
+      "quote": "However, because they can also receive emails like a distribution list, you can send an email to the group, and all members receive it. For example, a \"Finance Managers\" group has edit access to a budget SharePoint site and receives monthly financial updates through email."
+    }
+  },
+  {
+    "id": "secf-009",
+    "type": "single-choice",
+    "skillArea": "core",
+    "topic": "App registrations",
+    "difficulty": "hard",
+    "prompt": "In Microsoft Entra, what is the difference between an app registration and an enterprise application?",
+    "options": [
+      {
+        "id": "a",
+        "text": "An app registration defines the identity and configuration metadata of an app, while an enterprise application is the service principal instantiated in a tenant that users and admins interact with"
+      },
+      {
+        "id": "b",
+        "text": "An enterprise application defines the authentication flows and permissions, while an app registration is the running instance of the app in a tenant"
+      },
+      {
+        "id": "c",
+        "text": "App registrations are used only for Microsoft first-party apps, while enterprise applications are used only for non-Microsoft apps"
+      },
+      {
+        "id": "d",
+        "text": "App registrations manage user licenses, while enterprise applications manage device compliance"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Die App Registration enthält Identität und Konfigurationsmetadaten (Authentifizierungsflüsse, Berechtigungen, unterstützte Kontotypen), während die Enterprise Application der im Tenant instanziierte Service Principal ist, mit dem Benutzer und Admins interagieren. Option b vertauscht die Konzepte; die Unterscheidung hängt weder vom Hersteller der App noch von Lizenzen oder Geräten ab.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/8-troubleshoot-monitor-identity-security",
+    "source": {
+      "title": "Troubleshoot and monitor identity security",
+      "url": "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/8-troubleshoot-monitor-identity-security",
+      "quote": "App registrations represent the identity and configuration metadata required to integrate an app with Microsoft identity platform, including authentication flows, permissions, and supported account types. Enterprise applications are the actual service principals instantiated in a tenant, representing an instance of the app that users and admins interact with."
+    }
+  },
+  {
+    "id": "secf-010",
+    "type": "single-choice",
+    "skillArea": "core",
+    "topic": "Conditional Access troubleshooting",
+    "difficulty": "medium",
+    "prompt": "A user reports being unexpectedly blocked from accessing an app despite meeting all known requirements. You need to determine which Conditional Access policies would apply to the user's sign-in without performing a real sign-in. Which tool should you use?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The What If tool in the Microsoft Entra admin center"
+      },
+      {
+        "id": "b",
+        "text": "Audit log search in the Microsoft Purview portal"
+      },
+      {
+        "id": "c",
+        "text": "Threat Explorer in Microsoft Defender for Office 365"
+      },
+      {
+        "id": "d",
+        "text": "Endpoint Analytics in Microsoft Intune"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Das What-If-Tool simuliert eine Anmeldung für einen bestimmten Benutzer, ein Gerät und eine App und zeigt, welche Conditional-Access-Richtlinien greifen und ob der Zugriff gewährt oder verweigert würde — ohne echte Anmeldung. Audit-Logs zeigen vergangene Aktivitäten, Threat Explorer untersucht E-Mail-Bedrohungen, und Endpoint Analytics analysiert Geräteleistung.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/8-troubleshoot-monitor-identity-security",
+    "source": {
+      "title": "Troubleshoot and monitor identity security",
+      "url": "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/8-troubleshoot-monitor-identity-security",
+      "quote": "The “What If” tool lets admins test Conditional Access policies without needing to perform a real sign-in. The admin selects a specific user, device, and app, and the tool shows which policies would apply and whether access would be granted or denied."
+    }
+  },
+  {
+    "id": "secf-011",
+    "type": "multiple-choice",
+    "skillArea": "core",
+    "topic": "Zero Trust principles",
+    "difficulty": "easy",
+    "prompt": "Which of the following are core principles of the Zero Trust security model? Each correct answer presents part of the solution.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Verify explicitly"
+      },
+      {
+        "id": "b",
+        "text": "Least privilege access"
+      },
+      {
+        "id": "c",
+        "text": "Assume breach"
+      },
+      {
+        "id": "d",
+        "text": "Trust all traffic inside the corporate network"
+      },
+      {
+        "id": "e",
+        "text": "Grant standing administrative access to IT staff"
+      }
+    ],
+    "correct": [
+      "a",
+      "b",
+      "c"
+    ],
+    "explanation": "Die drei Kernprinzipien von Zero Trust sind 'Verify explicitly', 'Least privilege access' und 'Assume breach'. Vertrauen in das interne Netzwerk entspricht dem traditionellen Perimeter-Modell, das Zero Trust ersetzt, und dauerhafte Admin-Rechte widersprechen dem Least-Privilege-Prinzip.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/2-analyze-zero-trust-security-model",
+    "source": {
+      "title": "Analyze the Zero Trust security model",
+      "url": "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/2-analyze-zero-trust-security-model",
+      "quote": "The Verify explicitly principle is the cornerstone of the Zero Trust model. The Least privilege access principle is a foundational concept in Zero Trust architecture. The Assume breach principle reflects a shift in mindset from prevention to containment."
+    }
+  },
+  {
+    "id": "secf-012",
+    "type": "multiple-choice",
+    "skillArea": "core",
+    "topic": "Passwordless authentication",
+    "difficulty": "medium",
+    "prompt": "Your organization wants to enable passwordless sign-in to Microsoft 365. Which two methods should you consider? Each correct answer presents a complete solution.",
+    "options": [
+      {
+        "id": "a",
+        "text": "FIDO2 security keys"
+      },
+      {
+        "id": "b",
+        "text": "Windows Hello biometrics"
+      },
+      {
+        "id": "c",
+        "text": "Password with security questions"
+      },
+      {
+        "id": "d",
+        "text": "Legacy authentication over POP3 and IMAP"
+      }
+    ],
+    "correct": [
+      "a",
+      "b"
+    ],
+    "explanation": "FIDO2-Sicherheitsschlüssel nutzen Public-Key-Kryptografie ohne Passwortübertragung, und Windows Hello meldet Benutzer per Gesichtserkennung, Fingerabdruck oder Geräte-PIN an — beides sind passwortlose Methoden. Passwörter mit Sicherheitsfragen sind nicht passwortlos, und Legacy-Authentifizierung basiert auf einfachen Benutzername/Passwort-Anmeldungen und wird von Microsoft abgeschafft.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/5-explore-identity-authentication",
+    "source": {
+      "title": "Explore identity and authentication in Microsoft 365",
+      "url": "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/5-explore-identity-authentication",
+      "quote": "FIDO2 security keys are physical devices (like USB or NFC tokens) used for passwordless authentication. Windows Hello allows users to sign in using facial recognition, fingerprint scanning, or a secure PIN tied to the device."
+    }
+  },
+  {
+    "id": "secf-013",
+    "type": "multiple-choice",
+    "skillArea": "core",
+    "topic": "Security posture assessment",
+    "difficulty": "medium",
+    "prompt": "Your organization is beginning a Zero Trust implementation and needs to assess its current security posture and regulatory compliance. Which two tools should you use? Each correct answer presents part of the solution.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Microsoft Secure Score"
+      },
+      {
+        "id": "b",
+        "text": "Microsoft Purview Compliance Manager"
+      },
+      {
+        "id": "c",
+        "text": "Microsoft Viva Learning"
+      },
+      {
+        "id": "d",
+        "text": "Attack simulation training in Defender for Office 365"
+      },
+      {
+        "id": "e",
+        "text": "Azure Firewall"
+      }
+    ],
+    "correct": [
+      "a",
+      "b"
+    ],
+    "explanation": "In Phase 1 der Zero-Trust-Implementierung liefert Microsoft Secure Score eine quantitative Bewertung der Sicherheitslage mit Empfehlungen, während Microsoft Purview Compliance Manager die Konfiguration gegen Standards wie HIPAA und ISO 27001 abbildet. Viva Learning und Attack Simulation Training gehören zur Benutzerschulung (Phase 6), Azure Firewall zur Netzwerksicherheit.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/3-implement-zero-trust-microsoft-365",
+    "source": {
+      "title": "Implement Zero Trust in Microsoft 365",
+      "url": "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/3-implement-zero-trust-microsoft-365",
+      "quote": "Microsoft Secure Score and Microsoft Purview Compliance Manager are excellent starting points for this assessment, offering actionable insights and benchmarks."
+    }
+  },
+  {
+    "id": "secf-014",
+    "type": "multiple-choice",
+    "skillArea": "core",
+    "topic": "Privileged Identity Management",
+    "difficulty": "hard",
+    "prompt": "Your security policy mandates that all elevated administrative access must be time-bound, approved, and auditable. Which two Privileged Identity Management (PIM) capabilities directly support this requirement? Each correct answer presents part of the solution.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Time-bound role activation with automatic revocation after a set duration"
+      },
+      {
+        "id": "b",
+        "text": "Approval workflows with MFA and business justification for role activation requests"
+      },
+      {
+        "id": "c",
+        "text": "Permanent standing assignment of the Global Administrator role"
+      },
+      {
+        "id": "d",
+        "text": "Automatic application of sensitivity labels to documents"
+      },
+      {
+        "id": "e",
+        "text": "Retroactive purging of malicious email messages"
+      }
+    ],
+    "correct": [
+      "a",
+      "b"
+    ],
+    "explanation": "PIM bietet zeitgebundene Rollenaktivierung mit automatischem Entzug sowie Genehmigungsworkflows mit MFA- und Begründungspflicht — alle Aktivierungen werden zudem in Audit-Logs protokolliert. Dauerhafte Global-Admin-Zuweisungen sind genau das, was PIM vermeiden soll; Sensitivity Labels gehören zu Purview und das rückwirkende Entfernen von E-Mails zu ZAP.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/7-explore-identity-access-management",
+    "source": {
+      "title": "Explore identity and access management in Microsoft Entra",
+      "url": "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/7-explore-identity-access-management",
+      "quote": "Privileged Identity Management (PIM) in Microsoft Entra enables just-in-time access to sensitive roles and resources. Instead of assigning permanent admin rights, PIM allows users to activate roles temporarily, with optional approval, MFA, and a justification requirement."
+    }
+  },
+  {
+    "id": "secf-015",
+    "type": "yes-no",
+    "skillArea": "core",
+    "topic": "Microsoft 365 groups",
+    "difficulty": "easy",
+    "prompt": "For each of the following statements about groups in Microsoft 365, select Yes if the statement is true. Otherwise, select No.",
+    "statements": [
+      {
+        "id": "s1",
+        "text": "Creating a Microsoft 365 group automatically provisions shared resources such as a shared mailbox, a group calendar, and a SharePoint document library.",
+        "correct": true
+      },
+      {
+        "id": "s2",
+        "text": "Distribution groups can be used to assign permissions to Microsoft 365 resources such as SharePoint sites.",
+        "correct": false
+      },
+      {
+        "id": "s3",
+        "text": "Administrators can manually add or remove individual users in a dynamic group.",
+        "correct": false
+      }
+    ],
+    "explanation": "Microsoft 365 Groups stellen automatisch geteilte Ressourcen bereit (Postfach, Kalender, SharePoint-Bibliothek, Planner-Board). Distribution Groups dienen ausschließlich als E-Mail-Verteiler und können keine Berechtigungen zuweisen. Die Mitgliedschaft in dynamischen Gruppen basiert allein auf Benutzerattributen — manuelles Hinzufügen oder Entfernen ist nicht möglich.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/6-manage-access-permissions",
+    "source": {
+      "title": "Manage access and permissions in Microsoft 365",
+      "url": "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/6-manage-access-permissions",
+      "quote": "These groups are designed purely for sending messages to multiple users at once, like an email list, without giving the users any shared access. They can’t be used to assign permissions to Microsoft 365 resources. You can’t manually add or remove individual users from a Dynamic group."
+    }
+  },
+  {
+    "id": "secf-016",
+    "type": "yes-no",
+    "skillArea": "core",
+    "topic": "Hybrid authentication",
+    "difficulty": "medium",
+    "prompt": "Your organization uses a hybrid identity setup with Microsoft Entra ID. For each of the following statements, select Yes if the statement is true. Otherwise, select No.",
+    "statements": [
+      {
+        "id": "s1",
+        "text": "With password hash synchronization (PHS), user credentials are validated in the cloud without contacting an on-premises server during sign-in.",
+        "correct": true
+      },
+      {
+        "id": "s2",
+        "text": "With pass-through authentication (PTA), on-premises passwords are stored in Microsoft Entra ID in encrypted form.",
+        "correct": false
+      },
+      {
+        "id": "s3",
+        "text": "With federation authentication, users are redirected to an on-premises federation server such as AD FS to complete the sign-in.",
+        "correct": true
+      }
+    ],
+    "explanation": "Bei PHS wird der Passwort-Hash in die Cloud synchronisiert, sodass die Validierung ohne lokalen Server erfolgt. Bei PTA werden Passwörter in keiner Form in der Cloud gespeichert — die Validierung erfolgt in Echtzeit über einen lokalen Agent gegen Active Directory. Bei Federation wird der Benutzer zur Anmeldung an den lokalen Föderationsserver (z. B. AD FS) umgeleitet, der ein Token ausstellt.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/5-explore-identity-authentication",
+    "source": {
+      "title": "Explore identity and authentication in Microsoft 365",
+      "url": "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/5-explore-identity-authentication",
+      "quote": "When users sign in to Microsoft 365, their credentials are validated in the cloud, without needing to contact the on-premises environment. On-premises passwords are never stored in the cloud in any form. In this setup, when a user tries to sign into Microsoft 365, they’re redirected to the on-premises federation server, which authenticates the user and issues a token that Microsoft Entra ID trusts."
+    }
+  },
+  {
+    "id": "secf-017",
+    "type": "yes-no",
+    "skillArea": "core",
+    "topic": "Microsoft Defender XDR",
+    "difficulty": "medium",
+    "prompt": "For each of the following statements about Microsoft Defender XDR, select Yes if the statement is true. Otherwise, select No.",
+    "statements": [
+      {
+        "id": "s1",
+        "text": "Microsoft Defender for Office 365 protects email and collaboration tools against phishing and business email compromise (BEC).",
+        "correct": true
+      },
+      {
+        "id": "s2",
+        "text": "Microsoft Purview is a component of the Microsoft Defender XDR suite.",
+        "correct": false
+      },
+      {
+        "id": "s3",
+        "text": "Microsoft Defender for Identity uses signals from on-premises Active Directory to detect identity-based threats such as pass-the-hash attacks.",
+        "correct": true
+      }
+    ],
+    "explanation": "Defender for Office 365 schützt E-Mail und Collaboration-Tools vor Phishing und BEC. Purview ist ausdrücklich KEIN Bestandteil der Defender-XDR-Suite — es ergänzt sie mit Compliance-, Governance- und Datenschutzfunktionen. Defender for Identity nutzt Signale aus dem lokalen Active Directory, um identitätsbasierte Angriffe wie Pass-the-Hash und Lateral Movement zu erkennen.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/4-examine-threat-protection-intelligence",
+    "source": {
+      "title": "Examine threat protection and intelligence in Microsoft 365",
+      "url": "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/4-examine-threat-protection-intelligence",
+      "quote": "While Purview isn’t a component of the Defender XDR suite, it can work alongside Defender in real-world security operations, especially for organizations that need unified security and compliance workflows. This tool uses signals from on-premises Active Directory to identify identity-based threats such as lateral movement and pass-the-hash attacks."
+    }
+  },
+  {
+    "id": "secf-018",
+    "type": "yes-no",
+    "skillArea": "core",
+    "topic": "Identity Secure Score",
+    "difficulty": "medium",
+    "prompt": "For each of the following statements about Identity Secure Score in Microsoft Entra ID, select Yes if the statement is true. Otherwise, select No.",
+    "statements": [
+      {
+        "id": "s1",
+        "text": "Identity Secure Score allows organizations to benchmark their identity security posture against similar organizations by industry, region, or size.",
+        "correct": true
+      },
+      {
+        "id": "s2",
+        "text": "Marking an improvement action as 'Risk Accepted' means the recommendation has been implemented and is enforced.",
+        "correct": false
+      },
+      {
+        "id": "s3",
+        "text": "The status 'Resolved via Third Party' indicates that the risk is mitigated through non-Microsoft security tools.",
+        "correct": true
+      }
+    ],
+    "explanation": "Das Secure-Score-Dashboard bietet Benchmarking gegen vergleichbare Organisationen nach Branche, Region oder Größe. 'Risk Accepted' bedeutet, dass die Organisation die Empfehlung bewusst NICHT umsetzt und das Risiko akzeptiert — implementiert und erzwungen ist der Status 'Completed'. 'Resolved via Third Party' heißt, das Risiko wird durch Nicht-Microsoft-Tools abgedeckt, z. B. einen externen MFA-Anbieter.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/7-explore-identity-access-management",
+    "source": {
+      "title": "Explore identity and access management in Microsoft Entra",
+      "url": "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/7-explore-identity-access-management",
+      "quote": "The Secure Score dashboard includes visual benchmarking tools that allow organizations to compare their current security posture against similar organizations by industry, region, or size. The organization chooses not to implement the recommendation, acknowledging the associated risk for business or technical reasons."
+    }
+  },
+  {
+    "id": "secf-019",
+    "type": "ordering",
+    "skillArea": "core",
+    "topic": "Zero Trust implementation",
+    "difficulty": "medium",
+    "prompt": "Your organization is adopting Zero Trust in Microsoft 365. Place the first five phases of the implementation in the correct order.",
+    "items": [
+      {
+        "id": "i1",
+        "text": "Enforce endpoint compliance"
+      },
+      {
+        "id": "i2",
+        "text": "Assess current security posture"
+      },
+      {
+        "id": "i3",
+        "text": "Monitor and respond to threats"
+      },
+      {
+        "id": "i4",
+        "text": "Enable identity protection"
+      },
+      {
+        "id": "i5",
+        "text": "Classify and protect data"
+      }
+    ],
+    "correctOrder": [
+      "i2",
+      "i4",
+      "i1",
+      "i5",
+      "i3"
+    ],
+    "explanation": "Die Zero-Trust-Implementierung beginnt mit der Bewertung der aktuellen Sicherheitslage (Phase 1), gefolgt vom Identitätsschutz als erster und wichtigster Kontrollebene (Phase 2), der Endpunkt-Compliance (Phase 3), der Klassifizierung und dem Schutz von Daten (Phase 4) und der Bedrohungsüberwachung und -reaktion (Phase 5). Phase 6 wäre die Benutzerschulung.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/3-implement-zero-trust-microsoft-365",
+    "source": {
+      "title": "Implement Zero Trust in Microsoft 365",
+      "url": "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/3-implement-zero-trust-microsoft-365",
+      "quote": "To implement Zero Trust effectively, organizations should progress through the following six phases, each of which is examined in detail in the following sections. After organizations establish their baseline security posture, they can begin applying Zero Trust principles across the six foundational pillars. Among these pillars, identity serves as the first and most critical control plane."
+    }
+  },
+  {
+    "id": "secf-020",
+    "type": "ordering",
+    "skillArea": "core",
+    "topic": "PIM activation workflow",
+    "difficulty": "hard",
+    "prompt": "An organization uses Privileged Identity Management (PIM) to grant a cloud engineer temporary elevated access for a planned network migration. Place the steps of the PIM workflow in the correct order.",
+    "items": [
+      {
+        "id": "i1",
+        "text": "The request is routed to the engineer's team lead, who approves the activation"
+      },
+      {
+        "id": "i2",
+        "text": "The engineer is preassigned as eligible for the required role"
+      },
+      {
+        "id": "i3",
+        "text": "Access is automatically revoked and the activity is reviewed in the audit logs"
+      },
+      {
+        "id": "i4",
+        "text": "The engineer requests role activation, completes MFA, and provides a business justification"
+      },
+      {
+        "id": "i5",
+        "text": "Time-bound access is granted and the engineer performs the configuration changes"
+      }
+    ],
+    "correctOrder": [
+      "i2",
+      "i4",
+      "i1",
+      "i5",
+      "i3"
+    ],
+    "explanation": "Der PIM-Workflow folgt dem Beispielszenario der Unit: Zuerst wird der Benutzer als 'eligible' für die Rolle vorgemerkt, dann beantragt er die Aktivierung mit MFA und Begründung, anschließend genehmigt der Team-Lead die Anfrage, danach erhält der Benutzer zeitgebundenen Zugriff und führt die Aufgabe aus, und zuletzt wird der Zugriff automatisch entzogen und im Audit-Log überprüft.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/7-explore-identity-access-management",
+    "source": {
+      "title": "Explore identity and access management in Microsoft Entra",
+      "url": "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/7-explore-identity-access-management",
+      "quote": "The request is routed to the engineer's team lead for approval. Once approved, the engineer receives access immediately and performs the necessary configuration changes. The access is automatically revoked after four hours."
+    }
+  },
+  {
+    "id": "secf-021",
+    "type": "matching",
+    "skillArea": "core",
+    "topic": "Defender components",
+    "difficulty": "easy",
+    "prompt": "Match each Microsoft Defender XDR component to its primary function.",
+    "left": [
+      {
+        "id": "l1",
+        "text": "Defender for Office 365"
+      },
+      {
+        "id": "l2",
+        "text": "Defender for Endpoint"
+      },
+      {
+        "id": "l3",
+        "text": "Defender for Identity"
+      },
+      {
+        "id": "l4",
+        "text": "Defender for Cloud Apps"
+      }
+    ],
+    "right": [
+      {
+        "id": "r1",
+        "text": "Discovers shadow IT and provides visibility and control over cloud applications"
+      },
+      {
+        "id": "r2",
+        "text": "Protects email and collaboration tools against phishing and business email compromise"
+      },
+      {
+        "id": "r3",
+        "text": "Provides endpoint detection and response and can isolate compromised devices"
+      },
+      {
+        "id": "r4",
+        "text": "Detects identity-based threats such as lateral movement using on-premises Active Directory signals"
+      }
+    ],
+    "correct": {
+      "l1": "r2",
+      "l2": "r3",
+      "l3": "r4",
+      "l4": "r1"
+    },
+    "explanation": "Defender for Office 365 schützt E-Mail und Collaboration vor Phishing und BEC; Defender for Endpoint bietet EDR und kann kompromittierte Geräte isolieren; Defender for Identity erkennt identitätsbasierte Angriffe wie Lateral Movement anhand von Signalen aus dem lokalen Active Directory; Defender for Cloud Apps deckt Shadow IT auf und kontrolliert Cloud-Anwendungen.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/4-examine-threat-protection-intelligence",
+    "source": {
+      "title": "Examine threat protection and intelligence in Microsoft 365",
+      "url": "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/4-examine-threat-protection-intelligence",
+      "quote": "This component protects email and collaboration tools against phishing, business email compromise (BEC), malware, and other threats. Defender for Endpoint provides advanced endpoint detection and response (EDR), antivirus protection, attack surface reduction, and automated investigation and response. Defender for Cloud Apps provides visibility and control over cloud applications, including Shadow IT discovery, app governance, and data exfiltration prevention."
+    }
+  },
+  {
+    "id": "secf-022",
+    "type": "matching",
+    "skillArea": "core",
+    "topic": "Zero Trust pillars",
+    "difficulty": "hard",
+    "prompt": "Match each Zero Trust pillar in Microsoft 365 to the tool that is used to secure or govern it.",
+    "left": [
+      {
+        "id": "l1",
+        "text": "Identity"
+      },
+      {
+        "id": "l2",
+        "text": "Endpoints"
+      },
+      {
+        "id": "l3",
+        "text": "Data"
+      },
+      {
+        "id": "l4",
+        "text": "Infrastructure"
+      }
+    ],
+    "right": [
+      {
+        "id": "r1",
+        "text": "Azure Policy, which enforces rules such as required encryption or restricted VM sizes across cloud resources"
+      },
+      {
+        "id": "r2",
+        "text": "Microsoft Entra ID, which provides centralized identity management and passwordless sign-in"
+      },
+      {
+        "id": "r3",
+        "text": "Microsoft Purview Information Protection, which classifies, labels, and encrypts sensitive content"
+      },
+      {
+        "id": "r4",
+        "text": "Microsoft Intune, which enforces device compliance policies such as encryption and minimum OS versions"
+      }
+    ],
+    "correct": {
+      "l1": "r2",
+      "l2": "r4",
+      "l3": "r3",
+      "l4": "r1"
+    },
+    "explanation": "In der Zero-Trust-Architektur sichert Microsoft Entra ID die Säule Identität (zentrale Identitätsverwaltung, passwortlose Anmeldung), Microsoft Intune die Endpunkte (Compliance-Richtlinien für Geräte), Microsoft Purview Information Protection die Daten (Klassifizierung, Labels, Verschlüsselung) und Azure Policy die Infrastruktur (Governance-Regeln wie Verschlüsselungspflicht oder VM-Größenbeschränkungen).",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/2-analyze-zero-trust-security-model",
+    "source": {
+      "title": "Analyze the Zero Trust security model",
+      "url": "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/2-analyze-zero-trust-security-model",
+      "quote": "Identity is the cornerstone of Zero Trust. Microsoft Entra ID provides centralized identity management, authentication, and authorization. Azure Policy is a powerful governance tool that enables organizations to create, assign, and manage policies that enforce rules and effects across cloud resources."
+    }
+  },
+  {
+    "id": "secf-023",
+    "type": "dropdown",
+    "skillArea": "core",
+    "topic": "Authentication vs authorization",
+    "difficulty": "easy",
+    "prompt": "Complete the sentence by selecting the correct options.",
+    "textParts": [
+      "In Microsoft 365, ",
+      " is the process of verifying a user's identity before granting access, while ",
+      " determines what an authenticated user is allowed to access and do."
+    ],
+    "blanks": [
+      {
+        "id": "b1",
+        "options": [
+          {
+            "id": "o1",
+            "text": "authentication"
+          },
+          {
+            "id": "o2",
+            "text": "authorization"
+          },
+          {
+            "id": "o3",
+            "text": "synchronization"
+          }
+        ],
+        "correct": "o1"
+      },
+      {
+        "id": "b2",
+        "options": [
+          {
+            "id": "o1",
+            "text": "authorization"
+          },
+          {
+            "id": "o2",
+            "text": "authentication"
+          },
+          {
+            "id": "o3",
+            "text": "federation"
+          }
+        ],
+        "correct": "o1"
+      }
+    ],
+    "explanation": "Authentifizierung beantwortet die Frage 'Ist der Benutzer wirklich der, der er vorgibt zu sein?' und erfolgt vor der Zugriffsgewährung. Autorisierung folgt danach und legt fest, auf welche Ressourcen der verifizierte Benutzer zugreifen und welche Aktionen er ausführen darf.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/6-manage-access-permissions",
+    "source": {
+      "title": "Manage access and permissions in Microsoft 365",
+      "url": "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/6-manage-access-permissions",
+      "quote": "After authentication confirms a user’s identity, the next step is authorization, which determines what that user is allowed to do."
+    }
+  },
+  {
+    "id": "secf-024",
+    "type": "dropdown",
+    "skillArea": "core",
+    "topic": "Legacy authentication",
+    "difficulty": "hard",
+    "prompt": "A user with an older email client cannot sign in to Microsoft 365. Complete the explanation by selecting the correct options.",
+    "textParts": [
+      "Clients that connect using ",
+      " protocols such as POP3, IMAP, or SMTP AUTH are rejected because they rely on basic username and password sign-ins. Microsoft requires ",
+      ", which provides stronger, token-based protection against password spray and brute-force attacks."
+    ],
+    "blanks": [
+      {
+        "id": "b1",
+        "options": [
+          {
+            "id": "o1",
+            "text": "legacy authentication"
+          },
+          {
+            "id": "o2",
+            "text": "modern authentication"
+          },
+          {
+            "id": "o3",
+            "text": "certificate-based"
+          }
+        ],
+        "correct": "o1"
+      },
+      {
+        "id": "b2",
+        "options": [
+          {
+            "id": "o1",
+            "text": "modern authentication (OAuth 2.0)"
+          },
+          {
+            "id": "o2",
+            "text": "basic authentication"
+          },
+          {
+            "id": "o3",
+            "text": "self-service password reset"
+          }
+        ],
+        "correct": "o1"
+      }
+    ],
+    "explanation": "Legacy-Authentifizierung (POP3, IMAP, SMTP AUTH) nutzt einfache Benutzername/Passwort-Anmeldungen, die leicht durch Password-Spray- und Brute-Force-Angriffe angreifbar sind, und wird von Microsoft abgeschafft. Moderne Authentifizierung auf Basis von OAuth 2.0 bietet stärkeren, tokenbasierten Schutz und ist für die meisten Dienste erforderlich.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/8-troubleshoot-monitor-identity-security",
+    "source": {
+      "title": "Troubleshoot and monitor identity security",
+      "url": "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/8-troubleshoot-monitor-identity-security",
+      "quote": "Microsoft is retiring legacy authentication because it uses basic username and password sign-ins, which password spray and brute-force attacks easily target. Modern authentication (OAuth 2.0) provides stronger, token-based protection."
+    }
+  }
+]

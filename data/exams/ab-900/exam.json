@@ -1,0 +1,32 @@
+{
+  "slug": "ab-900",
+  "code": "AB-900",
+  "title": "Microsoft 365 Certified: Copilot and Agent Administration Fundamentals",
+  "description": "Demonstrate how to support, secure, and protect an AI-enabled Microsoft 365 environment. Umfasst M365-Kernservices, Sicherheit, Datenschutz & Governance (Purview) sowie die Administration von Microsoft 365 Copilot und Agents.",
+  "questionCount": 40,
+  "durationMinutes": 45,
+  "passScore": 700,
+  "maxScore": 1000,
+  "skillAreas": [
+    {
+      "id": "core",
+      "name": "Identify the core features and objects of Microsoft 365 services",
+      "weight": 0.325
+    },
+    {
+      "id": "governance",
+      "name": "Understand data protection and governance tasks for Microsoft 365 and Copilot",
+      "weight": 0.375
+    },
+    {
+      "id": "copilot-admin",
+      "name": "Perform basic administrative tasks for Copilot and agents",
+      "weight": 0.3
+    }
+  ],
+  "difficultyCurve": {
+    "easy": 0.35,
+    "medium": 0.4,
+    "hard": 0.25
+  }
+}
