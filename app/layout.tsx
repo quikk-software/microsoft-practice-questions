@@ -16,10 +16,30 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+
 export const metadata: Metadata = {
-  title: "Microsoft Practice Exams",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "Microsoft Practice Exams — kostenlose Test-Examen",
+    template: "%s · Microsoft Practice Exams",
+  },
   description:
-    "Kostenlose Test-Examen für Microsoft-Zertifizierungen mit AI-Erklärungen",
+    "Kostenlose Test-Examen für Microsoft-Zertifizierungen (z. B. AB-900) mit realistischen Fragetypen, Sofort-Feedback, Quellen-Belegen aus Microsoft Learn und AI-Erklärungen.",
+  applicationName: "Microsoft Practice Exams",
+  openGraph: {
+    type: "website",
+    siteName: "Microsoft Practice Exams",
+    locale: "de_DE",
+    url: siteUrl,
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default async function RootLayout({

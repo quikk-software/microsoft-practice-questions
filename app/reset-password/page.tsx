@@ -1,5 +1,11 @@
+import type { Metadata } from "next";
 import { getAuthService } from "@/lib/auth";
 import { ResetPasswordForm } from "./ResetPasswordForm";
+
+export const metadata: Metadata = {
+  title: "Passwort zurücksetzen",
+  robots: { index: false },
+};
 
 // /reset-password — zweistufig:
 // - Ohne Session: E-Mail eingeben → Reset-Mail anfordern.

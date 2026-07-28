@@ -43,11 +43,6 @@ export default async function Home() {
               <p className="mt-1 line-clamp-2 text-sm text-zinc-600 dark:text-zinc-400">
                 {config.description}
               </p>
-              <div className="mt-4 flex gap-3 text-xs text-zinc-500">
-                <span>🟢 {byDiff.easy} leicht</span>
-                <span>🟡 {byDiff.medium} mittel</span>
-                <span>🔴 {byDiff.hard} schwer</span>
-              </div>
             </Link>
           );
         })}

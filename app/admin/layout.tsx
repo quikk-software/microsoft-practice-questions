@@ -1,6 +1,12 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { ShieldCheck } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: { default: "Admin", template: "%s · Admin · Microsoft Practice Exams" },
+  robots: { index: false },
+};
 import { getAuthService } from "@/lib/auth";
 import { hasRole } from "@/lib/auth/port";
 

@@ -1,6 +1,12 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { ClipboardList } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Meine Prüfungen",
+  robots: { index: false },
+};
 import { getAuthService } from "@/lib/auth";
 import { getRepository } from "@/lib/data";
 import type { AttemptSummary } from "@/lib/data/port";

@@ -1,7 +1,27 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ChevronLeft } from "lucide-react";
 import { getRepository } from "@/lib/data";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const exam = await getRepository().getExam(slug);
+  if (!exam) return { title: "Examen nicht gefunden" };
+  const { config } = exam;
+  const title = `${config.code} Test-Examen — ${config.title}`;
+  const description = `Kostenloses ${config.code}-Test-Examen: ${config.questionCount} Fragen aus einem Pool von ${exam.questions.length}, realistische Fragetypen, Sofort-Feedback mit Quellen-Belegen aus Microsoft Learn und AI-Erklärungen.`;
+  return {
+    title,
+    description,
+    alternates: { canonical: `/exams/${config.slug}` },
+    openGraph: { title, description, url: `/exams/${config.slug}` },
+  };
+}
 
 export default async function ExamDetailPage({
   params,

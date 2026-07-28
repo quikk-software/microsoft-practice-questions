@@ -219,6 +219,8 @@ export function AiExplanation({
 }) {
   const [text, setText] = useState("");
   const [sources, setSources] = useState<ExplainSource[]>([]);
+  const [stage, setStage] = useState<string | null>(null);
+  const [stageDetail, setStageDetail] = useState<string | null>(null);
   const [state, setState] = useState<"idle" | "streaming" | "done" | "error">(
     "idle"
   );
@@ -227,6 +229,8 @@ export function AiExplanation({
     setState("streaming");
     setText("");
     setSources([]);
+    setStage(null);
+    setStageDetail(null);
     try {
       const res = await fetch("/api/explain", {
         method: "POST",
@@ -234,22 +238,53 @@ export function AiExplanation({
         body: JSON.stringify({ examSlug: slug, questionId, answer }),
       });
       if (!res.ok || !res.body) throw new Error(await res.text());
-      const encoded = res.headers.get("x-sources");
-      if (encoded) {
-        try {
-          setSources(JSON.parse(atob(encoded)) as ExplainSource[]);
-        } catch {
-          // Quellen sind optional
-        }
-      }
+
+      // NDJSON-Events: status | sources | text | done | error
       const reader = res.body.getReader();
       const decoder = new TextDecoder();
+      let buffer = "";
+      let failed = false;
+      const handle = (line: string) => {
+        if (!line.trim()) return;
+        let event: {
+          type: string;
+          stage?: string;
+          detail?: string;
+          sources?: ExplainSource[];
+          delta?: string;
+          message?: string;
+        };
+        try {
+          event = JSON.parse(line);
+        } catch {
+          return;
+        }
+        switch (event.type) {
+          case "status":
+            setStage(event.stage ?? null);
+            setStageDetail(event.detail ?? null);
+            break;
+          case "sources":
+            setSources(event.sources ?? []);
+            break;
+          case "text":
+            setText((prev) => prev + (event.delta ?? ""));
+            break;
+          case "error":
+            failed = true;
+            break;
+        }
+      };
       while (true) {
         const { done, value } = await reader.read();
         if (done) break;
-        setText((prev) => prev + decoder.decode(value, { stream: true }));
+        buffer += decoder.decode(value, { stream: true });
+        const lines = buffer.split("\n");
+        buffer = lines.pop() ?? "";
+        lines.forEach(handle);
       }
-      setState("done");
+      handle(buffer);
+      setState(failed ? "error" : "done");
     } catch {
       setState("error");
     }
@@ -277,6 +312,13 @@ export function AiExplanation({
       )}
       {(state === "streaming" || state === "done") && (
         <div className="rounded-lg border border-brand-200 bg-brand-50/60 p-4 text-sm leading-relaxed dark:border-brand-900 dark:bg-brand-950/30">
+          {state === "streaming" && text === "" && (
+            <ProgressSteps
+              stage={stage}
+              stageDetail={stageDetail}
+              sourceCount={sources.length}
+            />
+          )}
           <CitedText
             text={text}
             sources={sources}
@@ -307,6 +349,72 @@ export function AiExplanation({
           )}
         </div>
       )}
+    </div>
+  );
+}
+
+/**
+ * Live-Anzeige, woran die AI-Erklärung gerade arbeitet:
+ * RAG-Suche -> Generierung, mit Häkchen für abgeschlossene Schritte.
+ */
+function ProgressSteps({
+  stage,
+  stageDetail,
+  sourceCount,
+}: {
+  stage: string | null;
+  stageDetail: string | null;
+  sourceCount: number;
+}) {
+  const ragDone = stage === "generate" || stage === "norag";
+  const steps = [
+    {
+      key: "rag",
+      label: ragDone
+        ? stage === "norag"
+          ? "Keine Embeddings vorhanden — ohne Quellen-Kontext"
+          : `Lerninhalte durchsucht — ${sourceCount} Quellen gefunden`
+        : "Lerninhalte werden durchsucht (RAG) …",
+      active: stage === "rag" || stage === null,
+      done: ragDone,
+    },
+    {
+      key: "generate",
+      label:
+        stageDetail && (stage === "generate" || stage === "norag")
+          ? stageDetail
+          : "Erklärung generieren",
+      active: stage === "generate" || stage === "norag",
+      done: false,
+    },
+  ];
+
+  return (
+    <div className="mb-1 space-y-1.5" aria-live="polite">
+      {steps.map((s) => (
+        <div
+          key={s.key}
+          className={`flex items-center gap-2 text-xs ${
+            s.done
+              ? "text-green-700 dark:text-green-400"
+              : s.active
+                ? "text-brand-800 dark:text-brand-300"
+                : "text-zinc-400"
+          }`}
+        >
+          {s.done ? (
+            <span aria-hidden>✓</span>
+          ) : s.active ? (
+            <span
+              aria-hidden
+              className="inline-block h-3 w-3 animate-spin rounded-full border-2 border-current border-t-transparent"
+            />
+          ) : (
+            <span aria-hidden className="inline-block h-1.5 w-1.5 rounded-full bg-current" />
+          )}
+          <span>{s.label}</span>
+        </div>
+      ))}
     </div>
   );
 }
