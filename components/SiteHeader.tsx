@@ -44,7 +44,7 @@ export function SiteHeader({ user, authEnabled }: Props) {
             </>
           ) : (
             <img
-              src="/logo.svg"
+              src="/strategic-it/logo.svg"
               alt="Strategic IT GmbH"
               className="h-7 w-auto shrink-0"
             />
