@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import type { Answer, ExamResult, PublicQuestion, Question } from "@/lib/types";
@@ -42,36 +42,96 @@ export function PracticeRunner({
   const [answers, setAnswers] = useState<Record<string, Answer | null>>({});
   const [checks, setChecks] = useState<Record<string, CheckResult>>({});
   const [checking, setChecking] = useState(false);
+  const [restored, setRestored] = useState(false);
   const [result, setResult] = useState<ExamResult | null>(null);
 
-  // Nur Laden (alle setState-Aufrufe erst nach dem await -> effektsicher)
-  const fetchSession = useCallback(async () => {
-    try {
-      const res = await fetch(`/api/exams/${slug}/session`, { method: "POST" });
-      if (!res.ok) throw new Error(await res.text());
-      const data = (await res.json()) as SessionData;
-      setSession(data);
-      setPhase("running");
-    } catch {
-      setPhase("error");
-    }
-  }, [slug]);
+  // Fortschritts-Sync (nur wenn der Server die Session persistiert = Login)
+  const persistedRef = useRef(false);
+  const saveTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  // Neustart: Zustand zurücksetzen + neu laden (Initial-Mount startet direkt im "loading"-State)
+  const persistProgress = useCallback(
+    (next: {
+      answers: Record<string, Answer | null>;
+      checkedIds: string[];
+      currentIndex: number;
+    }) => {
+      if (!persistedRef.current) return;
+      // Debounce: schnelle Folge-Änderungen (z. B. Auswahl ändern) bündeln
+      if (saveTimer.current) clearTimeout(saveTimer.current);
+      saveTimer.current = setTimeout(() => {
+        void fetch(`/api/exams/${slug}/session`, {
+          method: "PATCH",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(next),
+        }).catch(() => {});
+      }, 600);
+    },
+    [slug]
+  );
+
+  // Nur Laden (alle setState-Aufrufe erst nach dem await -> effektsicher)
+  const fetchSession = useCallback(
+    async (fresh: boolean) => {
+      try {
+        const res = await fetch(`/api/exams/${slug}/session`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ fresh }),
+        });
+        if (!res.ok) throw new Error(await res.text());
+        const data = (await res.json()) as SessionData & {
+          persisted?: boolean;
+          progress?: {
+            answers: Record<string, Answer | null>;
+            currentIndex: number;
+            checks: CheckResult[];
+          };
+        };
+        persistedRef.current = data.persisted ?? false;
+        setSession(data);
+        if (data.progress) {
+          setAnswers(data.progress.answers ?? {});
+          setIndex(data.progress.currentIndex ?? 0);
+          setChecks(
+            Object.fromEntries(
+              (data.progress.checks ?? []).map((c) => [c.question.id, c])
+            )
+          );
+          setRestored(true);
+        }
+        setPhase("running");
+      } catch {
+        setPhase("error");
+      }
+    },
+    [slug]
+  );
+
+  // Neustart: Zustand zurücksetzen + neu ziehen (verwirft die gespeicherte Session)
   const startSession = useCallback(async () => {
     setPhase("loading");
     setIndex(0);
     setAnswers({});
     setChecks({});
     setResult(null);
-    await fetchSession();
+    setRestored(false);
+    await fetchSession(true);
   }, [fetchSession]);
 
   useEffect(() => {
     // Fetch-on-Mount: setState passiert erst nach dem await der Server-Antwort
     // eslint-disable-next-line react-hooks/set-state-in-effect
-    void fetchSession();
+    void fetchSession(false);
   }, [fetchSession]);
+
+  const goTo = (nextIndex: number) => {
+    setIndex(nextIndex);
+    persistProgress({
+      answers,
+      checkedIds: Object.keys(checks),
+      currentIndex: nextIndex,
+    });
+  };
 
   const checkAnswer = async (questionId: string) => {
     setChecking(true);
@@ -86,7 +146,15 @@ export function PracticeRunner({
       });
       if (!res.ok) throw new Error(await res.text());
       const check = (await res.json()) as CheckResult;
-      setChecks((prev) => ({ ...prev, [questionId]: check }));
+      setChecks((prev) => {
+        const next = { ...prev, [questionId]: check };
+        persistProgress({
+          answers,
+          checkedIds: Object.keys(next),
+          currentIndex: index,
+        });
+        return next;
+      });
     } catch {
       // beim nächsten Klick erneut versuchen
     } finally {
@@ -181,13 +249,36 @@ export function PracticeRunner({
         />
       </div>
 
+      {restored && (
+        <div className="mb-6 flex items-center justify-between gap-4 rounded-lg border border-brand-300 bg-brand-50 px-4 py-2.5 text-sm text-brand-900 dark:border-brand-800 dark:bg-brand-950/40 dark:text-brand-200">
+          <span>
+            Deine laufende Prüfung wurde wiederhergestellt — mach einfach
+            weiter, wo du warst.
+          </span>
+          <button
+            onClick={startSession}
+            className="shrink-0 font-semibold underline"
+          >
+            Neu starten
+          </button>
+        </div>
+      )}
+
       <div className="rounded-xl border border-zinc-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900/60">
         <QuestionView
           question={question}
           answer={answers[question.id] ?? null}
           solution={check?.question ?? null}
           onChange={(a) =>
-            setAnswers((prev) => ({ ...prev, [question.id]: a }))
+            setAnswers((prev) => {
+              const next = { ...prev, [question.id]: a };
+              persistProgress({
+                answers: next,
+                checkedIds: Object.keys(checks),
+                currentIndex: index,
+              });
+              return next;
+            })
           }
         />
       </div>
@@ -205,7 +296,7 @@ export function PracticeRunner({
 
       <div className="mt-6 flex items-center justify-between">
         <button
-          onClick={() => setIndex((i) => Math.max(0, i - 1))}
+          onClick={() => goTo(Math.max(0, index - 1))}
           disabled={index === 0}
           className="inline-flex items-center gap-1 rounded-lg border border-zinc-300 py-2 pl-2 pr-4 text-sm font-medium disabled:opacity-40 dark:border-zinc-700"
         >
@@ -217,7 +308,7 @@ export function PracticeRunner({
           <div className="flex items-center gap-3">
             {!hasAnswer && !isLast && (
               <button
-                onClick={() => setIndex((i) => i + 1)}
+                onClick={() => goTo(index + 1)}
                 className="rounded-lg border border-zinc-300 px-4 py-2 text-sm font-medium text-zinc-600 dark:border-zinc-700 dark:text-zinc-400"
               >
                 Überspringen
@@ -241,7 +332,7 @@ export function PracticeRunner({
           </button>
         ) : (
           <button
-            onClick={() => setIndex((i) => i + 1)}
+            onClick={() => goTo(index + 1)}
             className="inline-flex items-center gap-1 rounded-lg bg-brand-600 py-2 pl-6 pr-4 text-sm font-semibold text-white transition hover:bg-brand-700"
           >
             Weiter

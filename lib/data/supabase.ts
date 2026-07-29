@@ -8,6 +8,7 @@ import type {
   ContentUnit,
   DataRepository,
   ExamBundle,
+  ExamSessionRecord,
   ReadOptions,
   RetrievedChunk,
 } from "./port";
@@ -239,6 +240,63 @@ export class SupabaseRepository implements DataRepository {
       }))
     );
     if (insertError) fail("replaceContentUnits/insert", insertError);
+  }
+
+  // ---- Laufende Prüfungs-Sessions (exam_sessions) ----
+
+  async getExamSession(
+    userId: string,
+    examSlug: string
+  ): Promise<ExamSessionRecord | null> {
+    const { data, error } = await this.supabase
+      .from("exam_sessions")
+      .select("question_ids, answers, checked_ids, current_index, updated_at")
+      .eq("user_id", userId)
+      .eq("exam_slug", examSlug)
+      .maybeSingle();
+    if (error) fail("getExamSession", error);
+    if (!data) return null;
+    const row = data as {
+      question_ids: string[];
+      answers: ExamSessionRecord["answers"];
+      checked_ids: string[];
+      current_index: number;
+      updated_at: string;
+    };
+    return {
+      userId,
+      examSlug,
+      questionIds: row.question_ids,
+      answers: row.answers ?? {},
+      checkedIds: row.checked_ids ?? [],
+      currentIndex: row.current_index ?? 0,
+      updatedAt: row.updated_at,
+    };
+  }
+
+  async saveExamSession(record: ExamSessionRecord): Promise<void> {
+    const { error } = await this.supabase.from("exam_sessions").upsert(
+      {
+        user_id: record.userId,
+        exam_slug: record.examSlug,
+        question_ids: record.questionIds,
+        answers: record.answers,
+        checked_ids: record.checkedIds,
+        current_index: record.currentIndex,
+        updated_at: new Date().toISOString(),
+      },
+      { onConflict: "user_id,exam_slug" }
+    );
+    if (error) fail("saveExamSession", error);
+  }
+
+  async deleteExamSession(userId: string, examSlug: string): Promise<void> {
+    const { error } = await this.supabase
+      .from("exam_sessions")
+      .delete()
+      .eq("user_id", userId)
+      .eq("exam_slug", examSlug);
+    if (error) fail("deleteExamSession", error);
   }
 
   // ---- BYOK: ai_settings ----

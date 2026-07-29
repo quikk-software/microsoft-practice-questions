@@ -45,6 +45,15 @@ data/exams/<slug>/
 
 Fragetypen und Felder: siehe [lib/types.ts](lib/types.ts). Jede Frage braucht `id`, `type`, `skillArea` (muss zu einer Area in `exam.json` passen), `difficulty` (`easy`/`medium`/`hard`), `prompt`, `explanation` und die typspezifischen Lösungsfelder.
 
+## Mandanten (White-Label)
+
+Branding ist zentral in [lib/tenants/config.ts](lib/tenants/config.ts) definiert — Logo (inkl. Dark-Variante), Brand-Farbpalette, Schriftart, Produktname und SEO-Texte pro Mandant.
+
+- **Auswahl:** `NEXT_PUBLIC_TENANT_ID` (explizit) → sonst Host aus `NEXT_PUBLIC_SITE_URL` gegen `tenant.hosts` → sonst Default
+- **Wirkung:** Die Farbpalette wird als CSS-Variablen (`--color-brand-*`) gesetzt und von allen `brand-*`-Klassen genutzt; die Schrift hängt an `--font-sans`; Header-Logo und Metadaten kommen aus derselben Definition
+- **Neuen Mandanten anlegen:** Eintrag in `TENANTS` ergänzen, Logo(s) unter `public/<tenant-id>/` ablegen — kein weiterer Code nötig
+- **Tracking:** Bei der Registrierung wird die Mandanten-ID mitgeschrieben (`profiles.tenant_id`, Migration 0004)
+
 ## Auth & Admin (Ports & Adapters)
 
 Die App spricht nur eigene Interfaces ([lib/data/port.ts](lib/data/port.ts), [lib/auth/port.ts](lib/auth/port.ts)); Treiber per ENV:

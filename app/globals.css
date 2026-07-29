@@ -16,14 +16,21 @@
   color-scheme: dark;
 }
 
+/* --font-sans und die brand-Palette setzt der aktive Mandant zur Laufzeit
+   (app/layout.tsx -> lib/tenants/config.ts). Werte hier sind nur Fallbacks. */
+:root {
+  --font-sans: var(--font-tenant-sora);
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-sora);
+  --font-sans: var(--font-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-/* Brand-Palette nach strategic-it.de: Orange #F19720 auf Schwarz/Weiß/Grau */
+/* Fallback-Brand-Palette (Default-Mandant); der aktive Mandant überschreibt
+   diese Variablen im <head> — siehe lib/tenants/config.ts */
 @theme {
   --color-brand-50: #fef8ee;
   --color-brand-100: #fdeed7;
@@ -41,7 +48,7 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sora), "Sora", Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }
 
 /* Tailwind v4 setzt bei Buttons cursor: default — für klickbare Elemente zurück auf pointer */

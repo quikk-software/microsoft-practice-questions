@@ -10,6 +10,7 @@ import type {
   ContentUnit,
   DataRepository,
   ExamBundle,
+  ExamSessionRecord,
   RetrievedChunk,
 } from "./port";
 
@@ -20,6 +21,11 @@ import type {
 const DATA_DIR = path.join(process.cwd(), "data", "exams");
 const ATTEMPTS_DIR = path.join(process.cwd(), "data", "attempts");
 const AI_SETTINGS_DIR = path.join(process.cwd(), "data", "ai-settings");
+const EXAM_SESSIONS_DIR = path.join(process.cwd(), "data", "exam-sessions");
+
+function safeId(s: string): string {
+  return s.replace(/[^a-zA-Z0-9-]/g, "_");
+}
 
 function questionsDir(slug: string) {
   return path.join(DATA_DIR, slug, "questions");
@@ -276,6 +282,36 @@ export class FsRepository implements DataRepository {
 
   async hasContentChunks(examSlug: string): Promise<boolean> {
     return fs.existsSync(this.embeddingsPath(examSlug));
+  }
+
+  // ---- Laufende Prüfungs-Sessions (Datei pro User+Exam) ----
+
+  private examSessionPath(userId: string, examSlug: string) {
+    return path.join(
+      EXAM_SESSIONS_DIR,
+      `${safeId(userId)}--${safeId(examSlug)}.json`
+    );
+  }
+
+  async getExamSession(
+    userId: string,
+    examSlug: string
+  ): Promise<ExamSessionRecord | null> {
+    const p = this.examSessionPath(userId, examSlug);
+    if (!fs.existsSync(p)) return null;
+    return JSON.parse(fs.readFileSync(p, "utf-8")) as ExamSessionRecord;
+  }
+
+  async saveExamSession(record: ExamSessionRecord): Promise<void> {
+    fs.mkdirSync(EXAM_SESSIONS_DIR, { recursive: true });
+    fs.writeFileSync(
+      this.examSessionPath(record.userId, record.examSlug),
+      JSON.stringify(record, null, 2)
+    );
+  }
+
+  async deleteExamSession(userId: string, examSlug: string): Promise<void> {
+    fs.rmSync(this.examSessionPath(userId, examSlug), { force: true });
   }
 
   // ---- BYOK: AI-Einstellungen als Datei pro User (Dev-Modus) ----

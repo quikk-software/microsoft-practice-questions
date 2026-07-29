@@ -42,6 +42,19 @@ export interface RetrievedChunk {
   similarity: number;
 }
 
+import type { Answer } from "@/lib/types";
+
+/** Laufende Prüfung eines Users (Resume nach Reload); eine pro User+Exam */
+export interface ExamSessionRecord {
+  userId: string;
+  examSlug: string;
+  questionIds: string[];
+  answers: Record<string, Answer | null>;
+  checkedIds: string[];
+  currentIndex: number;
+  updatedAt: string;
+}
+
 /** BYOK: AI-Einstellungen eines Users; der Key liegt nur verschlüsselt vor */
 export interface AiSettingsRecord {
   provider: string;
@@ -92,6 +105,14 @@ export interface DataRepository {
     k: number
   ): Promise<RetrievedChunk[]>;
   hasContentChunks(examSlug: string): Promise<boolean>;
+
+  // Laufende Prüfungs-Session (Resume; nur mit Login)
+  getExamSession(
+    userId: string,
+    examSlug: string
+  ): Promise<ExamSessionRecord | null>;
+  saveExamSession(record: ExamSessionRecord): Promise<void>;
+  deleteExamSession(userId: string, examSlug: string): Promise<void>;
 
   // BYOK: AI-Einstellungen pro User
   getAiSettings(userId: string): Promise<AiSettingsRecord | null>;

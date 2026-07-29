@@ -18,39 +18,45 @@ import { ThemeToggle } from "./ThemeToggle";
 // Alle User-Aktionen (Meine Prüfungen, AI-Setup, Admin, Abmelden) liegen im
 // Dropdown, damit der Header auf allen Breakpoints einzeilig bleibt.
 
+interface TenantBranding {
+  name: string;
+  productName: string;
+  logo: { light: string; dark?: string };
+}
+
 interface Props {
   user: { email: string; role: "user" | "editor" | "admin" } | null;
   authEnabled: boolean;
+  /** Branding des aktiven Mandanten (aus lib/tenants/config.ts) */
+  tenant: TenantBranding;
 }
 
-export function SiteHeader({ user, authEnabled }: Props) {
+export function SiteHeader({ user, authEnabled, tenant }: Props) {
+  const logoClass = "h-7 w-auto shrink-0";
   return (
     <header className="border-b border-zinc-200 bg-white/80 backdrop-blur dark:border-zinc-800 dark:bg-zinc-950/80">
       <div className="mx-auto flex h-14 w-full max-w-3xl items-center justify-between gap-3 px-4 sm:px-6">
         <Link href="/" className="flex min-w-0 items-center gap-3">
-          {process.env.NEXT_PUBLIC_SITE_URL ===
-          "https://microsoft-practice-exams.quikk.de" ? (
+          {/* eslint-disable @next/next/no-img-element */}
+          {tenant.logo.dark ? (
             <>
               <img
-                src="/quikk/logo_dark.svg"
-                alt="QUIKK Software GmbH"
-                className="h-7 w-auto shrink-0 block dark:hidden"
+                src={tenant.logo.light}
+                alt={tenant.name}
+                className={`${logoClass} block dark:hidden`}
               />
               <img
-                src="/quikk/logo_light.svg"
-                alt="QUIKK Software GmbH"
-                className="h-7 w-auto shrink-0 hidden dark:block"
+                src={tenant.logo.dark}
+                alt={tenant.name}
+                className={`${logoClass} hidden dark:block`}
               />
             </>
           ) : (
-            <img
-              src="/strategic-it/logo.svg"
-              alt="Strategic IT GmbH"
-              className="h-7 w-auto shrink-0"
-            />
+            <img src={tenant.logo.light} alt={tenant.name} className={logoClass} />
           )}
+          {/* eslint-enable @next/next/no-img-element */}
           <span className="hidden truncate border-l border-zinc-300 pl-3 text-sm font-semibold tracking-tight sm:inline dark:border-zinc-700">
-            Practice Exams
+            {tenant.productName}
           </span>
         </Link>
 

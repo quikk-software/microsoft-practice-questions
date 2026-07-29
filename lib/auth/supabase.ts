@@ -3,6 +3,7 @@ import type { User } from "@supabase/supabase-js";
 import type { AppUser, AuthService, Role } from "./port";
 import { AuthError } from "./port";
 import { createServiceClient, createSessionClient } from "@/lib/supabase/server";
+import { getTenant } from "@/lib/tenants/config";
 
 // Supabase-Treiber für den Auth-Port (AUTH_DRIVER=supabase).
 // Session via Cookies (@supabase/ssr); Rollen kommen aus public.profiles.
@@ -58,7 +59,11 @@ export class SupabaseAuthService implements AuthService {
     const { data, error } = await supabase.auth.signUp({
       email,
       password,
-      options: { emailRedirectTo: `${siteUrl()}/auth/callback` },
+      options: {
+        emailRedirectTo: `${siteUrl()}/auth/callback`,
+        // Mandant mitschicken — der Signup-Trigger schreibt ihn nach profiles.tenant_id
+        data: { tenant_id: getTenant().id },
+      },
     });
     if (error) throw new AuthError(error.message, error.code ?? "auth-error");
     // Ohne Session ist eine E-Mail-Bestätigung ausstehend.

@@ -34,9 +34,12 @@ export async function POST(
 
   const result = gradeExam(exam.config, questions, body.answers ?? {});
 
-  // Verlauf speichern, falls eingeloggt (Üben bleibt auch ohne Login möglich)
+  // Verlauf speichern + laufende Session abschließen, falls eingeloggt
   const user = await getAuthService().getCurrentUser();
   if (user) {
+    await getRepository()
+      .deleteExamSession(user.id, slug)
+      .catch(() => {});
     await getRepository()
       .saveAttempt({
         userId: user.id,

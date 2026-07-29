@@ -1,14 +1,20 @@
 import type { Metadata } from "next";
-import { Geist_Mono, Sora } from "next/font/google";
+import { Geist_Mono, Inter, Sora } from "next/font/google";
 import { getAuthService, isAuthEnabled } from "@/lib/auth";
 import { SiteHeader } from "@/components/SiteHeader";
+import { brandCssVariables, getTenant } from "@/lib/tenants/config";
 import "./globals.css";
 
-// Schrift nach strategic-it.de: Sora (400/600/700/800)
+// Schriften aller Mandanten laden; aktiv ist die des Mandanten (tenant.theme.font).
 const sora = Sora({
-  variable: "--font-sora",
+  variable: "--font-tenant-sora",
   subsets: ["latin"],
   weight: ["400", "600", "700", "800"],
+});
+
+const inter = Inter({
+  variable: "--font-tenant-inter",
+  subsets: ["latin"],
 });
 
 const geistMono = Geist_Mono({
@@ -16,20 +22,20 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const tenant = getTenant();
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Microsoft Practice Exams — kostenlose Test-Examen",
-    template: "%s · Microsoft Practice Exams",
+    default: tenant.siteTitle,
+    template: `%s · ${tenant.productName}`,
   },
-  description:
-    "Kostenlose Test-Examen für Microsoft-Zertifizierungen (z. B. AB-900) mit realistischen Fragetypen, Sofort-Feedback, Quellen-Belegen aus Microsoft Learn und AI-Erklärungen.",
-  applicationName: "Microsoft Practice Exams",
+  description: tenant.siteDescription,
+  applicationName: tenant.productName,
   openGraph: {
     type: "website",
-    siteName: "Microsoft Practice Exams",
+    siteName: tenant.productName,
     locale: "de_DE",
     url: siteUrl,
   },
@@ -58,12 +64,24 @@ export default async function RootLayout({
   // Header-Einbindung: User serverseitig holen und als Prop an die
   // Client-Kopfzeile durchreichen (Logout-Klick passiert dort).
   const user = await getAuthService().getCurrentUser();
+
+  // Mandanten-Theme: Schrift-Variable auf die gewählte Familie mappen,
+  // Brand-Palette als CSS-Variablen überschreiben (Tailwind v4 liest --color-brand-*).
+  const fontVar =
+    tenant.theme.font === "inter"
+      ? "var(--font-tenant-inter)"
+      : "var(--font-tenant-sora)";
+  const tenantStyle = `:root{--font-sans:${fontVar};${brandCssVariables(tenant)}}`;
+
   return (
     <html
       lang="de"
-      className={`${sora.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${sora.variable} ${inter.variable} ${geistMono.variable} h-full antialiased`}
       suppressHydrationWarning
     >
+      <head>
+        <style dangerouslySetInnerHTML={{ __html: tenantStyle }} />
+      </head>
       <body className="min-h-full flex flex-col bg-zinc-50 text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100">
         {/* Theme vor dem ersten Paint setzen (Default: light) — verhindert Flackern */}
         <script
@@ -75,6 +93,11 @@ export default async function RootLayout({
         <SiteHeader
           user={user ? { email: user.email, role: user.role } : null}
           authEnabled={isAuthEnabled()}
+          tenant={{
+            name: tenant.name,
+            productName: tenant.productName,
+            logo: tenant.logo,
+          }}
         />
         {children}
       </body>
