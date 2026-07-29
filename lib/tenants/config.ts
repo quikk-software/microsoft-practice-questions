@@ -83,19 +83,20 @@ const QUIKK: Tenant = {
   siteDescription:
     "Kostenlose Test-Examen für Microsoft-Zertifizierungen mit realistischen Fragetypen, Sofort-Feedback, Quellen-Belegen aus Microsoft Learn und AI-Erklärungen.",
   theme: {
-    font: "sora",
+    // quikk.de: Inter + Korallrot #ff584f (--primary)
+    font: "inter",
     brand: {
-      50: "#eef6ff",
-      100: "#d9ebff",
-      200: "#bcdcff",
-      300: "#8ec7ff",
-      400: "#59a7ff",
-      500: "#3385fc",
-      600: "#1d66f1",
-      700: "#1651de",
-      800: "#1844b4",
-      900: "#1a3d8e",
-      950: "#152657",
+      50: "#fef1f0",
+      100: "#fde3e2",
+      200: "#fcc3c0",
+      300: "#ff9994",
+      400: "#ff6e66",
+      500: "#ff584f",
+      600: "#f5382d",
+      700: "#d81f14",
+      800: "#b31a11",
+      900: "#8f1a13",
+      950: "#4e0906",
     },
   },
 };
