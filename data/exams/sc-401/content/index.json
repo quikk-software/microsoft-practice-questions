@@ -1,0 +1,2153 @@
+[
+  {
+    "uid": "learn.wwl.apply-manage-sensitivity-labels.introduction",
+    "title": "Introduction",
+    "url": "https://learn.microsoft.com/en-us/training/modules/apply-manage-sensitivity-labels/introduction",
+    "module": "apply-manage-sensitivity-labels",
+    "moduleTitle": "Apply sensitivity labels for data protection",
+    "file": "content/apply-manage-sensitivity-labels/01-introduction.md",
+    "chars": 1819
+  },
+  {
+    "uid": "learn.wwl.apply-manage-sensitivity-labels.sensitivity-label-foundations",
+    "title": "Foundations of sensitivity label integration in Microsoft 365",
+    "url": "https://learn.microsoft.com/en-us/training/modules/apply-manage-sensitivity-labels/sensitivity-label-foundations",
+    "module": "apply-manage-sensitivity-labels",
+    "moduleTitle": "Apply sensitivity labels for data protection",
+    "file": "content/apply-manage-sensitivity-labels/02-sensitivity-label-foundations.md",
+    "chars": 7590
+  },
+  {
+    "uid": "learn.wwl.apply-manage-sensitivity-labels.manage-sensitivity-labels-office",
+    "title": "Manage sensitivity labels in Office apps",
+    "url": "https://learn.microsoft.com/en-us/training/modules/apply-manage-sensitivity-labels/manage-sensitivity-labels-office",
+    "module": "apply-manage-sensitivity-labels",
+    "moduleTitle": "Apply sensitivity labels for data protection",
+    "file": "content/apply-manage-sensitivity-labels/03-manage-sensitivity-labels-office.md",
+    "chars": 6651
+  },
+  {
+    "uid": "learn.wwl.apply-manage-sensitivity-labels.apply-sensitivity-labels-with-copilot",
+    "title": "Apply sensitivity labels with Microsoft 365 Copilot for secure collaboration",
+    "url": "https://learn.microsoft.com/en-us/training/modules/apply-manage-sensitivity-labels/apply-sensitivity-labels-with-copilot",
+    "module": "apply-manage-sensitivity-labels",
+    "moduleTitle": "Apply sensitivity labels for data protection",
+    "file": "content/apply-manage-sensitivity-labels/04-apply-sensitivity-labels-with-copilot.md",
+    "chars": 6142
+  },
+  {
+    "uid": "learn.wwl.apply-manage-sensitivity-labels.protect-meetings-with-sensitivity-labels",
+    "title": "Protect meetings with sensitivity labels",
+    "url": "https://learn.microsoft.com/en-us/training/modules/apply-manage-sensitivity-labels/protect-meetings-with-sensitivity-labels",
+    "module": "apply-manage-sensitivity-labels",
+    "moduleTitle": "Apply sensitivity labels for data protection",
+    "file": "content/apply-manage-sensitivity-labels/05-protect-meetings-with-sensitivity-labels.md",
+    "chars": 6541
+  },
+  {
+    "uid": "learn.wwl.apply-manage-sensitivity-labels.apply-sensitivity-labels-to-microsoft-365-services",
+    "title": "Apply sensitivity labels to Microsoft Teams, Microsoft 365 groups, and SharePoint sites",
+    "url": "https://learn.microsoft.com/en-us/training/modules/apply-manage-sensitivity-labels/apply-sensitivity-labels-to-microsoft-365-services",
+    "module": "apply-manage-sensitivity-labels",
+    "moduleTitle": "Apply sensitivity labels for data protection",
+    "file": "content/apply-manage-sensitivity-labels/06-apply-sensitivity-labels-to-microsoft-365-services.md",
+    "chars": 9406
+  },
+  {
+    "uid": "learn.wwl.apply-manage-sensitivity-labels.apply-sensitivity-labels-power-bi",
+    "title": "Apply sensitivity labels in Power BI",
+    "url": "https://learn.microsoft.com/en-us/training/modules/apply-manage-sensitivity-labels/apply-sensitivity-labels-power-bi",
+    "module": "apply-manage-sensitivity-labels",
+    "moduleTitle": "Apply sensitivity labels for data protection",
+    "file": "content/apply-manage-sensitivity-labels/07-apply-sensitivity-labels-power-bi.md",
+    "chars": 7536
+  },
+  {
+    "uid": "learn.wwl.apply-manage-sensitivity-labels.knowledge-check",
+    "title": "Module assessment",
+    "url": "https://learn.microsoft.com/en-us/training/modules/apply-manage-sensitivity-labels/knowledge-check",
+    "module": "apply-manage-sensitivity-labels",
+    "moduleTitle": "Apply sensitivity labels for data protection",
+    "file": "content/apply-manage-sensitivity-labels/08-knowledge-check.md",
+    "chars": 3771
+  },
+  {
+    "uid": "learn.wwl.apply-manage-sensitivity-labels.summary-resources",
+    "title": "Summary and resources",
+    "url": "https://learn.microsoft.com/en-us/training/modules/apply-manage-sensitivity-labels/summary-resources",
+    "module": "apply-manage-sensitivity-labels",
+    "moduleTitle": "Apply sensitivity labels for data protection",
+    "file": "content/apply-manage-sensitivity-labels/09-summary-resources.md",
+    "chars": 3266
+  },
+  {
+    "uid": "learn.wwl.create-manage-sensitive-information-types.introduction",
+    "title": "Introduction",
+    "url": "https://learn.microsoft.com/en-us/training/modules/create-manage-sensitive-information-types/1-introduction",
+    "module": "create-manage-sensitive-information-types",
+    "moduleTitle": "Create and manage sensitive information types",
+    "file": "content/create-manage-sensitive-information-types/01-1-introduction.md",
+    "chars": 1613
+  },
+  {
+    "uid": "learn.wwl.create-manage-sensitive-information-types.sensitive-info-type-overview",
+    "title": "Sensitive information type overview",
+    "url": "https://learn.microsoft.com/en-us/training/modules/create-manage-sensitive-information-types/sensitive-info-type-overview",
+    "module": "create-manage-sensitive-information-types",
+    "moduleTitle": "Create and manage sensitive information types",
+    "file": "content/create-manage-sensitive-information-types/02-sensitive-info-type-overview.md",
+    "chars": 2874
+  },
+  {
+    "uid": "learn.wwl.create-manage-sensitive-information-types.compare-built-versus-custom",
+    "title": "Compare built-in versus custom sensitive information types",
+    "url": "https://learn.microsoft.com/en-us/training/modules/create-manage-sensitive-information-types/2-compare-built-versus-custom",
+    "module": "create-manage-sensitive-information-types",
+    "moduleTitle": "Create and manage sensitive information types",
+    "file": "content/create-manage-sensitive-information-types/03-2-compare-built-versus-custom.md",
+    "chars": 5980
+  },
+  {
+    "uid": "learn.wwl.create-manage-sensitive-information-types.create-manage-custom",
+    "title": "Create and manage custom sensitive information types",
+    "url": "https://learn.microsoft.com/en-us/training/modules/create-manage-sensitive-information-types/3-create-manage-custom",
+    "module": "create-manage-sensitive-information-types",
+    "moduleTitle": "Create and manage sensitive information types",
+    "file": "content/create-manage-sensitive-information-types/04-3-create-manage-custom.md",
+    "chars": 10269
+  },
+  {
+    "uid": "learn.wwl.create-manage-sensitive-information-types.describe-custom-with-exact-data-match",
+    "title": "Create and manage exact data match sensitive info types",
+    "url": "https://learn.microsoft.com/en-us/training/modules/create-manage-sensitive-information-types/4-describe-custom-with-exact-data-match",
+    "module": "create-manage-sensitive-information-types",
+    "moduleTitle": "Create and manage sensitive information types",
+    "file": "content/create-manage-sensitive-information-types/05-4-describe-custom-with-exact-data-match.md",
+    "chars": 14346
+  },
+  {
+    "uid": "learn.wwl.create-manage-sensitive-information-types.implement-document-fingerprinting",
+    "title": "Implement document fingerprinting",
+    "url": "https://learn.microsoft.com/en-us/training/modules/create-manage-sensitive-information-types/5-implement-document-fingerprint",
+    "module": "create-manage-sensitive-information-types",
+    "moduleTitle": "Create and manage sensitive information types",
+    "file": "content/create-manage-sensitive-information-types/06-5-implement-document-fingerprint.md",
+    "chars": 7986
+  },
+  {
+    "uid": "learn.wwl.create-manage-sensitive-information-types.describe-named-entities",
+    "title": "Describe named entities",
+    "url": "https://learn.microsoft.com/en-us/training/modules/create-manage-sensitive-information-types/describe-named-entities",
+    "module": "create-manage-sensitive-information-types",
+    "moduleTitle": "Create and manage sensitive information types",
+    "file": "content/create-manage-sensitive-information-types/07-describe-named-entities.md",
+    "chars": 3835
+  },
+  {
+    "uid": "learn.wwl.create-manage-sensitive-information-types.create-keyword-dictionary",
+    "title": "Create a keyword dictionary",
+    "url": "https://learn.microsoft.com/en-us/training/modules/create-manage-sensitive-information-types/6-create-keyword-dictionary",
+    "module": "create-manage-sensitive-information-types",
+    "moduleTitle": "Create and manage sensitive information types",
+    "file": "content/create-manage-sensitive-information-types/08-6-create-keyword-dictionary.md",
+    "chars": 6354
+  },
+  {
+    "uid": "learn.wwl.create-manage-sensitive-information-types.knowledge-check",
+    "title": "Module assessment",
+    "url": "https://learn.microsoft.com/en-us/training/modules/create-manage-sensitive-information-types/7-knowledge-check",
+    "module": "create-manage-sensitive-information-types",
+    "moduleTitle": "Create and manage sensitive information types",
+    "file": "content/create-manage-sensitive-information-types/09-7-knowledge-check.md",
+    "chars": 1100
+  },
+  {
+    "uid": "learn.wwl.create-manage-sensitive-information-types.summary-resources",
+    "title": "Summary and resources",
+    "url": "https://learn.microsoft.com/en-us/training/modules/create-manage-sensitive-information-types/8-summary-resources",
+    "module": "create-manage-sensitive-information-types",
+    "moduleTitle": "Create and manage sensitive information types",
+    "file": "content/create-manage-sensitive-information-types/10-8-summary-resources.md",
+    "chars": 2035
+  },
+  {
+    "uid": "learn.wwl.deploy-message-encryption-microsoft-365.introduction",
+    "title": "Introduction",
+    "url": "https://learn.microsoft.com/en-us/training/modules/deploy-message-encryption-microsoft-365/introduction",
+    "module": "deploy-message-encryption-microsoft-365",
+    "moduleTitle": "Protect email with Microsoft Purview Message Encryption",
+    "file": "content/deploy-message-encryption-microsoft-365/01-introduction.md",
+    "chars": 1428
+  },
+  {
+    "uid": "learn.wwl.deploy-message-encryption-microsoft-365.understand-message-encryption",
+    "title": "Understand message encryption",
+    "url": "https://learn.microsoft.com/en-us/training/modules/deploy-message-encryption-microsoft-365/understand-message-encryption",
+    "module": "deploy-message-encryption-microsoft-365",
+    "moduleTitle": "Protect email with Microsoft Purview Message Encryption",
+    "file": "content/deploy-message-encryption-microsoft-365/02-understand-message-encryption.md",
+    "chars": 3085
+  },
+  {
+    "uid": "learn.wwl.deploy-message-encryption-microsoft-365.plan-message-encryption",
+    "title": "Plan for Microsoft Purview Message Encryption",
+    "url": "https://learn.microsoft.com/en-us/training/modules/deploy-message-encryption-microsoft-365/plan-message-encryption",
+    "module": "deploy-message-encryption-microsoft-365",
+    "moduleTitle": "Protect email with Microsoft Purview Message Encryption",
+    "file": "content/deploy-message-encryption-microsoft-365/03-plan-message-encryption.md",
+    "chars": 4628
+  },
+  {
+    "uid": "learn.wwl.deploy-message-encryption-microsoft-365.implement-message-encryption",
+    "title": "Configure Microsoft Purview Message Encryption",
+    "url": "https://learn.microsoft.com/en-us/training/modules/deploy-message-encryption-microsoft-365/implement-message-encryption",
+    "module": "deploy-message-encryption-microsoft-365",
+    "moduleTitle": "Protect email with Microsoft Purview Message Encryption",
+    "file": "content/deploy-message-encryption-microsoft-365/04-implement-message-encryption.md",
+    "chars": 3121
+  },
+  {
+    "uid": "learn.wwl.deploy-message-encryption-microsoft-365.branding-template",
+    "title": "Customize encrypted email branding with Microsoft Purview",
+    "url": "https://learn.microsoft.com/en-us/training/modules/deploy-message-encryption-microsoft-365/branding-template",
+    "module": "deploy-message-encryption-microsoft-365",
+    "moduleTitle": "Protect email with Microsoft Purview Message Encryption",
+    "file": "content/deploy-message-encryption-microsoft-365/05-branding-template.md",
+    "chars": 4177
+  },
+  {
+    "uid": "learn.wwl.deploy-message-encryption-microsoft-365.implement-advanced-message-encryption",
+    "title": "Control encrypted email access with Advanced Message Encryption",
+    "url": "https://learn.microsoft.com/en-us/training/modules/deploy-message-encryption-microsoft-365/implement-advanced-message-encryption",
+    "module": "deploy-message-encryption-microsoft-365",
+    "moduleTitle": "Protect email with Microsoft Purview Message Encryption",
+    "file": "content/deploy-message-encryption-microsoft-365/06-implement-advanced-message-encryption.md",
+    "chars": 4110
+  },
+  {
+    "uid": "learn.wwl.deploy-message-encryption-microsoft-365.mail-flow-rules-encryption",
+    "title": "Use Microsoft Purview Message Encryption templates in mail flow rules",
+    "url": "https://learn.microsoft.com/en-us/training/modules/deploy-message-encryption-microsoft-365/mail-flow-rules-encryption",
+    "module": "deploy-message-encryption-microsoft-365",
+    "moduleTitle": "Protect email with Microsoft Purview Message Encryption",
+    "file": "content/deploy-message-encryption-microsoft-365/07-mail-flow-rules-encryption.md",
+    "chars": 4502
+  },
+  {
+    "uid": "learn.wwl.deploy-message-encryption-microsoft-365.knowledge-check",
+    "title": "Module assessment",
+    "url": "https://learn.microsoft.com/en-us/training/modules/deploy-message-encryption-microsoft-365/knowledge-check",
+    "module": "deploy-message-encryption-microsoft-365",
+    "moduleTitle": "Protect email with Microsoft Purview Message Encryption",
+    "file": "content/deploy-message-encryption-microsoft-365/08-knowledge-check.md",
+    "chars": 2303
+  },
+  {
+    "uid": "learn.wwl.deploy-message-encryption-microsoft-365.summary",
+    "title": "Summary and resources",
+    "url": "https://learn.microsoft.com/en-us/training/modules/deploy-message-encryption-microsoft-365/summary",
+    "module": "deploy-message-encryption-microsoft-365",
+    "moduleTitle": "Protect email with Microsoft Purview Message Encryption",
+    "file": "content/deploy-message-encryption-microsoft-365/09-summary.md",
+    "chars": 1682
+  },
+  {
+    "uid": "learn.wwl.purview-protect-sensitive-data.introduction",
+    "title": "Introduction",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-protect-sensitive-data/introduction",
+    "module": "purview-protect-sensitive-data",
+    "moduleTitle": "Protect sensitive data in a digital world",
+    "file": "content/purview-protect-sensitive-data/01-introduction.md",
+    "chars": 1205
+  },
+  {
+    "uid": "learn.wwl.purview-protect-sensitive-data.data-protection-need",
+    "title": "The growing need for data protection",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-protect-sensitive-data/data-protection-need",
+    "module": "purview-protect-sensitive-data",
+    "moduleTitle": "Protect sensitive data in a digital world",
+    "file": "content/purview-protect-sensitive-data/02-data-protection-need.md",
+    "chars": 4705
+  },
+  {
+    "uid": "learn.wwl.purview-protect-sensitive-data.manage-sensitive-data-challenge",
+    "title": "The challenges of managing sensitive data",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-protect-sensitive-data/manage-sensitive-data-challenge",
+    "module": "purview-protect-sensitive-data",
+    "moduleTitle": "Protect sensitive data in a digital world",
+    "file": "content/purview-protect-sensitive-data/03-manage-sensitive-data-challenge.md",
+    "chars": 3437
+  },
+  {
+    "uid": "learn.wwl.purview-protect-sensitive-data.protect-data-zero-trust-world",
+    "title": "Protect data in a Zero Trust world",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-protect-sensitive-data/protect-data-zero-trust-world",
+    "module": "purview-protect-sensitive-data",
+    "moduleTitle": "Protect sensitive data in a digital world",
+    "file": "content/purview-protect-sensitive-data/04-protect-data-zero-trust-world.md",
+    "chars": 2495
+  },
+  {
+    "uid": "learn.wwl.purview-protect-sensitive-data.understand-classification-protection",
+    "title": "Understand data classification and protection",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-protect-sensitive-data/understand-classification-protection",
+    "module": "purview-protect-sensitive-data",
+    "moduleTitle": "Protect sensitive data in a digital world",
+    "file": "content/purview-protect-sensitive-data/05-understand-classification-protection.md",
+    "chars": 3388
+  },
+  {
+    "uid": "learn.wwl.purview-protect-sensitive-data.prevent-data-leaks-insider-threats",
+    "title": "Prevent data leaks and insider threats",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-protect-sensitive-data/prevent-data-leaks-insider-threats",
+    "module": "purview-protect-sensitive-data",
+    "moduleTitle": "Protect sensitive data in a digital world",
+    "file": "content/purview-protect-sensitive-data/06-prevent-data-leaks-insider-threats.md",
+    "chars": 2055
+  },
+  {
+    "uid": "learn.wwl.purview-protect-sensitive-data.manage-respond-alerts-threats",
+    "title": "Manage security alerts and respond to threats",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-protect-sensitive-data/manage-respond-alerts-threats",
+    "module": "purview-protect-sensitive-data",
+    "moduleTitle": "Protect sensitive data in a digital world",
+    "file": "content/purview-protect-sensitive-data/07-manage-respond-alerts-threats.md",
+    "chars": 1464
+  },
+  {
+    "uid": "learn.wwl.purview-protect-sensitive-data.protect-ai-data",
+    "title": "Protect AI-generated and AI-processed data",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-protect-sensitive-data/protect-ai-data",
+    "module": "purview-protect-sensitive-data",
+    "moduleTitle": "Protect sensitive data in a digital world",
+    "file": "content/purview-protect-sensitive-data/08-protect-ai-data.md",
+    "chars": 1662
+  },
+  {
+    "uid": "learn.wwl.purview-protect-sensitive-data.knowledge-check",
+    "title": "Module assessment",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-protect-sensitive-data/knowledge-check",
+    "module": "purview-protect-sensitive-data",
+    "moduleTitle": "Protect sensitive data in a digital world",
+    "file": "content/purview-protect-sensitive-data/09-knowledge-check.md",
+    "chars": 1608
+  },
+  {
+    "uid": "learn.wwl.purview-protect-sensitive-data.summary",
+    "title": "Summary",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-protect-sensitive-data/summary",
+    "module": "purview-protect-sensitive-data",
+    "moduleTitle": "Protect sensitive data in a digital world",
+    "file": "content/purview-protect-sensitive-data/10-summary.md",
+    "chars": 1288
+  },
+  {
+    "uid": "learn.wwl.purview-protect-on-premises-data.introduction",
+    "title": "Introduction",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-protect-on-premises-data/introduction",
+    "module": "purview-protect-on-premises-data",
+    "moduleTitle": "Classify and protect on-premises data with Microsoft Purview",
+    "file": "content/purview-protect-on-premises-data/01-introduction.md",
+    "chars": 1176
+  },
+  {
+    "uid": "learn.wwl.purview-protect-on-premises-data.protect-on-premises-files",
+    "title": "Protect on-premises files with Microsoft Purview",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-protect-on-premises-data/protect-on-premises-files",
+    "module": "purview-protect-on-premises-data",
+    "moduleTitle": "Classify and protect on-premises data with Microsoft Purview",
+    "file": "content/purview-protect-on-premises-data/02-protect-on-premises-files.md",
+    "chars": 4819
+  },
+  {
+    "uid": "learn.wwl.purview-protect-on-premises-data.information-protection-scanner-prerequisites",
+    "title": "Prepare your environment for the Microsoft Purview Information Protection scanner",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-protect-on-premises-data/information-protection-scanner-prerequisites",
+    "module": "purview-protect-on-premises-data",
+    "moduleTitle": "Classify and protect on-premises data with Microsoft Purview",
+    "file": "content/purview-protect-on-premises-data/03-information-protection-scanner-prerequisites.md",
+    "chars": 6557
+  },
+  {
+    "uid": "learn.wwl.purview-protect-on-premises-data.configure-install-scanner",
+    "title": "Configure and install the Microsoft Purview Information Protection scanner",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-protect-on-premises-data/configure-install-scanner",
+    "module": "purview-protect-on-premises-data",
+    "moduleTitle": "Classify and protect on-premises data with Microsoft Purview",
+    "file": "content/purview-protect-on-premises-data/04-configure-install-scanner.md",
+    "chars": 8682
+  },
+  {
+    "uid": "learn.wwl.purview-protect-on-premises-data.run-scanner",
+    "title": "Run and manage the scanner",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-protect-on-premises-data/run-scanner",
+    "module": "purview-protect-on-premises-data",
+    "moduleTitle": "Classify and protect on-premises data with Microsoft Purview",
+    "file": "content/purview-protect-on-premises-data/05-run-scanner.md",
+    "chars": 2640
+  },
+  {
+    "uid": "learn.wwl.purview-protect-on-premises-data.data-loss-prevention-on-premises",
+    "title": "Enforce data loss prevention policies on on-premises files",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-protect-on-premises-data/data-loss-prevention-on-premises",
+    "module": "purview-protect-on-premises-data",
+    "moduleTitle": "Classify and protect on-premises data with Microsoft Purview",
+    "file": "content/purview-protect-on-premises-data/06-data-loss-prevention-on-premises.md",
+    "chars": 3717
+  },
+  {
+    "uid": "learn.wwl.purview-protect-on-premises-data.knowledge-check",
+    "title": "Module assessment",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-protect-on-premises-data/knowledge-check",
+    "module": "purview-protect-on-premises-data",
+    "moduleTitle": "Classify and protect on-premises data with Microsoft Purview",
+    "file": "content/purview-protect-on-premises-data/07-knowledge-check.md",
+    "chars": 1824
+  },
+  {
+    "uid": "learn.wwl.purview-protect-on-premises-data.summary",
+    "title": "Summary",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-protect-on-premises-data/summary",
+    "module": "purview-protect-on-premises-data",
+    "moduleTitle": "Classify and protect on-premises data with Microsoft Purview",
+    "file": "content/purview-protect-on-premises-data/08-summary.md",
+    "chars": 1708
+  },
+  {
+    "uid": "learn.wwl.purview-review-analyze-data-classification.introduction",
+    "title": "Introduction",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-review-analyze-data-classification/introduction",
+    "module": "purview-review-analyze-data-classification",
+    "moduleTitle": "Review and analyze data classification and protection",
+    "file": "content/purview-review-analyze-data-classification/01-introduction.md",
+    "chars": 2087
+  },
+  {
+    "uid": "learn.wwl.purview-review-analyze-data-classification.information-protection-reports",
+    "title": "Review classification and protection insights",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-review-analyze-data-classification/information-protection-reports",
+    "module": "purview-review-analyze-data-classification",
+    "moduleTitle": "Review and analyze data classification and protection",
+    "file": "content/purview-review-analyze-data-classification/02-information-protection-reports.md",
+    "chars": 5482
+  },
+  {
+    "uid": "learn.wwl.purview-review-analyze-data-classification.analyze-classified-data",
+    "title": "Analyze classified data with data and content explorer",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-review-analyze-data-classification/analyze-classified-data",
+    "module": "purview-review-analyze-data-classification",
+    "moduleTitle": "Review and analyze data classification and protection",
+    "file": "content/purview-review-analyze-data-classification/03-analyze-classified-data.md",
+    "chars": 6599
+  },
+  {
+    "uid": "learn.wwl.purview-review-analyze-data-classification.monitor-review-actions",
+    "title": "Monitor and review actions on labeled data",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-review-analyze-data-classification/monitor-review-actions",
+    "module": "purview-review-analyze-data-classification",
+    "moduleTitle": "Review and analyze data classification and protection",
+    "file": "content/purview-review-analyze-data-classification/04-monitor-review-actions.md",
+    "chars": 7742
+  },
+  {
+    "uid": "learn.wwl.purview-review-analyze-data-classification.knowledge-check",
+    "title": "Module assessment",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-review-analyze-data-classification/knowledge-check",
+    "module": "purview-review-analyze-data-classification",
+    "moduleTitle": "Review and analyze data classification and protection",
+    "file": "content/purview-review-analyze-data-classification/05-knowledge-check.md",
+    "chars": 1854
+  },
+  {
+    "uid": "learn.wwl.purview-review-analyze-data-classification.summary",
+    "title": "Summary",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-review-analyze-data-classification/summary",
+    "module": "purview-review-analyze-data-classification",
+    "moduleTitle": "Review and analyze data classification and protection",
+    "file": "content/purview-review-analyze-data-classification/06-summary.md",
+    "chars": 1810
+  },
+  {
+    "uid": "learn-m365.audit-encryption.introduction",
+    "title": "Introduction to Microsoft 365 encryption",
+    "url": "https://learn.microsoft.com/en-us/training/modules/audit-encryption/introduction",
+    "module": "audit-encryption",
+    "moduleTitle": "Understand Microsoft 365 encryption",
+    "file": "content/audit-encryption/01-introduction.md",
+    "chars": 2822
+  },
+  {
+    "uid": "learn-m365.audit-encryption.data-at-rest-encryption",
+    "title": "Learn how Microsoft 365 data is encrypted at rest",
+    "url": "https://learn.microsoft.com/en-us/training/modules/audit-encryption/data-at-rest-encryption",
+    "module": "audit-encryption",
+    "moduleTitle": "Understand Microsoft 365 encryption",
+    "file": "content/audit-encryption/02-data-at-rest-encryption.md",
+    "chars": 5428
+  },
+  {
+    "uid": "learn-m365.audit-encryption.microsoft-managed-keys",
+    "title": "Understand service encryption in Microsoft Purview",
+    "url": "https://learn.microsoft.com/en-us/training/modules/audit-encryption/microsoft-managed-keys",
+    "module": "audit-encryption",
+    "moduleTitle": "Understand Microsoft 365 encryption",
+    "file": "content/audit-encryption/03-microsoft-managed-keys.md",
+    "chars": 1850
+  },
+  {
+    "uid": "learn-m365.audit-encryption.customer-key",
+    "title": "Explore customer key management using Customer Key",
+    "url": "https://learn.microsoft.com/en-us/training/modules/audit-encryption/customer-key",
+    "module": "audit-encryption",
+    "moduleTitle": "Understand Microsoft 365 encryption",
+    "file": "content/audit-encryption/04-customer-key.md",
+    "chars": 5229
+  },
+  {
+    "uid": "learn-m365.audit-encryption.encryption-in-transit",
+    "title": "Learn how data is encrypted in-transit",
+    "url": "https://learn.microsoft.com/en-us/training/modules/audit-encryption/encryption-in-transit",
+    "module": "audit-encryption",
+    "moduleTitle": "Understand Microsoft 365 encryption",
+    "file": "content/audit-encryption/05-encryption-in-transit.md",
+    "chars": 2833
+  },
+  {
+    "uid": "learn-m365.audit-encryption.summary-knowledge-check",
+    "title": "Summary and knowledge check",
+    "url": "https://learn.microsoft.com/en-us/training/modules/audit-encryption/summary-knowledge-check",
+    "module": "audit-encryption",
+    "moduleTitle": "Understand Microsoft 365 encryption",
+    "file": "content/audit-encryption/06-summary-knowledge-check.md",
+    "chars": 1647
+  },
+  {
+    "uid": "learn-m365.m365-compliance-information-protect-information.introduction",
+    "title": "Introduction",
+    "url": "https://learn.microsoft.com/en-us/training/modules/m365-compliance-information-protect-information/introduction",
+    "module": "m365-compliance-information-protect-information",
+    "moduleTitle": "Create and configure sensitivity labels with Microsoft Purview",
+    "file": "content/m365-compliance-information-protect-information/01-introduction.md",
+    "chars": 1259
+  },
+  {
+    "uid": "learn-m365.m365-compliance-information-protect-information.information-protection-overview",
+    "title": "Sensitivity label overview",
+    "url": "https://learn.microsoft.com/en-us/training/modules/m365-compliance-information-protect-information/information-protection-overview",
+    "module": "m365-compliance-information-protect-information",
+    "moduleTitle": "Create and configure sensitivity labels with Microsoft Purview",
+    "file": "content/m365-compliance-information-protect-information/02-information-protection-overview.md",
+    "chars": 8094
+  },
+  {
+    "uid": "learn-m365.m365-compliance-information-protect-information.configure-sensitivity-labels",
+    "title": "Create and configure sensitivity labels and label policies",
+    "url": "https://learn.microsoft.com/en-us/training/modules/m365-compliance-information-protect-information/configure-sensitivity-labels",
+    "module": "m365-compliance-information-protect-information",
+    "moduleTitle": "Create and configure sensitivity labels with Microsoft Purview",
+    "file": "content/m365-compliance-information-protect-information/03-configure-sensitivity-labels.md",
+    "chars": 8298
+  },
+  {
+    "uid": "learn-m365.m365-compliance-information-protect-information.configure-sensitivity-label-encryption",
+    "title": "Configure encryption with sensitivity labels",
+    "url": "https://learn.microsoft.com/en-us/training/modules/m365-compliance-information-protect-information/configure-sensitivity-label-encryption",
+    "module": "m365-compliance-information-protect-information",
+    "moduleTitle": "Create and configure sensitivity labels with Microsoft Purview",
+    "file": "content/m365-compliance-information-protect-information/04-configure-sensitivity-label-encryption.md",
+    "chars": 5589
+  },
+  {
+    "uid": "learn-m365.m365-compliance-information-protect-information.configure-auto-labeling-policies",
+    "title": "Implement auto-labeling policies",
+    "url": "https://learn.microsoft.com/en-us/training/modules/m365-compliance-information-protect-information/configure-auto-labeling-policies",
+    "module": "m365-compliance-information-protect-information",
+    "moduleTitle": "Create and configure sensitivity labels with Microsoft Purview",
+    "file": "content/m365-compliance-information-protect-information/05-configure-auto-labeling-policies.md",
+    "chars": 7964
+  },
+  {
+    "uid": "learn-m365.m365-compliance-information-protect-information.manage-monitor-remediate",
+    "title": "Track and evaluate sensitivity label usage in Microsoft Purview",
+    "url": "https://learn.microsoft.com/en-us/training/modules/m365-compliance-information-protect-information/manage-monitor-remediate",
+    "module": "m365-compliance-information-protect-information",
+    "moduleTitle": "Create and configure sensitivity labels with Microsoft Purview",
+    "file": "content/m365-compliance-information-protect-information/06-manage-monitor-remediate.md",
+    "chars": 9042
+  },
+  {
+    "uid": "learn-m365.m365-compliance-information-protect-information.knowledge-check",
+    "title": "Module assessment",
+    "url": "https://learn.microsoft.com/en-us/training/modules/m365-compliance-information-protect-information/knowledge-check",
+    "module": "m365-compliance-information-protect-information",
+    "moduleTitle": "Create and configure sensitivity labels with Microsoft Purview",
+    "file": "content/m365-compliance-information-protect-information/07-knowledge-check.md",
+    "chars": 1218
+  },
+  {
+    "uid": "learn-m365.m365-compliance-information-protect-information.summary",
+    "title": "Summary",
+    "url": "https://learn.microsoft.com/en-us/training/modules/m365-compliance-information-protect-information/summary",
+    "module": "m365-compliance-information-protect-information",
+    "moduleTitle": "Create and configure sensitivity labels with Microsoft Purview",
+    "file": "content/m365-compliance-information-protect-information/08-summary.md",
+    "chars": 3059
+  },
+  {
+    "uid": "learn-m365.m365-compliance-information-classify-data.introduction",
+    "title": "Introduction",
+    "url": "https://learn.microsoft.com/en-us/training/modules/m365-compliance-information-classify-data/introduction",
+    "module": "m365-compliance-information-classify-data",
+    "moduleTitle": "Classify data for protection and governance",
+    "file": "content/m365-compliance-information-classify-data/01-introduction.md",
+    "chars": 1566
+  },
+  {
+    "uid": "learn-m365.m365-compliance-information-classify-data.data-classification-overview",
+    "title": "Data classification overview",
+    "url": "https://learn.microsoft.com/en-us/training/modules/m365-compliance-information-classify-data/data-classification-overview",
+    "module": "m365-compliance-information-classify-data",
+    "moduleTitle": "Classify data for protection and governance",
+    "file": "content/m365-compliance-information-classify-data/02-data-classification-overview.md",
+    "chars": 2142
+  },
+  {
+    "uid": "learn-m365.m365-compliance-information-classify-data.using-sensitive-information-types",
+    "title": "Classify data using sensitive information types",
+    "url": "https://learn.microsoft.com/en-us/training/modules/m365-compliance-information-classify-data/using-sensitive-information-types",
+    "module": "m365-compliance-information-classify-data",
+    "moduleTitle": "Classify data for protection and governance",
+    "file": "content/m365-compliance-information-classify-data/03-using-sensitive-information-types.md",
+    "chars": 3711
+  },
+  {
+    "uid": "learn-m365.m365-compliance-information-classify-data.using-trainable-classifiers",
+    "title": "Classify data using trainable classifiers",
+    "url": "https://learn.microsoft.com/en-us/training/modules/m365-compliance-information-classify-data/using-trainable-classifiers",
+    "module": "m365-compliance-information-classify-data",
+    "moduleTitle": "Classify data for protection and governance",
+    "file": "content/m365-compliance-information-classify-data/04-using-trainable-classifiers.md",
+    "chars": 3497
+  },
+  {
+    "uid": "learn-m365.m365-compliance-information-classify-data.create-custom-trainable-classifier",
+    "title": "Create a custom trainable classifier",
+    "url": "https://learn.microsoft.com/en-us/training/modules/m365-compliance-information-classify-data/create-custom-trainable-classifier",
+    "module": "m365-compliance-information-classify-data",
+    "moduleTitle": "Classify data for protection and governance",
+    "file": "content/m365-compliance-information-classify-data/05-create-custom-trainable-classifier.md",
+    "chars": 5066
+  },
+  {
+    "uid": "learn-m365.m365-compliance-information-classify-data.knowledge-check",
+    "title": "Module assessment",
+    "url": "https://learn.microsoft.com/en-us/training/modules/m365-compliance-information-classify-data/knowledge-check",
+    "module": "m365-compliance-information-classify-data",
+    "moduleTitle": "Classify data for protection and governance",
+    "file": "content/m365-compliance-information-classify-data/06-knowledge-check.md",
+    "chars": 1594
+  },
+  {
+    "uid": "learn-m365.m365-compliance-information-classify-data.summary",
+    "title": "Summary",
+    "url": "https://learn.microsoft.com/en-us/training/modules/m365-compliance-information-classify-data/summary",
+    "module": "m365-compliance-information-classify-data",
+    "moduleTitle": "Classify data for protection and governance",
+    "file": "content/m365-compliance-information-classify-data/07-summary.md",
+    "chars": 1308
+  },
+  {
+    "uid": "learn.wwl.purview-data-loss-prevention-alerts.introduction",
+    "title": "Introduction",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-alerts/introduction",
+    "module": "purview-data-loss-prevention-alerts",
+    "moduleTitle": "Investigate and respond to Microsoft Purview Data Loss Prevention alerts",
+    "file": "content/purview-data-loss-prevention-alerts/01-introduction.md",
+    "chars": 979
+  },
+  {
+    "uid": "learn.wwl.purview-data-loss-prevention-alerts.understand-data-loss-prevention-alerts",
+    "title": "Understand data loss prevention (DLP) alerts",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-alerts/understand-data-loss-prevention-alerts",
+    "module": "purview-data-loss-prevention-alerts",
+    "moduleTitle": "Investigate and respond to Microsoft Purview Data Loss Prevention alerts",
+    "file": "content/purview-data-loss-prevention-alerts/02-understand-data-loss-prevention-alerts.md",
+    "chars": 3003
+  },
+  {
+    "uid": "learn.wwl.purview-data-loss-prevention-alerts.data-loss-prevention-alert-lifecycle",
+    "title": "Understand the DLP alert lifecycle",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-alerts/data-loss-prevention-alert-lifecycle",
+    "module": "purview-data-loss-prevention-alerts",
+    "moduleTitle": "Investigate and respond to Microsoft Purview Data Loss Prevention alerts",
+    "file": "content/purview-data-loss-prevention-alerts/03-data-loss-prevention-alert-lifecycle.md",
+    "chars": 5583
+  },
+  {
+    "uid": "learn.wwl.purview-data-loss-prevention-alerts.configure-data-loss-prevention-alert-generation",
+    "title": "Configure DLP policies to generate alerts",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-alerts/configure-data-loss-prevention-alert-generation",
+    "module": "purview-data-loss-prevention-alerts",
+    "moduleTitle": "Investigate and respond to Microsoft Purview Data Loss Prevention alerts",
+    "file": "content/purview-data-loss-prevention-alerts/04-configure-data-loss-prevention-alert-generation.md",
+    "chars": 5470
+  },
+  {
+    "uid": "learn.wwl.purview-data-loss-prevention-alerts.investigate-alerts-purview",
+    "title": "Investigate DLP alerts in Microsoft Purview",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-alerts/investigate-alerts-purview",
+    "module": "purview-data-loss-prevention-alerts",
+    "moduleTitle": "Investigate and respond to Microsoft Purview Data Loss Prevention alerts",
+    "file": "content/purview-data-loss-prevention-alerts/05-investigate-alerts-purview.md",
+    "chars": 7373
+  },
+  {
+    "uid": "learn.wwl.purview-data-loss-prevention-alerts.investigate-alerts-defender",
+    "title": "Investigate DLP alerts in Microsoft Defender XDR",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-alerts/investigate-alerts-defender",
+    "module": "purview-data-loss-prevention-alerts",
+    "moduleTitle": "Investigate and respond to Microsoft Purview Data Loss Prevention alerts",
+    "file": "content/purview-data-loss-prevention-alerts/06-investigate-alerts-defender.md",
+    "chars": 7601
+  },
+  {
+    "uid": "learn.wwl.purview-data-loss-prevention-alerts.investigate-alerts-security-copilot-agents",
+    "title": "Investigate DLP alerts with Security Copilot and AI agents",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-alerts/investigate-alerts-security-copilot-agents",
+    "module": "purview-data-loss-prevention-alerts",
+    "moduleTitle": "Investigate and respond to Microsoft Purview Data Loss Prevention alerts",
+    "file": "content/purview-data-loss-prevention-alerts/07-investigate-alerts-security-copilot-agents.md",
+    "chars": 7295
+  },
+  {
+    "uid": "learn.wwl.purview-data-loss-prevention-alerts.respond-data-loss-prevention-alerts",
+    "title": "Respond to DLP alerts",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-alerts/respond-data-loss-prevention-alerts",
+    "module": "purview-data-loss-prevention-alerts",
+    "moduleTitle": "Investigate and respond to Microsoft Purview Data Loss Prevention alerts",
+    "file": "content/purview-data-loss-prevention-alerts/08-respond-data-loss-prevention-alerts.md",
+    "chars": 3459
+  },
+  {
+    "uid": "learn.wwl.purview-data-loss-prevention-alerts.exercise-investigate-alert",
+    "title": "Exercise - Investigate a DLP alert and related incident",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-alerts/exercise-investigate-alert",
+    "module": "purview-data-loss-prevention-alerts",
+    "moduleTitle": "Investigate and respond to Microsoft Purview Data Loss Prevention alerts",
+    "file": "content/purview-data-loss-prevention-alerts/09-exercise-investigate-alert.md",
+    "chars": 1353
+  },
+  {
+    "uid": "learn.wwl.purview-data-loss-prevention-alerts.knowledge-check",
+    "title": "Module assessment",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-alerts/knowledge-check",
+    "module": "purview-data-loss-prevention-alerts",
+    "moduleTitle": "Investigate and respond to Microsoft Purview Data Loss Prevention alerts",
+    "file": "content/purview-data-loss-prevention-alerts/10-knowledge-check.md",
+    "chars": 2347
+  },
+  {
+    "uid": "learn.wwl.purview-data-loss-prevention-alerts.summary",
+    "title": "Summary",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-alerts/summary",
+    "module": "purview-data-loss-prevention-alerts",
+    "moduleTitle": "Investigate and respond to Microsoft Purview Data Loss Prevention alerts",
+    "file": "content/purview-data-loss-prevention-alerts/11-summary.md",
+    "chars": 1793
+  },
+  {
+    "uid": "learn.wwl.create-configure-data-loss-prevention-policies.introduction",
+    "title": "Introduction",
+    "url": "https://learn.microsoft.com/en-us/training/modules/create-configure-data-loss-prevention-policies/1-introduction",
+    "module": "create-configure-data-loss-prevention-policies",
+    "moduleTitle": "Configure DLP policies for Microsoft Defender for Cloud Apps and Power Platform",
+    "file": "content/create-configure-data-loss-prevention-policies/01-1-introduction.md",
+    "chars": 1311
+  },
+  {
+    "uid": "learn.wwl.create-configure-data-loss-prevention-policies.configure-data-loss-prevention-policies-for-power-platform",
+    "title": "Configure data loss prevention policies for Power Platform",
+    "url": "https://learn.microsoft.com/en-us/training/modules/create-configure-data-loss-prevention-policies/2-configure-data-loss-prevention-policies-for-power-platform",
+    "module": "create-configure-data-loss-prevention-policies",
+    "moduleTitle": "Configure DLP policies for Microsoft Defender for Cloud Apps and Power Platform",
+    "file": "content/create-configure-data-loss-prevention-policies/02-2-configure-data-loss-prevention-policies-for-power-platform.md",
+    "chars": 6887
+  },
+  {
+    "uid": "learn.wwl.create-configure-data-loss-prevention-policies.integrate-data-loss-prevention",
+    "title": "Integrate data loss prevention in Microsoft Defender for Cloud Apps",
+    "url": "https://learn.microsoft.com/en-us/training/modules/create-configure-data-loss-prevention-policies/3-integrate-data-loss-prevention-with-microsoft-cloud-app-security",
+    "module": "create-configure-data-loss-prevention-policies",
+    "moduleTitle": "Configure DLP policies for Microsoft Defender for Cloud Apps and Power Platform",
+    "file": "content/create-configure-data-loss-prevention-policies/03-3-integrate-data-loss-prevention-with-microsoft-cloud-app-security.md",
+    "chars": 4093
+  },
+  {
+    "uid": "learn.wwl.create-configure-data-loss-prevention-policies.configure-file-policies-microsoft-cloud-app-security",
+    "title": "Configure policies in Microsoft Defender for Cloud Apps",
+    "url": "https://learn.microsoft.com/en-us/training/modules/create-configure-data-loss-prevention-policies/4-configure-file-policies-microsoft-cloud-app-security",
+    "module": "create-configure-data-loss-prevention-policies",
+    "moduleTitle": "Configure DLP policies for Microsoft Defender for Cloud Apps and Power Platform",
+    "file": "content/create-configure-data-loss-prevention-policies/04-4-configure-file-policies-microsoft-cloud-app-security.md",
+    "chars": 6672
+  },
+  {
+    "uid": "learn.wwl.create-configure-data-loss-prevention-policies.knowledge-check",
+    "title": "Module assessment",
+    "url": "https://learn.microsoft.com/en-us/training/modules/create-configure-data-loss-prevention-policies/5-knowledge-check",
+    "module": "create-configure-data-loss-prevention-policies",
+    "moduleTitle": "Configure DLP policies for Microsoft Defender for Cloud Apps and Power Platform",
+    "file": "content/create-configure-data-loss-prevention-policies/05-5-knowledge-check.md",
+    "chars": 1778
+  },
+  {
+    "uid": "learn.wwl.create-configure-data-loss-prevention-policies.summary-resources",
+    "title": "Summary and resources",
+    "url": "https://learn.microsoft.com/en-us/training/modules/create-configure-data-loss-prevention-policies/6-summary-resources",
+    "module": "create-configure-data-loss-prevention-policies",
+    "moduleTitle": "Configure DLP policies for Microsoft Defender for Cloud Apps and Power Platform",
+    "file": "content/create-configure-data-loss-prevention-policies/06-6-summary-resources.md",
+    "chars": 1244
+  },
+  {
+    "uid": "learn.wwl.purview-data-loss-prevention-create-manage-policies.introduction",
+    "title": "Introduction",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-create-manage-policies/introduction",
+    "module": "purview-data-loss-prevention-create-manage-policies",
+    "moduleTitle": "Create and manage data loss prevention policies",
+    "file": "content/purview-data-loss-prevention-create-manage-policies/01-introduction.md",
+    "chars": 1683
+  },
+  {
+    "uid": "learn.wwl.purview-data-loss-prevention-create-manage-policies.policy-intent",
+    "title": "Understand how DLP policy decisions fit together",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-create-manage-policies/policy-intent",
+    "module": "purview-data-loss-prevention-create-manage-policies",
+    "moduleTitle": "Create and manage data loss prevention policies",
+    "file": "content/purview-data-loss-prevention-create-manage-policies/02-policy-intent.md",
+    "chars": 3427
+  },
+  {
+    "uid": "learn.wwl.purview-data-loss-prevention-create-manage-policies.template-custom-policy",
+    "title": "Choose a template or create a custom policy",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-create-manage-policies/template-custom-policy",
+    "module": "purview-data-loss-prevention-create-manage-policies",
+    "moduleTitle": "Create and manage data loss prevention policies",
+    "file": "content/purview-data-loss-prevention-create-manage-policies/03-template-custom-policy.md",
+    "chars": 2992
+  },
+  {
+    "uid": "learn.wwl.purview-data-loss-prevention-create-manage-policies.define-policy-detection",
+    "title": "Define what the policy detects",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-create-manage-policies/define-policy-detection",
+    "module": "purview-data-loss-prevention-create-manage-policies",
+    "moduleTitle": "Create and manage data loss prevention policies",
+    "file": "content/purview-data-loss-prevention-create-manage-policies/04-define-policy-detection.md",
+    "chars": 4739
+  },
+  {
+    "uid": "learn.wwl.purview-data-loss-prevention-create-manage-policies.policy-scope",
+    "title": "Align policy scope to risk",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-create-manage-policies/policy-scope",
+    "module": "purview-data-loss-prevention-create-manage-policies",
+    "moduleTitle": "Create and manage data loss prevention policies",
+    "file": "content/purview-data-loss-prevention-create-manage-policies/05-policy-scope.md",
+    "chars": 5131
+  },
+  {
+    "uid": "learn.wwl.purview-data-loss-prevention-create-manage-policies.policy-actions",
+    "title": "Define how the policy responds",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-create-manage-policies/policy-actions",
+    "module": "purview-data-loss-prevention-create-manage-policies",
+    "moduleTitle": "Create and manage data loss prevention policies",
+    "file": "content/purview-data-loss-prevention-create-manage-policies/06-policy-actions.md",
+    "chars": 4234
+  },
+  {
+    "uid": "learn.wwl.purview-data-loss-prevention-create-manage-policies.policy-validation",
+    "title": "Validate policy behavior using simulation mode",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-create-manage-policies/policy-validation",
+    "module": "purview-data-loss-prevention-create-manage-policies",
+    "moduleTitle": "Create and manage data loss prevention policies",
+    "file": "content/purview-data-loss-prevention-create-manage-policies/07-policy-validation.md",
+    "chars": 4933
+  },
+  {
+    "uid": "learn.wwl.purview-data-loss-prevention-create-manage-policies.manage-policies",
+    "title": "Manage DLP policies",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-create-manage-policies/manage-policies",
+    "module": "purview-data-loss-prevention-create-manage-policies",
+    "moduleTitle": "Create and manage data loss prevention policies",
+    "file": "content/purview-data-loss-prevention-create-manage-policies/08-manage-policies.md",
+    "chars": 4563
+  },
+  {
+    "uid": "learn.wwl.purview-data-loss-prevention-create-manage-policies.adaptive-protection-data-loss-prevention",
+    "title": "Adjust enforcement dynamically based on risk",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-create-manage-policies/adaptive-protection-data-loss-prevention",
+    "module": "purview-data-loss-prevention-create-manage-policies",
+    "moduleTitle": "Create and manage data loss prevention policies",
+    "file": "content/purview-data-loss-prevention-create-manage-policies/09-adaptive-protection-data-loss-prevention.md",
+    "chars": 4292
+  },
+  {
+    "uid": "learn.wwl.purview-data-loss-prevention-create-manage-policies.guided-walkthrough-create-policy",
+    "title": "Guided walkthrough: Create a DLP policy",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-create-manage-policies/guided-walkthrough-create-policy",
+    "module": "purview-data-loss-prevention-create-manage-policies",
+    "moduleTitle": "Create and manage data loss prevention policies",
+    "file": "content/purview-data-loss-prevention-create-manage-policies/10-guided-walkthrough-create-policy.md",
+    "chars": 13769
+  },
+  {
+    "uid": "learn.wwl.purview-data-loss-prevention-create-manage-policies.knowledge-check",
+    "title": "Module assessment",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-create-manage-policies/knowledge-check",
+    "module": "purview-data-loss-prevention-create-manage-policies",
+    "moduleTitle": "Create and manage data loss prevention policies",
+    "file": "content/purview-data-loss-prevention-create-manage-policies/11-knowledge-check.md",
+    "chars": 1994
+  },
+  {
+    "uid": "learn.wwl.purview-data-loss-prevention-create-manage-policies.summary",
+    "title": "Summary",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-create-manage-policies/summary",
+    "module": "purview-data-loss-prevention-create-manage-policies",
+    "moduleTitle": "Create and manage data loss prevention policies",
+    "file": "content/purview-data-loss-prevention-create-manage-policies/12-summary.md",
+    "chars": 1689
+  },
+  {
+    "uid": "learn.wwl.purview-data-loss-prevention-understand-plan.introduction",
+    "title": "Introduction",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-understand-plan/introduction",
+    "module": "purview-data-loss-prevention-understand-plan",
+    "moduleTitle": "Understand and plan data loss prevention",
+    "file": "content/purview-data-loss-prevention-understand-plan/01-introduction.md",
+    "chars": 1385
+  },
+  {
+    "uid": "learn.wwl.purview-data-loss-prevention-understand-plan.understand-data-loss-prevention",
+    "title": "Understand the role of data loss prevention (DLP)",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-understand-plan/understand-data-loss-prevention",
+    "module": "purview-data-loss-prevention-understand-plan",
+    "moduleTitle": "Understand and plan data loss prevention",
+    "file": "content/purview-data-loss-prevention-understand-plan/02-understand-data-loss-prevention.md",
+    "chars": 3128
+  },
+  {
+    "uid": "learn.wwl.purview-data-loss-prevention-understand-plan.understand-data-loss-prevention-protection",
+    "title": "Understand how DLP applies protection",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-understand-plan/understand-data-loss-prevention-protection",
+    "module": "purview-data-loss-prevention-understand-plan",
+    "moduleTitle": "Understand and plan data loss prevention",
+    "file": "content/purview-data-loss-prevention-understand-plan/03-understand-data-loss-prevention-protection.md",
+    "chars": 3443
+  },
+  {
+    "uid": "learn.wwl.purview-data-loss-prevention-understand-plan.plan-design-policies",
+    "title": "Plan and design DLP policies",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-understand-plan/plan-design-policies",
+    "module": "purview-data-loss-prevention-understand-plan",
+    "moduleTitle": "Understand and plan data loss prevention",
+    "file": "content/purview-data-loss-prevention-understand-plan/04-plan-design-policies.md",
+    "chars": 4026
+  },
+  {
+    "uid": "learn.wwl.purview-data-loss-prevention-understand-plan.understand-deployment-simulation-mode",
+    "title": "Understand DLP deployment and simulation mode",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-understand-plan/understand-deployment-simulation-mode",
+    "module": "purview-data-loss-prevention-understand-plan",
+    "moduleTitle": "Understand and plan data loss prevention",
+    "file": "content/purview-data-loss-prevention-understand-plan/05-understand-deployment-simulation-mode.md",
+    "chars": 3995
+  },
+  {
+    "uid": "learn.wwl.purview-data-loss-prevention-understand-plan.advanced-data-loss-prevention-controls",
+    "title": "Evaluate advanced DLP controls for your environment",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-understand-plan/advanced-data-loss-prevention-controls",
+    "module": "purview-data-loss-prevention-understand-plan",
+    "moduleTitle": "Understand and plan data loss prevention",
+    "file": "content/purview-data-loss-prevention-understand-plan/06-advanced-data-loss-prevention-controls.md",
+    "chars": 4765
+  },
+  {
+    "uid": "learn.wwl.purview-data-loss-prevention-understand-plan.knowledge-check",
+    "title": "Module assessment",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-understand-plan/knowledge-check",
+    "module": "purview-data-loss-prevention-understand-plan",
+    "moduleTitle": "Understand and plan data loss prevention",
+    "file": "content/purview-data-loss-prevention-understand-plan/07-knowledge-check.md",
+    "chars": 1771
+  },
+  {
+    "uid": "learn.wwl.purview-data-loss-prevention-understand-plan.summary",
+    "title": "Summary",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-understand-plan/summary",
+    "module": "purview-data-loss-prevention-understand-plan",
+    "moduleTitle": "Understand and plan data loss prevention",
+    "file": "content/purview-data-loss-prevention-understand-plan/08-summary.md",
+    "chars": 1015
+  },
+  {
+    "uid": "learn-m365.purview-implement-endpoint-dlp.introduction",
+    "title": "Introduction",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-implement-endpoint-dlp/introduction",
+    "module": "purview-implement-endpoint-dlp",
+    "moduleTitle": "Implement endpoint data loss prevention (DLP) with Microsoft Purview",
+    "file": "content/purview-implement-endpoint-dlp/01-introduction.md",
+    "chars": 1299
+  },
+  {
+    "uid": "learn-m365.purview-implement-endpoint-dlp.endpoint-dlp-overview",
+    "title": "Understand endpoint data loss prevention",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-implement-endpoint-dlp/endpoint-dlp-overview",
+    "module": "purview-implement-endpoint-dlp",
+    "moduleTitle": "Implement endpoint data loss prevention (DLP) with Microsoft Purview",
+    "file": "content/purview-implement-endpoint-dlp/02-endpoint-dlp-overview.md",
+    "chars": 3505
+  },
+  {
+    "uid": "learn-m365.purview-implement-endpoint-dlp.understand-dlp-implementation-workflow",
+    "title": "Understand the endpoint DLP implementation workflow",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-implement-endpoint-dlp/understand-dlp-implementation-workflow",
+    "module": "purview-implement-endpoint-dlp",
+    "moduleTitle": "Implement endpoint data loss prevention (DLP) with Microsoft Purview",
+    "file": "content/purview-implement-endpoint-dlp/03-understand-dlp-implementation-workflow.md",
+    "chars": 4653
+  },
+  {
+    "uid": "learn-m365.purview-implement-endpoint-dlp.onboard-devices-endpoint-dlp",
+    "title": "Onboard devices for endpoint DLP",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-implement-endpoint-dlp/onboard-devices-endpoint-dlp",
+    "module": "purview-implement-endpoint-dlp",
+    "moduleTitle": "Implement endpoint data loss prevention (DLP) with Microsoft Purview",
+    "file": "content/purview-implement-endpoint-dlp/04-onboard-devices-endpoint-dlp.md",
+    "chars": 5400
+  },
+  {
+    "uid": "learn-m365.purview-implement-endpoint-dlp.configure-endpoint-dlp-settings",
+    "title": "Configure settings for endpoint DLP",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-implement-endpoint-dlp/configure-endpoint-dlp-settings",
+    "module": "purview-implement-endpoint-dlp",
+    "moduleTitle": "Implement endpoint data loss prevention (DLP) with Microsoft Purview",
+    "file": "content/purview-implement-endpoint-dlp/05-configure-endpoint-dlp-settings.md",
+    "chars": 9645
+  },
+  {
+    "uid": "learn-m365.purview-implement-endpoint-dlp.create-manage-endpoint-dlp-policy",
+    "title": "Create and manage endpoint DLP policies",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-implement-endpoint-dlp/create-manage-endpoint-dlp-policy",
+    "module": "purview-implement-endpoint-dlp",
+    "moduleTitle": "Implement endpoint data loss prevention (DLP) with Microsoft Purview",
+    "file": "content/purview-implement-endpoint-dlp/06-create-manage-endpoint-dlp-policy.md",
+    "chars": 7575
+  },
+  {
+    "uid": "learn-m365.purview-implement-endpoint-dlp.deploy-purview-extension",
+    "title": "Deploy the Microsoft Purview browser extension",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-implement-endpoint-dlp/deploy-purview-extension",
+    "module": "purview-implement-endpoint-dlp",
+    "moduleTitle": "Implement endpoint data loss prevention (DLP) with Microsoft Purview",
+    "file": "content/purview-implement-endpoint-dlp/07-deploy-purview-extension.md",
+    "chars": 4082
+  },
+  {
+    "uid": "learn-m365.purview-implement-endpoint-dlp.configure-just-in-time-protection",
+    "title": "Configure just-in-time (JIT) protection",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-implement-endpoint-dlp/configure-just-in-time-protection",
+    "module": "purview-implement-endpoint-dlp",
+    "moduleTitle": "Implement endpoint data loss prevention (DLP) with Microsoft Purview",
+    "file": "content/purview-implement-endpoint-dlp/08-configure-just-in-time-protection.md",
+    "chars": 6242
+  },
+  {
+    "uid": "learn-m365.purview-implement-endpoint-dlp.knowledge-check",
+    "title": "Module assessment",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-implement-endpoint-dlp/knowledge-check",
+    "module": "purview-implement-endpoint-dlp",
+    "moduleTitle": "Implement endpoint data loss prevention (DLP) with Microsoft Purview",
+    "file": "content/purview-implement-endpoint-dlp/09-knowledge-check.md",
+    "chars": 2667
+  },
+  {
+    "uid": "learn-m365.purview-implement-endpoint-dlp.summary",
+    "title": "Summary and resources",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-implement-endpoint-dlp/summary",
+    "module": "purview-implement-endpoint-dlp",
+    "moduleTitle": "Implement endpoint data loss prevention (DLP) with Microsoft Purview",
+    "file": "content/purview-implement-endpoint-dlp/10-summary.md",
+    "chars": 2241
+  },
+  {
+    "uid": "learn.wwl.purview-retention-recovery.introduction",
+    "title": "Introduction",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-retention-recovery/introduction",
+    "module": "purview-retention-recovery",
+    "moduleTitle": "Implement and manage Microsoft 365 retention and recovery",
+    "file": "content/purview-retention-recovery/01-introduction.md",
+    "chars": 1207
+  },
+  {
+    "uid": "learn.wwl.purview-retention-recovery.plan-retention-disposition",
+    "title": "Plan for retention and disposition with retention labels",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-retention-recovery/plan-retention-disposition",
+    "module": "purview-retention-recovery",
+    "moduleTitle": "Implement and manage Microsoft 365 retention and recovery",
+    "file": "content/purview-retention-recovery/02-plan-retention-disposition.md",
+    "chars": 2217
+  },
+  {
+    "uid": "learn.wwl.purview-retention-recovery.create-publish-retention-label",
+    "title": "Create and publish retention labels",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-retention-recovery/create-publish-retention-label",
+    "module": "purview-retention-recovery",
+    "moduleTitle": "Implement and manage Microsoft 365 retention and recovery",
+    "file": "content/purview-retention-recovery/03-create-publish-retention-label.md",
+    "chars": 7875
+  },
+  {
+    "uid": "learn.wwl.purview-retention-recovery.auto-apply-retention-label",
+    "title": "Create and manage auto-apply retention labels",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-retention-recovery/auto-apply-retention-label",
+    "module": "purview-retention-recovery",
+    "moduleTitle": "Implement and manage Microsoft 365 retention and recovery",
+    "file": "content/purview-retention-recovery/04-auto-apply-retention-label.md",
+    "chars": 6859
+  },
+  {
+    "uid": "learn.wwl.purview-retention-recovery.create-configure-adaptive-scope",
+    "title": "Create and configure adaptive scopes",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-retention-recovery/create-configure-adaptive-scope",
+    "module": "purview-retention-recovery",
+    "moduleTitle": "Implement and manage Microsoft 365 retention and recovery",
+    "file": "content/purview-retention-recovery/05-create-configure-adaptive-scope.md",
+    "chars": 4386
+  },
+  {
+    "uid": "learn.wwl.purview-retention-recovery.create-configure-retention-policy",
+    "title": "Create and configure retention policies",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-retention-recovery/create-configure-retention-policy",
+    "module": "purview-retention-recovery",
+    "moduleTitle": "Implement and manage Microsoft 365 retention and recovery",
+    "file": "content/purview-retention-recovery/06-create-configure-retention-policy.md",
+    "chars": 5448
+  },
+  {
+    "uid": "learn.wwl.purview-retention-recovery.principles-retention",
+    "title": "Understand policy and label precedence in Microsoft Purview",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-retention-recovery/principles-retention",
+    "module": "purview-retention-recovery",
+    "moduleTitle": "Implement and manage Microsoft 365 retention and recovery",
+    "file": "content/purview-retention-recovery/07-principles-retention.md",
+    "chars": 4625
+  },
+  {
+    "uid": "learn.wwl.purview-retention-recovery.recover-content-microsoft-365-workloads",
+    "title": "Recover content in Microsoft 365 workloads",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-retention-recovery/recover-content-microsoft-365-workloads",
+    "module": "purview-retention-recovery",
+    "moduleTitle": "Implement and manage Microsoft 365 retention and recovery",
+    "file": "content/purview-retention-recovery/08-recover-content-microsoft-365-workloads.md",
+    "chars": 6223
+  },
+  {
+    "uid": "learn.wwl.purview-retention-recovery.knowledge-check",
+    "title": "Module assessment",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-retention-recovery/knowledge-check",
+    "module": "purview-retention-recovery",
+    "moduleTitle": "Implement and manage Microsoft 365 retention and recovery",
+    "file": "content/purview-retention-recovery/09-knowledge-check.md",
+    "chars": 1650
+  },
+  {
+    "uid": "learn.wwl.purview-retention-recovery.summary",
+    "title": "Summary",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-retention-recovery/summary",
+    "module": "purview-retention-recovery",
+    "moduleTitle": "Implement and manage Microsoft 365 retention and recovery",
+    "file": "content/purview-retention-recovery/10-summary.md",
+    "chars": 1844
+  },
+  {
+    "uid": "learn.wwl.purview-understand-retention.introduction",
+    "title": "Introduction",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-understand-retention/introduction",
+    "module": "purview-understand-retention",
+    "moduleTitle": "Understand retention in Microsoft Purview",
+    "file": "content/purview-understand-retention/01-introduction.md",
+    "chars": 1096
+  },
+  {
+    "uid": "learn.wwl.purview-understand-retention.retention-overview",
+    "title": "Overview of retention and the data lifecycle",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-understand-retention/retention-overview",
+    "module": "purview-understand-retention",
+    "moduleTitle": "Understand retention in Microsoft Purview",
+    "file": "content/purview-understand-retention/02-retention-overview.md",
+    "chars": 3063
+  },
+  {
+    "uid": "learn.wwl.purview-understand-retention.retention-labels-retention-policies",
+    "title": "Understand retention labels and retention policies",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-understand-retention/retention-labels-retention-policies",
+    "module": "purview-understand-retention",
+    "moduleTitle": "Understand retention in Microsoft Purview",
+    "file": "content/purview-understand-retention/03-retention-labels-retention-policies.md",
+    "chars": 4855
+  },
+  {
+    "uid": "learn.wwl.purview-understand-retention.decide-apply-retention",
+    "title": "Decide when to apply retention",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-understand-retention/decide-apply-retention",
+    "module": "purview-understand-retention",
+    "moduleTitle": "Understand retention in Microsoft Purview",
+    "file": "content/purview-understand-retention/04-decide-apply-retention.md",
+    "chars": 3302
+  },
+  {
+    "uid": "learn.wwl.purview-understand-retention.knowledge-check",
+    "title": "Module assessment",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-understand-retention/knowledge-check",
+    "module": "purview-understand-retention",
+    "moduleTitle": "Understand retention in Microsoft Purview",
+    "file": "content/purview-understand-retention/05-knowledge-check.md",
+    "chars": 818
+  },
+  {
+    "uid": "learn.wwl.purview-understand-retention.summary",
+    "title": "Summary",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-understand-retention/summary",
+    "module": "purview-understand-retention",
+    "moduleTitle": "Understand retention in Microsoft Purview",
+    "file": "content/purview-understand-retention/06-summary.md",
+    "chars": 1160
+  },
+  {
+    "uid": "learn.wwl.purview-explore-insider-risk-management.introduction",
+    "title": "Introduction",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-explore-insider-risk-management/introduction",
+    "module": "purview-explore-insider-risk-management",
+    "moduleTitle": "Understand Microsoft Purview Insider Risk Management",
+    "file": "content/purview-explore-insider-risk-management/01-introduction.md",
+    "chars": 1016
+  },
+  {
+    "uid": "learn.wwl.purview-explore-insider-risk-management.insider-risk-concept",
+    "title": "What is an insider risk?",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-explore-insider-risk-management/insider-risk-concept",
+    "module": "purview-explore-insider-risk-management",
+    "moduleTitle": "Understand Microsoft Purview Insider Risk Management",
+    "file": "content/purview-explore-insider-risk-management/02-insider-risk-concept.md",
+    "chars": 3198
+  },
+  {
+    "uid": "learn.wwl.purview-explore-insider-risk-management.insider-risk-management-overview",
+    "title": "Microsoft Purview Insider Risk Management overview",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-explore-insider-risk-management/insider-risk-management-overview",
+    "module": "purview-explore-insider-risk-management",
+    "moduleTitle": "Understand Microsoft Purview Insider Risk Management",
+    "file": "content/purview-explore-insider-risk-management/03-insider-risk-management-overview.md",
+    "chars": 5230
+  },
+  {
+    "uid": "learn.wwl.purview-explore-insider-risk-management.insider-risk-management-features",
+    "title": "Microsoft Purview Insider Risk Management features",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-explore-insider-risk-management/insider-risk-management-features",
+    "module": "purview-explore-insider-risk-management",
+    "moduleTitle": "Understand Microsoft Purview Insider Risk Management",
+    "file": "content/purview-explore-insider-risk-management/04-insider-risk-management-features.md",
+    "chars": 6770
+  },
+  {
+    "uid": "learn.wwl.purview-explore-insider-risk-management.case-study-protect-insider-data",
+    "title": "Case study: Protect sensitive data with Insider Risk Management",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-explore-insider-risk-management/case-study-protect-insider-data",
+    "module": "purview-explore-insider-risk-management",
+    "moduleTitle": "Understand Microsoft Purview Insider Risk Management",
+    "file": "content/purview-explore-insider-risk-management/05-case-study-protect-insider-data.md",
+    "chars": 2482
+  },
+  {
+    "uid": "learn.wwl.purview-explore-insider-risk-management.knowledge-check",
+    "title": "Module assessment",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-explore-insider-risk-management/knowledge-check",
+    "module": "purview-explore-insider-risk-management",
+    "moduleTitle": "Understand Microsoft Purview Insider Risk Management",
+    "file": "content/purview-explore-insider-risk-management/06-knowledge-check.md",
+    "chars": 870
+  },
+  {
+    "uid": "learn.wwl.purview-explore-insider-risk-management.summary",
+    "title": "Summary",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-explore-insider-risk-management/summary",
+    "module": "purview-explore-insider-risk-management",
+    "moduleTitle": "Understand Microsoft Purview Insider Risk Management",
+    "file": "content/purview-explore-insider-risk-management/07-summary.md",
+    "chars": 946
+  },
+  {
+    "uid": "learn.wwl.purview-create-manage-insider-risk-policy.introduction",
+    "title": "Introduction",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-create-manage-insider-risk-policy/introduction",
+    "module": "purview-create-manage-insider-risk-policy",
+    "moduleTitle": "Create and manage Insider Risk Management policies",
+    "file": "content/purview-create-manage-insider-risk-policy/01-introduction.md",
+    "chars": 1299
+  },
+  {
+    "uid": "learn.wwl.purview-create-manage-insider-risk-policy.policy-templates",
+    "title": "Understand Insider Risk Management policy templates",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-create-manage-insider-risk-policy/policy-templates",
+    "module": "purview-create-manage-insider-risk-policy",
+    "moduleTitle": "Create and manage Insider Risk Management policies",
+    "file": "content/purview-create-manage-insider-risk-policy/02-policy-templates.md",
+    "chars": 6050
+  },
+  {
+    "uid": "learn.wwl.purview-create-manage-insider-risk-policy.compare-quick-custom-policies",
+    "title": "Compare quick and custom insider risk policies",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-create-manage-insider-risk-policy/compare-quick-custom-policies",
+    "module": "purview-create-manage-insider-risk-policy",
+    "moduleTitle": "Create and manage Insider Risk Management policies",
+    "file": "content/purview-create-manage-insider-risk-policy/03-compare-quick-custom-policies.md",
+    "chars": 3572
+  },
+  {
+    "uid": "learn.wwl.purview-create-manage-insider-risk-policy.create-custom-insider-risk-policy",
+    "title": "Create a custom Insider Risk Management policy",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-create-manage-insider-risk-policy/create-custom-insider-risk-policy",
+    "module": "purview-create-manage-insider-risk-policy",
+    "moduleTitle": "Create and manage Insider Risk Management policies",
+    "file": "content/purview-create-manage-insider-risk-policy/04-create-custom-insider-risk-policy.md",
+    "chars": 8994
+  },
+  {
+    "uid": "learn.wwl.purview-create-manage-insider-risk-policy.manage-insider-risk-policy",
+    "title": "Manage policies in Insider Risk Management",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-create-manage-insider-risk-policy/manage-insider-risk-policy",
+    "module": "purview-create-manage-insider-risk-policy",
+    "moduleTitle": "Create and manage Insider Risk Management policies",
+    "file": "content/purview-create-manage-insider-risk-policy/05-manage-insider-risk-policy.md",
+    "chars": 5483
+  },
+  {
+    "uid": "learn.wwl.purview-create-manage-insider-risk-policy.knowledge-check",
+    "title": "Module assessment",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-create-manage-insider-risk-policy/knowledge-check",
+    "module": "purview-create-manage-insider-risk-policy",
+    "moduleTitle": "Create and manage Insider Risk Management policies",
+    "file": "content/purview-create-manage-insider-risk-policy/06-knowledge-check.md",
+    "chars": 1729
+  },
+  {
+    "uid": "learn.wwl.purview-create-manage-insider-risk-policy.summary",
+    "title": "Summary",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-create-manage-insider-risk-policy/summary",
+    "module": "purview-create-manage-insider-risk-policy",
+    "moduleTitle": "Create and manage Insider Risk Management policies",
+    "file": "content/purview-create-manage-insider-risk-policy/07-summary.md",
+    "chars": 2189
+  },
+  {
+    "uid": "learn.wwl.purview-insider-risk-investigate-alerts.introduction",
+    "title": "Introduction",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-insider-risk-investigate-alerts/introduction",
+    "module": "purview-insider-risk-investigate-alerts",
+    "moduleTitle": "Investigate insider risk alerts and related activity",
+    "file": "content/purview-insider-risk-investigate-alerts/01-introduction.md",
+    "chars": 1112
+  },
+  {
+    "uid": "learn.wwl.purview-insider-risk-investigate-alerts.understand-insider-risk-alerts",
+    "title": "Understand insider risk alerts and investigations",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-insider-risk-investigate-alerts/understand-insider-risk-alerts",
+    "module": "purview-insider-risk-investigate-alerts",
+    "moduleTitle": "Investigate insider risk alerts and related activity",
+    "file": "content/purview-insider-risk-investigate-alerts/02-understand-insider-risk-alerts.md",
+    "chars": 2960
+  },
+  {
+    "uid": "learn.wwl.purview-insider-risk-investigate-alerts.manage-alert-volume",
+    "title": "Manage alert volume in insider risk management",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-insider-risk-investigate-alerts/manage-alert-volume",
+    "module": "purview-insider-risk-investigate-alerts",
+    "moduleTitle": "Investigate insider risk alerts and related activity",
+    "file": "content/purview-insider-risk-investigate-alerts/03-manage-alert-volume.md",
+    "chars": 3304
+  },
+  {
+    "uid": "learn.wwl.purview-insider-risk-investigate-alerts.investigate-triage-alerts",
+    "title": "Investigate and triage insider risk alerts in Microsoft Purview",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-insider-risk-investigate-alerts/investigate-triage-alerts",
+    "module": "purview-insider-risk-investigate-alerts",
+    "moduleTitle": "Investigate insider risk alerts and related activity",
+    "file": "content/purview-insider-risk-investigate-alerts/04-investigate-triage-alerts.md",
+    "chars": 7594
+  },
+  {
+    "uid": "learn.wwl.purview-insider-risk-investigate-alerts.investigate-alerts-security-copilot-agents",
+    "title": "Investigate insider risk alerts with Security Copilot and AI agents",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-insider-risk-investigate-alerts/investigate-alerts-security-copilot-agents",
+    "module": "purview-insider-risk-investigate-alerts",
+    "moduleTitle": "Investigate insider risk alerts and related activity",
+    "file": "content/purview-insider-risk-investigate-alerts/05-investigate-alerts-security-copilot-agents.md",
+    "chars": 7311
+  },
+  {
+    "uid": "learn.wwl.purview-insider-risk-investigate-alerts.all-risk-factors-tab",
+    "title": "Analyze alert context with the All risk factors tab",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-insider-risk-investigate-alerts/all-risk-factors-tab",
+    "module": "purview-insider-risk-investigate-alerts",
+    "moduleTitle": "Investigate insider risk alerts and related activity",
+    "file": "content/purview-insider-risk-investigate-alerts/06-all-risk-factors-tab.md",
+    "chars": 3538
+  },
+  {
+    "uid": "learn.wwl.purview-insider-risk-investigate-alerts.activity-explorer-tab",
+    "title": "Investigate activity details with the Activity explorer tab",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-insider-risk-investigate-alerts/activity-explorer-tab",
+    "module": "purview-insider-risk-investigate-alerts",
+    "moduleTitle": "Investigate insider risk alerts and related activity",
+    "file": "content/purview-insider-risk-investigate-alerts/07-activity-explorer-tab.md",
+    "chars": 3985
+  },
+  {
+    "uid": "learn.wwl.purview-insider-risk-investigate-alerts.user-activity-tab",
+    "title": "Review patterns over time with the User activity tab",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-insider-risk-investigate-alerts/user-activity-tab",
+    "module": "purview-insider-risk-investigate-alerts",
+    "moduleTitle": "Investigate insider risk alerts and related activity",
+    "file": "content/purview-insider-risk-investigate-alerts/08-user-activity-tab.md",
+    "chars": 3205
+  },
+  {
+    "uid": "learn.wwl.purview-insider-risk-investigate-alerts.investigate-alerts-defender",
+    "title": "Investigate insider risk alerts in Microsoft Defender XDR",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-insider-risk-investigate-alerts/investigate-alerts-defender",
+    "module": "purview-insider-risk-investigate-alerts",
+    "moduleTitle": "Investigate insider risk alerts and related activity",
+    "file": "content/purview-insider-risk-investigate-alerts/09-investigate-alerts-defender.md",
+    "chars": 5023
+  },
+  {
+    "uid": "learn.wwl.purview-insider-risk-investigate-alerts.insider-risk-cases",
+    "title": "Manage and take action on insider risk cases",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-insider-risk-investigate-alerts/insider-risk-cases",
+    "module": "purview-insider-risk-investigate-alerts",
+    "moduleTitle": "Investigate insider risk alerts and related activity",
+    "file": "content/purview-insider-risk-investigate-alerts/10-insider-risk-cases.md",
+    "chars": 6002
+  },
+  {
+    "uid": "learn.wwl.purview-insider-risk-investigate-alerts.exercise-investigate-alert",
+    "title": "Exercise - Investigate potential data theft using Insider Risk Management",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-insider-risk-investigate-alerts/exercise-investigate-alert",
+    "module": "purview-insider-risk-investigate-alerts",
+    "moduleTitle": "Investigate insider risk alerts and related activity",
+    "file": "content/purview-insider-risk-investigate-alerts/11-exercise-investigate-alert.md",
+    "chars": 5930
+  },
+  {
+    "uid": "learn.wwl.purview-insider-risk-investigate-alerts.knowledge-check",
+    "title": "Module assessment",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-insider-risk-investigate-alerts/knowledge-check",
+    "module": "purview-insider-risk-investigate-alerts",
+    "moduleTitle": "Investigate insider risk alerts and related activity",
+    "file": "content/purview-insider-risk-investigate-alerts/12-knowledge-check.md",
+    "chars": 1277
+  },
+  {
+    "uid": "learn.wwl.purview-insider-risk-investigate-alerts.summary",
+    "title": "Summary",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-insider-risk-investigate-alerts/summary",
+    "module": "purview-insider-risk-investigate-alerts",
+    "moduleTitle": "Investigate insider risk alerts and related activity",
+    "file": "content/purview-insider-risk-investigate-alerts/13-summary.md",
+    "chars": 1526
+  },
+  {
+    "uid": "learn.wwl.purview-prepare-insider-risk-management.introduction",
+    "title": "Introduction",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-prepare-insider-risk-management/introduction",
+    "module": "purview-prepare-insider-risk-management",
+    "moduleTitle": "Prepare for Microsoft Purview Insider Risk Management",
+    "file": "content/purview-prepare-insider-risk-management/01-introduction.md",
+    "chars": 1194
+  },
+  {
+    "uid": "learn.wwl.purview-prepare-insider-risk-management.plan-insider-risk-management",
+    "title": "Plan for Insider Risk Management",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-prepare-insider-risk-management/plan-insider-risk-management",
+    "module": "purview-prepare-insider-risk-management",
+    "moduleTitle": "Prepare for Microsoft Purview Insider Risk Management",
+    "file": "content/purview-prepare-insider-risk-management/02-plan-insider-risk-management.md",
+    "chars": 5806
+  },
+  {
+    "uid": "learn.wwl.purview-prepare-insider-risk-management.insider-risk-management-prerequisites",
+    "title": "Prepare your organization for Insider Risk Management",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-prepare-insider-risk-management/insider-risk-management-prerequisites",
+    "module": "purview-prepare-insider-risk-management",
+    "moduleTitle": "Prepare for Microsoft Purview Insider Risk Management",
+    "file": "content/purview-prepare-insider-risk-management/03-insider-risk-management-prerequisites.md",
+    "chars": 7684
+  },
+  {
+    "uid": "learn.wwl.purview-prepare-insider-risk-management.configure-insider-risk-settings",
+    "title": "Configure settings for Insider Risk Management",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-prepare-insider-risk-management/configure-insider-risk-settings",
+    "module": "purview-prepare-insider-risk-management",
+    "moduleTitle": "Prepare for Microsoft Purview Insider Risk Management",
+    "file": "content/purview-prepare-insider-risk-management/04-configure-insider-risk-settings.md",
+    "chars": 6135
+  },
+  {
+    "uid": "learn.wwl.purview-prepare-insider-risk-management.insider-risk-management-integrations",
+    "title": "Integrate Insider Risk Management with data sources and tools",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-prepare-insider-risk-management/insider-risk-management-integrations",
+    "module": "purview-prepare-insider-risk-management",
+    "moduleTitle": "Prepare for Microsoft Purview Insider Risk Management",
+    "file": "content/purview-prepare-insider-risk-management/05-insider-risk-management-integrations.md",
+    "chars": 4221
+  },
+  {
+    "uid": "learn.wwl.purview-prepare-insider-risk-management.knowledge-check",
+    "title": "Module assessment",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-prepare-insider-risk-management/knowledge-check",
+    "module": "purview-prepare-insider-risk-management",
+    "moduleTitle": "Prepare for Microsoft Purview Insider Risk Management",
+    "file": "content/purview-prepare-insider-risk-management/06-knowledge-check.md",
+    "chars": 1567
+  },
+  {
+    "uid": "learn.wwl.purview-prepare-insider-risk-management.summary",
+    "title": "Summary",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-prepare-insider-risk-management/summary",
+    "module": "purview-prepare-insider-risk-management",
+    "moduleTitle": "Prepare for Microsoft Purview Insider Risk Management",
+    "file": "content/purview-prepare-insider-risk-management/07-summary.md",
+    "chars": 1332
+  },
+  {
+    "uid": "learn-m365.m365-compliance-irm-adaptive-protection.introduction",
+    "title": "Introduction",
+    "url": "https://learn.microsoft.com/en-us/training/modules/m365-compliance-irm-adaptive-protection/introduction",
+    "module": "m365-compliance-irm-adaptive-protection",
+    "moduleTitle": "Implement Adaptive Protection in Microsoft Purview",
+    "file": "content/m365-compliance-irm-adaptive-protection/01-introduction.md",
+    "chars": 1900
+  },
+  {
+    "uid": "learn-m365.m365-compliance-irm-adaptive-protection.overview",
+    "title": "Understand Adaptive Protection and insider risk levels",
+    "url": "https://learn.microsoft.com/en-us/training/modules/m365-compliance-irm-adaptive-protection/overview",
+    "module": "m365-compliance-irm-adaptive-protection",
+    "moduleTitle": "Implement Adaptive Protection in Microsoft Purview",
+    "file": "content/m365-compliance-irm-adaptive-protection/02-overview.md",
+    "chars": 3124
+  },
+  {
+    "uid": "learn-m365.m365-compliance-irm-adaptive-protection.risk-levels",
+    "title": "Evaluate and configure insider risk levels",
+    "url": "https://learn.microsoft.com/en-us/training/modules/m365-compliance-irm-adaptive-protection/risk-levels",
+    "module": "m365-compliance-irm-adaptive-protection",
+    "moduleTitle": "Implement Adaptive Protection in Microsoft Purview",
+    "file": "content/m365-compliance-irm-adaptive-protection/03-risk-levels.md",
+    "chars": 5359
+  },
+  {
+    "uid": "learn-m365.m365-compliance-irm-adaptive-protection.configure-adaptive-protection",
+    "title": "Set up Adaptive Protection",
+    "url": "https://learn.microsoft.com/en-us/training/modules/m365-compliance-irm-adaptive-protection/configure-adaptive-protection",
+    "module": "m365-compliance-irm-adaptive-protection",
+    "moduleTitle": "Implement Adaptive Protection in Microsoft Purview",
+    "file": "content/m365-compliance-irm-adaptive-protection/04-configure-adaptive-protection.md",
+    "chars": 5809
+  },
+  {
+    "uid": "learn-m365.m365-compliance-irm-adaptive-protection.adaptive-protection-dlp",
+    "title": "Configure Adaptive Protection with Data Loss Prevention",
+    "url": "https://learn.microsoft.com/en-us/training/modules/m365-compliance-irm-adaptive-protection/adaptive-protection-dlp",
+    "module": "m365-compliance-irm-adaptive-protection",
+    "moduleTitle": "Implement Adaptive Protection in Microsoft Purview",
+    "file": "content/m365-compliance-irm-adaptive-protection/05-adaptive-protection-dlp.md",
+    "chars": 4689
+  },
+  {
+    "uid": "learn-m365.m365-compliance-irm-adaptive-protection.adaptive-protection-conditional-access",
+    "title": "Configure Adaptive Protection with Conditional Access",
+    "url": "https://learn.microsoft.com/en-us/training/modules/m365-compliance-irm-adaptive-protection/adaptive-protection-conditional-access",
+    "module": "m365-compliance-irm-adaptive-protection",
+    "moduleTitle": "Implement Adaptive Protection in Microsoft Purview",
+    "file": "content/m365-compliance-irm-adaptive-protection/06-adaptive-protection-conditional-access.md",
+    "chars": 4130
+  },
+  {
+    "uid": "learn-m365.m365-compliance-irm-adaptive-protection.adaptive-protection-data-lifecycle-management",
+    "title": "Evaluate Adaptive Protection with Data Lifecycle Management",
+    "url": "https://learn.microsoft.com/en-us/training/modules/m365-compliance-irm-adaptive-protection/adaptive-protection-data-lifecycle-management",
+    "module": "m365-compliance-irm-adaptive-protection",
+    "moduleTitle": "Implement Adaptive Protection in Microsoft Purview",
+    "file": "content/m365-compliance-irm-adaptive-protection/07-adaptive-protection-data-lifecycle-management.md",
+    "chars": 3934
+  },
+  {
+    "uid": "learn-m365.m365-compliance-irm-adaptive-protection.knowledge-check",
+    "title": "Module assessment",
+    "url": "https://learn.microsoft.com/en-us/training/modules/m365-compliance-irm-adaptive-protection/knowledge-check",
+    "module": "m365-compliance-irm-adaptive-protection",
+    "moduleTitle": "Implement Adaptive Protection in Microsoft Purview",
+    "file": "content/m365-compliance-irm-adaptive-protection/08-knowledge-check.md",
+    "chars": 2337
+  },
+  {
+    "uid": "learn-m365.m365-compliance-irm-adaptive-protection.summary",
+    "title": "Summary",
+    "url": "https://learn.microsoft.com/en-us/training/modules/m365-compliance-irm-adaptive-protection/summary",
+    "module": "m365-compliance-irm-adaptive-protection",
+    "moduleTitle": "Implement Adaptive Protection in Microsoft Purview",
+    "file": "content/m365-compliance-irm-adaptive-protection/09-summary.md",
+    "chars": 1944
+  },
+  {
+    "uid": "learn.wwl.purview-ediscovery-search.introduction",
+    "title": "Introduction",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-ediscovery-search/introduction",
+    "module": "purview-ediscovery-search",
+    "moduleTitle": "Search for content with Microsoft Purview eDiscovery",
+    "file": "content/purview-ediscovery-search/01-introduction.md",
+    "chars": 1083
+  },
+  {
+    "uid": "learn.wwl.purview-ediscovery-search.understand-ediscovery",
+    "title": "Understand eDiscovery and content search capabilities",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-ediscovery-search/understand-ediscovery",
+    "module": "purview-ediscovery-search",
+    "moduleTitle": "Search for content with Microsoft Purview eDiscovery",
+    "file": "content/purview-ediscovery-search/02-understand-ediscovery.md",
+    "chars": 2508
+  },
+  {
+    "uid": "learn.wwl.purview-ediscovery-search.ediscovery-prerequisites",
+    "title": "Prerequisites for using eDiscovery in Microsoft Purview",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-ediscovery-search/ediscovery-prerequisites",
+    "module": "purview-ediscovery-search",
+    "moduleTitle": "Search for content with Microsoft Purview eDiscovery",
+    "file": "content/purview-ediscovery-search/03-ediscovery-prerequisites.md",
+    "chars": 2004
+  },
+  {
+    "uid": "learn.wwl.purview-ediscovery-search.create-ediscovery-search",
+    "title": "Create an eDiscovery search",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-ediscovery-search/create-ediscovery-search",
+    "module": "purview-ediscovery-search",
+    "moduleTitle": "Search for content with Microsoft Purview eDiscovery",
+    "file": "content/purview-ediscovery-search/04-create-ediscovery-search.md",
+    "chars": 3104
+  },
+  {
+    "uid": "learn.wwl.purview-ediscovery-search.conduct-ediscovery-search",
+    "title": "Conduct an eDiscovery search",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-ediscovery-search/conduct-ediscovery-search",
+    "module": "purview-ediscovery-search",
+    "moduleTitle": "Search for content with Microsoft Purview eDiscovery",
+    "file": "content/purview-ediscovery-search/05-conduct-ediscovery-search.md",
+    "chars": 7363
+  },
+  {
+    "uid": "learn.wwl.purview-ediscovery-search.export-results",
+    "title": "Export eDiscovery search results",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-ediscovery-search/export-results",
+    "module": "purview-ediscovery-search",
+    "moduleTitle": "Search for content with Microsoft Purview eDiscovery",
+    "file": "content/purview-ediscovery-search/06-export-results.md",
+    "chars": 5312
+  },
+  {
+    "uid": "learn.wwl.purview-ediscovery-search.knowledge-check",
+    "title": "Module assessment",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-ediscovery-search/knowledge-check",
+    "module": "purview-ediscovery-search",
+    "moduleTitle": "Search for content with Microsoft Purview eDiscovery",
+    "file": "content/purview-ediscovery-search/07-knowledge-check.md",
+    "chars": 1422
+  },
+  {
+    "uid": "learn.wwl.purview-ediscovery-search.summary",
+    "title": "Summary and resources",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-ediscovery-search/summary",
+    "module": "purview-ediscovery-search",
+    "moduleTitle": "Search for content with Microsoft Purview eDiscovery",
+    "file": "content/purview-ediscovery-search/08-summary.md",
+    "chars": 1500
+  },
+  {
+    "uid": "learn.wwl.purview-audit-search-investigate.introduction",
+    "title": "Introduction",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-audit-search-investigate/introduction",
+    "module": "purview-audit-search-investigate",
+    "moduleTitle": "Conduct investigations with Microsoft Purview Audit",
+    "file": "content/purview-audit-search-investigate/01-introduction.md",
+    "chars": 2957
+  },
+  {
+    "uid": "learn.wwl.purview-audit-search-investigate.audit-overview",
+    "title": "Understand how Microsoft Purview Audit works",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-audit-search-investigate/audit-overview",
+    "module": "purview-audit-search-investigate",
+    "moduleTitle": "Conduct investigations with Microsoft Purview Audit",
+    "file": "content/purview-audit-search-investigate/02-audit-overview.md",
+    "chars": 4016
+  },
+  {
+    "uid": "learn.wwl.purview-audit-search-investigate.audit-configure-manage",
+    "title": "Configure and manage Microsoft Purview Audit",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-audit-search-investigate/audit-configure-manage",
+    "module": "purview-audit-search-investigate",
+    "moduleTitle": "Conduct investigations with Microsoft Purview Audit",
+    "file": "content/purview-audit-search-investigate/03-audit-configure-manage.md",
+    "chars": 6010
+  },
+  {
+    "uid": "learn.wwl.purview-audit-search-investigate.audit-premium-retention",
+    "title": "Configure audit retention with Audit (Premium)",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-audit-search-investigate/audit-premium-retention",
+    "module": "purview-audit-search-investigate",
+    "moduleTitle": "Conduct investigations with Microsoft Purview Audit",
+    "file": "content/purview-audit-search-investigate/04-audit-premium-retention.md",
+    "chars": 6256
+  },
+  {
+    "uid": "learn.wwl.purview-audit-search-investigate.audit-standard-search",
+    "title": "Run audit searches with Audit (Standard)",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-audit-search-investigate/audit-standard-search",
+    "module": "purview-audit-search-investigate",
+    "moduleTitle": "Conduct investigations with Microsoft Purview Audit",
+    "file": "content/purview-audit-search-investigate/05-audit-standard-search.md",
+    "chars": 9250
+  },
+  {
+    "uid": "learn.wwl.purview-audit-search-investigate.audit-premium-investigate",
+    "title": "Investigate activities with Audit (Premium)",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-audit-search-investigate/audit-premium-investigate",
+    "module": "purview-audit-search-investigate",
+    "moduleTitle": "Conduct investigations with Microsoft Purview Audit",
+    "file": "content/purview-audit-search-investigate/06-audit-premium-investigate.md",
+    "chars": 7191
+  },
+  {
+    "uid": "learn.wwl.purview-audit-search-investigate.audit-copilot",
+    "title": "Search for Copilot and AI app activities",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-audit-search-investigate/audit-copilot",
+    "module": "purview-audit-search-investigate",
+    "moduleTitle": "Conduct investigations with Microsoft Purview Audit",
+    "file": "content/purview-audit-search-investigate/07-audit-copilot.md",
+    "chars": 9186
+  },
+  {
+    "uid": "learn.wwl.purview-audit-search-investigate.audit-export",
+    "title": "Analyze and report on audit results",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-audit-search-investigate/audit-export",
+    "module": "purview-audit-search-investigate",
+    "moduleTitle": "Conduct investigations with Microsoft Purview Audit",
+    "file": "content/purview-audit-search-investigate/08-audit-export.md",
+    "chars": 6239
+  },
+  {
+    "uid": "learn.wwl.purview-audit-search-investigate.knowledge-check",
+    "title": "Module assessment",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-audit-search-investigate/knowledge-check",
+    "module": "purview-audit-search-investigate",
+    "moduleTitle": "Conduct investigations with Microsoft Purview Audit",
+    "file": "content/purview-audit-search-investigate/09-knowledge-check.md",
+    "chars": 4394
+  },
+  {
+    "uid": "learn.wwl.purview-audit-search-investigate.summary",
+    "title": "Summary",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-audit-search-investigate/summary",
+    "module": "purview-audit-search-investigate",
+    "moduleTitle": "Conduct investigations with Microsoft Purview Audit",
+    "file": "content/purview-audit-search-investigate/10-summary.md",
+    "chars": 5503
+  },
+  {
+    "uid": "learn.wwl.purview-ai-secure-copilot.introduction",
+    "title": "Introduction",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-secure-copilot/introduction",
+    "module": "purview-ai-secure-copilot",
+    "moduleTitle": "Secure Microsoft 365 Copilot interactions with Microsoft Purview",
+    "file": "content/purview-ai-secure-copilot/01-introduction.md",
+    "chars": 1112
+  },
+  {
+    "uid": "learn.wwl.purview-ai-secure-copilot.understand-copilot-protection-needs",
+    "title": "Understand how Microsoft 365 Copilot changes data protection needs",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-secure-copilot/understand-copilot-protection-needs",
+    "module": "purview-ai-secure-copilot",
+    "moduleTitle": "Secure Microsoft 365 Copilot interactions with Microsoft Purview",
+    "file": "content/purview-ai-secure-copilot/02-understand-copilot-protection-needs.md",
+    "chars": 3426
+  },
+  {
+    "uid": "learn.wwl.purview-ai-secure-copilot.compliance-manager-copilot",
+    "title": "Assess Copilot regulatory compliance with Compliance Manager",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-secure-copilot/compliance-manager-copilot",
+    "module": "purview-ai-secure-copilot",
+    "moduleTitle": "Secure Microsoft 365 Copilot interactions with Microsoft Purview",
+    "file": "content/purview-ai-secure-copilot/03-compliance-manager-copilot.md",
+    "chars": 5366
+  },
+  {
+    "uid": "learn.wwl.purview-ai-secure-copilot.audit-copilot",
+    "title": "Audit Copilot interactions with Microsoft Purview",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-secure-copilot/audit-copilot",
+    "module": "purview-ai-secure-copilot",
+    "moduleTitle": "Secure Microsoft 365 Copilot interactions with Microsoft Purview",
+    "file": "content/purview-ai-secure-copilot/04-audit-copilot.md",
+    "chars": 5737
+  },
+  {
+    "uid": "learn.wwl.purview-ai-secure-copilot.communication-compliance-copilot",
+    "title": "Analyze Copilot interactions with Communication Compliance",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-secure-copilot/communication-compliance-copilot",
+    "module": "purview-ai-secure-copilot",
+    "moduleTitle": "Secure Microsoft 365 Copilot interactions with Microsoft Purview",
+    "file": "content/purview-ai-secure-copilot/05-communication-compliance-copilot.md",
+    "chars": 5811
+  },
+  {
+    "uid": "learn.wwl.purview-ai-secure-copilot.sensitivity-labels-copilot",
+    "title": "Classify and protect Copilot content with sensitivity labels",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-secure-copilot/sensitivity-labels-copilot",
+    "module": "purview-ai-secure-copilot",
+    "moduleTitle": "Secure Microsoft 365 Copilot interactions with Microsoft Purview",
+    "file": "content/purview-ai-secure-copilot/06-sensitivity-labels-copilot.md",
+    "chars": 3372
+  },
+  {
+    "uid": "learn.wwl.purview-ai-secure-copilot.data-loss-prevention-copilot",
+    "title": "Apply DLP policies to Microsoft 365 Copilot",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-secure-copilot/data-loss-prevention-copilot",
+    "module": "purview-ai-secure-copilot",
+    "moduleTitle": "Secure Microsoft 365 Copilot interactions with Microsoft Purview",
+    "file": "content/purview-ai-secure-copilot/07-data-loss-prevention-copilot.md",
+    "chars": 6149
+  },
+  {
+    "uid": "learn.wwl.purview-ai-secure-copilot.retention-copilot",
+    "title": "Apply retention policies to Copilot prompts and responses",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-secure-copilot/retention-copilot",
+    "module": "purview-ai-secure-copilot",
+    "moduleTitle": "Secure Microsoft 365 Copilot interactions with Microsoft Purview",
+    "file": "content/purview-ai-secure-copilot/08-retention-copilot.md",
+    "chars": 3613
+  },
+  {
+    "uid": "learn.wwl.purview-ai-secure-copilot.ediscovery-copilot",
+    "title": "Investigate and delete Copilot activity with eDiscovery",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-secure-copilot/ediscovery-copilot",
+    "module": "purview-ai-secure-copilot",
+    "moduleTitle": "Secure Microsoft 365 Copilot interactions with Microsoft Purview",
+    "file": "content/purview-ai-secure-copilot/09-ediscovery-copilot.md",
+    "chars": 6627
+  },
+  {
+    "uid": "learn.wwl.purview-ai-secure-copilot.knowledge-check",
+    "title": "Module assessment",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-secure-copilot/knowledge-check",
+    "module": "purview-ai-secure-copilot",
+    "moduleTitle": "Secure Microsoft 365 Copilot interactions with Microsoft Purview",
+    "file": "content/purview-ai-secure-copilot/10-knowledge-check.md",
+    "chars": 1609
+  },
+  {
+    "uid": "learn.wwl.purview-ai-secure-copilot.summary",
+    "title": "Summary",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-secure-copilot/summary",
+    "module": "purview-ai-secure-copilot",
+    "moduleTitle": "Secure Microsoft 365 Copilot interactions with Microsoft Purview",
+    "file": "content/purview-ai-secure-copilot/11-summary.md",
+    "chars": 1725
+  },
+  {
+    "uid": "learn.wwl.purview-ai-understand-risks.introduction",
+    "title": "Introduction",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-understand-risks/introduction",
+    "module": "purview-ai-understand-risks",
+    "moduleTitle": "Understand How to Secure AI Data with Microsoft Purview",
+    "file": "content/purview-ai-understand-risks/01-introduction.md",
+    "chars": 1394
+  },
+  {
+    "uid": "learn.wwl.purview-ai-understand-risks.understand-ai-risks",
+    "title": "Understand AI data security risks",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-understand-risks/understand-ai-risks",
+    "module": "purview-ai-understand-risks",
+    "moduleTitle": "Understand How to Secure AI Data with Microsoft Purview",
+    "file": "content/purview-ai-understand-risks/02-understand-ai-risks.md",
+    "chars": 3497
+  },
+  {
+    "uid": "learn.wwl.purview-ai-understand-risks.understand-purview-ai-protections",
+    "title": "Understand how Microsoft Purview secures AI data",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-understand-risks/understand-purview-ai-protections",
+    "module": "purview-ai-understand-risks",
+    "moduleTitle": "Understand How to Secure AI Data with Microsoft Purview",
+    "file": "content/purview-ai-understand-risks/03-understand-purview-ai-protections.md",
+    "chars": 4802
+  },
+  {
+    "uid": "learn.wwl.purview-ai-understand-risks.compliance-risks-ai",
+    "title": "Evaluate compliance risks for AI usage",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-understand-risks/compliance-risks-ai",
+    "module": "purview-ai-understand-risks",
+    "moduleTitle": "Understand How to Secure AI Data with Microsoft Purview",
+    "file": "content/purview-ai-understand-risks/04-compliance-risks-ai.md",
+    "chars": 2376
+  },
+  {
+    "uid": "learn.wwl.purview-ai-understand-risks.assess-ai-risks",
+    "title": "Identify AI-related data exposure risks",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-understand-risks/assess-ai-risks",
+    "module": "purview-ai-understand-risks",
+    "moduleTitle": "Understand How to Secure AI Data with Microsoft Purview",
+    "file": "content/purview-ai-understand-risks/05-assess-ai-risks.md",
+    "chars": 2961
+  },
+  {
+    "uid": "learn.wwl.purview-ai-understand-risks.control-ai-sensitive-data",
+    "title": "Understand how Microsoft Purview controls AI data access",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-understand-risks/control-ai-sensitive-data",
+    "module": "purview-ai-understand-risks",
+    "moduleTitle": "Understand How to Secure AI Data with Microsoft Purview",
+    "file": "content/purview-ai-understand-risks/06-control-ai-sensitive-data.md",
+    "chars": 3394
+  },
+  {
+    "uid": "learn.wwl.purview-ai-understand-risks.detect-respond-ai-activity",
+    "title": "Detect and respond to risky AI activity",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-understand-risks/detect-respond-ai-activity",
+    "module": "purview-ai-understand-risks",
+    "moduleTitle": "Understand How to Secure AI Data with Microsoft Purview",
+    "file": "content/purview-ai-understand-risks/07-detect-respond-ai-activity.md",
+    "chars": 2889
+  },
+  {
+    "uid": "learn.wwl.purview-ai-understand-risks.retain-search-copilot",
+    "title": "Retain and search Copilot prompts and responses",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-understand-risks/retain-search-copilot",
+    "module": "purview-ai-understand-risks",
+    "moduleTitle": "Understand How to Secure AI Data with Microsoft Purview",
+    "file": "content/purview-ai-understand-risks/08-retain-search-copilot.md",
+    "chars": 2822
+  },
+  {
+    "uid": "learn.wwl.purview-ai-understand-risks.knowledge-check",
+    "title": "Module assessment",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-understand-risks/knowledge-check",
+    "module": "purview-ai-understand-risks",
+    "moduleTitle": "Understand How to Secure AI Data with Microsoft Purview",
+    "file": "content/purview-ai-understand-risks/09-knowledge-check.md",
+    "chars": 1588
+  },
+  {
+    "uid": "learn.wwl.purview-ai-understand-risks.summary",
+    "title": "Summary",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-understand-risks/summary",
+    "module": "purview-ai-understand-risks",
+    "moduleTitle": "Understand How to Secure AI Data with Microsoft Purview",
+    "file": "content/purview-ai-understand-risks/10-summary.md",
+    "chars": 1993
+  },
+  {
+    "uid": "learn.wwl.purview-ai-developer-apps.introduction",
+    "title": "Introduction",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-developer-apps/introduction",
+    "module": "purview-ai-developer-apps",
+    "moduleTitle": "Secure developer AI environments with Microsoft Purview",
+    "file": "content/purview-ai-developer-apps/01-introduction.md",
+    "chars": 1319
+  },
+  {
+    "uid": "learn.wwl.purview-ai-developer-apps.understand-developer-ai-risks",
+    "title": "Understand risks and responsibilities in AI development environments",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-developer-apps/understand-developer-ai-risks",
+    "module": "purview-ai-developer-apps",
+    "moduleTitle": "Secure developer AI environments with Microsoft Purview",
+    "file": "content/purview-ai-developer-apps/02-understand-developer-ai-risks.md",
+    "chars": 3161
+  },
+  {
+    "uid": "learn.wwl.purview-ai-developer-apps.discover-assess-ai-apps",
+    "title": "Discover and assess AI apps with DSPM for AI",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-developer-apps/discover-assess-ai-apps",
+    "module": "purview-ai-developer-apps",
+    "moduleTitle": "Secure developer AI environments with Microsoft Purview",
+    "file": "content/purview-ai-developer-apps/03-discover-assess-ai-apps.md",
+    "chars": 6752
+  },
+  {
+    "uid": "learn.wwl.purview-ai-developer-apps.classify-protect-retain-ai-prompt-data",
+    "title": "Classify, restrict, and retain AI prompt data",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-developer-apps/classify-protect-retain-ai-prompt-data",
+    "module": "purview-ai-developer-apps",
+    "moduleTitle": "Secure developer AI environments with Microsoft Purview",
+    "file": "content/purview-ai-developer-apps/04-classify-protect-retain-ai-prompt-data.md",
+    "chars": 4352
+  },
+  {
+    "uid": "learn.wwl.purview-ai-developer-apps.azure-ai-services-protections",
+    "title": "Enforce protections in Microsoft Foundry and Foundry Tools",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-developer-apps/azure-ai-services-protections",
+    "module": "purview-ai-developer-apps",
+    "moduleTitle": "Secure developer AI environments with Microsoft Purview",
+    "file": "content/purview-ai-developer-apps/05-azure-ai-services-protections.md",
+    "chars": 3708
+  },
+  {
+    "uid": "learn.wwl.purview-ai-developer-apps.entra-ai-apps",
+    "title": "Apply controls for Microsoft Entra-registered custom AI apps",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-developer-apps/entra-ai-apps",
+    "module": "purview-ai-developer-apps",
+    "moduleTitle": "Secure developer AI environments with Microsoft Purview",
+    "file": "content/purview-ai-developer-apps/06-entra-ai-apps.md",
+    "chars": 4091
+  },
+  {
+    "uid": "learn.wwl.purview-ai-developer-apps.secure-copilot-studio",
+    "title": "Secure AI agents built in Copilot Studio",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-developer-apps/secure-copilot-studio",
+    "module": "purview-ai-developer-apps",
+    "moduleTitle": "Secure developer AI environments with Microsoft Purview",
+    "file": "content/purview-ai-developer-apps/07-secure-copilot-studio.md",
+    "chars": 6500
+  },
+  {
+    "uid": "learn.wwl.purview-ai-developer-apps.manage-copilot-fabric-risks",
+    "title": "Manage data risks in Copilot in Fabric",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-developer-apps/manage-copilot-fabric-risks",
+    "module": "purview-ai-developer-apps",
+    "moduleTitle": "Secure developer AI environments with Microsoft Purview",
+    "file": "content/purview-ai-developer-apps/08-manage-copilot-fabric-risks.md",
+    "chars": 3270
+  },
+  {
+    "uid": "learn.wwl.purview-ai-developer-apps.investigate-respond-ai-activity",
+    "title": "Investigate and respond to risky AI activity",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-developer-apps/investigate-respond-ai-activity",
+    "module": "purview-ai-developer-apps",
+    "moduleTitle": "Secure developer AI environments with Microsoft Purview",
+    "file": "content/purview-ai-developer-apps/09-investigate-respond-ai-activity.md",
+    "chars": 4547
+  },
+  {
+    "uid": "learn.wwl.purview-ai-developer-apps.knowledge-check",
+    "title": "Module assessment",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-developer-apps/knowledge-check",
+    "module": "purview-ai-developer-apps",
+    "moduleTitle": "Secure developer AI environments with Microsoft Purview",
+    "file": "content/purview-ai-developer-apps/10-knowledge-check.md",
+    "chars": 1671
+  },
+  {
+    "uid": "learn.wwl.purview-ai-developer-apps.summary",
+    "title": "Summary",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-developer-apps/summary",
+    "module": "purview-ai-developer-apps",
+    "moduleTitle": "Secure developer AI environments with Microsoft Purview",
+    "file": "content/purview-ai-developer-apps/11-summary.md",
+    "chars": 1852
+  },
+  {
+    "uid": "learn.wwl.purview-ai-secure-enterprise-other.introduction",
+    "title": "Introduction",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-secure-enterprise-other/introduction",
+    "module": "purview-ai-secure-enterprise-other",
+    "moduleTitle": "Secure enterprise and browser-based AI apps with Microsoft Purview",
+    "file": "content/purview-ai-secure-enterprise-other/01-introduction.md",
+    "chars": 1350
+  },
+  {
+    "uid": "learn.wwl.purview-ai-secure-enterprise-other.understand-ai-risks",
+    "title": "Understand risks from enterprise and non-Microsoft AI tools",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-secure-enterprise-other/understand-ai-risks",
+    "module": "purview-ai-secure-enterprise-other",
+    "moduleTitle": "Secure enterprise and browser-based AI apps with Microsoft Purview",
+    "file": "content/purview-ai-secure-enterprise-other/02-understand-ai-risks.md",
+    "chars": 4646
+  },
+  {
+    "uid": "learn.wwl.purview-ai-secure-enterprise-other.assess-ai-tool-usage",
+    "title": "Assess AI usage for security and compliance",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-secure-enterprise-other/assess-ai-tool-usage",
+    "module": "purview-ai-secure-enterprise-other",
+    "moduleTitle": "Secure enterprise and browser-based AI apps with Microsoft Purview",
+    "file": "content/purview-ai-secure-enterprise-other/03-assess-ai-tool-usage.md",
+    "chars": 5067
+  },
+  {
+    "uid": "learn.wwl.purview-ai-secure-enterprise-other.communication-compliance-ai",
+    "title": "Identify policy violations with Communication Compliance",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-secure-enterprise-other/communication-compliance-ai",
+    "module": "purview-ai-secure-enterprise-other",
+    "moduleTitle": "Secure enterprise and browser-based AI apps with Microsoft Purview",
+    "file": "content/purview-ai-secure-enterprise-other/04-communication-compliance-ai.md",
+    "chars": 5030
+  },
+  {
+    "uid": "learn.wwl.purview-ai-secure-enterprise-other.insider-risk-management-ai",
+    "title": "Detect risky AI usage with Insider Risk Management",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-secure-enterprise-other/insider-risk-management-ai",
+    "module": "purview-ai-secure-enterprise-other",
+    "moduleTitle": "Secure enterprise and browser-based AI apps with Microsoft Purview",
+    "file": "content/purview-ai-secure-enterprise-other/05-insider-risk-management-ai.md",
+    "chars": 4479
+  },
+  {
+    "uid": "learn.wwl.purview-ai-secure-enterprise-other.data-loss-prevention-ai",
+    "title": "Protect sensitive data in AI apps with Microsoft Purview DLP",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-secure-enterprise-other/data-loss-prevention-ai",
+    "module": "purview-ai-secure-enterprise-other",
+    "moduleTitle": "Secure enterprise and browser-based AI apps with Microsoft Purview",
+    "file": "content/purview-ai-secure-enterprise-other/06-data-loss-prevention-ai.md",
+    "chars": 6237
+  },
+  {
+    "uid": "learn.wwl.purview-ai-secure-enterprise-other.adaptive-protection-ai",
+    "title": "Case study: Use Adaptive Protection to respond to AI-related risk",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-secure-enterprise-other/adaptive-protection-ai",
+    "module": "purview-ai-secure-enterprise-other",
+    "moduleTitle": "Secure enterprise and browser-based AI apps with Microsoft Purview",
+    "file": "content/purview-ai-secure-enterprise-other/07-adaptive-protection-ai.md",
+    "chars": 5309
+  },
+  {
+    "uid": "learn.wwl.purview-ai-secure-enterprise-other.retention-ai",
+    "title": "Apply retention policies to AI app prompts and responses",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-secure-enterprise-other/retention-ai",
+    "module": "purview-ai-secure-enterprise-other",
+    "moduleTitle": "Secure enterprise and browser-based AI apps with Microsoft Purview",
+    "file": "content/purview-ai-secure-enterprise-other/08-retention-ai.md",
+    "chars": 5518
+  },
+  {
+    "uid": "learn.wwl.purview-ai-secure-enterprise-other.knowledge-check",
+    "title": "Module assessment",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-secure-enterprise-other/knowledge-check",
+    "module": "purview-ai-secure-enterprise-other",
+    "moduleTitle": "Secure enterprise and browser-based AI apps with Microsoft Purview",
+    "file": "content/purview-ai-secure-enterprise-other/09-knowledge-check.md",
+    "chars": 1951
+  },
+  {
+    "uid": "learn.wwl.purview-ai-secure-enterprise-other.summary",
+    "title": "Summary",
+    "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-secure-enterprise-other/summary",
+    "module": "purview-ai-secure-enterprise-other",
+    "moduleTitle": "Secure enterprise and browser-based AI apps with Microsoft Purview",
+    "file": "content/purview-ai-secure-enterprise-other/10-summary.md",
+    "chars": 2295
+  }
+]

@@ -1,0 +1,1104 @@
+[
+  {
+    "id": "scb5-001",
+    "type": "single-choice",
+    "skillArea": "risks",
+    "topic": "Insider risk types",
+    "difficulty": "easy",
+    "prompt": "Which of the following is an example of an accidental insider risk?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A frustrated employee downloads trade secrets and shares them with a competitor."
+      },
+      {
+        "id": "b",
+        "text": "An employee opens a phishing link, exposing sensitive company data."
+      },
+      {
+        "id": "c",
+        "text": "An external hacker brute-forces an administrator account."
+      },
+      {
+        "id": "d",
+        "text": "A departing employee deliberately copies confidential files to a personal drive."
+      }
+    ],
+    "correct": "b",
+    "explanation": "Versehentliche Insider-Risiken entstehen durch unbeabsichtigte Handlungen wie Fehler oder Fahrlässigkeit, z. B. das Öffnen eines Phishing-Links. Das Teilen von Geschäftsgeheimnissen mit einem Wettbewerber oder gezieltes Kopieren vertraulicher Dateien sind böswillige Insider-Risiken, und ein externer Hacker ist gar kein Insider-Risiko.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-explore-insider-risk-management/insider-risk-concept",
+    "source": {
+      "title": "What is an insider risk?",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-explore-insider-risk-management/insider-risk-concept",
+      "quote": "Accidental insider risks: These involve unintentional actions, like mistakes or negligence, that result in harm to the organization. Example: An employee opens phishing link, exposing sensitive company data."
+    }
+  },
+  {
+    "id": "scb5-002",
+    "type": "single-choice",
+    "skillArea": "risks",
+    "topic": "Insider risk analytics",
+    "difficulty": "medium",
+    "prompt": "Your organization is new to Microsoft Purview Insider Risk Management and wants to evaluate potential risk areas before creating any policies. What should you use?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Insider risk analytics"
+      },
+      {
+        "id": "b",
+        "text": "The Cases dashboard"
+      },
+      {
+        "id": "c",
+        "text": "A Data leaks quick policy"
+      },
+      {
+        "id": "d",
+        "text": "Content explorer"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Insider-Risk-Analytics liefert Erkenntnisse über potenzielle Risikobereiche, ohne dass aktive Richtlinien erforderlich sind, und ist damit der ideale Ausgangspunkt vor der Richtlinienerstellung. Cases-Dashboard und Content Explorer dienen der Untersuchung bereits erkannter Risiken, eine Quick Policy wäre bereits eine aktive Richtlinie.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-explore-insider-risk-management/insider-risk-management-overview",
+    "source": {
+      "title": "Microsoft Purview Insider Risk Management overview",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-explore-insider-risk-management/insider-risk-management-overview",
+      "quote": "This feature helps identify areas with higher user risk and guides decisions about which policies to implement. Analytics provides valuable insights without requiring active policies, making it an excellent starting point for organizations new to insider risk management."
+    }
+  },
+  {
+    "id": "scb5-003",
+    "type": "matching",
+    "skillArea": "risks",
+    "topic": "Investigative tools",
+    "difficulty": "medium",
+    "prompt": "Match each Insider Risk Management feature to its purpose.",
+    "left": [
+      {
+        "id": "l1",
+        "text": "User activity reports"
+      },
+      {
+        "id": "l2",
+        "text": "Content explorer"
+      },
+      {
+        "id": "l3",
+        "text": "Case notes"
+      },
+      {
+        "id": "l4",
+        "text": "Notice templates"
+      }
+    ],
+    "right": [
+      {
+        "id": "r1",
+        "text": "View detailed records of a user's actions over a specific time period"
+      },
+      {
+        "id": "r2",
+        "text": "Display files, emails, and other data associated with flagged activities"
+      },
+      {
+        "id": "r3",
+        "text": "Document investigator findings for consistent tracking and collaboration"
+      },
+      {
+        "id": "r4",
+        "text": "Send customized messages to users as reminders of compliance policies"
+      }
+    ],
+    "correct": {
+      "l1": "r1",
+      "l2": "r2",
+      "l3": "r3",
+      "l4": "r4"
+    },
+    "explanation": "User Activity Reports zeigen detaillierte Aktionen eines Nutzers über einen Zeitraum, Content Explorer zeigt die mit Warnungen verknüpften Dateien und E-Mails, Case Notes dokumentieren Untersuchungsergebnisse, und Notice Templates senden angepasste Erinnerungen an Compliance-Richtlinien an Nutzer.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-explore-insider-risk-management/insider-risk-management-features",
+    "source": {
+      "title": "Microsoft Purview Insider Risk Management features",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-explore-insider-risk-management/insider-risk-management-features",
+      "quote": "User activity reports (preview): Allow investigators to view detailed records of a user's actions over a specific time period. Content explorer: Displays files, emails, and other data associated with flagged activities. Notice templates: Send customized messages to users as reminders of compliance policies or as corrective guidance."
+    }
+  },
+  {
+    "id": "scb5-004",
+    "type": "yes-no",
+    "skillArea": "risks",
+    "topic": "IRM principles",
+    "difficulty": "easy",
+    "prompt": "For each of the following statements about Microsoft Purview Insider Risk Management, select Yes if the statement is true. Otherwise, select No.",
+    "statements": [
+      {
+        "id": "s1",
+        "text": "The Insider Risk Management workflow emphasizes monitoring individual employees rather than their actions.",
+        "correct": false
+      },
+      {
+        "id": "s2",
+        "text": "Organizations can tailor policies to meet their specific needs based on industry, geography, or business context.",
+        "correct": true
+      },
+      {
+        "id": "s3",
+        "text": "Insider Risk Management works with other Microsoft Purview tools to provide a cohesive risk management workflow.",
+        "correct": true
+      }
+    ],
+    "explanation": "Der Workflow betont ausdrücklich Aktionen statt Personen, damit Reaktionen fair und datenschutzbewusst bleiben. Das Prinzip 'Configurable' erlaubt die Anpassung nach Branche, Region und Geschäftskontext, und 'Integrated' beschreibt das nahtlose Zusammenspiel mit anderen Purview-Tools.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-explore-insider-risk-management/insider-risk-management-overview",
+    "source": {
+      "title": "Microsoft Purview Insider Risk Management overview",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-explore-insider-risk-management/insider-risk-management-overview",
+      "quote": "This workflow emphasizes actions rather than individuals, ensuring responses remain fair and privacy-conscious."
+    }
+  },
+  {
+    "id": "scb5-005",
+    "type": "ordering",
+    "skillArea": "risks",
+    "topic": "Data theft investigation",
+    "difficulty": "hard",
+    "prompt": "A project manager resigns and then downloads several files labeled Confidential from a team SharePoint site. A Data theft by departing users policy is in place. Place the organization's response steps in the correct order.",
+    "items": [
+      {
+        "id": "i1",
+        "text": "Review the high-priority alert generated by the policy in the Alerts dashboard"
+      },
+      {
+        "id": "i2",
+        "text": "Examine the downloaded files with Content explorer to check for sensitivity labels"
+      },
+      {
+        "id": "i3",
+        "text": "Use User activity reports to confirm the downloads occurred outside normal working hours"
+      },
+      {
+        "id": "i4",
+        "text": "Send the user a notice and escalate the case to the legal team using eDiscovery (Premium)"
+      },
+      {
+        "id": "i5",
+        "text": "Refine the policy to flag downloads of labeled files during non-business hours"
+      }
+    ],
+    "correctOrder": [
+      "i1",
+      "i2",
+      "i3",
+      "i4",
+      "i5"
+    ],
+    "explanation": "Die Fallstudie folgt dem Ablauf: Zuerst wird der von der Richtlinie erzeugte Alert im Alerts-Dashboard geprüft, dann untersucht der Investigator die Dateien im Content Explorer, bestätigt per User Activity Reports die ungewöhnlichen Zeiten, ergreift Maßnahmen (Notice und Eskalation an die Rechtsabteilung via eDiscovery Premium) und verfeinert abschließend die Richtlinie.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-explore-insider-risk-management/case-study-protect-insider-data",
+    "source": {
+      "title": "Case study: Protect sensitive data with Insider Risk Management",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-explore-insider-risk-management/case-study-protect-insider-data",
+      "quote": "The investigator also uses User activity reports to confirm that the downloads occurred outside the project manager's normal working hours, adding to the concern."
+    }
+  },
+  {
+    "id": "scb5-006",
+    "type": "multiple-choice",
+    "skillArea": "risks",
+    "topic": "IRM integrations",
+    "difficulty": "medium",
+    "prompt": "Which two solutions integrate with Microsoft Purview Insider Risk Management to provide a more comprehensive view of risks? Each correct answer presents a complete solution.",
+    "options": [
+      {
+        "id": "a",
+        "text": "eDiscovery (Premium) for managing legal investigations involving insider risks"
+      },
+      {
+        "id": "b",
+        "text": "Microsoft Defender for Endpoint for alerts about device-related risks"
+      },
+      {
+        "id": "c",
+        "text": "Azure Firewall for blocking outbound network traffic"
+      },
+      {
+        "id": "d",
+        "text": "Windows Autopilot for device provisioning"
+      },
+      {
+        "id": "e",
+        "text": "Microsoft Cost Management for tracking subscription spending"
+      }
+    ],
+    "correct": [
+      "a",
+      "b"
+    ],
+    "explanation": "Insider Risk Management integriert sich mit eDiscovery (Premium) für rechtliche Untersuchungen und mit Microsoft Defender for Endpoint für gerätebezogene Warnungen (sowie mit Communication Compliance). Azure Firewall, Autopilot und Cost Management sind keine Insider-Risk-Integrationen.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-explore-insider-risk-management/insider-risk-management-features",
+    "source": {
+      "title": "Microsoft Purview Insider Risk Management features",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-explore-insider-risk-management/insider-risk-management-features",
+      "quote": "eDiscovery (Premium) enables legal teams to manage investigations involving insider risks. Microsoft Defender for Endpoint contributes alerts about device-related risks."
+    }
+  },
+  {
+    "id": "scb5-007",
+    "type": "dropdown",
+    "skillArea": "risks",
+    "topic": "IRM dashboards",
+    "difficulty": "easy",
+    "prompt": "Complete the statement by selecting the correct options.",
+    "textParts": [
+      "In Microsoft Purview Insider Risk Management, the ",
+      " dashboard helps reviewers prioritize risks by displaying the severity, status, and type of flagged activities, while the ",
+      " dashboard tracks investigations with details on progress, timelines, and outcomes."
+    ],
+    "blanks": [
+      {
+        "id": "b1",
+        "options": [
+          {
+            "id": "o1",
+            "text": "Alerts"
+          },
+          {
+            "id": "o2",
+            "text": "Cases"
+          },
+          {
+            "id": "o3",
+            "text": "Users"
+          }
+        ],
+        "correct": "o1"
+      },
+      {
+        "id": "b2",
+        "options": [
+          {
+            "id": "o1",
+            "text": "Cases"
+          },
+          {
+            "id": "o2",
+            "text": "Alerts"
+          },
+          {
+            "id": "o3",
+            "text": "Policies"
+          }
+        ],
+        "correct": "o1"
+      }
+    ],
+    "explanation": "Das Alerts-Dashboard zeigt Schweregrad, Status und Art der geflaggten Aktivitäten und hilft bei der Priorisierung; das Cases-Dashboard verfolgt Untersuchungen mit Fortschritt, Zeitverlauf und Ergebnissen.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-explore-insider-risk-management/insider-risk-management-features",
+    "source": {
+      "title": "Microsoft Purview Insider Risk Management features",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-explore-insider-risk-management/insider-risk-management-features",
+      "quote": "Alerts dashboard: Helps reviewers prioritize risks by displaying the severity, status, and type of activities flagged by policies. Cases dashboard: Tracks investigations with details on progress, timelines, and outcomes."
+    }
+  },
+  {
+    "id": "scb5-008",
+    "type": "single-choice",
+    "skillArea": "risks",
+    "topic": "Risky AI usage template",
+    "difficulty": "easy",
+    "prompt": "Your organization is adopting generative AI tools and wants to detect when users enter sensitive information into AI prompts. Which Insider Risk Management policy template should you use?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Risky AI usage"
+      },
+      {
+        "id": "b",
+        "text": "Data theft by departing users"
+      },
+      {
+        "id": "c",
+        "text": "Security policy violations"
+      },
+      {
+        "id": "d",
+        "text": "Health record misuse"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Die Vorlage 'Risky AI usage' adressiert Risiken durch generative KI-Tools und erkennt sensible oder riskante Prompts und Antworten. Die anderen Vorlagen zielen auf ausscheidende Mitarbeiter, Sicherheitsverstöße bzw. Patientendaten ab.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-create-manage-insider-risk-policy/policy-templates",
+    "source": {
+      "title": "Understand Insider Risk Management policy templates",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-create-manage-insider-risk-policy/policy-templates",
+      "quote": "The Risky AI usage policy template addresses emerging risks associated with generative AI tools. It identifies sensitive or risky prompts and responses that could expose an organization to security threats."
+    }
+  },
+  {
+    "id": "scb5-009",
+    "type": "single-choice",
+    "skillArea": "risks",
+    "topic": "Quick vs custom policies",
+    "difficulty": "medium",
+    "prompt": "Your organization needs an insider risk policy that is scoped to a specific department, prioritizes selected SharePoint sites and sensitivity labels, and uses organization-defined thresholds. Which approach should you use?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Create a custom policy"
+      },
+      {
+        "id": "b",
+        "text": "Create a quick policy"
+      },
+      {
+        "id": "c",
+        "text": "Enable insider risk analytics only"
+      },
+      {
+        "id": "d",
+        "text": "Enable inline alert customization"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Custom Policies bieten granulare Kontrolle über Scope (Nutzer, Gruppen, adaptive Bereiche), Content-Priorisierung (SharePoint-Sites, Sensitivity Labels, Dateitypen) sowie Indikatoren und Schwellenwerte. Quick Policies sind vorkonfiguriert und nur begrenzt anpassbar; Analytics und Inline-Anpassung ersetzen keine Richtlinie mit diesen Anforderungen.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-create-manage-insider-risk-policy/compare-quick-custom-policies",
+    "source": {
+      "title": "Compare quick and custom insider risk policies",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-create-manage-insider-risk-policy/compare-quick-custom-policies",
+      "quote": "Custom policies allow you to fully tailor the policy settings to fit your organization's unique requirements. They provide granular control over: Scope: Define specific users, groups, or adaptive scopes. Content prioritization: Focus on specific SharePoint sites, sensitivity labels, or file types. Indicators and triggers: Choose detailed conditions and thresholds."
+    }
+  },
+  {
+    "id": "scb5-010",
+    "type": "multiple-choice",
+    "skillArea": "risks",
+    "topic": "Departing users prerequisites",
+    "difficulty": "medium",
+    "prompt": "You're creating a policy from the Data theft by departing users template. Which two configurations allow the policy to identify departing users? Each correct answer presents a complete solution.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Configure the Microsoft 365 HR Connector to import resignation and termination dates."
+      },
+      {
+        "id": "b",
+        "text": "Select the User account deleted from Microsoft Entra option when configuring trigger events."
+      },
+      {
+        "id": "c",
+        "text": "Integrate Microsoft Defender for Endpoint with the Purview compliance portal."
+      },
+      {
+        "id": "d",
+        "text": "Install the Microsoft Purview extension for Chrome on all devices."
+      },
+      {
+        "id": "e",
+        "text": "Create a high-severity data loss prevention (DLP) policy."
+      }
+    ],
+    "correct": [
+      "a",
+      "b"
+    ],
+    "explanation": "Die Vorlage 'Data theft by departing users' benötigt entweder den Microsoft 365 HR Connector für Kündigungs- und Austrittsdaten oder alternativ die Trigger-Option 'User account deleted from Microsoft Entra'. Defender for Endpoint gehört zur Vorlage für Sicherheitsverstöße, Browser-Erweiterungen zu Risky-Browser-/AI-Vorlagen und DLP-Richtlinien zur Data-Leaks-Vorlage.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-create-manage-insider-risk-policy/policy-templates",
+    "source": {
+      "title": "Understand Insider Risk Management policy templates",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-create-manage-insider-risk-policy/policy-templates",
+      "quote": "Configure the Microsoft 365 HR Connector to import resignation and termination dates. If not using the HR Connector, select the User account deleted from Microsoft Entra option when configuring trigger events."
+    }
+  },
+  {
+    "id": "scb5-011",
+    "type": "ordering",
+    "skillArea": "risks",
+    "topic": "Custom policy creation",
+    "difficulty": "medium",
+    "prompt": "You're creating a custom Insider Risk Management policy in the Microsoft Purview portal. Place the steps of the policy creation wizard in the correct order.",
+    "items": [
+      {
+        "id": "i1",
+        "text": "Select a policy template"
+      },
+      {
+        "id": "i2",
+        "text": "Provide a name and description for the policy"
+      },
+      {
+        "id": "i3",
+        "text": "Choose users, groups, and adaptive scopes"
+      },
+      {
+        "id": "i4",
+        "text": "Choose the triggering event for the policy"
+      },
+      {
+        "id": "i5",
+        "text": "Configure policy indicators and thresholds"
+      }
+    ],
+    "correctOrder": [
+      "i1",
+      "i2",
+      "i3",
+      "i4",
+      "i5"
+    ],
+    "explanation": "Der Assistent folgt dieser Reihenfolge: Zuerst wird die Vorlage gewählt (Pflichtschritt), dann Name und Beschreibung vergeben, anschließend der Nutzer-Scope definiert, danach (optional nach der Content-Priorisierung) das auslösende Ereignis festgelegt und zuletzt Indikatoren, Erkennungsoptionen und Schwellenwerte konfiguriert.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-create-manage-insider-risk-policy/create-custom-insider-risk-policy",
+    "source": {
+      "title": "Create a custom Insider Risk Management policy",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-create-manage-insider-risk-policy/create-custom-insider-risk-policy",
+      "quote": "Policy templates provide a starting point for configuring custom policies tailored to specific risk scenarios, such as data theft by departing users or security policy violations. Choose the template that aligns with your organization's needs."
+    }
+  },
+  {
+    "id": "scb5-012",
+    "type": "single-choice",
+    "skillArea": "risks",
+    "topic": "Policy triggers",
+    "difficulty": "hard",
+    "prompt": "You're creating a custom policy based on the Data leaks template. Users should only come into scope of the policy after their activity matches an existing data loss prevention policy. Which triggering event should you select?",
+    "options": [
+      {
+        "id": "a",
+        "text": "User matches a data loss prevention (DLP) policy"
+      },
+      {
+        "id": "b",
+        "text": "User performs an exfiltration activity"
+      },
+      {
+        "id": "c",
+        "text": "HR data connector events"
+      },
+      {
+        "id": "d",
+        "text": "Risk triggers from communication compliance"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Für die Vorlagen 'Data leaks' und 'Data leaks by priority users' basiert das Onboarding in die Richtlinie auf dem Trigger 'User matches a data loss prevention (DLP) policy'. Exfiltrationsaktivitäten gehören zu Data-Theft-/Risky-Users-Vorlagen, HR-Connector-Events zu 'Data theft by departing users' und Communication-Compliance-Trigger zu 'Security policy violations by risky users'.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-create-manage-insider-risk-policy/create-custom-insider-risk-policy",
+    "source": {
+      "title": "Create a custom Insider Risk Management policy",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-create-manage-insider-risk-policy/create-custom-insider-risk-policy",
+      "quote": "Data leaks or Data leaks by priority users: Use the User matches a data loss prevention (DLP) policy trigger to base the policy on a DLP match."
+    }
+  },
+  {
+    "id": "scb5-013",
+    "type": "yes-no",
+    "skillArea": "risks",
+    "topic": "Policy deletion",
+    "difficulty": "medium",
+    "prompt": "For each of the following statements about deleting Insider Risk Management policies, select Yes if the statement is true. Otherwise, select No.",
+    "statements": [
+      {
+        "id": "s1",
+        "text": "Deleting an insider risk policy is irreversible.",
+        "correct": true
+      },
+      {
+        "id": "s2",
+        "text": "When deleting a policy, you can choose to keep the associated alerts and user data.",
+        "correct": true
+      },
+      {
+        "id": "s3",
+        "text": "Policy deletion always completes immediately.",
+        "correct": false
+      }
+    ],
+    "explanation": "Das Löschen einer Richtlinie ist unumkehrbar. Es gibt zwei Optionen: nur die Richtlinie löschen (Alerts und Nutzerdaten bleiben erhalten) oder Richtlinie samt zugehöriger Daten löschen. Die Löschung kann bis zu 72 Stunden dauern.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-create-manage-insider-risk-policy/manage-insider-risk-policy",
+    "source": {
+      "title": "Manage policies in Insider Risk Management",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-create-manage-insider-risk-policy/manage-insider-risk-policy",
+      "quote": "When policies are no longer needed, you can delete them, but note that this action is irreversible. Delete only the policy: Keeps associated alerts and user data. Deleting a policy might take up to 72 hours to complete."
+    }
+  },
+  {
+    "id": "scb5-014",
+    "type": "single-choice",
+    "skillArea": "risks",
+    "topic": "Health record misuse",
+    "difficulty": "hard",
+    "prompt": "A hospital wants to use the Health record misuse policy template to detect unauthorized access to patient records and support HIPAA compliance. Which connector must be configured to track activity in their electronic medical record (EMR) system?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Microsoft Healthcare Connector"
+      },
+      {
+        "id": "b",
+        "text": "Microsoft 365 HR Connector only"
+      },
+      {
+        "id": "c",
+        "text": "Physical badging connector"
+      },
+      {
+        "id": "d",
+        "text": "Office 365 Management Activity API"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Die Vorlage 'Health record misuse' erfordert den Microsoft Healthcare Connector, um Aktivitäten in EMR-Systemen nachzuverfolgen; zusätzlich wird der HR Connector für Organisationsprofildaten genutzt. Der HR Connector allein genügt nicht, Badging-Daten und die Management Activity API dienen anderen Zwecken.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-create-manage-insider-risk-policy/policy-templates",
+    "source": {
+      "title": "Understand Insider Risk Management policy templates",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-create-manage-insider-risk-policy/policy-templates",
+      "quote": "Configure the Microsoft Healthcare Connector to track activity in electronic medical record (EMR) systems. Use the Microsoft HR Connector to import organizational profile data."
+    }
+  },
+  {
+    "id": "scb5-015",
+    "type": "single-choice",
+    "skillArea": "risks",
+    "topic": "Alert retention",
+    "difficulty": "easy",
+    "prompt": "How long are insider risk alerts in a Needs review state retained before they're automatically deleted, unless they're linked to an active case?",
+    "options": [
+      {
+        "id": "a",
+        "text": "30 days"
+      },
+      {
+        "id": "b",
+        "text": "90 days"
+      },
+      {
+        "id": "c",
+        "text": "120 days"
+      },
+      {
+        "id": "d",
+        "text": "365 days"
+      }
+    ],
+    "correct": "c",
+    "explanation": "Alerts im Status 'Needs review' werden 120 Tage aufbewahrt und danach automatisch gelöscht, sofern sie nicht mit einem aktiven Fall verknüpft sind. Aktive und ungelöste Fälle werden unbegrenzt aufbewahrt.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-insider-risk-investigate-alerts/investigate-triage-alerts",
+    "source": {
+      "title": "Investigate and triage insider risk alerts in Microsoft Purview",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-insider-risk-investigate-alerts/investigate-triage-alerts",
+      "quote": "Alerts in a \"Needs review\" state are retained for 120 days. After this period, they're automatically deleted unless linked to an active case."
+    }
+  },
+  {
+    "id": "scb5-016",
+    "type": "ordering",
+    "skillArea": "risks",
+    "topic": "Alert generation process",
+    "difficulty": "medium",
+    "prompt": "Place the five steps of the insider risk alert generation process in the correct order.",
+    "items": [
+      {
+        "id": "i1",
+        "text": "Settings are configured to align with the insider risk strategy"
+      },
+      {
+        "id": "i2",
+        "text": "A policy is created that defines whose activity to evaluate and what to detect"
+      },
+      {
+        "id": "i3",
+        "text": "A triggering event activates the policy for a specific user"
+      },
+      {
+        "id": "i4",
+        "text": "User activity is evaluated and assigned risk scores"
+      },
+      {
+        "id": "i5",
+        "text": "An alert is generated when the risk score exceeds the policy-defined threshold"
+      }
+    ],
+    "correctOrder": [
+      "i1",
+      "i2",
+      "i3",
+      "i4",
+      "i5"
+    ],
+    "explanation": "Der fünfstufige Prozess: Zuerst werden die Einstellungen konfiguriert, dann die Richtlinie erstellt, anschließend aktiviert ein auslösendes Ereignis (z. B. eine Kündigung) die Richtlinie für einen Nutzer, dessen Aktivitäten bewertet und mit Risiko-Scores versehen werden; überschreitet der Score den Schwellenwert, wird ein Alert erzeugt.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-insider-risk-investigate-alerts/understand-insider-risk-alerts",
+    "source": {
+      "title": "Understand insider risk alerts and investigations",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-insider-risk-investigate-alerts/understand-insider-risk-alerts",
+      "quote": "A triggering event activates the policy for a specific user. This could include events such as a resignation date being set or a risky website being accessed."
+    }
+  },
+  {
+    "id": "scb5-017",
+    "type": "single-choice",
+    "skillArea": "risks",
+    "topic": "Alert volume tuning",
+    "difficulty": "easy",
+    "prompt": "Your insider risk policies generate fewer alerts than expected. You want to increase overall alert generation, including medium- and low-severity alerts. What should you adjust?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The alert volume slider under Settings > Intelligent detections"
+      },
+      {
+        "id": "b",
+        "text": "The pseudonymization setting under Privacy"
+      },
+      {
+        "id": "c",
+        "text": "The bulk dismiss option in the alert queue"
+      },
+      {
+        "id": "d",
+        "text": "The Microsoft Teams integration setting"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Der Alert-Volume-Slider unter Settings > Intelligent detections erhöht in Richtung 'More alerts' die gesamte Alert-Erzeugung inklusive mittlerer und niedriger Schweregrade. Privacy-, Dismiss- und Teams-Einstellungen beeinflussen das Alert-Volumen nicht in diese Richtung.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-insider-risk-investigate-alerts/manage-alert-volume",
+    "source": {
+      "title": "Manage alert volume in insider risk management",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-insider-risk-investigate-alerts/manage-alert-volume",
+      "quote": "Adjust the alert volume slider under Settings > Intelligent detections. Moving the slider toward \"More alerts\" increases overall alert generation, including medium- and low-severity alerts."
+    }
+  },
+  {
+    "id": "scb5-018",
+    "type": "matching",
+    "skillArea": "risks",
+    "topic": "Case investigation tabs",
+    "difficulty": "medium",
+    "prompt": "You're investigating an insider risk case in Microsoft Purview. Match each case tab to the information it provides.",
+    "left": [
+      {
+        "id": "l1",
+        "text": "User activity"
+      },
+      {
+        "id": "l2",
+        "text": "Activity explorer"
+      },
+      {
+        "id": "l3",
+        "text": "Forensic evidence"
+      },
+      {
+        "id": "l4",
+        "text": "Content explorer"
+      }
+    ],
+    "right": [
+      {
+        "id": "r1",
+        "text": "Timeline of scored risk behavior from the alert or broader user history"
+      },
+      {
+        "id": "r2",
+        "text": "Detailed timeline and metadata for each associated event"
+      },
+      {
+        "id": "r3",
+        "text": "Screen captures from activity that triggered the alert"
+      },
+      {
+        "id": "r4",
+        "text": "Copies of files and email messages associated with risk alerts"
+      }
+    ],
+    "correct": {
+      "l1": "r1",
+      "l2": "r2",
+      "l3": "r3",
+      "l4": "r4"
+    },
+    "explanation": "Der Tab 'User activity' zeigt die Gesamtzeitleiste des Risikoverhaltens, 'Activity explorer' liefert Event-Details mit Metadaten, 'Forensic evidence' enthält Bildschirmaufnahmen der auslösenden Aktivität, und 'Content explorer' stellt Kopien der betroffenen Dateien und E-Mails bereit.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-insider-risk-investigate-alerts/insider-risk-cases",
+    "source": {
+      "title": "Manage and take action on insider risk cases",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-insider-risk-investigate-alerts/insider-risk-cases",
+      "quote": "User activity shows the overall timeline of user risk behavior, while Activity explorer focuses on event-level details within the case scope."
+    }
+  },
+  {
+    "id": "scb5-019",
+    "type": "yes-no",
+    "skillArea": "risks",
+    "topic": "Defender XDR integration",
+    "difficulty": "hard",
+    "prompt": "Your organization integrates Insider Risk Management alerts with Microsoft Defender XDR. For each of the following statements, select Yes if the statement is true. Otherwise, select No.",
+    "statements": [
+      {
+        "id": "s1",
+        "text": "The setting Share user risk details with other security solutions must be enabled in the Microsoft Purview portal before alerts appear in the Defender portal.",
+        "correct": true
+      },
+      {
+        "id": "s2",
+        "text": "Updates to alert status and classification reflect across both portals within about 30 minutes.",
+        "correct": true
+      },
+      {
+        "id": "s3",
+        "text": "Risky AI usage events are available for investigation in the Defender portal.",
+        "correct": false
+      }
+    ],
+    "explanation": "Die Freigabe 'Share user risk details with other security solutions' ist Voraussetzung für die Anzeige in Defender, und Status-/Klassifizierungsänderungen synchronisieren sich in etwa 30 Minuten. Risky-AI-Usage-Events gehören zu den Daten, die in Defender nicht verfügbar sind (ebenso wie z. B. E-Mail-Exfiltration und Custom-Detection-Alerts).",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-insider-risk-investigate-alerts/investigate-alerts-defender",
+    "source": {
+      "title": "Investigate insider risk alerts in Microsoft Defender XDR",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-insider-risk-investigate-alerts/investigate-alerts-defender",
+      "quote": "The setting Share user risk details with other security solutions must be enabled in the Microsoft Purview portal. Updates to status, classification, and alert details reflect across both portals within about 30 minutes."
+    }
+  },
+  {
+    "id": "scb5-020",
+    "type": "single-choice",
+    "skillArea": "risks",
+    "topic": "Advanced hunting",
+    "difficulty": "hard",
+    "prompt": "A SOC analyst uses advanced hunting in Microsoft Defender to find detailed events from insider risk policy violations, such as uploads of .zip files. Which table should the KQL query target?",
+    "options": [
+      {
+        "id": "a",
+        "text": "DataSecurityEvents"
+      },
+      {
+        "id": "b",
+        "text": "DataSecurityBehaviors"
+      },
+      {
+        "id": "c",
+        "text": "AlertInfo"
+      },
+      {
+        "id": "d",
+        "text": "AlertEvidence"
+      }
+    ],
+    "correct": "a",
+    "explanation": "DataSecurityEvents enthält die detaillierten Events aus Richtlinienverstößen und wird im Lerninhalt genau für dieses Beispiel (FileName endswith \".zip\", ActionType FileUploaded) abgefragt. DataSecurityBehaviors enthält verhaltensbasierte Muster, AlertInfo Alert-Metadaten und AlertEvidence verknüpfte Entitäten.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-insider-risk-investigate-alerts/investigate-alerts-defender",
+    "source": {
+      "title": "Investigate insider risk alerts in Microsoft Defender XDR",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-insider-risk-investigate-alerts/investigate-alerts-defender",
+      "quote": "DataSecurityEvents: Detailed events from policy violations"
+    }
+  },
+  {
+    "id": "scb5-021",
+    "type": "multiple-choice",
+    "skillArea": "risks",
+    "topic": "Case actions",
+    "difficulty": "medium",
+    "prompt": "An investigator opens an insider risk case in Microsoft Purview. Which three actions can they take on the case? Each correct answer presents a complete solution.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Send an email notice to the user"
+      },
+      {
+        "id": "b",
+        "text": "Escalate to Microsoft Purview eDiscovery (Premium)"
+      },
+      {
+        "id": "c",
+        "text": "Run Power Automate flows"
+      },
+      {
+        "id": "d",
+        "text": "Permanently delete the user's OneDrive content"
+      },
+      {
+        "id": "e",
+        "text": "Reset the user's account password"
+      }
+    ],
+    "correct": [
+      "a",
+      "b",
+      "c"
+    ],
+    "explanation": "Aus einem Fall heraus lassen sich u. a. E-Mail-Notices senden, Eskalationen an eDiscovery (Premium) durchführen, Power-Automate-Flows ausführen sowie Teams-Teams erstellen und Fälle mit einer Klassifizierung auflösen. Das Löschen von OneDrive-Inhalten oder das Zurücksetzen von Passwörtern sind keine Fallaktionen in Insider Risk Management.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-insider-risk-investigate-alerts/insider-risk-cases",
+    "source": {
+      "title": "Manage and take action on insider risk cases",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-insider-risk-investigate-alerts/insider-risk-cases",
+      "quote": "Send an email notice to the user. Escalate to Microsoft Purview eDiscovery (Premium). Run Power Automate flows. Create or view a connected Microsoft Teams team."
+    }
+  },
+  {
+    "id": "scb5-022",
+    "type": "single-choice",
+    "skillArea": "risks",
+    "topic": "Licensing requirements",
+    "difficulty": "easy",
+    "prompt": "Which subscription meets the licensing requirement for Microsoft Purview Insider Risk Management?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Microsoft 365 E5"
+      },
+      {
+        "id": "b",
+        "text": "Microsoft 365 E3 without add-ons"
+      },
+      {
+        "id": "c",
+        "text": "Office 365 E1"
+      },
+      {
+        "id": "d",
+        "text": "Microsoft 365 Business Basic"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Insider Risk Management erfordert Microsoft 365 E5, Microsoft 365 E5 Compliance oder einen gleichwertigen Plan mit entsprechenden Funktionen (z. B. E5-Insider-Risk-Management-Add-on auf einem Basisplan). E3 ohne Add-on, Office 365 E1 und Business Basic erfüllen die Anforderung nicht.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-prepare-insider-risk-management/insider-risk-management-prerequisites",
+    "source": {
+      "title": "Prepare your organization for Insider Risk Management",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-prepare-insider-risk-management/insider-risk-management-prerequisites",
+      "quote": "Required license: A subscription to Microsoft 365 E5, Microsoft 365 E5 Compliance, or an equivalent plan that includes Insider Risk Management capabilities."
+    }
+  },
+  {
+    "id": "scb5-023",
+    "type": "single-choice",
+    "skillArea": "risks",
+    "topic": "Audit log verification",
+    "difficulty": "hard",
+    "prompt": "An administrator runs Get-AdminAuditLogConfig | Format-List UnifiedAuditLogIngestionEnabled in Security & Compliance PowerShell and the property returns False, even though auditing was recently enabled for the tenant. What is the most likely explanation?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The command must be run in Exchange Online PowerShell; in Security & Compliance PowerShell it always returns False."
+      },
+      {
+        "id": "b",
+        "text": "Audit logging is disabled and must be re-enabled."
+      },
+      {
+        "id": "c",
+        "text": "The administrator lacks the Insider Risk Management Admin role."
+      },
+      {
+        "id": "d",
+        "text": "Unified audit logging requires a Microsoft Sentinel workspace."
+      }
+    ],
+    "correct": "a",
+    "explanation": "Die Prüfung von UnifiedAuditLogIngestionEnabled liefert nur in Exchange Online PowerShell verlässliche Ergebnisse; in Security & Compliance PowerShell zeigt der Befehl immer False, selbst wenn Auditing aktiviert ist. Die anderen Optionen erklären das Verhalten nicht.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-prepare-insider-risk-management/insider-risk-management-prerequisites",
+    "source": {
+      "title": "Prepare your organization for Insider Risk Management",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-prepare-insider-risk-management/insider-risk-management-prerequisites",
+      "quote": "Be sure to use Exchange Online PowerShell for accurate results. Running it in Security & Compliance PowerShell always shows False, even if auditing is enabled."
+    }
+  },
+  {
+    "id": "scb5-024",
+    "type": "yes-no",
+    "skillArea": "risks",
+    "topic": "IRM planning",
+    "difficulty": "easy",
+    "prompt": "You're planning the rollout of Microsoft Purview Insider Risk Management. For each of the following statements, select Yes if the statement is true. Otherwise, select No.",
+    "statements": [
+      {
+        "id": "s1",
+        "text": "The planning team should include representatives from IT and security, compliance and privacy, human resources, and legal.",
+        "correct": true
+      },
+      {
+        "id": "s2",
+        "text": "New policies should first be tested with a limited group of users in a production environment.",
+        "correct": true
+      },
+      {
+        "id": "s3",
+        "text": "Anonymization should be disabled during testing so investigators can identify users faster.",
+        "correct": false
+      }
+    ],
+    "explanation": "Die Planung erfordert Stakeholder aus IT/Security, Compliance/Datenschutz, HR und Legal. Tests sollten in der Produktionsumgebung mit einer kleinen Nutzergruppe stattfinden — und dabei sollte die Anonymisierung aktiviert werden, um Identitäten zu schützen und Verzerrungen bei Untersuchungen zu reduzieren, nicht deaktiviert.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-prepare-insider-risk-management/plan-insider-risk-management",
+    "source": {
+      "title": "Plan for Insider Risk Management",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-prepare-insider-risk-management/plan-insider-risk-management",
+      "quote": "Use a production environment with a limited group of users to assess real-world scenarios and ensure configurations work as intended. During testing: Enable anonymization to protect user identities and reduce potential bias during investigations."
+    }
+  },
+  {
+    "id": "scb5-025",
+    "type": "multiple-choice",
+    "skillArea": "risks",
+    "topic": "IRM prerequisites",
+    "difficulty": "medium",
+    "prompt": "You're preparing your tenant for Microsoft Purview Insider Risk Management. Which two actions are prerequisites before your policies can detect insider risks? Each correct answer presents part of the solution.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Enable Microsoft 365 audit logging"
+      },
+      {
+        "id": "b",
+        "text": "Assign users to the Insider Risk Management role groups"
+      },
+      {
+        "id": "c",
+        "text": "Deploy the Microsoft Purview browser extension to every device"
+      },
+      {
+        "id": "d",
+        "text": "Create a Microsoft Sentinel workspace"
+      },
+      {
+        "id": "e",
+        "text": "Enable Microsoft Teams integration"
+      }
+    ],
+    "correct": [
+      "a",
+      "b"
+    ],
+    "explanation": "Audit-Logging ist eine kritische Voraussetzung für die Erkennung von Insider-Risiken, und Berechtigungen über die Insider-Risk-Management-Rollengruppen sind Schritt 1 der Vorbereitung. Browser-Erweiterungen sind nur für bestimmte Vorlagen nötig, Sentinel und Teams-Integration sind optionale Erweiterungen.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-prepare-insider-risk-management/insider-risk-management-prerequisites",
+    "source": {
+      "title": "Prepare your organization for Insider Risk Management",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-prepare-insider-risk-management/insider-risk-management-prerequisites",
+      "quote": "Turn on auditing: Enable audit logging to track user and admin activities. This is a critical prerequisite for detecting insider risks."
+    }
+  },
+  {
+    "id": "scb5-026",
+    "type": "dropdown",
+    "skillArea": "risks",
+    "topic": "IRM settings",
+    "difficulty": "medium",
+    "prompt": "Complete the statement by selecting the correct options.",
+    "textParts": [
+      "In Insider Risk Management settings, use ",
+      " to prevent service accounts and routine administrative tasks from generating unnecessary alerts, and use ",
+      " to assign higher risk-scoring thresholds to users in critical roles or with elevated access."
+    ],
+    "blanks": [
+      {
+        "id": "b1",
+        "options": [
+          {
+            "id": "o1",
+            "text": "global exclusions"
+          },
+          {
+            "id": "o2",
+            "text": "policy timeframes"
+          },
+          {
+            "id": "o3",
+            "text": "priority physical assets"
+          }
+        ],
+        "correct": "o1"
+      },
+      {
+        "id": "b2",
+        "options": [
+          {
+            "id": "o1",
+            "text": "priority user groups"
+          },
+          {
+            "id": "o2",
+            "text": "detection groups"
+          },
+          {
+            "id": "o3",
+            "text": "notifications"
+          }
+        ],
+        "correct": "o1"
+      }
+    ],
+    "explanation": "Global Exclusions schließen bestimmte Nutzer, Gruppen oder Aktivitäten (z. B. Service-Konten und Routineaufgaben) von der Erkennung aus, um Rauschen zu reduzieren. Priority User Groups weisen Nutzern in kritischen Rollen oder mit erhöhten Zugriffsrechten höhere Risiko-Scoring-Schwellen zu.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-prepare-insider-risk-management/configure-insider-risk-settings",
+    "source": {
+      "title": "Configure settings for Insider Risk Management",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-prepare-insider-risk-management/configure-insider-risk-settings",
+      "quote": "Exclude specific users, groups, or activities from being included in policy detections. For instance, service accounts or routine administrative tasks can be excluded to reduce unnecessary alerts. Assign higher risk-scoring thresholds to users in critical roles or those with elevated access."
+    }
+  },
+  {
+    "id": "scb5-027",
+    "type": "multiple-choice",
+    "skillArea": "risks",
+    "topic": "SIEM integration",
+    "difficulty": "hard",
+    "prompt": "Your security team wants insider risk alerts aggregated in Microsoft Sentinel for centralized investigation. Which two actions should you perform? Each correct answer presents part of the solution.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Enable the Data sharing setting to export alerts to external tools"
+      },
+      {
+        "id": "b",
+        "text": "Enable the Office 365 Management Activity API"
+      },
+      {
+        "id": "c",
+        "text": "Configure the Microsoft 365 HR Connector"
+      },
+      {
+        "id": "d",
+        "text": "Enable inline alert customization"
+      },
+      {
+        "id": "e",
+        "text": "Create a priority physical assets list"
+      }
+    ],
+    "correct": [
+      "a",
+      "b"
+    ],
+    "explanation": "Die Data-Sharing-Einstellung ermöglicht den Export von Alerts an SIEM-/SOAR-Plattformen wie Sentinel, wobei die Integration über die Office 365 Management Activity API läuft. Der HR Connector liefert Mitarbeiterdaten für Richtlinien, Inline-Anpassung und Priority Physical Assets haben mit dem Alert-Export nichts zu tun.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-prepare-insider-risk-management/configure-insider-risk-settings",
+    "source": {
+      "title": "Configure settings for Insider Risk Management",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-prepare-insider-risk-management/configure-insider-risk-settings",
+      "quote": "Enable the export of alerts to external tools like SIEM or SOAR platforms. Using the Office 365 Management Activity API, this integration allows for centralized alert aggregation and investigation."
+    }
+  },
+  {
+    "id": "scb5-028",
+    "type": "yes-no",
+    "skillArea": "risks",
+    "topic": "Data connectors",
+    "difficulty": "medium",
+    "prompt": "For each of the following statements about connectors for Insider Risk Management, select Yes if the statement is true. Otherwise, select No.",
+    "statements": [
+      {
+        "id": "s1",
+        "text": "HR connectors import employee lifecycle data, such as resignation or termination dates.",
+        "correct": true
+      },
+      {
+        "id": "s2",
+        "text": "Healthcare connectors import electronic health record (EHR) audit data to help identify unauthorized access.",
+        "correct": true
+      },
+      {
+        "id": "s3",
+        "text": "Physical badging data can't be imported into Microsoft Purview.",
+        "correct": false
+      }
+    ],
+    "explanation": "HR-Connectors importieren Lebenszyklusdaten wie Kündigungs- und Austrittstermine, Healthcare-Connectors importieren EHR-Audit-Daten zur Erkennung unautorisierter Zugriffe. Auch Physical-Badging-Daten lassen sich über einen eigenen Connector importieren — der Lerninhalt verweist auf die entsprechende Einrichtungsanleitung.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-prepare-insider-risk-management/insider-risk-management-integrations",
+    "source": {
+      "title": "Integrate Insider Risk Management with data sources and tools",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-prepare-insider-risk-management/insider-risk-management-integrations",
+      "quote": "HR connectors: Use employee lifecycle data, such as resignation or termination dates, to inform policies about departing employees. Healthcare connectors: Import electronic health record (EHR) audit data to help identify unauthorized access or data handling."
+    }
+  }
+]

@@ -1,0 +1,662 @@
+[
+  {
+    "id": "scb3-001",
+    "type": "single-choice",
+    "skillArea": "dlp-retention",
+    "topic": "DLP purpose",
+    "difficulty": "easy",
+    "prompt": "Your organization is planning a data loss prevention (DLP) strategy. Which type of data loss scenario is DLP primarily designed to address?",
+    "options": [
+      { "id": "a", "text": "Sensitive information shared accidentally by users during everyday work" },
+      { "id": "b", "text": "External attackers breaching the network perimeter through malware" },
+      { "id": "c", "text": "Data corruption caused by failed storage hardware" },
+      { "id": "d", "text": "Unauthorized access resulting from misconfigured firewall rules" }
+    ],
+    "correct": "a",
+    "explanation": "Die meisten Datenverluste entstehen nicht durch böswillige Absicht, sondern versehentlich bei der täglichen Arbeit — etwa beim Teilen von Dateien oder Kopieren von Inhalten. Genau hier setzt DLP an; Malware-Angriffe, Hardware-Defekte und Firewall-Fehlkonfigurationen sind keine DLP-Kernszenarien.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-understand-plan/understand-data-loss-prevention",
+    "source": {
+      "title": "Understand the role of data loss prevention (DLP)",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-understand-plan/understand-data-loss-prevention",
+      "quote": "Most data loss doesn't come from malicious intent. It happens during everyday work, when people share files, copy content, or use tools to make collaboration easier."
+    }
+  },
+  {
+    "id": "scb3-002",
+    "type": "multiple-choice",
+    "skillArea": "dlp-retention",
+    "topic": "DLP evaluation signals",
+    "difficulty": "medium",
+    "prompt": "You're explaining to a colleague how Microsoft Purview DLP decides whether an activity puts data at risk. Which three signals does DLP evaluate together to make this decision? Each correct answer presents part of the solution.",
+    "options": [
+      { "id": "a", "text": "Content, such as sensitive information types or labeled content" },
+      { "id": "b", "text": "Context, such as where the data is stored or shared and who is involved" },
+      { "id": "c", "text": "Action, such as sharing, copying, uploading, or pasting" },
+      { "id": "d", "text": "The user's job title and seniority level" },
+      { "id": "e", "text": "The age of the data and how long it has existed" }
+    ],
+    "correct": ["a", "b", "c"],
+    "explanation": "DLP kombiniert drei Signale: Content (was die Daten sind), Context (wo/mit wem) und Action (was damit geschieht). Dieselben Daten können je nach Nutzung erlaubt oder eingeschränkt sein. Jobtitel und Datenalter sind keine der drei Bewertungssignale.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-understand-plan/understand-data-loss-prevention-protection",
+    "source": {
+      "title": "Understand how DLP applies protection",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-understand-plan/understand-data-loss-prevention-protection",
+      "quote": "DLP decisions are made by combining these signals. The same data might be allowed in one situation and restricted in another, depending on how it's used."
+    }
+  },
+  {
+    "id": "scb3-003",
+    "type": "yes-no",
+    "skillArea": "dlp-retention",
+    "topic": "DLP capabilities and limits",
+    "difficulty": "medium",
+    "prompt": "For each of the following statements about the capabilities of Microsoft Purview DLP, select Yes if the statement is true. Otherwise, select No.",
+    "statements": [
+      { "id": "s1", "text": "DLP can apply actions like blocking, warning, or auditing risky behavior.", "correct": true },
+      { "id": "s2", "text": "DLP can determine user intent on its own.", "correct": false },
+      { "id": "s3", "text": "DLP can replace data classification and labeling strategies.", "correct": false }
+    ],
+    "explanation": "DLP soll Risiken reduzieren, nicht vollständig eliminieren: Es kann sensible Inhalte erkennen und Aktionen wie Blockieren, Warnen oder Auditieren anwenden. Es kann jedoch weder die Absicht eines Nutzers selbst bestimmen noch Klassifizierungs- und Labeling-Strategien ersetzen — es baut auf ihnen auf.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-understand-plan/understand-data-loss-prevention",
+    "source": {
+      "title": "Understand the role of data loss prevention (DLP)",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-understand-plan/understand-data-loss-prevention",
+      "quote": "DLP is designed to reduce risk, not eliminate it entirely."
+    }
+  },
+  {
+    "id": "scb3-004",
+    "type": "single-choice",
+    "skillArea": "dlp-retention",
+    "topic": "DLP in Microsoft Teams",
+    "difficulty": "medium",
+    "prompt": "Users in your organization share sensitive files in Microsoft Teams channels. You need to understand which DLP policies govern these files. Which statement is correct?",
+    "options": [
+      { "id": "a", "text": "Files shared in Teams are governed by SharePoint and OneDrive policies, while Teams DLP evaluates chat and channel messages" },
+      { "id": "b", "text": "Teams DLP evaluates both messages and all shared files directly" },
+      { "id": "c", "text": "Files shared in Teams are only protected by Endpoint DLP policies" },
+      { "id": "d", "text": "Files shared in Teams can't be protected by DLP and require sensitivity labels instead" }
+    ],
+    "correct": "a",
+    "explanation": "In Microsoft Teams bewertet DLP Chat- und Kanalnachrichten, während in Teams geteilte Dateien über die SharePoint- und OneDrive-Richtlinien abgedeckt werden. Der Schutz ist also nicht an allen Orten identisch — ein wichtiger Punkt bei der Planung.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-understand-plan/understand-data-loss-prevention-protection",
+    "source": {
+      "title": "Understand how DLP applies protection",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-understand-plan/understand-data-loss-prevention-protection",
+      "quote": "For example, in Microsoft Teams, DLP evaluates chat and channel messages, while files shared in Teams are governed by SharePoint and OneDrive policies."
+    }
+  },
+  {
+    "id": "scb3-005",
+    "type": "dropdown",
+    "skillArea": "dlp-retention",
+    "topic": "Simulation mode limits",
+    "difficulty": "easy",
+    "prompt": "Complete the sentence by selecting the correct options.",
+    "textParts": [
+      "In Microsoft Purview, a DLP policy simulation runs for up to ",
+      ", and the simulation results are retained for ",
+      " to support review and tuning."
+    ],
+    "blanks": [
+      {
+        "id": "b1",
+        "options": [
+          { "id": "a", "text": "7 days" },
+          { "id": "b", "text": "15 days" },
+          { "id": "c", "text": "30 days" }
+        ],
+        "correct": "b"
+      },
+      {
+        "id": "b2",
+        "options": [
+          { "id": "a", "text": "15 days" },
+          { "id": "b", "text": "30 days" },
+          { "id": "c", "text": "90 days" }
+        ],
+        "correct": "b"
+      }
+    ],
+    "explanation": "Simulationen laufen bis zu 15 Tage, die Ergebnisse werden 30 Tage aufbewahrt. So lässt sich das Richtlinienverhalten über einen Zeitraum hinweg statt anhand einzelner Ereignisse beurteilen.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-understand-plan/understand-deployment-simulation-mode",
+    "source": {
+      "title": "Understand DLP deployment and simulation mode",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-understand-plan/understand-deployment-simulation-mode",
+      "quote": "Simulations run for up to **15 days**\n*   Results are retained for **30 days**"
+    }
+  },
+  {
+    "id": "scb3-006",
+    "type": "single-choice",
+    "skillArea": "dlp-retention",
+    "topic": "Advanced DLP controls",
+    "difficulty": "hard",
+    "prompt": "A user who normally accesses a limited set of sensitive files begins downloading large volumes of data and uploading content to unfamiliar cloud services over a short period. Your current content-based DLP policies either miss this pattern or would require overly strict rules for everyone. What is the most appropriate approach?",
+    "options": [
+      { "id": "a", "text": "Use signal-based controls that adjust enforcement as behavior patterns change" },
+      { "id": "b", "text": "Apply blocking actions to all users at all times to cover the risk" },
+      { "id": "c", "text": "Add more sensitive information types to the existing content-based policy" },
+      { "id": "d", "text": "Disable DLP for this user and monitor manually through audit logs" }
+    ],
+    "correct": "a",
+    "explanation": "Hier steigt das Risiko durch das jüngste Verhalten, nicht durch die Daten selbst. Signalbasierte Kontrollen (z. B. Adaptive Protection) passen die Durchsetzung an, wenn das Risiko steigt, statt für alle Nutzer permanent dieselben Restriktionen anzuwenden. Pauschales Blockieren erzeugt Rauschen, mehr SITs adressieren das Verhaltensmuster nicht.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-understand-plan/advanced-data-loss-prevention-controls",
+    "source": {
+      "title": "Evaluate advanced DLP controls for your environment",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-understand-plan/advanced-data-loss-prevention-controls",
+      "quote": "Here, risk increases based on recent behavior rather than the data alone. Signal-based controls can adjust enforcement as patterns change, allowing policies to respond when risk rises instead of applying the same restrictions at all times."
+    }
+  },
+  {
+    "id": "scb3-007",
+    "type": "ordering",
+    "skillArea": "dlp-retention",
+    "topic": "DLP rollout approach",
+    "difficulty": "medium",
+    "prompt": "Your organization is deploying its first DLP policies. Place the steps of the recommended rollout approach in the correct order.",
+    "items": [
+      { "id": "i1", "text": "Run policies in simulation to observe policy behavior" },
+      { "id": "i2", "text": "Refine scope and actions based on real activity" },
+      { "id": "i3", "text": "Introduce limited enforcement where confidence is high" },
+      { "id": "i4", "text": "Expand enforcement gradually as policies mature" }
+    ],
+    "correctOrder": ["i1", "i2", "i3", "i4"],
+    "explanation": "Ein bedachter Rollout beginnt mit der Simulation, verfeinert dann Scope und Aktionen anhand realer Aktivität, führt begrenzte Durchsetzung dort ein, wo das Vertrauen hoch ist, und weitet die Durchsetzung schrittweise aus. Das minimiert Störungen und baut Vertrauen in die DLP-Kontrollen auf.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-understand-plan/understand-deployment-simulation-mode",
+    "source": {
+      "title": "Understand DLP deployment and simulation mode",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-understand-plan/understand-deployment-simulation-mode",
+      "quote": "1.  Run policies in simulation to observe policy behavior\n2.  Refine scope and actions based on real activity\n3.  Introduce limited enforcement where confidence is high\n4.  Expand enforcement gradually as policies mature"
+    }
+  },
+  {
+    "id": "scb3-008",
+    "type": "single-choice",
+    "skillArea": "dlp-retention",
+    "topic": "Template vs custom policy",
+    "difficulty": "easy",
+    "prompt": "Your organization needs a DLP policy for a common, well-understood compliance scenario and needs to move quickly. Which starting point should you choose in Microsoft Purview?",
+    "options": [
+      { "id": "a", "text": "Start with a prebuilt policy template" },
+      { "id": "b", "text": "Build a custom policy from scratch" },
+      { "id": "c", "text": "Export a policy from another tenant" },
+      { "id": "d", "text": "Create the policy through the Power Platform admin center" }
+    ],
+    "correct": "a",
+    "explanation": "Vorlagen eignen sich, wenn das Risikoszenario verbreitet und gut verstanden ist, es schnell gehen muss und Konsistenz wichtiger als Präzision ist. Custom Policies sind sinnvoll bei organisationsspezifischen Szenarien oder wenn sich die Richtlinie stark weiterentwickeln soll.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-create-manage-policies/template-custom-policy",
+    "source": {
+      "title": "Choose a template or create a custom policy",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-create-manage-policies/template-custom-policy",
+      "quote": "Templates are useful when:\n\n*   The risk scenario is common and well understood\n*   You need to move quickly\n*   Consistency matters more than precision"
+    }
+  },
+  {
+    "id": "scb3-009",
+    "type": "single-choice",
+    "skillArea": "dlp-retention",
+    "topic": "Rule-level detection",
+    "difficulty": "medium",
+    "prompt": "You're designing a Microsoft Purview DLP policy that needs different detection conditions and different responses for two separate scenarios. At which level are detection conditions defined?",
+    "options": [
+      { "id": "a", "text": "At the rule level; a policy can contain multiple rules that are evaluated independently" },
+      { "id": "b", "text": "At the policy level; all rules inherit the same detection conditions" },
+      { "id": "c", "text": "At the location level; each workload defines the detection conditions" },
+      { "id": "d", "text": "At the tenant level; detection conditions apply globally to all policies" }
+    ],
+    "correct": "a",
+    "explanation": "Detection wird auf Regel-Ebene definiert, nicht auf Richtlinien-Ebene. Eine DLP-Richtlinie kann mehrere Regeln enthalten; jede Regel definiert eigene Erkennungsbedingungen und eigenes Antwortverhalten und wird unabhängig ausgewertet.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-create-manage-policies/define-policy-detection",
+    "source": {
+      "title": "Define what the policy detects",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-create-manage-policies/define-policy-detection",
+      "quote": "In Microsoft Purview, detection is defined at the **rule level**, not at the policy level. A data loss prevention (DLP) policy can contain one or more rules, and each rule defines its own detection conditions and response behavior."
+    }
+  },
+  {
+    "id": "scb3-010",
+    "type": "single-choice",
+    "skillArea": "dlp-retention",
+    "topic": "Policy priority",
+    "difficulty": "hard",
+    "prompt": "Two DLP policies apply to the same Exchange location and target similar sensitive data. Policy A has a higher priority and audits sensitive data sharing. Policy B has a lower priority and blocks the same action. A user shares a matching document externally. What is the likely outcome?",
+    "options": [
+      { "id": "a", "text": "The activity is audited but not blocked, because the first matching policy can control enforcement" },
+      { "id": "b", "text": "The activity is blocked, because the most restrictive action always wins" },
+      { "id": "c", "text": "Both policies apply, so the activity is audited and blocked simultaneously" },
+      { "id": "d", "text": "Neither policy applies until the priority conflict is resolved by an administrator" }
+    ],
+    "correct": "a",
+    "explanation": "DLP-Richtlinien werden in Prioritätsreihenfolge ausgewertet. Die erste passende Richtlinie kann das Enforcement-Ergebnis bestimmen — eine höher priorisierte Audit-Richtlinie kann daher verhindern, dass eine niedriger priorisierte Richtlinie dieselbe Aktion blockiert. \"Most restrictive wins\" gilt hier nicht (das ist das Verhalten von Power-Platform-Connector-Richtlinien).",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-create-manage-policies/manage-policies",
+    "source": {
+      "title": "Manage DLP policies",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-create-manage-policies/manage-policies",
+      "quote": "For example, a high-priority policy that audits sensitive data sharing might prevent a lower-priority policy from blocking the same action, even if both policies target similar data."
+    }
+  },
+  {
+    "id": "scb3-011",
+    "type": "matching",
+    "skillArea": "dlp-retention",
+    "topic": "DLP enforcement actions",
+    "difficulty": "easy",
+    "prompt": "Match each DLP enforcement category to its behavior.",
+    "left": [
+      { "id": "l1", "text": "Audit" },
+      { "id": "l2", "text": "Warn" },
+      { "id": "l3", "text": "Block with override" },
+      { "id": "l4", "text": "Block" }
+    ],
+    "right": [
+      { "id": "r1", "text": "Activity is logged without interrupting users" },
+      { "id": "r2", "text": "Users receive guidance but can continue their action" },
+      { "id": "r3", "text": "Users can proceed with justification" },
+      { "id": "r4", "text": "The action is prevented entirely" }
+    ],
+    "correct": { "l1": "r1", "l2": "r2", "l3": "r3", "l4": "r4" },
+    "explanation": "Audit protokolliert nur, Warn zeigt Hinweise ohne zu stoppen, Block with override erlaubt das Fortfahren mit Begründung, und Block verhindert die Aktion vollständig. Nicht jede Kategorie ist an jedem Ort verfügbar; Aktionen werden auf Regel-Ebene konfiguriert.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-create-manage-policies/policy-actions",
+    "source": {
+      "title": "Define how the policy responds",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-create-manage-policies/policy-actions",
+      "quote": "**Audit**, where activity is logged without interrupting users\n*   **Warn**, where users receive guidance but can continue their action\n*   **Block with override**, where users can proceed with justification\n*   **Block**, where the action is prevented entirely"
+    }
+  },
+  {
+    "id": "scb3-012",
+    "type": "yes-no",
+    "skillArea": "dlp-retention",
+    "topic": "Simulation mode behavior",
+    "difficulty": "medium",
+    "prompt": "For each of the following statements about DLP simulation mode in Microsoft Purview, select Yes if the statement is true. Otherwise, select No.",
+    "statements": [
+      { "id": "s1", "text": "The policy mode (off, simulation, or enforcement) applies at the policy level, so all rules within a policy run under the same mode.", "correct": true },
+      { "id": "s2", "text": "You can simulate one rule while enforcing another rule within the same policy.", "correct": false },
+      { "id": "s3", "text": "While a policy runs in simulation mode, users might still see policy tips or guidance.", "correct": true }
+    ],
+    "explanation": "Der Modus gilt auf Richtlinien-Ebene, nicht pro Regel — alle Regeln laufen im selben Modus, einzelne Regeln lassen sich nicht getrennt simulieren/durchsetzen. Policy Tips können in der Simulation dennoch angezeigt werden, sodass sich auch die Nutzerreaktion auf Hinweise beobachten lässt.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-create-manage-policies/policy-validation",
+    "source": {
+      "title": "Validate policy behavior using simulation mode",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-create-manage-policies/policy-validation",
+      "quote": "A DLP policy can be **off**, run in **simulation**, or run in **enforcement**, and the selected mode applies at the policy level, not per rule.\n\nAll rules within a policy run under the same mode. You can't simulate one rule while enforcing another."
+    }
+  },
+  {
+    "id": "scb3-013",
+    "type": "multiple-choice",
+    "skillArea": "dlp-retention",
+    "topic": "Edit vs clone policies",
+    "difficulty": "medium",
+    "prompt": "An administrator wants to make changes to an existing, enforced DLP policy. For which three changes is cloning the policy safer than editing it directly? Each correct answer presents a complete solution.",
+    "options": [
+      { "id": "a", "text": "Changing the intent of the policy" },
+      { "id": "b", "text": "Introducing stricter enforcement" },
+      { "id": "c", "text": "Expanding coverage to new locations or users" },
+      { "id": "d", "text": "Refining detection conditions slightly" },
+      { "id": "e", "text": "Updating notification recipients" }
+    ],
+    "correct": ["a", "b", "c"],
+    "explanation": "Klonen ist sicherer bei Intent-Änderungen, strikterer Durchsetzung, Erweiterung auf neue Orte/Nutzer oder Paralleltests, weil das Originalverhalten erhalten bleibt und Änderungen unabhängig validiert werden können. Kleine Verfeinerungen der Erkennung oder Benachrichtigungs-Updates sind typische Fälle für direktes Bearbeiten.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-create-manage-policies/manage-policies",
+    "source": {
+      "title": "Manage DLP policies",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-create-manage-policies/manage-policies",
+      "quote": "Cloning a policy is safer when:\n\n*   Changing the intent of the policy\n*   Introducing stricter enforcement\n*   Expanding coverage to new locations or users\n*   Testing a different approach in parallel"
+    }
+  },
+  {
+    "id": "scb3-014",
+    "type": "single-choice",
+    "skillArea": "dlp-retention",
+    "topic": "Adaptive Protection",
+    "difficulty": "hard",
+    "prompt": "A DLP rule with Adaptive Protection warned a user last month when they attempted to copy a sensitive file. This week, the same rule blocks the same user performing the same action. The rule's detection conditions and scope haven't changed. What is the most likely explanation?",
+    "options": [
+      { "id": "a", "text": "The user's insider risk level increased, so the same rule now produces a stricter enforcement outcome" },
+      { "id": "b", "text": "The policy priority was automatically raised by Microsoft Purview" },
+      { "id": "c", "text": "The sensitivity label on the file was upgraded, which always converts warnings into blocks" },
+      { "id": "d", "text": "Simulation mode ended, and enforcement began automatically" }
+    ],
+    "correct": "a",
+    "explanation": "Bei Adaptive Protection bleibt die Erkennung unverändert, aber das Enforcement passt sich dem Nutzerrisiko an. Steigt oder sinkt das Risiko, kann dieselbe Regel unterschiedliche Ergebnisse liefern — z. B. erst warnen, später blockieren —, ohne dass Detection oder Scope neu definiert werden.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-create-manage-policies/adaptive-protection-data-loss-prevention",
+    "source": {
+      "title": "Adjust enforcement dynamically based on risk",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-create-manage-policies/adaptive-protection-data-loss-prevention",
+      "quote": "User risk can change over time as behavior changes. When risk increases or decreases, the same rule can produce different enforcement outcomes without redefining detection or scope."
+    }
+  },
+  {
+    "id": "scb3-015",
+    "type": "single-choice",
+    "skillArea": "dlp-retention",
+    "topic": "Alert investigation tools",
+    "difficulty": "easy",
+    "prompt": "A DLP alert turns out to be a false positive caused by masked credit card numbers in a monthly report. You want to adjust the policy so this doesn't happen again. Which tool should you use?",
+    "options": [
+      { "id": "a", "text": "Microsoft Purview" },
+      { "id": "b", "text": "Microsoft Defender XDR" },
+      { "id": "c", "text": "Microsoft Sentinel" },
+      { "id": "d", "text": "Microsoft Entra ID" }
+    ],
+    "correct": "a",
+    "explanation": "Beide Tools zeigen dieselben Alerts, dienen aber unterschiedlichen Zwecken: Microsoft Purview ist auf Compliance und die Richtlinie selbst fokussiert — was den Alert ausgelöst hat und ob die Regeln wie erwartet funktionieren. Bei False Positives passt man dort die Richtlinie an. Defender XDR dient der Korrelation mit anderen Sicherheitssignalen.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-alerts/understand-data-loss-prevention-alerts",
+    "source": {
+      "title": "Understand data loss prevention (DLP) alerts",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-alerts/understand-data-loss-prevention-alerts",
+      "quote": "**Microsoft Purview** is used for compliance. It focuses more on the policy itself: what triggered the alert, what rules were involved, and whether those rules are working as expected. If the alert came from a false positive, Purview is where you'd go to adjust the policy so it doesn't happen again."
+    }
+  },
+  {
+    "id": "scb3-016",
+    "type": "yes-no",
+    "skillArea": "dlp-retention",
+    "topic": "Alert licensing",
+    "difficulty": "medium",
+    "prompt": "Your organization is planning DLP alert configuration and reviewing licensing. For each of the following statements, select Yes if the statement is true. Otherwise, select No.",
+    "statements": [
+      { "id": "s1", "text": "Single-event alerts are available with E1, F1, G1, E3, or G3 licenses.", "correct": true },
+      { "id": "s2", "text": "Aggregate-event alerts require an E5 or G5 license, or an eligible add-on for E1/E3/G1/G3.", "correct": true },
+      { "id": "s3", "text": "An E3 tenant without an add-on license uses a one-minute aggregation time window.", "correct": false }
+    ],
+    "explanation": "Single-Event-Alerts sind bereits mit E1/F1/G1/E3/G3 verfügbar; Aggregate-Event-Alerts erfordern E5/G5 oder ein passendes Add-on. Das Ein-Minuten-Aggregationsfenster gilt für E5 bzw. Add-on-Lizenzen — E3/G3 ohne Add-on nutzen ein 15-Minuten-Fenster.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-alerts/configure-data-loss-prevention-alert-generation",
+    "source": {
+      "title": "Configure DLP policies to generate alerts",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-alerts/configure-data-loss-prevention-alert-generation",
+      "quote": "**Single-event alerts**: Available with E1, F1, G1, E3, or G3 licenses.\n*   **Aggregate-event alerts**: Requires an E5 or G5 license, or one of the following add-ons for E1/E3/G1/G3"
+    }
+  },
+  {
+    "id": "scb3-017",
+    "type": "ordering",
+    "skillArea": "dlp-retention",
+    "topic": "DLP alert lifecycle",
+    "difficulty": "easy",
+    "prompt": "Place the stages of the DLP alert lifecycle in the correct order, from detection through resolution.",
+    "items": [
+      { "id": "i1", "text": "Trigger: a user's action matches a condition in a DLP policy" },
+      { "id": "i2", "text": "Notify: the alert appears in the portals and notifications are sent" },
+      { "id": "i3", "text": "Triage: review the alert, assign priority and an owner" },
+      { "id": "i4", "text": "Investigate: gather evidence and review activity logs" },
+      { "id": "i5", "text": "Remediate: take response actions based on the findings" }
+    ],
+    "correctOrder": ["i1", "i2", "i3", "i4", "i5"],
+    "explanation": "Der DLP-Alert-Lebenszyklus folgt einem strukturierten Pfad: Trigger, Notify, Triage, Investigate, Remediate — und abschließend Tune, um die Richtlinie anhand der Erkenntnisse zu optimieren.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-alerts/data-loss-prevention-alert-lifecycle",
+    "source": {
+      "title": "Understand the DLP alert lifecycle",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-alerts/data-loss-prevention-alert-lifecycle",
+      "quote": "Data loss prevention (DLP) alerts follow a structured path from detection through resolution. Each stage has a specific purpose and a different set of decisions."
+    }
+  },
+  {
+    "id": "scb3-018",
+    "type": "yes-no",
+    "skillArea": "dlp-retention",
+    "topic": "Alert behavior",
+    "difficulty": "hard",
+    "prompt": "You deployed a new DLP policy with alerting enabled. For each of the following statements about how alerts behave after deployment, select Yes if the statement is true. Otherwise, select No.",
+    "statements": [
+      { "id": "s1", "text": "It can take up to 3 hours for a new or updated policy to begin generating alerts.", "correct": true },
+      { "id": "s2", "text": "If the same document triggers the same rule again within the aggregation window, a new separate alert is generated.", "correct": false },
+      { "id": "s3", "text": "Policy matches on the same item in the same location are grouped if they occur within a one-minute window.", "correct": true }
+    ],
+    "explanation": "Neue oder geänderte Richtlinien können bis zu 3 Stunden brauchen, bevor sie Alerts erzeugen. Löst dasselbe Dokument dieselbe Regel innerhalb des Aggregationsfensters erneut aus, wird es in den bestehenden Alert gruppiert statt einen neuen zu erzeugen. Matches auf demselben Element am selben Ort werden innerhalb eines Ein-Minuten-Fensters gruppiert.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-alerts/configure-data-loss-prevention-alert-generation",
+    "source": {
+      "title": "Configure DLP policies to generate alerts",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-alerts/configure-data-loss-prevention-alert-generation",
+      "quote": "If the same document triggers the same rule again within the aggregation window, it's grouped into the existing alert rather than generating a new one.\n*   It can take up to 3 hours for a new or updated policy to begin generating alerts."
+    }
+  },
+  {
+    "id": "scb3-019",
+    "type": "matching",
+    "skillArea": "dlp-retention",
+    "topic": "Investigation starting points",
+    "difficulty": "medium",
+    "prompt": "You're investigating DLP alerts. Match each tool to the investigation scenario where it's the best starting point.",
+    "left": [
+      { "id": "l1", "text": "Microsoft Defender XDR" },
+      { "id": "l2", "text": "Microsoft Purview alerts dashboard" },
+      { "id": "l3", "text": "Activity explorer" },
+      { "id": "l4", "text": "Content explorer" }
+    ],
+    "right": [
+      { "id": "r1", "text": "See whether the alert is part of a broader pattern correlated across endpoints, email, identity, and cloud apps" },
+      { "id": "r2", "text": "Review the specific policy match, check the file content, and decide whether the policy needs tuning" },
+      { "id": "r3", "text": "Filter and compare user actions over time without opening individual alerts" },
+      { "id": "r4", "text": "Inspect the actual file or message content that triggered the match" }
+    ],
+    "correct": { "l1": "r1", "l2": "r2", "l3": "r3", "l4": "r4" },
+    "explanation": "Defender XDR korreliert DLP-Alerts mit Signalen aus Endpunkten, E-Mail, Identität und Cloud-Apps. Das Purview-Alerts-Dashboard eignet sich, wenn die auslösende Richtlinie bekannt ist und getunt werden soll. Activity Explorer vergleicht Nutzeraktionen über die Zeit, Content Explorer zeigt den tatsächlichen Inhalt.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-alerts/data-loss-prevention-alert-lifecycle",
+    "source": {
+      "title": "Understand the DLP alert lifecycle",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-alerts/data-loss-prevention-alert-lifecycle",
+      "quote": "**Use Activity explorer** when you need to filter and compare user actions over time without opening individual alerts.\n*   **Use Content explorer** when you need to inspect the actual file or message content that triggered the match."
+    }
+  },
+  {
+    "id": "scb3-020",
+    "type": "single-choice",
+    "skillArea": "dlp-retention",
+    "topic": "DLP triage agent",
+    "difficulty": "hard",
+    "prompt": "Your organization deployed the Microsoft Purview DLP triage agent powered by Security Copilot. An analyst notices that alerts from a newly created DLP policy never appear in the Alert triage agent view. The policy is running in simulation mode. What is the cause?",
+    "options": [
+      { "id": "a", "text": "The triage agent only triages alerts from active DLP policies; alerts from policies in simulation mode aren't included" },
+      { "id": "b", "text": "The triage agent requires 30 days of alert history before processing a new policy" },
+      { "id": "c", "text": "The triage agent only processes alerts from Exchange and SharePoint locations" },
+      { "id": "d", "text": "The agent identity was not assigned the Compliance Administrator role" }
+    ],
+    "correct": "a",
+    "explanation": "Der Triage-Agent verarbeitet nur Alerts aktiver DLP-Richtlinien — Richtlinien im Simulationsmodus sind ausgeschlossen. Weitere Einschränkungen: keine rein durch Custom SITs/Custom Trainable Classifiers ausgelösten Alerts, keine Dateien über 2 MB, keine Administrative-Unit-Scopes.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-alerts/investigate-alerts-security-copilot-agents",
+    "source": {
+      "title": "Investigate DLP alerts with Security Copilot and AI agents",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-alerts/investigate-alerts-security-copilot-agents",
+      "quote": "The agent only triages alerts from **active DLP policies**. Alerts from policies in **simulation mode** aren't included."
+    }
+  },
+  {
+    "id": "scb3-021",
+    "type": "multiple-choice",
+    "skillArea": "dlp-retention",
+    "topic": "Alert response actions",
+    "difficulty": "medium",
+    "prompt": "You're reviewing a matched event on the Events tab of a DLP alert in the Microsoft Purview Alerts dashboard. Which three actions are available from the Actions dropdown? Each correct answer presents a complete solution.",
+    "options": [
+      { "id": "a", "text": "Apply or remove a sensitivity label" },
+      { "id": "b", "text": "Unshare or delete the file" },
+      { "id": "c", "text": "Send a notification email" },
+      { "id": "d", "text": "Isolate the user's device" },
+      { "id": "e", "text": "Reset the user's password" }
+    ],
+    "correct": ["a", "b", "c"],
+    "explanation": "Im Actions-Dropdown des Events-Tabs in Purview stehen u. a. das Herunterladen des Inhalts, Anwenden/Entfernen eines Sensitivity Labels, Unshare/Delete der Datei, das Senden einer Benachrichtigungs-E-Mail und das Kopieren des Event-Links zur Verfügung. Geräteisolierung und Passwort-Reset sind Aktionen in Microsoft Defender XDR.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-alerts/investigate-alerts-purview",
+    "source": {
+      "title": "Investigate DLP alerts in Microsoft Purview",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-alerts/investigate-alerts-purview",
+      "quote": "From the **Actions** dropdown, you can:\n\n*   Download the matched content (requires appropriate role)\n*   Apply or remove a sensitivity label (if permitted)\n*   Unshare or delete the file\n*   Send a notification email"
+    }
+  },
+  {
+    "id": "scb3-022",
+    "type": "single-choice",
+    "skillArea": "dlp-retention",
+    "topic": "Power Platform DLP",
+    "difficulty": "easy",
+    "prompt": "What do data loss prevention (DLP) policies in Power Platform control?",
+    "options": [
+      { "id": "a", "text": "Which connectors can work together, not what data flows through them" },
+      { "id": "b", "text": "Which sensitive information types can be stored in Dataverse" },
+      { "id": "c", "text": "Which content users can access within a SharePoint library" },
+      { "id": "d", "text": "Which users are allowed to create flows and apps" }
+    ],
+    "correct": "a",
+    "explanation": "Power-Platform-DLP-Richtlinien klassifizieren Connectors in Gruppen (Business, Non-Business, Blocked) und steuern, welche Connectors kombiniert werden dürfen — nicht, welche Daten durch sie fließen. Ein Business-gruppierter SharePoint-Connector kann weiterhin auf beliebige Inhalte zugreifen.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/create-configure-data-loss-prevention-policies/2-configure-data-loss-prevention-policies-for-power-platform",
+    "source": {
+      "title": "Configure data loss prevention policies for Power Platform",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-configure-data-loss-prevention-policies/2-configure-data-loss-prevention-policies-for-power-platform",
+      "quote": "DLP policies control which connectors can work together, not what data flows through them. For example, if the SharePoint Online connector is in the Business group, a user can still access any content in a SharePoint library."
+    }
+  },
+  {
+    "id": "scb3-023",
+    "type": "yes-no",
+    "skillArea": "dlp-retention",
+    "topic": "Connector classification",
+    "difficulty": "medium",
+    "prompt": "Your organization uses DLP policies in Power Platform to govern connectors. For each of the following statements, select Yes if the statement is true. Otherwise, select No.",
+    "statements": [
+      { "id": "s1", "text": "A connector can reside in only one group (Business, Non-Business, or Blocked) at a time.", "correct": true },
+      { "id": "s2", "text": "When multiple policies apply to the same environment, the most restrictive combination of connector classifications takes effect.", "correct": true },
+      { "id": "s3", "text": "A Power Platform DLP policy inspects the content of the data that flows between connectors.", "correct": false }
+    ],
+    "explanation": "Connectors können nur in genau einer Gruppe sein, und bei überlappenden Richtlinien in einer Umgebung gilt die restriktivste Kombination. Power-Platform-DLP prüft jedoch keine Dateninhalte — es steuert nur, welche Connectors miteinander kombiniert werden dürfen.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/create-configure-data-loss-prevention-policies/2-configure-data-loss-prevention-policies-for-power-platform",
+    "source": {
+      "title": "Configure data loss prevention policies for Power Platform",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-configure-data-loss-prevention-policies/2-configure-data-loss-prevention-policies-for-power-platform",
+      "quote": "Connectors can reside in only one group at a time. If you move SharePoint Online and a non-Microsoft connector into the Business group, users can't create flows or apps that combine those connectors with anything in the Non-Business or Blocked groups."
+    }
+  },
+  {
+    "id": "scb3-024",
+    "type": "ordering",
+    "skillArea": "dlp-retention",
+    "topic": "Power Platform policy creation",
+    "difficulty": "hard",
+    "prompt": "You need to create a DLP policy in the Power Platform admin center that prevents flows from bridging SharePoint data to unmanaged destinations. Place the policy creation steps in the correct order.",
+    "items": [
+      { "id": "i1", "text": "Enter a policy name" },
+      { "id": "i2", "text": "Assign connectors across the Business, Non-Business, and Blocked groups" },
+      { "id": "i3", "text": "Define Allow or Deny URL patterns for custom connectors" },
+      { "id": "i4", "text": "Define the policy scope by adding environments" },
+      { "id": "i5", "text": "Review all settings and create the policy" }
+    ],
+    "correctOrder": ["i1", "i2", "i3", "i4", "i5"],
+    "explanation": "Der Assistent im Power Platform Admin Center folgt dieser Reihenfolge: Richtlinienname, Connector-Zuweisung (Business/Non-Business/Blocked), Custom-Connector-Patterns (Allow/Deny-URL-Muster), Scope-Definition über Umgebungen und abschließend Review und Erstellung.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/create-configure-data-loss-prevention-policies/2-configure-data-loss-prevention-policies-for-power-platform",
+    "source": {
+      "title": "Configure data loss prevention policies for Power Platform",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-configure-data-loss-prevention-policies/2-configure-data-loss-prevention-policies-for-power-platform",
+      "quote": "In Power Platform admin center, select **Policies**, select **Data policies**, and then select **+** **New policy**. Enter a policy name, and then select **Next**. On the **Assign Connectors** page, review the default connector classifications."
+    }
+  },
+  {
+    "id": "scb3-025",
+    "type": "single-choice",
+    "skillArea": "dlp-retention",
+    "topic": "File policy vs Purview DLP",
+    "difficulty": "hard",
+    "prompt": "Your organization connected Box to Microsoft Defender for Cloud Apps. You need to detect externally shared files containing financial data in Box and automatically quarantine them. Which approach should you use?",
+    "options": [
+      { "id": "a", "text": "Create a file policy in the Microsoft Defender portal under Cloud Apps" },
+      { "id": "b", "text": "Create a DLP policy in the Microsoft Purview portal scoped to the Instances location" },
+      { "id": "c", "text": "Create a DLP policy in the Power Platform admin center and block the Box connector" },
+      { "id": "d", "text": "Create a DLP policy in the Microsoft Purview portal scoped to the OneDrive location" }
+    ],
+    "correct": "a",
+    "explanation": "Für Cloud-App-spezifische Governance-Aktionen wie Quarantäne oder das Widerrufen geteilter Links sind File Policies im Defender-Portal die richtige Wahl. Instances-basierte Purview-DLP-Richtlinien bieten zentrale Berichterstattung mit derselben Regel-Engine, aber die Quarantäne-Governance ist die Stärke der File Policies.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/create-configure-data-loss-prevention-policies/3-integrate-data-loss-prevention-with-microsoft-cloud-app-security",
+    "source": {
+      "title": "Integrate data loss prevention in Microsoft Defender for Cloud Apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-configure-data-loss-prevention-policies/3-integrate-data-loss-prevention-with-microsoft-cloud-app-security",
+      "quote": "File policies offer cloud-app-specific governance like quarantine and link revocation. Purview DLP policies provide the same rule engine and reporting you use for Exchange and SharePoint."
+    }
+  },
+  {
+    "id": "scb3-026",
+    "type": "dropdown",
+    "skillArea": "dlp-retention",
+    "topic": "File policy inspection methods",
+    "difficulty": "medium",
+    "prompt": "Complete the sentence by selecting the correct options.",
+    "textParts": [
+      "When creating a file policy in Defender for Cloud Apps, the ",
+      " inspection method uses Defender for Cloud Apps content inspection capabilities, while the ",
+      " uses the same sensitive information types and trainable classifiers you already manage in Microsoft Purview."
+    ],
+    "blanks": [
+      {
+        "id": "b1",
+        "options": [
+          { "id": "a", "text": "Built-in DLP" },
+          { "id": "b", "text": "Data Classification Service" },
+          { "id": "c", "text": "Exact data match" }
+        ],
+        "correct": "a"
+      },
+      {
+        "id": "b2",
+        "options": [
+          { "id": "a", "text": "Built-in DLP" },
+          { "id": "b", "text": "Data Classification Service" },
+          { "id": "c", "text": "Content explorer" }
+        ],
+        "correct": "b"
+      }
+    ],
+    "explanation": "File Policies unterstützen zwei Inspektionsmethoden: Built-in DLP nutzt die Content-Inspection von Defender for Cloud Apps, der Data Classification Service greift auf die in Purview gepflegten SITs und Trainable Classifiers zu — so müssen keine zwei getrennten Regelsätze gepflegt werden.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/create-configure-data-loss-prevention-policies/4-configure-file-policies-microsoft-cloud-app-security",
+    "source": {
+      "title": "Configure policies in Microsoft Defender for Cloud Apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-configure-data-loss-prevention-policies/4-configure-file-policies-microsoft-cloud-app-security",
+      "quote": "**Built-in DLP** uses Defender for Cloud Apps content inspection capabilities.\n*   **Data Classification Service** uses the same sensitive information types and trainable classifiers you already manage in Microsoft Purview."
+    }
+  },
+  {
+    "id": "scb3-027",
+    "type": "multiple-choice",
+    "skillArea": "dlp-retention",
+    "topic": "File policy elements",
+    "difficulty": "easy",
+    "prompt": "Which three elements does a file policy in Microsoft Defender for Cloud Apps combine? Each correct answer presents part of the solution.",
+    "options": [
+      { "id": "a", "text": "A content scan that identifies files matching sensitive information types or custom expressions" },
+      { "id": "b", "text": "Context filters that narrow the scope based on metadata like sharing level, file owner, or app" },
+      { "id": "c", "text": "Automated actions that define what happens when the conditions match" },
+      { "id": "d", "text": "A connector group classification for Business and Non-Business data sources" },
+      { "id": "e", "text": "A simulation window that delays enforcement for 15 days" }
+    ],
+    "correct": ["a", "b", "c"],
+    "explanation": "Jede File Policy kombiniert drei Elemente: Content Scan (Erkennung sensibler Inhalte), Context Filter (Eingrenzung über Metadaten wie Sharing-Level) und Automated Actions (z. B. externen Zugriff widerrufen). Connector-Gruppen gehören zu Power Platform, ein 15-Tage-Simulationsfenster ist ein Purview-DLP-Konzept.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/create-configure-data-loss-prevention-policies/4-configure-file-policies-microsoft-cloud-app-security",
+    "source": {
+      "title": "Configure policies in Microsoft Defender for Cloud Apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-configure-data-loss-prevention-policies/4-configure-file-policies-microsoft-cloud-app-security",
+      "quote": "**Content scan** identifies files that match sensitive information types or custom expressions. In this case, credit card number patterns.\n*   **Context filters** narrow the scope based on metadata like sharing level, file owner, or app.\n*   **Automated actions** define what happens when both conditions match, such as revoking external access or sending an alert."
+    }
+  },
+  {
+    "id": "scb3-028",
+    "type": "multiple-choice",
+    "skillArea": "dlp-retention",
+    "topic": "Power Platform permissions",
+    "difficulty": "medium",
+    "prompt": "An administrator needs to create a tenant-level DLP policy in the Power Platform admin center. Which two permissions allow this? Each correct answer presents a complete solution.",
+    "options": [
+      { "id": "a", "text": "Power Platform admin permissions" },
+      { "id": "b", "text": "Microsoft 365 Global admin permissions" },
+      { "id": "c", "text": "Power Apps Environment Admin permissions" },
+      { "id": "d", "text": "Compliance Administrator role in Microsoft Purview" }
+    ],
+    "correct": ["a", "b"],
+    "explanation": "Tenant-weite Power-Platform-DLP-Richtlinien erfordern Power-Platform-Admin- oder Microsoft-365-Global-Admin-Berechtigungen. Power Apps Environment Admin reicht nur für Umgebungs-Richtlinien; die Purview-Compliance-Rollen gelten für Purview-DLP, nicht für Power Platform.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/create-configure-data-loss-prevention-policies/2-configure-data-loss-prevention-policies-for-power-platform",
+    "source": {
+      "title": "Configure data loss prevention policies for Power Platform",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-configure-data-loss-prevention-policies/2-configure-data-loss-prevention-policies-for-power-platform",
+      "quote": "To follow these steps for tenant-level policies, you need one of the following permissions:\n\n*   Power Platform admin permissions\n*   Microsoft 365 Global admin permissions"
+    }
+  }
+]

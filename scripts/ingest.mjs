@@ -68,20 +68,29 @@ for (const pathUid of sources.learningPaths) {
     const modDir = path.join(contentDir, moduleSlug);
     fs.mkdirSync(modDir, { recursive: true });
 
-    // Unit-Titel nachladen (Batch)
-    const unitInfo = new Map(
-      (await catalog({ uid: mod.units.join(",") })).units.map((u) => [
-        u.uid,
-        u.title,
-      ])
+    // Echte Unit-URLs + Titel über die Hierarchy API (URL-Slugs weichen
+    // teils von den UID-Segmenten ab — nie aus Position/UID raten!)
+    const hierarchyRes = await fetch(
+      `https://learn.microsoft.com/api/hierarchy/modules/${mod.uid}?locale=en-us`
     );
+    if (!hierarchyRes.ok) {
+      console.log(`  ✗ Hierarchy API für ${mod.uid}: HTTP ${hierarchyRes.status}`);
+      continue;
+    }
+    const hierarchy = await hierarchyRes.json();
+    const units = (hierarchy.units ?? []).map((u) => ({
+      uid: u.uid,
+      title: u.title,
+      url: `https://learn.microsoft.com/en-us${u.url.replace(/\/$/, "")}`,
+    }));
 
-    console.log(`\n## ${mod.title} (${mod.units.length} Units)`);
+    console.log(`\n## ${mod.title} (${units.length} Units)`);
 
-    for (const [i, unitUid] of mod.units.entries()) {
-      const unitSlug = unitUid.split(".").pop();
-      const unitUrl = `${moduleUrl}${i + 1}-${unitSlug}`;
-      const title = unitInfo.get(unitUid) ?? unitSlug;
+    for (const [i, unit] of units.entries()) {
+      const unitUid = unit.uid;
+      const unitSlug = unit.url.split("/").pop();
+      const unitUrl = unit.url;
+      const title = unit.title;
       const md = await fetchUnitMarkdown(unitUrl);
       if (md == null) {
         console.log(`  ✗ ${title} (${unitUrl})`);

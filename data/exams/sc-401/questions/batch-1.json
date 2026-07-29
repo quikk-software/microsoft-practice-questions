@@ -1,0 +1,663 @@
+[
+  {
+    "id": "scb1-001",
+    "type": "single-choice",
+    "skillArea": "protection",
+    "topic": "Container labels",
+    "difficulty": "easy",
+    "prompt": "An administrator applies a sensitivity label with the Groups & sites scope to a SharePoint site. What effect does this label have on the Word documents stored in the site's document library?",
+    "options": [
+      { "id": "a", "text": "The documents are automatically encrypted with the site's label settings." },
+      { "id": "b", "text": "The documents receive headers and footers defined in the label's content markings." },
+      { "id": "c", "text": "The documents are not encrypted or marked; the label only protects workspace-level settings such as privacy and external sharing." },
+      { "id": "d", "text": "The documents inherit the label as soon as the site is recrawled by the search index." }
+    ],
+    "correct": "c",
+    "explanation": "Container-Labels schützen den Arbeitsbereich selbst (Privatsphäre, externer Zugriff, Conditional Access), aber sie verschlüsseln oder markieren nicht die Dateien darin. Jedes Dokument braucht ein eigenes, direkt angewendetes Label, damit Verschlüsselung und Content Markings greifen.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/apply-manage-sensitivity-labels/sensitivity-label-foundations",
+    "source": {
+      "title": "Foundations of sensitivity label integration in Microsoft 365",
+      "url": "https://learn.microsoft.com/en-us/training/modules/apply-manage-sensitivity-labels/sensitivity-label-foundations",
+      "quote": "Applying a label to a SharePoint site doesn't encrypt or mark the documents inside it. Content markings like headers and footers, and encryption settings, only apply when a label is applied directly to a file or email."
+    }
+  },
+  {
+    "id": "scb1-002",
+    "type": "single-choice",
+    "skillArea": "protection",
+    "topic": "Copilot label inheritance",
+    "difficulty": "easy",
+    "prompt": "A user asks Microsoft 365 Copilot in Word to draft a proposal by referencing a document labeled Confidential and a document labeled Highly Confidential (the higher-priority label). Which sensitivity label does the generated proposal receive?",
+    "options": [
+      { "id": "a", "text": "No label, because Copilot-generated content is always unlabeled by default." },
+      { "id": "b", "text": "The Highly Confidential label, because Copilot inherits the label with the highest priority from the source files." },
+      { "id": "c", "text": "The Confidential label, because Copilot always applies the lowest common label." },
+      { "id": "d", "text": "The default label from the user's label policy, which overrides inheritance." }
+    ],
+    "correct": "b",
+    "explanation": "Wenn Copilot neue Inhalte aus gelabelten Quelldateien erstellt, erbt das Ergebnis automatisch das Label mit der höchsten Priorität. Ein geerbtes Label ersetzt zwar Default-Labels und manuell gesetzte Labels mit niedrigerer Priorität, überschreibt aber nie ein höher priorisiertes Label.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/apply-manage-sensitivity-labels/apply-sensitivity-labels-with-copilot",
+    "source": {
+      "title": "Apply sensitivity labels with Microsoft 365 Copilot for secure collaboration",
+      "url": "https://learn.microsoft.com/en-us/training/modules/apply-manage-sensitivity-labels/apply-sensitivity-labels-with-copilot",
+      "quote": "When Copilot creates new content based on labeled source files, it automatically inherits the sensitivity label from the source. If multiple source files are involved, Copilot applies the label with the highest priority."
+    }
+  },
+  {
+    "id": "scb1-003",
+    "type": "yes-no",
+    "skillArea": "protection",
+    "topic": "Copilot encryption rights",
+    "difficulty": "hard",
+    "prompt": "Your organization uses sensitivity labels with encryption and plans to roll out Microsoft 365 Copilot. For each of the following statements, select Yes if the statement is true. Otherwise, select No.",
+    "statements": [
+      { "id": "s1", "text": "If a user has both View and Extract usage rights on an encrypted document, Copilot can summarize and reference that content.", "correct": true },
+      { "id": "s2", "text": "If a user has only the View right without Extract, Copilot can still summarize the encrypted content for that user.", "correct": false },
+      { "id": "s3", "text": "Content protected with Double Key Encryption (DKE) can be summarized by Copilot as long as the user has full usage rights.", "correct": false }
+    ],
+    "explanation": "Copilot prüft die Nutzungsrechte des Anwenders: Mit View und Extract darf Copilot zusammenfassen. Mit View allein verweist Copilot nur per Link auf den Inhalt — ohne das Extract-Recht ist keine Zusammenfassung möglich. DKE-geschützte Inhalte sind für Copilot grundsätzlich unzugänglich; ist ein DKE-Element geöffnet, steht Copilot in der App gar nicht zur Verfügung.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/apply-manage-sensitivity-labels/apply-sensitivity-labels-with-copilot",
+    "source": {
+      "title": "Apply sensitivity labels with Microsoft 365 Copilot for secure collaboration",
+      "url": "https://learn.microsoft.com/en-us/training/modules/apply-manage-sensitivity-labels/apply-sensitivity-labels-with-copilot",
+      "quote": "Summarization isn't available without the Extract right. Copilot doesn't return items protected by DKE, and if a DKE item is open, Copilot is unavailable in that app."
+    }
+  },
+  {
+    "id": "scb1-004",
+    "type": "multiple-choice",
+    "skillArea": "protection",
+    "topic": "Meeting label scopes",
+    "difficulty": "medium",
+    "prompt": "You create a sensitivity label in the Microsoft Purview portal to protect Teams meetings, including the calendar event, invitation, related emails, and attachments. Which three scopes must you select from the Items scope? Each correct answer presents part of the solution.",
+    "options": [
+      { "id": "a", "text": "Files & other data assets" },
+      { "id": "b", "text": "Emails" },
+      { "id": "c", "text": "Meetings" },
+      { "id": "d", "text": "Groups & sites" },
+      { "id": "e", "text": "Schematized data assets" }
+    ],
+    "correct": ["a", "b", "c"],
+    "explanation": "Für Meeting-Schutz müssen die drei Scopes 'Files & other data assets', 'Emails' und 'Meetings' gemeinsam ausgewählt werden, weil ein Meeting aus mehreren zusammenhängenden Elementen besteht (Kalendereintrag, Einladung, Anhänge, E-Mails, Teams-Meeting), die alle dasselbe Label benötigen. 'Groups & sites' ist der Scope für Container-Labels, nicht für Meetings.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/apply-manage-sensitivity-labels/protect-meetings-with-sensitivity-labels",
+    "source": {
+      "title": "Protect meetings with sensitivity labels",
+      "url": "https://learn.microsoft.com/en-us/training/modules/apply-manage-sensitivity-labels/protect-meetings-with-sensitivity-labels",
+      "quote": "All three options are required because of their interdependency. A meeting consists of several items that all need the same sensitivity label for consistent protection"
+    }
+  },
+  {
+    "id": "scb1-005",
+    "type": "matching",
+    "skillArea": "protection",
+    "topic": "Label application surfaces",
+    "difficulty": "medium",
+    "prompt": "Match each scenario for applying a container sensitivity label to the most appropriate surface in Microsoft 365.",
+    "left": [
+      { "id": "l1", "text": "A group owner classifies their own Microsoft 365 Group" },
+      { "id": "l2", "text": "An admin standardizes labels across many sites at scale" },
+      { "id": "l3", "text": "A specific document library needs a consistent default file classification" },
+      { "id": "l4", "text": "An admin reclassifies an existing team" }
+    ],
+    "right": [
+      { "id": "r1", "text": "SharePoint admin center" },
+      { "id": "r2", "text": "Outlook on the web" },
+      { "id": "r3", "text": "Teams admin center" },
+      { "id": "r4", "text": "SharePoint library settings" }
+    ],
+    "correct": { "l1": "r2", "l2": "r1", "l3": "r4", "l4": "r3" },
+    "explanation": "Jede Oberfläche bedient eine andere Zielgruppe: Gruppenbesitzer labeln ihre eigene Gruppe am direktesten über Outlook im Web, Admins standardisieren Site-Labels zentral im SharePoint Admin Center, Default-Labels für Dateien werden in den Bibliothekseinstellungen gesetzt, und bestehende Teams klassifizieren Admins über das Teams Admin Center um.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/apply-manage-sensitivity-labels/apply-sensitivity-labels-to-microsoft-365-services",
+    "source": {
+      "title": "Apply sensitivity labels to Microsoft Teams, Microsoft 365 groups, and SharePoint sites",
+      "url": "https://learn.microsoft.com/en-us/training/modules/apply-manage-sensitivity-labels/apply-sensitivity-labels-to-microsoft-365-services",
+      "quote": "Each surface serves a different audience and scope. The following table maps common scenarios to the surface that fits best:"
+    }
+  },
+  {
+    "id": "scb1-006",
+    "type": "single-choice",
+    "skillArea": "protection",
+    "topic": "Power BI label export",
+    "difficulty": "hard",
+    "prompt": "A financial analyst works with a Power BI dashboard labeled Confidential, where the label includes encryption. The analyst exports the data once to PDF for a client presentation and once to .csv for further processing. What is the result?",
+    "options": [
+      { "id": "a", "text": "Both exported files carry the Confidential label and are encrypted." },
+      { "id": "b", "text": "The PDF inherits the label and encryption; the .csv file carries neither the label nor the protection." },
+      { "id": "c", "text": "Neither file is protected, because labels only apply inside the Power BI service." },
+      { "id": "d", "text": "The .csv file inherits the label, but the PDF loses it because PDF is an unsupported format." }
+    ],
+    "correct": "b",
+    "explanation": "Beim Export nach Excel, PowerPoint, PDF oder .pbix wandert das Label mitsamt Verschlüsselung in die exportierte Datei. Nicht unterstützte Formate wie .csv oder .png übernehmen dagegen weder Label noch Schutz — eine wichtige Lücke, die man bei Confidential-Daten kennen muss.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/apply-manage-sensitivity-labels/apply-sensitivity-labels-power-bi",
+    "source": {
+      "title": "Apply sensitivity labels in Power BI",
+      "url": "https://learn.microsoft.com/en-us/training/modules/apply-manage-sensitivity-labels/apply-sensitivity-labels-power-bi",
+      "quote": "Export to unsupported formats like .csv or .png doesn't carry the sensitivity label or protection."
+    }
+  },
+  {
+    "id": "scb1-007",
+    "type": "ordering",
+    "skillArea": "protection",
+    "topic": "Enable container labels",
+    "difficulty": "medium",
+    "prompt": "Your organization wants users to apply sensitivity labels when creating Teams, Microsoft 365 Groups, and SharePoint sites. Place the required steps in the correct order.",
+    "items": [
+      { "id": "i1", "text": "Enable sensitivity labels for Microsoft 365 Groups at the directory level by following the Microsoft Entra documentation" },
+      { "id": "i2", "text": "Connect to Security & Compliance PowerShell as an administrator" },
+      { "id": "i3", "text": "Run the Execute-AzureAdLabelSync command to synchronize published labels to Microsoft Entra ID" },
+      { "id": "i4", "text": "Users apply sensitivity labels when creating or editing containers such as teams and sites" }
+    ],
+    "correctOrder": ["i1", "i2", "i3", "i4"],
+    "explanation": "Bevor Labels auf Containern erscheinen, sind zwei Schritte nötig: erst das Feature auf Verzeichnisebene in Microsoft Entra aktivieren, dann per Security & Compliance PowerShell mit Execute-AzureAdLabelSync die Labels nach Entra ID synchronisieren. Erst danach können Benutzer Labels beim Erstellen oder Bearbeiten von Containern anwenden. Ohne diese Schritte sind die Einstellungen im Purview-Portal zwar sichtbar, aber nicht konfigurierbar.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/apply-manage-sensitivity-labels/sensitivity-label-foundations",
+    "source": {
+      "title": "Foundations of sensitivity label integration in Microsoft 365",
+      "url": "https://learn.microsoft.com/en-us/training/modules/apply-manage-sensitivity-labels/sensitivity-label-foundations",
+      "quote": "Before labels appear on containers, two steps are required. Without these steps, the settings are visible in the Microsoft Purview portal but can't be configured."
+    }
+  },
+  {
+    "id": "scb1-008",
+    "type": "single-choice",
+    "skillArea": "protection",
+    "topic": "Keyword dictionaries",
+    "difficulty": "easy",
+    "prompt": "A healthcare organization needs to detect a very large list of medical terms and diagnosis codes across Exchange, SharePoint, OneDrive, and Teams. Which capability is designed for managing such large lists of sensitive terms?",
+    "options": [
+      { "id": "a", "text": "A keyword dictionary, which supports up to 1 MB of compressed terms" },
+      { "id": "b", "text": "A built-in sensitive information type" },
+      { "id": "c", "text": "Document fingerprinting" },
+      { "id": "d", "text": "A trainable classifier" }
+    ],
+    "correct": "a",
+    "explanation": "Keyword Dictionaries sind für große Begriffslisten ausgelegt (bis zu 1 MB komprimierte Begriffe) und ideal für branchenspezifische Terminologie wie medizinische Fachbegriffe. Built-in SITs decken nur Standarddatentypen ab, Document Fingerprinting erkennt Formularvorlagen, und Trainable Classifier arbeiten kontextbasiert statt mit Begriffslisten.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/create-manage-sensitive-information-types/6-create-keyword-dictionary",
+    "source": {
+      "title": "Create a keyword dictionary",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-manage-sensitive-information-types/6-create-keyword-dictionary",
+      "quote": "These dictionaries can support up to 1 MB of compressed terms. They're essential for flagging and protecting sensitive information in services like Exchange, SharePoint, OneDrive, and Teams."
+    }
+  },
+  {
+    "id": "scb1-009",
+    "type": "single-choice",
+    "skillArea": "protection",
+    "topic": "Exact data match",
+    "difficulty": "medium",
+    "prompt": "Your organization must detect the exact customer account numbers stored in a database of 40 million rows, while keeping false positives to a minimum and refreshing the data daily. Which approach should you use?",
+    "options": [
+      { "id": "a", "text": "A custom sensitive information type with a regular expression" },
+      { "id": "b", "text": "An exact data match (EDM) sensitive information type" },
+      { "id": "c", "text": "A keyword list with all account numbers" },
+      { "id": "d", "text": "Document fingerprinting based on an account statement template" }
+    ],
+    "correct": "b",
+    "explanation": "EDM vergleicht Inhalte mit exakten Werten aus einer Datenbank (bis zu 100 Millionen Zeilen, täglich aktualisierbar) und reduziert so Fehltreffer deutlich. Eine Regex würde jede Zahl im passenden Format markieren, Keyword-Listen skalieren nicht auf Millionen Werte, und Fingerprinting erkennt Formulare, keine exakten Datenwerte.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/create-manage-sensitive-information-types/4-describe-custom-with-exact-data-match",
+    "source": {
+      "title": "Create and manage exact data match sensitive info types",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-manage-sensitive-information-types/4-describe-custom-with-exact-data-match",
+      "quote": "EDM-based classification enables you to create custom sensitive types that match exact values from a database. This database can hold up to 100 million rows of data. You can also refresh it daily to reflect changes such as new or departing employees, patients, or clients, which helps keep your custom sensitive information types current and relevant."
+    }
+  },
+  {
+    "id": "scb1-010",
+    "type": "single-choice",
+    "skillArea": "protection",
+    "topic": "EDM experiences",
+    "difficulty": "hard",
+    "prompt": "A compliance administrator plans an exact data match deployment that requires 15 EDM sensitive info types, several of which map to the same schema, and the schemas must have custom names. Which approach should the administrator use?",
+    "options": [
+      { "id": "a", "text": "The new EDM experience, because it supports any number of SITs per tenant" },
+      { "id": "b", "text": "The classic EDM experience, because it supports more than 10 SITs, multiple SITs per schema, and custom schema names" },
+      { "id": "c", "text": "The new EDM experience with the guardrails feature disabled" },
+      { "id": "d", "text": "Document fingerprinting, because EDM cannot exceed 10 sensitive info types" }
+    ],
+    "correct": "b",
+    "explanation": "Die klassische EDM-Erfahrung ist für genau diese vier Fälle nötig: mehrere SITs pro Schema, mehr als 10 SITs, eigene Schemanamen und das Bearbeiten bestehender Schemas. Die neue Erfahrung erzeugt beim Versuch, ein elftes Schema anzulegen, einen Fehler und generiert Schemanamen automatisch.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/create-manage-sensitive-information-types/4-describe-custom-with-exact-data-match",
+    "source": {
+      "title": "Create and manage exact data match sensitive info types",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-manage-sensitive-information-types/4-describe-custom-with-exact-data-match",
+      "quote": "If you need to create or manage more than 10 SITs, you need to use the classic experience. Because you can map multiple EDM SITs to the same schema, you can have more than 10 EDM SITs. Attempting to create an eleventh schema with the new experience generates an error."
+    }
+  },
+  {
+    "id": "scb1-011",
+    "type": "yes-no",
+    "skillArea": "protection",
+    "topic": "Document fingerprinting",
+    "difficulty": "medium",
+    "prompt": "Your organization plans to use document fingerprinting to protect a standard contract template. For each of the following statements, select Yes if the statement is true. Otherwise, select No.",
+    "statements": [
+      { "id": "s1", "text": "The original template document is stored in Microsoft Purview alongside the generated fingerprint.", "correct": false },
+      { "id": "s2", "text": "Document fingerprinting can detect sensitive information in password-protected files.", "correct": false },
+      { "id": "s3", "text": "The uploaded template must contain at least 256 characters to generate a reliable fingerprint.", "correct": true }
+    ],
+    "explanation": "Der Fingerprint wird als kleine Unicode-XML-Datei mit einem Hashwert erzeugt — das Originaldokument selbst wird nicht gespeichert. Passwortgeschützte Dateien, reine Bilddateien und Dateien über 4 MB kann Fingerprinting nicht analysieren. Die Vorlage muss mindestens 256 Zeichen enthalten, damit genug Wortmuster für zuverlässige Treffer vorhanden sind.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/create-manage-sensitive-information-types/5-implement-document-fingerprint",
+    "source": {
+      "title": "Implement document fingerprinting",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-manage-sensitive-information-types/5-implement-document-fingerprint",
+      "quote": "When you upload a form or template, DLP analyzes this pattern and generates a fingerprint as a small Unicode XML file containing a hash value. The original document itself isn't stored."
+    }
+  },
+  {
+    "id": "scb1-012",
+    "type": "multiple-choice",
+    "skillArea": "protection",
+    "topic": "Custom SIT patterns",
+    "difficulty": "medium",
+    "prompt": "You are creating a pattern for a custom sensitive information type in Microsoft Purview. Which of the following can you select as the primary element? Each correct answer presents a complete solution.",
+    "options": [
+      { "id": "a", "text": "A regular expression" },
+      { "id": "b", "text": "A keyword dictionary" },
+      { "id": "c", "text": "A function" },
+      { "id": "d", "text": "A trainable classifier" },
+      { "id": "e", "text": "A retention label" }
+    ],
+    "correct": ["a", "b", "c"],
+    "explanation": "Das primäre Element eines Patterns kann eine Regular Expression (mit oder ohne Prüfsummen-Validierung), eine Keyword List, ein Keyword Dictionary oder eine Funktion sein. Trainable Classifier sind eine eigenständige, KI-basierte Klassifizierungsmethode, und Retention Labels gehören zum Data Lifecycle Management, nicht zur SIT-Definition.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/create-manage-sensitive-information-types/3-create-manage-custom",
+    "source": {
+      "title": "Create and manage custom sensitive information types",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-manage-sensitive-information-types/3-create-manage-custom",
+      "quote": "Primary element: The main pattern that the sensitive information type is looking for. It can be a regular expression with or without a checksum validation, a keyword list, a keyword dictionary, or a function."
+    }
+  },
+  {
+    "id": "scb1-013",
+    "type": "dropdown",
+    "skillArea": "protection",
+    "topic": "Named entities",
+    "difficulty": "easy",
+    "prompt": "Complete the statement about named entity sensitive information types by selecting the correct options.",
+    "textParts": [
+      "Named entity SITs come in two types: ",
+      " named entity SITs detect all possible matches in a class, such as All physical addresses, while ",
+      " named entity SITs have a narrower focus, such as a single region or a single class of terms."
+    ],
+    "blanks": [
+      {
+        "id": "b1",
+        "options": [
+          { "id": "o1", "text": "bundled" },
+          { "id": "o2", "text": "unbundled" },
+          { "id": "o3", "text": "enhanced" }
+        ],
+        "correct": "o1"
+      },
+      {
+        "id": "b2",
+        "options": [
+          { "id": "o1", "text": "unbundled" },
+          { "id": "o2", "text": "bundled" },
+          { "id": "o3", "text": "credential" }
+        ],
+        "correct": "o1"
+      }
+    ],
+    "explanation": "Bundled Named-Entity-SITs wie 'All physical addresses' erkennen alle möglichen Treffer einer Klasse und eignen sich als breite Kriterien in DLP-Richtlinien — sie erfordern aktiviertes Advanced classification scanning and protection. Unbundled SITs haben einen engeren Fokus, etwa eine einzelne Region wie 'Australia physical addresses'.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/create-manage-sensitive-information-types/describe-named-entities",
+    "source": {
+      "title": "Describe named entities",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-manage-sensitive-information-types/describe-named-entities",
+      "quote": "Bundled named entity SITs detect all possible matches in a class, such as All physical addresses. Use them as broad criteria in your DLP policies for detecting sensitive items."
+    }
+  },
+  {
+    "id": "scb1-014",
+    "type": "multiple-choice",
+    "skillArea": "protection",
+    "topic": "Fingerprinting capabilities",
+    "difficulty": "medium",
+    "prompt": "Which of the following are capabilities of document fingerprinting in Microsoft Purview? Each correct answer presents a complete solution.",
+    "options": [
+      { "id": "a", "text": "DLP policies using fingerprints can be applied to Exchange, SharePoint, OneDrive, Teams, and devices." },
+      { "id": "b", "text": "Both partial and exact matching are supported." },
+      { "id": "c", "text": "Content can be detected in dual-byte languages such as Chinese, Japanese, and Korean." },
+      { "id": "d", "text": "Template file types such as .dotx are supported for fingerprint creation." },
+      { "id": "e", "text": "Sensitive information can be detected in image-only files." }
+    ],
+    "correct": ["a", "b", "c"],
+    "explanation": "Document Fingerprinting funktioniert plattformübergreifend (Exchange, SharePoint, OneDrive, Teams, Geräte), unterstützt partielles und exaktes Matching und erkennt mehrsprachige Inhalte inklusive Doppelbyte-Sprachen. Template-Formate wie .dotx werden dagegen nicht unterstützt, und reine Bilddateien kann Fingerprinting nicht analysieren.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/create-manage-sensitive-information-types/5-implement-document-fingerprint",
+    "source": {
+      "title": "Implement document fingerprinting",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-manage-sensitive-information-types/5-implement-document-fingerprint",
+      "quote": "Multilingual detection: Detects content in multiple languages, including dual-byte languages such as Chinese, Japanese, and Korean."
+    }
+  },
+  {
+    "id": "scb1-015",
+    "type": "single-choice",
+    "skillArea": "protection",
+    "topic": "Encryption technologies",
+    "difficulty": "easy",
+    "prompt": "Which encryption technology in Microsoft 365 secures the connection between mail servers but does not encrypt the message content itself?",
+    "options": [
+      { "id": "a", "text": "Microsoft Purview Message Encryption" },
+      { "id": "b", "text": "Information Rights Management (IRM)" },
+      { "id": "c", "text": "S/MIME" },
+      { "id": "d", "text": "Transport Layer Security (TLS)" }
+    ],
+    "correct": "d",
+    "explanation": "TLS verschlüsselt nur die Verbindung zwischen Mailservern, nicht die Nachricht selbst. Purview Message Encryption verschlüsselt den Nachrichteninhalt, IRM ergänzt zusätzlich Nutzungseinschränkungen (z. B. Weiterleiten verbieten), und S/MIME arbeitet zertifikatsbasiert mit Signierung und Verschlüsselung.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/deploy-message-encryption-microsoft-365/understand-message-encryption",
+    "source": {
+      "title": "Understand message encryption",
+      "url": "https://learn.microsoft.com/en-us/training/modules/deploy-message-encryption-microsoft-365/understand-message-encryption",
+      "quote": "TLS helps secure data in transit between trusted endpoints but doesn't encrypt the message content itself."
+    }
+  },
+  {
+    "id": "scb1-016",
+    "type": "single-choice",
+    "skillArea": "protection",
+    "topic": "Advanced encryption licensing",
+    "difficulty": "medium",
+    "prompt": "Your organization uses Microsoft 365 E3 and wants to expire access to encrypted messages after seven days and revoke messages after they're sent. What must the organization do first?",
+    "options": [
+      { "id": "a", "text": "Nothing; these features are included in Microsoft 365 E3." },
+      { "id": "b", "text": "Add the Microsoft 365 E5 Compliance add-on or another eligible compliance SKU, because Advanced Message Encryption isn't included in E3." },
+      { "id": "c", "text": "Enable BitLocker for Exchange Online mailboxes." },
+      { "id": "d", "text": "Migrate all mailboxes to Exchange Server on-premises." }
+    ],
+    "correct": "b",
+    "explanation": "Ablauf (Expiration) und Widerruf (Revocation) sind Funktionen von Advanced Message Encryption, das in Microsoft 365 E5, Office 365 E5 und A5 enthalten ist. E3-Kunden benötigen das E5 Compliance Add-on oder eine andere geeignete Compliance-SKU. Standard-Message-Encryption in E3 bietet diese Funktionen nicht.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/deploy-message-encryption-microsoft-365/implement-advanced-message-encryption",
+    "source": {
+      "title": "Control encrypted email access with Advanced Message Encryption",
+      "url": "https://learn.microsoft.com/en-us/training/modules/deploy-message-encryption-microsoft-365/implement-advanced-message-encryption",
+      "quote": "If your organization uses Microsoft 365 E3, you can add this capability through the Microsoft 365 E5 Compliance add-on or another eligible compliance SKU."
+    }
+  },
+  {
+    "id": "scb1-017",
+    "type": "yes-no",
+    "skillArea": "protection",
+    "topic": "Expiration and revocation",
+    "difficulty": "hard",
+    "prompt": "Your organization has Advanced Message Encryption and wants to control access to encrypted emails after they're sent. For each of the following statements, select Yes if the statement is true. Otherwise, select No.",
+    "statements": [
+      { "id": "s1", "text": "Access to an encrypted message can be revoked regardless of whether the recipient viewed it in Outlook or through the encrypted message portal.", "correct": false },
+      { "id": "s2", "text": "Expiration settings only apply to external recipients who view the message through the encrypted message portal.", "correct": true },
+      { "id": "s3", "text": "A sender can revoke an eligible message from the Sent Items folder in Outlook on the web using the Remove external access option.", "correct": true }
+    ],
+    "explanation": "Widerruf funktioniert nur für Nachrichten, die über das verschlüsselte Nachrichtenportal aufgerufen wurden — nicht bei nativer Anzeige in Outlook. Auch Ablaufeinstellungen gelten nur für externe Empfänger im Portal; deshalb wird per Mail-Flow-Regel ein Custom-Branding-Template erzwungen, das die Portal-Erfahrung sicherstellt. Absender können berechtigte Nachrichten in Outlook im Web über 'Remove external access' widerrufen.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/deploy-message-encryption-microsoft-365/implement-advanced-message-encryption",
+    "source": {
+      "title": "Control encrypted email access with Advanced Message Encryption",
+      "url": "https://learn.microsoft.com/en-us/training/modules/deploy-message-encryption-microsoft-365/implement-advanced-message-encryption",
+      "quote": "Expiration settings only apply to external recipients who view the message through the encrypted message portal. To ensure this portal experience is used, apply a custom branding template through a mail flow rule."
+    }
+  },
+  {
+    "id": "scb1-018",
+    "type": "single-choice",
+    "skillArea": "protection",
+    "topic": "Branding rule order",
+    "difficulty": "hard",
+    "prompt": "An administrator creates two mail flow rules: one applies a custom branding template to OME messages, and another applies Office 365 Message Encryption to emails sent to external legal partners. External recipients report that encrypted messages arrive without the company branding. What is the most likely cause?",
+    "options": [
+      { "id": "a", "text": "The branding rule runs before the encryption rule, but mail must already be encrypted before branding is applied." },
+      { "id": "b", "text": "Branding templates can only be applied to internal recipients." },
+      { "id": "c", "text": "The branding template must be published as a sensitivity label first." },
+      { "id": "d", "text": "Custom branding requires recipients to have a Microsoft 365 mailbox." }
+    ],
+    "correct": "a",
+    "explanation": "Branding wird nur auf bereits verschlüsselte Nachrichten angewendet. Die Verschlüsselungsregel muss daher vor der Branding-Regel ausgeführt werden — läuft die Branding-Regel zuerst, greift sie ins Leere. Die Reihenfolge der Mail-Flow-Regeln ist hier die entscheidende Fehlerquelle.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/deploy-message-encryption-microsoft-365/branding-template",
+    "source": {
+      "title": "Customize encrypted email branding with Microsoft Purview",
+      "url": "https://learn.microsoft.com/en-us/training/modules/deploy-message-encryption-microsoft-365/branding-template",
+      "quote": "Mail must already be encrypted before branding is applied. Make sure your encryption rule runs before the branding rule."
+    }
+  },
+  {
+    "id": "scb1-019",
+    "type": "ordering",
+    "skillArea": "protection",
+    "topic": "Message encryption setup",
+    "difficulty": "medium",
+    "prompt": "You need to implement Microsoft Purview Message Encryption in your tenant and apply it automatically to sensitive emails. Place the steps in the correct order.",
+    "items": [
+      { "id": "i1", "text": "Connect to Exchange Online PowerShell and run Get-IRMConfiguration to check that AzureRMSLicensingEnabled is True" },
+      { "id": "i2", "text": "Run Test-IRMConfiguration to verify that RMS templates are available and encryption and decryption succeed" },
+      { "id": "i3", "text": "Review available encryption templates such as Do Not Forward and Encrypt-Only with Get-RMSTemplate" },
+      { "id": "i4", "text": "Create a mail flow rule in the Exchange admin center that applies an encryption template based on message conditions" },
+      { "id": "i5", "text": "Send test messages to internal, external, and mobile recipients to validate the user experience" }
+    ],
+    "correctOrder": ["i1", "i2", "i3", "i4", "i5"],
+    "explanation": "Zuerst wird geprüft, ob Azure RMS aktiv ist (Get-IRMConfiguration), dann die Funktionsfähigkeit getestet (Test-IRMConfiguration). Anschließend sichtet man die verfügbaren Templates (Get-RMSTemplate), wendet sie über eine Mail-Flow-Regel automatisch an und validiert zum Schluss die Empfängererfahrung über verschiedene Client-Typen hinweg.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/deploy-message-encryption-microsoft-365/implement-message-encryption",
+    "source": {
+      "title": "Configure Microsoft Purview Message Encryption",
+      "url": "https://learn.microsoft.com/en-us/training/modules/deploy-message-encryption-microsoft-365/implement-message-encryption",
+      "quote": "Once encryption is available, you can create templates that define how messages are protected, test encryption behavior, and apply those settings through mail flow rules."
+    }
+  },
+  {
+    "id": "scb1-020",
+    "type": "dropdown",
+    "skillArea": "protection",
+    "topic": "Encryption PowerShell cmdlets",
+    "difficulty": "medium",
+    "prompt": "Complete the statement about managing Advanced Message Encryption with PowerShell by selecting the correct options.",
+    "textParts": [
+      "To create a custom branding template that expires external access to encrypted messages after 14 days, an administrator runs ",
+      ". To revoke access to a message that has already been sent, the administrator runs ",
+      "."
+    ],
+    "blanks": [
+      {
+        "id": "b1",
+        "options": [
+          { "id": "o1", "text": "New-OMEConfiguration -Identity \"Expire in 14 days\" -ExternalMailExpiryInDays 14" },
+          { "id": "o2", "text": "Set-IrmConfiguration -EnablePortalTrackingLogs $true" },
+          { "id": "o3", "text": "Set-OMEConfiguration -Identity \"Default Branding\" -OTPEnabled $true" }
+        ],
+        "correct": "o1"
+      },
+      {
+        "id": "b2",
+        "options": [
+          { "id": "o1", "text": "Set-OMEMessageRevocation -Revoke $true -MessageId \"<messageId>\"" },
+          { "id": "o2", "text": "Remove-OMEConfiguration -Identity \"<messageId>\"" },
+          { "id": "o3", "text": "Get-OMEMessageStatus -MessageId \"<messageId>\"" }
+        ],
+        "correct": "o1"
+      }
+    ],
+    "explanation": "New-OMEConfiguration mit dem Parameter ExternalMailExpiryInDays (1 bis 730 Tage) erstellt ein Branding-Template mit Ablaufrichtlinie. Set-OMEMessageRevocation -Revoke $true widerruft eine bereits gesendete Nachricht; Get-OMEMessageStatus dient nur zur Bestätigung des Widerrufs und Remove-OMEConfiguration löscht ein Branding-Template.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/deploy-message-encryption-microsoft-365/implement-advanced-message-encryption",
+    "source": {
+      "title": "Control encrypted email access with Advanced Message Encryption",
+      "url": "https://learn.microsoft.com/en-us/training/modules/deploy-message-encryption-microsoft-365/implement-advanced-message-encryption",
+      "quote": "You can configure encrypted emails to expire after a specific number of days. This helps limit how long recipients can access the content."
+    }
+  },
+  {
+    "id": "scb1-021",
+    "type": "multiple-choice",
+    "skillArea": "protection",
+    "topic": "Advanced encryption features",
+    "difficulty": "medium",
+    "prompt": "Which capabilities require Microsoft Purview Advanced Message Encryption and are not available with standard Microsoft Purview Message Encryption? Each correct answer presents a complete solution.",
+    "options": [
+      { "id": "a", "text": "Expiring access to an encrypted message after a specific time" },
+      { "id": "b", "text": "Revoking access to a message after it's sent" },
+      { "id": "c", "text": "Creating multiple branding templates" },
+      { "id": "d", "text": "Sending encrypted email to Gmail and Yahoo recipients" },
+      { "id": "e", "text": "Viewing encrypted messages in a secure web portal" }
+    ],
+    "correct": ["a", "b", "c"],
+    "explanation": "Ablauf, Widerruf und mehrere Branding-Templates sind Advanced-Features (E5 bzw. AIP Premium P2 erforderlich). Verschlüsselte Mails an Drittanbieter-Dienste wie Gmail/Yahoo und die Anzeige im sicheren Webportal gehören bereits zum Standard-Funktionsumfang von Purview Message Encryption.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/deploy-message-encryption-microsoft-365/plan-message-encryption",
+    "source": {
+      "title": "Plan for Microsoft Purview Message Encryption",
+      "url": "https://learn.microsoft.com/en-us/training/modules/deploy-message-encryption-microsoft-365/plan-message-encryption",
+      "quote": "Advanced Message Encryption builds on the base encryption experience and provides more granular control over external access."
+    }
+  },
+  {
+    "id": "scb1-022",
+    "type": "single-choice",
+    "skillArea": "protection",
+    "topic": "Classification methods",
+    "difficulty": "easy",
+    "prompt": "A financial services company needs to automatically detect structured data such as credit card numbers and Social Security numbers across Microsoft 365. Which Microsoft Purview classification method is designed for this purpose?",
+    "options": [
+      { "id": "a", "text": "Trainable classifiers" },
+      { "id": "b", "text": "Sensitive information types (SITs)" },
+      { "id": "c", "text": "Manual classification by users" },
+      { "id": "d", "text": "Retention labels" }
+    ],
+    "correct": "b",
+    "explanation": "SITs erkennen strukturierte Datenmuster wie Kreditkarten- oder Sozialversicherungsnummern über vordefinierte oder eigene Erkennungsregeln. Trainable Classifier sind für unstrukturierte Inhalte gedacht, die auf Bedeutung und Kontext basieren, und manuelle Klassifizierung skaliert nicht für automatische Erkennung.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/m365-compliance-information-classify-data/using-sensitive-information-types",
+    "source": {
+      "title": "Classify data using sensitive information types",
+      "url": "https://learn.microsoft.com/en-us/training/modules/m365-compliance-information-classify-data/using-sensitive-information-types",
+      "quote": "SITs recognize predefined patterns, such as credit card numbers or Social Security numbers."
+    }
+  },
+  {
+    "id": "scb1-023",
+    "type": "multiple-choice",
+    "skillArea": "protection",
+    "topic": "Pretrained classifiers",
+    "difficulty": "easy",
+    "prompt": "For which types of content does Microsoft Purview provide pretrained trainable classifiers that are ready to use without manual training? Each correct answer presents a complete solution.",
+    "options": [
+      { "id": "a", "text": "Resumes" },
+      { "id": "b", "text": "Source code" },
+      { "id": "c", "text": "Offensive language" },
+      { "id": "d", "text": "Credit card numbers" },
+      { "id": "e", "text": "Employee ID numbers" }
+    ],
+    "correct": ["a", "b", "c"],
+    "explanation": "Microsoft liefert vortrainierte Classifier für gängige unstrukturierte Inhalte wie Lebensläufe, Quellcode und beleidigende Sprache; sie werden regelmäßig von Microsoft aktualisiert. Kreditkartennummern sind strukturierte Daten und werden über SITs erkannt, Mitarbeiter-IDs über custom SITs.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/m365-compliance-information-classify-data/using-trainable-classifiers",
+    "source": {
+      "title": "Classify data using trainable classifiers",
+      "url": "https://learn.microsoft.com/en-us/training/modules/m365-compliance-information-classify-data/using-trainable-classifiers",
+      "quote": "Pretrained classifiers: Built-in classifiers that are ready to use for common content types such as resumes, source code, and offensive language."
+    }
+  },
+  {
+    "id": "scb1-024",
+    "type": "single-choice",
+    "skillArea": "protection",
+    "topic": "Classifier training data",
+    "difficulty": "easy",
+    "prompt": "You plan to create a custom trainable classifier in Microsoft Purview. How many sample items must you provide to train the classifier?",
+    "options": [
+      { "id": "a", "text": "50–500 positive examples and 150–1500 negative examples" },
+      { "id": "b", "text": "Exactly 100 positive examples; negative examples are optional" },
+      { "id": "c", "text": "10 positive and 10 negative examples" },
+      { "id": "d", "text": "At least 5000 mixed examples in a single folder" }
+    ],
+    "correct": "a",
+    "explanation": "Für das Training sind zwei manuell ausgewählte Beispielsätze nötig: 50–500 positive Beispiele (Dokumente der Kategorie) und 150–1500 negative Beispiele (Dokumente außerhalb der Kategorie). Beide Sätze werden in getrennten SharePoint-Ordnern abgelegt.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/m365-compliance-information-classify-data/create-custom-trainable-classifier",
+    "source": {
+      "title": "Create a custom trainable classifier",
+      "url": "https://learn.microsoft.com/en-us/training/modules/m365-compliance-information-classify-data/create-custom-trainable-classifier",
+      "quote": "Positive examples (50–500 items): Documents that belong to the category. Negative examples (150–1500 items): Documents that don't belong in the category."
+    }
+  },
+  {
+    "id": "scb1-025",
+    "type": "yes-no",
+    "skillArea": "protection",
+    "topic": "Classifier limitations",
+    "difficulty": "medium",
+    "prompt": "Your organization evaluates trainable classifiers for classifying contracts and HR records. For each of the following statements, select Yes if the statement is true. Otherwise, select No.",
+    "statements": [
+      { "id": "s1", "text": "Trainable classifiers can classify content that is encrypted.", "correct": false },
+      { "id": "s2", "text": "Custom trainable classifiers require an initial training and review process to improve accuracy.", "correct": true },
+      { "id": "s3", "text": "Trainable classifiers only classify content in supported locations such as SharePoint, OneDrive, and Exchange.", "correct": true }
+    ],
+    "explanation": "Trainable Classifier arbeiten KI-basiert, haben aber klare Grenzen: Sie funktionieren nicht auf verschlüsselten Inhalten, benötigen einen initialen Trainings- und Review-Prozess und klassifizieren nur Inhalte in unterstützten Speicherorten (SharePoint, OneDrive, Exchange).",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/m365-compliance-information-classify-data/using-trainable-classifiers",
+    "source": {
+      "title": "Classify data using trainable classifiers",
+      "url": "https://learn.microsoft.com/en-us/training/modules/m365-compliance-information-classify-data/using-trainable-classifiers",
+      "quote": "They require an initial training and review process to improve accuracy. They don't work on encrypted content. They only classify content in supported locations (such as SharePoint, OneDrive, and Exchange)."
+    }
+  },
+  {
+    "id": "scb1-026",
+    "type": "ordering",
+    "skillArea": "protection",
+    "topic": "Custom classifier creation",
+    "difficulty": "hard",
+    "prompt": "Your security team needs a custom trainable classifier to detect confidential research documents. Place the steps to create and deploy the classifier in the correct order.",
+    "items": [
+      { "id": "i1", "text": "Collect 50–500 positive and 150–1500 negative sample documents" },
+      { "id": "i2", "text": "Store the positive and negative samples in separate SharePoint folders and allow time for indexing" },
+      { "id": "i3", "text": "Create the trainable classifier in the Microsoft Purview portal and provide the SharePoint folder URLs" },
+      { "id": "i4", "text": "Review the classifier's predictions and confirm whether each one is correct, incorrect, or uncertain" },
+      { "id": "i5", "text": "Publish the classifier for use in autolabeling, retention, DLP, and communication compliance policies" }
+    ],
+    "correctOrder": ["i1", "i2", "i3", "i4", "i5"],
+    "explanation": "Der Prozess folgt einer festen Struktur: Erst Trainingsdaten sammeln, dann in getrennten SharePoint-Ordnern ablegen (bei neuen Ordnern mindestens eine Stunde Indexierung abwarten), den Classifier im Purview-Portal mit den Ordner-URLs anlegen, die Vorhersagen prüfen (mindestens 200 Testelemente empfohlen) und erst danach veröffentlichen. Die Verarbeitung der Trainingsdaten dauert typischerweise bis zu 24 Stunden.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/m365-compliance-information-classify-data/create-custom-trainable-classifier",
+    "source": {
+      "title": "Create a custom trainable classifier",
+      "url": "https://learn.microsoft.com/en-us/training/modules/m365-compliance-information-classify-data/create-custom-trainable-classifier",
+      "quote": "Creating a classifier follows a structured process that includes training, testing, and publishing."
+    }
+  },
+  {
+    "id": "scb1-027",
+    "type": "matching",
+    "skillArea": "protection",
+    "topic": "Classification method selection",
+    "difficulty": "medium",
+    "prompt": "Match each data protection scenario to the most appropriate Microsoft Purview classification method.",
+    "left": [
+      { "id": "l1", "text": "Detect structured patterns such as credit card numbers in emails" },
+      { "id": "l2", "text": "Classify confidential contracts that have no consistent keywords or structure" },
+      { "id": "l3", "text": "Detect customer forms created from a standard company template" },
+      { "id": "l4", "text": "Match content against exact values from a structured HR dataset" }
+    ],
+    "right": [
+      { "id": "r1", "text": "Document fingerprinting" },
+      { "id": "r2", "text": "Sensitive information types (pattern-based)" },
+      { "id": "r3", "text": "Exact data match (EDM)" },
+      { "id": "r4", "text": "Trainable classifiers" }
+    ],
+    "correct": { "l1": "r2", "l2": "r4", "l3": "r1", "l4": "r3" },
+    "explanation": "Musterbasierte SITs erkennen strukturierte Daten wie Kreditkartennummern. Trainable Classifier analysieren unstrukturierte Inhalte nach Bedeutung und Kontext — ideal für Verträge ohne feste Schlüsselwörter. Document Fingerprinting erkennt Dokumente, die einer Standardvorlage folgen, und EDM gleicht Inhalte mit exakten Werten aus einem strukturierten Datensatz ab.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/m365-compliance-information-classify-data/using-sensitive-information-types",
+    "source": {
+      "title": "Classify data using sensitive information types",
+      "url": "https://learn.microsoft.com/en-us/training/modules/m365-compliance-information-classify-data/using-sensitive-information-types",
+      "quote": "Document fingerprinting: Creates SITs based on document templates, allowing organizations to detect and classify content that follows a specific form."
+    }
+  },
+  {
+    "id": "scb1-028",
+    "type": "yes-no",
+    "skillArea": "protection",
+    "topic": "Classifier requirements",
+    "difficulty": "hard",
+    "prompt": "A compliance administrator prepares to build custom trainable classifiers in Microsoft Purview. For each of the following statements, select Yes if the statement is true. Otherwise, select No.",
+    "statements": [
+      { "id": "s1", "text": "By default, only the user who creates a custom classifier can train and review predictions made by that classifier.", "correct": true },
+      { "id": "s2", "text": "Trainable classifiers are included in a base Microsoft 365 E3 license without any add-ons.", "correct": false },
+      { "id": "s3", "text": "Newly created SharePoint folders for training data should be indexed for at least one hour before they're used in the classifier setup.", "correct": true }
+    ],
+    "explanation": "Standardmäßig kann nur der Ersteller eines Custom Classifiers dessen Vorhersagen trainieren und prüfen. Lizenzseitig sind Microsoft 365 E5, E5 Compliance oder E3 mit dem Information Protection and Governance Add-on erforderlich — E3 allein genügt nicht. Neue SharePoint-Ordner müssen vor der Verwendung mindestens eine Stunde indexiert werden.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/m365-compliance-information-classify-data/create-custom-trainable-classifier",
+    "source": {
+      "title": "Create a custom trainable classifier",
+      "url": "https://learn.microsoft.com/en-us/training/modules/m365-compliance-information-classify-data/create-custom-trainable-classifier",
+      "quote": "By default, only the user who creates a custom classifier can train and review predictions made by that classifier."
+    }
+  }
+]

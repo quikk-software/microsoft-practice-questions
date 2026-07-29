@@ -1,0 +1,714 @@
+[
+  {
+    "id": "scb2-001",
+    "type": "single-choice",
+    "skillArea": "protection",
+    "topic": "Zero Trust principles",
+    "difficulty": "easy",
+    "prompt": "Which of the following best describes the core assumption of the Zero Trust security model?",
+    "options": [
+      { "id": "a", "text": "No user, device, or service should automatically be trusted, even inside the corporate network" },
+      { "id": "b", "text": "Users inside the corporate network perimeter can be trusted with broad access to systems and data" },
+      { "id": "c", "text": "Only devices that are physically connected to the corporate network require verification" },
+      { "id": "d", "text": "Trust is established once at sign-in and remains valid for all future sessions" }
+    ],
+    "correct": "a",
+    "explanation": "Zero Trust geht davon aus, dass kein Benutzer, Gerät oder Dienst automatisch vertrauenswürdig ist — auch nicht innerhalb des Unternehmensnetzwerks. Jede Zugriffsanfrage wird explizit verifiziert, mit minimalen Rechten versehen und kontinuierlich überwacht.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-protect-sensitive-data/protect-data-zero-trust-world",
+    "source": {
+      "title": "Protect data in a Zero Trust world",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-protect-sensitive-data/protect-data-zero-trust-world",
+      "quote": "Zero Trust provides a more effective approach by assuming that no user, device, or service should automatically be trusted, even inside the corporate network."
+    }
+  },
+  {
+    "id": "scb2-002",
+    "type": "single-choice",
+    "skillArea": "protection",
+    "topic": "Incident investigation tools",
+    "difficulty": "medium",
+    "prompt": "A security analyst at Contoso is investigating a DLP alert and needs to review detailed user activity logs to support the incident analysis. Which Microsoft Purview tool should the analyst use?",
+    "options": [
+      { "id": "a", "text": "Microsoft Purview Audit" },
+      { "id": "b", "text": "Content explorer" },
+      { "id": "c", "text": "Information Protection scanner" },
+      { "id": "d", "text": "Sensitivity label policies" }
+    ],
+    "correct": "a",
+    "explanation": "Microsoft Purview Audit stellt detaillierte Aktivitätsprotokolle für die Incident-Analyse bereit. Content explorer dient zur Validierung von Klassifizierung und Labeling, der Scanner klassifiziert On-Premises-Daten und Label-Policies veröffentlichen Labels.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-protect-sensitive-data/manage-respond-alerts-threats",
+    "source": {
+      "title": "Manage security alerts and respond to threats",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-protect-sensitive-data/manage-respond-alerts-threats",
+      "quote": "Use Microsoft Purview Audit to review detailed user activity logs that support incident analysis."
+    }
+  },
+  {
+    "id": "scb2-003",
+    "type": "multiple-choice",
+    "skillArea": "protection",
+    "topic": "Purview AI protections",
+    "difficulty": "medium",
+    "prompt": "Contoso is rolling out AI-powered services and wants to protect sensitive data used in AI interactions with Microsoft Purview. Which three protections extend to AI services? Each correct answer presents a complete solution.",
+    "options": [
+      { "id": "a", "text": "DLP policies that evaluate prompts and responses submitted to supported AI services" },
+      { "id": "b", "text": "Sensitivity labels and encryption inherited by AI-generated content stored in Microsoft 365" },
+      { "id": "c", "text": "Insider risk management policies that monitor risky activity involving AI services" },
+      { "id": "d", "text": "Automatic blocking of all AI services from accessing any labeled content" },
+      { "id": "e", "text": "Real-time rewriting of AI responses to remove all sensitive terms" }
+    ],
+    "correct": ["a", "b", "c"],
+    "explanation": "Purview erweitert DLP auf Prompts und Antworten unterstützter KI-Dienste, KI-generierte Inhalte können Sensitivity Labels und Verschlüsselung erben, und Insider Risk Management überwacht riskante Aktivitäten mit KI-Tools. Ein pauschales Blockieren aller KI-Dienste oder automatisches Umschreiben von Antworten gibt es nicht.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-protect-sensitive-data/protect-ai-data",
+    "source": {
+      "title": "Protect AI-generated and AI-processed data",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-protect-sensitive-data/protect-ai-data",
+      "quote": "DLP policies can evaluate prompts and responses submitted to supported AI services, applying protections to prevent sensitive information exposure."
+    }
+  },
+  {
+    "id": "scb2-004",
+    "type": "yes-no",
+    "skillArea": "protection",
+    "topic": "Insider risk management",
+    "difficulty": "medium",
+    "prompt": "For each of the following statements about preventing data leaks and insider threats with Microsoft Purview, select Yes if the statement is true. Otherwise, select No.",
+    "statements": [
+      { "id": "s1", "text": "Insider risk management policies can define risk indicators based on user activities such as mass downloads or transferring data to unmanaged devices.", "correct": true },
+      { "id": "s2", "text": "Insider risk management requires directly monitoring individual users to detect patterns of data misuse.", "correct": false },
+      { "id": "s3", "text": "DLP policies can apply to Teams chats and meetings in addition to email, SharePoint, OneDrive, and endpoints.", "correct": true }
+    ],
+    "explanation": "Insider Risk Management definiert Risikoindikatoren wie Massendownloads oder Transfers auf nicht verwaltete Geräte und erkennt Muster, ohne einzelne Benutzer direkt zu überwachen. DLP-Richtlinien gelten auch für Teams-Chats und -Meetings.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-protect-sensitive-data/prevent-data-leaks-insider-threats",
+    "source": {
+      "title": "Prevent data leaks and insider threats",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-protect-sensitive-data/prevent-data-leaks-insider-threats",
+      "quote": "Detect patterns that might suggest data misuse without monitoring individual users directly."
+    }
+  },
+  {
+    "id": "scb2-005",
+    "type": "single-choice",
+    "skillArea": "protection",
+    "topic": "Message encryption",
+    "difficulty": "easy",
+    "prompt": "Contoso needs to ensure that sensitive email messages remain protected even when they are sent to external recipients outside the organization. Which Microsoft Purview capability should be used?",
+    "options": [
+      { "id": "a", "text": "Microsoft Purview Message Encryption" },
+      { "id": "b", "text": "Microsoft Purview Information Protection scanner" },
+      { "id": "c", "text": "Activity explorer" },
+      { "id": "d", "text": "Insider risk management" }
+    ],
+    "correct": "a",
+    "explanation": "Microsoft Purview Message Encryption verschlüsselt E-Mails innerhalb und außerhalb der Organisation, sodass sensible Nachrichten auch bei externen Empfängern geschützt bleiben. Der Scanner dient On-Premises-Daten, Activity explorer der Überwachung und Insider Risk Management der Risikoerkennung.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-protect-sensitive-data/understand-classification-protection",
+    "source": {
+      "title": "Understand data classification and protection",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-protect-sensitive-data/understand-classification-protection",
+      "quote": "Microsoft Purview Message Encryption allows emails to be encrypted both inside and outside the organization. This ensures that sensitive messages remain protected even when shared with external recipients."
+    }
+  },
+  {
+    "id": "scb2-006",
+    "type": "matching",
+    "skillArea": "protection",
+    "topic": "Investigation tools",
+    "difficulty": "medium",
+    "prompt": "Match each Microsoft Purview capability to the task it supports during an investigation.",
+    "left": [
+      { "id": "l1", "text": "Microsoft Purview Audit" },
+      { "id": "l2", "text": "Activity explorer" },
+      { "id": "l3", "text": "Content explorer and Data explorer" },
+      { "id": "l4", "text": "Microsoft Purview alerts" }
+    ],
+    "right": [
+      { "id": "r1", "text": "Review detailed user activity logs that support incident analysis" },
+      { "id": "r2", "text": "Review data access, movement, and sharing activities" },
+      { "id": "r3", "text": "Validate how sensitive data is classified and labeled across Microsoft 365 services" },
+      { "id": "r4", "text": "Get notified when policies detect activity that might put sensitive data at risk" }
+    ],
+    "correct": { "l1": "r1", "l2": "r2", "l3": "r3", "l4": "r4" },
+    "explanation": "Purview Audit liefert detaillierte Aktivitätsprotokolle, Activity explorer zeigt Datenzugriffe und -bewegungen, Content/Data explorer validieren Klassifizierung und Labeling, und Purview-Alerts melden riskante Aktivitäten aus DLP- und Insider-Risk-Richtlinien.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-protect-sensitive-data/manage-respond-alerts-threats",
+    "source": {
+      "title": "Manage security alerts and respond to threats",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-protect-sensitive-data/manage-respond-alerts-threats",
+      "quote": "Use Activity explorer to review data access, movement, and sharing activities. Use Content explorer and Data explorer to validate how sensitive data is classified and labeled across Microsoft 365 services."
+    }
+  },
+  {
+    "id": "scb2-007",
+    "type": "single-choice",
+    "skillArea": "protection",
+    "topic": "Scanner discovery mode",
+    "difficulty": "easy",
+    "prompt": "You want the Microsoft Purview Information Protection scanner to identify sensitive data on your file shares without labeling or protecting any files, so you can assess results before taking action. Which scanner capability should you use?",
+    "options": [
+      { "id": "a", "text": "Discovery mode" },
+      { "id": "b", "text": "Enforcement mode" },
+      { "id": "c", "text": "DLP quarantine" },
+      { "id": "d", "text": "Relabel files" }
+    ],
+    "correct": "a",
+    "explanation": "Im Discovery-Modus scannt der Scanner Inhalte nur und identifiziert sensible Daten, ohne Labels oder Schutz anzuwenden. Enforcement wendet Labels und Verschlüsselung an, Quarantäne ist eine DLP-Aktion und Relabel steuert das Neu-Labeln bereits gelabelter Dateien.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-protect-on-premises-data/protect-on-premises-files",
+    "source": {
+      "title": "Protect on-premises files with Microsoft Purview",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-protect-on-premises-data/protect-on-premises-files",
+      "quote": "Scan in discovery mode to identify sensitive data without labeling or protecting files, allowing you to assess results before taking action."
+    }
+  },
+  {
+    "id": "scb2-008",
+    "type": "ordering",
+    "skillArea": "protection",
+    "topic": "On-premises DLP deployment",
+    "difficulty": "hard",
+    "prompt": "Your organization has deployed the Microsoft Purview Information Protection scanner and now wants to enforce DLP on on-premises file shares. Place the steps to deploy and test DLP enforcement in the correct order.",
+    "items": [
+      { "id": "i1", "text": "Turn on Enable DLP rules in the scan job settings" },
+      { "id": "i2", "text": "Create a DLP policy that includes the On-premises repositories location" },
+      { "id": "i3", "text": "Run the policy in simulation mode to validate its behavior" },
+      { "id": "i4", "text": "Switch the policy to enforcement" },
+      { "id": "i5", "text": "Monitor results in Activity explorer, the Audit log, or scan reports" }
+    ],
+    "correctOrder": ["i1", "i2", "i3", "i4", "i5"],
+    "explanation": "Zuerst werden DLP-Regeln im Scan-Job aktiviert, dann wird eine DLP-Policy mit dem Standort On-premises repositories erstellt. Vor der Durchsetzung sollte die Policy im Simulationsmodus validiert werden; anschließend wird sie durchgesetzt und über Activity explorer, Audit-Log oder Scan-Reports überwacht.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-protect-on-premises-data/data-loss-prevention-on-premises",
+    "source": {
+      "title": "Enforce data loss prevention policies on on-premises files",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-protect-on-premises-data/data-loss-prevention-on-premises",
+      "quote": "Run the policy in simulation mode first to validate its behavior before switching to enforcement."
+    }
+  },
+  {
+    "id": "scb2-009",
+    "type": "ordering",
+    "skillArea": "protection",
+    "topic": "Scanner deployment steps",
+    "difficulty": "hard",
+    "prompt": "You need to deploy the Microsoft Purview Information Protection scanner to classify and protect files on your on-premises file shares. Place the deployment steps in the correct order.",
+    "items": [
+      { "id": "i1", "text": "Configure a scanner cluster and a content scan job in the Microsoft Purview portal" },
+      { "id": "i2", "text": "Install the scanner service with Install-Scanner on a supported Windows Server" },
+      { "id": "i3", "text": "Authenticate the scanner with Microsoft Entra ID using Set-Authentication" },
+      { "id": "i4", "text": "Turn on policy enforcement in the content scan job" },
+      { "id": "i5", "text": "Start the first scan with Scan now" }
+    ],
+    "correctOrder": ["i1", "i2", "i3", "i4", "i5"],
+    "explanation": "Die Reihenfolge lautet: Cluster und Content-Scan-Job im Purview-Portal konfigurieren, Scanner-Dienst per Install-Scanner installieren, mit Set-Authentication gegen Microsoft Entra ID authentifizieren, dann Enforcement aktivieren und schließlich den ersten Scan starten. Der Cluster-Name aus dem Portal wird bereits bei der Installation benötigt.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-protect-on-premises-data/configure-install-scanner",
+    "source": {
+      "title": "Configure and install the Microsoft Purview Information Protection scanner",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-protect-on-premises-data/configure-install-scanner",
+      "quote": "Once you configured your cluster and scan job, the next step is to install the scanner service on a supported Windows Server. This step uses PowerShell and requires that you meet a few key setup requirements."
+    }
+  },
+  {
+    "id": "scb2-010",
+    "type": "multiple-choice",
+    "skillArea": "protection",
+    "topic": "On-premises DLP actions",
+    "difficulty": "medium",
+    "prompt": "A file on an on-premises file share matches a DLP policy enforced by the Microsoft Purview Information Protection scanner. Which three actions can the policy apply to the file? Each correct answer presents a complete solution.",
+    "options": [
+      { "id": "a", "text": "Remove built-in groups such as Everyone, Authenticated Users, and Domain Users from the file's access list" },
+      { "id": "b", "text": "Quarantine the file by replacing it with a stub .txt file and moving it to a designated quarantine folder" },
+      { "id": "c", "text": "Force the file to inherit permissions from its parent folder" },
+      { "id": "d", "text": "Show a policy tip to users who open the file" },
+      { "id": "e", "text": "Preview the DLP action results before they are applied" }
+    ],
+    "correct": ["a", "b", "c"],
+    "explanation": "Verfügbare DLP-Aktionen für On-Premises-Dateien sind: Block all access, Block broad access (Entfernen von Everyone/Authenticated Users/Domain Users), Vererbung vom übergeordneten Ordner erzwingen und Quarantäne. Policy Tips sind für On-Premises-DLP nicht verfügbar, und DLP-Aktionen können nicht in einer Vorschau angezeigt werden.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-protect-on-premises-data/data-loss-prevention-on-premises",
+    "source": {
+      "title": "Enforce data loss prevention policies on on-premises files",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-protect-on-premises-data/data-loss-prevention-on-premises",
+      "quote": "Quarantine the file: Replace the original file with a stub .txt file and move the file to a designated quarantine folder."
+    }
+  },
+  {
+    "id": "scb2-011",
+    "type": "yes-no",
+    "skillArea": "protection",
+    "topic": "Scanner prerequisites",
+    "difficulty": "hard",
+    "prompt": "You are preparing the environment for the Microsoft Purview Information Protection scanner. For each of the following statements, select Yes if the statement is true. Otherwise, select No.",
+    "statements": [
+      { "id": "s1", "text": "The scanner stores its configuration data in a SQL Server database running SQL Server 2016 or later.", "correct": true },
+      { "id": "s2", "text": "Windows Server Core is a supported operating system for running the scanner.", "correct": false },
+      { "id": "s3", "text": "For SharePoint scanning in discovery mode only, Read access is sufficient for the scanner service account.", "correct": true }
+    ],
+    "explanation": "Der Scanner benötigt SQL Server 2016 oder neuer für seine Konfigurationsdatenbank. Server Core und Nano Server werden in keinem Szenario unterstützt. Für SharePoint reicht im reinen Discovery-Modus Lesezugriff — Full Control ist nur für Klassifizieren und Schützen nötig.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-protect-on-premises-data/information-protection-scanner-prerequisites",
+    "source": {
+      "title": "Prepare your environment for the Microsoft Purview Information Protection scanner",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-protect-on-premises-data/information-protection-scanner-prerequisites",
+      "quote": "Server Core and Nano Server aren't supported in any scenario."
+    }
+  },
+  {
+    "id": "scb2-012",
+    "type": "single-choice",
+    "skillArea": "protection",
+    "topic": "Scanner authentication",
+    "difficulty": "hard",
+    "prompt": "You are authenticating the Microsoft Purview Information Protection scanner with Microsoft Entra ID. Company policy prevents the scanner service account from signing in locally on the scanner server. Which parameter should you add to the Set-Authentication command?",
+    "options": [
+      { "id": "a", "text": "-OnBehalfOf" },
+      { "id": "b", "text": "-DelegatedUser" },
+      { "id": "c", "text": "-AppSecret" },
+      { "id": "d", "text": "-Cluster" }
+    ],
+    "correct": "a",
+    "explanation": "Wenn das Scanner-Dienstkonto sich nicht lokal anmelden darf, wird Set-Authentication mit dem Parameter -OnBehalfOf und den Anmeldeinformationen des Dienstkontos ausgeführt. -DelegatedUser und -AppSecret sind ohnehin Teil des Standardbefehls, -Cluster gehört zu Install-Scanner.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-protect-on-premises-data/configure-install-scanner",
+    "source": {
+      "title": "Configure and install the Microsoft Purview Information Protection scanner",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-protect-on-premises-data/configure-install-scanner",
+      "quote": "If the scanner service account isn't allowed to sign in locally, use the -OnBehalfOf parameter along with credentials for the service account"
+    }
+  },
+  {
+    "id": "scb2-013",
+    "type": "single-choice",
+    "skillArea": "protection",
+    "topic": "Data explorer purpose",
+    "difficulty": "easy",
+    "prompt": "What is the primary purpose of Data explorer in Microsoft Purview?",
+    "options": [
+      { "id": "a", "text": "To provide a centralized view of classified and labeled data across the organization" },
+      { "id": "b", "text": "To encrypt files stored in SharePoint and OneDrive" },
+      { "id": "c", "text": "To install and manage the Information Protection scanner" },
+      { "id": "d", "text": "To create and publish sensitivity label policies" }
+    ],
+    "correct": "a",
+    "explanation": "Data explorer bietet eine zentrale Sicht auf klassifizierte und gelabelte Daten in der Organisation, inklusive Sensitivity Labels, Retention Labels, SITs und Trainable Classifiers. Verschlüsselung, Scanner-Verwaltung und Label-Veröffentlichung sind andere Purview-Funktionen.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-review-analyze-data-classification/analyze-classified-data",
+    "source": {
+      "title": "Analyze classified data with data and content explorer",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-review-analyze-data-classification/analyze-classified-data",
+      "quote": "In Microsoft Purview, Data explorer provides a centralized view of classified and labeled data across your organization."
+    }
+  },
+  {
+    "id": "scb2-014",
+    "type": "single-choice",
+    "skillArea": "protection",
+    "topic": "Information Protection reports",
+    "difficulty": "easy",
+    "prompt": "Your security team wants to identify gaps in encryption and access control policies across cloud and on-premises data sources. Which Information Protection report in Microsoft Purview should they review?",
+    "options": [
+      { "id": "a", "text": "Protection coverage" },
+      { "id": "b", "text": "Sensitivity label usage" },
+      { "id": "c", "text": "Data scanning summary" },
+      { "id": "d", "text": "Trainable classifiers" }
+    ],
+    "correct": "a",
+    "explanation": "Der Bericht Protection coverage zeigt den Prozentsatz verschlüsselter und zugriffskontrollierter Daten und identifiziert Lücken bei Verschlüsselungs- und Zugriffskontrollrichtlinien. Sensitivity label usage zeigt Label-Nutzung, Data scanning summary ungescannte Bereiche und Trainable classifiers die meistgenutzten KI-Klassifizierer.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-review-analyze-data-classification/information-protection-reports",
+    "source": {
+      "title": "Review classification and protection insights",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-review-analyze-data-classification/information-protection-reports",
+      "quote": "Identifies gaps in encryption and access control policies."
+    }
+  },
+  {
+    "id": "scb2-015",
+    "type": "matching",
+    "skillArea": "protection",
+    "topic": "Report purposes",
+    "difficulty": "medium",
+    "prompt": "Match each Information Protection report in Microsoft Purview to its purpose.",
+    "left": [
+      { "id": "l1", "text": "Protection coverage" },
+      { "id": "l2", "text": "Sensitivity label coverage" },
+      { "id": "l3", "text": "Data scanning summary" },
+      { "id": "l4", "text": "Email encryption summary" }
+    ],
+    "right": [
+      { "id": "r1", "text": "Identifies gaps in encryption and access control policies" },
+      { "id": "r2", "text": "Shows the percentage of labeled vs. unlabeled items across connected environments" },
+      { "id": "r3", "text": "Detects unscanned areas that might pose compliance risks" },
+      { "id": "r4", "text": "Shows the number of emails encrypted manually or by policy" }
+    ],
+    "correct": { "l1": "r1", "l2": "r2", "l3": "r3", "l4": "r4" },
+    "explanation": "Protection coverage deckt Lücken bei Verschlüsselung und Zugriffskontrolle auf, Sensitivity label coverage zeigt gelabelte vs. ungelabelte Elemente, Data scanning summary erkennt ungescannte Datenquellen und Email encryption summary zählt manuell oder per Richtlinie verschlüsselte E-Mails.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-review-analyze-data-classification/information-protection-reports",
+    "source": {
+      "title": "Review classification and protection insights",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-review-analyze-data-classification/information-protection-reports",
+      "quote": "Detects unscanned areas that might pose compliance risks."
+    }
+  },
+  {
+    "id": "scb2-016",
+    "type": "yes-no",
+    "skillArea": "protection",
+    "topic": "Activity Explorer facts",
+    "difficulty": "medium",
+    "prompt": "For each of the following statements about Activity Explorer in Microsoft Purview, select Yes if the statement is true. Otherwise, select No.",
+    "statements": [
+      { "id": "s1", "text": "Activity Explorer stores activity data for 30 days.", "correct": true },
+      { "id": "s2", "text": "Exchange retention activities are included in Activity Explorer.", "correct": false },
+      { "id": "s3", "text": "Filter dropdowns display results from the first 500 records for performance optimization.", "correct": true }
+    ],
+    "explanation": "Activity Explorer speichert Daten 30 Tage lang und die Filter-Dropdowns zeigen aus Performancegründen nur die ersten 500 Datensätze. Exchange-Retention-Aktivitäten sind derzeit nicht in Activity Explorer enthalten.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-review-analyze-data-classification/monitor-review-actions",
+    "source": {
+      "title": "Monitor and review actions on labeled data",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-review-analyze-data-classification/monitor-review-actions",
+      "quote": "Exchange retention activities aren't currently included in Activity Explorer."
+    }
+  },
+  {
+    "id": "scb2-017",
+    "type": "single-choice",
+    "skillArea": "protection",
+    "topic": "Explorer permissions",
+    "difficulty": "hard",
+    "prompt": "A compliance analyst at Contoso can see item metadata and classification details in Content explorer but cannot open or preview file contents. You need to grant the minimum additional access required. Which role group should you assign?",
+    "options": [
+      { "id": "a", "text": "Content Explorer Content Viewer" },
+      { "id": "b", "text": "Content Explorer List Viewer" },
+      { "id": "c", "text": "Compliance Administrator" },
+      { "id": "d", "text": "Organization Management" }
+    ],
+    "correct": "a",
+    "explanation": "Die Rollengruppe Content Explorer Content Viewer erlaubt zusätzlich zum Metadaten-Zugriff das Anzeigen von Dateiinhalten. List Viewer hat der Analyst faktisch bereits (nur Metadaten), und Compliance Administrator oder Organization Management wären deutlich mehr als das erforderliche Minimum.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-review-analyze-data-classification/analyze-classified-data",
+    "source": {
+      "title": "Analyze classified data with data and content explorer",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-review-analyze-data-classification/analyze-classified-data",
+      "quote": "Content Viewer access is required to open or preview file contents."
+    }
+  },
+  {
+    "id": "scb2-018",
+    "type": "multiple-choice",
+    "skillArea": "protection",
+    "topic": "Predefined filter sets",
+    "difficulty": "easy",
+    "prompt": "Which three predefined filter sets are built into Activity Explorer in Microsoft Purview? Each correct answer presents a complete solution.",
+    "options": [
+      { "id": "a", "text": "Egress activities" },
+      { "id": "b", "text": "DLP detections" },
+      { "id": "c", "text": "Sensitivity label changes" },
+      { "id": "d", "text": "Retention label expirations" },
+      { "id": "e", "text": "eDiscovery hold activities" }
+    ],
+    "correct": ["a", "b", "c"],
+    "explanation": "Zu den integrierten Filter-Sets gehören unter anderem Egress activities (Datenbewegung nach außen), DLP detections und Sensitivity label changes sowie Endpoint DLP, Network DLP und Protected Browser. Retention-Ablauf- oder eDiscovery-Filter-Sets gibt es nicht.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-review-analyze-data-classification/monitor-review-actions",
+    "source": {
+      "title": "Monitor and review actions on labeled data",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-review-analyze-data-classification/monitor-review-actions",
+      "quote": "Egress activities: Data movement outside the organization. Use this to detect potential data exfiltration."
+    }
+  },
+  {
+    "id": "scb2-019",
+    "type": "single-choice",
+    "skillArea": "protection",
+    "topic": "Volume level encryption",
+    "difficulty": "easy",
+    "prompt": "Which technology does Microsoft 365 use to encrypt customer data at rest at the disk volume level in its datacenters?",
+    "options": [
+      { "id": "a", "text": "BitLocker with AES 256-bit encryption" },
+      { "id": "b", "text": "TLS with Forward Secrecy" },
+      { "id": "c", "text": "Azure Rights Management service" },
+      { "id": "d", "text": "SQL Transparent Data Encryption" }
+    ],
+    "correct": "a",
+    "explanation": "BitLocker verschlüsselt Datenträger auf Volume-Ebene mit AES 256-Bit. TLS schützt Daten während der Übertragung, Azure RMS wird für Sensitivity-Label-Verschlüsselung genutzt und SQL TDE ist Teil der Service-Level-Verschlüsselung für SharePoint-Schlüsselhierarchien.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/audit-encryption/data-at-rest-encryption",
+    "source": {
+      "title": "Learn how Microsoft 365 data is encrypted at rest",
+      "url": "https://learn.microsoft.com/en-us/training/modules/audit-encryption/data-at-rest-encryption",
+      "quote": "BitLocker is deployed with Advanced Encryption Standard (AES) 256-bit encryption on disks containing customer data."
+    }
+  },
+  {
+    "id": "scb2-020",
+    "type": "dropdown",
+    "skillArea": "protection",
+    "topic": "BitLocker key hierarchy",
+    "difficulty": "medium",
+    "prompt": "Complete the sentence about the BitLocker key hierarchy in Microsoft 365 by selecting the correct options.",
+    "textParts": [
+      "In the Microsoft 365 BitLocker implementation, disk sectors are encrypted with the ",
+      ", which is itself encrypted with the ",
+      ", which in turn is bound to the Trusted Platform Module (TPM) in the server."
+    ],
+    "blanks": [
+      {
+        "id": "b1",
+        "options": [
+          { "id": "o1", "text": "Full Volume Encryption Key (FVEK)" },
+          { "id": "o2", "text": "Volume Master Key (VMK)" },
+          { "id": "o3", "text": "BitLocker recovery key" }
+        ],
+        "correct": "o1"
+      },
+      {
+        "id": "b2",
+        "options": [
+          { "id": "o1", "text": "Volume Master Key (VMK)" },
+          { "id": "o2", "text": "availability key" },
+          { "id": "o3", "text": "Data Encryption Policy Key" }
+        ],
+        "correct": "o1"
+      }
+    ],
+    "explanation": "Die BitLocker-Schlüsselkette lautet: Disk-Sektoren werden mit dem Full Volume Encryption Key (FVEK) verschlüsselt, der FVEK mit dem Volume Master Key (VMK), und der VMK ist an das TPM des Servers gebunden. Availability Key und Data Encryption Policy Key gehören zur Service-Level-Verschlüsselung, nicht zu BitLocker.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/audit-encryption/data-at-rest-encryption",
+    "source": {
+      "title": "Learn how Microsoft 365 data is encrypted at rest",
+      "url": "https://learn.microsoft.com/en-us/training/modules/audit-encryption/data-at-rest-encryption",
+      "quote": "Disk sectors are encrypted with a Full Volume Encryption Key (FVEK), which is itself encrypted with the Volume Master Key (VMK), which in turn is bound to the Trusted Platform Module (TPM) in the server."
+    }
+  },
+  {
+    "id": "scb2-021",
+    "type": "single-choice",
+    "skillArea": "protection",
+    "topic": "Availability key fallback",
+    "difficulty": "hard",
+    "prompt": "Your organization uses Customer Key for Exchange Online. During a transient Microsoft Entra ID issue, Exchange Online can't reach your root keys in Azure Key Vault, and Microsoft receives no indication that you intended to block access to the keys. What happens?",
+    "options": [
+      { "id": "a", "text": "Exchange Online falls back to the availability key to complete the operation" },
+      { "id": "b", "text": "The mailbox data is cryptographically shredded and becomes unreadable" },
+      { "id": "c", "text": "All Exchange Online operations are suspended until the root keys are reachable again" },
+      { "id": "d", "text": "Microsoft Support automatically replaces the customer root keys with Microsoft Managed Keys" }
+    ],
+    "correct": "a",
+    "explanation": "Um die Verfügbarkeit von Exchange Online zu sichern, greift der Dienst bei vorübergehenden Problemen auf den Availability Key zurück — sofern der Kunde den Zugriff nicht absichtlich blockiert hat. Diese Fallback-Regel gilt nur für Exchange Online; SharePoint Online und Teams nutzen den Availability Key nur auf ausdrückliche Anweisung des Kunden im Recovery-Prozess.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/audit-encryption/customer-key",
+    "source": {
+      "title": "Explore customer key management using Customer Key",
+      "url": "https://learn.microsoft.com/en-us/training/modules/audit-encryption/customer-key",
+      "quote": "If Exchange Online can't reach the customer's root keys and we don't receive a response that indicates the customer has intended to block access to their root keys, the service falls back to the availability key to complete the operation."
+    }
+  },
+  {
+    "id": "scb2-022",
+    "type": "yes-no",
+    "skillArea": "protection",
+    "topic": "Customer Key facts",
+    "difficulty": "medium",
+    "prompt": "For each of the following statements about Customer Key in Microsoft 365, select Yes if the statement is true. Otherwise, select No.",
+    "statements": [
+      { "id": "s1", "text": "Customer root keys are uploaded to or generated within Azure Key Vault.", "correct": true },
+      { "id": "s2", "text": "Microsoft employees can directly access the availability key when needed.", "correct": false },
+      { "id": "s3", "text": "Customers have sole authority over the disablement or destruction of the availability key.", "correct": true }
+    ],
+    "explanation": "Bei Customer Key werden die Root-Keys in Azure Key Vault hochgeladen oder dort erzeugt. Auf den Availability Key hat per Design niemand bei Microsoft direkten Zugriff — nur Microsoft-365-Dienstcode. Über dessen Deaktivierung oder Zerstörung entscheidet allein der Kunde.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/audit-encryption/customer-key",
+    "source": {
+      "title": "Explore customer key management using Customer Key",
+      "url": "https://learn.microsoft.com/en-us/training/modules/audit-encryption/customer-key",
+      "quote": "By design, no one at Microsoft has access to the availability key: it's only accessible by Microsoft 365 service code."
+    }
+  },
+  {
+    "id": "scb2-023",
+    "type": "matching",
+    "skillArea": "protection",
+    "topic": "BitLocker key roles",
+    "difficulty": "medium",
+    "prompt": "Match each component of the Microsoft 365 BitLocker implementation to its role.",
+    "left": [
+      { "id": "l1", "text": "Full Volume Encryption Key (FVEK)" },
+      { "id": "l2", "text": "Volume Master Key (VMK)" },
+      { "id": "l3", "text": "Trusted Platform Module (TPM)" },
+      { "id": "l4", "text": "BitLocker recovery key" }
+    ],
+    "right": [
+      { "id": "r1", "text": "Encrypts the disk sectors" },
+      { "id": "r2", "text": "Encrypts the FVEK" },
+      { "id": "r3", "text": "Hardware component in the server that the VMK is bound to" },
+      { "id": "r4", "text": "Used to unlock disks when an operating system is reinstalled and encrypted data disks already exist" }
+    ],
+    "correct": { "l1": "r1", "l2": "r2", "l3": "r3", "l4": "r4" },
+    "explanation": "Der FVEK verschlüsselt die Disk-Sektoren, der VMK verschlüsselt den FVEK und ist an das TPM im Server gebunden. Recovery Keys werden außerhalb von BitLocker verwaltet und dienen der Entschlüsselung, etwa wenn ein Betriebssystem neu installiert wird und verschlüsselte Datenträger bereits existieren.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/audit-encryption/data-at-rest-encryption",
+    "source": {
+      "title": "Learn how Microsoft 365 data is encrypted at rest",
+      "url": "https://learn.microsoft.com/en-us/training/modules/audit-encryption/data-at-rest-encryption",
+      "quote": "BitLocker uses recovery keys for the scenario in which an operating system is reinstalled, and encrypted data disks already exist."
+    }
+  },
+  {
+    "id": "scb2-024",
+    "type": "multiple-choice",
+    "skillArea": "protection",
+    "topic": "Data-in-transit scenarios",
+    "difficulty": "medium",
+    "prompt": "Which three of the following are data-in-transit scenarios that Microsoft 365 protects with encryption technologies? Each correct answer presents part of the solution.",
+    "options": [
+      { "id": "a", "text": "A client machine communicating with a Microsoft server" },
+      { "id": "b", "text": "A Microsoft server communicating with another Microsoft server" },
+      { "id": "c", "text": "A Microsoft server communicating with a non-Microsoft server, such as Exchange Online delivering email to a third-party email server" },
+      { "id": "d", "text": "Customer files stored as encrypted blobs in Azure Storage" },
+      { "id": "e", "text": "Mailbox data encrypted at the mailbox level with BitLocker" }
+    ],
+    "correct": ["a", "b", "c"],
+    "explanation": "Data-in-transit umfasst die Kommunikation Client-zu-Microsoft-Server, Microsoft-Server untereinander und Microsoft-Server zu Fremdservern (z. B. E-Mail-Zustellung an Drittanbieter). Verschlüsselte Blobs in Azure Storage und BitLocker-verschlüsselte Mailboxen sind Data-at-Rest-Szenarien.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/audit-encryption/encryption-in-transit",
+    "source": {
+      "title": "Learn how data is encrypted in-transit",
+      "url": "https://learn.microsoft.com/en-us/training/modules/audit-encryption/encryption-in-transit",
+      "quote": "Data-in-transit scenarios include: When a client machine communicates with a Microsoft server. When a Microsoft server communicates with another Microsoft server. When a Microsoft server communicates with a non-Microsoft server (for example, Exchange Online delivering email to a third-party email server)."
+    }
+  },
+  {
+    "id": "scb2-025",
+    "type": "single-choice",
+    "skillArea": "protection",
+    "topic": "Deleting sensitivity labels",
+    "difficulty": "easy",
+    "prompt": "An administrator deletes a sensitivity label from the Microsoft Purview portal. What happens to content that already has that label applied?",
+    "options": [
+      { "id": "a", "text": "The label isn't automatically removed from the content, and any protection settings continue to be enforced" },
+      { "id": "b", "text": "The label and all protection settings are immediately removed from the content" },
+      { "id": "c", "text": "The content is automatically re-labeled with the next label in the priority order" },
+      { "id": "d", "text": "The content is quarantined until an administrator assigns a new label" }
+    ],
+    "correct": "a",
+    "explanation": "Beim Löschen eines Sensitivity Labels wird das Label nicht automatisch von bereits gelabelten Inhalten entfernt — die Schutzeinstellungen bleiben auf diesen Inhalten weiterhin wirksam. Eine automatische Neuvergabe oder Quarantäne findet nicht statt.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/m365-compliance-information-protect-information/information-protection-overview",
+    "source": {
+      "title": "Sensitivity label overview",
+      "url": "https://learn.microsoft.com/en-us/training/modules/m365-compliance-information-protect-information/information-protection-overview",
+      "quote": "If you delete a sensitivity label from the Microsoft Purview portal, the label isn't automatically removed from content. Any protection settings continue to be enforced on content that had that label applied."
+    }
+  },
+  {
+    "id": "scb2-026",
+    "type": "ordering",
+    "skillArea": "protection",
+    "topic": "Label creation workflow",
+    "difficulty": "medium",
+    "prompt": "You need to make a new sensitivity label available to users in your organization. Place the steps in the correct order.",
+    "items": [
+      { "id": "i1", "text": "Create the label and provide basic details such as name and description" },
+      { "id": "i2", "text": "Define the scope for the label, such as files, emails, or containers" },
+      { "id": "i3", "text": "Configure protection settings, then review and save the label" },
+      { "id": "i4", "text": "Publish the label to users and groups by creating a label policy" },
+      { "id": "i5", "text": "Wait up to 24 hours for users to see and apply the label in supported apps" }
+    ],
+    "correctOrder": ["i1", "i2", "i3", "i4", "i5"],
+    "explanation": "Zuerst wird das Label mit Basisdetails erstellt, dann der Scope definiert und die Schutzeinstellungen konfiguriert und gespeichert. Erst durch das Veröffentlichen über eine Label Policy wird das Label für Benutzer verfügbar — die Verteilung kann bis zu 24 Stunden dauern.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/m365-compliance-information-protect-information/configure-sensitivity-labels",
+    "source": {
+      "title": "Create and configure sensitivity labels and label policies",
+      "url": "https://learn.microsoft.com/en-us/training/modules/m365-compliance-information-protect-information/configure-sensitivity-labels",
+      "quote": "Creating and saving a label makes it available for publishing, but users can't see or use the label until it's published in a label policy."
+    }
+  },
+  {
+    "id": "scb2-027",
+    "type": "dropdown",
+    "skillArea": "protection",
+    "topic": "Auto-labeling methods",
+    "difficulty": "medium",
+    "prompt": "Complete the sentence about automatic sensitivity labeling in Microsoft 365 by selecting the correct options.",
+    "textParts": [
+      "With ",
+      " labeling, Office apps recommend or automatically apply labels while users are working in Word, Excel, PowerPoint, or Outlook. With ",
+      " labeling, labels are applied automatically to stored content in SharePoint, OneDrive, and Exchange, even if users don't interact with the content."
+    ],
+    "blanks": [
+      {
+        "id": "b1",
+        "options": [
+          { "id": "o1", "text": "client-side" },
+          { "id": "o2", "text": "service-side" },
+          { "id": "o3", "text": "endpoint" }
+        ],
+        "correct": "o1"
+      },
+      {
+        "id": "b2",
+        "options": [
+          { "id": "o1", "text": "service-side" },
+          { "id": "o2", "text": "client-side" },
+          { "id": "o3", "text": "manual" }
+        ],
+        "correct": "o1"
+      }
+    ],
+    "explanation": "Client-seitiges Labeling wirkt in den Office-Apps, während Benutzer Inhalte erstellen oder bearbeiten. Service-seitiges Labeling wendet Labels automatisch auf gespeicherte Inhalte in SharePoint, OneDrive und Exchange an — ganz ohne Benutzerinteraktion.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/m365-compliance-information-protect-information/configure-auto-labeling-policies",
+    "source": {
+      "title": "Implement auto-labeling policies",
+      "url": "https://learn.microsoft.com/en-us/training/modules/m365-compliance-information-protect-information/configure-auto-labeling-policies",
+      "quote": "Service-side labeling: Labels are applied automatically to stored content in SharePoint, OneDrive, and Exchange, even if users don't interact with the content."
+    }
+  },
+  {
+    "id": "scb2-028",
+    "type": "single-choice",
+    "skillArea": "protection",
+    "topic": "Simulation mode",
+    "difficulty": "easy",
+    "prompt": "You created a service-side auto-labeling policy in Microsoft Purview. Before deploying it, you want to test how it affects your content without making permanent changes. What should you do?",
+    "options": [
+      { "id": "a", "text": "Run the policy in simulation mode and review the results" },
+      { "id": "b", "text": "Publish the policy to a single administrative unit immediately" },
+      { "id": "c", "text": "Enable the policy and monitor Activity explorer for errors" },
+      { "id": "d", "text": "Export the policy configuration and test it with the Information Protection scanner" }
+    ],
+    "correct": "a",
+    "explanation": "Der Simulationsmodus testet die Auto-Labeling-Policy gegen vorhandene Inhalte, ohne dauerhafte Änderungen vorzunehmen. Simulationen sind in der Regel nach 12 Stunden abgeschlossen und können bis zu 1 Million Elemente pro Lauf analysieren; erst danach sollte die Policy scharf geschaltet werden.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/m365-compliance-information-protect-information/configure-auto-labeling-policies",
+    "source": {
+      "title": "Implement auto-labeling policies",
+      "url": "https://learn.microsoft.com/en-us/training/modules/m365-compliance-information-protect-information/configure-auto-labeling-policies",
+      "quote": "Before you deploy a service-side auto-labeling policy, it's important to run it in simulation mode. Simulation mode allows you to test the policy against your content without making permanent changes."
+    }
+  },
+  {
+    "id": "scb2-029",
+    "type": "multiple-choice",
+    "skillArea": "protection",
+    "topic": "Label encryption settings",
+    "difficulty": "medium",
+    "prompt": "You are configuring encryption for a sensitivity label in Microsoft Purview and select the Assign permissions now option. Which three settings can you configure? Each correct answer presents part of the solution.",
+    "options": [
+      { "id": "a", "text": "Set content expiration based on a fixed date or a number of days after labeling" },
+      { "id": "b", "text": "Control offline access, allowing it always, never, or for a limited time" },
+      { "id": "c", "text": "Specify users or groups who can access the content, along with their permission levels" },
+      { "id": "d", "text": "Let each user define access permissions at the time they apply the label" },
+      { "id": "e", "text": "Require users to provide a justification when changing the label" }
+    ],
+    "correct": ["a", "b", "c"],
+    "explanation": "Mit Assign permissions now lassen sich Ablaufdatum für Inhalte, Offline-Zugriff sowie Benutzer/Gruppen mit ihren Berechtigungsstufen festlegen. Dass Benutzer die Berechtigungen selbst vergeben, ist die alternative Option Let users assign permissions, und die Begründungspflicht bei Label-Änderungen ist eine Label-Policy-Einstellung.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/m365-compliance-information-protect-information/configure-sensitivity-label-encryption",
+    "source": {
+      "title": "Configure encryption with sensitivity labels",
+      "url": "https://learn.microsoft.com/en-us/training/modules/m365-compliance-information-protect-information/configure-sensitivity-label-encryption",
+      "quote": "Set content expiration to limit how long users can access labeled content. Expiration can be based on a fixed date or a number of days after labeling."
+    }
+  },
+  {
+    "id": "scb2-030",
+    "type": "yes-no",
+    "skillArea": "protection",
+    "topic": "Label policy behavior",
+    "difficulty": "hard",
+    "prompt": "For each of the following statements about sensitivity label policies in Microsoft Purview, select Yes if the statement is true. Otherwise, select No.",
+    "statements": [
+      { "id": "s1", "text": "When publishing a sublabel, you must also select its parent label.", "correct": true },
+      { "id": "s2", "text": "After a label policy is created, it can take up to 24 hours for users to see the new labels in supported apps.", "correct": true },
+      { "id": "s3", "text": "Removing a label from a policy also removes the label and its protection from existing labeled content.", "correct": false }
+    ],
+    "explanation": "Beim Veröffentlichen eines Sublabels muss auch das übergeordnete Label ausgewählt werden, und die Verteilung neuer Labels kann bis zu 24 Stunden dauern. Das Entfernen eines Labels aus einer Policy macht es nur für neue Nutzung unverfügbar — bestehende gelabelte Inhalte bleiben unverändert.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/m365-compliance-information-protect-information/configure-sensitivity-labels",
+    "source": {
+      "title": "Create and configure sensitivity labels and label policies",
+      "url": "https://learn.microsoft.com/en-us/training/modules/m365-compliance-information-protect-information/configure-sensitivity-labels",
+      "quote": "Removing a label from a policy: Makes the label unavailable for new use but doesn't affect existing labeled content."
+    }
+  }
+]

@@ -1,0 +1,540 @@
+[
+  {
+    "id": "scb4-001",
+    "type": "single-choice",
+    "skillArea": "dlp-retention",
+    "topic": "Endpoint DLP enforcement",
+    "difficulty": "easy",
+    "prompt": "Where does policy enforcement occur for devices that are onboarded to Microsoft Purview endpoint data loss prevention (DLP)?",
+    "options": [
+      { "id": "a", "text": "In the Purview cloud service, which inspects each file operation remotely" },
+      { "id": "b", "text": "Locally on the device, by an agent that operates at the operating system level" },
+      { "id": "c", "text": "In Microsoft Defender XDR, which intercepts file transfers" },
+      { "id": "d", "text": "On the network proxy that connects the device to Microsoft 365" }
+    ],
+    "correct": "b",
+    "explanation": "Der Endpoint-DLP-Agent läuft lokal auf dem Gerät und arbeitet auf Betriebssystemebene. Er erhält Richtlinien-Updates aus der Purview-Cloud und meldet Aktivitäten zurück, aber die Durchsetzung selbst passiert lokal — deshalb wirken bereits synchronisierte Richtlinien auch offline weiter.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-implement-endpoint-dlp/endpoint-dlp-overview",
+    "source": {
+      "title": "Understand endpoint data loss prevention",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-implement-endpoint-dlp/endpoint-dlp-overview",
+      "quote": "The agent receives policy updates from the Purview cloud service and reports activity back, but enforcement happens locally on the device. Previously synced policies continue to apply even when devices go offline."
+    }
+  },
+  {
+    "id": "scb4-002",
+    "type": "single-choice",
+    "skillArea": "dlp-retention",
+    "topic": "Device onboarding methods",
+    "difficulty": "medium",
+    "prompt": "Your organization manages Windows laptops through Intune and also has domain-joined desktops managed through Active Directory. You need to onboard both device populations for endpoint DLP. What should you do?",
+    "options": [
+      { "id": "a", "text": "Onboard all devices through Intune, since it's the newer management platform" },
+      { "id": "b", "text": "Run the local script on every device to keep the process consistent" },
+      { "id": "c", "text": "Use Intune for the cloud-managed laptops and Group Policy for the domain-joined desktops" },
+      { "id": "d", "text": "Use the VDI onboarding script for both populations" }
+    ],
+    "correct": "c",
+    "explanation": "Die Onboarding-Methode sollte zum vorhandenen Management-Tooling passen. In gemischten Umgebungen werden mehrere Methoden parallel genutzt: Intune für cloud-verwaltete Geräte, Group Policy (oder Configuration Manager) für domänengebundene Geräte. Geräte werden dabei nicht doppelt onboarded. Lokale Skripte skalieren nicht, das VDI-Skript ist für virtuelle Desktops gedacht.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-implement-endpoint-dlp/onboard-devices-endpoint-dlp",
+    "source": {
+      "title": "Onboard devices for endpoint DLP",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-implement-endpoint-dlp/onboard-devices-endpoint-dlp",
+      "quote": "Use the method that matches your existing management tooling. If devices are managed through multiple systems, you'll likely need more than one method."
+    }
+  },
+  {
+    "id": "scb4-003",
+    "type": "multiple-choice",
+    "skillArea": "dlp-retention",
+    "topic": "Endpoint DLP settings",
+    "difficulty": "medium",
+    "prompt": "You're preparing your first endpoint DLP deployment. Which three settings areas should you focus on before creating your first policy? Each correct answer presents part of the solution.",
+    "options": [
+      { "id": "a", "text": "File path exclusions" },
+      { "id": "b", "text": "Restricted apps and app groups" },
+      { "id": "c", "text": "Browser and domain restrictions" },
+      { "id": "d", "text": "Autoquarantine" },
+      { "id": "e", "text": "Evidence collection for file activities" }
+    ],
+    "correct": ["a", "b", "c"],
+    "explanation": "Für das erste Deployment empfiehlt Microsoft drei Bereiche: Dateipfad-Ausschlüsse, eingeschränkte Apps/App-Gruppen sowie Browser- und Domänen-Einschränkungen — sie haben den größten Einfluss darauf, ob die ersten Richtlinien wie beabsichtigt funktionieren. Autoquarantine und Evidence Collection sind nachgelagerte Einstellungen.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-implement-endpoint-dlp/configure-endpoint-dlp-settings",
+    "source": {
+      "title": "Configure settings for endpoint DLP",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-implement-endpoint-dlp/configure-endpoint-dlp-settings",
+      "quote": "For your first deployment, focus on three areas: **file path exclusions**, **restricted apps and app groups**, and **browser and domain restrictions**. These three have the most influence on whether your first policies work as intended."
+    }
+  },
+  {
+    "id": "scb4-004",
+    "type": "yes-no",
+    "skillArea": "dlp-retention",
+    "topic": "Purview browser extension",
+    "difficulty": "medium",
+    "prompt": "Your organization uses a mix of browsers on Windows and macOS devices. For each of the following statements about endpoint DLP browser enforcement, select Yes if the statement is true. Otherwise, select No.",
+    "statements": [
+      {
+        "id": "s1",
+        "text": "Microsoft Edge enforces endpoint DLP restrictions natively without a browser extension.",
+        "correct": true
+      },
+      {
+        "id": "s2",
+        "text": "The Microsoft Purview browser extension for Chrome and Firefox is available on both Windows and macOS.",
+        "correct": false
+      },
+      {
+        "id": "s3",
+        "text": "On macOS, Chrome and Firefox receive DLP enforcement through the endpoint agent without a separate extension.",
+        "correct": true
+      }
+    ],
+    "explanation": "Edge (und Safari auf macOS) setzen Endpoint DLP nativ durch. Die Purview-Browsererweiterung für Chrome und Firefox gibt es nur unter Windows — auf macOS übernimmt der Endpoint-Agent die Durchsetzung für Chrome und Firefox ohne separate Erweiterung.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-implement-endpoint-dlp/deploy-purview-extension",
+    "source": {
+      "title": "Deploy the Microsoft Purview browser extension",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-implement-endpoint-dlp/deploy-purview-extension",
+      "quote": "The extension is only available on Windows. On macOS, Chrome and Firefox receive DLP enforcement through the endpoint agent without a separate extension."
+    }
+  },
+  {
+    "id": "scb4-005",
+    "type": "ordering",
+    "skillArea": "dlp-retention",
+    "topic": "Endpoint DLP rollout",
+    "difficulty": "medium",
+    "prompt": "You're planning an endpoint DLP implementation for your organization. Place the following implementation steps in the correct order.",
+    "items": [
+      { "id": "i1", "text": "Identify your sensitive data and risk priorities" },
+      { "id": "i2", "text": "Onboard the devices that handle your priority data" },
+      { "id": "i3", "text": "Configure endpoint DLP settings" },
+      { "id": "i4", "text": "Create policies in simulation mode" },
+      { "id": "i5", "text": "Enable enforcement for a small pilot group" }
+    ],
+    "correctOrder": ["i1", "i2", "i3", "i4", "i5"],
+    "explanation": "Die empfohlene Reihenfolge: Zuerst sensible Daten und Risikoprioritäten identifizieren, dann Geräte onboarden, danach Einstellungen konfigurieren (vor den Richtlinien!), anschließend Richtlinien im Simulationsmodus erstellen und erst dann mit einer kleinen Pilotgruppe die Durchsetzung aktivieren. Jeder Schritt baut auf dem vorherigen auf.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-implement-endpoint-dlp/understand-dlp-implementation-workflow",
+    "source": {
+      "title": "Understand the endpoint DLP implementation workflow",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-implement-endpoint-dlp/understand-dlp-implementation-workflow",
+      "quote": "Each step depends on the one before it."
+    }
+  },
+  {
+    "id": "scb4-006",
+    "type": "single-choice",
+    "skillArea": "dlp-retention",
+    "topic": "JIT protection fallback",
+    "difficulty": "hard",
+    "prompt": "Your organization handles regulated data and is enabling just-in-time (JIT) protection for endpoint DLP for the first time. Classification failure rates in your environment are unknown. How should you configure the fallback action?",
+    "options": [
+      { "id": "a", "text": "Set the fallback to Block users from completing actions immediately, since no unclassified file should leave a device" },
+      { "id": "b", "text": "Set the fallback to Allow users to complete actions, then switch to Block after reviewing JIT event data and confirming failures are infrequent" },
+      { "id": "c", "text": "Disable the fallback action so JIT retries classification indefinitely" },
+      { "id": "d", "text": "Set the fallback to Allow permanently, because Block is never recommended" }
+    ],
+    "correct": "b",
+    "explanation": "Beim initialen Deployment sollte der Fallback auf 'Allow' stehen, weil unerwartete Klassifizierungsfehler sonst legitime Arbeit massiv blockieren können. Erst nachdem die JIT-Ereignisdaten zeigen, dass Fehler selten sind, wird auf 'Block' umgestellt. Option a riskiert erhebliche Störungen, Option c existiert nicht, Option d ignoriert den empfohlenen Zielzustand.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-implement-endpoint-dlp/configure-just-in-time-protection",
+    "source": {
+      "title": "Configure just-in-time (JIT) protection",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-implement-endpoint-dlp/configure-just-in-time-protection",
+      "quote": "Start with **Allow** during initial deployment. Switch to **Block** after reviewing JIT event data and confirming failures are infrequent."
+    }
+  },
+  {
+    "id": "scb4-007",
+    "type": "single-choice",
+    "skillArea": "dlp-retention",
+    "topic": "Clipboard enforcement behavior",
+    "difficulty": "hard",
+    "prompt": "An endpoint DLP policy applies a Block action to the copy-to-clipboard activity for files containing credit card numbers. A user has such an Excel workbook open. Which statement accurately describes the enforcement behavior?",
+    "options": [
+      { "id": "a", "text": "Copying and pasting within the same workbook is still allowed, even though the file matches the Block rule" },
+      { "id": "b", "text": "Copying between two different Office files is allowed as long as the destination is also an Office file" },
+      { "id": "c", "text": "Enforcement is based on the sensitivity of the destination file, not the source file" },
+      { "id": "d", "text": "While the blocked file is open, users can freely copy from other files in the same application" }
+    ],
+    "correct": "a",
+    "explanation": "Innerhalb derselben Office-Datei ist Copy & Paste immer erlaubt, selbst bei einer Block-Regel. Die Durchsetzung richtet sich nach der Sensitivität der QUELL-Datei (nicht des Ziels), und solange die blockierte Datei geöffnet ist, ist das Kopieren aus allen anderen Dateien derselben Anwendung ebenfalls eingeschränkt — daher sind b, c und d falsch.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-implement-endpoint-dlp/create-manage-endpoint-dlp-policy",
+    "source": {
+      "title": "Create and manage endpoint DLP policies",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-implement-endpoint-dlp/create-manage-endpoint-dlp-policy",
+      "quote": "Enforcement follows the _source_ file's sensitivity. Also, when a DLP rule blocks copying from an open file, copying from _any_ other file in the same application is restricted. That restriction stays in place while the blocked file remains open."
+    }
+  },
+  {
+    "id": "scb4-008",
+    "type": "single-choice",
+    "skillArea": "dlp-retention",
+    "topic": "Retention policy purpose",
+    "difficulty": "easy",
+    "prompt": "You need to apply a uniform retention rule to all content in every Exchange mailbox in your organization, without requiring any user action. What should you use?",
+    "options": [
+      { "id": "a", "text": "A retention label published to users" },
+      { "id": "b", "text": "A retention policy" },
+      { "id": "c", "text": "A sensitivity label with encryption" },
+      { "id": "d", "text": "A disposition review" }
+    ],
+    "correct": "b",
+    "explanation": "Aufbewahrungsrichtlinien (Retention Policies) wenden einheitliche Regeln auf ganze Container wie Postfächer oder Sites an. Retention Labels wirken dagegen auf Einzelelement-Ebene und bieten mehr Granularität — für eine pauschale Regel über alle Postfächer ist die Richtlinie das richtige Werkzeug.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-retention-recovery/create-configure-retention-policy",
+    "source": {
+      "title": "Create and configure retention policies",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-retention-recovery/create-configure-retention-policy",
+      "quote": "Unlike retention labels, which apply to individual items and offer more granularity, retention policies are best for applying uniform rules across entire workloads."
+    }
+  },
+  {
+    "id": "scb4-009",
+    "type": "single-choice",
+    "skillArea": "dlp-retention",
+    "topic": "Retention label locations",
+    "difficulty": "medium",
+    "prompt": "Your compliance team wants to retain Teams chat messages for three years. They ask you to publish a retention label for users to apply to their chats. What should you tell them?",
+    "options": [
+      { "id": "a", "text": "Publish the label to the Teams chats location so users can apply it" },
+      { "id": "b", "text": "Teams chats don't support retention labels; use a retention policy instead" },
+      { "id": "c", "text": "Teams chats can only be retained through eDiscovery holds" },
+      { "id": "d", "text": "Apply the label automatically with a trainable classifier targeting Teams chats" }
+    ],
+    "correct": "b",
+    "explanation": "Exchange Public Folders, Teams-Chats und Viva-Engage-Nachrichten unterstützen keine Retention Labels. Für diese Speicherorte müssen Aufbewahrungsrichtlinien (Retention Policies) verwendet werden. Teams-DATEIEN werden dagegen über SharePoint abgedeckt und unterstützen Labels.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-retention-recovery/create-publish-retention-label",
+    "source": {
+      "title": "Create and publish retention labels",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-retention-recovery/create-publish-retention-label",
+      "quote": "Exchange public folders, Teams chats, and Viva Engage messages don't support retention labels. Use retention policies for managing data in those locations."
+    }
+  },
+  {
+    "id": "scb4-010",
+    "type": "multiple-choice",
+    "skillArea": "dlp-retention",
+    "topic": "Auto-apply label conditions",
+    "difficulty": "medium",
+    "prompt": "You're creating a policy to automatically apply a retention label. Which conditions can you use to trigger the labeling? Each correct answer presents a complete solution.",
+    "options": [
+      { "id": "a", "text": "Sensitive information types, such as credit card or Social Security numbers" },
+      { "id": "b", "text": "Trainable classifiers based on patterns learned from example documents" },
+      { "id": "c", "text": "Cloud attachments shared through Outlook, Teams, or Viva Engage" },
+      { "id": "d", "text": "Device compliance state in Microsoft Intune" },
+      { "id": "e", "text": "File size thresholds" }
+    ],
+    "correct": ["a", "b", "c"],
+    "explanation": "Auto-Apply-Richtlinien nutzen serverseitige Bedingungen: Sensitive Information Types, Keywords/durchsuchbare Eigenschaften (KQL), Trainable Classifiers und Cloud-Anhänge. Gerätestatus oder Dateigröße sind keine verfügbaren Bedingungen für automatische Retention Labels.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-retention-recovery/auto-apply-retention-label",
+    "source": {
+      "title": "Create and manage auto-apply retention labels",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-retention-recovery/auto-apply-retention-label",
+      "quote": "Auto-apply retention label policies use service-side conditions to label content. You choose a retention label and configure conditions that determine when and where it's applied."
+    }
+  },
+  {
+    "id": "scb4-011",
+    "type": "ordering",
+    "skillArea": "dlp-retention",
+    "topic": "Auto-labeling simulation",
+    "difficulty": "easy",
+    "prompt": "You want to safely roll out an auto-apply retention label policy using simulation mode. Place the steps in the correct order.",
+    "items": [
+      { "id": "i1", "text": "Create the auto-labeling policy with your chosen label and conditions" },
+      { "id": "i2", "text": "Run the policy in simulation mode" },
+      { "id": "i3", "text": "Review the results, including how many items match and where they're located" },
+      { "id": "i4", "text": "Adjust the conditions if needed and rerun simulation" },
+      { "id": "i5", "text": "Turn on the policy to start labeling content" }
+    ],
+    "correctOrder": ["i1", "i2", "i3", "i4", "i5"],
+    "explanation": "Der Simulationsmodus erlaubt eine Vorschau, welche Inhalte gelabelt würden, bevor die Richtlinie scharf geschaltet wird: Richtlinie erstellen, Simulation ausführen, Ergebnisse prüfen, Bedingungen bei Bedarf anpassen und erneut simulieren, dann die Richtlinie aktivieren.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-retention-recovery/auto-apply-retention-label",
+    "source": {
+      "title": "Create and manage auto-apply retention labels",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-retention-recovery/auto-apply-retention-label",
+      "quote": "Simulation mode lets you preview which content would be labeled before turning on the policy. This helps you fine-tune your conditions and avoid unexpected results."
+    }
+  },
+  {
+    "id": "scb4-012",
+    "type": "single-choice",
+    "skillArea": "dlp-retention",
+    "topic": "Retention precedence",
+    "difficulty": "hard",
+    "prompt": "A document in SharePoint has a retention label that deletes it after seven years. The site is also included in two retention policies with delete actions: one deletes content after five years, the other after ten years. When is the document permanently deleted?",
+    "options": [
+      { "id": "a", "text": "After five years, because the shortest deletion period always wins" },
+      { "id": "b", "text": "After seven years, because the label's deletion setting takes precedence over the policies" },
+      { "id": "c", "text": "After ten years, because the longest period always applies" },
+      { "id": "d", "text": "Never, because conflicting settings cancel each other out" }
+    ],
+    "correct": "b",
+    "explanation": "Bei widersprüchlichen Löscheinstellungen gewinnt die spezifischste Einstellung: Ein direkt auf das Element angewendetes Retention Label hat Vorrang vor Richtlinien, die auf den Container wirken. Das Dokument wird daher nach sieben Jahren gelöscht. Die Regel 'längster Zeitraum gewinnt' gilt nur für konkurrierende AUFBEWAHRUNGS-Einstellungen, nicht für Löschkonflikte.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-retention-recovery/principles-retention",
+    "source": {
+      "title": "Understand policy and label precedence in Microsoft Purview",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-retention-recovery/principles-retention",
+      "quote": "A retention label applied to an item takes precedence over a policy applied to the container."
+    }
+  },
+  {
+    "id": "scb4-013",
+    "type": "yes-no",
+    "skillArea": "dlp-retention",
+    "topic": "Principles of retention",
+    "difficulty": "hard",
+    "prompt": "An item in Microsoft 365 is subject to multiple retention settings. For each of the following statements, select Yes if the statement is true. Otherwise, select No.",
+    "statements": [
+      {
+        "id": "s1",
+        "text": "If an item has both retention and deletion settings, the deletion setting takes precedence and the item is removed at the earliest deletion date.",
+        "correct": false
+      },
+      {
+        "id": "s2",
+        "text": "When multiple settings require content to be retained, the setting with the longest retention duration is used.",
+        "correct": true
+      },
+      {
+        "id": "s3",
+        "text": "An item subject to an eDiscovery hold can't be permanently deleted until the hold is removed.",
+        "correct": true
+      }
+    ],
+    "explanation": "Aufbewahrung hat immer Vorrang vor Löschung — das Element bleibt bis zum Ende der Aufbewahrungsfrist erhalten (s1 falsch). Bei mehreren Aufbewahrungseinstellungen gilt die längste Dauer (s2 richtig). Ein eDiscovery-Hold verhindert die endgültige Löschung; erst nach Aufhebung greifen die übrigen Einstellungen wieder (s3 richtig).",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-retention-recovery/principles-retention",
+    "source": {
+      "title": "Understand policy and label precedence in Microsoft Purview",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-retention-recovery/principles-retention",
+      "quote": "If an item has both retention and deletion settings, the retention setting always takes precedence. The item is retained until the retention period ends, even if another setting is trying to delete it sooner."
+    }
+  },
+  {
+    "id": "scb4-014",
+    "type": "matching",
+    "skillArea": "dlp-retention",
+    "topic": "End of retention actions",
+    "difficulty": "medium",
+    "prompt": "When creating a retention label, you choose what happens after the retention period ends. Match each action to its behavior.",
+    "left": [
+      { "id": "l1", "text": "Delete items automatically" },
+      { "id": "l2", "text": "Start a disposition review" },
+      { "id": "l3", "text": "Run a Power Automate flow" },
+      { "id": "l4", "text": "Deactivate retention settings" }
+    ],
+    "right": [
+      { "id": "r1", "text": "Permanently remove labeled content from storage" },
+      { "id": "r2", "text": "Assigned reviewers decide what action to take" },
+      { "id": "r3", "text": "Trigger a custom workflow, such as notifying users or moving items" },
+      { "id": "r4", "text": "Stop retaining or deleting content, leaving items unchanged" }
+    ],
+    "correct": { "l1": "r1", "l2": "r2", "l3": "r3", "l4": "r4" },
+    "explanation": "Nach Ablauf der Aufbewahrungsfrist kann ein Label Inhalte automatisch endgültig löschen, eine Disposition Review starten (Prüfer entscheiden), einen Power-Automate-Flow als benutzerdefinierten Workflow auslösen oder die Aufbewahrungseinstellungen deaktivieren, sodass die Elemente unverändert bleiben.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-retention-recovery/create-publish-retention-label",
+    "source": {
+      "title": "Create and publish retention labels",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-retention-recovery/create-publish-retention-label",
+      "quote": "**Start a disposition review** to have assigned reviewers decide what action to take."
+    }
+  },
+  {
+    "id": "scb4-015",
+    "type": "single-choice",
+    "skillArea": "dlp-retention",
+    "topic": "OneDrive recovery",
+    "difficulty": "easy",
+    "prompt": "A user's OneDrive was hit by a ransomware attack that encrypted a large number of files. Which recovery option is most appropriate?",
+    "options": [
+      { "id": "a", "text": "Restore individual files from the OneDrive Recycle Bin" },
+      { "id": "b", "text": "Use Restore your OneDrive to revert the entire OneDrive to an earlier point in time" },
+      { "id": "c", "text": "Use SharePoint version history on each affected file" },
+      { "id": "d", "text": "Ask the user to recreate the files from local copies" }
+    ],
+    "correct": "b",
+    "explanation": "Bei umfangreichen Datenänderungen wie einem Ransomware-Angriff oder massenhaften versehentlichen Löschungen ist die komplette Wiederherstellung über 'Restore your OneDrive' auf einen früheren Zeitpunkt das richtige Mittel. Papierkorb und Versionsverlauf eignen sich nur für einzelne Dateien.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-retention-recovery/recover-content-microsoft-365-workloads",
+    "source": {
+      "title": "Recover content in Microsoft 365 workloads",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-retention-recovery/recover-content-microsoft-365-workloads",
+      "quote": "For scenarios involving extensive data changes, like after a ransomware attack or widespread accidental deletions, a complete restoration of OneDrive content might be necessary."
+    }
+  },
+  {
+    "id": "scb4-016",
+    "type": "multiple-choice",
+    "skillArea": "dlp-retention",
+    "topic": "Retention limitations",
+    "difficulty": "easy",
+    "prompt": "Which of the following are NOT capabilities of retention in Microsoft Purview? Each correct answer presents a complete solution.",
+    "options": [
+      { "id": "a", "text": "Blocking access to content" },
+      { "id": "b", "text": "Encrypting or protecting content in transit" },
+      { "id": "c", "text": "Monitoring or detecting data movement" },
+      { "id": "d", "text": "Preserving content for a defined period even if a user deletes it" },
+      { "id": "e", "text": "Automatically deleting content when it's no longer needed" }
+    ],
+    "correct": ["a", "b", "c"],
+    "explanation": "Retention steuert ausschließlich, wie lange Inhalte aufbewahrt oder wann sie gelöscht werden (d und e sind Kernfunktionen). Zugriff blockieren, verschlüsseln oder Datenbewegungen überwachen gehört nicht dazu — dafür sind Sensitivity Labels, DLP und Verschlüsselung zuständig.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-understand-retention/decide-apply-retention",
+    "source": {
+      "title": "Decide when to apply retention",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-understand-retention/decide-apply-retention",
+      "quote": "Retention doesn't stop users from reading or editing content. It simply ensures the content is preserved or removed based on the configured rules. For other protection needs, retention should be used alongside tools like sensitivity labels, DLP, and encryption."
+    }
+  },
+  {
+    "id": "scb4-017",
+    "type": "yes-no",
+    "skillArea": "dlp-retention",
+    "topic": "Retention fundamentals",
+    "difficulty": "easy",
+    "prompt": "For each of the following statements about retention in Microsoft Purview, select Yes if the statement is true. Otherwise, select No.",
+    "statements": [
+      {
+        "id": "s1",
+        "text": "Once a retention rule is in place, content is preserved even if a user tries to remove it.",
+        "correct": true
+      },
+      {
+        "id": "s2",
+        "text": "Retention can automatically delete stale content that no longer has a business or legal reason to be kept.",
+        "correct": true
+      },
+      {
+        "id": "s3",
+        "text": "Retention is used only for regulatory compliance and plays no role in data security.",
+        "correct": false
+      }
+    ],
+    "explanation": "Retention bewahrt Inhalte trotz Löschversuchen auf und kann veraltete Inhalte automatisch entfernen, um die Angriffsfläche zu reduzieren. Es dient nicht nur der Compliance, sondern spielt auch eine wichtige Rolle für die Datensicherheit — s3 ist daher falsch.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-understand-retention/retention-overview",
+    "source": {
+      "title": "Overview of retention and the data lifecycle",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-understand-retention/retention-overview",
+      "quote": "While retention is often used for compliance, it also plays a key role in data security. It protects important information from being deleted, either by accident or on purpose."
+    }
+  },
+  {
+    "id": "scb4-018",
+    "type": "dropdown",
+    "skillArea": "dlp-retention",
+    "topic": "Labels vs policies",
+    "difficulty": "medium",
+    "prompt": "Complete the statement about retention methods in Microsoft Purview.",
+    "textParts": [
+      "Retention ",
+      " are applied to individual items such as emails, documents, or Teams chats, while retention ",
+      " apply a default retention rule to all content within a location, such as all mailboxes or all SharePoint sites."
+    ],
+    "blanks": [
+      {
+        "id": "b1",
+        "options": [
+          { "id": "a", "text": "labels" },
+          { "id": "b", "text": "policies" },
+          { "id": "c", "text": "holds" }
+        ],
+        "correct": "a"
+      },
+      {
+        "id": "b2",
+        "options": [
+          { "id": "a", "text": "labels" },
+          { "id": "b", "text": "policies" },
+          { "id": "c", "text": "scopes" }
+        ],
+        "correct": "b"
+      }
+    ],
+    "explanation": "Retention Labels wirken auf Einzelelemente (E-Mails, Dokumente, Teams-Chats) und bieten Granularität. Retention Policies wenden dagegen eine Standardregel auf alle Inhalte eines Speicherorts an, z. B. alle Postfächer oder alle SharePoint-Sites.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-understand-retention/retention-labels-retention-policies",
+    "source": {
+      "title": "Understand retention labels and retention policies",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-understand-retention/retention-labels-retention-policies",
+      "quote": "Retention policies are used to apply retention settings across a broader location. Instead of labeling individual items, a policy can apply a default retention rule to all content within a location, such as all mailboxes or all SharePoint sites."
+    }
+  },
+  {
+    "id": "scb4-019",
+    "type": "matching",
+    "skillArea": "dlp-retention",
+    "topic": "Retention configurations",
+    "difficulty": "medium",
+    "prompt": "Match each retention configuration to its behavior.",
+    "left": [
+      { "id": "l1", "text": "Retain-only" },
+      { "id": "l2", "text": "Delete-only" },
+      { "id": "l3", "text": "Retain then delete" },
+      { "id": "l4", "text": "Mark content as a record" }
+    ],
+    "right": [
+      { "id": "r1", "text": "Keeps content for a defined period; no automatic action when the period ends" },
+      { "id": "r2", "text": "Deletes content after a defined period, without preserving it beforehand" },
+      { "id": "r3", "text": "Retains content for a set time and deletes it automatically when that time expires" },
+      { "id": "r4", "text": "Makes content immutable so users can't edit, move, or delete it" }
+    ],
+    "correct": { "l1": "r1", "l2": "r2", "l3": "r3", "l4": "r4" },
+    "explanation": "Retain-only bewahrt nur auf, Delete-only löscht nach Ablauf ohne vorherige Aufbewahrung, Retain-then-delete kombiniert beides. Wird ein Inhalt als Record markiert, ist er unveränderlich — Bearbeiten, Verschieben und Löschen sind blockiert, solange das Label angewendet ist.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-understand-retention/retention-labels-retention-policies",
+    "source": {
+      "title": "Understand retention labels and retention policies",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-understand-retention/retention-labels-retention-policies",
+      "quote": "Retention labels can also **mark content as a record**. When this option is used, the content becomes immutable. Users can't edit, move, or delete the item while the label is applied."
+    }
+  },
+  {
+    "id": "scb4-020",
+    "type": "multiple-choice",
+    "skillArea": "dlp-retention",
+    "topic": "Scoping retention",
+    "difficulty": "medium",
+    "prompt": "Your organization wants to apply different retention rules to different teams and content types instead of one org-wide rule. Which targeting options does Microsoft Purview retention support? Each correct answer presents a complete solution.",
+    "options": [
+      { "id": "a", "text": "Apply retention to specific mailboxes, OneDrive accounts, or SharePoint sites" },
+      { "id": "b", "text": "Target content based on sensitivity labels, file types, or custom metadata" },
+      { "id": "c", "text": "Use adaptive scopes to dynamically target users, groups, or sites based on Microsoft Entra ID attributes" },
+      { "id": "d", "text": "Target devices based on their Intune compliance state" },
+      { "id": "e", "text": "Scope retention by a user's sign-in risk level" }
+    ],
+    "correct": ["a", "b", "c"],
+    "explanation": "Retention lässt sich auf bestimmte Postfächer, OneDrive-Konten oder Sites anwenden, auf Inhalte anhand von Sensitivity Labels, Dateitypen oder Metadaten ausrichten und über Adaptive Scopes dynamisch anhand von Entra-ID-Attributen zuweisen. Geräte-Compliance oder Anmelderisiko sind keine Retention-Scoping-Optionen.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-understand-retention/decide-apply-retention",
+    "source": {
+      "title": "Decide when to apply retention",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-understand-retention/decide-apply-retention",
+      "quote": "Retention doesn't have to apply to everyone or everything in your environment. Microsoft Purview lets you target retention settings to the locations and content that require them."
+    }
+  },
+  {
+    "id": "scb4-021",
+    "type": "yes-no",
+    "skillArea": "dlp-retention",
+    "topic": "Retention vs DLP",
+    "difficulty": "hard",
+    "prompt": "Your organization is deciding when to use retention and when to use data loss prevention (DLP). For each of the following statements, select Yes if the statement is true. Otherwise, select No.",
+    "statements": [
+      {
+        "id": "s1",
+        "text": "DLP can block or warn about risky user actions such as copying, pasting, uploading, or sending sensitive data.",
+        "correct": true
+      },
+      {
+        "id": "s2",
+        "text": "Retention monitors how users interact with content and detects data movement across the organization.",
+        "correct": false
+      },
+      {
+        "id": "s3",
+        "text": "DLP and retention are mutually exclusive; content covered by a DLP policy can't also be subject to a retention policy.",
+        "correct": false
+      }
+    ],
+    "explanation": "DLP betrachtet Benutzerinteraktionen und kann riskante Aktionen blockieren oder davor warnen (s1 richtig). Retention überwacht keine Datenbewegungen, sondern steuert nur die Aufbewahrungsdauer (s2 falsch). Beide Werkzeuge werden häufig zusammen eingesetzt — z. B. verhindert DLP externes Teilen, während Retention dieselben Dokumente drei Jahre aufbewahrt (s3 falsch).",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-understand-retention/decide-apply-retention",
+    "source": {
+      "title": "Decide when to apply retention",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-understand-retention/decide-apply-retention",
+      "quote": "**DLP** is focused on preventing sensitive information from being shared or exposed. It looks at how users interact with content. Based on the action, it can block or warn about risky behavior such as copying, pasting, uploading, or sending sensitive data."
+    }
+  }
+]

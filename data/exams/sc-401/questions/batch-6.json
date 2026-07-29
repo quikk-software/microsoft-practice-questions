@@ -1,0 +1,490 @@
+[
+  {
+    "id": "scb6-001",
+    "type": "single-choice",
+    "skillArea": "risks",
+    "topic": "Adaptive Protection purpose",
+    "difficulty": "easy",
+    "prompt": "What is the primary function of Adaptive Protection in Microsoft Purview?",
+    "options": [
+      { "id": "a", "text": "It replaces existing DLP policies with a single machine learning-based blocking policy." },
+      { "id": "b", "text": "It provides a real-time monitoring dashboard for all Insider Risk Management alerts." },
+      { "id": "c", "text": "It assigns insider risk levels based on Insider Risk Management detections and uses those levels as conditions in enforcement policies such as DLP and Conditional Access." },
+      { "id": "d", "text": "It automatically encrypts all content created by users who trigger security alerts." }
+    ],
+    "correct": "c",
+    "explanation": "Adaptive Protection ist die Brücke zwischen Erkennung und Durchsetzung: Insider-Risk-Management-Richtlinien erkennen riskante Aktivitäten, Adaptive Protection weist daraufhin ein Insider-Risk-Level zu, und dieses Level wird als Bedingung in bestehenden DLP-, Conditional-Access- und DLM-Richtlinien verwendet. Es ersetzt weder DLP noch verschlüsselt es Inhalte oder dient als Monitoring-Dashboard.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/m365-compliance-irm-adaptive-protection/overview",
+    "source": {
+      "title": "Understand Adaptive Protection and insider risk levels",
+      "url": "https://learn.microsoft.com/en-us/training/modules/m365-compliance-irm-adaptive-protection/overview",
+      "quote": "Adaptive Protection uses Insider Risk Management policies to detect risky user and agent activity. When detected activity matches the conditions you define, Adaptive Protection assigns an insider risk level to that user or agent. That insider risk level then becomes a condition in your existing enforcement policies."
+    }
+  },
+  {
+    "id": "scb6-002",
+    "type": "single-choice",
+    "skillArea": "risks",
+    "topic": "Insights vs events",
+    "difficulty": "medium",
+    "prompt": "Your Insider Risk Management policy detects SharePoint downloads. A user downloads 12 files from a SharePoint site in a single day, and the policy classifies the activity as high severity. Your elevated risk level requires three high severity insights. Does the user qualify for the elevated risk level?",
+    "options": [
+      { "id": "a", "text": "Yes, because 12 high severity events exceed the threshold of three." },
+      { "id": "b", "text": "No, because the 12 downloads count as a single insight, so the user needs high severity activity on additional days." },
+      { "id": "c", "text": "Yes, but only if the downloads came from three different SharePoint sites." },
+      { "id": "d", "text": "No, because SharePoint downloads can never be classified as high severity." }
+    ],
+    "correct": "b",
+    "explanation": "Insider-Risk-Level basieren auf Insights, nicht auf einzelnen Ereignissen: Die 12 Downloads an einem Tag zählen als ein einziges Insight mit 12 Aktivitätsereignissen. Für das Elevated-Level mit drei erforderlichen High-Severity-Insights braucht der Nutzer daher High-Severity-Aktivität an mindestens zwei weiteren Tagen.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/m365-compliance-irm-adaptive-protection/risk-levels",
+    "source": {
+      "title": "Evaluate and configure insider risk levels",
+      "url": "https://learn.microsoft.com/en-us/training/modules/m365-compliance-irm-adaptive-protection/risk-levels",
+      "quote": "A user might perform 10 related actions in a single day, but those actions count as one insight consisting of 10 activity events."
+    }
+  },
+  {
+    "id": "scb6-003",
+    "type": "single-choice",
+    "skillArea": "risks",
+    "topic": "DLM preservation opt-in",
+    "difficulty": "hard",
+    "prompt": "Contoso enabled Adaptive Protection over a year ago, before Data Lifecycle Management (DLM) support was available in Adaptive Protection. The compliance team now wants content deleted by elevated-risk users to be automatically preserved. What should you do?",
+    "options": [
+      { "id": "a", "text": "Explicitly opt in to the data lifecycle management policy in the Adaptive Protection configuration." },
+      { "id": "b", "text": "Nothing. DLM preservation is enabled by default for all Adaptive Protection deployments and applies retroactively." },
+      { "id": "c", "text": "Disable Adaptive Protection and re-enable it so that quick setup recreates all policies including DLM." },
+      { "id": "d", "text": "Ask Microsoft support to enable the organization-wide retention label policy for the tenant." }
+    ],
+    "correct": "a",
+    "explanation": "Bei neuen Bereitstellungen wird die DLM-Aufbewahrungsrichtlinie automatisch erstellt. War Adaptive Protection jedoch bereits aktiviert, bevor das DLM-Feature verfügbar war, muss man explizit in die DLM-Richtlinie einwilligen (Opt-in) — sie gilt nicht rückwirkend. Deaktivieren und Neuaktivieren ist nicht erforderlich und kann sogar zu Richtlinienfehlern führen.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/m365-compliance-irm-adaptive-protection/adaptive-protection-data-lifecycle-management",
+    "source": {
+      "title": "Evaluate Adaptive Protection with Data Lifecycle Management",
+      "url": "https://learn.microsoft.com/en-us/training/modules/m365-compliance-irm-adaptive-protection/adaptive-protection-data-lifecycle-management",
+      "quote": "If Adaptive Protection was already enabled before the DLM feature became available, you need to explicitly opt in to the data lifecycle management policy. The policy isn't applied retroactively."
+    }
+  },
+  {
+    "id": "scb6-004",
+    "type": "multiple-choice",
+    "skillArea": "risks",
+    "topic": "Adaptive Protection DLP locations",
+    "difficulty": "medium",
+    "prompt": "You're creating a DLP policy that uses the condition \"Insider risk level for Adaptive Protection is\". Which three policy locations support this condition? Each correct answer presents part of the solution.",
+    "options": [
+      { "id": "a", "text": "Exchange Online" },
+      { "id": "b", "text": "SharePoint Online sites" },
+      { "id": "c", "text": "Microsoft Teams" },
+      { "id": "d", "text": "Devices" },
+      { "id": "e", "text": "On-premises repositories" }
+    ],
+    "correct": ["a", "c", "d"],
+    "explanation": "Die Adaptive-Protection-Bedingung in DLP-Richtlinien funktioniert nur für die Speicherorte Exchange Online, Microsoft Teams und Devices. Andere Speicherorte wie SharePoint Online oder On-Premises-Repositories können zwar in der Richtlinie enthalten sein, werden von Adaptive Protection aber derzeit nicht unterstützt.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/m365-compliance-irm-adaptive-protection/adaptive-protection-dlp",
+    "source": {
+      "title": "Configure Adaptive Protection with Data Loss Prevention",
+      "url": "https://learn.microsoft.com/en-us/training/modules/m365-compliance-irm-adaptive-protection/adaptive-protection-dlp",
+      "quote": "This condition works in policies scoped to **Exchange Online**, **Microsoft Teams**, and **Devices**. Although you can include other locations in the DLP policy, Adaptive Protection currently supports only these three locations."
+    }
+  },
+  {
+    "id": "scb6-005",
+    "type": "yes-no",
+    "skillArea": "risks",
+    "topic": "Conditional Access integration",
+    "difficulty": "medium",
+    "prompt": "Your organization uses Adaptive Protection with Microsoft Entra Conditional Access. For each of the following statements, select Yes if the statement is true. Otherwise, select No.",
+    "statements": [
+      { "id": "s1", "text": "Quick setup automatically creates a Conditional Access policy in Report-only mode that targets elevated-risk users.", "correct": true },
+      { "id": "s2", "text": "When the Show anonymized versions of usernames setting is enabled in Insider Risk Management, Conditional Access policies also anonymize usernames.", "correct": false },
+      { "id": "s3", "text": "A single Conditional Access policy can target more than one insider risk level.", "correct": true }
+    ],
+    "explanation": "Quick Setup erstellt automatisch eine Conditional-Access-Richtlinie im Report-only-Modus für Elevated-Risk-Nutzer. Conditional-Access-Richtlinien anonymisieren Benutzernamen jedoch nicht — auch dann nicht, wenn die Anonymisierung in Insider Risk Management aktiviert ist. Pro Richtlinie lassen sich ein oder mehrere Risk-Level auswählen, separate Richtlinien pro Level geben aber unabhängige Kontrolle.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/m365-compliance-irm-adaptive-protection/adaptive-protection-conditional-access",
+    "source": {
+      "title": "Configure Adaptive Protection with Conditional Access",
+      "url": "https://learn.microsoft.com/en-us/training/modules/m365-compliance-irm-adaptive-protection/adaptive-protection-conditional-access",
+      "quote": "Quick setup creates a Conditional Access policy automatically in Report-only mode targeting elevated-risk users. With custom setup, you create policies manually."
+    }
+  },
+  {
+    "id": "scb6-006",
+    "type": "ordering",
+    "skillArea": "risks",
+    "topic": "Custom setup steps",
+    "difficulty": "medium",
+    "prompt": "Your organization already has tuned Insider Risk Management policies and wants full control over each Adaptive Protection component. You decide to use custom setup. Place the following configuration steps in the correct order.",
+    "items": [
+      { "id": "i1", "text": "Create or select an Insider Risk Management policy that defines which users are in scope and which activities are risky" },
+      { "id": "i2", "text": "Configure the insider risk level conditions based on your organization's risk tolerance" },
+      { "id": "i3", "text": "Create or edit the DLP, Conditional Access, and data lifecycle management enforcement policies" },
+      { "id": "i4", "text": "Turn Adaptive Protection to On in the Adaptive Protection settings tab" }
+    ],
+    "correctOrder": ["i1", "i2", "i3", "i4"],
+    "explanation": "Beim Custom Setup baut man jede Komponente einzeln auf: zuerst die Insider-Risk-Management-Richtlinie erstellen oder auswählen, dann die Insider-Risk-Level konfigurieren, anschließend die Durchsetzungsrichtlinien (DLP, Conditional Access, DLM) anlegen oder anpassen und zuletzt Adaptive Protection aktivieren. Nach dem Aktivieren kann es bis zu 36 Stunden dauern, bis Risk-Level und Durchsetzungsaktionen greifen.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/m365-compliance-irm-adaptive-protection/configure-adaptive-protection",
+    "source": {
+      "title": "Set up Adaptive Protection",
+      "url": "https://learn.microsoft.com/en-us/training/modules/m365-compliance-irm-adaptive-protection/configure-adaptive-protection",
+      "quote": "**Create or select an Insider Risk Management policy.** Define which users or agents are in scope and which activities are considered risky."
+    }
+  },
+  {
+    "id": "scb6-007",
+    "type": "matching",
+    "skillArea": "risks",
+    "topic": "Enforcement mechanisms",
+    "difficulty": "easy",
+    "prompt": "Match each component in an Adaptive Protection deployment to its role.",
+    "left": [
+      { "id": "l1", "text": "Insider Risk Management policy" },
+      { "id": "l2", "text": "DLP policy" },
+      { "id": "l3", "text": "Conditional Access policy" },
+      { "id": "l4", "text": "Data Lifecycle Management" }
+    ],
+    "right": [
+      { "id": "r1", "text": "Grants, restricts, or blocks access to cloud applications based on the user's risk level" },
+      { "id": "r2", "text": "Detects risky activity and provides the signals used to assign insider risk levels" },
+      { "id": "r3", "text": "Preserves content deleted by elevated-risk users so it can be recovered during investigations" },
+      { "id": "r4", "text": "Blocks, warns, or audits data-related actions such as file sharing based on the user's risk level" }
+    ],
+    "correct": { "l1": "r2", "l2": "r4", "l3": "r1", "l4": "r3" },
+    "explanation": "Insider-Risk-Management-Richtlinien liefern die Erkennungssignale für die Risk-Level. DLP steuert Datenaktionen (blockieren, warnen, auditieren), Conditional Access regelt den Zugriff auf Cloud-Anwendungen, und Data Lifecycle Management bewahrt von Elevated-Risk-Nutzern gelöschte Inhalte auf.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/m365-compliance-irm-adaptive-protection/overview",
+    "source": {
+      "title": "Understand Adaptive Protection and insider risk levels",
+      "url": "https://learn.microsoft.com/en-us/training/modules/m365-compliance-irm-adaptive-protection/overview",
+      "quote": "A DLP rule can check a user's risk level before deciding whether to block or allow an action. A Conditional Access policy can evaluate it before granting or denying access to a cloud application. Data Lifecycle Management can use it to determine whether to preserve content a user deletes."
+    }
+  },
+  {
+    "id": "scb6-008",
+    "type": "single-choice",
+    "skillArea": "risks",
+    "topic": "eDiscovery case model",
+    "difficulty": "easy",
+    "prompt": "Why is every eDiscovery search in Microsoft Purview associated with a case?",
+    "options": [
+      { "id": "a", "text": "To reduce storage consumption of search results in Microsoft 365." },
+      { "id": "b", "text": "To ensure that access to investigation data is controlled and auditable." },
+      { "id": "c", "text": "To group searches by workload, such as email or Teams." },
+      { "id": "d", "text": "To enforce licensing requirements for advanced eDiscovery features." }
+    ],
+    "correct": "b",
+    "explanation": "Das Case-Modell stellt sicher, dass der Zugriff auf Ermittlungsdaten kontrolliert und nachvollziehbar (auditierbar) ist. Es bietet außerdem eine konsistente Struktur für Ermittlungsaufgaben — mit Speicherkosten, Workload-Gruppierung oder Lizenzierung hat es nichts zu tun.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-ediscovery-search/create-ediscovery-search",
+    "source": {
+      "title": "Create an eDiscovery search",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-ediscovery-search/create-ediscovery-search",
+      "quote": "Creating a search also creates a case, which ensures that access to investigation data is controlled and auditable."
+    }
+  },
+  {
+    "id": "scb6-009",
+    "type": "single-choice",
+    "skillArea": "risks",
+    "topic": "eDiscovery permissions",
+    "difficulty": "medium",
+    "prompt": "A Global Administrator at your organization needs to investigate a data leak using eDiscovery, but when they open the Microsoft Purview portal, they can't access the eDiscovery Cases page. What should you do?",
+    "options": [
+      { "id": "a", "text": "Assign the user the Compliance Administrator role in Microsoft Entra ID." },
+      { "id": "b", "text": "Instruct the user to open the portal in a private browser session, because Global Administrators have access by default." },
+      { "id": "c", "text": "Assign the user to the eDiscovery Manager or eDiscovery Administrator role group in Microsoft Purview." },
+      { "id": "d", "text": "Enable audit logging for the tenant so that eDiscovery becomes visible." }
+    ],
+    "correct": "c",
+    "explanation": "Global- und Compliance-Administratoren haben keinen automatischen Zugriff auf eDiscovery-Fälle oder Nutzerinhalte — sie müssen explizit der Rollengruppe eDiscovery Manager oder eDiscovery Administrator zugewiesen werden. Dieses Berechtigungsmodell stellt sicher, dass der Zugriff auf sensible Daten bewusst und auditierbar erfolgt.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-ediscovery-search/ediscovery-prerequisites",
+    "source": {
+      "title": "Prerequisites for using eDiscovery in Microsoft Purview",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-ediscovery-search/ediscovery-prerequisites",
+      "quote": "**Global** and **Compliance Administrators** can't access eDiscovery cases or search user content unless they're explicitly assigned to the **eDiscovery Manager** or **eDiscovery Administrator** role group. This permission model ensures that access to sensitive data is intentional and auditable."
+    }
+  },
+  {
+    "id": "scb6-010",
+    "type": "multiple-choice",
+    "skillArea": "risks",
+    "topic": "Search by file",
+    "difficulty": "medium",
+    "prompt": "You're investigating suspicious behavior and want to use the Search by file (preview) feature in an eDiscovery search to find content related to an audit log export you already have. Which two statements about this feature are true? Each correct answer presents a complete solution.",
+    "options": [
+      { "id": "a", "text": "Uploaded files must be 10 MB or smaller and in .txt or .csv format." },
+      { "id": "b", "text": "The feature supports uploading .docx and .pdf files as sample evidence." },
+      { "id": "c", "text": "While using this method, the KQL and condition builder options are disabled." },
+      { "id": "d", "text": "Matching items are automatically exported to a review set." },
+      { "id": "e", "text": "The feature requires a Microsoft Security Copilot license." }
+    ],
+    "correct": ["a", "c"],
+    "explanation": "Search by file akzeptiert nur .txt-Dateien (ähnliche Inhalte finden) und .csv-Dateien (Referenzinhalte, z. B. aus Audit-Logs) mit maximal 10 MB. Solange diese Methode verwendet wird, sind KQL und Condition Builder deaktiviert — Microsoft Purview analysiert stattdessen die hochgeladenen Inhalte, um Treffer zu finden.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-ediscovery-search/conduct-ediscovery-search",
+    "source": {
+      "title": "Conduct an eDiscovery search",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-ediscovery-search/conduct-ediscovery-search",
+      "quote": "Each file must be 10 MB or smaller and in `.txt` or `.csv` format. When using this method, KQL and condition builder options are disabled. Instead, Microsoft Purview analyzes the uploaded content to find matches."
+    }
+  },
+  {
+    "id": "scb6-011",
+    "type": "multiple-choice",
+    "skillArea": "risks",
+    "topic": "Export Teams content",
+    "difficulty": "medium",
+    "prompt": "You're exporting eDiscovery search results that include Microsoft Teams chat messages. The legal team wants to review the chats with as much conversational context as possible. Which two export options should you configure? Each correct answer presents part of the solution.",
+    "options": [
+      { "id": "a", "text": "Thread conversations into HTML transcripts." },
+      { "id": "b", "text": "Include contextual Teams and Viva Engage messages, covering up to 12 hours of related conversation." },
+      { "id": "c", "text": "Condense the original folder path for each item." },
+      { "id": "d", "text": "Export all mailbox content as individual MSG files." },
+      { "id": "e", "text": "Include attachments from SharePoint lists." }
+    ],
+    "correct": ["a", "b"],
+    "explanation": "Für Exchange- und Teams-Inhalte lassen sich Unterhaltungen als HTML-Transkripte zusammenfassen (besonders nützlich für Chat-Reviews) und kontextbezogene Teams- und Viva-Engage-Nachrichten von bis zu 12 Stunden einbeziehen. Ordnerpfade, MSG-Format und SharePoint-Listenanhänge betreffen nicht den Gesprächskontext.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-ediscovery-search/export-results",
+    "source": {
+      "title": "Export eDiscovery search results",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-ediscovery-search/export-results",
+      "quote": "**Thread conversations** into HTML transcripts (especially useful for chat review)\n**Include contextual Teams and Viva Engage messages** (up to 12 hours of related conversation)"
+    }
+  },
+  {
+    "id": "scb6-012",
+    "type": "yes-no",
+    "skillArea": "risks",
+    "topic": "eDiscovery roles",
+    "difficulty": "easy",
+    "prompt": "For each of the following statements about eDiscovery roles and access in Microsoft Purview, select Yes if the statement is true. Otherwise, select No.",
+    "statements": [
+      { "id": "s1", "text": "The eDiscovery Administrator role includes all eDiscovery Manager permissions, plus the ability to manage role assignments and settings across all cases.", "correct": true },
+      { "id": "s2", "text": "Global Administrators can access all eDiscovery cases by default without any additional role assignment.", "correct": false },
+      { "id": "s3", "text": "eDiscovery role groups can be assigned in the Microsoft Purview portal under Settings > Roles and Scopes > Role groups.", "correct": true }
+    ],
+    "explanation": "Der eDiscovery Administrator umfasst alle Berechtigungen des eDiscovery Managers plus die Verwaltung von Rollenzuweisungen und Einstellungen über alle Fälle hinweg. Global Administrators haben ohne explizite Zuweisung keinen Zugriff. Die Zuweisung erfolgt im Purview-Portal über die Rollengruppen.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-ediscovery-search/ediscovery-prerequisites",
+    "source": {
+      "title": "Prerequisites for using eDiscovery in Microsoft Purview",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-ediscovery-search/ediscovery-prerequisites",
+      "quote": "**eDiscovery Administrator**: Includes all eDiscovery Manager permissions, plus the ability to manage role assignments and settings across all cases."
+    }
+  },
+  {
+    "id": "scb6-013",
+    "type": "ordering",
+    "skillArea": "risks",
+    "topic": "eDiscovery search phases",
+    "difficulty": "medium",
+    "prompt": "You're an information security administrator investigating a suspected data leak in the Sales department. Place the phases of conducting an eDiscovery search in the correct order.",
+    "items": [
+      { "id": "i1", "text": "Define the scope of your search" },
+      { "id": "i2", "text": "Identify data sources such as users, groups, or sites" },
+      { "id": "i3", "text": "Build the query using conditions, keywords, or KQL" },
+      { "id": "i4", "text": "Run the query and review the results" }
+    ],
+    "correctOrder": ["i1", "i2", "i3", "i4"],
+    "explanation": "eDiscovery-Suchen laufen in Phasen ab: Zuerst den Umfang definieren, dann die Datenquellen festlegen, anschließend die Abfrage mit Bedingungen, Keywords oder KQL aufbauen und zuletzt die Suche ausführen und die Ergebnisse prüfen. Bei Bedarf kehrt man zu früheren Phasen zurück, um Quellen oder Abfrage zu verfeinern.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-ediscovery-search/conduct-ediscovery-search",
+    "source": {
+      "title": "Conduct an eDiscovery search",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-ediscovery-search/conduct-ediscovery-search",
+      "quote": "The phases include:\n\n1.  Define the scope of your search\n2.  Identify data sources\n3.  Build the query\n4.  Run and review the results"
+    }
+  },
+  {
+    "id": "scb6-014",
+    "type": "dropdown",
+    "skillArea": "risks",
+    "topic": "Search result types",
+    "difficulty": "easy",
+    "prompt": "Complete the statement by selecting the correct options.",
+    "textParts": [
+      "After running an eDiscovery query, you choose the ",
+      " result type to view summary data such as the number of items found, the size of the results, and a breakdown by location, or you choose the ",
+      " result type to view a random subset of the results and validate your query before proceeding."
+    ],
+    "blanks": [
+      {
+        "id": "b1",
+        "options": [
+          { "id": "o1", "text": "Statistics" },
+          { "id": "o2", "text": "Sample" },
+          { "id": "o3", "text": "Export" }
+        ],
+        "correct": "o1"
+      },
+      {
+        "id": "b2",
+        "options": [
+          { "id": "o1", "text": "Sample" },
+          { "id": "o2", "text": "Statistics" },
+          { "id": "o3", "text": "Review set" }
+        ],
+        "correct": "o1"
+      }
+    ],
+    "explanation": "Der Ergebnistyp Statistics liefert zusammengefasste Daten wie Trefferanzahl, Größe und Aufschlüsselung nach Speicherort. Der Ergebnistyp Sample zeigt eine zufällige Stichprobe der Suchergebnisse, mit der sich die Abfrage vor dem Export oder der Übernahme in ein Review-Set validieren lässt.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-ediscovery-search/conduct-ediscovery-search",
+    "source": {
+      "title": "Conduct an eDiscovery search",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-ediscovery-search/conduct-ediscovery-search",
+      "quote": "**Statistics**: View summary data about the search, including the number of items found, size of the results, and breakdown by location.\n**Sample**: View a random sample of the search results to validate your query before proceeding."
+    }
+  },
+  {
+    "id": "scb6-015",
+    "type": "yes-no",
+    "skillArea": "risks",
+    "topic": "Audit tiers",
+    "difficulty": "easy",
+    "prompt": "For each of the following statements about Microsoft Purview Audit (Standard) and Audit (Premium), select Yes if the statement is true. Otherwise, select No.",
+    "statements": [
+      { "id": "s1", "text": "Audit (Standard) retains audit records for 180 days by default.", "correct": true },
+      { "id": "s2", "text": "Audit log retention policies of up to 10 years can be created with Audit (Standard).", "correct": false },
+      { "id": "s3", "text": "Audit (Premium) includes high-value events such as MailItemsAccessed and higher bandwidth for the Management Activity API.", "correct": true }
+    ],
+    "explanation": "Audit (Standard) deckt Tausende Aktivitäten mit 180 Tagen Standardaufbewahrung ab. Aufbewahrungsrichtlinien bis 10 Jahre, High-Value-Events wie MailItemsAccessed und höhere API-Bandbreite sind Audit (Premium) vorbehalten.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-audit-search-investigate/audit-overview",
+    "source": {
+      "title": "Understand how Microsoft Purview Audit works",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-audit-search-investigate/audit-overview",
+      "quote": "Audit (Standard) covers thousands of activities across Microsoft 365 with 180-day default retention. Audit (Premium) adds the capabilities most investigations lean on: retention policies, longer default retention for key workloads, high-value events like `MailItemsAccessed` that show which specific messages a user opened, and higher bandwidth for the Management Activity API."
+    }
+  },
+  {
+    "id": "scb6-016",
+    "type": "single-choice",
+    "skillArea": "risks",
+    "topic": "Advanced Auditing enablement",
+    "difficulty": "hard",
+    "prompt": "A financial services firm upgraded all users to Microsoft 365 E5 two weeks ago to investigate message-level mailbox access. A search for MailItemsAccessed events over the past month returns no records for a user who was active the entire time. What is the most likely cause?",
+    "options": [
+      { "id": "a", "text": "Audit (Premium) records take 30 days to start populating after a license change." },
+      { "id": "b", "text": "The Microsoft 365 Advanced Auditing service plan isn't enabled on the user's account, because the E5 license doesn't turn it on automatically, and records only exist from the enablement date forward." },
+      { "id": "c", "text": "The firm must purchase the 10-Year Audit Log Retention add-on before Premium events start logging." },
+      { "id": "d", "text": "MailItemsAccessed records can only be retrieved through the Microsoft Graph API, not through audit search." }
+    ],
+    "correct": "b",
+    "explanation": "E5-Lizenzen enthalten den Service-Plan Microsoft 365 Advanced Auditing, aktivieren ihn aber nicht automatisch — er muss pro Nutzer eingeschaltet werden, damit Events wie MailItemsAccessed überhaupt protokolliert werden. Zudem existieren Records erst ab dem Aktivierungsdatum; rückwirkend wird nichts erfasst. Das 10-Jahres-Add-on betrifft nur die Aufbewahrungsdauer.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-audit-search-investigate/audit-configure-manage",
+    "source": {
+      "title": "Configure and manage Microsoft Purview Audit",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-audit-search-investigate/audit-configure-manage",
+      "quote": "Microsoft 365 E5, Office 365 E5, and E5 Compliance licensing include the service plan, but it isn't turned on automatically. Someone still has to enable it per user for those events to start logging."
+    }
+  },
+  {
+    "id": "scb6-017",
+    "type": "single-choice",
+    "skillArea": "risks",
+    "topic": "Audit retention timing",
+    "difficulty": "hard",
+    "prompt": "Your organization has Audit (Premium). Today you create a custom audit log retention policy that keeps SharePoint audit records for two years. An investigation requires SharePoint records from eight months ago that were covered only by the one-year default retention policy. Will the new two-year policy extend the retention of those existing records?",
+    "options": [
+      { "id": "a", "text": "No. Retention is determined when the record is created, so the new policy affects only new records." },
+      { "id": "b", "text": "Yes. Custom retention policies apply retroactively to all records of the covered record type." },
+      { "id": "c", "text": "Yes, but only for users with a Microsoft 365 E5 license assigned." },
+      { "id": "d", "text": "No, because SharePoint audit records can never be retained for longer than one year." }
+    ],
+    "correct": "a",
+    "explanation": "Die Aufbewahrungsdauer wird beim Erstellen des Audit-Records festgelegt — Richtlinien- oder Lizenzänderungen wirken sich nur auf neue Records aus. Die bestehenden Records aus den letzten acht Monaten bleiben bei der ursprünglichen einjährigen Aufbewahrung; deshalb ist Retention ein Planungsschritt, den man vor dem Ermittlungsbedarf konfiguriert.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-audit-search-investigate/audit-premium-retention",
+    "source": {
+      "title": "Configure audit retention with Audit (Premium)",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-audit-search-investigate/audit-premium-retention",
+      "quote": "**Data retention timing**: Retention is determined when the record is created. Policy or license changes affect only new records."
+    }
+  },
+  {
+    "id": "scb6-018",
+    "type": "multiple-choice",
+    "skillArea": "risks",
+    "topic": "Empty audit results",
+    "difficulty": "medium",
+    "prompt": "You run an audit search in the Microsoft Purview portal for a user's file downloads that occurred earlier today, but the search returns zero results. Auditing is enabled tenant-wide and you have the Audit Reader role. Which two possible causes should you check? Each correct answer presents part of the solution.",
+    "options": [
+      { "id": "a", "text": "The date range wasn't converted to UTC, so the activity falls outside the searched window." },
+      { "id": "b", "text": "The activity is too recent, because records from core services typically take 60 to 90 minutes to become available." },
+      { "id": "c", "text": "Your account is missing the Organization Configuration role, which is required for all audit searches." },
+      { "id": "d", "text": "The tenant is missing the 10-Year Audit Log Retention add-on license." },
+      { "id": "e", "text": "The audit configuration must be deleted and recreated after every search." }
+    ],
+    "correct": ["a", "b"],
+    "explanation": "Portal-Suchergebnisse und Search-UnifiedAuditLog interpretieren Datumsangaben in UTC — ein nicht konvertierter Zeitraum verfehlt die Aktivität leicht. Außerdem erscheinen Records aus Kern-Diensten wie Exchange, SharePoint, OneDrive und Teams typischerweise erst 60 bis 90 Minuten nach der Aktivität. Die Organization-Configuration-Rolle wird nur für Retention-Richtlinien benötigt, nicht für Suchen.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-audit-search-investigate/audit-standard-search",
+    "source": {
+      "title": "Run audit searches with Audit (Standard)",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-audit-search-investigate/audit-standard-search",
+      "quote": "**Latency**: Records from core services like Exchange, SharePoint, OneDrive, and Teams are typically available 60 to 90 minutes after the activity. Other services can take longer."
+    }
+  },
+  {
+    "id": "scb6-019",
+    "type": "yes-no",
+    "skillArea": "risks",
+    "topic": "MailItemsAccessed throttling",
+    "difficulty": "medium",
+    "prompt": "You're investigating a potentially compromised mailbox using the MailItemsAccessed event in Audit (Premium). For each of the following statements, select Yes if the statement is true. Otherwise, select No.",
+    "statements": [
+      { "id": "s1", "text": "Exchange Online throttles MailItemsAccessed logging when a mailbox logs more than 1,000 bind events within 24 hours.", "correct": true },
+      { "id": "s2", "text": "Sync activities are also paused while a mailbox is being throttled.", "correct": false },
+      { "id": "s3", "text": "Bind events that weren't recorded during a throttled period are automatically backfilled after throttling ends.", "correct": false }
+    ],
+    "explanation": "Das Throttling greift bei mehr als 1.000 Bind-Events pro Mailbox in 24 Stunden, betrifft aber nur Bind-Operationen — Sync-Aktivitäten und andere Events laufen weiter. Fehlende Bind-Events werden nicht nachträglich aufgefüllt; Lücken müssen über Exchange Message Trace oder Entra-Sign-in-Logs rekonstruiert werden.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-audit-search-investigate/audit-premium-investigate",
+    "source": {
+      "title": "Investigate activities with Audit (Premium)",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-audit-search-investigate/audit-premium-investigate",
+      "quote": "To maintain performance, Exchange Online throttles MailItemsAccessed logging if a mailbox logs more than 1,000 bind events in 24 hours."
+    }
+  },
+  {
+    "id": "scb6-020",
+    "type": "matching",
+    "skillArea": "risks",
+    "topic": "AI audit record types",
+    "difficulty": "hard",
+    "prompt": "Your compliance team investigates AI-related activity in the audit log. Match each activity to the record type or operation you should filter on.",
+    "left": [
+      { "id": "l1", "text": "A user prompts Microsoft 365 Copilot in Word" },
+      { "id": "l2", "text": "A user interacts with a Copilot Studio agent that was onboarded through DSPM" },
+      { "id": "l3", "text": "A user submits prompts to a non-Microsoft AI website in the browser" },
+      { "id": "l4", "text": "An administrator changes a Copilot tenant setting" }
+    ],
+    "right": [
+      { "id": "r1", "text": "ConnectedAIAppInteraction record type" },
+      { "id": "r2", "text": "UpdateTenantSettings operation" },
+      { "id": "r3", "text": "CopilotInteraction record type" },
+      { "id": "r4", "text": "AIAppInteraction record type" }
+    ],
+    "correct": { "l1": "r3", "l2": "r1", "l3": "r4", "l4": "r2" },
+    "explanation": "First-Party-Copilot-Erlebnisse wie Microsoft 365 Copilot erzeugen CopilotInteraction-Records, Copilot-Studio-Agents und Entra-registrierte AI-Apps ConnectedAIAppInteraction, und Nicht-Microsoft-AI-Websites (über Browser-Extension plus DLP) AIAppInteraction. Admin-Aktivitäten rund um Copilot erscheinen unter separaten Operations wie UpdateTenantSettings.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-audit-search-investigate/audit-copilot",
+    "source": {
+      "title": "Search for Copilot and AI app activities",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-audit-search-investigate/audit-copilot",
+      "quote": "User interactions map to those three record types. Admin activity around Copilot shows up under separate operations, including `UpdateTenantSettings`, `CreatePlugin`, `DeletePlugin`, and `EnablePromptBook`."
+    }
+  },
+  {
+    "id": "scb6-021",
+    "type": "single-choice",
+    "skillArea": "risks",
+    "topic": "PowerShell audit export",
+    "difficulty": "hard",
+    "prompt": "You export a month of SharePoint audit activity with Search-UnifiedAuditLog in Exchange Online PowerShell and pipe the results to a CSV file. The CSV contains exactly 5,000 rows, and you suspect the result set is incomplete. What should you do to retrieve the complete results?",
+    "options": [
+      { "id": "a", "text": "Increase the -ResultSize parameter to 1,000,000." },
+      { "id": "b", "text": "Add the -Encoding UTF8 parameter so that all rows are written to the file." },
+      { "id": "c", "text": "Switch to the portal export, which always returns unlimited rows." },
+      { "id": "d", "text": "Page through the results using the -SessionId and -SessionCommand ReturnLargeSet parameters." }
+    ],
+    "correct": "d",
+    "explanation": "Search-UnifiedAuditLog liefert maximal 5.000 Zeilen pro Aufruf (standardmäßig 100) und schneidet größere Ergebnismengen stillschweigend ab. Für größere Exporte muss man mit -SessionId und -SessionCommand ReturnLargeSet durch die Ergebnisse paginieren. -Encoding betrifft nur die Zeichenkodierung, und auch Portal-Exporte sind limitiert (50.000 Zeilen bei Standard, 1.000.000 bei Premium).",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-audit-search-investigate/audit-export",
+    "source": {
+      "title": "Analyze and report on audit results",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-audit-search-investigate/audit-export",
+      "quote": "`Search-UnifiedAuditLog` returns a maximum of 5,000 rows per call and 100 by default. The one-shot examples above silently truncate at 5,000 rows on larger date ranges. For larger exports, page through results with the `-SessionId` and `-SessionCommand ReturnLargeSet` parameters."
+    }
+  }
+]

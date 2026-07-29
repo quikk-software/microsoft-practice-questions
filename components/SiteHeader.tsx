@@ -28,9 +28,27 @@ export function SiteHeader({ user, authEnabled }: Props) {
     <header className="border-b border-zinc-200 bg-white/80 backdrop-blur dark:border-zinc-800 dark:bg-zinc-950/80">
       <div className="mx-auto flex h-14 w-full max-w-3xl items-center justify-between gap-3 px-4 sm:px-6">
         <Link href="/" className="flex min-w-0 items-center gap-3">
-          {/* Logo strategic IT (Vektor, funktioniert hell + dunkel) */}
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/logo.svg" alt="strategic IT" className="h-7 w-auto shrink-0" />
+          {process.env.NEXT_PUBLIC_SITE_URL ===
+          "https://microsoft-practice-exams.quikk.de" ? (
+            <>
+              <img
+                src="/quikk/logo_dark.svg"
+                alt="QUIKK Software GmbH"
+                className="h-7 w-auto shrink-0 block dark:hidden"
+              />
+              <img
+                src="/quikk/logo_light.svg"
+                alt="QUIKK Software GmbH"
+                className="h-7 w-auto shrink-0 hidden dark:block"
+              />
+            </>
+          ) : (
+            <img
+              src="/logo.svg"
+              alt="Strategic IT GmbH"
+              className="h-7 w-auto shrink-0"
+            />
+          )}
           <span className="hidden truncate border-l border-zinc-300 pl-3 text-sm font-semibold tracking-tight sm:inline dark:border-zinc-700">
             Practice Exams
           </span>

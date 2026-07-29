@@ -107,7 +107,11 @@ if (fs.existsSync(contentDir)) {
 // Satzweise prüfen: Agents dürfen mehrere wörtliche Sätze kombinieren,
 // aber jeder einzelne Satz muss verbatim im Content vorkommen.
 const normalize = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
-const normContent = normalize(contentText);
+// Markdown-Links auf ihren sichtbaren Text reduzieren — Zitate sind aus
+// Leser-Sicht wörtlich, auch wenn im Quelltext [text](url) steht.
+const normContent = normalize(
+  contentText.replace(/\[([^\]]*)\]\([^)]*\)/g, "$1")
+);
 let quoteMisses = 0;
 for (const q of all) {
   if (q.source?.quote && contentText) {

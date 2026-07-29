@@ -1,0 +1,32 @@
+{
+  "slug": "sc-401",
+  "code": "SC-401",
+  "title": "Microsoft Certified: Information Security Administrator Associate",
+  "description": "Administering Information Security in Microsoft 365. Umfasst Microsoft Purview Information Protection (Klassifizierung, Sensitivity Labels, Verschlüsselung), Data Loss Prevention & Retention sowie Insider Risk Management, Audit, eDiscovery und den Schutz von Daten in KI-Umgebungen (DSPM for AI).",
+  "questionCount": 40,
+  "durationMinutes": 100,
+  "passScore": 700,
+  "maxScore": 1000,
+  "skillAreas": [
+    {
+      "id": "protection",
+      "name": "Implement information protection",
+      "weight": 0.34
+    },
+    {
+      "id": "dlp-retention",
+      "name": "Implement data loss prevention and retention",
+      "weight": 0.33
+    },
+    {
+      "id": "risks",
+      "name": "Manage risks, alerts, and activities",
+      "weight": 0.33
+    }
+  ],
+  "difficultyCurve": {
+    "easy": 0.3,
+    "medium": 0.45,
+    "hard": 0.25
+  }
+}

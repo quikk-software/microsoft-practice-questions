@@ -1,0 +1,661 @@
+[
+  {
+    "id": "scb7-001",
+    "type": "single-choice",
+    "skillArea": "risks",
+    "topic": "DSPM for AI basics",
+    "difficulty": "easy",
+    "prompt": "Your organization uses Data Security Posture Management (DSPM) for AI to get recommendations for protecting Microsoft 365 Copilot interactions. After a DLP policy is created from a DSPM recommendation, where is the policy managed going forward?",
+    "options": [
+      { "id": "a", "text": "In DSPM for AI, which manages all policies it initiates" },
+      { "id": "b", "text": "In the Data Loss Prevention solution area of Microsoft Purview" },
+      { "id": "c", "text": "In the Microsoft 365 admin center under Copilot settings" },
+      { "id": "d", "text": "In Microsoft Entra ID under Enterprise applications" }
+    ],
+    "correct": "b",
+    "explanation": "DSPM for AI kann Richtlinien zwar anstoßen, verwaltet sie aber nicht selbst. Jede Richtlinie wird in ihrem zugehörigen Lösungsbereich in Microsoft Purview erstellt und gespeichert – DLP-Richtlinien erscheinen unter Data Loss Prevention und werden dort angepasst.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-ai-secure-copilot/understand-copilot-protection-needs",
+    "source": {
+      "title": "Understand how Microsoft 365 Copilot changes data protection needs",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-secure-copilot/understand-copilot-protection-needs",
+      "quote": "Although DSPM for AI can initiate policies, it doesn't manage them directly. Each policy is created and stored in its corresponding solution area within Microsoft Purview"
+    }
+  },
+  {
+    "id": "scb7-002",
+    "type": "single-choice",
+    "skillArea": "risks",
+    "topic": "DLP for Copilot",
+    "difficulty": "medium",
+    "prompt": "You create a DLP policy with Microsoft 365 Copilot as the location and the action 'Prevent Copilot from processing content' for files labeled Highly Confidential. A user who has access to a labeled file asks Copilot to summarize it. What is the result?",
+    "options": [
+      { "id": "a", "text": "The user loses access to the file until the label is removed" },
+      { "id": "b", "text": "The content is excluded from AI-generated summaries, but the item might still appear in citations" },
+      { "id": "c", "text": "The file is automatically encrypted and moved to a quarantine location" },
+      { "id": "d", "text": "Copilot deletes the prompt and notifies the user's manager" }
+    ],
+    "correct": "b",
+    "explanation": "Die auf Microsoft 365 Copilot beschränkte DLP-Richtlinie verhindert nur, dass gelabelte Inhalte in KI-generierten Zusammenfassungen verwendet werden. Der Benutzerzugriff bleibt bestehen, und das Element kann weiterhin in Zitaten erscheinen, sofern der Benutzer berechtigt ist.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-ai-secure-copilot/data-loss-prevention-copilot",
+    "source": {
+      "title": "Apply DLP policies to Microsoft 365 Copilot",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-secure-copilot/data-loss-prevention-copilot",
+      "quote": "You can create a DLP policy scoped specifically to Microsoft 365 Copilot to prevent labeled content from being used in response summaries. It doesn't block user access or remove the item from citations. It only prevents the content from being used in AI-generated summaries."
+    }
+  },
+  {
+    "id": "scb7-003",
+    "type": "yes-no",
+    "skillArea": "risks",
+    "topic": "Copilot auditing",
+    "difficulty": "medium",
+    "prompt": "Your organization has auditing enabled in Microsoft Purview and wants to track Microsoft 365 Copilot usage. For each of the following statements, select Yes if the statement is true. Otherwise, select No.",
+    "statements": [
+      { "id": "s1", "text": "Audit logs for Microsoft 365 Copilot are included in Audit (Standard), so no additional configuration is needed if auditing is already enabled.", "correct": true },
+      { "id": "s2", "text": "Copilot audit logs are retained for 180 days by default.", "correct": true },
+      { "id": "s3", "text": "Audit logs for browser-based AI tools outside your environment are included with the Microsoft 365 subscription at no additional cost.", "correct": false }
+    ],
+    "explanation": "Copilot-Audit-Logs sind in Audit (Standard) enthalten und werden standardmäßig 180 Tage aufbewahrt. Logs für Nicht-Microsoft-KI-Apps – einschließlich verbundener oder browserbasierter Tools außerhalb der Umgebung – sind dagegen nur mit aktivierter Pay-as-you-go-Abrechnung verfügbar.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-ai-secure-copilot/audit-copilot",
+    "source": {
+      "title": "Audit Copilot interactions with Microsoft Purview",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-secure-copilot/audit-copilot",
+      "quote": "Audit logs for Microsoft 365 Copilot are included in Audit (Standard). Audit logs are retained for 180 days by default, based on your organization's license and audit configuration. Logs for non-Microsoft AI apps, including connected or browser-based tools outside your environment, are available only if you enable pay-as-you-go billing."
+    }
+  },
+  {
+    "id": "scb7-004",
+    "type": "matching",
+    "skillArea": "risks",
+    "topic": "Audit record types",
+    "difficulty": "medium",
+    "prompt": "You're searching the Microsoft Purview audit log for AI activity. Match each scenario to the audit record type it generates.",
+    "left": [
+      { "id": "l1", "text": "A user interacts with Copilot in Word" },
+      { "id": "l2", "text": "AI Notes is used through Microsoft Facilitator in Teams" },
+      { "id": "l3", "text": "A user interacts with a non-Microsoft Copilot app deployed in your organization" },
+      { "id": "l4", "text": "A user interacts with a browser-based AI tool not deployed in your environment" }
+    ],
+    "right": [
+      { "id": "r1", "text": "CopilotInteraction" },
+      { "id": "r2", "text": "TeamCopilotInteraction" },
+      { "id": "r3", "text": "ConnectedAIAppInteraction" },
+      { "id": "r4", "text": "AIAppInteraction" }
+    ],
+    "correct": { "l1": "r1", "l2": "r2", "l3": "r3", "l4": "r4" },
+    "explanation": "CopilotInteraction erfasst Microsoft-eigene Copilot-Apps wie Word oder Excel, TeamCopilotInteraction die Facilitator-Funktionen wie AI Notes in Teams. ConnectedAIAppInteraction steht für verbundene bzw. selbst entwickelte Copilot-Apps in der Organisation, AIAppInteraction für externe, browserbasierte KI-Tools außerhalb der Umgebung.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-ai-secure-copilot/audit-copilot",
+    "source": {
+      "title": "Audit Copilot interactions with Microsoft Purview",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-secure-copilot/audit-copilot",
+      "quote": "ConnectedAIAppInteraction: Interactions with non-Microsoft or custom-built Copilot apps deployed in your organization. AIAppInteraction: Interactions with browser-based or external AI tools not deployed within your environment"
+    }
+  },
+  {
+    "id": "scb7-005",
+    "type": "single-choice",
+    "skillArea": "risks",
+    "topic": "Copilot retention",
+    "difficulty": "easy",
+    "prompt": "You need to create a retention policy that retains prompts and responses from Copilot Chat. Which policy location should you select?",
+    "options": [
+      { "id": "a", "text": "Exchange mailboxes" },
+      { "id": "b", "text": "Teams chats" },
+      { "id": "c", "text": "Microsoft Copilot experiences" },
+      { "id": "d", "text": "SharePoint sites" }
+    ],
+    "correct": "c",
+    "explanation": "Für Copilot Chat und andere Copilot-Erfahrungen gibt es den dedizierten Richtlinienspeicherort 'Microsoft Copilot experiences'. Er ist in bestehenden Richtlinien nicht enthalten und muss beim Erstellen oder Bearbeiten einer Aufbewahrungsrichtlinie explizit ausgewählt werden.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-ai-secure-copilot/retention-copilot",
+    "source": {
+      "title": "Apply retention policies to Copilot prompts and responses",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-secure-copilot/retention-copilot",
+      "quote": "Microsoft Copilot experiences is a new, dedicated policy location. It isn’t included in existing policies and must be selected when creating or editing a policy."
+    }
+  },
+  {
+    "id": "scb7-006",
+    "type": "ordering",
+    "skillArea": "risks",
+    "topic": "eDiscovery Copilot deletion",
+    "difficulty": "hard",
+    "prompt": "An investigation determines that Copilot interactions in several mailboxes contain sensitive data that must be deleted. The mailboxes are subject to a retention policy. Arrange the steps you should perform in the correct order.",
+    "items": [
+      { "id": "i1", "text": "Create an eDiscovery case in the Microsoft Purview portal" },
+      { "id": "i2", "text": "Create a search with the condition Type set to Copilot activity and review the results" },
+      { "id": "i3", "text": "Temporarily remove the holds or retention policies that apply to the affected mailboxes" },
+      { "id": "i4", "text": "Submit a purgeData request for the search by using Microsoft Graph Explorer" },
+      { "id": "i5", "text": "Confirm the deletion and reapply the holds or retention policies" }
+    ],
+    "correctOrder": ["i1", "i2", "i3", "i4", "i5"],
+    "explanation": "Zuerst wird ein eDiscovery-Fall erstellt und eine Suche mit dem Typ 'Copilot activity' durchgeführt. Da Inhalte unter Hold- oder Aufbewahrungsrichtlinien nicht gelöscht werden können, müssen diese vorübergehend entfernt werden, bevor die purgeData-Anfrage über Graph Explorer erfolgt. Abschließend werden die Richtlinien wieder angewendet.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-ai-secure-copilot/ediscovery-copilot",
+    "source": {
+      "title": "Investigate and delete Copilot activity with eDiscovery",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-secure-copilot/ediscovery-copilot",
+      "quote": "Content under a hold or retention policy can't be deleted until those policies are removed. Once you're confident the data is gone, reapply any holds or retention policies you removed earlier."
+    }
+  },
+  {
+    "id": "scb7-007",
+    "type": "single-choice",
+    "skillArea": "risks",
+    "topic": "Sensitivity labels Copilot",
+    "difficulty": "easy",
+    "prompt": "A user works in a Word document labeled Confidential and asks Copilot to draft additional content. How is the Copilot-generated content classified?",
+    "options": [
+      { "id": "a", "text": "Copilot applies its own AI-generated sensitivity label" },
+      { "id": "b", "text": "The content inherits the label already applied to the file" },
+      { "id": "c", "text": "The content remains unlabeled until an administrator reviews it" },
+      { "id": "d", "text": "The content is automatically labeled Public" }
+    ],
+    "correct": "b",
+    "explanation": "In Word und Excel erbt Copilot-generierter Inhalt das Label, das bereits auf die Datei angewendet ist. Copilot wendet nie ein eigenes Sensitivity Label an – ohne bestehendes Label bleibt die Ausgabe unklassifiziert, sofern keine App- oder Richtlinieneinstellung greift.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-ai-secure-copilot/sensitivity-labels-copilot",
+    "source": {
+      "title": "Classify and protect Copilot content with sensitivity labels",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-secure-copilot/sensitivity-labels-copilot",
+      "quote": "In Word and Excel, Copilot-generated content inherits the label already applied to the file. Copilot doesn't apply or generate its own sensitivity label."
+    }
+  },
+  {
+    "id": "scb7-008",
+    "type": "single-choice",
+    "skillArea": "risks",
+    "topic": "AI tool categories",
+    "difficulty": "easy",
+    "prompt": "In Microsoft Purview, AI tools fall into three categories. Into which category does the consumer version of ChatGPT used in a web browser fall?",
+    "options": [
+      { "id": "a", "text": "Copilot experiences" },
+      { "id": "b", "text": "Enterprise AI apps" },
+      { "id": "c", "text": "Other AI apps" },
+      { "id": "d", "text": "Connected AI services" }
+    ],
+    "correct": "c",
+    "explanation": "Browserbasierte generative KI-Tools wie ChatGPT (Consumer) oder Gemini gehören zur Kategorie 'Other AI apps', da sie außerhalb der Microsoft-365-Umgebung laufen. 'Copilot experiences' sind Microsoft-verwaltete Copilots, 'Enterprise AI apps' sind organisatorisch verbundene Apps wie ChatGPT Enterprise.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-ai-understand-risks/understand-ai-risks",
+    "source": {
+      "title": "Understand AI data security risks",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-understand-risks/understand-ai-risks",
+      "quote": "Other AI apps: Browser-based generative AI tools like ChatGPT (consumer) and Gemini, which operate outside the Microsoft 365 environment"
+    }
+  },
+  {
+    "id": "scb7-009",
+    "type": "single-choice",
+    "skillArea": "risks",
+    "topic": "Layered AI protections",
+    "difficulty": "medium",
+    "prompt": "A security team is deciding which Microsoft Purview capabilities to combine for AI interactions. According to the recommended rule of thumb, which capability pair addresses risky user behavior patterns over time?",
+    "options": [
+      { "id": "a", "text": "Sensitivity labels with encryption" },
+      { "id": "b", "text": "DLP policies scoped to Copilot" },
+      { "id": "c", "text": "Insider Risk Management with Adaptive Protection" },
+      { "id": "d", "text": "Compliance Manager with AI assessment templates" }
+    ],
+    "correct": "c",
+    "explanation": "Die Faustregel lautet: Labels erzwingen den Zugriff, DLP kontrolliert Daten in Bewegung, und Insider Risk Management mit Adaptive Protection adressiert riskante Verhaltensmuster über die Zeit. Labels und DLP wirken auf Inhalte, nicht auf Verhaltensmuster.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-ai-understand-risks/understand-purview-ai-protections",
+    "source": {
+      "title": "Understand how Microsoft Purview secures AI data",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-understand-risks/understand-purview-ai-protections",
+      "quote": "Use labels to enforce access, DLP to control data in motion, and Insider Risk with Adaptive Protection to address risky behavior patterns over time."
+    }
+  },
+  {
+    "id": "scb7-010",
+    "type": "dropdown",
+    "skillArea": "risks",
+    "topic": "DSPM risk assessments",
+    "difficulty": "easy",
+    "prompt": "Complete the sentence about assessing AI-related data exposure in Microsoft Purview.",
+    "textParts": [
+      "In DSPM for AI, each data risk assessment produces a ",
+      ", a list of affected files, and recommended actions, while the ",
+      " shows how AI prompts result in file-level access."
+    ],
+    "blanks": [
+      {
+        "id": "b1",
+        "options": [
+          { "id": "a", "text": "risk score" },
+          { "id": "b", "text": "compliance score" },
+          { "id": "c", "text": "secure score" }
+        ],
+        "correct": "a"
+      },
+      {
+        "id": "b2",
+        "options": [
+          { "id": "a", "text": "audit log search" },
+          { "id": "b", "text": "Activity Explorer" },
+          { "id": "c", "text": "content explorer" }
+        ],
+        "correct": "b"
+      }
+    ],
+    "explanation": "Jedes Data Risk Assessment in DSPM for AI liefert einen Risk Score, betroffene Dateien und Handlungsempfehlungen. Der Activity Explorer zeigt, wie KI-Prompts zu Zugriffen auf Dateiebene führen – inklusive Benutzer, Label und Zugriffszeitpunkt.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-ai-understand-risks/assess-ai-risks",
+    "source": {
+      "title": "Identify AI-related data exposure risks",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-understand-risks/assess-ai-risks",
+      "quote": "Each assessment produces a risk score, a list of affected files, and recommended actions to reduce exposure. The Activity Explorer in DSPM for AI shows how AI prompts result in file-level access."
+    }
+  },
+  {
+    "id": "scb7-011",
+    "type": "multiple-choice",
+    "skillArea": "risks",
+    "topic": "Default assessments",
+    "difficulty": "medium",
+    "prompt": "Which exposure scenarios are covered by the default data risk assessments in DSPM for AI? Each correct answer presents a complete solution.",
+    "options": [
+      { "id": "a", "text": "Oversharing in SharePoint Online" },
+      { "id": "b", "text": "Anonymous sharing links" },
+      { "id": "c", "text": "Unmanaged AI tools interacting with sensitive or labeled data" },
+      { "id": "d", "text": "Malware infections on onboarded devices" },
+      { "id": "e", "text": "Conditional Access policy gaps in Microsoft Entra ID" }
+    ],
+    "correct": ["a", "b", "c"],
+    "explanation": "Die Standard-Assessments decken gängige Expositionsszenarien ab: Oversharing in SharePoint Online, externen Gastzugriff, anonyme Freigabelinks und nicht verwaltete KI-Tools, die mit sensiblen oder gelabelten Daten interagieren. Malware-Erkennung und Conditional-Access-Analysen gehören nicht zu DSPM for AI.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-ai-understand-risks/assess-ai-risks",
+    "source": {
+      "title": "Identify AI-related data exposure risks",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-understand-risks/assess-ai-risks",
+      "quote": "Purview includes default assessments that cover common exposure scenarios, such as: Oversharing in SharePoint Online, External guest access to sensitive files, Anonymous sharing links, Unmanaged AI tools interacting with sensitive or labeled data"
+    }
+  },
+  {
+    "id": "scb7-012",
+    "type": "yes-no",
+    "skillArea": "risks",
+    "topic": "AI data storage",
+    "difficulty": "easy",
+    "prompt": "A compliance officer asks where Microsoft 365 Copilot interaction data is stored and how it can be used in investigations. For each of the following statements, select Yes if the statement is true. Otherwise, select No.",
+    "statements": [
+      { "id": "s1", "text": "Copilot prompts and responses are saved in a hidden folder in the user's Exchange Online mailbox.", "correct": true },
+      { "id": "s2", "text": "Copilot prompts and responses are stored in SharePoint document libraries.", "correct": false },
+      { "id": "s3", "text": "Copilot interaction data can be searched with content search or eDiscovery.", "correct": true }
+    ],
+    "explanation": "Copilot-Prompts und -Antworten werden in einem versteckten Ordner im Exchange-Online-Postfach des Benutzers gespeichert – nicht in SharePoint. Dadurch gelten dieselben Compliance-Prozesse wie für E-Mails: Die Daten sind über Content Search und eDiscovery durchsuchbar und über Aufbewahrungsrichtlinien verwaltbar.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-ai-understand-risks/retain-search-copilot",
+    "source": {
+      "title": "Retain and search Copilot prompts and responses",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-understand-risks/retain-search-copilot",
+      "quote": "When users interact with Microsoft 365 Copilot, their prompts and responses are saved in Exchange Online mailboxes. The data is stored in a hidden folder within the mailbox and treated like other communications data for compliance."
+    }
+  },
+  {
+    "id": "scb7-013",
+    "type": "single-choice",
+    "skillArea": "risks",
+    "topic": "eDiscovery licensing",
+    "difficulty": "medium",
+    "prompt": "Your organization uses Microsoft 365 E3 and wants to use review sets, analytics, and adaptive holds in eDiscovery to investigate Copilot interactions. What should you tell management?",
+    "options": [
+      { "id": "a", "text": "These capabilities are available in all Microsoft 365 subscriptions" },
+      { "id": "b", "text": "These advanced capabilities are only included with Microsoft 365 E5" },
+      { "id": "c", "text": "These capabilities require pay-as-you-go billing but no license change" },
+      { "id": "d", "text": "These capabilities require Microsoft Sentinel integration" }
+    ],
+    "correct": "b",
+    "explanation": "Der eDiscovery-Funktionsumfang hängt von der Microsoft-365-Lizenz ab: Erweiterte Funktionen wie Review Sets, Analytics und Adaptive Holds sind nur in Microsoft 365 E5 enthalten. Mit E3 stehen nur die Basisfunktionen zur Verfügung.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-ai-understand-risks/retain-search-copilot",
+    "source": {
+      "title": "Retain and search Copilot prompts and responses",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-understand-risks/retain-search-copilot",
+      "quote": "eDiscovery features available depend on your organization's Microsoft 365 license. For example, advanced capabilities like review sets, analytics, and adaptive holds are only included with Microsoft 365 E5."
+    }
+  },
+  {
+    "id": "scb7-014",
+    "type": "matching",
+    "skillArea": "risks",
+    "topic": "Protections by tool type",
+    "difficulty": "hard",
+    "prompt": "Your organization uses several types of AI tools. Match each AI tool type to the primary protections Microsoft Purview supports for it.",
+    "left": [
+      { "id": "l1", "text": "Microsoft Copilot" },
+      { "id": "l2", "text": "Enterprise AI apps" },
+      { "id": "l3", "text": "Browser-based tools" },
+      { "id": "l4", "text": "Azure AI Foundry / developer AI tools" }
+    ],
+    "right": [
+      { "id": "r1", "text": "Sensitivity labels, DLP, Audit, Insider Risk Management" },
+      { "id": "r2", "text": "DLP through endpoints, Microsoft Edge, and Microsoft 365 data locations, with access controls enforced by Microsoft Entra ID" },
+      { "id": "r3", "text": "Endpoint DLP, browser control policies, file transfer restrictions" },
+      { "id": "r4", "text": "DLP and labeling via Purview integration and SDK, visibility in DSPM for AI" }
+    ],
+    "correct": { "l1": "r1", "l2": "r2", "l3": "r3", "l4": "r4" },
+    "explanation": "Microsoft Copilot unterstützt die vollständigen integrierten Schutzmechanismen (Labels, DLP, Audit, IRM). Enterprise AI Apps werden über Endpoint-/Edge-DLP, Microsoft-365-Datenspeicherorte und Entra-ID-Zugriffssteuerung geschützt. Bei nicht verwalteten, browserbasierten Tools sind Endpoint-DLP und Browsersteuerung die primären Schutzmechanismen; Azure AI Foundry nutzt Purview-Integration und SDK.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-ai-understand-risks/control-ai-sensitive-data",
+    "source": {
+      "title": "Understand how Microsoft Purview controls AI data access",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-understand-risks/control-ai-sensitive-data",
+      "quote": "Not every AI tool supports the same safeguards. The protections available depend on how the tool connects with your environment. If the tool is unmanaged or browser-based, endpoint and browser DLP are your primary protections."
+    }
+  },
+  {
+    "id": "scb7-015",
+    "type": "single-choice",
+    "skillArea": "risks",
+    "topic": "DSPM enforcement scope",
+    "difficulty": "easy",
+    "prompt": "What is the primary role of DSPM for AI when securing developer AI apps in Microsoft Purview?",
+    "options": [
+      { "id": "a", "text": "It enforces DLP and labeling policies directly on AI apps" },
+      { "id": "b", "text": "It provides visibility so admins can decide where to apply Microsoft Purview controls" },
+      { "id": "c", "text": "It blocks unapproved AI apps from registering in Microsoft Entra ID" },
+      { "id": "d", "text": "It encrypts all prompts and responses automatically" }
+    ],
+    "correct": "b",
+    "explanation": "DSPM for AI setzt keine Schutzmaßnahmen direkt durch. Es liefert die nötige Sichtbarkeit über Apps, Agents und deren Datenzugriffe, damit Administratoren gezielt entscheiden können, wo Purview-Kontrollen wie DLP, Labels oder Retention angewendet werden.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-ai-developer-apps/discover-assess-ai-apps",
+    "source": {
+      "title": "Discover and assess AI apps with DSPM for AI",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-developer-apps/discover-assess-ai-apps",
+      "quote": "DSPM for AI doesn't enforce protections directly, but it gives admins the visibility needed to decide where to apply Microsoft Purview controls."
+    }
+  },
+  {
+    "id": "scb7-016",
+    "type": "yes-no",
+    "skillArea": "risks",
+    "topic": "Copilot Studio investigation",
+    "difficulty": "medium",
+    "prompt": "You're investigating how a Copilot Studio agent is used in your organization. For each of the following statements, select Yes if the statement is true. Otherwise, select No.",
+    "statements": [
+      { "id": "s1", "text": "Microsoft Purview Audit logs contain the full text of agent prompts and responses.", "correct": false },
+      { "id": "s2", "text": "eDiscovery can be used to search the content of stored Copilot Studio conversations.", "correct": true },
+      { "id": "s3", "text": "Audit logs can identify which users interacted with a specific agent and when.", "correct": true }
+    ],
+    "explanation": "Audit-Logs liefern nur Metadaten zur Agent-Aktivität (wer, wann, welcher Agent) – keine Prompt- oder Antwortinhalte. Für die inhaltliche Untersuchung gespeicherter Konversationen ist eDiscovery das richtige Werkzeug.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-ai-developer-apps/secure-copilot-studio",
+    "source": {
+      "title": "Secure AI agents built in Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-developer-apps/secure-copilot-studio",
+      "quote": "Audit logs don't contain prompt or response content. For deeper investigation, use eDiscovery to search stored conversations."
+    }
+  },
+  {
+    "id": "scb7-017",
+    "type": "single-choice",
+    "skillArea": "risks",
+    "topic": "Copilot in Fabric",
+    "difficulty": "hard",
+    "prompt": "A security administrator wants Microsoft Purview to block Copilot in Fabric responses in real time when they contain sensitive data from Power BI datasets. What should you tell the administrator?",
+    "options": [
+      { "id": "a", "text": "Create a DLP policy scoped to the Microsoft 365 Copilot location to block the responses" },
+      { "id": "b", "text": "Real-time DLP enforcement isn't currently supported for Copilot in Fabric; use collection policies, retention, audit, and eDiscovery for visibility and investigation" },
+      { "id": "c", "text": "Enable Adaptive Protection, which automatically blocks all Fabric responses" },
+      { "id": "d", "text": "Configure a Communication Compliance policy, which blocks matching responses before delivery" }
+    ],
+    "correct": "b",
+    "explanation": "Microsoft Purview erzwingt derzeit keine Echtzeit-DLP für Copilot in Fabric – DSPM liefert Sichtbarkeit, aber keine Antwortblockierung. Stattdessen lassen sich Interaktionen über Collection Policies erfassen und mit Retention, Audit und eDiscovery bewerten und untersuchen.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-ai-developer-apps/manage-copilot-fabric-risks",
+    "source": {
+      "title": "Manage data risks in Copilot in Fabric",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-developer-apps/manage-copilot-fabric-risks",
+      "quote": "Microsoft Purview doesn't currently enforce real-time data loss prevention for Copilot in Fabric. DSPM provides visibility into Copilot activity, but not response blocking."
+    }
+  },
+  {
+    "id": "scb7-018",
+    "type": "multiple-choice",
+    "skillArea": "risks",
+    "topic": "Azure AI app onboarding",
+    "difficulty": "medium",
+    "prompt": "Your organization built an AI app with Azure AI services that is registered in Microsoft Entra ID. You need to onboard the app to Microsoft Purview so protections like DLP and retention apply. Which three actions are typically part of onboarding? Each correct answer presents part of the solution.",
+    "options": [
+      { "id": "a", "text": "Authorize the app's access to Microsoft 365 data" },
+      { "id": "b", "text": "Assign the appropriate Microsoft Graph API permissions, such as Mail.Read or Sites.Read.All" },
+      { "id": "c", "text": "Make sure Purview-supported signals are enabled for the app" },
+      { "id": "d", "text": "Deploy the Microsoft Purview browser extension to all user devices" },
+      { "id": "e", "text": "Enable litigation hold on all user mailboxes" }
+    ],
+    "correct": ["a", "b", "c"],
+    "explanation": "Für in Entra ID registrierte Azure-AI-Apps umfasst das Onboarding typischerweise drei Schritte: Zugriff auf Microsoft-365-Daten autorisieren, passende Graph-API-Berechtigungen zuweisen und sicherstellen, dass Purview-unterstützte Signale aktiviert sind. Browser-Extensions und Litigation Holds sind dafür nicht erforderlich.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-ai-developer-apps/azure-ai-services-protections",
+    "source": {
+      "title": "Enforce protections in Microsoft Foundry and Foundry Tools",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-developer-apps/azure-ai-services-protections",
+      "quote": "If the app is registered in Microsoft Entra ID, onboarding typically involves: Authorizing access to Microsoft 365 data, Assigning the appropriate Microsoft Graph API permissions, such as Mail.Read or Sites.Read.All, depending on which data the app needs to access, Making sure Purview-supported signals are enabled for the app"
+    }
+  },
+  {
+    "id": "scb7-019",
+    "type": "yes-no",
+    "skillArea": "risks",
+    "topic": "Copilot Studio agents",
+    "difficulty": "hard",
+    "prompt": "Contoso publishes a Copilot Studio agent in Teams that uses a SharePoint site as its knowledge source. For each of the following statements, select Yes if the statement is true. Otherwise, select No.",
+    "statements": [
+      { "id": "s1", "text": "Dataverse transcript logging must be enabled in the agent before compliance copies of interactions are captured in Exchange Online.", "correct": false },
+      { "id": "s2", "text": "If a user doesn't have rights to open or extract content from a labeled file, the agent can't summarize it.", "correct": true },
+      { "id": "s3", "text": "A DLP policy scoped to the Microsoft 365 Copilot location applies to the agent because its knowledge source is SharePoint.", "correct": true }
+    ],
+    "explanation": "Compliance-Kopien in Exchange Online werden automatisch erstellt – das optionale Dataverse-Transcript-Logging ist davon getrennt. Agents laufen im Benutzerkontext und respektieren Labels samt Verschlüsselung; ohne Extraktionsrechte kann der Agent nicht zusammenfassen. Copilot-bezogene DLP-Richtlinien greifen bei SharePoint als Wissensquelle auch für Copilot-Studio-Agents.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-ai-developer-apps/secure-copilot-studio",
+    "source": {
+      "title": "Secure AI agents built in Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-developer-apps/secure-copilot-studio",
+      "quote": "Compliance copies in Exchange Online are automatic and don't require enabling a setting in the agent. If a user doesn't have rights to open or extract content from a labeled file, the agent can't summarize it. A Copilot-scoped DLP policy applies when the knowledge source is SharePoint."
+    }
+  },
+  {
+    "id": "scb7-020",
+    "type": "ordering",
+    "skillArea": "risks",
+    "topic": "Securing developer AI",
+    "difficulty": "medium",
+    "prompt": "Your organization is starting to secure its AI development environments with Microsoft Purview. Arrange the recommended actions in the order they should be performed.",
+    "items": [
+      { "id": "i1", "text": "Discover apps and agents to identify the data they access" },
+      { "id": "i2", "text": "Apply sensitivity labels and DLP policies to protect sensitive files and unsafe interactions" },
+      { "id": "i3", "text": "Detect risky behavior such as prompt misuse or unauthorized access using Purview analytics" },
+      { "id": "i4", "text": "Preserve and investigate interactions with retention, audit, and eDiscovery" }
+    ],
+    "correctOrder": ["i1", "i2", "i3", "i4"],
+    "explanation": "Die empfohlene Reihenfolge beginnt mit der Discovery von Apps und Agents samt ihrer Datenzugriffe. Darauf folgen Schutzmaßnahmen (Labels und DLP), dann die Erkennung riskanten Verhaltens über Purview-Analysen und schließlich Aufbewahrung und Untersuchung der Interaktionen mit Retention, Audit und eDiscovery.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-ai-developer-apps/understand-developer-ai-risks",
+    "source": {
+      "title": "Understand risks and responsibilities in AI development environments",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-developer-apps/understand-developer-ai-risks",
+      "quote": "To reduce these risks, organizations should take these actions across AI development environments: Discover apps and agents to identify the data they access, Apply sensitivity labels and DLP policies so sensitive files and unsafe interactions are protected, Detect risky behavior such as prompt misuse or unauthorized access using Purview analytics, Preserve and investigate interactions with retention, audit, and eDiscovery to meet compliance needs"
+    }
+  },
+  {
+    "id": "scb7-021",
+    "type": "dropdown",
+    "skillArea": "risks",
+    "topic": "Entra-registered AI apps",
+    "difficulty": "hard",
+    "prompt": "Complete the sentence about inspecting a custom AI app registered in Microsoft Entra ID.",
+    "textParts": [
+      "To capture prompts and responses submitted through a Microsoft Entra-registered AI app, you configure ",
+      " in DSPM for AI; the captured activity then becomes available in ",
+      ", where you can view individual prompt events and trace the flow of sensitive data."
+    ],
+    "blanks": [
+      {
+        "id": "b1",
+        "options": [
+          { "id": "a", "text": "collection policies" },
+          { "id": "b", "text": "retention label policies" },
+          { "id": "c", "text": "app protection policies" }
+        ],
+        "correct": "a"
+      },
+      {
+        "id": "b2",
+        "options": [
+          { "id": "a", "text": "content explorer" },
+          { "id": "b", "text": "the compliance score dashboard" },
+          { "id": "c", "text": "activity explorer" }
+        ],
+        "correct": "c"
+      }
+    ],
+    "explanation": "Collection Policies in DSPM for AI erfassen Prompts und Antworten von Entra-registrierten Apps und können auf bestimmte Apps, Dienste oder Aktivitäten beschränkt werden. Die erfasste Aktivität erscheint im Activity Explorer, wo sich einzelne Prompt-Ereignisse nach Benutzer oder App filtern lassen.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-ai-developer-apps/entra-ai-apps",
+    "source": {
+      "title": "Apply controls for Microsoft Entra-registered custom AI apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-developer-apps/entra-ai-apps",
+      "quote": "Collection policies can be scoped to include specific apps, services, or activities. Captured activity becomes available in activity explorer, where you can view individual prompt events, filter by user or app, and trace the flow of sensitive data."
+    }
+  },
+  {
+    "id": "scb7-022",
+    "type": "multiple-choice",
+    "skillArea": "risks",
+    "topic": "AI retention locations",
+    "difficulty": "medium",
+    "prompt": "Your organization captures interactions from ChatGPT Enterprise (registered in Microsoft Entra ID) and from the consumer version of Google Gemini. You need to create a retention policy that covers both. Which two policy locations should you select? Each correct answer presents part of the solution.",
+    "options": [
+      { "id": "a", "text": "Enterprise AI apps" },
+      { "id": "b", "text": "Other AI apps" },
+      { "id": "c", "text": "Microsoft Copilot experiences" },
+      { "id": "d", "text": "Exchange mailboxes" },
+      { "id": "e", "text": "SharePoint sites" }
+    ],
+    "correct": ["a", "b"],
+    "explanation": "Für Entra-registrierte Apps wie ChatGPT Enterprise gilt der Speicherort 'Enterprise AI apps', für Consumer-Tools wie Google Gemini der Speicherort 'Other AI apps'. 'Microsoft Copilot experiences' deckt nur Microsoft 365 Copilot und andere First-Party-Erfahrungen ab; die Standorte müssen explizit zur Richtlinie hinzugefügt werden.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-ai-secure-enterprise-other/retention-ai",
+    "source": {
+      "title": "Apply retention policies to AI app prompts and responses",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-secure-enterprise-other/retention-ai",
+      "quote": "Enterprise AI apps: For Entra-registered apps like ChatGPT Enterprise and Azure AI services. Other AI apps: For tools like ChatGPT (consumer), Google Gemini, and Microsoft Copilot (consumer version)."
+    }
+  },
+  {
+    "id": "scb7-023",
+    "type": "single-choice",
+    "skillArea": "risks",
+    "topic": "One-click DLP policies",
+    "difficulty": "medium",
+    "prompt": "You use the one-click policy recommendations in DSPM for AI to protect against data leaks to generative AI websites. Which statement about the 'Block sensitive info from AI sites' policy is correct?",
+    "options": [
+      { "id": "a", "text": "It audits pasting actions for all users and is active immediately" },
+      { "id": "b", "text": "It blocks pasting and uploading actions for elevated-risk users using Adaptive Protection and starts in simulation mode" },
+      { "id": "c", "text": "It blocks all users from visiting generative AI websites entirely" },
+      { "id": "d", "text": "It removes sensitive files from SharePoint sites referenced by AI tools" }
+    ],
+    "correct": "b",
+    "explanation": "'Block sensitive info from AI sites' blockiert Einfüge- und Upload-Aktionen für Benutzer mit erhöhtem Risiko über Adaptive Protection und startet im Simulationsmodus. Die Audit-Variante, die sofort aktiv ist, heißt 'Detect sensitive info added to AI sites'. Beide nutzen die integrierte Service-Domain-Gruppe 'Generative AI Websites'.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-ai-secure-enterprise-other/data-loss-prevention-ai",
+    "source": {
+      "title": "Protect sensitive data in AI apps with Microsoft Purview DLP",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-secure-enterprise-other/data-loss-prevention-ai",
+      "quote": "Block sensitive info from AI sites: Blocks pasting and uploading actions for elevated-risk users using Adaptive Protection. This policy starts in simulation mode."
+    }
+  },
+  {
+    "id": "scb7-024",
+    "type": "multiple-choice",
+    "skillArea": "risks",
+    "topic": "Endpoint DLP actions",
+    "difficulty": "medium",
+    "prompt": "You manually configure an endpoint DLP rule to restrict users from sharing sensitive content with browser-based AI websites. Which two actions should you enable in the rule? Each correct answer presents part of the solution.",
+    "options": [
+      { "id": "a", "text": "Paste to supported browsers" },
+      { "id": "b", "text": "Upload to a restricted cloud service domain" },
+      { "id": "c", "text": "Prevent Copilot from processing content" },
+      { "id": "d", "text": "Restrict access by unallowed apps" }
+    ],
+    "correct": ["a", "b"],
+    "explanation": "Für browserbasierte KI-Websites bietet Endpoint DLP die Aktionen 'Paste to supported browsers' und 'Upload to a restricted cloud service domain', angewendet auf die Service-Domain-Gruppe 'Generative AI Websites'. 'Prevent Copilot from processing content' ist eine Aktion für den Microsoft-365-Copilot-Speicherort, nicht für Endpoint DLP.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-ai-secure-enterprise-other/data-loss-prevention-ai",
+    "source": {
+      "title": "Protect sensitive data in AI apps with Microsoft Purview DLP",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-secure-enterprise-other/data-loss-prevention-ai",
+      "quote": "When defining a rule, enable one or both of these actions: Paste to supported browsers, Upload to a restricted cloud service domain. You can apply these actions to the built-in Generative AI Websites service domain group or create a custom domain group to match specific URLs."
+    }
+  },
+  {
+    "id": "scb7-025",
+    "type": "ordering",
+    "skillArea": "risks",
+    "topic": "Adaptive Protection setup",
+    "difficulty": "hard",
+    "prompt": "A financial software company wants DLP enforcement for generative AI websites to adjust dynamically based on each user's risk level. Arrange the configuration steps in the correct order.",
+    "items": [
+      { "id": "i1", "text": "Create an insider risk policy using the Risky AI usage template with the browsed to generative AI websites indicator" },
+      { "id": "i2", "text": "Assign adaptive risk levels such as elevated, moderate, and minor based on user activity" },
+      { "id": "i3", "text": "Create a DLP policy with risk-based actions using the Fortify your data security recommendation in DSPM for AI" },
+      { "id": "i4", "text": "Enable Adaptive Protection in the Microsoft Purview portal" }
+    ],
+    "correctOrder": ["i1", "i2", "i3", "i4"],
+    "explanation": "Zuerst wird die Insider-Risk-Richtlinie mit dem Template 'Risky AI usage' erstellt, dann werden die adaptiven Risikostufen definiert. Anschließend folgt die DLP-Richtlinie mit risikobasierten Aktionen (z. B. über die DSPM-Empfehlung), und zum Abschluss wird Adaptive Protection aktiviert, wodurch die dynamischen Schutzmaßnahmen wirksam werden.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-ai-secure-enterprise-other/adaptive-protection-ai",
+    "source": {
+      "title": "Case study: Use Adaptive Protection to respond to AI-related risk",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-secure-enterprise-other/adaptive-protection-ai",
+      "quote": "To complete setup, Contoso enables Adaptive Protection in the Microsoft Purview portal. This activates the dynamic protections they configured."
+    }
+  },
+  {
+    "id": "scb7-026",
+    "type": "yes-no",
+    "skillArea": "risks",
+    "topic": "Communication Compliance AI",
+    "difficulty": "medium",
+    "prompt": "Your organization plans to use Communication Compliance to review interactions with enterprise and public AI apps. For each of the following statements, select Yes if the statement is true. Otherwise, select No.",
+    "statements": [
+      { "id": "s1", "text": "Communication Compliance can analyze prompts and responses from public browser-based AI tools such as Gemini, Claude, or Perplexity.", "correct": true },
+      { "id": "s2", "text": "When a policy match occurs, Communication Compliance automatically blocks the prompt from being submitted to the AI app.", "correct": false },
+      { "id": "s3", "text": "Detection for enterprise and other AI apps requires pay-as-you-go billing.", "correct": true }
+    ],
+    "explanation": "Communication Compliance deckt neben Microsoft 365 Copilot auch Enterprise AI Apps und öffentliche browserbasierte Tools ab. Es prüft aber nur Inhalte und ergreift keine automatischen Blockierungsaktionen – dafür sind Insider Risk Management und Adaptive Protection zuständig. Die Erkennung für Enterprise- und andere KI-Apps setzt Pay-as-you-go-Abrechnung voraus.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-ai-secure-enterprise-other/communication-compliance-ai",
+    "source": {
+      "title": "Identify policy violations with Communication Compliance",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-secure-enterprise-other/communication-compliance-ai",
+      "quote": "Other AI apps: Public browser-based tools such as Gemini, Claude, or Perplexity that operate outside of identity or policy frameworks. It focuses on reviewing content, not taking automatic action. Detection for enterprise and other AI apps requires enabling pay-as-you-go billing."
+    }
+  },
+  {
+    "id": "scb7-027",
+    "type": "multiple-choice",
+    "skillArea": "risks",
+    "topic": "Browser DLP for Edge",
+    "difficulty": "hard",
+    "prompt": "You need to block sharing of sensitive information from Microsoft Edge to unmanaged AI apps on Intune-managed devices using browser DLP. Which three actions are required? Each correct answer presents part of the solution.",
+    "options": [
+      { "id": "a", "text": "Create a DLP policy scoped to Data in browser activity" },
+      { "id": "b", "text": "Apply a configuration profile through the Microsoft Edge Management Service" },
+      { "id": "c", "text": "Ensure users are in scope of both the DLP policy and the Edge configuration profile" },
+      { "id": "d", "text": "Deploy the Microsoft Purview extension for Mozilla Firefox" },
+      { "id": "e", "text": "Create a retention policy for the Other AI apps location" }
+    ],
+    "correct": ["a", "b", "c"],
+    "explanation": "Browser DLP für Edge besteht aus einer Purview-DLP-Richtlinie mit dem Bereich 'Data in browser activity' und einer Edge-Browser-Richtlinie, die über den Microsoft Edge Management Service bereitgestellt wird. Der Schutz greift nur, wenn der Benutzer im Geltungsbereich beider Komponenten liegt. Firefox-Extensions und Aufbewahrungsrichtlinien sind hierfür nicht erforderlich.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-ai-secure-enterprise-other/data-loss-prevention-ai",
+    "source": {
+      "title": "Protect sensitive data in AI apps with Microsoft Purview DLP",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-secure-enterprise-other/data-loss-prevention-ai",
+      "quote": "This configuration includes both a Purview DLP policy and a Microsoft Edge browser policy deployed through the Microsoft Edge Management Service. The user must be in scope of both the DLP policy and the Microsoft Edge configuration profile for protections to apply."
+    }
+  },
+  {
+    "id": "scb7-028",
+    "type": "single-choice",
+    "skillArea": "risks",
+    "topic": "Collection policy prerequisite",
+    "difficulty": "easy",
+    "prompt": "Your organization wants to apply retention policies to prompts and responses from consumer AI tools. What must happen before retention can apply to this content?",
+    "options": [
+      { "id": "a", "text": "The AI interactions must be captured by a collection policy that copies them into the user's Exchange mailbox" },
+      { "id": "b", "text": "The AI tool must be added as a connected app in Microsoft Defender for Cloud Apps" },
+      { "id": "c", "text": "Users must manually forward their AI conversations to a compliance mailbox" },
+      { "id": "d", "text": "An eDiscovery hold must be placed on all user mailboxes" }
+    ],
+    "correct": "a",
+    "explanation": "Aufbewahrungsrichtlinien können nur auf Inhalte wirken, die zuvor durch eine Collection Policy erfasst und in das Exchange-Postfach des Benutzers kopiert wurden. Erst dann liegen die KI-Interaktionen in den versteckten Ordnern, auf die Retention, Suche und Compliance-Prozesse zugreifen.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/purview-ai-secure-enterprise-other/retention-ai",
+    "source": {
+      "title": "Apply retention policies to AI app prompts and responses",
+      "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-secure-enterprise-other/retention-ai",
+      "quote": "AI interactions must be captured by a collection policy before retention can apply. The policy must be configured to copy message content into the user's mailbox for discovery and compliance."
+    }
+  }
+]
