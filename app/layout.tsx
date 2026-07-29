@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist_Mono, Inter, Sora } from "next/font/google";
 import { getAuthService, isAuthEnabled } from "@/lib/auth";
+import { Analytics } from "@vercel/analytics/next";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { brandCssVariables, getTenant } from "@/lib/tenants/config";
@@ -102,6 +103,8 @@ export default async function RootLayout({
         />
         <div className="flex-1">{children}</div>
         <SiteFooter />
+        {/* Vercel Web Analytics — anonymisierte Seitenaufrufe, keine Cookies */}
+        <Analytics />
       </body>
     </html>
   );

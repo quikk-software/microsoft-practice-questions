@@ -33,9 +33,9 @@ export default function DatenschutzPage() {
           nutzen möchten.
         </p>
         <p>
-          Wir setzen keine Tracking- oder Werbe-Cookies ein und binden keine
-          Analyse-Dienste von Drittanbietern ein, die ein Profil über Sie
-          erstellen.
+          Wir setzen keine Tracking- oder Werbe-Cookies ein. Zur Reichweiten&shy;messung
+          nutzen wir ein cookiefreies Verfahren, das keine Profile über einzelne
+          Personen bildet (siehe Abschnitt 7).
         </p>
       </LegalSection>
 
@@ -173,7 +173,34 @@ export default function DatenschutzPage() {
         </p>
       </LegalSection>
 
-      <LegalSection title="7. Speicherdauer und Löschung">
+      <LegalSection title="7. Reichweitenmessung (Vercel Web Analytics)">
+        <p>
+          Zur Auswertung der Nutzung unseres Angebots setzen wir Vercel Web
+          Analytics ein, einen Dienst der Vercel Inc., 340 S Lemon Ave #4133,
+          Walnut, CA 91789, USA. Erfasst werden aggregierte Kennzahlen wie
+          aufgerufene Seiten, Referrer, ungefähre geografische Herkunft auf
+          Länderebene sowie Angaben zu Gerätetyp, Betriebssystem und Browser.
+        </p>
+        <p>
+          Vercel Web Analytics arbeitet <strong>ohne Cookies</strong> und ohne
+          dauerhafte Kennung im Browser. Zur Unterscheidung von Besuchen wird ein
+          nicht umkehrbarer Hash-Wert gebildet, der unter anderem aus der
+          IP-Adresse abgeleitet und täglich verworfen wird. Die IP-Adresse selbst
+          wird nicht gespeichert, es werden keine geräteübergreifenden Profile
+          gebildet und die Daten werden nicht zu Werbezwecken genutzt.
+        </p>
+        <p>
+          Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse
+          an einer bedarfsgerechten Gestaltung und Verbesserung unseres
+          Angebots). Da keine Informationen auf Ihrem Endgerät gespeichert oder
+          ausgelesen werden, ist keine Einwilligung nach § 25 TDDDG erforderlich.
+          Mit Vercel besteht ein Auftragsverarbeitungsvertrag; für die
+          Übermittlung in die USA gelten die EU-Standardvertragsklauseln bzw. das
+          EU-US Data Privacy Framework.
+        </p>
+      </LegalSection>
+
+      <LegalSection title="8. Speicherdauer und Löschung">
         <p>
           Server-Logfiles werden vom Hosting-Anbieter nach kurzer Zeit
           automatisch gelöscht. Kontodaten, Prüfungsverlauf und KI-Einstellungen
@@ -188,7 +215,7 @@ export default function DatenschutzPage() {
         </p>
       </LegalSection>
 
-      <LegalSection title="8. Ihre Rechte">
+      <LegalSection title="9. Ihre Rechte">
         <p>Sie haben jederzeit das Recht auf</p>
         <ul className="ml-5 list-disc space-y-1">
           <li>
@@ -216,7 +243,7 @@ export default function DatenschutzPage() {
         </p>
       </LegalSection>
 
-      <LegalSection title="9. SSL- bzw. TLS-Verschlüsselung">
+      <LegalSection title="10. SSL- bzw. TLS-Verschlüsselung">
         <p>
           Diese Website nutzt aus Sicherheitsgründen und zum Schutz der
           Übertragung vertraulicher Inhalte eine SSL- bzw. TLS-Verschlüsselung.
@@ -225,7 +252,7 @@ export default function DatenschutzPage() {
         </p>
       </LegalSection>
 
-      <LegalSection title="10. Änderungen dieser Datenschutzerklärung">
+      <LegalSection title="11. Änderungen dieser Datenschutzerklärung">
         <p>
           Wir passen diese Datenschutzerklärung an, sobald Änderungen an unserem
           Angebot oder an der Rechtslage dies erforderlich machen. Es gilt jeweils
