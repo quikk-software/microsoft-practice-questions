@@ -27,10 +27,30 @@ export interface TenantTheme {
   };
 }
 
+/** Pflichtangaben für Impressum & Datenschutz (pro Mandant) */
+export interface TenantLegal {
+  /** Vollständige Firmierung inkl. Rechtsform */
+  company: string;
+  street: string;
+  zip: string;
+  city: string;
+  country?: string;
+  /** Geschäftsführung / vertretungsberechtigte Person(en) */
+  representedBy: string;
+  email: string;
+  phone?: string;
+  register?: { court: string; number: string };
+  vatId?: string;
+  /** Verantwortlich i. S. d. § 18 Abs. 2 MStV (falls abweichend) */
+  contentResponsible?: string;
+}
+
 export interface Tenant {
   id: string;
   /** Anzeigename des Betreibers (Logo-Alt, Footer, …) */
   name: string;
+  /** Ohne Angabe zeigen die Rechtstexte einen Platzhalter-Hinweis */
+  legal?: TenantLegal;
   /** Hosts, die diesen Mandanten aktivieren (ohne Protokoll) */
   hosts: string[];
   logo: {
@@ -78,6 +98,18 @@ const QUIKK: Tenant = {
   name: "QUIKK Software GmbH",
   hosts: ["microsoft-practice-exams.quikk.de"],
   logo: { light: "/quikk/logo_dark.svg", dark: "/quikk/logo_light.svg" },
+  legal: {
+    company: "QUIKK Software GmbH",
+    street: "Hahler Straße 285",
+    zip: "32427",
+    city: "Minden",
+    country: "Deutschland",
+    representedBy: "Joyce Marvin Rafflenbeul",
+    email: "info@quikk.de",
+    register: { court: "Amtsgericht Bad Oeynhausen", number: "HRB 17559" },
+    vatId: "DE339709992",
+    contentResponsible: "Joyce Marvin Rafflenbeul",
+  },
   productName: "Practice Exams",
   siteTitle: "Microsoft Practice Exams — kostenlose Test-Examen",
   siteDescription:

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist_Mono, Inter, Sora } from "next/font/google";
 import { getAuthService, isAuthEnabled } from "@/lib/auth";
 import { SiteHeader } from "@/components/SiteHeader";
+import { SiteFooter } from "@/components/SiteFooter";
 import { brandCssVariables, getTenant } from "@/lib/tenants/config";
 import "./globals.css";
 
@@ -99,7 +100,8 @@ export default async function RootLayout({
             logo: tenant.logo,
           }}
         />
-        {children}
+        <div className="flex-1">{children}</div>
+        <SiteFooter />
       </body>
     </html>
   );
