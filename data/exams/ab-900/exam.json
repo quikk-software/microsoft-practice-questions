@@ -3,6 +3,39 @@
   "code": "AB-900",
   "title": "Microsoft 365 Certified: Copilot and Agent Administration Fundamentals",
   "description": "Demonstrate how to support, secure, and protect an AI-enabled Microsoft 365 environment. Umfasst M365-Kernservices, Sicherheit, Datenschutz & Governance (Purview) sowie die Administration von Microsoft 365 Copilot und Agents.",
+  "seo": {
+    "intro": [
+      "Die AB-900 ist Microsofts Fundamentals-Zertifizierung rund um die Administration von Microsoft 365 Copilot und Agents. Geprüft wird, ob du eine KI-gestützte Microsoft-365-Umgebung unterstützen, absichern und schützen kannst — von den Kernobjekten der M365-Dienste über Datenschutz und Governance mit Microsoft Purview bis zu den administrativen Aufgaben für Copilot und Agents.",
+      "Die Prüfung richtet sich an Einsteiger mit Grundverständnis von Microsoft 365: Du solltest die gängigen Admin Center kennen (Microsoft 365, Exchange, SharePoint, Teams, Entra, Purview), wissen, wie Benutzer, Gruppen, Teams und Websites zusammenhängen, und die zentralen Sicherheitsfunktionen wie Authentifizierungsmethoden, Richtlinien für bedingten Zugriff und Single Sign-On einordnen können.",
+      "Unsere Test-Examen ziehen bei jedem Durchlauf eine neue Fragenkombination aus dem Pool — leichte Fragen zuerst, schwierigere später. Nach jeder Antwort siehst du sofort, ob sie richtig war, bekommst eine Erklärung auf Deutsch und den belegenden Textausschnitt aus dem offiziellen Lernpfad. Am Ende erhältst du eine Auswertung auf der 1000-Punkte-Skala mit Aufschlüsselung nach Skill-Bereichen."
+    ],
+    "faq": [
+      {
+        "question": "Wie viele Fragen hat die AB-900-Prüfung?",
+        "answer": "Microsoft-Fundamentals-Prüfungen umfassen üblicherweise 40 bis 60 Fragen. Unser Test-Examen stellt 40 Fragen zusammen und bildet damit den Umfang eines realistischen Prüfungsdurchlaufs ab."
+      },
+      {
+        "question": "Wie lange dauert die AB-900?",
+        "answer": "Für die AB-900 stehen 45 Minuten zur Verfügung. Unsere Test-Examen orientieren sich an dieser Vorgabe, laufen aber ohne Zeitdruck, damit du in Ruhe die Erklärungen lesen kannst."
+      },
+      {
+        "question": "Wie viele Punkte braucht man zum Bestehen?",
+        "answer": "Zum Bestehen ist ein Score von 700 von 1000 Punkten nötig. Diese Grenze gilt für alle Microsoft-Zertifizierungsprüfungen und wird auch in unserer Auswertung angewendet."
+      },
+      {
+        "question": "Welche Fragetypen kommen in der Prüfung vor?",
+        "answer": "Microsoft setzt verschiedene Formate ein: Single Choice, Multiple Response, Ja/Nein-Serien, Reihenfolge-Aufgaben (Build List), Zuordnungen per Drag-and-Drop sowie Satzergänzungen mit Auswahllisten. Alle diese Typen sind in unserem Fragen-Pool enthalten."
+      },
+      {
+        "question": "Ist die AB-900 schwer?",
+        "answer": "Als Fundamentals-Prüfung setzt die AB-900 kein Expertenwissen voraus, verlangt aber sicheres Verständnis der Microsoft-365-Grundlagen und der Copilot-Administration. Anspruchsvoll sind vor allem Fragen, die zwei ähnliche Konzepte gegeneinander abgrenzen — etwa App-Registrierung gegenüber Unternehmensanwendung oder Aufbewahrungsrichtlinie gegenüber Aufbewahrungsbezeichnung."
+      },
+      {
+        "question": "Kostet dieses Test-Examen etwas?",
+        "answer": "Nein. Die Test-Examen sind kostenlos und ohne Anmeldung nutzbar. Ein Konto brauchst du nur, wenn du deinen Prüfungsverlauf speichern oder die KI-Erklärungen mit deinem eigenen API-Key nutzen möchtest."
+      }
+    ]
+  },
   "questionCount": 40,
   "durationMinutes": 45,
   "passScore": 700,

@@ -3,6 +3,43 @@
   "code": "SC-401",
   "title": "Microsoft Certified: Information Security Administrator Associate",
   "description": "Administering Information Security in Microsoft 365. Umfasst Microsoft Purview Information Protection (Klassifizierung, Sensitivity Labels, Verschlüsselung), Data Loss Prevention & Retention sowie Insider Risk Management, Audit, eDiscovery und den Schutz von Daten in KI-Umgebungen (DSPM for AI).",
+  "seo": {
+    "intro": [
+      "Die SC-401 ist Microsofts Associate-Zertifizierung für Information Security Administratoren. Im Mittelpunkt steht der Schutz sensibler Daten mit Microsoft Purview: Du planst und implementierst Informationsschutz, Verhinderung von Datenverlust (DLP) und Aufbewahrung, verwaltest Insider-Risiken und sicherst Daten ab, die von KI-Diensten verarbeitet werden.",
+      "Die Prüfung richtet sich an Praktiker, die bereits mit Microsoft 365, PowerShell, Microsoft Entra, dem Defender-Portal und Defender for Cloud Apps arbeiten. Erwartet wird, dass du Anforderungen an den Schutz sensibler Daten in konkrete Konfigurationen übersetzen kannst — von benutzerdefinierten Typen für vertrauliche Informationen über Vertraulichkeitsbezeichnungen und Endpoint DLP bis zu Richtlinien im Insider Risk Management.",
+      "Weil die SC-401 deutlich tiefer geht als eine Fundamentals-Prüfung, sind unsere Fragen überwiegend szenariobasiert: Du entscheidest, welches Werkzeug für eine Anforderung das richtige ist, in welcher Reihenfolge Schritte ablaufen und wie sich Richtlinien gegenseitig beeinflussen. Nach jeder Antwort gibt es eine Erklärung auf Deutsch und den belegenden Textausschnitt aus dem offiziellen Lernpfad."
+    ],
+    "faq": [
+      {
+        "question": "Wie viele Fragen hat die SC-401-Prüfung?",
+        "answer": "Microsoft-Associate-Prüfungen umfassen typischerweise 40 bis 60 Fragen. Unser Test-Examen stellt 40 Fragen aus einem Pool von aktuell 184 Fragen zusammen, sodass sich jeder Durchlauf unterscheidet."
+      },
+      {
+        "question": "Wie lange dauert die SC-401?",
+        "answer": "Für die SC-401 sind 100 Minuten vorgesehen. Unsere Test-Examen bilden diesen Umfang ab, laufen aber ohne Zeitlimit, damit du die Erklärungen in Ruhe durcharbeiten kannst."
+      },
+      {
+        "question": "Wie viele Punkte braucht man zum Bestehen?",
+        "answer": "Wie bei allen Microsoft-Zertifizierungen sind 700 von 1000 Punkten zum Bestehen nötig. Unsere Auswertung nutzt dieselbe Skala und zeigt zusätzlich deine Leistung je Skill-Bereich."
+      },
+      {
+        "question": "Welche Themen werden geprüft?",
+        "answer": "Die Prüfung verteilt sich auf drei etwa gleich gewichtete Bereiche: Informationsschutz umsetzen (30–35 %), Verhinderung von Datenverlust und Aufbewahrung umsetzen (30–35 %) sowie Risiken, Warnungen und Aktivitäten verwalten (30–35 %). Letzterer Bereich enthält auch den Schutz von Daten, die von KI-Diensten genutzt werden."
+      },
+      {
+        "question": "Welche Vorkenntnisse brauche ich für die SC-401?",
+        "answer": "Du solltest Microsoft 365 sicher bedienen, Grundkenntnisse in PowerShell mitbringen und mit Microsoft Entra, dem Microsoft-Defender-Portal sowie Microsoft Defender for Cloud Apps vertraut sein. Praxiserfahrung mit Microsoft Purview hilft besonders bei den szenariobasierten Fragen."
+      },
+      {
+        "question": "Ersetzt die SC-401 die SC-400?",
+        "answer": "Die SC-401 ist die Nachfolgerin der früheren SC-400 (Information Protection and Compliance Administrator). Der Fokus wurde erweitert, unter anderem um den Schutz von Daten in KI-Umgebungen mit Data Security Posture Management für KI."
+      },
+      {
+        "question": "Kostet dieses Test-Examen etwas?",
+        "answer": "Nein. Die Test-Examen sind kostenlos und ohne Anmeldung nutzbar. Ein Konto brauchst du nur für den gespeicherten Prüfungsverlauf und die KI-Erklärungen mit deinem eigenen API-Key."
+      }
+    ]
+  },
   "questionCount": 40,
   "durationMinutes": 100,
   "passScore": 700,

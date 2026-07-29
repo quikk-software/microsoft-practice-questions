@@ -23,10 +23,19 @@ export interface SkillArea {
   weight: number;
 }
 
+/** Redaktionelle Inhalte für die öffentliche Examen-Seite (SEO) */
+export interface ExamSeo {
+  /** Eigener Einleitungstext (2–4 Absätze, kein fremder Content) */
+  intro?: string[];
+  /** FAQ-Einträge; werden zusätzlich als FAQPage-JSON-LD ausgegeben */
+  faq?: { question: string; answer: string }[];
+}
+
 export interface ExamConfig {
   slug: string;
   /** Unveröffentlichte Examen sind nur im Admin sichtbar; fehlend = veröffentlicht */
   published?: boolean;
+  seo?: ExamSeo;
   code: string;
   title: string;
   description: string;
@@ -53,6 +62,8 @@ interface QuestionBase {
   source?: { title: string; url: string; quote?: string };
   /** Entwurfs-Status (Admin); fehlend = published */
   status?: "draft" | "published";
+  /** Als öffentliche Beispielfrage auf der Examen-Seite zeigen (SEO) */
+  sample?: boolean;
 }
 
 export interface SingleChoiceQuestion extends QuestionBase {
