@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { GraduationCap, Shuffle } from "lucide-react";
 import { getRepository } from "@/lib/data";
 
 export const dynamic = "force-dynamic";
@@ -16,7 +17,38 @@ export default async function Home() {
         und AI-Erklärungen für jede Antwort.
       </p>
 
-      <div className="mt-10 grid gap-4">
+      {exams.length > 0 && (
+        <Link
+          href="/lernen"
+          className="group mt-10 flex items-start gap-4 rounded-xl border border-brand-200 bg-brand-50/60 p-5 transition hover:border-brand-400 dark:border-brand-900 dark:bg-brand-950/30"
+        >
+          <GraduationCap
+            className="mt-0.5 h-6 w-6 shrink-0 text-brand-600 dark:text-brand-400"
+            aria-hidden
+          />
+          <span className="flex-1">
+            <span className="block font-semibold group-hover:text-brand-700 dark:group-hover:text-brand-400">
+              Lern-Modus
+            </span>
+            <span className="mt-1 block text-sm text-zinc-600 dark:text-zinc-400">
+              Alle{" "}
+              {exams.reduce((sum, e) => sum + e.questions.length, 0)} Fragen in
+              zufälliger Reihenfolge — Examen kombinierbar, Schwierigkeit
+              filterbar, ohne Prüfungslänge.
+            </span>
+          </span>
+          <Shuffle
+            className="mt-1 h-4 w-4 shrink-0 text-zinc-400 transition group-hover:text-brand-600"
+            aria-hidden
+          />
+        </Link>
+      )}
+
+      <h2 className="mt-10 text-sm font-semibold text-zinc-500">
+        Test-Examen nach Zertifizierung
+      </h2>
+
+      <div className="mt-3 grid gap-4">
         {exams.map(({ config, questions }) => {
           const byDiff = {
             easy: questions.filter((q) => q.difficulty === "easy").length,

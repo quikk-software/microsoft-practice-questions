@@ -27,6 +27,12 @@ export function SiteFooter() {
               Alle Examen
             </Link>
             <Link
+              href="/lernen"
+              className="text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
+            >
+              Lern-Modus
+            </Link>
+            <Link
               href="/rechtliches/impressum"
               className="text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
             >
