@@ -14,7 +14,7 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
-import { getCachedSession } from "@/lib/offline/session";
+import { clearCachedSession, getCachedSession } from "@/lib/offline/session";
 
 // Schlanke, responsive Kopfzeile: links Logo, rechts Theme-Toggle + Benutzer-Menü.
 // Alle User-Aktionen (Meine Prüfungen, AI-Setup, Admin, Abmelden) liegen im
@@ -117,6 +117,8 @@ function UserMenu({
     setBusy(true);
     try {
       await fetch("/api/auth/logout", { method: "POST" });
+      // Einziger Ort, an dem der Offline-Marker verschwindet — siehe SessionMarker
+      clearCachedSession();
       setOpen(false);
       router.push("/");
       router.refresh();

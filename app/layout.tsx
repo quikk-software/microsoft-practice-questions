@@ -29,6 +29,10 @@ const geistMono = Geist_Mono({
 const tenant = getTenant();
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 
+// Kennung des aktuellen Builds für die Service-Worker-Registrierung. Auf Vercel
+// der Commit-SHA, lokal ein Platzhalter (dort ist der Worker ohnehin aus).
+const buildId = process.env.VERCEL_GIT_COMMIT_SHA?.slice(0, 8) ?? "dev";
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
@@ -107,7 +111,7 @@ export default async function RootLayout({
         <SiteFooter />
         {/* Vercel Web Analytics — anonymisierte Seitenaufrufe, keine Cookies */}
         <Analytics />
-        <ServiceWorkerRegistrar />
+        <ServiceWorkerRegistrar version={buildId} />
         <SessionMarker email={user?.email ?? null} />
       </body>
     </html>
