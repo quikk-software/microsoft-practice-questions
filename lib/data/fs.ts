@@ -11,6 +11,7 @@ import type {
   DataRepository,
   ExamBundle,
   ExamSessionRecord,
+  LearnProgressEntry,
   RetrievedChunk,
 } from "./port";
 
@@ -22,6 +23,7 @@ const DATA_DIR = path.join(process.cwd(), "data", "exams");
 const ATTEMPTS_DIR = path.join(process.cwd(), "data", "attempts");
 const AI_SETTINGS_DIR = path.join(process.cwd(), "data", "ai-settings");
 const EXAM_SESSIONS_DIR = path.join(process.cwd(), "data", "exam-sessions");
+const LEARN_PROGRESS_DIR = path.join(process.cwd(), "data", "learn-progress");
 
 function safeId(s: string): string {
   return s.replace(/[^a-zA-Z0-9-]/g, "_");
@@ -312,6 +314,78 @@ export class FsRepository implements DataRepository {
 
   async deleteExamSession(userId: string, examSlug: string): Promise<void> {
     fs.rmSync(this.examSessionPath(userId, examSlug), { force: true });
+  }
+
+  // ---- Lern-Fortschritt (Datei pro User, Dev-Modus) ----
+
+  private learnProgressPath(userId: string) {
+    return path.join(LEARN_PROGRESS_DIR, `${safeId(userId)}.json`);
+  }
+
+  private readLearnProgress(userId: string): LearnProgressEntry[] {
+    const p = this.learnProgressPath(userId);
+    if (!fs.existsSync(p)) return [];
+    return JSON.parse(fs.readFileSync(p, "utf-8")) as LearnProgressEntry[];
+  }
+
+  async getLearnProgress(
+    userId: string,
+    examSlugs?: string[]
+  ): Promise<LearnProgressEntry[]> {
+    const all = this.readLearnProgress(userId);
+    return examSlugs?.length
+      ? all.filter((e) => examSlugs.includes(e.examSlug))
+      : all;
+  }
+
+  async recordLearnAnswers(
+    userId: string,
+    entries: { examSlug: string; questionId: string; score: number }[]
+  ): Promise<void> {
+    const all = this.readLearnProgress(userId);
+    const byId = new Map(all.map((e) => [e.questionId, e]));
+    const now = new Date().toISOString();
+    for (const entry of entries) {
+      const existing = byId.get(entry.questionId);
+      if (existing) {
+        existing.lastScore = entry.score;
+        existing.timesSeen += 1;
+        existing.timesCorrect += entry.score === 1 ? 1 : 0;
+        existing.lastAnsweredAt = now;
+      } else {
+        byId.set(entry.questionId, {
+          examSlug: entry.examSlug,
+          questionId: entry.questionId,
+          lastScore: entry.score,
+          timesSeen: 1,
+          timesCorrect: entry.score === 1 ? 1 : 0,
+          lastAnsweredAt: now,
+        });
+      }
+    }
+    fs.mkdirSync(LEARN_PROGRESS_DIR, { recursive: true });
+    fs.writeFileSync(
+      this.learnProgressPath(userId),
+      JSON.stringify([...byId.values()], null, 2)
+    );
+  }
+
+  async resetLearnProgress(
+    userId: string,
+    examSlugs?: string[]
+  ): Promise<void> {
+    if (!examSlugs?.length) {
+      fs.rmSync(this.learnProgressPath(userId), { force: true });
+      return;
+    }
+    const rest = this.readLearnProgress(userId).filter(
+      (e) => !examSlugs.includes(e.examSlug)
+    );
+    fs.mkdirSync(LEARN_PROGRESS_DIR, { recursive: true });
+    fs.writeFileSync(
+      this.learnProgressPath(userId),
+      JSON.stringify(rest, null, 2)
+    );
   }
 
   // ---- BYOK: AI-Einstellungen als Datei pro User (Dev-Modus) ----

@@ -23,5 +23,9 @@
 			"sizes": "96x96",
 			"type": "image/png"
 		}
-	]
+	],
+	"id": "/",
+	"scope": "/",
+	"description": "Kostenlose Test-Examen für Microsoft-Zertifizierungen mit Sofort-Feedback und Lern-Modus.",
+	"lang": "de"
 }

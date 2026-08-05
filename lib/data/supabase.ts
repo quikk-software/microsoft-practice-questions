@@ -9,6 +9,7 @@ import type {
   DataRepository,
   ExamBundle,
   ExamSessionRecord,
+  LearnProgressEntry,
   ReadOptions,
   RetrievedChunk,
 } from "./port";
@@ -297,6 +298,96 @@ export class SupabaseRepository implements DataRepository {
       .eq("user_id", userId)
       .eq("exam_slug", examSlug);
     if (error) fail("deleteExamSession", error);
+  }
+
+  // ---- Lern-Fortschritt (learn_progress) ----
+
+  async getLearnProgress(
+    userId: string,
+    examSlugs?: string[]
+  ): Promise<LearnProgressEntry[]> {
+    let query = this.supabase
+      .from("learn_progress")
+      .select(
+        "exam_slug, question_id, last_score, times_seen, times_correct, last_answered_at"
+      )
+      .eq("user_id", userId);
+    if (examSlugs?.length) query = query.in("exam_slug", examSlugs);
+    const { data, error } = await query;
+    if (error) fail("getLearnProgress", error);
+    return (
+      (data ?? []) as {
+        exam_slug: string;
+        question_id: string;
+        last_score: number;
+        times_seen: number;
+        times_correct: number;
+        last_answered_at: string;
+      }[]
+    ).map((r) => ({
+      examSlug: r.exam_slug,
+      questionId: r.question_id,
+      lastScore: Number(r.last_score),
+      timesSeen: r.times_seen,
+      timesCorrect: r.times_correct,
+      lastAnsweredAt: r.last_answered_at,
+    }));
+  }
+
+  async recordLearnAnswers(
+    userId: string,
+    entries: { examSlug: string; questionId: string; score: number }[]
+  ): Promise<void> {
+    if (entries.length === 0) return;
+
+    // Bestehende Zähler laden, um timesSeen/timesCorrect zu addieren
+    const ids = entries.map((e) => e.questionId);
+    const { data: existingRows, error: readError } = await this.supabase
+      .from("learn_progress")
+      .select("question_id, times_seen, times_correct")
+      .eq("user_id", userId)
+      .in("question_id", ids);
+    if (readError) fail("recordLearnAnswers/read", readError);
+
+    const existing = new Map(
+      ((existingRows ?? []) as {
+        question_id: string;
+        times_seen: number;
+        times_correct: number;
+      }[]).map((r) => [r.question_id, r])
+    );
+
+    const now = new Date().toISOString();
+    const rows = entries.map((e) => {
+      const prev = existing.get(e.questionId);
+      return {
+        user_id: userId,
+        exam_slug: e.examSlug,
+        question_id: e.questionId,
+        last_score: e.score,
+        times_seen: (prev?.times_seen ?? 0) + 1,
+        times_correct: (prev?.times_correct ?? 0) + (e.score === 1 ? 1 : 0),
+        last_answered_at: now,
+      };
+    });
+
+    const { error } = await this.supabase
+      .from("learn_progress")
+      .upsert(rows, { onConflict: "user_id,question_id" });
+    if (error) fail("recordLearnAnswers/upsert", error);
+  }
+
+  async resetLearnProgress(
+    userId: string,
+    examSlugs?: string[]
+  ): Promise<void> {
+    let query = this.supabase
+      .from("learn_progress")
+      .delete()
+      .eq("user_id", userId);
+    if (examSlugs?.length) query = query.in("exam_slug", examSlugs);
+    const { error } = await query;
+    if (error) fail("resetLearnProgress", error);
   }
 
   // ---- BYOK: ai_settings ----

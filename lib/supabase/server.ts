@@ -7,8 +7,16 @@ import { cookies } from "next/headers";
 //
 // - createServiceClient(): Service-Role-Key, umgeht RLS bewusst.
 //   Für Datenpflege (DataRepository) und Rollen-Lookup (profiles).
-// - createSessionClient(): Cookie-basierte User-Session via @supabase/ssr.
-//   Für Auth-Flows (AuthService).
+// - createReadSessionClient(): NUR LESEN, refresht bewusst nicht (s. u.).
+// - createWritableSessionClient(): für echte Auth-Aktionen (Login, Logout, …).
+//
+// WARUM DIE TRENNUNG — sonst fliegt man sporadisch aus der Session:
+// Refresh-Tokens werden von Supabase bei jedem Refresh rotiert. Server
+// Components dürfen keine Cookies schreiben; refresht dort ein Client, geht das
+// neue Token verloren, während Supabase bereits rotiert hat. Der nächste
+// Request sendet dann ein verbrauchtes Token -> Reuse-Detection -> die ganze
+// Token-Familie wird invalidiert -> Logout. Deshalb refresht ausschließlich der
+// Proxy (proxy.ts), der die rotierten Cookies auch wirklich speichern kann.
 
 function requireEnv(name: string, fallbackName?: string): string {
   const value =
@@ -32,8 +40,34 @@ export function createServiceClient(): SupabaseClient {
   });
 }
 
-/** Client mit Anon-Key + Session-Cookies des aktuellen Requests (Next 16: cookies() ist async). */
-export async function createSessionClient(): Promise<SupabaseClient> {
+/**
+ * Nur-Lese-Client für Server Components und Routen, die lediglich den
+ * aktuellen User brauchen. Refresht NICHT — die Cookies wurden unmittelbar
+ * vorher vom Proxy aktualisiert (siehe Kommentar oben).
+ */
+export async function createReadSessionClient(): Promise<SupabaseClient> {
+  const url = requireEnv("NEXT_PUBLIC_SUPABASE_URL", "SUPABASE_URL");
+  const anonKey = requireEnv("NEXT_PUBLIC_SUPABASE_ANON_KEY");
+  const cookieStore = await cookies();
+
+  return createServerClient(url, anonKey, {
+    auth: { autoRefreshToken: false, persistSession: false },
+    cookies: {
+      getAll() {
+        return cookieStore.getAll();
+      },
+      // Absichtlich leer: dieser Client soll keine Session-Cookies verändern.
+      setAll() {},
+    },
+  });
+}
+
+/**
+ * Schreibender Client für echte Auth-Aktionen (Login, Registrierung, Logout,
+ * Passwort-Reset, OAuth-Callback). Nur in Route Handlern verwenden — dort
+ * dürfen Cookies gesetzt werden.
+ */
+export async function createWritableSessionClient(): Promise<SupabaseClient> {
   const url = requireEnv("NEXT_PUBLIC_SUPABASE_URL", "SUPABASE_URL");
   const anonKey = requireEnv("NEXT_PUBLIC_SUPABASE_ANON_KEY");
   const cookieStore = await cookies();
@@ -48,9 +82,13 @@ export async function createSessionClient(): Promise<SupabaseClient> {
           for (const { name, value, options } of cookiesToSet) {
             cookieStore.set(name, value, options);
           }
-        } catch {
-          // In Server Components darf nicht geschrieben werden — Middleware/Route
-          // Handler übernehmen das Session-Refresh; hier bewusst ignorieren.
+        } catch (e) {
+          // Sollte in Route Handlern nicht passieren — wenn doch, ist eine
+          // Session-Rotation verloren gegangen: sichtbar machen statt schlucken.
+          console.warn(
+            "[supabase] Session-Cookies konnten nicht geschrieben werden:",
+            e instanceof Error ? e.message : e
+          );
         }
       },
     },

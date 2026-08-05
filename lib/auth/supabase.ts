@@ -2,11 +2,20 @@ import "server-only";
 import type { User } from "@supabase/supabase-js";
 import type { AppUser, AuthService, Role } from "./port";
 import { AuthError } from "./port";
-import { createServiceClient, createSessionClient } from "@/lib/supabase/server";
+import {
+  createReadSessionClient,
+  createServiceClient,
+  createWritableSessionClient,
+} from "@/lib/supabase/server";
 import { getTenant } from "@/lib/tenants/config";
 
 // Supabase-Treiber für den Auth-Port (AUTH_DRIVER=supabase).
 // Session via Cookies (@supabase/ssr); Rollen kommen aus public.profiles.
+//
+// getCurrentUser() nutzt den Nur-Lese-Client (kein Token-Refresh, siehe
+// lib/supabase/server.ts) — sonst gehen rotierte Refresh-Tokens in Server
+// Components verloren und die Session wird serverseitig invalidiert.
+// Alle schreibenden Auth-Aktionen laufen über den schreibenden Client.
 
 function siteUrl(): string {
   return process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
@@ -42,7 +51,8 @@ async function toAppUser(user: User): Promise<AppUser> {
 export class SupabaseAuthService implements AuthService {
   async getCurrentUser(): Promise<AppUser | null> {
     try {
-      const supabase = await createSessionClient();
+      // Nur lesen — refresht bewusst nicht (verhindert Token-Rotation ins Leere)
+      const supabase = await createReadSessionClient();
       const { data, error } = await supabase.auth.getUser();
       if (error || !data.user) return null;
       return await toAppUser(data.user);
@@ -55,7 +65,7 @@ export class SupabaseAuthService implements AuthService {
     email: string,
     password: string
   ): Promise<{ needsEmailConfirmation: boolean }> {
-    const supabase = await createSessionClient();
+    const supabase = await createWritableSessionClient();
     const { data, error } = await supabase.auth.signUp({
       email,
       password,
@@ -71,7 +81,7 @@ export class SupabaseAuthService implements AuthService {
   }
 
   async signInWithPassword(email: string, password: string): Promise<AppUser> {
-    const supabase = await createSessionClient();
+    const supabase = await createWritableSessionClient();
     const { data, error } = await supabase.auth.signInWithPassword({
       email,
       password,
@@ -92,13 +102,13 @@ export class SupabaseAuthService implements AuthService {
   }
 
   async signOut(): Promise<void> {
-    const supabase = await createSessionClient();
+    const supabase = await createWritableSessionClient();
     const { error } = await supabase.auth.signOut();
     if (error) throw new AuthError(error.message, error.code ?? "auth-error");
   }
 
   async requestPasswordReset(email: string): Promise<void> {
-    const supabase = await createSessionClient();
+    const supabase = await createWritableSessionClient();
     const { error } = await supabase.auth.resetPasswordForEmail(email, {
       redirectTo: `${siteUrl()}/auth/callback?next=/reset-password`,
     });
@@ -106,7 +116,7 @@ export class SupabaseAuthService implements AuthService {
   }
 
   async updatePassword(newPassword: string): Promise<void> {
-    const supabase = await createSessionClient();
+    const supabase = await createWritableSessionClient();
     const { error } = await supabase.auth.updateUser({ password: newPassword });
     if (error) throw new AuthError(error.message, error.code ?? "auth-error");
   }

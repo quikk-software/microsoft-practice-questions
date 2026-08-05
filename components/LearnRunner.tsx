@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import {
   ChevronLeft,
@@ -11,8 +11,11 @@ import {
   SlidersHorizontal,
 } from "lucide-react";
 import type { Answer, Difficulty, PublicQuestion, Question } from "@/lib/types";
+import { gradeQuestion, stripAnswers } from "@/lib/engine";
+import { loadBundle, queueAnswer, type OfflineBundle } from "@/lib/offline/db";
 import { QuestionView } from "./QuestionView";
 import { AnswerFeedback } from "./AnswerFeedback";
+import { OfflineCard } from "./OfflineCard";
 
 // Lern-Modus: alle Fragen der gewählten Examen in zufälliger Reihenfolge,
 // ohne Prüfungs-Umfang und ohne Schwierigkeitskurve. Auswahl (Examen +
@@ -45,7 +48,21 @@ const DIFFICULTIES: { id: Difficulty; label: string; dot: string }[] = [
 
 const STORAGE_KEY = "learn-filter";
 
-export function LearnRunner({ exams }: { exams: ExamOption[] }) {
+type LearnMode = "all" | "open" | "wrong";
+
+interface ProgressEntry {
+  examSlug: string;
+  questionId: string;
+  lastScore: number;
+}
+
+export function LearnRunner({
+  exams,
+  signedIn,
+}: {
+  exams: ExamOption[];
+  signedIn: boolean;
+}) {
   const [phase, setPhase] = useState<"setup" | "loading" | "running" | "error">(
     "setup"
   );
@@ -62,6 +79,56 @@ export function LearnRunner({ exams }: { exams: ExamOption[] }) {
   const [answers, setAnswers] = useState<Record<string, Answer | null>>({});
   const [checks, setChecks] = useState<Record<string, CheckResult>>({});
   const [checking, setChecking] = useState(false);
+  const [progress, setProgress] = useState<ProgressEntry[]>([]);
+  const [resetting, setResetting] = useState(false);
+  const [offlineBundle, setOfflineBundle] = useState<OfflineBundle | null>(null);
+  const [usingOffline, setUsingOffline] = useState(false);
+  /** Lösungen aus dem Offline-Paket (nur gefüllt, wenn offline gearbeitet wird) */
+  const offlineSolutions = useRef<Map<string, Question>>(new Map());
+
+  // Gespeicherten Fortschritt laden (nur mit Login)
+  const loadProgress = useCallback(async () => {
+    if (!signedIn) return;
+    try {
+      const res = await fetch("/api/learn/progress");
+      if (!res.ok) return;
+      const data = (await res.json()) as { entries: ProgressEntry[] };
+      setProgress(data.entries ?? []);
+    } catch {
+      // Fortschritt ist Komfort — ohne ihn funktioniert der Lern-Modus trotzdem
+    }
+  }, [signedIn]);
+
+  useEffect(() => {
+    // Fetch-on-Mount: setState passiert erst nach dem await der Server-Antwort
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    void loadProgress();
+  }, [loadProgress]);
+
+  /** Antwort dauerhaft festhalten (gebündelt, Fehler bewusst still) */
+  const persistAnswer = (entry: {
+    examSlug: string;
+    questionId: string;
+    score: number;
+  }) => {
+    if (!signedIn) return;
+    setProgress((prev) => {
+      const rest = prev.filter((p) => p.questionId !== entry.questionId);
+      return [
+        ...rest,
+        {
+          examSlug: entry.examSlug,
+          questionId: entry.questionId,
+          lastScore: entry.score,
+        },
+      ];
+    });
+    void fetch("/api/learn/progress", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ entries: [entry] }),
+    }).catch(() => {});
+  };
 
   // Gemerkte Auswahl laden
   useEffect(() => {
@@ -102,32 +169,127 @@ export function LearnRunner({ exams }: { exams: ExamOption[] }) {
       0
     );
 
-  const start = useCallback(async () => {
-    setPhase("loading");
-    try {
-      const res = await fetch("/api/learn/session", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          examSlugs: selectedExams,
-          difficulties: selectedDiffs,
-        }),
-      });
-      if (!res.ok) throw new Error(await res.text());
-      const data = (await res.json()) as { questions: LearnQuestion[] };
-      setQuestions(data.questions);
+  /** Fragen aus dem lokalen Offline-Paket ziehen (ohne Netz). */
+  const startOffline = useCallback(
+    async (mode: LearnMode): Promise<boolean> => {
+      const bundle = await loadBundle();
+      if (!bundle) return false;
+
+      offlineSolutions.current = new Map();
+      const masteredIds = new Set(
+        progress.filter((p) => p.lastScore === 1).map((p) => p.questionId)
+      );
+      const wrongIds = new Set(
+        progress.filter((p) => p.lastScore < 1).map((p) => p.questionId)
+      );
+
+      const pool: LearnQuestion[] = [];
+      for (const exam of bundle.exams) {
+        if (!selectedExams.includes(exam.slug)) continue;
+        for (const q of exam.questions) {
+          if (!selectedDiffs.includes(q.difficulty)) continue;
+          if (mode === "open" && masteredIds.has(q.id)) continue;
+          if (mode === "wrong" && !wrongIds.has(q.id)) continue;
+          offlineSolutions.current.set(q.id, q);
+          pool.push({
+            examSlug: exam.slug,
+            examCode: exam.code,
+            question: stripAnswers(q),
+          });
+        }
+      }
+      // Fisher-Yates
+      for (let i = pool.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [pool[i], pool[j]] = [pool[j], pool[i]];
+      }
+      if (pool.length === 0) return false;
+
+      setQuestions(pool);
       setIndex(0);
       setAnswers({});
       setChecks({});
+      setUsingOffline(true);
       setPhase("running");
-    } catch {
-      setPhase("error");
-    }
-  }, [selectedExams, selectedDiffs]);
+      return true;
+    },
+    [selectedExams, selectedDiffs, progress]
+  );
+
+  const start = useCallback(
+    async (mode: LearnMode = "all") => {
+      setPhase("loading");
+      // Ohne Netz direkt aus dem Offline-Paket starten
+      if (typeof navigator !== "undefined" && !navigator.onLine) {
+        if (await startOffline(mode)) return;
+        setPhase("error");
+        return;
+      }
+      try {
+        const res = await fetch("/api/learn/session", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            examSlugs: selectedExams,
+            difficulties: selectedDiffs,
+            mode,
+          }),
+        });
+        if (!res.ok) throw new Error(await res.text());
+        const data = (await res.json()) as { questions: LearnQuestion[] };
+        setQuestions(data.questions);
+        setIndex(0);
+        setAnswers({});
+        setChecks({});
+        setUsingOffline(false);
+        setPhase("running");
+      } catch {
+        // Netzwerkfehler: als Fallback das Offline-Paket versuchen
+        if (await startOffline(mode)) return;
+        setPhase("error");
+      }
+    },
+    [selectedExams, selectedDiffs, startOffline]
+  );
+
+  /** Offline bewerten: gradeQuestion() ist eine reine Funktion und läuft im Client. */
+  const checkOffline = (item: LearnQuestion): CheckResult | null => {
+    const solution = offlineSolutions.current.get(item.question.id);
+    if (!solution) return null;
+    const answer = answers[item.question.id] ?? null;
+    const score = gradeQuestion(solution, answer);
+    return { score, correct: score === 1, question: solution };
+  };
+
+  const applyCheck = (item: LearnQuestion, check: CheckResult) => {
+    setChecks((prev) => ({ ...prev, [item.question.id]: check }));
+    persistAnswer({
+      examSlug: item.examSlug,
+      questionId: item.question.id,
+      score: check.score,
+    });
+  };
 
   const checkAnswer = async (item: LearnQuestion) => {
     setChecking(true);
     try {
+      // Offline (oder offline gestartet): lokal bewerten und Antwort einreihen
+      if (usingOffline || !navigator.onLine) {
+        const local = checkOffline(item);
+        if (local) {
+          applyCheck(item, local);
+          if (signedIn) {
+            void queueAnswer({
+              examSlug: item.examSlug,
+              questionId: item.question.id,
+              score: local.score,
+              answeredAt: new Date().toISOString(),
+            });
+          }
+          return;
+        }
+      }
+
       const res = await fetch("/api/learn/check", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -138,17 +300,46 @@ export function LearnRunner({ exams }: { exams: ExamOption[] }) {
         }),
       });
       if (!res.ok) throw new Error(await res.text());
-      const check = (await res.json()) as CheckResult;
-      setChecks((prev) => ({ ...prev, [item.question.id]: check }));
+      applyCheck(item, (await res.json()) as CheckResult);
     } catch {
-      // beim nächsten Klick erneut versuchen
+      // Netzwerkfehler: falls möglich lokal bewerten
+      const local = checkOffline(item);
+      if (local) applyCheck(item, local);
     } finally {
       setChecking(false);
     }
   };
 
+  // Fortschritts-Kennzahlen, auf die aktuelle Examen-Auswahl bezogen
+  const relevantProgress = progress.filter((p) =>
+    selectedExams.includes(p.examSlug)
+  );
+  const answeredCount = relevantProgress.length;
+  const masteredCount = relevantProgress.filter((p) => p.lastScore === 1).length;
+  const wrongCount = relevantProgress.filter((p) => p.lastScore < 1).length;
+
   // ---------- Setup ----------
   if (phase === "setup" || phase === "loading" || phase === "error") {
+    const openCount = Math.max(0, availableCount - masteredCount);
+
+    const resetProgress = async () => {
+      if (!confirm("Lernfortschritt für die gewählten Examen zurücksetzen?"))
+        return;
+      setResetting(true);
+      try {
+        await fetch("/api/learn/progress", {
+          method: "DELETE",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ examSlugs: selectedExams }),
+        });
+        setProgress((prev) =>
+          prev.filter((p) => !selectedExams.includes(p.examSlug))
+        );
+      } finally {
+        setResetting(false);
+      }
+    };
+
     const toggleExam = (slug: string) => {
       const next = selectedExams.includes(slug)
         ? selectedExams.filter((s) => s !== slug)
@@ -244,9 +435,38 @@ export function LearnRunner({ exams }: { exams: ExamOption[] }) {
           </p>
         </section>
 
-        <div className="mt-8 flex items-center gap-4">
+        {signedIn && answeredCount > 0 && (
+          <section className="mt-8 rounded-xl border border-zinc-200 bg-white p-5 dark:border-zinc-800 dark:bg-zinc-900/60">
+            <h2 className="text-sm font-semibold">Dein Fortschritt</h2>
+            <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
+              {answeredCount} von {availableCount} Fragen beantwortet ·{" "}
+              <span className="text-green-700 dark:text-green-400">
+                {masteredCount} richtig
+              </span>
+              {openCount > 0 && <> · {openCount} offen</>}
+            </p>
+            <div className="mt-2 h-2 w-full overflow-hidden rounded-full bg-zinc-200 dark:bg-zinc-800">
+              <div
+                className="h-full rounded-full bg-green-500 transition-all"
+                style={{
+                  width: `${availableCount > 0 ? (masteredCount / availableCount) * 100 : 0}%`,
+                }}
+              />
+            </div>
+            <button
+              type="button"
+              onClick={resetProgress}
+              disabled={resetting}
+              className="mt-3 text-xs text-red-700 hover:underline disabled:opacity-50 dark:text-red-400"
+            >
+              Fortschritt zurücksetzen
+            </button>
+          </section>
+        )}
+
+        <div className="mt-8 flex flex-wrap items-center gap-3">
           <button
-            onClick={start}
+            onClick={() => start("all")}
             disabled={
               availableCount === 0 ||
               selectedExams.length === 0 ||
@@ -257,8 +477,31 @@ export function LearnRunner({ exams }: { exams: ExamOption[] }) {
             <Shuffle className="h-4 w-4" aria-hidden />
             {phase === "loading"
               ? "Fragen werden gemischt …"
-              : `Lernen starten (${availableCount} Fragen)`}
+              : `Alle mischen (${availableCount})`}
           </button>
+
+          {signedIn && openCount > 0 && (
+            <button
+              onClick={() => start("open")}
+              disabled={phase === "loading"}
+              className="inline-flex items-center gap-2 rounded-lg border border-brand-400 px-5 py-3 text-sm font-semibold text-brand-700 transition hover:bg-brand-50 disabled:opacity-40 dark:text-brand-400 dark:hover:bg-brand-950/40"
+            >
+              <GraduationCap className="h-4 w-4" aria-hidden />
+              Weiter lernen ({openCount} offen)
+            </button>
+          )}
+
+          {signedIn && wrongCount > 0 && (
+            <button
+              onClick={() => start("wrong")}
+              disabled={phase === "loading"}
+              className="inline-flex items-center gap-2 rounded-lg border border-zinc-300 px-5 py-3 text-sm font-medium transition hover:border-zinc-400 disabled:opacity-40 dark:border-zinc-700"
+            >
+              <RotateCcw className="h-4 w-4" aria-hidden />
+              Falsche wiederholen ({wrongCount})
+            </button>
+          )}
+
           <Link
             href="/"
             className="text-sm text-zinc-500 hover:text-zinc-800 dark:hover:text-zinc-200"
@@ -266,6 +509,25 @@ export function LearnRunner({ exams }: { exams: ExamOption[] }) {
             Abbrechen
           </Link>
         </div>
+
+        <OfflineCard
+          examSlugs={selectedExams}
+          signedIn={signedIn}
+          onBundleChange={setOfflineBundle}
+        />
+
+        {!signedIn && (
+          <p className="mt-4 rounded-lg border border-zinc-200 bg-zinc-50 px-4 py-3 text-sm text-zinc-600 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-400">
+            <Link
+              href="/login?next=/lernen"
+              className="font-semibold text-brand-600 hover:underline dark:text-brand-400"
+            >
+              Melde dich an
+            </Link>
+            , damit dein Lernfortschritt gespeichert wird — dann kannst du auch
+            auf einem anderen Gerät weitermachen.
+          </p>
+        )}
         {phase === "error" && (
           <p className="mt-4 text-sm text-red-600">
             Fragen konnten nicht geladen werden. Bitte erneut versuchen.
@@ -342,6 +604,7 @@ export function LearnRunner({ exams }: { exams: ExamOption[] }) {
             question={check.question}
             answer={answers[item.question.id] ?? null}
             score={check.score}
+            hideAiExplanation={usingOffline}
           />
         </div>
       )}
@@ -376,7 +639,7 @@ export function LearnRunner({ exams }: { exams: ExamOption[] }) {
           </div>
         ) : isLast ? (
           <button
-            onClick={start}
+            onClick={() => start("all")}
             className="inline-flex items-center gap-2 rounded-lg bg-green-600 px-6 py-2 text-sm font-semibold text-white transition hover:bg-green-700"
           >
             <RotateCcw className="h-4 w-4" aria-hidden />

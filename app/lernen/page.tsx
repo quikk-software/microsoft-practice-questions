@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { getRepository } from "@/lib/data";
+import { getAuthService } from "@/lib/auth";
 import { LearnRunner } from "@/components/LearnRunner";
 import type { Difficulty } from "@/lib/types";
 
@@ -14,6 +15,7 @@ export const dynamic = "force-dynamic";
 
 export default async function LernenPage() {
   const exams = await getRepository().listExams();
+  const user = await getAuthService().getCurrentUser();
 
   const options = exams.map(({ config, questions }) => {
     const counts: Record<Difficulty, number> = { easy: 0, medium: 0, hard: 0 };
@@ -26,5 +28,5 @@ export default async function LernenPage() {
     };
   });
 
-  return <LearnRunner exams={options} />;
+  return <LearnRunner exams={options} signedIn={user != null} />;
 }

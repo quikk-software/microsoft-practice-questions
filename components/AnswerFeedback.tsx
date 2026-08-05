@@ -16,12 +16,15 @@ export function AnswerFeedback({
   answer,
   score,
   showBanner = true,
+  hideAiExplanation = false,
 }: {
   slug: string;
   question: Question;
   answer: Answer | null;
   score: number;
   showBanner?: boolean;
+  /** Offline: KI-Erklärungen brauchen Netz und werden ausgeblendet */
+  hideAiExplanation?: boolean;
 }) {
   const partial = score > 0 && score < 1;
   const correct = score === 1;
@@ -89,7 +92,13 @@ export function AnswerFeedback({
         )}
       </div>
 
-      <AiExplanation slug={slug} questionId={question.id} answer={answer} />
+      {hideAiExplanation ? (
+        <p className="mt-4 text-xs text-zinc-500">
+          KI-Erklärungen sind offline nicht verfügbar.
+        </p>
+      ) : (
+        <AiExplanation slug={slug} questionId={question.id} answer={answer} />
+      )}
     </div>
   );
 }

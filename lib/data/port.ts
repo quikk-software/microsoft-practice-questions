@@ -55,6 +55,16 @@ export interface ExamSessionRecord {
   updatedAt: string;
 }
 
+/** Lern-Fortschritt zu genau einer Frage (Lern-Modus, nur mit Login) */
+export interface LearnProgressEntry {
+  examSlug: string;
+  questionId: string;
+  lastScore: number;
+  timesSeen: number;
+  timesCorrect: number;
+  lastAnsweredAt: string;
+}
+
 /** BYOK: AI-Einstellungen eines Users; der Key liegt nur verschlüsselt vor */
 export interface AiSettingsRecord {
   provider: string;
@@ -113,6 +123,18 @@ export interface DataRepository {
   ): Promise<ExamSessionRecord | null>;
   saveExamSession(record: ExamSessionRecord): Promise<void>;
   deleteExamSession(userId: string, examSlug: string): Promise<void>;
+
+  // Lern-Fortschritt (Lern-Modus; nur mit Login)
+  getLearnProgress(
+    userId: string,
+    examSlugs?: string[]
+  ): Promise<LearnProgressEntry[]>;
+  /** Batch-Upsert: addiert timesSeen/timesCorrect auf vorhandene Einträge */
+  recordLearnAnswers(
+    userId: string,
+    entries: { examSlug: string; questionId: string; score: number }[]
+  ): Promise<void>;
+  resetLearnProgress(userId: string, examSlugs?: string[]): Promise<void>;
 
   // BYOK: AI-Einstellungen pro User
   getAiSettings(userId: string): Promise<AiSettingsRecord | null>;

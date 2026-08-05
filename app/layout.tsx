@@ -4,6 +4,7 @@ import { getAuthService, isAuthEnabled } from "@/lib/auth";
 import { Analytics } from "@vercel/analytics/next";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { ServiceWorkerRegistrar } from "@/components/ServiceWorkerRegistrar";
 import { brandCssVariables, getTenant } from "@/lib/tenants/config";
 import "./globals.css";
 
@@ -105,6 +106,7 @@ export default async function RootLayout({
         <SiteFooter />
         {/* Vercel Web Analytics — anonymisierte Seitenaufrufe, keine Cookies */}
         <Analytics />
+        <ServiceWorkerRegistrar />
       </body>
     </html>
   );
