@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import {
   ChevronLeft,
@@ -13,6 +13,11 @@ import {
 import type { Answer, Difficulty, PublicQuestion, Question } from "@/lib/types";
 import { gradeQuestion, stripAnswers } from "@/lib/engine";
 import { loadBundle, queueAnswer, type OfflineBundle } from "@/lib/offline/db";
+import {
+  cacheProgress,
+  getCachedProgress,
+  getCachedSession,
+} from "@/lib/offline/session";
 import { QuestionView } from "./QuestionView";
 import { AnswerFeedback } from "./AnswerFeedback";
 import { OfflineCard } from "./OfflineCard";
@@ -83,19 +88,49 @@ export function LearnRunner({
   const [resetting, setResetting] = useState(false);
   const [offlineBundle, setOfflineBundle] = useState<OfflineBundle | null>(null);
   const [usingOffline, setUsingOffline] = useState(false);
+  const [online, setOnline] = useState(true);
+  /** Konto bekannt? Offline zählt der lokal gemerkte Stand (SSR-Snapshot lügt). */
+  const [knownAccount, setKnownAccount] = useState(signedIn);
   /** Lösungen aus dem Offline-Paket (nur gefüllt, wenn offline gearbeitet wird) */
   const offlineSolutions = useRef<Map<string, Question>>(new Map());
 
-  // Gespeicherten Fortschritt laden (nur mit Login)
+  // Online-Status + lokal bekanntes Konto ermitteln (wichtig für die PWA:
+  // offline liefert der Service Worker einen Snapshot, in dem signedIn=false
+  // stehen kann, obwohl ein Konto existiert und Fragen geladen sind).
+  useEffect(() => {
+    const sync = () => {
+      const isOnline = navigator.onLine;
+       
+      setOnline(isOnline);
+       
+      setKnownAccount(signedIn || getCachedSession() != null);
+    };
+    sync();
+    window.addEventListener("online", sync);
+    window.addEventListener("offline", sync);
+    return () => {
+      window.removeEventListener("online", sync);
+      window.removeEventListener("offline", sync);
+    };
+  }, [signedIn]);
+
+  // Fortschritt laden: online vom Server (und lokal spiegeln), offline aus dem Cache
   const loadProgress = useCallback(async () => {
-    if (!signedIn) return;
+    if (!signedIn || (typeof navigator !== "undefined" && !navigator.onLine)) {
+      const cached = getCachedProgress();
+      if (cached.length > 0) setProgress(cached);
+      return;
+    }
     try {
       const res = await fetch("/api/learn/progress");
       if (!res.ok) return;
       const data = (await res.json()) as { entries: ProgressEntry[] };
-      setProgress(data.entries ?? []);
+      const entries = data.entries ?? [];
+      setProgress(entries);
+      cacheProgress(entries);
     } catch {
-      // Fortschritt ist Komfort — ohne ihn funktioniert der Lern-Modus trotzdem
+      const cached = getCachedProgress();
+      if (cached.length > 0) setProgress(cached);
     }
   }, [signedIn]);
 
@@ -105,16 +140,16 @@ export function LearnRunner({
     void loadProgress();
   }, [loadProgress]);
 
-  /** Antwort dauerhaft festhalten (gebündelt, Fehler bewusst still) */
+  /** Antwort festhalten: lokal immer, serverseitig sobald online. */
   const persistAnswer = (entry: {
     examSlug: string;
     questionId: string;
     score: number;
   }) => {
-    if (!signedIn) return;
+    if (!knownAccount) return;
     setProgress((prev) => {
       const rest = prev.filter((p) => p.questionId !== entry.questionId);
-      return [
+      const next = [
         ...rest,
         {
           examSlug: entry.examSlug,
@@ -122,7 +157,10 @@ export function LearnRunner({
           lastScore: entry.score,
         },
       ];
+      cacheProgress(next);
+      return next;
     });
+    if (!navigator.onLine) return; // offline: übernimmt die Sync-Queue
     void fetch("/api/learn/progress", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -162,7 +200,26 @@ export function LearnRunner({
     }
   };
 
-  const availableCount = exams
+  // Offline zählt nur, was wirklich lokal liegt — der serverseitig gerenderte
+  // Snapshot würde sonst Fragen versprechen, die ohne Netz nicht abrufbar sind.
+  const offlineCounts = useMemo(() => {
+    if (online || !offlineBundle) return null;
+    const map = new Map<string, Record<Difficulty, number>>();
+    for (const exam of offlineBundle.exams) {
+      const counts: Record<Difficulty, number> = { easy: 0, medium: 0, hard: 0 };
+      for (const q of exam.questions) counts[q.difficulty] += 1;
+      map.set(exam.slug, counts);
+    }
+    return map;
+  }, [online, offlineBundle]);
+
+  const visibleExams = offlineCounts
+    ? exams
+        .filter((e) => offlineCounts.has(e.slug))
+        .map((e) => ({ ...e, counts: offlineCounts.get(e.slug)! }))
+    : exams;
+
+  const availableCount = visibleExams
     .filter((e) => selectedExams.includes(e.slug))
     .reduce(
       (sum, e) => sum + selectedDiffs.reduce((s, d) => s + e.counts[d], 0),
@@ -278,7 +335,7 @@ export function LearnRunner({
         const local = checkOffline(item);
         if (local) {
           applyCheck(item, local);
-          if (signedIn) {
+          if (knownAccount) {
             void queueAnswer({
               examSlug: item.examSlug,
               questionId: item.question.id,
@@ -332,9 +389,13 @@ export function LearnRunner({
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ examSlugs: selectedExams }),
         });
-        setProgress((prev) =>
-          prev.filter((p) => !selectedExams.includes(p.examSlug))
-        );
+        setProgress((prev) => {
+          const next = prev.filter((p) => !selectedExams.includes(p.examSlug));
+          cacheProgress(next);
+          return next;
+        });
+      } catch {
+        // ohne Netz nicht zurücksetzbar — Stand bleibt, wie er ist
       } finally {
         setResetting(false);
       }
@@ -373,7 +434,7 @@ export function LearnRunner({
             Examen
           </h2>
           <div className="space-y-2">
-            {exams.map((e) => {
+            {visibleExams.map((e) => {
               const active = selectedExams.includes(e.slug);
               const count = selectedDiffs.reduce((s, d) => s + e.counts[d], 0);
               return (
@@ -435,7 +496,7 @@ export function LearnRunner({
           </p>
         </section>
 
-        {signedIn && answeredCount > 0 && (
+        {knownAccount && answeredCount > 0 && (
           <section className="mt-8 rounded-xl border border-zinc-200 bg-white p-5 dark:border-zinc-800 dark:bg-zinc-900/60">
             <h2 className="text-sm font-semibold">Dein Fortschritt</h2>
             <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
@@ -456,7 +517,7 @@ export function LearnRunner({
             <button
               type="button"
               onClick={resetProgress}
-              disabled={resetting}
+              disabled={resetting || !online}
               className="mt-3 text-xs text-red-700 hover:underline disabled:opacity-50 dark:text-red-400"
             >
               Fortschritt zurücksetzen
@@ -480,7 +541,7 @@ export function LearnRunner({
               : `Alle mischen (${availableCount})`}
           </button>
 
-          {signedIn && openCount > 0 && (
+          {knownAccount && openCount > 0 && (
             <button
               onClick={() => start("open")}
               disabled={phase === "loading"}
@@ -491,7 +552,7 @@ export function LearnRunner({
             </button>
           )}
 
-          {signedIn && wrongCount > 0 && (
+          {knownAccount && wrongCount > 0 && (
             <button
               onClick={() => start("wrong")}
               disabled={phase === "loading"}
@@ -512,11 +573,11 @@ export function LearnRunner({
 
         <OfflineCard
           examSlugs={selectedExams}
-          signedIn={signedIn}
+          signedIn={knownAccount}
           onBundleChange={setOfflineBundle}
         />
 
-        {!signedIn && (
+        {!knownAccount && online && (
           <p className="mt-4 rounded-lg border border-zinc-200 bg-zinc-50 px-4 py-3 text-sm text-zinc-600 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-400">
             <Link
               href="/login?next=/lernen"
@@ -526,6 +587,14 @@ export function LearnRunner({
             </Link>
             , damit dein Lernfortschritt gespeichert wird — dann kannst du auch
             auf einem anderen Gerät weitermachen.
+          </p>
+        )}
+
+        {!online && (
+          <p className="mt-4 rounded-lg border border-amber-300 bg-amber-50 px-4 py-3 text-sm text-amber-900 dark:border-amber-800 dark:bg-amber-950/40 dark:text-amber-200">
+            {offlineBundle
+              ? `Offline-Modus: ${offlineBundle.totalQuestions} heruntergeladene Fragen stehen bereit. Deine Antworten werden lokal gespeichert und synchronisiert, sobald du wieder online bist.`
+              : "Du bist offline und hast keine Fragen heruntergeladen. Sobald du wieder online bist, kannst du sie hier für die Offline-Nutzung speichern."}
           </p>
         )}
         {phase === "error" && (

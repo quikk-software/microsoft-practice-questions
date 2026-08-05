@@ -5,6 +5,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { ServiceWorkerRegistrar } from "@/components/ServiceWorkerRegistrar";
+import { SessionMarker } from "@/components/SessionMarker";
 import { brandCssVariables, getTenant } from "@/lib/tenants/config";
 import "./globals.css";
 
@@ -107,6 +108,7 @@ export default async function RootLayout({
         {/* Vercel Web Analytics — anonymisierte Seitenaufrufe, keine Cookies */}
         <Analytics />
         <ServiceWorkerRegistrar />
+        <SessionMarker email={user?.email ?? null} />
       </body>
     </html>
   );

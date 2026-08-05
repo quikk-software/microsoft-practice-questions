@@ -1,10 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import {
   ChevronDown,
+  CloudOff,
   CircleUserRound,
   ClipboardList,
   LogIn,
@@ -13,6 +14,7 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
+import { getCachedSession } from "@/lib/offline/session";
 
 // Schlanke, responsive Kopfzeile: links Logo, rechts Theme-Toggle + Benutzer-Menü.
 // Alle User-Aktionen (Meine Prüfungen, AI-Setup, Admin, Abmelden) liegen im
@@ -33,6 +35,24 @@ interface Props {
 
 export function SiteHeader({ user, authEnabled, tenant }: Props) {
   const logoClass = "h-7 w-auto shrink-0";
+  // Offline liefert der Service Worker einen gecachten Snapshot — dort kann
+  // user=null stehen, obwohl ein Konto existiert. Dann keinen irreführenden
+  // "Anmelden"-Button zeigen (Anmelden ginge offline ohnehin nicht).
+  const [offlineWithAccount, setOfflineWithAccount] = useState(false);
+
+  useEffect(() => {
+    const sync = () => {
+       
+      setOfflineWithAccount(!navigator.onLine && getCachedSession() != null);
+    };
+    sync();
+    window.addEventListener("online", sync);
+    window.addEventListener("offline", sync);
+    return () => {
+      window.removeEventListener("online", sync);
+      window.removeEventListener("offline", sync);
+    };
+  }, []);
   return (
     <header className="border-b border-zinc-200 bg-white/80 backdrop-blur dark:border-zinc-800 dark:bg-zinc-950/80">
       <div className="mx-auto flex h-14 w-full max-w-3xl items-center justify-between gap-3 px-4 sm:px-6">
@@ -64,6 +84,11 @@ export function SiteHeader({ user, authEnabled, tenant }: Props) {
           <ThemeToggle />
           {user ? (
             <UserMenu user={user} />
+          ) : offlineWithAccount ? (
+            <span className="inline-flex items-center gap-1.5 rounded-lg border border-amber-300 px-3 py-1.5 text-sm text-amber-800 dark:border-amber-800 dark:text-amber-300">
+              <CloudOff className="h-4 w-4" aria-hidden />
+              Offline
+            </span>
           ) : authEnabled ? (
             <Link
               href="/login"

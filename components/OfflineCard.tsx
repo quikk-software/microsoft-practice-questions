@@ -94,7 +94,9 @@ export function OfflineCard({
     onBundleChange?.(null);
   }
 
-  if (!signedIn) return null;
+  // Sichtbar, sobald ein Konto bekannt ist ODER lokal Fragen liegen — offline
+  // darf der (zwischengespeicherte) Anmeldestatus die Karte nicht verstecken.
+  if (!signedIn && !bundle) return null;
 
   return (
     <section className="mt-8 rounded-xl border border-zinc-200 bg-white p-5 dark:border-zinc-800 dark:bg-zinc-900/60">
