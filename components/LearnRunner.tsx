@@ -6,6 +6,7 @@ import {
   ChevronLeft,
   ChevronRight,
   GraduationCap,
+  Play,
   RotateCcw,
   Shuffle,
   SlidersHorizontal,
@@ -15,8 +16,13 @@ import { gradeQuestion, stripAnswers } from "@/lib/engine";
 import { loadBundle, queueAnswer, type OfflineBundle } from "@/lib/offline/db";
 import {
   cacheProgress,
+  clearLearnSession,
   getCachedProgress,
   getCachedSession,
+  getLearnSession,
+  mergeProgress,
+  saveLearnSession,
+  type CachedLearnSession,
 } from "@/lib/offline/session";
 import { QuestionView } from "./QuestionView";
 import { AnswerFeedback } from "./AnswerFeedback";
@@ -89,6 +95,9 @@ export function LearnRunner({
   const [offlineBundle, setOfflineBundle] = useState<OfflineBundle | null>(null);
   const [usingOffline, setUsingOffline] = useState(false);
   const [online, setOnline] = useState(true);
+  const [mode, setMode] = useState<LearnMode>("all");
+  /** Unterbrochene Sitzung, die im Setup wieder aufgenommen werden kann */
+  const [resumable, setResumable] = useState<CachedLearnSession | null>(null);
   /** Konto bekannt? Offline zählt der lokal gemerkte Stand (SSR-Snapshot lügt). */
   const [knownAccount, setKnownAccount] = useState(signedIn);
   /** Lösungen aus dem Offline-Paket (nur gefüllt, wenn offline gearbeitet wird) */
@@ -114,25 +123,30 @@ export function LearnRunner({
     };
   }, [signedIn]);
 
-  // Fortschritt laden: online vom Server (und lokal spiegeln), offline aus dem Cache
+  // Fortschritt laden: online vom Server, offline aus dem Cache — und beides
+  // zusammenführen. Der Server kann hinterherhinken (offline beantwortete
+  // Fragen hängen noch in der Sync-Queue); sein Stand darf den lokalen also
+  // nicht ersetzen, sonst wären beantwortete Fragen plötzlich wieder "offen".
   const loadProgress = useCallback(async () => {
-    if (!signedIn || (typeof navigator !== "undefined" && !navigator.onLine)) {
-      const cached = getCachedProgress();
+    const cached = getCachedProgress();
+    if (!knownAccount || (typeof navigator !== "undefined" && !navigator.onLine)) {
       if (cached.length > 0) setProgress(cached);
       return;
     }
     try {
       const res = await fetch("/api/learn/progress");
-      if (!res.ok) return;
+      if (!res.ok) {
+        if (cached.length > 0) setProgress(cached);
+        return;
+      }
       const data = (await res.json()) as { entries: ProgressEntry[] };
-      const entries = data.entries ?? [];
-      setProgress(entries);
-      cacheProgress(entries);
+      const merged = mergeProgress(data.entries ?? [], cached);
+      setProgress(merged);
+      cacheProgress(merged);
     } catch {
-      const cached = getCachedProgress();
       if (cached.length > 0) setProgress(cached);
     }
-  }, [signedIn]);
+  }, [knownAccount]);
 
   useEffect(() => {
     // Fetch-on-Mount: setState passiert erst nach dem await der Server-Antwort
@@ -160,12 +174,27 @@ export function LearnRunner({
       cacheProgress(next);
       return next;
     });
-    if (!navigator.onLine) return; // offline: übernimmt die Sync-Queue
+    // Fehlgeschlagene Übertragungen dürfen nicht verloren gehen — sie landen
+    // in derselben Queue wie die offline gegebenen Antworten und werden beim
+    // nächsten Online-Start nachgereicht.
+    const queue = () =>
+      void queueAnswer({
+        examSlug: entry.examSlug,
+        questionId: entry.questionId,
+        score: entry.score,
+        answeredAt: new Date().toISOString(),
+      });
+
+    if (!navigator.onLine) return queue();
     void fetch("/api/learn/progress", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ entries: [entry] }),
-    }).catch(() => {});
+    })
+      .then((res) => {
+        if (!res.ok) queue();
+      })
+      .catch(queue);
   };
 
   // Gemerkte Auswahl laden
@@ -276,6 +305,9 @@ export function LearnRunner({
   const start = useCallback(
     async (mode: LearnMode = "all") => {
       setPhase("loading");
+      setMode(mode);
+      clearLearnSession();
+      setResumable(null);
       // Ohne Netz direkt aus dem Offline-Paket starten
       if (typeof navigator !== "undefined" && !navigator.onLine) {
         if (await startOffline(mode)) return;
@@ -294,7 +326,25 @@ export function LearnRunner({
         });
         if (!res.ok) throw new Error(await res.text());
         const data = (await res.json()) as { questions: LearnQuestion[] };
-        setQuestions(data.questions);
+        // Zusätzlich lokal filtern: der Server kennt nur den synchronisierten
+        // Stand, der Client auch die noch nicht übertragenen Antworten.
+        let pool = data.questions;
+        if (mode === "open") {
+          const mastered = new Set(
+            progress.filter((p) => p.lastScore === 1).map((p) => p.questionId)
+          );
+          pool = pool.filter((q) => !mastered.has(q.question.id));
+        } else if (mode === "wrong") {
+          const wrong = new Set(
+            progress.filter((p) => p.lastScore < 1).map((p) => p.questionId)
+          );
+          pool = pool.filter((q) => wrong.has(q.question.id));
+        }
+        if (pool.length === 0) {
+          setPhase("error");
+          return;
+        }
+        setQuestions(pool);
         setIndex(0);
         setAnswers({});
         setChecks({});
@@ -306,8 +356,52 @@ export function LearnRunner({
         setPhase("error");
       }
     },
-    [selectedExams, selectedDiffs, startOffline]
+    [selectedExams, selectedDiffs, startOffline, progress]
   );
+
+  /** Gespeicherte Sitzung wieder aufnehmen (Reihenfolge, Position, Feedback). */
+  const restoreSession = useCallback(async (saved: CachedLearnSession) => {
+    // Lösungen für die lokale Bewertung bereitstellen, falls offline weiter
+    // gelernt wird — die Prüfung darf nach einem Neustart nicht ins Leere laufen.
+    const bundle = await loadBundle();
+    if (bundle) {
+      offlineSolutions.current = new Map(
+        bundle.exams.flatMap((e) =>
+          e.questions.map((q) => [q.id, q] as [string, Question])
+        )
+      );
+    }
+    setQuestions(saved.questions as LearnQuestion[]);
+    setAnswers(saved.answers as Record<string, Answer | null>);
+    setChecks(saved.checks as Record<string, CheckResult>);
+    setIndex(saved.index);
+    setUsingOffline(saved.usingOffline);
+    setMode((saved.mode as LearnMode) ?? "all");
+    setResumable(null);
+    setPhase("running");
+  }, []);
+
+  // Beim Öffnen eine unterbrochene Sitzung fortsetzen, statt neu zu mischen
+  useEffect(() => {
+    const saved = getLearnSession();
+    if (!saved) return;
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    void restoreSession(saved);
+  }, [restoreSession]);
+
+  // Laufende Sitzung sichern (überlebt Reload, Zurück-Navigation, PWA-Neustart)
+  useEffect(() => {
+    if (phase !== "running" || questions.length === 0) return;
+    saveLearnSession({
+      questions,
+      answers,
+      checks,
+      index,
+      mode,
+      usingOffline,
+      savedAt: new Date().toISOString(),
+    });
+  }, [phase, questions, answers, checks, index, mode, usingOffline]);
 
   /** Offline bewerten: gradeQuestion() ist eine reine Funktion und läuft im Client. */
   const checkOffline = (item: LearnQuestion): CheckResult | null => {
@@ -334,15 +428,8 @@ export function LearnRunner({
       if (usingOffline || !navigator.onLine) {
         const local = checkOffline(item);
         if (local) {
+          // Einreihen übernimmt persistAnswer (via applyCheck)
           applyCheck(item, local);
-          if (knownAccount) {
-            void queueAnswer({
-              examSlug: item.examSlug,
-              questionId: item.question.id,
-              score: local.score,
-              answeredAt: new Date().toISOString(),
-            });
-          }
           return;
         }
       }
@@ -427,6 +514,40 @@ export function LearnRunner({
           Zeitdruck. Du kannst mehrere Examen mischen und Schwierigkeitsstufen
           ausblenden.
         </p>
+
+        {resumable && (
+          <section className="mt-6 rounded-xl border border-brand-300 bg-brand-50 p-5 dark:border-brand-800 dark:bg-brand-950/40">
+            <h2 className="flex items-center gap-2 text-sm font-semibold">
+              <Play className="h-4 w-4" aria-hidden />
+              Unterbrochene Sitzung
+            </h2>
+            <p className="mt-1 text-sm text-zinc-700 dark:text-zinc-300">
+              Frage {resumable.index + 1} von {resumable.questions.length} ·{" "}
+              {Object.keys(resumable.checks ?? {}).length} geprüft. Fortsetzen
+              behält Reihenfolge und Stand — neu mischen verwirft sie.
+            </p>
+            <div className="mt-3 flex flex-wrap gap-2">
+              <button
+                type="button"
+                onClick={() => void restoreSession(resumable)}
+                className="inline-flex items-center gap-1.5 rounded-lg bg-brand-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-brand-700"
+              >
+                <Play className="h-4 w-4" aria-hidden />
+                Fortsetzen
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  clearLearnSession();
+                  setResumable(null);
+                }}
+                className="rounded-lg border border-zinc-300 px-4 py-2 text-sm font-medium transition hover:border-zinc-400 dark:border-zinc-700"
+              >
+                Verwerfen
+              </button>
+            </div>
+          </section>
+        )}
 
         <section className="mt-8">
           <h2 className="mb-3 flex items-center gap-2 text-sm font-semibold">
@@ -599,7 +720,8 @@ export function LearnRunner({
         )}
         {phase === "error" && (
           <p className="mt-4 text-sm text-red-600">
-            Fragen konnten nicht geladen werden. Bitte erneut versuchen.
+            Es konnten keine Fragen geladen werden. Bitte Auswahl anpassen oder
+            erneut versuchen.
           </p>
         )}
         {availableCount === 0 && (
@@ -626,7 +748,11 @@ export function LearnRunner({
     <main className="mx-auto w-full max-w-3xl px-6 py-10">
       <div className="mb-6 flex flex-wrap items-center justify-between gap-2 text-sm text-zinc-500">
         <button
-          onClick={() => setPhase("setup")}
+          onClick={() => {
+            // Sitzung bleibt erhalten — im Setup lässt sie sich fortsetzen
+            setResumable(getLearnSession());
+            setPhase("setup");
+          }}
           className="inline-flex items-center gap-1 hover:text-zinc-800 dark:hover:text-zinc-200"
         >
           <ChevronLeft className="h-4 w-4" aria-hidden />

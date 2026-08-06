@@ -72,3 +72,70 @@ export function getCachedProgress(): CachedProgressEntry[] {
     return [];
   }
 }
+
+/**
+ * Zwei Fortschritts-Stände zusammenführen. Nötig, weil der Server hinterher
+ * hinken kann (offline beantwortete Fragen hängen noch in der Sync-Queue) —
+ * ein leerer Server-Stand darf den lokalen nicht auslöschen. Bei Dopplungen
+ * gewinnt der zuerst übergebene Stand.
+ */
+export function mergeProgress(
+  preferred: CachedProgressEntry[],
+  fallback: CachedProgressEntry[]
+): CachedProgressEntry[] {
+  const byId = new Map(fallback.map((e) => [e.questionId, e]));
+  for (const entry of preferred) byId.set(entry.questionId, entry);
+  return [...byId.values()];
+}
+
+/** Laufende Lern-Sitzung, damit ein Neustart nicht neu mischt. */
+const LEARN_SESSION_KEY = "learn-session";
+
+export interface CachedLearnSession {
+  /** Reihenfolge der Fragen (ohne Lösungen — die kommen vom Server oder aus IndexedDB) */
+  questions: unknown[];
+  answers: Record<string, unknown>;
+  checks: Record<string, unknown>;
+  index: number;
+  mode: string;
+  usingOffline: boolean;
+  savedAt: string;
+}
+
+export function saveLearnSession(session: CachedLearnSession): void {
+  try {
+    localStorage.setItem(LEARN_SESSION_KEY, JSON.stringify(session));
+  } catch {
+    // Bei vollem Speicher lieber ohne das bereits gegebene Feedback sichern
+    // (das ist der große Teil) als die Sitzung ganz zu verlieren.
+    try {
+      localStorage.setItem(
+        LEARN_SESSION_KEY,
+        JSON.stringify({ ...session, checks: {} })
+      );
+    } catch {
+      // dann eben ohne Fortsetzen
+    }
+  }
+}
+
+export function getLearnSession(): CachedLearnSession | null {
+  try {
+    const raw = localStorage.getItem(LEARN_SESSION_KEY);
+    if (!raw) return null;
+    const parsed = JSON.parse(raw) as CachedLearnSession;
+    return Array.isArray(parsed.questions) && parsed.questions.length > 0
+      ? parsed
+      : null;
+  } catch {
+    return null;
+  }
+}
+
+export function clearLearnSession(): void {
+  try {
+    localStorage.removeItem(LEARN_SESSION_KEY);
+  } catch {
+    // ignorieren
+  }
+}
