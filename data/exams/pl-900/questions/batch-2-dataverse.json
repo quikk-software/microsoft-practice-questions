@@ -1,0 +1,432 @@
+[
+  {
+    "id": "plb2-001",
+    "type": "single-choice",
+    "skillArea": "environment",
+    "topic": "Dataverse relationships",
+    "difficulty": "easy",
+    "prompt": "In Dataverse, one Account record can be associated with many Contact records. How does Dataverse implement this one-to-many relationship?",
+    "options": [
+      { "id": "a", "text": "Through a lookup column on the related (Contact) table" },
+      { "id": "b", "text": "Through an automatically created intersect table" },
+      { "id": "c", "text": "Through a formula column on the Account table" },
+      { "id": "d", "text": "Through a business rule that links the two tables" }
+    ],
+    "correct": "a",
+    "explanation": "Bei einer 1:N-Beziehung kann eine Zeile der übergeordneten Tabelle mit mehreren Zeilen der verknüpften Tabelle in Beziehung stehen. Dataverse setzt das über eine Lookup-Spalte auf der verknüpften Tabelle um — jede Contact-Zeile zeigt per Lookup auf ihr Account. Die Intersect-Tabelle kommt nur bei N:N-Beziehungen zum Einsatz.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-dataverse/3-describe-tables-columns-relationships-microsoft-dataverse",
+    "source": {
+      "title": "Describe tables, columns, and relationships in Dataverse",
+      "url": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-dataverse/3-describe-tables-columns-relationships-microsoft-dataverse",
+      "quote": "In a one-to-many relationship, a single row in the parent table can be related to multiple rows in a related table. For example, one Account record can be associated with many Contact records. Dataverse implements this relationship using a lookup column on the related table."
+    }
+  },
+  {
+    "id": "plb2-002",
+    "type": "single-choice",
+    "skillArea": "environment",
+    "topic": "Dataverse relationships",
+    "difficulty": "medium",
+    "prompt": "A single Employee can be assigned to many Projects, and a single Project can have many Employees. How does Dataverse manage this many-to-many (N:N) relationship?",
+    "options": [
+      { "id": "a", "text": "Through a lookup column on each of the two tables" },
+      { "id": "b", "text": "Through an automatically created intersect table that stores the associations" },
+      { "id": "c", "text": "Through a rollup column that aggregates the related rows" },
+      { "id": "d", "text": "Through duplicated rows in both tables" }
+    ],
+    "correct": "b",
+    "explanation": "N:N-Beziehungen verwaltet Dataverse über eine automatisch erstellte Intersect-Tabelle, die die Zuordnungen zwischen beiden Tabellen speichert. Lookup-Spalten bilden 1:N-Beziehungen ab, Rollup-Spalten aggregieren nur Werte.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-dataverse/3-describe-tables-columns-relationships-microsoft-dataverse",
+    "source": {
+      "title": "Describe tables, columns, and relationships in Dataverse",
+      "url": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-dataverse/3-describe-tables-columns-relationships-microsoft-dataverse",
+      "quote": "In a many-to-many relationship, rows in one table can be related to multiple rows in another table, and vice versa. For example, a single Employee can be assigned to many Projects, and a single Project can have many Employees assigned to it. Dataverse manages this through an automatically created intersect table that stores the associations between the two tables."
+    }
+  },
+  {
+    "id": "plb2-003",
+    "type": "single-choice",
+    "skillArea": "environment",
+    "topic": "Common Data Model",
+    "difficulty": "easy",
+    "prompt": "What is the Common Data Model (CDM) at the foundation of Microsoft Dataverse?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A standardized schema that defines how business data is structured and shared across applications"
+      },
+      {
+        "id": "b",
+        "text": "A backup format for exporting Dataverse tables to SQL Server"
+      },
+      {
+        "id": "c",
+        "text": "A licensing model that determines how much Dataverse storage an organization receives"
+      },
+      {
+        "id": "d",
+        "text": "A visualization library for building dashboards on Dataverse data"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Das Common Data Model ist ein standardisiertes Schema mit vordefinierten Tabellendefinitionen für gängige Geschäftskonzepte (Accounts, Contacts, Products, Cases). Weil diese Definitionen produktübergreifend geteilt werden, lassen sich Daten z. B. aus Dynamics 365 direkt in Power Apps oder Power BI nutzen — ohne Transformation.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-dataverse/2-describe-differences-between-traditional-databases-microsoft-dataverse",
+    "source": {
+      "title": "Describe differences between traditional databases and Dataverse",
+      "url": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-dataverse/2-describe-differences-between-traditional-databases-microsoft-dataverse",
+      "quote": "At the foundation of Microsoft Dataverse is the Common Data Model (CDM), a standardized schema that defines how business data is structured and shared across applications. The CDM provides predefined table definitions for common business concepts such as accounts, contacts, products, and cases."
+    }
+  },
+  {
+    "id": "plb2-004",
+    "type": "matching",
+    "skillArea": "environment",
+    "topic": "Dataverse form types",
+    "difficulty": "hard",
+    "prompt": "Match each Dataverse form type to its purpose.",
+    "left": [
+      { "id": "l1", "text": "Main form" },
+      { "id": "l2", "text": "Quick view form" },
+      { "id": "l3", "text": "Quick create form" },
+      { "id": "l4", "text": "Card form" }
+    ],
+    "right": [
+      {
+        "id": "r1",
+        "text": "The primary form for viewing or editing a full record, with tabs, sections, and subgrids"
+      },
+      {
+        "id": "r2",
+        "text": "A read-only form showing summary information from a related record inside another record's form"
+      },
+      {
+        "id": "r3",
+        "text": "A streamlined form for creating a new record without leaving the current context"
+      },
+      {
+        "id": "r4",
+        "text": "A compact form used in views and dashboards to show a minimal set of key values"
+      }
+    ],
+    "correct": { "l1": "r1", "l2": "r2", "l3": "r3", "l4": "r4" },
+    "explanation": "Main Forms sind die Hauptformulare mit vollem Layout. Quick View Forms zeigen schreibgeschützte Zusammenfassungen verknüpfter Datensätze. Quick Create Forms legen neue Datensätze an, ohne den Kontext zu verlassen. Card Forms sind kompakte Darstellungen für Ansichten und Dashboards.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-dataverse/forms-views",
+    "source": {
+      "title": "Describe table forms and views",
+      "url": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-dataverse/forms-views",
+      "quote": "Main form: The primary form that users interact with when viewing or editing a full record. Main forms support rich layouts with tabs, sections, columns, and embedded subgrids. Quick view form: A read-only form that displays summary information from a related record within another record's main form."
+    }
+  },
+  {
+    "id": "plb2-005",
+    "type": "single-choice",
+    "skillArea": "environment",
+    "topic": "Dataverse views",
+    "difficulty": "easy",
+    "prompt": "What is a view in Microsoft Dataverse?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A saved query that defines which records are displayed, in what order, when a user sees a list of records"
+      },
+      {
+        "id": "b",
+        "text": "A layout that defines how an individual record is displayed for editing"
+      },
+      {
+        "id": "c",
+        "text": "A security setting that controls which users can open a table"
+      },
+      {
+        "id": "d",
+        "text": "A chart that visualizes data from a single record"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Eine View ist eine gespeicherte Abfrage: Sie bestimmt Spalten, Sortierung und Filterbedingungen für die Listenansicht mehrerer Datensätze. Die Detail-Darstellung eines einzelnen Datensatzes übernimmt dagegen das Formular.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-dataverse/forms-views",
+    "source": {
+      "title": "Describe table forms and views",
+      "url": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-dataverse/forms-views",
+      "quote": "A view is a saved query that defines which records from a table are displayed, and in what order, when a user sees a list of records. Where a form shows a single record in detail, a view shows multiple records in a grid."
+    }
+  },
+  {
+    "id": "plb2-006",
+    "type": "yes-no",
+    "skillArea": "environment",
+    "topic": "Business rules",
+    "difficulty": "medium",
+    "prompt": "For each of the following statements about business rules in Dataverse, select Yes if the statement is true. Otherwise, select No.",
+    "statements": [
+      {
+        "id": "s1",
+        "text": "Business rules defined at the table level apply across all Power Apps that use that table.",
+        "correct": true
+      },
+      {
+        "id": "s2",
+        "text": "All business rule actions, including show/hide columns, are available in canvas apps.",
+        "correct": false
+      },
+      {
+        "id": "s3",
+        "text": "Business rules are created with a visual, no-code designer.",
+        "correct": true
+      }
+    ],
+    "explanation": "Auf Tabellenebene definierte Business Rules gelten in allen Apps, die die Tabelle nutzen — Canvas wie modellgesteuert. Aber: Aktionen wie Spalten ein-/ausblenden, sperren/entsperren und Empfehlungen funktionieren nur in modellgesteuerten Apps. Erstellt werden Business Rules im visuellen No-Code-Designer.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-dataverse/4-describe-options-business-logic-microsoft-dataverse",
+    "source": {
+      "title": "Describe the options for business logic in Dataverse",
+      "url": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-dataverse/4-describe-options-business-logic-microsoft-dataverse",
+      "quote": "Business rules defined at the table level apply across all Power Apps that use that table—both canvas apps and model-driven apps—ensuring consistent enforcement of your data policies without duplicating logic. Actions such as show/hide columns, lock/unlock columns, and recommendations apply to model-driven apps only. Using a visual, no-code designer, makers can create conditions and actions that run when a record is created or updated."
+    }
+  },
+  {
+    "id": "plb2-007",
+    "type": "matching",
+    "skillArea": "environment",
+    "topic": "Business logic options",
+    "difficulty": "hard",
+    "prompt": "Dataverse offers several mechanisms for implementing business logic. Match each approach to the scenario it is best for.",
+    "left": [
+      { "id": "l1", "text": "Business rules" },
+      { "id": "l2", "text": "Power Fx formula columns" },
+      { "id": "l3", "text": "Dataverse functions" },
+      { "id": "l4", "text": "Power Automate" }
+    ],
+    "right": [
+      { "id": "r1", "text": "Simple, no-code validations on forms" },
+      { "id": "r2", "text": "Real-time computed values based on row data" },
+      { "id": "r3", "text": "Reusable, server-side logic with parameters" },
+      { "id": "r4", "text": "Asynchronous workflows across apps and services" }
+    ],
+    "correct": { "l1": "r1", "l2": "r2", "l3": "r3", "l4": "r4" },
+    "explanation": "Business Rules decken einfache No-Code-Validierungen ab (z. B. Pflichtfeld je nach Kontotyp). Formula Columns berechnen Werte in Echtzeit aus Zeilendaten. Dataverse Functions kapseln wiederverwendbare Server-Logik mit Parametern. Power Automate übernimmt asynchrone Workflows über App- und Dienstgrenzen hinweg.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-dataverse/describe-power-fx",
+    "source": {
+      "title": "Describe Power Fx",
+      "url": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-dataverse/describe-power-fx",
+      "quote": "Business rules Simple, no-code validations on forms Require a phone number if the Account Type is set to Customer Power Fx (formula columns) Real-time computed values based on row data Calculate total price from unit price, quantity, and discount Power Fx (Dataverse functions) Reusable, server-side logic with parameters Compute shipping cost based on weight and destination region Power Automate Asynchronous workflows across apps and services Send an approval email when an expense exceeds a threshold"
+    }
+  },
+  {
+    "id": "plb2-008",
+    "type": "single-choice",
+    "skillArea": "environment",
+    "topic": "Rollup columns",
+    "difficulty": "medium",
+    "prompt": "An Account table should show the sum of all related Opportunity values as a summary metric. Which Dataverse column type is designed for this, and how is it kept up to date?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A rollup column — recalculated on a scheduled basis"
+      },
+      {
+        "id": "b",
+        "text": "A formula column — recalculated whenever the record is read"
+      },
+      {
+        "id": "c",
+        "text": "A lookup column — updated by the related table"
+      },
+      {
+        "id": "d",
+        "text": "A choice column — updated manually by users"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Rollup-Spalten aggregieren Daten aus verknüpften Datensätzen (Summen, Anzahl) und werden planmäßig neu berechnet. Formula-Spalten berechnen dagegen Werte aus Spalten derselben Zeile beim Lesen des Datensatzes.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-dataverse/describe-power-fx",
+    "source": {
+      "title": "Describe Power Fx",
+      "url": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-dataverse/describe-power-fx",
+      "quote": "Rollup columns aggregate data from related records. For example, an Account table might include a rollup column that calculates the sum of all related Opportunity values, or the count of open Service Requests. Rollup columns are recalculated on a scheduled basis and are useful for generating summary metrics without requiring custom reports or queries."
+    }
+  },
+  {
+    "id": "plb2-009",
+    "type": "single-choice",
+    "skillArea": "environment",
+    "topic": "Power Fx",
+    "difficulty": "easy",
+    "prompt": "Power Fx is the low-code formula language used across Microsoft Power Platform. Which familiar tool is its syntax similar to?",
+    "options": [
+      { "id": "a", "text": "Microsoft Excel formulas" },
+      { "id": "b", "text": "SQL stored procedures" },
+      { "id": "c", "text": "C# expressions" },
+      { "id": "d", "text": "JavaScript functions" }
+    ],
+    "correct": "a",
+    "explanation": "Power Fx ist eine universelle, stark typisierte, deklarative und funktionale Sprache fÃ¼r Low-Code-Szenarien. Die Syntax Ã¤hnelt Excel-Formeln â dadurch ist sie fÃ¼r Business-Anwender mit Tabellenkalkulations-Erfahrung leicht zugÃ¤nglich. AusdrÃ¼cke sind immer âlive“ und berechnen sich bei DatenÃ¤nderungen automatisch neu.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-dataverse/describe-power-fx",
+    "source": {
+      "title": "Describe Power Fx",
+      "url": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-dataverse/describe-power-fx",
+      "quote": "Power Fx is a general-purpose, strongly typed, declarative, and functional programming language designed specifically for low-code scenarios. Its syntax is similar to Microsoft Excel formulas, which makes it approachable for business users who are already familiar with spreadsheet logic."
+    }
+  },
+  {
+    "id": "plb2-010",
+    "type": "dropdown",
+    "skillArea": "environment",
+    "topic": "Flow types with Dataverse",
+    "difficulty": "medium",
+    "prompt": "Complete the statement about Power Automate flow types that integrate with Dataverse.",
+    "textParts": [
+      "",
+      " cloud flows are triggered automatically when a Dataverse record is created, updated, or deleted, while ",
+      " flows run on a time-based schedule, such as sending a daily summary report."
+    ],
+    "blanks": [
+      {
+        "id": "b1",
+        "options": [
+          { "id": "o1", "text": "Automated" },
+          { "id": "o2", "text": "Instant" },
+          { "id": "o3", "text": "Scheduled" }
+        ],
+        "correct": "o1"
+      },
+      {
+        "id": "b2",
+        "options": [
+          { "id": "o1", "text": "automated" },
+          { "id": "o2", "text": "instant" },
+          { "id": "o3", "text": "scheduled" }
+        ],
+        "correct": "o3"
+      }
+    ],
+    "explanation": "Automated Cloud Flows starten automatisch bei Ereignissen wie dem Erstellen, Ändern oder Löschen eines Dataverse-Datensatzes. Instant Flows löst ein Benutzer manuell aus (z. B. aus einer Power-Apps-Form). Scheduled Flows laufen zeitgesteuert, etwa für tägliche Berichte oder nächtliche Synchronisierung.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-dataverse/4-describe-options-business-logic-microsoft-dataverse",
+    "source": {
+      "title": "Describe the options for business logic in Dataverse",
+      "url": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-dataverse/4-describe-options-business-logic-microsoft-dataverse",
+      "quote": "Automated cloud flows: Triggered automatically when a Dataverse record is created, updated, or deleted Instant flows: Triggered manually by a user from within a Power Apps form or a Teams message Scheduled flows: Run on a time-based schedule, such as sending a daily summary report or syncing data overnight"
+    }
+  },
+  {
+    "id": "plb2-011",
+    "type": "yes-no",
+    "skillArea": "environment",
+    "topic": "Dataverse vs. traditional databases",
+    "difficulty": "hard",
+    "prompt": "For each of the following statements comparing Dataverse with traditional databases, select Yes if the statement is true. Otherwise, select No.",
+    "statements": [
+      {
+        "id": "s1",
+        "text": "Dataverse requires administrators to manage indexing strategies and manual performance tuning.",
+        "correct": false
+      },
+      {
+        "id": "s2",
+        "text": "Dataverse provides role-based access control, row-level access restrictions, and column-level security out of the box.",
+        "correct": true
+      },
+      {
+        "id": "s3",
+        "text": "Building applications on top of traditional databases usually requires professional developers.",
+        "correct": true
+      }
+    ],
+    "explanation": "Traditionelle Datenbanken verlangen manuelle Schema-, Index- und Sicherheitspflege sowie Entwickler für Anwendungen darauf. Dataverse skaliert automatisch ohne manuelles Tuning und bringt rollenbasierte Zugriffskontrolle, Zeilen- und Spaltensicherheit von Haus aus mit — Apps entstehen per Low-Code ohne eigenen Sicherheitscode.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-dataverse/2-describe-differences-between-traditional-databases-microsoft-dataverse",
+    "source": {
+      "title": "Describe differences between traditional databases and Dataverse",
+      "url": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-dataverse/2-describe-differences-between-traditional-databases-microsoft-dataverse",
+      "quote": "Dataverse is designed to scale automatically and handle complex data models without manual tuning. Dataverse provides advanced security capabilities out of the box, including role-based access control, row-level access restrictions, and column-level security. Building applications on top of traditional databases usually requires professional developers who write custom queries, APIs, and user interfaces."
+    }
+  },
+  {
+    "id": "plb2-012",
+    "type": "single-choice",
+    "skillArea": "environment",
+    "topic": "Copilot in Dataverse",
+    "difficulty": "medium",
+    "prompt": "In the Power Apps maker portal, a maker prompts Copilot: \"Each employee can complete many training courses, and each course can be completed by many employees.\" What does Copilot propose?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A many-to-many (N:N) relationship with an intersect table to manage the associations"
+      },
+      {
+        "id": "b",
+        "text": "A one-to-many (1:N) relationship with a lookup column on the course table"
+      },
+      {
+        "id": "c",
+        "text": "Two unrelated tables with duplicated employee data"
+      },
+      {
+        "id": "d",
+        "text": "A rollup column that counts completed trainings"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Copilot erkennt an der Beschreibung eine N:N-Beziehung und schlägt die passende Intersect-Tabelle vor — Beziehungen lassen sich so per Konversation definieren, ohne Lookup-Spalten manuell zu konfigurieren.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-dataverse/5-create-modify-tables-columns-use-conversations",
+    "source": {
+      "title": "Create and edit tables, columns, and relationships through conversations",
+      "url": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-dataverse/5-create-modify-tables-columns-use-conversations",
+      "quote": "For example, if you prompt Copilot with \"Each employee can complete many training courses, and each course can be completed by many employees,\" Copilot recognizes this as a many-to-many (N:N) relationship and proposes the appropriate intersect table to manage the associations."
+    }
+  },
+  {
+    "id": "plb2-013",
+    "type": "single-choice",
+    "skillArea": "environment",
+    "topic": "Column data types",
+    "difficulty": "easy",
+    "prompt": "Which Dataverse column data type stores a reference to a row in another table and is used to build relationships?",
+    "options": [
+      { "id": "a", "text": "Choice" },
+      { "id": "b", "text": "Lookup" },
+      { "id": "c", "text": "Formula (fx)" },
+      { "id": "d", "text": "Text" }
+    ],
+    "correct": "b",
+    "explanation": "Lookup-Spalten verweisen auf eine Zeile einer anderen Tabelle und bilden damit Beziehungen ab. Choice bietet eine vordefinierte Optionsliste, Formula berechnet Werte per Power Fx, Text speichert ein- oder mehrzeilige Texte.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-dataverse/3-describe-tables-columns-relationships-microsoft-dataverse",
+    "source": {
+      "title": "Describe tables, columns, and relationships in Dataverse",
+      "url": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-dataverse/3-describe-tables-columns-relationships-microsoft-dataverse",
+      "quote": "Columns define the attributes that each row in a table can store. Lookup: A reference to a row in another table, used to build relationships"
+    }
+  },
+  {
+    "id": "plb2-014",
+    "type": "single-choice",
+    "skillArea": "environment",
+    "topic": "Dataverse MCP server",
+    "difficulty": "hard",
+    "prompt": "What does the Dataverse Model Context Protocol (MCP) server enable?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Copilot Studio agents can query structured Dataverse data conversationally and use it to drive intelligent workflows"
+      },
+      {
+        "id": "b",
+        "text": "Dataverse tables can be exported automatically to on-premises SQL Server"
+      },
+      {
+        "id": "c",
+        "text": "Administrators can migrate environments between tenants without downtime"
+      },
+      {
+        "id": "d",
+        "text": "Canvas apps can run offline without a Dataverse connection"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Der Dataverse-MCP-Server macht strukturierte Dataverse-Daten interaktiv: Copilot-Studio-Agents können sie per Konversation abfragen und für intelligente Workflows nutzen — ohne eigene API-Integrationen zu bauen. Antworten bleiben in aktuellen Geschäftsdaten verankert.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-dataverse/2-describe-differences-between-traditional-databases-microsoft-dataverse",
+    "source": {
+      "title": "Describe differences between traditional databases and Dataverse",
+      "url": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-dataverse/2-describe-differences-between-traditional-databases-microsoft-dataverse",
+      "quote": "The MCP server makes your structured Dataverse data interactive, allowing Copilot Studio agents to query it conversationally and use it to drive intelligent workflows. Instead of building custom API integrations, makers can connect their agents directly to Dataverse and get answers grounded in up-to-date business records."
+    }
+  }
+]

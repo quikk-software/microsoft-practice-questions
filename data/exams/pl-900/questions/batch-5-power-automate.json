@@ -1,0 +1,463 @@
+[
+  {
+    "id": "plb5-001",
+    "type": "single-choice",
+    "skillArea": "power-automate",
+    "topic": "Triggers",
+    "difficulty": "easy",
+    "prompt": "What is a trigger in a Power Automate cloud flow?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The event that starts the flow — every cloud flow begins with exactly one trigger"
+      },
+      {
+        "id": "b",
+        "text": "A task the flow performs after it has started"
+      },
+      {
+        "id": "c",
+        "text": "A connector that stores the flow's run history"
+      },
+      {
+        "id": "d",
+        "text": "A report showing how often the flow has failed"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Der Trigger ist das Ereignis, das einen Cloud-Flow startet. Jeder Cloud-Flow beginnt mit genau einem Trigger; alle nachfolgenden Aktionen laufen als Reaktion darauf. Der Trigger übergibt dabei relevante Ereignisdaten (z. B. die eingegangene E-Mail) als Eingaben an den Flow.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/identify-microsoft-power-automate-components/describe-triggers-cloud-flows",
+    "source": {
+      "title": "Describe triggers for cloud flows",
+      "url": "https://learn.microsoft.com/en-us/training/modules/identify-microsoft-power-automate-components/describe-triggers-cloud-flows",
+      "quote": "A trigger is the event that starts a cloud flow running. Every cloud flow begins with exactly one trigger, and all subsequent actions in the flow execute in response to that trigger event."
+    }
+  },
+  {
+    "id": "plb5-002",
+    "type": "matching",
+    "skillArea": "power-automate",
+    "topic": "Cloud flow types",
+    "difficulty": "medium",
+    "prompt": "Match each cloud flow type to its description.",
+    "left": [
+      { "id": "l1", "text": "Automated flow" },
+      { "id": "l2", "text": "Instant flow" },
+      { "id": "l3", "text": "Scheduled flow" }
+    ],
+    "right": [
+      {
+        "id": "r1",
+        "text": "Triggered automatically when an event occurs in a connected service, with no user action"
+      },
+      {
+        "id": "r2",
+        "text": "Triggered manually by the user, for example through a button click"
+      },
+      {
+        "id": "r3",
+        "text": "Runs at a specific time or on a recurring interval"
+      }
+    ],
+    "correct": { "l1": "r1", "l2": "r2", "l3": "r3" },
+    "explanation": "Automated Flows starten automatisch bei Ereignissen (neue E-Mail, neues SharePoint-Element, Dataverse-Änderung). Instant Flows löst ein Benutzer bewusst aus — etwa per Button in Power Apps oder Teams. Scheduled Flows laufen zeitgesteuert, z. B. stündlich, täglich oder wöchentlich.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/identify-microsoft-power-automate-components/3-describe-use-cases-cloud-desktop-flows",
+    "source": {
+      "title": "Describe use cases for cloud and desktop flows",
+      "url": "https://learn.microsoft.com/en-us/training/modules/identify-microsoft-power-automate-components/3-describe-use-cases-cloud-desktop-flows",
+      "quote": "Automated flows: Triggered automatically when a specific event occurs in a connected service—such as receiving an email, a new item being added to a SharePoint list, or a record being updated in Dataverse. Instant flows: Triggered manually by the user, typically through a button click in the Power Automate app, a Power Apps canvas app, or a Teams message. Scheduled flows: Run at a specific time or on a recurring interval—hourly, daily, weekly, or on a custom schedule."
+    }
+  },
+  {
+    "id": "plb5-003",
+    "type": "single-choice",
+    "skillArea": "power-automate",
+    "topic": "Trigger mechanisms",
+    "difficulty": "medium",
+    "prompt": "What is the difference between polling triggers and webhook triggers in Power Automate?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Polling triggers check the connected system at intervals; webhook triggers receive an instant notification the moment the event occurs"
+      },
+      {
+        "id": "b",
+        "text": "Polling triggers are instant; webhook triggers check the system once per day"
+      },
+      {
+        "id": "c",
+        "text": "Polling triggers only work with Dataverse; webhook triggers only work with SharePoint"
+      },
+      {
+        "id": "d",
+        "text": "There is no difference — both terms describe the same mechanism"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Polling-Trigger fragen das verbundene System in definierten Intervallen ab (viele SharePoint- und SQL-Server-Trigger). Webhook-Trigger werden vom Dienst sofort benachrichtigt — moderne Microsoft-365-Connectors und Dataverse nutzen Webhooks, wodurch Flows nahezu verzögerungsfrei starten.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/identify-microsoft-power-automate-components/describe-triggers-cloud-flows",
+    "source": {
+      "title": "Describe triggers for cloud flows",
+      "url": "https://learn.microsoft.com/en-us/training/modules/identify-microsoft-power-automate-components/describe-triggers-cloud-flows",
+      "quote": "Polling triggers: The Power Automate service regularly checks the connected system at a defined interval to see if the trigger condition has been met. Webhook triggers: The connected service sends an instant notification to Power Automate the moment the trigger event occurs."
+    }
+  },
+  {
+    "id": "plb5-004",
+    "type": "single-choice",
+    "skillArea": "power-automate",
+    "topic": "Scheduled triggers",
+    "difficulty": "easy",
+    "prompt": "Which trigger is the primary scheduled trigger in Power Automate, letting makers define interval, frequency, start time, and time zone?",
+    "options": [
+      { "id": "a", "text": "Recurrence" },
+      { "id": "b", "text": "When an email arrives" },
+      { "id": "c", "text": "Manually trigger a flow" },
+      { "id": "d", "text": "When an HTTP request is received" }
+    ],
+    "correct": "a",
+    "explanation": "Der Recurrence-Trigger ist der wichtigste zeitgesteuerte Trigger: Intervall und Häufigkeit (z. B. täglich, stündlich), Startzeit, Zeitzone und bestimmte Wochen- oder Monatstage lassen sich festlegen — typisch für Berichte, Datenbereinigung oder wiederkehrende Erinnerungen.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/identify-microsoft-power-automate-components/describe-triggers-cloud-flows",
+    "source": {
+      "title": "Describe triggers for cloud flows",
+      "url": "https://learn.microsoft.com/en-us/training/modules/identify-microsoft-power-automate-components/describe-triggers-cloud-flows",
+      "quote": "The Recurrence trigger is the primary scheduled trigger. It allows makers to specify: The interval and frequency—for example, every 1 day, every 7 days, every 1 hour."
+    }
+  },
+  {
+    "id": "plb5-005",
+    "type": "multiple-choice",
+    "skillArea": "power-automate",
+    "topic": "Instant triggers",
+    "difficulty": "medium",
+    "prompt": "Which three of the following are instant triggers that let a user start a flow manually? Each correct answer presents part of the solution.",
+    "options": [
+      { "id": "a", "text": "Manually trigger a flow" },
+      { "id": "b", "text": "PowerApps trigger" },
+      { "id": "c", "text": "For a selected file or item (SharePoint)" },
+      { "id": "d", "text": "When a row is added (Dataverse)" },
+      { "id": "e", "text": "Recurrence" }
+    ],
+    "correct": ["a", "b", "c"],
+    "explanation": "Instant-Trigger starten Flows auf Benutzeraktion: der manuelle Button, der PowerApps-Trigger (Canvas-App übergibt Werte an den Flow) und „For a selected file or item“ im SharePoint-Menü. „When a row is added“ ist ein automatisierter Trigger, Recurrence ein zeitgesteuerter.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/identify-microsoft-power-automate-components/describe-triggers-cloud-flows",
+    "source": {
+      "title": "Describe triggers for cloud flows",
+      "url": "https://learn.microsoft.com/en-us/training/modules/identify-microsoft-power-automate-components/describe-triggers-cloud-flows",
+      "quote": "Manually trigger a flow: A button in the Power Automate app or web portal. PowerApps trigger: Allows a Power Apps canvas app to trigger a cloud flow. For a selected file or item (SharePoint): Adds a flow to the SharePoint document library or list menu, allowing users to run it against a specific file or item."
+    }
+  },
+  {
+    "id": "plb5-006",
+    "type": "single-choice",
+    "skillArea": "power-automate",
+    "topic": "HTTP triggers",
+    "difficulty": "medium",
+    "prompt": "An external service without a Power Automate connector should be able to start a flow. Which trigger enables this?",
+    "options": [
+      {
+        "id": "a",
+        "text": "When an HTTP request is received — it creates a unique URL endpoint for the flow"
+      },
+      { "id": "b", "text": "When a new response is submitted (Microsoft Forms)" },
+      { "id": "c", "text": "For a selected message (Outlook or Teams)" },
+      { "id": "d", "text": "When an item is created or modified (SharePoint)" }
+    ],
+    "correct": "a",
+    "explanation": "Der Trigger „When an HTTP request is received“ erzeugt eine eindeutige URL für den Flow. Jedes System, das HTTP-Anfragen senden kann, startet den Flow über diese URL mit einem JSON-Payload — typisch für Webhook-Ereignisse externer Dienste ohne nativen Connector.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/identify-microsoft-power-automate-components/describe-triggers-cloud-flows",
+    "source": {
+      "title": "Describe triggers for cloud flows",
+      "url": "https://learn.microsoft.com/en-us/training/modules/identify-microsoft-power-automate-components/describe-triggers-cloud-flows",
+      "quote": "When an HTTP request is received: Creates a unique URL endpoint for the flow. Any system that can make an HTTP request can trigger the flow by calling that URL with a JSON payload."
+    }
+  },
+  {
+    "id": "plb5-007",
+    "type": "single-choice",
+    "skillArea": "power-automate",
+    "topic": "Trigger conditions",
+    "difficulty": "medium",
+    "prompt": "Why should makers use trigger conditions to filter events as early as possible in a cloud flow?",
+    "options": [
+      {
+        "id": "a",
+        "text": "It reduces unnecessary flow runs, conserves the daily action limit, and improves responsiveness"
+      },
+      {
+        "id": "b",
+        "text": "It is required before a flow can be shared with other users"
+      },
+      {
+        "id": "c",
+        "text": "It automatically upgrades standard connectors to premium connectors"
+      },
+      {
+        "id": "d",
+        "text": "It encrypts the trigger data with a customer-managed key"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Trigger-Bedingungen werten Kriterien aus, bevor Aktionen laufen — z. B. Absender oder Anhänge beim Outlook-Trigger. Das vermeidet unnötige Flow-Läufe, schont das tägliche Aktionslimit und macht die Automatisierung insgesamt reaktionsschneller.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/identify-microsoft-power-automate-components/describe-triggers-cloud-flows",
+    "source": {
+      "title": "Describe triggers for cloud flows",
+      "url": "https://learn.microsoft.com/en-us/training/modules/identify-microsoft-power-automate-components/describe-triggers-cloud-flows",
+      "quote": "Use trigger conditions to filter events as early as possible in the flow, before any actions execute. This reduces unnecessary flow runs, conserves your daily action limit, and improves the overall responsiveness of the automation."
+    }
+  },
+  {
+    "id": "plb5-008",
+    "type": "matching",
+    "skillArea": "power-automate",
+    "topic": "Control actions",
+    "difficulty": "hard",
+    "prompt": "Match each control action in a cloud flow to what it does.",
+    "left": [
+      { "id": "l1", "text": "Condition" },
+      { "id": "l2", "text": "Switch" },
+      { "id": "l3", "text": "Apply to each" },
+      { "id": "l4", "text": "Do until" }
+    ],
+    "right": [
+      {
+        "id": "r1",
+        "text": "Evaluates a true/false condition and splits the flow into Yes and No branches"
+      },
+      {
+        "id": "r2",
+        "text": "Evaluates a single value against multiple cases and runs the matching case's actions"
+      },
+      {
+        "id": "r3",
+        "text": "Loops through every item in a collection and performs the same actions on each"
+      },
+      {
+        "id": "r4",
+        "text": "Repeats a set of actions until a specified condition becomes true"
+      }
+    ],
+    "correct": { "l1": "r1", "l2": "r2", "l3": "r3", "l4": "r4" },
+    "explanation": "Condition verzweigt nach Ja/Nein. Switch prüft einen Wert gegen mehrere Fälle — effizienter als verkettete Conditions bei vielen diskreten Ausgängen. Apply to each iteriert über Sammlungen, Do until wiederholt Aktionen bis eine Bedingung wahr wird (z. B. Retry eines API-Aufrufs).",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/identify-microsoft-power-automate-components/describe-actions-cloud-flows",
+    "source": {
+      "title": "Describe actions for cloud flows",
+      "url": "https://learn.microsoft.com/en-us/training/modules/identify-microsoft-power-automate-components/describe-actions-cloud-flows",
+      "quote": "Condition: Evaluates a true/false condition and splits the flow into Yes and No branches. Apply to each: Loops through every item in a collection and performs the same set of actions on each item. Do until: Repeats a set of actions until a specified condition becomes true—for example, retrying an API call until it succeeds."
+    }
+  },
+  {
+    "id": "plb5-009",
+    "type": "single-choice",
+    "skillArea": "power-automate",
+    "topic": "Data operations",
+    "difficulty": "medium",
+    "prompt": "A flow receives a JSON string from an external API. Which data operation action makes the individual JSON properties available as dynamic content tokens for later actions?",
+    "options": [
+      { "id": "a", "text": "Parse JSON" },
+      { "id": "b", "text": "Create HTML table" },
+      { "id": "c", "text": "Join" },
+      { "id": "d", "text": "Compose" }
+    ],
+    "correct": "a",
+    "explanation": "Parse JSON zerlegt einen JSON-String und stellt dessen Eigenschaften als Dynamic-Content-Tokens für Folgeaktionen bereit. Compose speichert Ausdrucksergebnisse, Join verbindet Array-Werte zu einem String, Create HTML table baut eine HTML-Tabelle aus einem Array.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/identify-microsoft-power-automate-components/describe-actions-cloud-flows",
+    "source": {
+      "title": "Describe actions for cloud flows",
+      "url": "https://learn.microsoft.com/en-us/training/modules/identify-microsoft-power-automate-components/describe-actions-cloud-flows",
+      "quote": "Parse JSON: Parses a JSON string and makes its individual properties available as dynamic content tokens for use in subsequent actions."
+    }
+  },
+  {
+    "id": "plb5-010",
+    "type": "single-choice",
+    "skillArea": "power-automate",
+    "topic": "Approval actions",
+    "difficulty": "medium",
+    "prompt": "What does the \"Start and wait for an approval\" action do in a cloud flow?",
+    "options": [
+      {
+        "id": "a",
+        "text": "It sends an approval request to approvers and pauses the flow until responses are received"
+      },
+      {
+        "id": "b",
+        "text": "It approves the flow run automatically on behalf of the administrator"
+      },
+      {
+        "id": "c",
+        "text": "It publishes the flow to the production environment"
+      },
+      {
+        "id": "d",
+        "text": "It waits for a fixed period and then continues regardless of any responses"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Die Aktion sendet eine Genehmigungsanfrage an einen oder mehrere Genehmiger und pausiert den Flow bis zur Antwort. Danach kann der Flow anhand des Ergebnisses verzweigen — ein Pfad bei Genehmigung, ein anderer bei Ablehnung.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/identify-microsoft-power-automate-components/describe-actions-cloud-flows",
+    "source": {
+      "title": "Describe actions for cloud flows",
+      "url": "https://learn.microsoft.com/en-us/training/modules/identify-microsoft-power-automate-components/describe-actions-cloud-flows",
+      "quote": "The Start and wait for an approval action sends an approval request to one or more approvers and pauses the flow until responses are received. The flow can then branch based on the approval outcome—taking one path if approved and another if rejected."
+    }
+  },
+  {
+    "id": "plb5-011",
+    "type": "yes-no",
+    "skillArea": "power-automate",
+    "topic": "Connector licensing",
+    "difficulty": "hard",
+    "prompt": "For each of the following statements about connectors in Power Automate, select Yes if the statement is true. Otherwise, select No.",
+    "statements": [
+      {
+        "id": "s1",
+        "text": "Standard connectors such as Outlook, Teams, and SharePoint are available to all Power Automate license tiers.",
+        "correct": true
+      },
+      {
+        "id": "s2",
+        "text": "In Power Automate, the Dataverse connector is a standard connector available without a premium license.",
+        "correct": false
+      },
+      {
+        "id": "s3",
+        "text": "Custom connectors define an API's authentication, endpoints, and operations as a reusable connector.",
+        "correct": true
+      }
+    ],
+    "explanation": "Standard-Connectors (Outlook, Teams, SharePoint, OneDrive …) stehen allen Lizenzstufen offen. Dataverse zählt in Power Automate zu den Premium-Connectors — wie SQL Server, Salesforce, SAP und ServiceNow. Für nicht abgedeckte Systeme definieren Custom Connectors Authentifizierung, Endpunkte und Operationen wiederverwendbar.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/identify-microsoft-power-automate-components/describe-actions-cloud-flows",
+    "source": {
+      "title": "Describe actions for cloud flows",
+      "url": "https://learn.microsoft.com/en-us/training/modules/identify-microsoft-power-automate-components/describe-actions-cloud-flows",
+      "quote": "Standard connectors: Available to all Power Automate license tiers. Premium connectors: Require a Power Automate Premium or per-flow license. Includes connectors for enterprise services like Dataverse, SQL Server, Salesforce, SAP, ServiceNow, and custom connectors."
+    }
+  },
+  {
+    "id": "plb5-012",
+    "type": "single-choice",
+    "skillArea": "power-automate",
+    "topic": "Attended vs. unattended desktop flows",
+    "difficulty": "hard",
+    "prompt": "A desktop flow should run in the background overnight without anyone being logged in to the machine. Which mode is required?",
+    "options": [
+      { "id": "a", "text": "An unattended desktop flow" },
+      { "id": "b", "text": "An attended desktop flow" },
+      { "id": "c", "text": "An instant cloud flow" },
+      { "id": "d", "text": "A scheduled cloud flow without any desktop flow" }
+    ],
+    "correct": "a",
+    "explanation": "Unattended Desktop-Flows laufen im Hintergrund ohne angemeldeten Benutzer — genau für solche Nachtläufe. Attended Flows setzen einen angemeldeten Benutzer voraus und können interaktiv neben dessen Arbeit laufen. Wichtig: Die Maschine muss zur Laufzeit verfügbar sein.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/identify-microsoft-power-automate-components/3-describe-use-cases-cloud-desktop-flows",
+    "source": {
+      "title": "Describe use cases for cloud and desktop flows",
+      "url": "https://learn.microsoft.com/en-us/training/modules/identify-microsoft-power-automate-components/3-describe-use-cases-cloud-desktop-flows",
+      "quote": "For unattended scenarios where the flow should run in the background without a logged-in user, use an unattended desktop flow. Attended flows require the user to be logged in but can run interactively alongside the user's work."
+    }
+  },
+  {
+    "id": "plb5-013",
+    "type": "single-choice",
+    "skillArea": "power-automate",
+    "topic": "Desktop flows and RPA",
+    "difficulty": "easy",
+    "prompt": "How do desktop flows automate legacy applications that have no APIs or cloud connectors?",
+    "options": [
+      {
+        "id": "a",
+        "text": "They use RPA technology to simulate human actions on the screen, such as clicking buttons and filling in forms"
+      },
+      {
+        "id": "b",
+        "text": "They decompile the legacy application and insert integration code"
+      },
+      {
+        "id": "c",
+        "text": "They require the legacy vendor to publish a REST API first"
+      },
+      {
+        "id": "d",
+        "text": "They replace the legacy application with a canvas app"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Desktop-Flows nutzen Robotic Process Automation: Sie simulieren menschliche Bildschirmaktionen — Buttons klicken, Formulare ausfüllen, Daten aus Tabellen lesen, Menüs navigieren — und automatisieren so Anwendungen ganz ohne API.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/identify-microsoft-power-automate-components/3-describe-use-cases-cloud-desktop-flows",
+    "source": {
+      "title": "Describe use cases for cloud and desktop flows",
+      "url": "https://learn.microsoft.com/en-us/training/modules/identify-microsoft-power-automate-components/3-describe-use-cases-cloud-desktop-flows",
+      "quote": "Desktop flows use Robotic Process Automation (RPA) technology to simulate human actions on the screen: clicking buttons, filling in forms, reading data from spreadsheets, navigating menus, and interacting with applications exactly as a person would."
+    }
+  },
+  {
+    "id": "plb5-014",
+    "type": "ordering",
+    "skillArea": "power-automate",
+    "topic": "Combining cloud and desktop flows",
+    "difficulty": "hard",
+    "prompt": "Contoso automates supplier invoice processing end to end. Place the steps of the combined cloud/desktop flow solution in the correct order.",
+    "items": [
+      {
+        "id": "i1",
+        "text": "A cloud flow monitors the Outlook inbox, detects incoming invoices, and extracts the attachment"
+      },
+      {
+        "id": "i2",
+        "text": "The cloud flow triggers a desktop flow that enters the invoice data into the legacy accounting application"
+      },
+      {
+        "id": "i3",
+        "text": "The cloud flow sends a confirmation email to the supplier and updates a SharePoint tracking list"
+      }
+    ],
+    "correctOrder": ["i1", "i2", "i3"],
+    "explanation": "Der Cloud-Flow orchestriert: Er überwacht das Postfach und extrahiert den Anhang, übergibt an einen Desktop-Flow für die Legacy-Anwendung und schließt danach cloudseitig ab (Bestätigungsmail, SharePoint-Update) — Ende-zu-Ende ohne manuelle Schritte.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/identify-microsoft-power-automate-components/3-describe-use-cases-cloud-desktop-flows",
+    "source": {
+      "title": "Describe use cases for cloud and desktop flows",
+      "url": "https://learn.microsoft.com/en-us/training/modules/identify-microsoft-power-automate-components/3-describe-use-cases-cloud-desktop-flows",
+      "quote": "A cloud flow monitors the Outlook inbox, detects incoming invoices, and extracts the attachment. It then triggers a desktop flow that opens the legacy accounting application, enters the invoice data into the correct form, and confirms the entry. The cloud flow then sends a confirmation email to the supplier and updates a SharePoint tracking list—all without anyone touching a keyboard."
+    }
+  },
+  {
+    "id": "plb5-015",
+    "type": "dropdown",
+    "skillArea": "power-automate",
+    "topic": "AI Builder actions",
+    "difficulty": "medium",
+    "prompt": "Complete the statement about AI Builder actions in cloud flows.",
+    "textParts": [
+      "The ",
+      " action evaluates whether text is positive, negative, or neutral, while the ",
+      " action generates text using a custom or prebuilt AI Builder prompt — for example, summarizing an email thread."
+    ],
+    "blanks": [
+      {
+        "id": "b1",
+        "options": [
+          { "id": "o1", "text": "Analyze positive or negative sentiment in text" },
+          { "id": "o2", "text": "Run a prompt" },
+          { "id": "o3", "text": "Process documents" }
+        ],
+        "correct": "o1"
+      },
+      {
+        "id": "b2",
+        "options": [
+          { "id": "o1", "text": "Analyze positive or negative sentiment in text" },
+          { "id": "o2", "text": "Run a prompt" },
+          { "id": "o3", "text": "Extract entities from text" }
+        ],
+        "correct": "o2"
+      }
+    ],
+    "explanation": "Die Sentiment-Aktion bewertet Texte als positiv, negativ oder neutral — nützlich fürs Routing von Kundenfeedback. „Run a prompt“ erzeugt Text per AI-Builder-Prompt (zusammenfassen, Antwortentwurf, klassifizieren). „Process documents“ extrahiert Felder aus Dokumenten, „Extract entities“ erkennt Namen, Daten, Orte und Beträge.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/identify-microsoft-power-automate-components/describe-actions-cloud-flows",
+    "source": {
+      "title": "Describe actions for cloud flows",
+      "url": "https://learn.microsoft.com/en-us/training/modules/identify-microsoft-power-automate-components/describe-actions-cloud-flows",
+      "quote": "Run a prompt: Generates text using a custom or prebuilt AI Builder prompt—for example, summarizing an email thread, drafting a response, or classifying customer feedback. Analyze positive or negative sentiment in text: Evaluates whether text is positive, negative, or neutral—useful for routing customer feedback or survey responses."
+    }
+  }
+]

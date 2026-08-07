@@ -1,0 +1,328 @@
+[
+  {
+    "id": "plb1-001",
+    "type": "single-choice",
+    "skillArea": "business-value",
+    "topic": "Power Platform components",
+    "difficulty": "easy",
+    "prompt": "Which Microsoft Power Platform component is a low-code, software as a service (SaaS) platform for creating, hosting, and administering modern external-facing business websites?",
+    "options": [
+      { "id": "a", "text": "Power Apps" },
+      { "id": "b", "text": "Power Pages" },
+      { "id": "c", "text": "Copilot Studio" },
+      { "id": "d", "text": "Microsoft Dataverse" }
+    ],
+    "correct": "b",
+    "explanation": "Power Pages ist die Low-Code-SaaS-Plattform für externe Business-Websites — etwa Kunden- oder Lieferantenportale. Power Apps baut Apps für interne Nutzer, Copilot Studio erstellt Agents, und Dataverse ist die Datenplattform darunter.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/describe-business-value-microsoft-power-platform/4-describe-value-power-pages-build-websites",
+    "source": {
+      "title": "Describe the value of Microsoft Power Pages to build websites",
+      "url": "https://learn.microsoft.com/en-us/training/modules/describe-business-value-microsoft-power-platform/4-describe-value-power-pages-build-websites",
+      "quote": "Microsoft Power Pages is a low-code, software as a service (SaaS) platform for creating, hosting, and administering modern external-facing business websites."
+    }
+  },
+  {
+    "id": "plb1-002",
+    "type": "single-choice",
+    "skillArea": "business-value",
+    "topic": "Flow types",
+    "difficulty": "easy",
+    "prompt": "Your finance team needs to automate data entry into an older ERP application that does not have an API. Which Power Automate capability should they use?",
+    "options": [
+      { "id": "a", "text": "Cloud flows" },
+      { "id": "b", "text": "Process mining" },
+      { "id": "c", "text": "Desktop flows" },
+      { "id": "d", "text": "AI Builder" }
+    ],
+    "correct": "c",
+    "explanation": "Desktop-Flows erweitern die Automatisierung auf den Desktop — inklusive Legacy-Anwendungen ohne API — und nutzen dafür Robotic Process Automation (RPA): Aktionen wie Datenübertragung oder Formulareingaben werden aufgezeichnet und wiederholt abgespielt. Cloud-Flows brauchen Connectors zu Cloud-Diensten, Process Mining analysiert Prozesse.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/describe-business-value-microsoft-power-platform/3-describe-value-power-automate-automate-processes",
+    "source": {
+      "title": "Describe the value of Microsoft Power Automate to automate processes",
+      "url": "https://learn.microsoft.com/en-us/training/modules/describe-business-value-microsoft-power-platform/3-describe-value-power-automate-automate-processes",
+      "quote": "Desktop flows extend automation to tasks that live on your computer's desktop—including legacy applications that don't have an API. Using robotic process automation (RPA) technology, desktop flows can record and replay actions such as copying data between systems, filling out web forms, or processing files in older applications."
+    }
+  },
+  {
+    "id": "plb1-003",
+    "type": "matching",
+    "skillArea": "business-value",
+    "topic": "Plan Designer agents",
+    "difficulty": "hard",
+    "prompt": "Plan Designer uses a team of specialized AI agents. Match each agent to what it contributes to the solution plan.",
+    "left": [
+      { "id": "l1", "text": "Solution Agent" },
+      { "id": "l2", "text": "Process Agent" },
+      { "id": "l3", "text": "Data Agent" },
+      { "id": "l4", "text": "Experience Agent" }
+    ],
+    "right": [
+      { "id": "r1", "text": "Ties the entire plan together into a coherent, end-to-end solution" },
+      { "id": "r2", "text": "Maps out the workflows and processes the solution needs to support" },
+      { "id": "r3", "text": "Generates the recommended Dataverse data model (tables, columns, relationships)" },
+      { "id": "r4", "text": "Proposes the user experiences, such as which canvas or model-driven apps to build" }
+    ],
+    "correct": { "l1": "r1", "l2": "r2", "l3": "r3", "l4": "r4" },
+    "explanation": "Der Solution Agent hält die Architektur zusammen, der Process Agent bildet die Workflows ab (inkl. Einsatzstellen für Power Automate oder Copilot Studio), der Data Agent entwirft das Dataverse-Datenmodell und der Experience Agent schlägt die rollenspezifischen Benutzererlebnisse vor.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/describe-business-value-microsoft-power-platform/9-describe-value-plan-designer",
+    "source": {
+      "title": "Describe the value of Plan Designer",
+      "url": "https://learn.microsoft.com/en-us/training/modules/describe-business-value-microsoft-power-platform/9-describe-value-plan-designer",
+      "quote": "Process Agent: maps out the workflows and processes that the solution needs to support, identifying where Power Automate flows or Copilot Studio agents should be used to automate steps or handle interactions. Data Agent: generates a recommended data model—the tables, columns, and relationships in Microsoft Dataverse—that stores and organizes the information your solution requires."
+    }
+  },
+  {
+    "id": "plb1-004",
+    "type": "yes-no",
+    "skillArea": "business-value",
+    "topic": "Connectors",
+    "difficulty": "medium",
+    "prompt": "For each of the following statements about Power Platform connectors, select Yes if the statement is true. Otherwise, select No.",
+    "statements": [
+      {
+        "id": "s1",
+        "text": "There are more than 1,800 prebuilt connectors available for Power Platform.",
+        "correct": true
+      },
+      {
+        "id": "s2",
+        "text": "Premium connectors such as SAP ERP and Salesforce are included with most Power Platform licenses.",
+        "correct": false
+      },
+      {
+        "id": "s3",
+        "text": "Custom connectors are defined using OpenAPI specifications and can connect to any service that exposes an API.",
+        "correct": true
+      }
+    ],
+    "explanation": "Es gibt über 1.800 vorgefertigte Connectors. In den meisten Lizenzen enthalten sind aber nur die Standard-Connectors — Premium-Connectors (z. B. SAP ERP, Salesforce, ServiceNow) erfordern Premium-Lizenzen. Eigene Dienste bindet man per Custom Connector auf Basis einer OpenAPI-Spezifikation an.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/describe-business-value-microsoft-power-platform/8-describe-value-connectors-integrate-services-data",
+    "source": {
+      "title": "Describe the value of connectors to integrate services and data for apps and flows",
+      "url": "https://learn.microsoft.com/en-us/training/modules/describe-business-value-microsoft-power-platform/8-describe-value-connectors-integrate-services-data",
+      "quote": "There are more than 1,800 prebuilt connectors available for Power Platform today, covering Microsoft services, major enterprise platforms, and specialized third-party tools. Premium connectors: available with premium licenses, covering specialized enterprise services such as SAP ERP, Salesforce, ServiceNow, and more. Custom connectors are defined using OpenAPI specifications and allow Power Platform to communicate with any service that exposes an API—whether that's an internal system built by your IT team or a niche third-party tool specific to your industry."
+    }
+  },
+  {
+    "id": "plb1-005",
+    "type": "single-choice",
+    "skillArea": "business-value",
+    "topic": "Copilot Studio",
+    "difficulty": "easy",
+    "prompt": "What is Microsoft Copilot Studio?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A low-code tool that allows makers to create custom AI-powered agents that understand natural language and can take action"
+      },
+      {
+        "id": "b",
+        "text": "A professional development environment for writing custom AI models in Python"
+      },
+      {
+        "id": "c",
+        "text": "A reporting service that visualizes conversation analytics for call centers"
+      },
+      {
+        "id": "d",
+        "text": "A desktop application for recording robotic process automation scripts"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Copilot Studio ist ein Low-Code-Werkzeug zum Erstellen eigener Agents: KI-Assistenten, die natürliche Sprache verstehen, Konversationspfaden folgen, Informationen aus Datenquellen abrufen und über verbundene Flows und Dienste Aktionen ausführen. KI- oder Entwicklerkenntnisse sind dafür nicht nötig.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/describe-business-value-microsoft-power-platform/6-describe-value-copilot-studio-create-agents",
+    "source": {
+      "title": "Describe the value of Copilot Studio to create agents",
+      "url": "https://learn.microsoft.com/en-us/training/modules/describe-business-value-microsoft-power-platform/6-describe-value-copilot-studio-create-agents",
+      "quote": "Microsoft Copilot Studio is a low-code tool that allows makers to create custom agents—AI-powered assistants that can understand natural language, follow complex conversation paths, retrieve information from your data sources, and take action through connected flows and services."
+    }
+  },
+  {
+    "id": "plb1-006",
+    "type": "dropdown",
+    "skillArea": "business-value",
+    "topic": "Connector concepts",
+    "difficulty": "medium",
+    "prompt": "Complete the statement about the building blocks of a connector.",
+    "textParts": [
+      "Within each connector, ",
+      " are things your app or flow can do, such as \"create a record\" or \"send an email\", while ",
+      " are events in the external service that can start a flow, such as \"when a new item is added to a SharePoint list\"."
+    ],
+    "blanks": [
+      {
+        "id": "b1",
+        "options": [
+          { "id": "o1", "text": "actions" },
+          { "id": "o2", "text": "triggers" },
+          { "id": "o3", "text": "environments" }
+        ],
+        "correct": "o1"
+      },
+      {
+        "id": "b2",
+        "options": [
+          { "id": "o1", "text": "actions" },
+          { "id": "o2", "text": "triggers" },
+          { "id": "o3", "text": "connections" }
+        ],
+        "correct": "o2"
+      }
+    ],
+    "explanation": "Jeder Connector besteht aus Actions (was App oder Flow tun können, z. B. einen Datensatz anlegen oder eine E-Mail senden) und Triggers (Ereignisse im externen Dienst, die einen Flow starten können, z. B. ein neues Element in einer SharePoint-Liste).",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/describe-business-value-microsoft-power-platform/8-describe-value-connectors-integrate-services-data",
+    "source": {
+      "title": "Describe the value of connectors to integrate services and data for apps and flows",
+      "url": "https://learn.microsoft.com/en-us/training/modules/describe-business-value-microsoft-power-platform/8-describe-value-connectors-integrate-services-data",
+      "quote": "Actions: things your app or flow can do, such as \"create a record\" or \"send an email.\" Triggers: events in the external service that can start a flow, such as \"when a new item is added to a SharePoint list.\""
+    }
+  },
+  {
+    "id": "plb1-007",
+    "type": "single-choice",
+    "skillArea": "business-value",
+    "topic": "Process mining",
+    "difficulty": "medium",
+    "prompt": "A company wants to find out where its order-handling process has inefficiencies and bottlenecks before deciding what to automate. Which Power Automate capability is designed for this?",
+    "options": [
+      { "id": "a", "text": "Desktop flows" },
+      { "id": "b", "text": "Process mining" },
+      { "id": "c", "text": "Generative actions" },
+      { "id": "d", "text": "Approvals" }
+    ],
+    "correct": "b",
+    "explanation": "Process Mining analysiert vorhandene Prozessdaten und liefert eine visuelle Karte auf Basis echter Ereignisdaten — statt zu raten, wo Prozesse haken, sieht man Ineffizienzen, Engpässe und Automatisierungspotenziale.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/describe-business-value-microsoft-power-platform/3-describe-value-power-automate-automate-processes",
+    "source": {
+      "title": "Describe the value of Microsoft Power Automate to automate processes",
+      "url": "https://learn.microsoft.com/en-us/training/modules/describe-business-value-microsoft-power-platform/3-describe-value-power-automate-automate-processes",
+      "quote": "Process mining is an advanced capability within Power Automate that analyzes your existing process data to identify inefficiencies, bottlenecks, and automation opportunities. Rather than guessing where processes break down, you get a visual map grounded in real event data."
+    }
+  },
+  {
+    "id": "plb1-008",
+    "type": "multiple-choice",
+    "skillArea": "business-value",
+    "topic": "Agent capabilities",
+    "difficulty": "medium",
+    "prompt": "Which three of the following can agents built in Copilot Studio do? Each correct answer presents part of the solution.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Answer questions using knowledge sourced from websites, SharePoint documents, and Dataverse records"
+      },
+      {
+        "id": "b",
+        "text": "Execute actions such as submitting a support ticket by triggering Power Automate flows"
+      },
+      {
+        "id": "c",
+        "text": "Escalate to a human agent when the conversation exceeds the agent's capabilities"
+      },
+      {
+        "id": "d",
+        "text": "Replace the Microsoft Power Platform security model with their own permissions"
+      },
+      {
+        "id": "e",
+        "text": "Compile custom program code into standalone mobile apps"
+      }
+    ],
+    "correct": ["a", "b", "c"],
+    "explanation": "Agents beantworten Fragen aus Wissensquellen (Websites, SharePoint, Dataverse), führen über Power-Automate-Flows Aktionen aus, meistern mehrstufige Konversationen und eskalieren bei Bedarf an einen Menschen. Sie ersetzen weder das Sicherheitsmodell noch kompilieren sie Apps.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/describe-business-value-microsoft-power-platform/6-describe-value-copilot-studio-create-agents",
+    "source": {
+      "title": "Describe the value of Copilot Studio to create agents",
+      "url": "https://learn.microsoft.com/en-us/training/modules/describe-business-value-microsoft-power-platform/6-describe-value-copilot-studio-create-agents",
+      "quote": "Answer questions using knowledge sourced from websites, SharePoint documents, Dataverse records, and custom knowledge bases. Execute actions—such as submitting a support ticket, checking order status, or booking an appointment—by triggering Power Automate flows. Escalate to a human agent when the conversation exceeds the agent's capabilities."
+    }
+  },
+  {
+    "id": "plb1-009",
+    "type": "single-choice",
+    "skillArea": "business-value",
+    "topic": "Dataverse",
+    "difficulty": "easy",
+    "prompt": "Which statement best describes the role of Microsoft Dataverse within Power Platform?",
+    "options": [
+      {
+        "id": "a",
+        "text": "It is the cloud-based data platform where apps, flows, websites, and agents share the same trusted source of business data"
+      },
+      {
+        "id": "b",
+        "text": "It is a spreadsheet add-in that synchronizes Excel workbooks between users"
+      },
+      {
+        "id": "c",
+        "text": "It is a licensing portal for assigning Power Platform licenses to users"
+      },
+      {
+        "id": "d",
+        "text": "It is a code repository for professional developers to store app source code"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Dataverse ist die Cloud-Datenplattform und das Fundament jeder Power-Platform-Lösung: ein sicherer, gemeinsamer Ort, an dem Apps, Flows, Websites und Agents mit derselben vertrauenswürdigen Datenbasis arbeiten.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/describe-business-value-microsoft-power-platform/5-describe-value-dataverse-organize-business-data",
+    "source": {
+      "title": "Describe the value of Microsoft Dataverse to organize business data",
+      "url": "https://learn.microsoft.com/en-us/training/modules/describe-business-value-microsoft-power-platform/5-describe-value-dataverse-organize-business-data",
+      "quote": "Microsoft Dataverse is the cloud-based data platform that serves as that foundation. Think of Dataverse as the connective tissue that holds your Power Platform solutions together—a single, secure place where your apps, flows, websites, and agents all share the same trusted source of business data."
+    }
+  },
+  {
+    "id": "plb1-010",
+    "type": "single-choice",
+    "skillArea": "business-value",
+    "topic": "AI Builder",
+    "difficulty": "medium",
+    "prompt": "An accounts payable team wants to automatically extract vendor name, invoice number, and total amount from scanned PDF invoices inside a flow — without writing code. Which Power Platform capability should they use?",
+    "options": [
+      { "id": "a", "text": "AI Builder" },
+      { "id": "b", "text": "Plan Designer" },
+      { "id": "c", "text": "Power Fx" },
+      { "id": "d", "text": "Process mining" }
+    ],
+    "correct": "a",
+    "explanation": "AI Builder stellt vorgefertigte und eigene KI-Modelle für Apps und Flows bereit — ohne Code. Typische Szenarien: Informationen aus Dokumenten extrahieren, Objekte in Bildern erkennen, Texte klassifizieren, Ergebnisse vorhersagen. Genau das Rechnungs-Szenario nennt das Lernmaterial als Beispiel.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/describe-business-value-microsoft-power-platform/7-describe-value-copilots-generative-ai-features",
+    "source": {
+      "title": "Describe the value of copilots and generative AI features in Microsoft Power Platform",
+      "url": "https://learn.microsoft.com/en-us/training/modules/describe-business-value-microsoft-power-platform/7-describe-value-copilots-generative-ai-features",
+      "quote": "AI Builder is a capability within Power Platform that allows you to add pre-built and custom AI models to your apps and flows without writing code. For example, an accounts payable team might use an AI Builder document processing model to automatically extract vendor name, invoice number, line items, and total amount from scanned PDF invoices—eliminating manual data entry entirely."
+    }
+  },
+  {
+    "id": "plb1-011",
+    "type": "yes-no",
+    "skillArea": "business-value",
+    "topic": "Power Apps app types",
+    "difficulty": "medium",
+    "prompt": "For each of the following statements about the types of apps you can build with Power Apps, select Yes if the statement is true. Otherwise, select No.",
+    "statements": [
+      {
+        "id": "s1",
+        "text": "Canvas apps connect to more than 1,800 data sources.",
+        "correct": true
+      },
+      {
+        "id": "s2",
+        "text": "Model-driven apps generate the user interface automatically from your data model.",
+        "correct": true
+      },
+      {
+        "id": "s3",
+        "text": "Apps built with Power Apps require additional configuration before they can run on iOS and Android devices.",
+        "correct": false
+      }
+    ],
+    "explanation": "Canvas-Apps bieten volle Layout-Kontrolle und verbinden sich mit über 1.800 Datenquellen. Modellgesteuerte Apps bauen auf Dataverse auf und erzeugen die Oberfläche automatisch aus dem Datenmodell. Power-Apps-Apps laufen ohne zusätzliche Konfiguration nativ auf iOS, Android und Windows sowie im Browser.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/describe-business-value-microsoft-power-platform/2-describe-value-power-apps-build-applications",
+    "source": {
+      "title": "Describe the value of Microsoft Power Apps to build applications",
+      "url": "https://learn.microsoft.com/en-us/training/modules/describe-business-value-microsoft-power-platform/2-describe-value-power-apps-build-applications",
+      "quote": "Canvas apps connect to more than 1,800 data sources, making them ideal for scenarios where you need a highly tailored user experience. Model-driven apps are built on top of Dataverse and generate the user interface automatically from your data model. Power Apps for mobile means the apps you build run natively on iOS, Android, and Windows devices—as well as in any web browser—without additional configuration."
+    }
+  }
+]

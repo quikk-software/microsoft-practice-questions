@@ -3,6 +3,10 @@ import { getRepository } from "@/lib/data";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 
+// Stündlich neu erzeugen: neu geseedete Examen erscheinen ohne Redeploy,
+// und der Build-Cache kann keinen veralteten Stand einfrieren.
+export const revalidate = 3600;
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const exams = await getRepository()
     .listExams()

@@ -1,0 +1,497 @@
+[
+  {
+    "uid": "learn.wwl.describe-microsoft-power-platform-administration-governance.introduction",
+    "title": "Introduction",
+    "url": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-power-platform-administration-governance/1-introduction",
+    "module": "describe-microsoft-power-platform-administration-governance",
+    "moduleTitle": "Describe Power Platform governance and administration",
+    "file": "content/describe-microsoft-power-platform-administration-governance/01-1-introduction.md",
+    "chars": 1563
+  },
+  {
+    "uid": "learn.wwl.describe-microsoft-power-platform-administration-governance.describe-environments",
+    "title": "Describe Power Platform environments",
+    "url": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-power-platform-administration-governance/3-describe-environments",
+    "module": "describe-microsoft-power-platform-administration-governance",
+    "moduleTitle": "Describe Power Platform governance and administration",
+    "file": "content/describe-microsoft-power-platform-administration-governance/02-3-describe-environments.md",
+    "chars": 7705
+  },
+  {
+    "uid": "learn.wwl.describe-microsoft-power-platform-administration-governance.describe-microsoft-power-platform-security-model",
+    "title": "Describe the Microsoft Power Platform security model",
+    "url": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-power-platform-administration-governance/2-describe-microsoft-power-platform-security-model",
+    "module": "describe-microsoft-power-platform-administration-governance",
+    "moduleTitle": "Describe Power Platform governance and administration",
+    "file": "content/describe-microsoft-power-platform-administration-governance/03-2-describe-microsoft-power-platform-security-model.md",
+    "chars": 7300
+  },
+  {
+    "uid": "learn.wwl.describe-microsoft-power-platform-administration-governance.describe-power-platform-data-privacy-accessibility-guidelines",
+    "title": "Describe how Microsoft Power Platform supports data privacy and accessibility guidelines",
+    "url": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-power-platform-administration-governance/5-describe-power-platform-data-privacy-accessibility-guidelines",
+    "module": "describe-microsoft-power-platform-administration-governance",
+    "moduleTitle": "Describe Power Platform governance and administration",
+    "file": "content/describe-microsoft-power-platform-administration-governance/04-5-describe-power-platform-data-privacy-accessibility-guidelines.md",
+    "chars": 6217
+  },
+  {
+    "uid": "learn.wwl.describe-microsoft-power-platform-administration-governance.describe-monitoring-analytics",
+    "title": "Describe the monitoring and analytics capabilities of the Microsoft Power Platform",
+    "url": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-power-platform-administration-governance/describe-monitoring-analytics",
+    "module": "describe-microsoft-power-platform-administration-governance",
+    "moduleTitle": "Describe Power Platform governance and administration",
+    "file": "content/describe-microsoft-power-platform-administration-governance/05-describe-monitoring-analytics.md",
+    "chars": 7925
+  },
+  {
+    "uid": "learn.wwl.describe-microsoft-power-platform-administration-governance.describe-application-lifecycle-management-power-platform",
+    "title": "Describe application lifecycle management with Power Platform Pipelines",
+    "url": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-power-platform-administration-governance/6-describe-application-lifecycle-management-power-platform",
+    "module": "describe-microsoft-power-platform-administration-governance",
+    "moduleTitle": "Describe Power Platform governance and administration",
+    "file": "content/describe-microsoft-power-platform-administration-governance/06-6-describe-application-lifecycle-management-power-platform.md",
+    "chars": 7191
+  },
+  {
+    "uid": "learn.wwl.describe-microsoft-power-platform-administration-governance.knowledge-check",
+    "title": "Module assessment",
+    "url": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-power-platform-administration-governance/7-knowledge-check",
+    "module": "describe-microsoft-power-platform-administration-governance",
+    "moduleTitle": "Describe Power Platform governance and administration",
+    "file": "content/describe-microsoft-power-platform-administration-governance/07-7-knowledge-check.md",
+    "chars": 2449
+  },
+  {
+    "uid": "learn.wwl.describe-microsoft-power-platform-administration-governance.summary",
+    "title": "Summary",
+    "url": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-power-platform-administration-governance/8-summary",
+    "module": "describe-microsoft-power-platform-administration-governance",
+    "moduleTitle": "Describe Power Platform governance and administration",
+    "file": "content/describe-microsoft-power-platform-administration-governance/08-8-summary.md",
+    "chars": 4053
+  },
+  {
+    "uid": "learn.wwl.identify-microsoft-power-automate-components.introduction",
+    "title": "Introduction",
+    "url": "https://learn.microsoft.com/en-us/training/modules/identify-microsoft-power-automate-components/1-introduction",
+    "module": "identify-microsoft-power-automate-components",
+    "moduleTitle": "Identify Microsoft Power Automate components",
+    "file": "content/identify-microsoft-power-automate-components/01-1-introduction.md",
+    "chars": 1435
+  },
+  {
+    "uid": "learn.wwl.identify-microsoft-power-automate-components.describe-use-cases-cloud-desktop-flows",
+    "title": "Describe use cases for cloud and desktop flows",
+    "url": "https://learn.microsoft.com/en-us/training/modules/identify-microsoft-power-automate-components/3-describe-use-cases-cloud-desktop-flows",
+    "module": "identify-microsoft-power-automate-components",
+    "moduleTitle": "Identify Microsoft Power Automate components",
+    "file": "content/identify-microsoft-power-automate-components/02-3-describe-use-cases-cloud-desktop-flows.md",
+    "chars": 5140
+  },
+  {
+    "uid": "learn.wwl.identify-microsoft-power-automate-components.describe-power-automate-use-cases",
+    "title": "Describe Power Automate use cases",
+    "url": "https://learn.microsoft.com/en-us/training/modules/identify-microsoft-power-automate-components/describe-power-automate-use-cases",
+    "module": "identify-microsoft-power-automate-components",
+    "moduleTitle": "Identify Microsoft Power Automate components",
+    "file": "content/identify-microsoft-power-automate-components/03-describe-power-automate-use-cases.md",
+    "chars": 9832
+  },
+  {
+    "uid": "learn.wwl.identify-microsoft-power-automate-components.describe-triggers-cloud-flows",
+    "title": "Describe triggers for cloud flows",
+    "url": "https://learn.microsoft.com/en-us/training/modules/identify-microsoft-power-automate-components/describe-triggers-cloud-flows",
+    "module": "identify-microsoft-power-automate-components",
+    "moduleTitle": "Identify Microsoft Power Automate components",
+    "file": "content/identify-microsoft-power-automate-components/04-describe-triggers-cloud-flows.md",
+    "chars": 5489
+  },
+  {
+    "uid": "learn.wwl.identify-microsoft-power-automate-components.describe-actions-cloud-flows",
+    "title": "Describe actions for cloud flows",
+    "url": "https://learn.microsoft.com/en-us/training/modules/identify-microsoft-power-automate-components/describe-actions-cloud-flows",
+    "module": "identify-microsoft-power-automate-components",
+    "moduleTitle": "Identify Microsoft Power Automate components",
+    "file": "content/identify-microsoft-power-automate-components/05-describe-actions-cloud-flows.md",
+    "chars": 6322
+  },
+  {
+    "uid": "learn.wwl.identify-microsoft-power-automate-components.create-cloud-flows-copilot",
+    "title": "Create cloud flows with Copilot",
+    "url": "https://learn.microsoft.com/en-us/training/modules/identify-microsoft-power-automate-components/create-cloud-flows-copilot",
+    "module": "identify-microsoft-power-automate-components",
+    "moduleTitle": "Identify Microsoft Power Automate components",
+    "file": "content/identify-microsoft-power-automate-components/06-create-cloud-flows-copilot.md",
+    "chars": 6384
+  },
+  {
+    "uid": "learn.wwl.identify-microsoft-power-automate-components.create-desktop-flows-copilot",
+    "title": "Create desktop flows with Copilot",
+    "url": "https://learn.microsoft.com/en-us/training/modules/identify-microsoft-power-automate-components/create-desktop-flows-copilot",
+    "module": "identify-microsoft-power-automate-components",
+    "moduleTitle": "Identify Microsoft Power Automate components",
+    "file": "content/identify-microsoft-power-automate-components/07-create-desktop-flows-copilot.md",
+    "chars": 5090
+  },
+  {
+    "uid": "learn.wwl.identify-microsoft-power-automate-components.describe-building-cloud-flows",
+    "title": "Describe building cloud flows",
+    "url": "https://learn.microsoft.com/en-us/training/modules/identify-microsoft-power-automate-components/describe-building-cloud-flows",
+    "module": "identify-microsoft-power-automate-components",
+    "moduleTitle": "Identify Microsoft Power Automate components",
+    "file": "content/identify-microsoft-power-automate-components/08-describe-building-cloud-flows.md",
+    "chars": 6884
+  },
+  {
+    "uid": "learn.wwl.identify-microsoft-power-automate-components.knowledge-check",
+    "title": "Knowledge check",
+    "url": "https://learn.microsoft.com/en-us/training/modules/identify-microsoft-power-automate-components/10-knowledge-check",
+    "module": "identify-microsoft-power-automate-components",
+    "moduleTitle": "Identify Microsoft Power Automate components",
+    "file": "content/identify-microsoft-power-automate-components/09-10-knowledge-check.md",
+    "chars": 1740
+  },
+  {
+    "uid": "learn.wwl.identify-microsoft-power-automate-components.summary",
+    "title": "Summary",
+    "url": "https://learn.microsoft.com/en-us/training/modules/identify-microsoft-power-automate-components/11-summary",
+    "module": "identify-microsoft-power-automate-components",
+    "moduleTitle": "Identify Microsoft Power Automate components",
+    "file": "content/identify-microsoft-power-automate-components/10-11-summary.md",
+    "chars": 4964
+  },
+  {
+    "uid": "learn-bizapps.understand-features-copilot-studio-agents.introduction",
+    "title": "Introduction",
+    "url": "https://learn.microsoft.com/en-us/training/modules/understand-features-copilot-studio-agents/introduction",
+    "module": "understand-features-copilot-studio-agents",
+    "moduleTitle": "Understand features of Copilot Studio agents",
+    "file": "content/understand-features-copilot-studio-agents/01-introduction.md",
+    "chars": 1551
+  },
+  {
+    "uid": "learn-bizapps.understand-features-copilot-studio-agents.describe-use-cases-agents",
+    "title": "Describe use cases for agents",
+    "url": "https://learn.microsoft.com/en-us/training/modules/understand-features-copilot-studio-agents/describe-use-cases-agents",
+    "module": "understand-features-copilot-studio-agents",
+    "moduleTitle": "Understand features of Copilot Studio agents",
+    "file": "content/understand-features-copilot-studio-agents/02-describe-use-cases-agents.md",
+    "chars": 4069
+  },
+  {
+    "uid": "learn-bizapps.understand-features-copilot-studio-agents.how-copilot-studio-uses-your-data",
+    "title": "Describe how Copilot Studio uses and processes data",
+    "url": "https://learn.microsoft.com/en-us/training/modules/understand-features-copilot-studio-agents/how-copilot-studio-uses-your-data",
+    "module": "understand-features-copilot-studio-agents",
+    "moduleTitle": "Understand features of Copilot Studio agents",
+    "file": "content/understand-features-copilot-studio-agents/03-how-copilot-studio-uses-your-data.md",
+    "chars": 7985
+  },
+  {
+    "uid": "learn-bizapps.understand-features-copilot-studio-agents.describe-knowledge-tools",
+    "title": "Describe how knowledge, tools, and MCP servers extend agent capabilities",
+    "url": "https://learn.microsoft.com/en-us/training/modules/understand-features-copilot-studio-agents/describe-knowledge-tools",
+    "module": "understand-features-copilot-studio-agents",
+    "moduleTitle": "Understand features of Copilot Studio agents",
+    "file": "content/understand-features-copilot-studio-agents/04-describe-knowledge-tools.md",
+    "chars": 8507
+  },
+  {
+    "uid": "learn-bizapps.understand-features-copilot-studio-agents.monitor-agent-usage",
+    "title": "Describe how to monitor Copilot Studio agent usage and adoption",
+    "url": "https://learn.microsoft.com/en-us/training/modules/understand-features-copilot-studio-agents/monitor-agent-usage",
+    "module": "understand-features-copilot-studio-agents",
+    "moduleTitle": "Understand features of Copilot Studio agents",
+    "file": "content/understand-features-copilot-studio-agents/05-monitor-agent-usage.md",
+    "chars": 3322
+  },
+  {
+    "uid": "learn-bizapps.understand-features-copilot-studio-agents.describe-agent-flows",
+    "title": "Describe agent flows",
+    "url": "https://learn.microsoft.com/en-us/training/modules/understand-features-copilot-studio-agents/describe-agent-flows",
+    "module": "understand-features-copilot-studio-agents",
+    "moduleTitle": "Understand features of Copilot Studio agents",
+    "file": "content/understand-features-copilot-studio-agents/06-describe-agent-flows.md",
+    "chars": 3476
+  },
+  {
+    "uid": "learn-bizapps.understand-features-copilot-studio-agents.agent-development-process",
+    "title": "Describe the agent development process and build an agent",
+    "url": "https://learn.microsoft.com/en-us/training/modules/understand-features-copilot-studio-agents/agent-development-process",
+    "module": "understand-features-copilot-studio-agents",
+    "moduleTitle": "Understand features of Copilot Studio agents",
+    "file": "content/understand-features-copilot-studio-agents/07-agent-development-process.md",
+    "chars": 11569
+  },
+  {
+    "uid": "learn-bizapps.understand-features-copilot-studio-agents.knowledge-check",
+    "title": "Module assessment",
+    "url": "https://learn.microsoft.com/en-us/training/modules/understand-features-copilot-studio-agents/knowledge-check",
+    "module": "understand-features-copilot-studio-agents",
+    "moduleTitle": "Understand features of Copilot Studio agents",
+    "file": "content/understand-features-copilot-studio-agents/08-knowledge-check.md",
+    "chars": 2462
+  },
+  {
+    "uid": "learn-bizapps.understand-features-copilot-studio-agents.summary",
+    "title": "Summary",
+    "url": "https://learn.microsoft.com/en-us/training/modules/understand-features-copilot-studio-agents/summary",
+    "module": "understand-features-copilot-studio-agents",
+    "moduleTitle": "Understand features of Copilot Studio agents",
+    "file": "content/understand-features-copilot-studio-agents/09-summary.md",
+    "chars": 2754
+  },
+  {
+    "uid": "learn.wwl.describe-business-value-microsoft-power-platform.introduction",
+    "title": "Introduction",
+    "url": "https://learn.microsoft.com/en-us/training/modules/describe-business-value-microsoft-power-platform/1-introduction",
+    "module": "describe-business-value-microsoft-power-platform",
+    "moduleTitle": "Describe the business value of Microsoft Power Platform",
+    "file": "content/describe-business-value-microsoft-power-platform/01-1-introduction.md",
+    "chars": 1363
+  },
+  {
+    "uid": "learn.wwl.describe-business-value-microsoft-power-platform.describe-value-power-apps-build-applications",
+    "title": "Describe the value of Microsoft Power Apps to build applications",
+    "url": "https://learn.microsoft.com/en-us/training/modules/describe-business-value-microsoft-power-platform/2-describe-value-power-apps-build-applications",
+    "module": "describe-business-value-microsoft-power-platform",
+    "moduleTitle": "Describe the business value of Microsoft Power Platform",
+    "file": "content/describe-business-value-microsoft-power-platform/02-2-describe-value-power-apps-build-applications.md",
+    "chars": 10648
+  },
+  {
+    "uid": "learn.wwl.describe-business-value-microsoft-power-platform.describe-value-power-automate-automate-processes",
+    "title": "Describe the value of Microsoft Power Automate to automate processes",
+    "url": "https://learn.microsoft.com/en-us/training/modules/describe-business-value-microsoft-power-platform/3-describe-value-power-automate-automate-processes",
+    "module": "describe-business-value-microsoft-power-platform",
+    "moduleTitle": "Describe the business value of Microsoft Power Platform",
+    "file": "content/describe-business-value-microsoft-power-platform/03-3-describe-value-power-automate-automate-processes.md",
+    "chars": 10907
+  },
+  {
+    "uid": "learn.wwl.describe-business-value-microsoft-power-platform.describe-value-power-pages-build-websites",
+    "title": "Describe the value of Microsoft Power Pages to build websites",
+    "url": "https://learn.microsoft.com/en-us/training/modules/describe-business-value-microsoft-power-platform/4-describe-value-power-pages-build-websites",
+    "module": "describe-business-value-microsoft-power-platform",
+    "moduleTitle": "Describe the business value of Microsoft Power Platform",
+    "file": "content/describe-business-value-microsoft-power-platform/04-4-describe-value-power-pages-build-websites.md",
+    "chars": 8429
+  },
+  {
+    "uid": "learn.wwl.describe-business-value-microsoft-power-platform.describe-value-dataverse-organize-business-data",
+    "title": "Describe the value of Microsoft Dataverse to organize business data",
+    "url": "https://learn.microsoft.com/en-us/training/modules/describe-business-value-microsoft-power-platform/5-describe-value-dataverse-organize-business-data",
+    "module": "describe-business-value-microsoft-power-platform",
+    "moduleTitle": "Describe the business value of Microsoft Power Platform",
+    "file": "content/describe-business-value-microsoft-power-platform/05-5-describe-value-dataverse-organize-business-data.md",
+    "chars": 7198
+  },
+  {
+    "uid": "learn.wwl.describe-business-value-microsoft-power-platform.describe-value-copilot-studio-create-agents",
+    "title": "Describe the value of Copilot Studio to create agents",
+    "url": "https://learn.microsoft.com/en-us/training/modules/describe-business-value-microsoft-power-platform/6-describe-value-copilot-studio-create-agents",
+    "module": "describe-business-value-microsoft-power-platform",
+    "moduleTitle": "Describe the business value of Microsoft Power Platform",
+    "file": "content/describe-business-value-microsoft-power-platform/06-6-describe-value-copilot-studio-create-agents.md",
+    "chars": 8340
+  },
+  {
+    "uid": "learn.wwl.describe-business-value-microsoft-power-platform.describe-value-copilots-generative-ai-features",
+    "title": "Describe the value of copilots and generative AI features in Microsoft Power Platform",
+    "url": "https://learn.microsoft.com/en-us/training/modules/describe-business-value-microsoft-power-platform/7-describe-value-copilots-generative-ai-features",
+    "module": "describe-business-value-microsoft-power-platform",
+    "moduleTitle": "Describe the business value of Microsoft Power Platform",
+    "file": "content/describe-business-value-microsoft-power-platform/07-7-describe-value-copilots-generative-ai-features.md",
+    "chars": 3963
+  },
+  {
+    "uid": "learn.wwl.describe-business-value-microsoft-power-platform.describe-value-connectors-integrate-services-data",
+    "title": "Describe the value of connectors to integrate services and data for apps and flows",
+    "url": "https://learn.microsoft.com/en-us/training/modules/describe-business-value-microsoft-power-platform/8-describe-value-connectors-integrate-services-data",
+    "module": "describe-business-value-microsoft-power-platform",
+    "moduleTitle": "Describe the business value of Microsoft Power Platform",
+    "file": "content/describe-business-value-microsoft-power-platform/08-8-describe-value-connectors-integrate-services-data.md",
+    "chars": 2586
+  },
+  {
+    "uid": "learn.wwl.describe-business-value-microsoft-power-platform.describe-value-plan-designer",
+    "title": "Describe the value of Plan Designer",
+    "url": "https://learn.microsoft.com/en-us/training/modules/describe-business-value-microsoft-power-platform/9-describe-value-plan-designer",
+    "module": "describe-business-value-microsoft-power-platform",
+    "moduleTitle": "Describe the business value of Microsoft Power Platform",
+    "file": "content/describe-business-value-microsoft-power-platform/09-9-describe-value-plan-designer.md",
+    "chars": 9359
+  },
+  {
+    "uid": "learn.wwl.describe-business-value-microsoft-power-platform.knowledge-check",
+    "title": "Module assessment",
+    "url": "https://learn.microsoft.com/en-us/training/modules/describe-business-value-microsoft-power-platform/10-knowledge-check",
+    "module": "describe-business-value-microsoft-power-platform",
+    "moduleTitle": "Describe the business value of Microsoft Power Platform",
+    "file": "content/describe-business-value-microsoft-power-platform/10-10-knowledge-check.md",
+    "chars": 2925
+  },
+  {
+    "uid": "learn.wwl.describe-business-value-microsoft-power-platform.summary",
+    "title": "Summary",
+    "url": "https://learn.microsoft.com/en-us/training/modules/describe-business-value-microsoft-power-platform/11-summary",
+    "module": "describe-business-value-microsoft-power-platform",
+    "moduleTitle": "Describe the business value of Microsoft Power Platform",
+    "file": "content/describe-business-value-microsoft-power-platform/11-11-summary.md",
+    "chars": 3572
+  },
+  {
+    "uid": "learn.wwl.describe-microsoft-dataverse.introduction",
+    "title": "Introduction",
+    "url": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-dataverse/1-introduction",
+    "module": "describe-microsoft-dataverse",
+    "moduleTitle": "Describe Microsoft Dataverse",
+    "file": "content/describe-microsoft-dataverse/01-1-introduction.md",
+    "chars": 1515
+  },
+  {
+    "uid": "learn.wwl.describe-microsoft-dataverse.describe-differences-between-traditional-databases-microsoft-dataverse",
+    "title": "Describe differences between traditional databases and Dataverse",
+    "url": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-dataverse/2-describe-differences-between-traditional-databases-microsoft-dataverse",
+    "module": "describe-microsoft-dataverse",
+    "moduleTitle": "Describe Microsoft Dataverse",
+    "file": "content/describe-microsoft-dataverse/02-2-describe-differences-between-traditional-databases-microsoft-dataverse.md",
+    "chars": 5448
+  },
+  {
+    "uid": "learn.wwl.describe-microsoft-dataverse.describe-tables-columns-relationships-microsoft-dataverse",
+    "title": "Describe tables, columns, and relationships in Dataverse",
+    "url": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-dataverse/3-describe-tables-columns-relationships-microsoft-dataverse",
+    "module": "describe-microsoft-dataverse",
+    "moduleTitle": "Describe Microsoft Dataverse",
+    "file": "content/describe-microsoft-dataverse/03-3-describe-tables-columns-relationships-microsoft-dataverse.md",
+    "chars": 4821
+  },
+  {
+    "uid": "learn.wwl.describe-microsoft-dataverse.describe-options-business-logic-microsoft-dataverse",
+    "title": "Describe the options for business logic in Dataverse  ",
+    "url": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-dataverse/4-describe-options-business-logic-microsoft-dataverse",
+    "module": "describe-microsoft-dataverse",
+    "moduleTitle": "Describe Microsoft Dataverse",
+    "file": "content/describe-microsoft-dataverse/04-4-describe-options-business-logic-microsoft-dataverse.md",
+    "chars": 4877
+  },
+  {
+    "uid": "learn.wwl.describe-microsoft-dataverse.describe-forms-views",
+    "title": "Describe table forms and views",
+    "url": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-dataverse/forms-views",
+    "module": "describe-microsoft-dataverse",
+    "moduleTitle": "Describe Microsoft Dataverse",
+    "file": "content/describe-microsoft-dataverse/05-forms-views.md",
+    "chars": 3750
+  },
+  {
+    "uid": "learn.wwl.describe-microsoft-dataverse.create-modify-tables-columns-use-conversations",
+    "title": "Create and edit tables, columns, and relationships through conversations",
+    "url": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-dataverse/5-create-modify-tables-columns-use-conversations",
+    "module": "describe-microsoft-dataverse",
+    "moduleTitle": "Describe Microsoft Dataverse",
+    "file": "content/describe-microsoft-dataverse/06-5-create-modify-tables-columns-use-conversations.md",
+    "chars": 4179
+  },
+  {
+    "uid": "learn.wwl.describe-microsoft-dataverse.describe-power-fx",
+    "title": "Describe Power Fx",
+    "url": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-dataverse/describe-power-fx",
+    "module": "describe-microsoft-dataverse",
+    "moduleTitle": "Describe Microsoft Dataverse",
+    "file": "content/describe-microsoft-dataverse/07-describe-power-fx.md",
+    "chars": 4763
+  },
+  {
+    "uid": "learn.wwl.describe-microsoft-dataverse.knowledge-check",
+    "title": "Module assessment",
+    "url": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-dataverse/7-knowledge-check",
+    "module": "describe-microsoft-dataverse",
+    "moduleTitle": "Describe Microsoft Dataverse",
+    "file": "content/describe-microsoft-dataverse/08-7-knowledge-check.md",
+    "chars": 1815
+  },
+  {
+    "uid": "learn.wwl.describe-microsoft-dataverse.summary",
+    "title": "Summary and resources",
+    "url": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-dataverse/8-summary",
+    "module": "describe-microsoft-dataverse",
+    "moduleTitle": "Describe Microsoft Dataverse",
+    "file": "content/describe-microsoft-dataverse/09-8-summary.md",
+    "chars": 2429
+  },
+  {
+    "uid": "learn.wwl.identify-basic-microsoft-power-apps-capabilities.introduction",
+    "title": "Introduction",
+    "url": "https://learn.microsoft.com/en-us/training/modules/identify-basic-microsoft-power-apps-capabilities/1-introduction",
+    "module": "identify-basic-microsoft-power-apps-capabilities",
+    "moduleTitle": "Identify basic Microsoft Power Apps capabilities",
+    "file": "content/identify-basic-microsoft-power-apps-capabilities/01-1-introduction.md",
+    "chars": 1877
+  },
+  {
+    "uid": "learn.wwl.identify-basic-microsoft-power-apps-capabilities.describe-use-cases-canvas-apps",
+    "title": "Describe use cases and capabilities of canvas apps",
+    "url": "https://learn.microsoft.com/en-us/training/modules/identify-basic-microsoft-power-apps-capabilities/3-describe-use-cases-canvas-apps",
+    "module": "identify-basic-microsoft-power-apps-capabilities",
+    "moduleTitle": "Identify basic Microsoft Power Apps capabilities",
+    "file": "content/identify-basic-microsoft-power-apps-capabilities/02-3-describe-use-cases-canvas-apps.md",
+    "chars": 8206
+  },
+  {
+    "uid": "learn.wwl.identify-basic-microsoft-power-apps-capabilities.describe-use-cases-model-driven-apps",
+    "title": "Describe use cases and capabilities of model-driven apps",
+    "url": "https://learn.microsoft.com/en-us/training/modules/identify-basic-microsoft-power-apps-capabilities/4-describe-use-cases-model-driven-apps",
+    "module": "identify-basic-microsoft-power-apps-capabilities",
+    "moduleTitle": "Identify basic Microsoft Power Apps capabilities",
+    "file": "content/identify-basic-microsoft-power-apps-capabilities/03-4-describe-use-cases-model-driven-apps.md",
+    "chars": 8146
+  },
+  {
+    "uid": "learn.wwl.identify-basic-microsoft-power-apps-capabilities.describe-use-cases-code-apps",
+    "title": "Describe use cases of code apps",
+    "url": "https://learn.microsoft.com/en-us/training/modules/identify-basic-microsoft-power-apps-capabilities/describe-use-cases-code-apps",
+    "module": "identify-basic-microsoft-power-apps-capabilities",
+    "moduleTitle": "Identify basic Microsoft Power Apps capabilities",
+    "file": "content/identify-basic-microsoft-power-apps-capabilities/04-describe-use-cases-code-apps.md",
+    "chars": 5573
+  },
+  {
+    "uid": "learn.wwl.identify-basic-microsoft-power-apps-capabilities.create-canvas-app-copilot",
+    "title": "Create a canvas app through conversations",
+    "url": "https://learn.microsoft.com/en-us/training/modules/identify-basic-microsoft-power-apps-capabilities/create-canvas-app-copilot",
+    "module": "identify-basic-microsoft-power-apps-capabilities",
+    "moduleTitle": "Identify basic Microsoft Power Apps capabilities",
+    "file": "content/identify-basic-microsoft-power-apps-capabilities/05-create-canvas-app-copilot.md",
+    "chars": 6625
+  },
+  {
+    "uid": "learn.wwl.identify-basic-microsoft-power-apps-capabilities.create-model-driven-app-copilot",
+    "title": "Create a model-driven app through conversations",
+    "url": "https://learn.microsoft.com/en-us/training/modules/identify-basic-microsoft-power-apps-capabilities/create-model-driven-app-copilot",
+    "module": "identify-basic-microsoft-power-apps-capabilities",
+    "moduleTitle": "Identify basic Microsoft Power Apps capabilities",
+    "file": "content/identify-basic-microsoft-power-apps-capabilities/06-create-model-driven-app-copilot.md",
+    "chars": 8802
+  },
+  {
+    "uid": "learn.wwl.identify-basic-microsoft-power-apps-capabilities.knowledge-check",
+    "title": "Knowledge check",
+    "url": "https://learn.microsoft.com/en-us/training/modules/identify-basic-microsoft-power-apps-capabilities/7-knowledge-check",
+    "module": "identify-basic-microsoft-power-apps-capabilities",
+    "moduleTitle": "Identify basic Microsoft Power Apps capabilities",
+    "file": "content/identify-basic-microsoft-power-apps-capabilities/07-7-knowledge-check.md",
+    "chars": 1992
+  },
+  {
+    "uid": "learn.wwl.identify-basic-microsoft-power-apps-capabilities.summary",
+    "title": "Summary",
+    "url": "https://learn.microsoft.com/en-us/training/modules/identify-basic-microsoft-power-apps-capabilities/8-summary",
+    "module": "identify-basic-microsoft-power-apps-capabilities",
+    "moduleTitle": "Identify basic Microsoft Power Apps capabilities",
+    "file": "content/identify-basic-microsoft-power-apps-capabilities/08-8-summary.md",
+    "chars": 3187
+  }
+]

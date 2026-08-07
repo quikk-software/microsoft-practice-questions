@@ -1,0 +1,439 @@
+[
+  {
+    "id": "plb4-001",
+    "type": "single-choice",
+    "skillArea": "power-apps",
+    "topic": "Canvas apps",
+    "difficulty": "easy",
+    "prompt": "Which Power Apps app type starts with a blank canvas and gives the maker complete control over the entire app, including the user interface and the data it connects to?",
+    "options": [
+      { "id": "a", "text": "Canvas apps" },
+      { "id": "b", "text": "Model-driven apps" },
+      { "id": "c", "text": "Code apps" },
+      { "id": "d", "text": "Power Pages" }
+    ],
+    "correct": "a",
+    "explanation": "Canvas-Apps sind der flexibelste App-Typ: Maker platzieren Steuerelemente frei auf einer leeren Leinwand, verbinden beliebige Datenquellen und schreiben Logik in Power Fx. Modellgesteuerte Apps erzeugen ihre Oberfläche dagegen automatisch aus dem Datenmodell.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/identify-basic-microsoft-power-apps-capabilities/3-describe-use-cases-canvas-apps",
+    "source": {
+      "title": "Describe use cases and capabilities of canvas apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/identify-basic-microsoft-power-apps-capabilities/3-describe-use-cases-canvas-apps",
+      "quote": "Canvas apps are a great option for organizations to build apps designed to perform specific tasks. They give the app maker complete control over the entire app—including the user interface and the data it connects to."
+    }
+  },
+  {
+    "id": "plb4-002",
+    "type": "single-choice",
+    "skillArea": "power-apps",
+    "topic": "Model-driven apps",
+    "difficulty": "easy",
+    "prompt": "How do model-driven apps approach app creation?",
+    "options": [
+      {
+        "id": "a",
+        "text": "They start with the data model in Dataverse and generate the user interface automatically from it"
+      },
+      {
+        "id": "b",
+        "text": "They start with a blank canvas where the maker designs every screen manually"
+      },
+      {
+        "id": "c",
+        "text": "They are written in TypeScript and published via the Power Platform CLI"
+      },
+      {
+        "id": "d",
+        "text": "They are generated from a PowerPoint presentation of the process"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Modellgesteuerte Apps sind datenmodell-zentriert: Tabellen, Spalten, Beziehungen und Geschäftslogik werden in Dataverse definiert, die responsive Oberfläche entsteht automatisch daraus. Dieser Data-First-Ansatz eignet sich für komplexe, datenreiche Verwaltungsszenarien.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/identify-basic-microsoft-power-apps-capabilities/4-describe-use-cases-model-driven-apps",
+    "source": {
+      "title": "Describe use cases and capabilities of model-driven apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/identify-basic-microsoft-power-apps-capabilities/4-describe-use-cases-model-driven-apps",
+      "quote": "Instead of starting with the user interface and connecting data to it, model-driven apps start with the data model—the tables, columns, relationships, and business logic defined in Microsoft Dataverse—and generate the user interface automatically based on that model."
+    }
+  },
+  {
+    "id": "plb4-003",
+    "type": "yes-no",
+    "skillArea": "power-apps",
+    "topic": "Canvas vs. model-driven apps",
+    "difficulty": "medium",
+    "prompt": "For each of the following statements about Power Apps app types, select Yes if the statement is true. Otherwise, select No.",
+    "statements": [
+      {
+        "id": "s1",
+        "text": "Model-driven apps inherit Dataverse's security model, including security roles and row-level access controls.",
+        "correct": true
+      },
+      {
+        "id": "s2",
+        "text": "Canvas apps natively support business process flows.",
+        "correct": false
+      },
+      {
+        "id": "s3",
+        "text": "Dynamics 365 Sales and Customer Service are themselves model-driven apps built on Dataverse.",
+        "correct": true
+      }
+    ],
+    "explanation": "Modellgesteuerte Apps erben das komplette Dataverse-Sicherheitsmodell ohne Zusatzkonfiguration. Business Process Flows sind dort eingebaut — Canvas-Apps unterstützen sie nativ nicht. Und die Dynamics-365-Anwendungen selbst sind modellgesteuerte Apps auf Dataverse.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/identify-basic-microsoft-power-apps-capabilities/4-describe-use-cases-model-driven-apps",
+    "source": {
+      "title": "Describe use cases and capabilities of model-driven apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/identify-basic-microsoft-power-apps-capabilities/4-describe-use-cases-model-driven-apps",
+      "quote": "Model-driven apps inherit Dataverse's security model, including security roles, business unit hierarchies, row-level access controls, and column-level security—without requiring any additional security configuration in the app. Dynamics 365 Sales, Customer Service, Field Service, and other Dynamics 365 apps are themselves model-driven apps built on Dataverse."
+    }
+  },
+  {
+    "id": "plb4-004",
+    "type": "single-choice",
+    "skillArea": "power-apps",
+    "topic": "Build from data",
+    "difficulty": "medium",
+    "prompt": "A maker creates a canvas app directly from a SharePoint list. Which three screens does the auto-generated app contain?",
+    "options": [
+      { "id": "a", "text": "A browse screen, a details screen, and an edit screen" },
+      { "id": "b", "text": "A login screen, a dashboard screen, and a settings screen" },
+      { "id": "c", "text": "A home screen, a chart screen, and an export screen" },
+      { "id": "d", "text": "A form screen, a report screen, and an admin screen" }
+    ],
+    "correct": "a",
+    "explanation": "Beim Erstellen aus Daten (SharePoint, Dataverse, Excel, SQL) generiert Power Apps automatisch eine Drei-Bildschirm-App: Durchsuchen (Browse), Details und Bearbeiten (Edit) — eine funktionierende App in Minuten als Ausgangspunkt.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/identify-basic-microsoft-power-apps-capabilities/3-describe-use-cases-canvas-apps",
+    "source": {
+      "title": "Describe use cases and capabilities of canvas apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/identify-basic-microsoft-power-apps-capabilities/3-describe-use-cases-canvas-apps",
+      "quote": "Create a canvas app directly from a list in SharePoint or Lists. Power Apps Studio opens and shows an app with three screens: a browse screen, a details screen, and an edit screen."
+    }
+  },
+  {
+    "id": "plb4-005",
+    "type": "multiple-choice",
+    "skillArea": "power-apps",
+    "topic": "Canvas app capabilities",
+    "difficulty": "medium",
+    "prompt": "Which three of the following are key capabilities of canvas apps? Each correct answer presents part of the solution.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Offline support for scenarios with unreliable internet connectivity"
+      },
+      {
+        "id": "b",
+        "text": "Embedding into SharePoint sites, Power BI dashboards, Teams channels, and model-driven apps"
+      },
+      {
+        "id": "c",
+        "text": "Reusable components shared across multiple apps"
+      },
+      {
+        "id": "d",
+        "text": "Automatic UI generation from the Dataverse data model"
+      },
+      {
+        "id": "e",
+        "text": "A requirement that all data must be stored in Dataverse"
+      }
+    ],
+    "correct": ["a", "b", "c"],
+    "explanation": "Canvas-Apps unterstützen Offline-Modus (z. B. für Außendienst und Lager), lassen sich in SharePoint, Power BI, Teams und modellgesteuerte Apps einbetten und nutzen wiederverwendbare Komponenten. Automatische UI-Generierung aus dem Datenmodell ist das Merkmal modellgesteuerter Apps — und Canvas-Apps können viele Datenquellen nutzen, nicht nur Dataverse.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/identify-basic-microsoft-power-apps-capabilities/3-describe-use-cases-canvas-apps",
+    "source": {
+      "title": "Describe use cases and capabilities of canvas apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/identify-basic-microsoft-power-apps-capabilities/3-describe-use-cases-canvas-apps",
+      "quote": "Canvas apps can be embedded into SharePoint sites, Power BI dashboards, Teams channels, and model-driven apps, making it easy to surface app functionality within the tools users already work in. Canvas apps support reusable components that can be shared across multiple apps, ensuring consistent design and behavior across an organization's app portfolio."
+    }
+  },
+  {
+    "id": "plb4-006",
+    "type": "single-choice",
+    "skillArea": "power-apps",
+    "topic": "Business process flows",
+    "difficulty": "medium",
+    "prompt": "What are business process flows in model-driven apps?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Guided, stage-based processes shown across the top of a record that walk users through predefined steps"
+      },
+      {
+        "id": "b",
+        "text": "Automated cloud flows that run when a record is created"
+      },
+      {
+        "id": "c",
+        "text": "Diagrams that document how data flows between connectors"
+      },
+      {
+        "id": "d",
+        "text": "Desktop automation scripts recorded with RPA"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Business Process Flows sind geführte, stufenbasierte Prozesse am oberen Rand eines Datensatzes — sie leiten Nutzer durch definierte Schritte wie Lead-Qualifizierung, Fallauflösung oder Onboarding. Sie sind in modellgesteuerten Apps eingebaut.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/identify-basic-microsoft-power-apps-capabilities/4-describe-use-cases-model-driven-apps",
+    "source": {
+      "title": "Describe use cases and capabilities of model-driven apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/identify-basic-microsoft-power-apps-capabilities/4-describe-use-cases-model-driven-apps",
+      "quote": "Business process flows are guided, stage-based processes that appear across the top of a record and walk users through a predefined sequence of steps—such as lead qualification, case resolution, or onboarding."
+    }
+  },
+  {
+    "id": "plb4-007",
+    "type": "single-choice",
+    "skillArea": "power-apps",
+    "topic": "Code apps",
+    "difficulty": "hard",
+    "prompt": "How are Power Apps code apps built and published?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Built locally with standard developer tooling, version-controlled in Git, and published using the Power Platform CLI"
+      },
+      {
+        "id": "b",
+        "text": "Built in the Power Apps maker portal using the drag-and-drop designer"
+      },
+      {
+        "id": "c",
+        "text": "Generated automatically by Copilot from a natural language prompt"
+      },
+      {
+        "id": "d",
+        "text": "Imported as compiled binaries through the Dynamics 365 admin center"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Code Apps sind eigene Webanwendungen (HTML, TypeScript/JavaScript, React, Vue …), die Profi-Entwickler lokal in IDEs wie VS Code bauen, in Git versionieren und per Power Platform CLI veröffentlichen — nicht im Maker-Portal. Sie laufen in einer Power-Platform-Umgebung und nutzen deren Connectors und Governance.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/identify-basic-microsoft-power-apps-capabilities/describe-use-cases-code-apps",
+    "source": {
+      "title": "Describe use cases of code apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/identify-basic-microsoft-power-apps-capabilities/describe-use-cases-code-apps",
+      "quote": "Code apps aren't built in the Power Apps maker portal. Developers build them locally on a workstation using standard developer tooling, version-control them in Git repositories, and publish them to Power Platform using the Power Platform command-line interface (CLI)."
+    }
+  },
+  {
+    "id": "plb4-008",
+    "type": "yes-no",
+    "skillArea": "power-apps",
+    "topic": "Code apps governance",
+    "difficulty": "hard",
+    "prompt": "For each of the following statements about Power Apps code apps, select Yes if the statement is true. Otherwise, select No.",
+    "statements": [
+      {
+        "id": "s1",
+        "text": "Code apps inherit the governance controls of their Power Platform environment, including DLP policies.",
+        "correct": true
+      },
+      {
+        "id": "s2",
+        "text": "Code apps can be packaged in solutions and deployed through Power Platform Pipelines.",
+        "correct": true
+      },
+      {
+        "id": "s3",
+        "text": "Code apps only support the React framework.",
+        "correct": false
+      }
+    ],
+    "explanation": "Code Apps laufen innerhalb einer Power-Platform-Umgebung und erben deren Governance (Managed-Environment-Richtlinien, Sharing-Limits, Conditional Access, DLP). Sie folgen demselben ALM wie andere Apps (Solutions, Pipelines). Als Framework ist alles Web-übliche möglich — React, Vue, Angular oder pures TypeScript/JavaScript.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/identify-basic-microsoft-power-apps-capabilities/describe-use-cases-code-apps",
+    "source": {
+      "title": "Describe use cases of code apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/identify-basic-microsoft-power-apps-capabilities/describe-use-cases-code-apps",
+      "quote": "Code apps run inside a Power Platform environment and inherit its governance controls, including Managed Environment policies, app sharing limits, conditional access, and Data Loss Prevention (DLP) policies. Code apps can be packaged in Power Platform solutions and deployed through Power Platform Pipelines, using the same Application Lifecycle Management (ALM) practices as canvas and model-driven apps. Code apps support any web framework—React, Vue, Angular, or plain TypeScript/JavaScript."
+    }
+  },
+  {
+    "id": "plb4-009",
+    "type": "single-choice",
+    "skillArea": "power-apps",
+    "topic": "Power Apps Component Framework",
+    "difficulty": "medium",
+    "prompt": "What does the Power Apps Component Framework (PCF) enable professional developers to build?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Reusable UI components in TypeScript that can be used in both canvas apps and model-driven apps"
+      },
+      {
+        "id": "b",
+        "text": "Server-side plug-ins that run inside Dataverse"
+      },
+      {
+        "id": "c",
+        "text": "Standalone mobile apps that run without Power Platform"
+      },
+      {
+        "id": "d",
+        "text": "Custom connectors based on OpenAPI specifications"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Mit dem Power Apps Component Framework bauen Profi-Entwickler eigene, wiederverwendbare UI-Steuerelemente in TypeScript, die organisationsweit sowohl in Canvas- als auch in modellgesteuerten Apps eingesetzt werden können.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/identify-basic-microsoft-power-apps-capabilities/describe-use-cases-code-apps",
+    "source": {
+      "title": "Describe use cases of code apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/identify-basic-microsoft-power-apps-capabilities/describe-use-cases-code-apps",
+      "quote": "Professional developers can build custom PCF controls—reusable UI components built in TypeScript—that can be used in both canvas apps and model-driven apps across the organization."
+    }
+  },
+  {
+    "id": "plb4-010",
+    "type": "dropdown",
+    "skillArea": "power-apps",
+    "topic": "Choosing an app type",
+    "difficulty": "medium",
+    "prompt": "Complete the guidance on choosing between Power Apps app types.",
+    "textParts": [
+      "",
+      " are best for task-focused, process-specific apps with custom UI requirements, while ",
+      " are best for data management apps with complex relationships and business logic."
+    ],
+    "blanks": [
+      {
+        "id": "b1",
+        "options": [
+          { "id": "o1", "text": "Canvas apps" },
+          { "id": "o2", "text": "Model-driven apps" },
+          { "id": "o3", "text": "Power Pages sites" }
+        ],
+        "correct": "o1"
+      },
+      {
+        "id": "b2",
+        "options": [
+          { "id": "o1", "text": "canvas apps" },
+          { "id": "o2", "text": "model-driven apps" },
+          { "id": "o3", "text": "desktop flows" }
+        ],
+        "correct": "o2"
+      }
+    ],
+    "explanation": "Canvas-Apps glänzen bei aufgabenfokussierten Apps mit maßgeschneiderter Oberfläche und beliebigen Datenquellen. Modellgesteuerte Apps sind erste Wahl für Datenverwaltung mit komplexen Beziehungen und Geschäftslogik — die Oberfläche entsteht automatisch und responsiv aus dem Dataverse-Modell.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/identify-basic-microsoft-power-apps-capabilities/4-describe-use-cases-model-driven-apps",
+    "source": {
+      "title": "Describe use cases and capabilities of model-driven apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/identify-basic-microsoft-power-apps-capabilities/4-describe-use-cases-model-driven-apps",
+      "quote": "Best for Task-focused, process-specific apps with custom UI requirements Data management apps with complex relationships and business logic"
+    }
+  },
+  {
+    "id": "plb4-011",
+    "type": "single-choice",
+    "skillArea": "power-apps",
+    "topic": "Copilot in canvas apps",
+    "difficulty": "easy",
+    "prompt": "A maker describes a new canvas app to Copilot in natural language. What does Copilot generate?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Dataverse tables with sample data and a functional app with browse, detail, and edit screens"
+      },
+      {
+        "id": "b",
+        "text": "Only a text document describing the app's requirements"
+      },
+      {
+        "id": "c",
+        "text": "A compiled mobile app ready for the App Store"
+      },
+      {
+        "id": "d",
+        "text": "A Power BI dashboard visualizing the described process"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Copilot interpretiert die Beschreibung, erstellt eine oder mehrere Dataverse-Tabellen samt repräsentativer Beispieldaten und baut eine funktionierende Canvas-App mit Browse-, Detail- und Edit-Screens — ein Startpunkt, der sich im Gespräch weiter verfeinern lässt.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/identify-basic-microsoft-power-apps-capabilities/3-describe-use-cases-canvas-apps",
+    "source": {
+      "title": "Describe use cases and capabilities of canvas apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/identify-basic-microsoft-power-apps-capabilities/3-describe-use-cases-canvas-apps",
+      "quote": "Copilot interprets the description, generates one or more Dataverse tables to store the data, populates the tables with representative sample data, and builds a functional canvas app with browse, detail, and edit screens."
+    }
+  },
+  {
+    "id": "plb4-012",
+    "type": "single-choice",
+    "skillArea": "power-apps",
+    "topic": "Dashboards in model-driven apps",
+    "difficulty": "medium",
+    "prompt": "A team wants charts and KPI metrics on the home page of their model-driven app without setting up a separate reporting tool. Which capability covers this?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The built-in dashboard capability of model-driven apps"
+      },
+      { "id": "b", "text": "AI Builder prediction models" },
+      { "id": "c", "text": "Power Automate process mining" },
+      { "id": "d", "text": "The Accessibility Checker" }
+    ],
+    "correct": "a",
+    "explanation": "Modellgesteuerte Apps bringen Dashboards mit: Diagramme, Graphen und KPI-Kennzahlen lassen sich ohne separate Power-BI-Integration konfigurieren und erscheinen auf der Startseite der App. Zusätzlich können Power-BI-Dashboards eingebettet werden.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/identify-basic-microsoft-power-apps-capabilities/4-describe-use-cases-model-driven-apps",
+    "source": {
+      "title": "Describe use cases and capabilities of model-driven apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/identify-basic-microsoft-power-apps-capabilities/4-describe-use-cases-model-driven-apps",
+      "quote": "Model-driven apps include built-in dashboard capability for visualizing data without a separate Power BI integration. Makers can configure charts, graphs, and key performance indicator (KPI) metrics that appear on the app's home page."
+    }
+  },
+  {
+    "id": "plb4-013",
+    "type": "single-choice",
+    "skillArea": "power-apps",
+    "topic": "Power BI integration",
+    "difficulty": "medium",
+    "prompt": "Which option lets users generate a Power BI report directly from a view in a model-driven app?",
+    "options": [
+      { "id": "a", "text": "Visualize this view" },
+      { "id": "b", "text": "Export to PDF" },
+      { "id": "c", "text": "Run diagnostics" },
+      { "id": "d", "text": "Start with Copilot" }
+    ],
+    "correct": "a",
+    "explanation": "Über „Visualize this view“ erzeugen Nutzer direkt aus einer Ansicht der modellgesteuerten App einen Power-BI-Bericht; außerdem lassen sich Power-BI-Dashboards in die App einbetten.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/identify-basic-microsoft-power-apps-capabilities/4-describe-use-cases-model-driven-apps",
+    "source": {
+      "title": "Describe use cases and capabilities of model-driven apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/identify-basic-microsoft-power-apps-capabilities/4-describe-use-cases-model-driven-apps",
+      "quote": "Users can generate Power BI reports directly from model-driven app views using the Visualize this view option, and Power BI dashboards can be embedded within the app."
+    }
+  },
+  {
+    "id": "plb4-014",
+    "type": "single-choice",
+    "skillArea": "power-apps",
+    "topic": "Offline support",
+    "difficulty": "easy",
+    "prompt": "Field inspectors often work in locations with unreliable internet connectivity. Why are canvas apps still a good fit for this scenario?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Canvas apps run on iOS and Android through the Power Apps mobile app and support offline mode"
+      },
+      {
+        "id": "b",
+        "text": "Canvas apps automatically switch to SMS-based data entry when offline"
+      },
+      {
+        "id": "c",
+        "text": "Canvas apps store all data permanently on the device and never synchronize"
+      },
+      {
+        "id": "d",
+        "text": "Canvas apps can only be used offline and require no connectivity at all"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Canvas-Apps laufen über die Power-Apps-Mobile-App auf iOS und Android und unterstützen einen Offline-Modus für Szenarien mit unzuverlässiger Verbindung — etwa Außendienst-Inspektionen, Lagerbetrieb oder Remote-Serviceeinsätze.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/identify-basic-microsoft-power-apps-capabilities/3-describe-use-cases-canvas-apps",
+    "source": {
+      "title": "Describe use cases and capabilities of canvas apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/identify-basic-microsoft-power-apps-capabilities/3-describe-use-cases-canvas-apps",
+      "quote": "Canvas apps run on iOS and Android through the Power Apps mobile app, and support offline mode for scenarios where internet connectivity is unreliable—such as field inspections, warehouse operations, or remote service calls."
+    }
+  }
+]

@@ -1,0 +1,79 @@
+{
+  "slug": "pl-900",
+  "code": "PL-900",
+  "title": "Microsoft Certified: Power Platform Fundamentals",
+  "description": "Microsoft Power Platform Fundamentals. Umfasst den Geschäftswert der Power Platform, Microsoft Dataverse und die Verwaltung der Umgebung (Sicherheitsmodell, Governance, ALM), Power Apps (Canvas- und modellgesteuerte Apps), Power Automate (Cloud-Flows, Trigger, Aktionen) sowie Agents in Microsoft Copilot Studio.",
+  "seo": {
+    "intro": [
+      "Die PL-900 ist Microsofts Einstiegszertifizierung für die Power Platform. Sie richtet sich an alle, die Geschäftslösungen mit Low-Code-Werkzeugen bauen oder bewerten wollen: Apps mit Power Apps, automatisierte Abläufe mit Power Automate, Agents mit Microsoft Copilot Studio — und darunter Microsoft Dataverse als gemeinsame Datenbasis mit Connectors zu hunderten Diensten.",
+      "Die Prüfung erwartet kein Entwicklerwissen, aber ein solides Verständnis der Bausteine: Wann eignet sich eine Canvas-App, wann eine modellgesteuerte App? Wie unterscheiden sich automatisierte, geplante und Sofort-Flows? Was leisten Umgebungen, das Sicherheitsmodell und Application Lifecycle Management (ALM) mit Pipelines? Und wie erstellen und veröffentlichen Agents in Copilot Studio Antworten aus eigenen Wissensquellen? Seit der letzten Überarbeitung der Prüfung sind Power BI und Power Pages nicht mehr Bestandteil — dafür hat der Bereich Copilot Studio deutlich an Gewicht gewonnen.",
+      "Unser Fragen-Pool ist vollständig aus dem offiziellen Microsoft-Learn-Lernpfad zur PL-900 abgeleitet. Nach jeder Antwort siehst du sofort, ob sie richtig war, bekommst eine Erklärung auf Deutsch und den wörtlichen Textausschnitt aus dem Lernmaterial, der die Antwort belegt — inklusive Link zur Original-Unit."
+    ],
+    "faq": [
+      {
+        "question": "Wie viele Fragen hat die PL-900-Prüfung?",
+        "answer": "Microsoft-Fundamentals-Prüfungen umfassen typischerweise 40 bis 60 Fragen. Unser Test-Examen stellt 40 Fragen aus dem Pool zusammen und beginnt mit leichteren Fragen, bevor die schwereren folgen — wie in der echten Prüfung variiert jeder Durchlauf."
+      },
+      {
+        "question": "Wie lange dauert die PL-900?",
+        "answer": "Für die PL-900 sind 45 Minuten vorgesehen. Unsere Test-Examen bilden den Umfang ab, laufen aber ohne Zeitlimit, damit du Erklärungen und Quellen in Ruhe durcharbeiten kannst."
+      },
+      {
+        "question": "Wie viele Punkte braucht man zum Bestehen?",
+        "answer": "Wie bei allen Microsoft-Zertifizierungen sind 700 von 1000 Punkten zum Bestehen nötig. Unsere Auswertung nutzt dieselbe Skala und zeigt zusätzlich deine Leistung je Skill-Bereich."
+      },
+      {
+        "question": "Welche Themen werden geprüft?",
+        "answer": "Fünf Bereiche: der Geschäftswert der Power Platform (5–10 %), die Verwaltung der Power-Platform-Umgebung inklusive Microsoft Dataverse, Sicherheit und ALM (20–25 %), die Fähigkeiten von Power Apps (20–25 %), die Fähigkeiten von Power Automate (20–25 %) sowie Agents in Microsoft Copilot Studio (20–25 %)."
+      },
+      {
+        "question": "Sind Power BI und Power Pages noch Teil der PL-900?",
+        "answer": "Nein. Seit der Überarbeitung der Prüfung gehören Power BI und Power Pages nicht mehr zum Prüfungsstoff. Neu hinzugekommen ist dafür der Bereich Agents in Microsoft Copilot Studio mit 20–25 % Gewicht."
+      },
+      {
+        "question": "Welche Vorkenntnisse brauche ich für die PL-900?",
+        "answer": "Keine formalen. Hilfreich ist Grundverständnis für Geschäftsprozesse und Datenorganisation. Die Prüfung ist für Einsteiger konzipiert — Entwickler- oder Administrationskenntnisse werden nicht vorausgesetzt."
+      },
+      {
+        "question": "Kostet dieses Test-Examen etwas?",
+        "answer": "Nein. Die Test-Examen sind kostenlos und ohne Anmeldung nutzbar. Ein Konto brauchst du nur für den gespeicherten Prüfungsverlauf, den Lern-Modus mit Fortschritt und die KI-Erklärungen mit deinem eigenen API-Key."
+      }
+    ]
+  },
+  "questionCount": 40,
+  "durationMinutes": 45,
+  "passScore": 700,
+  "maxScore": 1000,
+  "skillAreas": [
+    {
+      "id": "business-value",
+      "name": "Describe the business value of Microsoft Power Platform",
+      "weight": 0.08
+    },
+    {
+      "id": "environment",
+      "name": "Manage the Microsoft Power Platform environment",
+      "weight": 0.23
+    },
+    {
+      "id": "power-apps",
+      "name": "Demonstrate the capabilities of Power Apps",
+      "weight": 0.23
+    },
+    {
+      "id": "power-automate",
+      "name": "Demonstrate the capabilities of Power Automate",
+      "weight": 0.23
+    },
+    {
+      "id": "copilot-studio",
+      "name": "Describe features and capabilities of agents in Microsoft Copilot Studio",
+      "weight": 0.23
+    }
+  ],
+  "difficultyCurve": {
+    "easy": 0.35,
+    "medium": 0.4,
+    "hard": 0.25
+  }
+}

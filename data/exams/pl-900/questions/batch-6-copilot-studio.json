@@ -1,0 +1,511 @@
+[
+  {
+    "id": "plb6-001",
+    "type": "single-choice",
+    "skillArea": "copilot-studio",
+    "topic": "Agent categories",
+    "difficulty": "easy",
+    "prompt": "What distinguishes an autonomous agent from a conversational agent in Microsoft Copilot Studio?",
+    "options": [
+      {
+        "id": "a",
+        "text": "It takes action proactively — on a schedule or in response to a trigger — without a human initiating each action"
+      },
+      {
+        "id": "b",
+        "text": "It can only answer questions but never take actions"
+      },
+      {
+        "id": "c",
+        "text": "It requires a professional developer to build"
+      },
+      {
+        "id": "d",
+        "text": "It runs exclusively on desktop computers without internet access"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Konversations-Agents reagieren auf Fragen im Dialog. Autonome Agents handeln proaktiv — zeitgesteuert, auf Trigger-Ereignisse oder als Teil mehrstufiger Prozesse — ohne dass ein Mensch jede Aktion anstößt. Typisch: Lead-Qualifizierung, Rechnungsverarbeitung, Supply-Chain-Überwachung.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/understand-features-copilot-studio-agents/describe-use-cases-agents",
+    "source": {
+      "title": "Describe use cases for agents",
+      "url": "https://learn.microsoft.com/en-us/training/modules/understand-features-copilot-studio-agents/describe-use-cases-agents",
+      "quote": "An autonomous agent takes action proactively—on a schedule, in response to a trigger event, or as part of a multi-step process—without requiring a human to initiate each action."
+    }
+  },
+  {
+    "id": "plb6-002",
+    "type": "ordering",
+    "skillArea": "copilot-studio",
+    "topic": "Retrieval-Augmented Generation",
+    "difficulty": "medium",
+    "prompt": "Copilot Studio uses Retrieval-Augmented Generation (RAG) to ground responses in organizational data. Place the three RAG stages in the correct order.",
+    "items": [
+      {
+        "id": "i1",
+        "text": "Retrieval — search configured knowledge sources and retrieve the most relevant passages"
+      },
+      {
+        "id": "i2",
+        "text": "Augmentation — combine the retrieved content with the user's original question as context"
+      },
+      {
+        "id": "i3",
+        "text": "Generation — the AI model generates a response grounded in the retrieved content"
+      }
+    ],
+    "correctOrder": ["i1", "i2", "i3"],
+    "explanation": "RAG arbeitet dreistufig: Erst werden die relevantesten Passagen aus den Wissensquellen abgerufen (Retrieval), dann mit der ursprünglichen Frage als Kontext kombiniert (Augmentation), und schließlich generiert das Modell eine darin verankerte Antwort mit Quellenangaben (Generation) — statt aus möglicherweise veraltetem Trainingswissen zu spekulieren.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/understand-features-copilot-studio-agents/how-copilot-studio-uses-your-data",
+    "source": {
+      "title": "Describe how Copilot Studio uses and processes data",
+      "url": "https://learn.microsoft.com/en-us/training/modules/understand-features-copilot-studio-agents/how-copilot-studio-uses-your-data",
+      "quote": "Retrieval: When a user asks a question, Copilot Studio searches configured knowledge sources—SharePoint documents, websites, Dataverse records, or other connected content—and retrieves the most relevant passages. Augmentation: The retrieved content is combined with the user's original question and provided to the AI model as context."
+    }
+  },
+  {
+    "id": "plb6-003",
+    "type": "yes-no",
+    "skillArea": "copilot-studio",
+    "topic": "Data protection",
+    "difficulty": "medium",
+    "prompt": "For each of the following statements about how Copilot Studio handles data, select Yes if the statement is true. Otherwise, select No.",
+    "statements": [
+      {
+        "id": "s1",
+        "text": "Microsoft uses your prompts and knowledge source data to train foundation AI models.",
+        "correct": false
+      },
+      {
+        "id": "s2",
+        "text": "Agents run as the authenticated user and never have elevated privileges beyond those of the user.",
+        "correct": true
+      },
+      {
+        "id": "s3",
+        "text": "Makers can disable the built-in responsible AI content moderation.",
+        "correct": false
+      }
+    ],
+    "explanation": "Prompts, Antworten und Wissensquellen-Daten werden nicht zum Training der Foundation-Modelle verwendet. Agents laufen mit den Rechten des angemeldeten Nutzers — nie mit mehr. Die Content-Moderation (Azure AI Content Safety) läuft automatisch und lässt sich von Makern nicht abschalten; eigene Guardrails können sie nur ergänzen.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/understand-features-copilot-studio-agents/how-copilot-studio-uses-your-data",
+    "source": {
+      "title": "Describe how Copilot Studio uses and processes data",
+      "url": "https://learn.microsoft.com/en-us/training/modules/understand-features-copilot-studio-agents/how-copilot-studio-uses-your-data",
+      "quote": "Microsoft does not use your prompts, responses, or the data accessed through your knowledge sources to train foundation AI models. The agent never has elevated privileges beyond those of the user. Content moderation runs automatically and cannot be disabled by makers."
+    }
+  },
+  {
+    "id": "plb6-004",
+    "type": "multiple-choice",
+    "skillArea": "copilot-studio",
+    "topic": "Knowledge sources",
+    "difficulty": "medium",
+    "prompt": "Which three of the following can serve as knowledge sources for a Copilot Studio agent? Each correct answer presents part of the solution.",
+    "options": [
+      { "id": "a", "text": "SharePoint sites, document libraries, and specific files" },
+      { "id": "b", "text": "Publicly accessible web pages" },
+      { "id": "c", "text": "Structured Dataverse tables" },
+      { "id": "d", "text": "Conversations from other organizations' agents" },
+      { "id": "e", "text": "The AI model's internal training data configured as a source" }
+    ],
+    "correct": ["a", "b", "c"],
+    "explanation": "Wissensquellen sind u. a. SharePoint (Sites, Bibliotheken, Dateien), öffentliche Websites, direkt hochgeladene Dateien, Dataverse-Tabellen und externe Systeme über Custom-Knowledge-Connectors. Fremde Organisationen oder das Modell-Trainingswissen sind keine konfigurierbaren Quellen.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/understand-features-copilot-studio-agents/describe-knowledge-tools",
+    "source": {
+      "title": "Describe how knowledge, tools, and MCP servers extend agent capabilities",
+      "url": "https://learn.microsoft.com/en-us/training/modules/understand-features-copilot-studio-agents/describe-knowledge-tools",
+      "quote": "SharePoint sites and documents: Agents can index SharePoint sites, document libraries, and specific files. Public websites: Agents can index publicly accessible web pages, enabling customer-facing agents to answer questions based on product documentation sites, marketing content, or support portals. Dataverse knowledge: Agents can search structured Dataverse tables as knowledge sources, enabling agents to answer questions about business records such as customer accounts, product catalogs, or case history."
+    }
+  },
+  {
+    "id": "plb6-005",
+    "type": "single-choice",
+    "skillArea": "copilot-studio",
+    "topic": "Orchestration",
+    "difficulty": "medium",
+    "prompt": "What does generative orchestration do in a Copilot Studio agent?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The AI model decides at runtime whether to answer from knowledge, call a tool, invoke a topic, or ask a clarifying question"
+      },
+      {
+        "id": "b",
+        "text": "It matches the user's message only against fixed topic trigger phrases"
+      },
+      {
+        "id": "c",
+        "text": "It generates new Dataverse environments on demand"
+      },
+      {
+        "id": "d",
+        "text": "It translates the conversation into all supported languages simultaneously"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Bei generativer Orchestrierung bestimmt das KI-Modell die beste Antwortstrategie dynamisch zur Laufzeit — Wissen durchsuchen, Tool aufrufen, Topic starten oder nachfragen. Topic-basierte Orchestrierung matcht dagegen gegen konfigurierte Trigger-Phrasen und folgt festen Konversationspfaden.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/understand-features-copilot-studio-agents/how-copilot-studio-uses-your-data",
+    "source": {
+      "title": "Describe how Copilot Studio uses and processes data",
+      "url": "https://learn.microsoft.com/en-us/training/modules/understand-features-copilot-studio-agents/how-copilot-studio-uses-your-data",
+      "quote": "Generative orchestration: With generative AI orchestration enabled, the agent's AI model dynamically determines the best response strategy based on the user's intent, available knowledge sources, and configured tools—deciding at runtime whether to answer from knowledge, call a tool, invoke a topic, or ask a clarifying question."
+    }
+  },
+  {
+    "id": "plb6-006",
+    "type": "matching",
+    "skillArea": "copilot-studio",
+    "topic": "Tool categories",
+    "difficulty": "hard",
+    "prompt": "Match each Copilot Studio tool category to its description.",
+    "left": [
+      { "id": "l1", "text": "Power Platform connectors" },
+      { "id": "l2", "text": "Agent flows" },
+      { "id": "l3", "text": "Computer Using Agents (CUA)" },
+      { "id": "l4", "text": "Child agents" }
+    ],
+    "right": [
+      {
+        "id": "r1",
+        "text": "Pre-built integrations with over 1,400 external services for reading and writing in real time"
+      },
+      {
+        "id": "r2",
+        "text": "Deterministic, rule-based automation workflows the agent can invoke as needed"
+      },
+      {
+        "id": "r3",
+        "text": "Interact with graphical user interfaces of legacy systems by simulating mouse clicks and keyboard input"
+      },
+      {
+        "id": "r4",
+        "text": "Specialized agents that a primary agent invokes as tools in multi-agent architectures"
+      }
+    ],
+    "correct": { "l1": "r1", "l2": "r2", "l3": "r3", "l4": "r4" },
+    "explanation": "Connectors integrieren über 1.400 Dienste in Echtzeit. Agent Flows sind deterministische Workflows als aufrufbare Tools. CUA bedient Legacy-Oberflächen per simulierten Maus-/Tastatureingaben. Child Agents ermöglichen Multi-Agent-Architekturen, in denen ein koordinierender Agent an Spezialisten weiterleitet.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/understand-features-copilot-studio-agents/describe-knowledge-tools",
+    "source": {
+      "title": "Describe how knowledge, tools, and MCP servers extend agent capabilities",
+      "url": "https://learn.microsoft.com/en-us/training/modules/understand-features-copilot-studio-agents/describe-knowledge-tools",
+      "quote": "Computer Using Agents (CUA): An advanced capability that allows agents to interact with graphical user interfaces of legacy systems that don't have APIs, by simulating mouse clicks and keyboard input. Child agents: A primary agent can invoke other specialized agents as tools, enabling multi-agent architectures where a coordinating agent routes requests to domain-specific specialist agents."
+    }
+  },
+  {
+    "id": "plb6-007",
+    "type": "single-choice",
+    "skillArea": "copilot-studio",
+    "topic": "MCP servers",
+    "difficulty": "medium",
+    "prompt": "What is an MCP (Model Context Protocol) server in the context of Copilot Studio?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A backend service that exposes a defined set of operations, which the agent's AI orchestrator calls dynamically at runtime"
+      },
+      {
+        "id": "b",
+        "text": "A physical server that must be installed in the company's data center"
+      },
+      {
+        "id": "c",
+        "text": "A licensing server that counts how many users chat with the agent"
+      },
+      {
+        "id": "d",
+        "text": "A backup service for conversation transcripts"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Ein MCP-Server ist ein Backend-Dienst, der einem KI-Agent definierte Operationen (Abfragen, Aktionen, Datenoperationen) bereitstellt. Der Server beschreibt seine Fähigkeiten; der Orchestrator des Agents entscheidet zur Laufzeit, welche Operationen er in welcher Reihenfolge aufruft — flexibler als fest verdrahtete API-Aufrufe.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/understand-features-copilot-studio-agents/describe-knowledge-tools",
+    "source": {
+      "title": "Describe how knowledge, tools, and MCP servers extend agent capabilities",
+      "url": "https://learn.microsoft.com/en-us/training/modules/understand-features-copilot-studio-agents/describe-knowledge-tools",
+      "quote": "An MCP server is a backend service that exposes a defined set of operations to an AI agent. The server declares what it can do—the operations it exposes, the parameters those operations accept, and the data they return—and the agent's AI orchestrator decides at runtime which operations to call and in what order, based on the user's request."
+    }
+  },
+  {
+    "id": "plb6-008",
+    "type": "single-choice",
+    "skillArea": "copilot-studio",
+    "topic": "MCP and DLP governance",
+    "difficulty": "hard",
+    "prompt": "An administrator blocks a connector via DLP policy that an MCP server relies on. What is the effect on Copilot Studio agents?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Agents cannot use that MCP server's tools — MCP connections are subject to Power Platform DLP policies"
+      },
+      {
+        "id": "b",
+        "text": "Nothing — MCP servers bypass DLP policies by design"
+      },
+      {
+        "id": "c",
+        "text": "The agent switches automatically to an unauthenticated connection"
+      },
+      {
+        "id": "d",
+        "text": "Only new agents are affected; existing agents keep working indefinitely"
+      }
+    ],
+    "correct": "a",
+    "explanation": "MCP-Server-Verbindungen nutzen unter der Haube Power-Platform-Connectors und unterliegen damit denselben DLP-Richtlinien. Blockiert ein Admin den zugrunde liegenden Connector, kann der Agent die Tools dieses MCP-Servers nicht verwenden — MCP-Agents bleiben in denselben Governance-Grenzen wie alle anderen Integrationen.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/understand-features-copilot-studio-agents/describe-knowledge-tools",
+    "source": {
+      "title": "Describe how knowledge, tools, and MCP servers extend agent capabilities",
+      "url": "https://learn.microsoft.com/en-us/training/modules/understand-features-copilot-studio-agents/describe-knowledge-tools",
+      "quote": "Because MCP server connections use Power Platform connectors for their underlying connectivity, they are subject to Power Platform DLP policies. If an administrator blocks a connector that an MCP server relies on, the agent cannot use that MCP server's tools."
+    }
+  },
+  {
+    "id": "plb6-009",
+    "type": "single-choice",
+    "skillArea": "copilot-studio",
+    "topic": "Agent flows",
+    "difficulty": "medium",
+    "prompt": "What are agent flows in Microsoft Copilot Studio?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Deterministic automation workflows built in Copilot Studio that agents can invoke as tools"
+      },
+      {
+        "id": "b",
+        "text": "Diagrams that visualize how many users chat with an agent"
+      },
+      {
+        "id": "c",
+        "text": "AI-generated conversation summaries for supervisors"
+      },
+      {
+        "id": "d",
+        "text": "Network routes between the agent and Microsoft data centers"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Agent Flows sind deterministische Workflows, die direkt in Copilot Studio gebaut und vom Agent als Tool aufgerufen werden. Anders als die dynamische KI-Orchestrierung folgen sie einer explizit definierten Schrittfolge — ideal für Prozesse mit festen Geschäftsregeln, exakter Datenerfassung oder auditierbaren Systeminteraktionen.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/understand-features-copilot-studio-agents/describe-agent-flows",
+    "source": {
+      "title": "Describe agent flows",
+      "url": "https://learn.microsoft.com/en-us/training/modules/understand-features-copilot-studio-agents/describe-agent-flows",
+      "quote": "Agent flows are deterministic automation workflows built directly in Microsoft Copilot Studio that agents can invoke as tools. Unlike the AI orchestrator's dynamic reasoning, agent flows follow an explicitly defined sequence of steps—making them ideal for processes that must always execute in a specific order, apply fixed business rules, or interact with external systems in a controlled, auditable way."
+    }
+  },
+  {
+    "id": "plb6-010",
+    "type": "yes-no",
+    "skillArea": "copilot-studio",
+    "topic": "Agent flow vs. generative orchestration",
+    "difficulty": "hard",
+    "prompt": "For each of the following scenarios, select Yes if an agent flow (rather than a generative response) is the right choice. Otherwise, select No.",
+    "statements": [
+      {
+        "id": "s1",
+        "text": "Calculate commission based on a fixed rate table.",
+        "correct": true
+      },
+      {
+        "id": "s2",
+        "text": "Answer a question about a company policy from a knowledge source.",
+        "correct": false
+      },
+      {
+        "id": "s3",
+        "text": "Submit a leave request to an HR system.",
+        "correct": true
+      }
+    ],
+    "explanation": "Agent Flows passen, wenn Regeln immer exakt gleich gelten müssen (Provisionsberechnung) oder exakte Dateneingabe und Systeminteraktion nötig sind (Urlaubsantrag). Für Richtlinien-Fragen ist die generative Antwort aus einer Wissensquelle angemessen und flexibel.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/understand-features-copilot-studio-agents/describe-agent-flows",
+    "source": {
+      "title": "Describe agent flows",
+      "url": "https://learn.microsoft.com/en-us/training/modules/understand-features-copilot-studio-agents/describe-agent-flows",
+      "quote": "Calculate commission based on a fixed rate table Yes Business rules must always apply exactly the same way, with no variation Answer a question about a company policy No Generative response from a knowledge source is appropriate and flexible Submit a leave request to an HR system Yes Requires exact data entry, system interaction, and confirmation—not generative"
+    }
+  },
+  {
+    "id": "plb6-011",
+    "type": "matching",
+    "skillArea": "copilot-studio",
+    "topic": "Agent analytics",
+    "difficulty": "medium",
+    "prompt": "Match each Copilot Studio analytics metric to what it measures.",
+    "left": [
+      { "id": "l1", "text": "Engagement rate" },
+      { "id": "l2", "text": "Resolution rate" },
+      { "id": "l3", "text": "Escalation rate" },
+      { "id": "l4", "text": "Abandonment rate" }
+    ],
+    "right": [
+      {
+        "id": "r1",
+        "text": "Percentage of sessions where the agent provided at least one substantive response"
+      },
+      {
+        "id": "r2",
+        "text": "Percentage of sessions where the user's need was resolved without escalation"
+      },
+      {
+        "id": "r3",
+        "text": "Percentage of sessions handed off to a human agent"
+      },
+      {
+        "id": "r4",
+        "text": "Percentage of sessions where the user stopped interacting before resolution"
+      }
+    ],
+    "correct": { "l1": "r1", "l2": "r2", "l3": "r3", "l4": "r4" },
+    "explanation": "Engagement misst substanzielle Interaktion über die Begrüßung hinaus, Resolution die Lösung ohne Eskalation, Escalation die Übergabe an Menschen und Abandonment den Abbruch vor der Lösung. Zusammen zeigen sie die Gesundheit des Agents auf einen Blick.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/understand-features-copilot-studio-agents/monitor-agent-usage",
+    "source": {
+      "title": "Describe how to monitor Copilot Studio agent usage and adoption",
+      "url": "https://learn.microsoft.com/en-us/training/modules/understand-features-copilot-studio-agents/monitor-agent-usage",
+      "quote": "Engagement rate: The percentage of sessions where the agent provided at least one substantive response, indicating users actively engaged beyond a greeting. Resolution rate: The percentage of sessions where the user's need was resolved without escalation or repeated questions. Escalation rate: The percentage of sessions handed off to a human agent or escalated through a defined escalation path. Abandonment rate: The percentage of sessions where the user stopped interacting before their question was resolved."
+    }
+  },
+  {
+    "id": "plb6-012",
+    "type": "single-choice",
+    "skillArea": "copilot-studio",
+    "topic": "Publishing channels",
+    "difficulty": "medium",
+    "prompt": "Which statement about publishing Copilot Studio agents is true?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A single agent can be published to multiple channels simultaneously, such as Teams, Microsoft 365 Copilot, websites, and SharePoint"
+      },
+      {
+        "id": "b",
+        "text": "Each agent can only ever be published to exactly one channel"
+      },
+      {
+        "id": "c",
+        "text": "Agents can only be used inside the Copilot Studio authoring portal"
+      },
+      {
+        "id": "d",
+        "text": "Publishing to a website requires rebuilding the agent from scratch"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Ein Agent lässt sich gleichzeitig auf mehreren Kanälen veröffentlichen: als Bot in Teams, in Microsoft 365 Copilot, als Chat-Widget per iframe auf Websites, als Panel auf SharePoint-Seiten und über die Direct-Line-API in eigenen Anwendungen.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/understand-features-copilot-studio-agents/how-copilot-studio-uses-your-data",
+    "source": {
+      "title": "Describe how Copilot Studio uses and processes data",
+      "url": "https://learn.microsoft.com/en-us/training/modules/understand-features-copilot-studio-agents/how-copilot-studio-uses-your-data",
+      "quote": "A single Copilot Studio agent can be published to multiple channels simultaneously: Microsoft Teams: The agent appears as a bot in Teams, accessible via direct message or added to team channels."
+    }
+  },
+  {
+    "id": "plb6-013",
+    "type": "dropdown",
+    "skillArea": "copilot-studio",
+    "topic": "Knowledge vs. tools",
+    "difficulty": "easy",
+    "prompt": "Complete the statement about the two fundamental building blocks of a Copilot Studio agent.",
+    "textParts": [
+      "",
+      " gives an agent something to read and reason over, while ",
+      " give an agent something to do — the actions it can take to retrieve live data, run processes, or interact with external systems."
+    ],
+    "blanks": [
+      {
+        "id": "b1",
+        "options": [
+          { "id": "o1", "text": "Knowledge" },
+          { "id": "o2", "text": "Tools" },
+          { "id": "o3", "text": "Licensing" }
+        ],
+        "correct": "o1"
+      },
+      {
+        "id": "b2",
+        "options": [
+          { "id": "o1", "text": "knowledge sources" },
+          { "id": "o2", "text": "tools" },
+          { "id": "o3", "text": "channels" }
+        ],
+        "correct": "o2"
+      }
+    ],
+    "explanation": "Die Fähigkeiten eines Agents bestimmen zwei Bausteine: Knowledge (Wissen zum Lesen und Schlussfolgern — SharePoint, Websites, Dataverse …) und Tools (Aktionen — Connectors, Agent Flows, MCP-Server, Child Agents).",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/understand-features-copilot-studio-agents/describe-knowledge-tools",
+    "source": {
+      "title": "Describe how knowledge, tools, and MCP servers extend agent capabilities",
+      "url": "https://learn.microsoft.com/en-us/training/modules/understand-features-copilot-studio-agents/describe-knowledge-tools",
+      "quote": "Knowledge gives an agent something to read and reason over. Tools give an agent something to do—the actions it can take to retrieve live data, run processes, or interact with external systems."
+    }
+  },
+  {
+    "id": "plb6-014",
+    "type": "single-choice",
+    "skillArea": "copilot-studio",
+    "topic": "Active user metrics",
+    "difficulty": "hard",
+    "prompt": "A maker wants to see daily and monthly active users (DAU/MAU) for their agent in the Copilot Studio analytics. What is required for these metrics?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The agent must be configured with Microsoft Entra ID authentication"
+      },
+      {
+        "id": "b",
+        "text": "The agent must be published to at least three channels"
+      },
+      {
+        "id": "c",
+        "text": "A premium AI Builder license for every user"
+      },
+      {
+        "id": "d",
+        "text": "A custom Power BI report connected to Dataverse"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Die Active-Users-Seite zeigt DAU und MAU samt Trends — Voraussetzung ist, dass der Agent mit Microsoft-Entra-ID-Authentifizierung konfiguriert ist, damit eindeutige Nutzer erkannt werden können.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/understand-features-copilot-studio-agents/monitor-agent-usage",
+    "source": {
+      "title": "Describe how to monitor Copilot Studio agent usage and adoption",
+      "url": "https://learn.microsoft.com/en-us/training/modules/understand-features-copilot-studio-agents/monitor-agent-usage",
+      "quote": "The Active Users page tracks unique users who interacted with the agent, displaying daily active users (DAU) and monthly active users (MAU). Active user metrics require the agent to be configured with Microsoft Entra ID authentication."
+    }
+  },
+  {
+    "id": "plb6-015",
+    "type": "single-choice",
+    "skillArea": "copilot-studio",
+    "topic": "Customer Lockbox",
+    "difficulty": "hard",
+    "prompt": "What does Customer Lockbox provide for Copilot Studio?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Microsoft support personnel need explicit customer approval before accessing customer data during troubleshooting"
+      },
+      {
+        "id": "b",
+        "text": "A physical safe for storing backup tapes of conversation logs"
+      },
+      {
+        "id": "c",
+        "text": "Automatic deletion of all conversations after 24 hours"
+      },
+      {
+        "id": "d",
+        "text": "A separate license tier for premium connectors"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Customer Lockbox verlangt die ausdrückliche Zustimmung des Kunden, bevor Microsoft-Support-Mitarbeiter in Troubleshooting-Szenarien auf Kundendaten zugreifen dürfen — eine zusätzliche Kontrollebene neben Nutzerrechte-Vererbung und DLP-Durchsetzung.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/understand-features-copilot-studio-agents/how-copilot-studio-uses-your-data",
+    "source": {
+      "title": "Describe how Copilot Studio uses and processes data",
+      "url": "https://learn.microsoft.com/en-us/training/modules/understand-features-copilot-studio-agents/how-copilot-studio-uses-your-data",
+      "quote": "Copilot Studio supports Customer Lockbox, which requires explicit customer approval before Microsoft support personnel can access customer data during troubleshooting scenarios."
+    }
+  }
+]

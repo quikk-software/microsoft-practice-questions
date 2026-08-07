@@ -1,0 +1,452 @@
+[
+  {
+    "id": "plb3-001",
+    "type": "single-choice",
+    "skillArea": "environment",
+    "topic": "Environment types",
+    "difficulty": "easy",
+    "prompt": "Which Power Platform environment type is intended for short-term testing and evaluation and expires after 30 days?",
+    "options": [
+      { "id": "a", "text": "Production" },
+      { "id": "b", "text": "Sandbox" },
+      { "id": "c", "text": "Trial" },
+      { "id": "d", "text": "Default" }
+    ],
+    "correct": "c",
+    "explanation": "Trial-Umgebungen sind temporär für kurzfristige Tests und Evaluierungen gedacht und laufen nach 30 Tagen ab — ihre Ressourcen werden dann gelöscht. Sandbox-Umgebungen sind dagegen dauerhafte Nicht-Produktionsumgebungen für Entwicklung und Test.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-power-platform-administration-governance/3-describe-environments",
+    "source": {
+      "title": "Describe environments",
+      "url": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-power-platform-administration-governance/3-describe-environments",
+      "quote": "Temporary environments for short-term testing and evaluation. Expire after 30 days. Resources are deleted when the trial expires."
+    }
+  },
+  {
+    "id": "plb3-002",
+    "type": "matching",
+    "skillArea": "environment",
+    "topic": "Environment types",
+    "difficulty": "medium",
+    "prompt": "Match each Power Platform environment type to its description.",
+    "left": [
+      { "id": "l1", "text": "Production" },
+      { "id": "l2", "text": "Default" },
+      { "id": "l3", "text": "Sandbox" },
+      { "id": "l4", "text": "Developer" }
+    ],
+    "right": [
+      {
+        "id": "r1",
+        "text": "Used for permanent, live workloads; requires at least 1 GB of available database capacity"
+      },
+      {
+        "id": "r2",
+        "text": "Automatically created for each tenant and shared by all licensed users"
+      },
+      {
+        "id": "r3",
+        "text": "Non-production environment for development and testing; can be reset or copied"
+      },
+      {
+        "id": "r4",
+        "text": "Created by users with a Developer Plan license for personal, non-commercial use"
+      }
+    ],
+    "correct": { "l1": "r1", "l2": "r2", "l3": "r3", "l4": "r4" },
+    "explanation": "Production trägt produktive Workloads (mind. 1 GB Datenbankkapazität). Die Default-Umgebung wird pro Tenant automatisch erstellt und von allen lizenzierten Nutzern geteilt. Sandbox-Umgebungen dienen Entwicklung/Test und lassen sich zurücksetzen oder kopieren. Developer-Umgebungen entstehen über den Developer Plan für persönliche, nicht-kommerzielle Nutzung.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-power-platform-administration-governance/3-describe-environments",
+    "source": {
+      "title": "Describe environments",
+      "url": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-power-platform-administration-governance/3-describe-environments",
+      "quote": "Used for permanent, live workloads in an organization. Requires at least 1 GB of available database capacity. Automatically created for each tenant and shared by all licensed users. Non-production environments intended for development and testing. Can be reset or copied without impacting production. Created by users with a Developer Plan license for personal, non-commercial development use."
+    }
+  },
+  {
+    "id": "plb3-003",
+    "type": "multiple-choice",
+    "skillArea": "environment",
+    "topic": "Managed Environments",
+    "difficulty": "medium",
+    "prompt": "Which three of the following are features of Managed Environments? Each correct answer presents part of the solution.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Limit sharing — restrict how broadly users share canvas apps"
+      },
+      {
+        "id": "b",
+        "text": "Weekly usage insights — automated analytics emails for administrators"
+      },
+      {
+        "id": "c",
+        "text": "Environment routing — direct makers to their personal developer environments"
+      },
+      {
+        "id": "d",
+        "text": "Unlimited free Dataverse storage for all environments"
+      },
+      {
+        "id": "e",
+        "text": "Automatic replacement of all DLP policies with AI-based rules"
+      }
+    ],
+    "correct": ["a", "b", "c"],
+    "explanation": "Managed Environments ist ein Premium-Governance-Feature: Sharing-Beschränkungen, wöchentliche Nutzungs-Insights, Umgebungs-Routing zu persönlichen Entwicklerumgebungen, dazu u. a. DLP-Durchsetzung, Solution-Checker-Erzwingung, IP-Firewall, Customer Managed Keys und erweiterte Backups (bis 28 Tage). Kostenloser Speicher oder KI-Ersatz für DLP gehören nicht dazu.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-power-platform-administration-governance/3-describe-environments",
+    "source": {
+      "title": "Describe environments",
+      "url": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-power-platform-administration-governance/3-describe-environments",
+      "quote": "Limit sharing: Administrators can restrict how broadly users share canvas apps, preventing sharing with the entire organization or limiting sharing to specific security groups. Environment routing: Automatically directs makers who visit make.powerapps.com to their personal developer environments instead of the shared default environment, reducing clutter and improving governance in the default environment."
+    }
+  },
+  {
+    "id": "plb3-004",
+    "type": "single-choice",
+    "skillArea": "environment",
+    "topic": "DLP policies",
+    "difficulty": "medium",
+    "prompt": "An administrator places Microsoft Dataverse in the Business connector group and a consumer email service in the Non-business group of a DLP policy. What happens to a Power Automate flow that reads from Dataverse and sends email through the consumer service?",
+    "options": [
+      { "id": "a", "text": "The flow is blocked by the policy" },
+      { "id": "b", "text": "The flow runs, but sends a warning to the administrator" },
+      { "id": "c", "text": "The flow runs normally — DLP policies only affect canvas apps" },
+      { "id": "d", "text": "The flow runs after the maker confirms a consent dialog" }
+    ],
+    "correct": "a",
+    "explanation": "DLP-Richtlinien verhindern, dass Daten zwischen Connectors verschiedener Gruppen fließen. Ein Flow, der Business- und Non-Business-Connectors kombiniert, wird blockiert — genau dieses Beispiel nennt das Lernmaterial.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-power-platform-administration-governance/2-describe-microsoft-power-platform-security-model",
+    "source": {
+      "title": "Describe the Microsoft Power Platform security model",
+      "url": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-power-platform-administration-governance/2-describe-microsoft-power-platform-security-model",
+      "quote": "A DLP policy prevents data from flowing between connectors in different groups. For example, if Dataverse is in the Business group and a consumer email service is in the Non-business group, a Power Automate flow that reads from Dataverse and sends email through that consumer service would be blocked by the policy."
+    }
+  },
+  {
+    "id": "plb3-005",
+    "type": "yes-no",
+    "skillArea": "environment",
+    "topic": "DLP scopes and Advanced Connector Policies",
+    "difficulty": "hard",
+    "prompt": "For each of the following statements about DLP policy scopes and Advanced Connector Policies (ACP), select Yes if the statement is true. Otherwise, select No.",
+    "statements": [
+      {
+        "id": "s1",
+        "text": "Tenant-level DLP policies can be overridden by environment-level policies.",
+        "correct": false
+      },
+      {
+        "id": "s2",
+        "text": "With Advanced Connector Policies, all connectors are blocked unless explicitly permitted.",
+        "correct": true
+      },
+      {
+        "id": "s3",
+        "text": "Under ACP, new connectors added to the platform are automatically blocked.",
+        "correct": true
+      }
+    ],
+    "explanation": "Tenant-weite Richtlinien gelten für die ganze Organisation und können durch Umgebungs-Richtlinien nicht überschrieben werden. ACP dreht das Modell um (Default-Deny): Alles ist blockiert, bis es explizit erlaubt wird — auch neu hinzukommende Connectors sind automatisch gesperrt.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-power-platform-administration-governance/2-describe-microsoft-power-platform-security-model",
+    "source": {
+      "title": "Describe the Microsoft Power Platform security model",
+      "url": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-power-platform-administration-governance/2-describe-microsoft-power-platform-security-model",
+      "quote": "Tenant-level policies: Apply across the entire organization and cannot be overridden by environment-level policies. With ACP, all connectors are blocked unless explicitly permitted, and any new connectors added to the platform are automatically blocked."
+    }
+  },
+  {
+    "id": "plb3-006",
+    "type": "single-choice",
+    "skillArea": "environment",
+    "topic": "Authentication",
+    "difficulty": "easy",
+    "prompt": "Which service serves as the identity platform for Microsoft Power Platform, verifying user credentials and issuing access tokens?",
+    "options": [
+      { "id": "a", "text": "Microsoft Entra ID" },
+      { "id": "b", "text": "Microsoft Purview" },
+      { "id": "c", "text": "Azure Application Insights" },
+      { "id": "d", "text": "Microsoft Dataverse" }
+    ],
+    "correct": "a",
+    "explanation": "Microsoft Entra ID (früher Azure Active Directory) ist die Identitätsplattform der Power Platform. Sie zentralisiert die Identitätsverwaltung über Power Platform, Microsoft 365, Azure und Dynamics 365 hinweg und nutzt Standards wie OAuth 2.0 für zeitlich begrenzte Zugriffstoken. MFA und Conditional Access setzen darauf auf.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-power-platform-administration-governance/2-describe-microsoft-power-platform-security-model",
+    "source": {
+      "title": "Describe the Microsoft Power Platform security model",
+      "url": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-power-platform-administration-governance/2-describe-microsoft-power-platform-security-model",
+      "quote": "Microsoft Entra ID, formerly Azure Active Directory, serves as the identity platform for Power Platform. It centralizes user identity management across Power Platform, Microsoft 365, Azure, and Dynamics 365 applications."
+    }
+  },
+  {
+    "id": "plb3-007",
+    "type": "dropdown",
+    "skillArea": "environment",
+    "topic": "Data encryption",
+    "difficulty": "medium",
+    "prompt": "Complete the statement about encryption in Power Platform.",
+    "textParts": [
+      "Data stored in Dataverse and other Power Platform storage systems is encrypted at rest using ",
+      " encryption, while data in transit is protected using ",
+      " or higher."
+    ],
+    "blanks": [
+      {
+        "id": "b1",
+        "options": [
+          { "id": "o1", "text": "AES 256-bit" },
+          { "id": "o2", "text": "SHA-1" },
+          { "id": "o3", "text": "Base64" }
+        ],
+        "correct": "o1"
+      },
+      {
+        "id": "b2",
+        "options": [
+          { "id": "o1", "text": "Transport Layer Security (TLS) 1.2" },
+          { "id": "o2", "text": "FTP" },
+          { "id": "o3", "text": "WEP" }
+        ],
+        "correct": "o1"
+      }
+    ],
+    "explanation": "Ruhende Daten werden mit AES-256 verschlüsselt (Schlüssel verwaltet Microsoft; optional Customer Managed Keys für Dataverse). Übertragene Daten sichert TLS 1.2 oder höher gegen Abfangen und Manipulation.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-power-platform-administration-governance/2-describe-microsoft-power-platform-security-model",
+    "source": {
+      "title": "Describe the Microsoft Power Platform security model",
+      "url": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-power-platform-administration-governance/2-describe-microsoft-power-platform-security-model",
+      "quote": "Encryption at rest: Data stored in Dataverse, SharePoint, and other Power Platform storage systems is encrypted using AES 256-bit encryption. Encryption in transit: Data transmitted between user devices, Power Platform services, and Microsoft data centers is protected using Transport Layer Security (TLS) 1.2 or higher."
+    }
+  },
+  {
+    "id": "plb3-008",
+    "type": "yes-no",
+    "skillArea": "environment",
+    "topic": "Role-based access control",
+    "difficulty": "medium",
+    "prompt": "For each of the following statements about role-based access control (RBAC) in Power Platform, select Yes if the statement is true. Otherwise, select No.",
+    "statements": [
+      {
+        "id": "s1",
+        "text": "Users can be assigned multiple security roles, and their effective permissions are the union of all assigned roles.",
+        "correct": true
+      },
+      {
+        "id": "s2",
+        "text": "Users need at least the Environment Maker role to create resources in an environment.",
+        "correct": true
+      },
+      {
+        "id": "s3",
+        "text": "The principle of least privilege recommends granting users broad permissions to avoid support requests.",
+        "correct": false
+      }
+    ],
+    "explanation": "Mehrere Sicherheitsrollen sind möglich; die effektiven Berechtigungen sind die Vereinigung aller Rollen. Ressourcen erstellen erfordert mindestens die Environment-Maker-Rolle. Least Privilege bedeutet das Gegenteil von breiten Rechten: nur die für die Aufgabe nötigen Berechtigungen vergeben.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-power-platform-administration-governance/2-describe-microsoft-power-platform-security-model",
+    "source": {
+      "title": "Describe the Microsoft Power Platform security model",
+      "url": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-power-platform-administration-governance/2-describe-microsoft-power-platform-security-model",
+      "quote": "Users can be assigned multiple security roles simultaneously, and their effective permissions are the union of all roles assigned to them. Users must have at least the Environment Maker role to create resources in an environment."
+    }
+  },
+  {
+    "id": "plb3-009",
+    "type": "single-choice",
+    "skillArea": "environment",
+    "topic": "Accessibility",
+    "difficulty": "easy",
+    "prompt": "A maker wants to automatically review a canvas app for issues such as missing alt text, insufficient color contrast, and controls not reachable by keyboard. Which Power Apps tool does this?",
+    "options": [
+      { "id": "a", "text": "Solution Checker" },
+      { "id": "b", "text": "Accessibility Checker" },
+      { "id": "c", "text": "Process mining" },
+      { "id": "d", "text": "Monitor" }
+    ],
+    "correct": "b",
+    "explanation": "Der Accessibility Checker prüft das App-Design automatisch auf Barrierefreiheits-Probleme (fehlende Alt-Texte, Kontraste, Tastatur-Erreichbarkeit) und hilft, Standards wie WCAG 2.2 zu erfüllen. Der Solution Checker prüft dagegen Best Practices von Lösungen vor dem Deployment.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-power-platform-administration-governance/5-describe-power-platform-data-privacy-accessibility-guidelines",
+    "source": {
+      "title": "Describe how Microsoft Power Platform supports data privacy and accessibility guidelines",
+      "url": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-power-platform-administration-governance/5-describe-power-platform-data-privacy-accessibility-guidelines",
+      "quote": "Makers building canvas apps in Power Apps have access to an Accessibility Checker tool that automatically reviews the app design for potential accessibility issues. The checker identifies problems such as missing alt text on images, insufficient color contrast ratios, and controls that are not reachable via keyboard navigation."
+    }
+  },
+  {
+    "id": "plb3-010",
+    "type": "single-choice",
+    "skillArea": "environment",
+    "topic": "Data residency",
+    "difficulty": "medium",
+    "prompt": "Contoso is subject to regulations that require customer data to remain within the European Union. Which Power Platform capability ensures that Dataverse data stays within a designated geographic region?",
+    "options": [
+      { "id": "a", "text": "Data residency — environments can target specific geographic regions" },
+      { "id": "b", "text": "Customer Managed Keys" },
+      { "id": "c", "text": "Conditional access policies" },
+      { "id": "d", "text": "The Center of Excellence Starter Kit" }
+    ],
+    "correct": "a",
+    "explanation": "Beim Anlegen des Entra-Tenants wird eine geografische Standardregion gewählt; Umgebungen können gezielt Regionen zugewiesen werden, und Dataverse-Daten bleiben in der festgelegten Region. Genau das brauchen Organisationen mit Datenlokalisierungs-Pflichten wie in der EU.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-power-platform-administration-governance/5-describe-power-platform-data-privacy-accessibility-guidelines",
+    "source": {
+      "title": "Describe how Microsoft Power Platform supports data privacy and accessibility guidelines",
+      "url": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-power-platform-administration-governance/5-describe-power-platform-data-privacy-accessibility-guidelines",
+      "quote": "Environments created within that tenant can also target specific geographic regions, and data stored in Dataverse within those environments remains within the designated region. This data residency capability is critical for organizations subject to regulations that require data to be stored in specific countries or regions, such as regional data protection regulations in the European Union or data localization requirements in specific jurisdictions."
+    }
+  },
+  {
+    "id": "plb3-011",
+    "type": "single-choice",
+    "skillArea": "environment",
+    "topic": "Compliance tooling",
+    "difficulty": "medium",
+    "prompt": "A compliance team must locate and export or delete personal data stored in Dataverse to fulfill a data subject request (DSR). Which tool do Power Platform administrators use for this?",
+    "options": [
+      { "id": "a", "text": "Microsoft Purview" },
+      { "id": "b", "text": "Azure Application Insights" },
+      { "id": "c", "text": "Power Platform Pipelines" },
+      { "id": "d", "text": "AI Builder" }
+    ],
+    "correct": "a",
+    "explanation": "Microsoft Purview bündelt Compliance und Data Governance: Administratoren führen damit Data Subject Requests aus (personenbezogene Daten finden, exportieren, löschen) und werten Aktivitätsprotokolle für Power Apps, Flows, Copilot Studio und Co. aus.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-power-platform-administration-governance/5-describe-power-platform-data-privacy-accessibility-guidelines",
+    "source": {
+      "title": "Describe how Microsoft Power Platform supports data privacy and accessibility guidelines",
+      "url": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-power-platform-administration-governance/5-describe-power-platform-data-privacy-accessibility-guidelines",
+      "quote": "Power Platform administrators can use Microsoft Purview to conduct data subject requests (DSRs)—locating and exporting or deleting personal data stored in Dataverse and other Power Platform data stores."
+    }
+  },
+  {
+    "id": "plb3-012",
+    "type": "ordering",
+    "skillArea": "environment",
+    "topic": "Power Platform Pipelines",
+    "difficulty": "hard",
+    "prompt": "Place the steps of a deployment with Power Platform Pipelines in the correct order.",
+    "items": [
+      {
+        "id": "i1",
+        "text": "The maker navigates to the solution in the development environment and selects the pipeline"
+      },
+      {
+        "id": "i2",
+        "text": "The pipeline validates the solution using preflight checks (Solution Checker)"
+      },
+      {
+        "id": "i3",
+        "text": "The solution is deployed to the next stage — or held until an approver confirms"
+      },
+      {
+        "id": "i4",
+        "text": "After validation in the test environment, the maker advances the solution to the next stage"
+      }
+    ],
+    "correctOrder": ["i1", "i2", "i3", "i4"],
+    "explanation": "Der Ablauf: Lösung und Pipeline in der Entwicklungsumgebung wählen → Preflight-Checks validieren (Solution Checker, Import-Prüfung) → Deployment zur nächsten Stufe (bei Approval-Gate erst nach Freigabe) → nach Test-Validierung weiter zur nächsten Stufe. Alle Aktivitäten werden automatisch im Pipeline-Host protokolliert.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-power-platform-administration-governance/6-describe-application-lifecycle-management-power-platform",
+    "source": {
+      "title": "Describe application lifecycle management with Power Platform Pipelines",
+      "url": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-power-platform-administration-governance/6-describe-application-lifecycle-management-power-platform",
+      "quote": "The maker navigates to their solution in the development environment and selects the pipeline to use. If validation passes, the solution is deployed to the next stage. If approval is required, the deployment is held until an approver confirms it. After validation in the test environment, the maker can advance the solution to the next stage using the same guided interface."
+    }
+  },
+  {
+    "id": "plb3-013",
+    "type": "single-choice",
+    "skillArea": "environment",
+    "topic": "Solutions and ALM",
+    "difficulty": "medium",
+    "prompt": "What is a solution in the context of Power Platform application lifecycle management (ALM)?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A container that packages all components of an application — tables, apps, flows, agents — into a single deployable unit"
+      },
+      {
+        "id": "b",
+        "text": "A backup file of a single canvas app"
+      },
+      {
+        "id": "c",
+        "text": "A Power BI report that documents an application's architecture"
+      },
+      {
+        "id": "d",
+        "text": "A license bundle for distributing apps to end users"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Eine Solution ist der Container, der alle Komponenten einer Power-Platform-Anwendung — Tabellen, Apps, Flows, Agents, Connection References, Umgebungsvariablen — als eine deploybare Einheit bündelt. Sie ist die Grundeinheit des ALM: versioniert, nachverfolgbar und zwischen Umgebungen beweglich.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-power-platform-administration-governance/6-describe-application-lifecycle-management-power-platform",
+    "source": {
+      "title": "Describe application lifecycle management with Power Platform Pipelines",
+      "url": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-power-platform-administration-governance/6-describe-application-lifecycle-management-power-platform",
+      "quote": "A solution is a container that packages all the components of a Power Platform application—tables, apps, flows, agents, connection references, environment variables, and more—into a single deployable unit."
+    }
+  },
+  {
+    "id": "plb3-014",
+    "type": "single-choice",
+    "skillArea": "environment",
+    "topic": "Delegated deployments",
+    "difficulty": "hard",
+    "prompt": "A pipeline stage is configured for delegated deployment. Under which identity is the deployment carried out?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A service principal or the pipeline stage owner's identity — not the requesting maker's identity"
+      },
+      {
+        "id": "b",
+        "text": "Always the requesting maker's identity"
+      },
+      {
+        "id": "c",
+        "text": "The identity of the last user who edited the solution"
+      },
+      {
+        "id": "d",
+        "text": "An anonymous system account without any identity"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Bei Delegated Deployments läuft die Bereitstellung unter einem Service Principal oder der Identität des Stage-Besitzers. Maker können so Deployments in sensible Umgebungen anfordern, ohne direkten Zugriff darauf zu haben — Least Privilege. Mit Approval-Gate wartet das Deployment zusätzlich auf explizite Freigabe.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-power-platform-administration-governance/6-describe-application-lifecycle-management-power-platform",
+    "source": {
+      "title": "Describe application lifecycle management with Power Platform Pipelines",
+      "url": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-power-platform-administration-governance/6-describe-application-lifecycle-management-power-platform",
+      "quote": "When a delegated deployment is configured for a pipeline stage, the deployment is carried out using a service principal or pipeline stage owner's identity rather than the requesting maker's identity. This means makers can request deployments to sensitive environments without needing direct access to those environments, supporting the principle of least privilege."
+    }
+  },
+  {
+    "id": "plb3-015",
+    "type": "single-choice",
+    "skillArea": "environment",
+    "topic": "Center of Excellence Starter Kit",
+    "difficulty": "medium",
+    "prompt": "What is the Microsoft Power Platform Center of Excellence (CoE) Starter Kit?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A collection of components built on Power Platform itself that provides advanced governance and observability"
+      },
+      {
+        "id": "b",
+        "text": "A paid consulting service delivered by Microsoft partners"
+      },
+      {
+        "id": "c",
+        "text": "A hardware appliance for hosting Power Platform on-premises"
+      },
+      {
+        "id": "d",
+        "text": "A certification program for Power Platform administrators"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Das CoE Starter Kit ist eine Sammlung von Komponenten und Tools, die selbst auf der Power Platform gebaut sind: ein Power-BI-Dashboard für Tenant-weite Einblicke, Governance-Komponenten (z. B. Business-Justification-Abfragen, Archivierung ungenutzter Apps), Nurture-Komponenten für Maker-Onboarding und Audit-Komponenten.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-power-platform-administration-governance/describe-monitoring-analytics",
+    "source": {
+      "title": "Describe the monitoring and analytics capabilities of the Microsoft Power Platform",
+      "url": "https://learn.microsoft.com/en-us/training/modules/describe-microsoft-power-platform-administration-governance/describe-monitoring-analytics",
+      "quote": "The Microsoft Power Platform Center of Excellence (CoE) Starter Kit is a collection of components and tools built on Power Platform itself that provides an advanced governance and observability solution for organizations that want deeper visibility and control."
+    }
+  }
+]
