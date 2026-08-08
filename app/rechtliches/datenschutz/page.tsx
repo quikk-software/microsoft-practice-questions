@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { getTenant } from "@/lib/tenants/config";
+import { getRequestTenant } from "@/lib/tenants/server";
 import {
   LegalPage,
   LegalSection,
@@ -15,8 +15,8 @@ export const metadata: Metadata = {
 
 const UPDATED = "Juli 2026";
 
-export default function DatenschutzPage() {
-  const tenant = getTenant();
+export default async function DatenschutzPage() {
+  const tenant = await getRequestTenant();
   const legal = tenant.legal;
   const link =
     "text-brand-600 hover:underline dark:text-brand-400 break-words";

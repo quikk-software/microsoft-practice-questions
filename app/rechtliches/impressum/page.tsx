@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { getTenant } from "@/lib/tenants/config";
+import { getRequestTenant } from "@/lib/tenants/server";
 import {
   LegalPage,
   LegalSection,
@@ -12,8 +12,8 @@ export const metadata: Metadata = {
   alternates: { canonical: "/rechtliches/impressum" },
 };
 
-export default function ImpressumPage() {
-  const tenant = getTenant();
+export default async function ImpressumPage() {
+  const tenant = await getRequestTenant();
   const legal = tenant.legal;
 
   return (

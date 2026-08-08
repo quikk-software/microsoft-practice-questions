@@ -1,11 +1,11 @@
 import Link from "next/link";
-import { getTenant } from "@/lib/tenants/config";
+import { getRequestTenant } from "@/lib/tenants/server";
 
 // Footer (Server-Komponente): Betreiber, Rechtliches, Hinweis auf die
 // Markenrechte von Microsoft. Erscheint auf allen Seiten.
 
-export function SiteFooter() {
-  const tenant = getTenant();
+export async function SiteFooter() {
+  const tenant = await getRequestTenant();
   const year = new Date().getFullYear();
 
   return (

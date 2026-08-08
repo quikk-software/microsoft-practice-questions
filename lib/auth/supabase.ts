@@ -7,7 +7,7 @@ import {
   createServiceClient,
   createWritableSessionClient,
 } from "@/lib/supabase/server";
-import { getTenant } from "@/lib/tenants/config";
+import { getRequestTenant } from "@/lib/tenants/server";
 
 // Supabase-Treiber für den Auth-Port (AUTH_DRIVER=supabase).
 // Session via Cookies (@supabase/ssr); Rollen kommen aus public.profiles.
@@ -66,13 +66,16 @@ export class SupabaseAuthService implements AuthService {
     password: string
   ): Promise<{ needsEmailConfirmation: boolean }> {
     const supabase = await createWritableSessionClient();
+    // Mandant aus dem Request — wer sich auf einer fest zugeordneten Domain
+    // registriert, wird auch dort verbucht, unabhängig von der ENV.
+    const tenantId = (await getRequestTenant()).id;
     const { data, error } = await supabase.auth.signUp({
       email,
       password,
       options: {
         emailRedirectTo: `${siteUrl()}/auth/callback`,
         // Mandant mitschicken — der Signup-Trigger schreibt ihn nach profiles.tenant_id
-        data: { tenant_id: getTenant().id },
+        data: { tenant_id: tenantId },
       },
     });
     if (error) throw new AuthError(error.message, error.code ?? "auth-error");

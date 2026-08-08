@@ -6,7 +6,8 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { ServiceWorkerRegistrar } from "@/components/ServiceWorkerRegistrar";
 import { SessionMarker } from "@/components/SessionMarker";
-import { brandCssVariables, getTenant } from "@/lib/tenants/config";
+import { brandCssVariables } from "@/lib/tenants/config";
+import { getRequestTenant } from "@/lib/tenants/server";
 import "./globals.css";
 
 // Schriften aller Mandanten laden; aktiv ist die des Mandanten (tenant.theme.font).
@@ -26,43 +27,47 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const tenant = getTenant();
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 
 // Kennung des aktuellen Builds für die Service-Worker-Registrierung. Auf Vercel
 // der Commit-SHA, lokal ein Platzhalter (dort ist der Worker ohnehin aus).
 const buildId = process.env.VERCEL_GIT_COMMIT_SHA?.slice(0, 8) ?? "dev";
 
-export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
-  title: {
-    default: tenant.siteTitle,
-    template: `%s · ${tenant.productName}`,
-  },
-  description: tenant.siteDescription,
-  applicationName: tenant.productName,
-  openGraph: {
-    type: "website",
-    siteName: tenant.productName,
-    locale: "de_DE",
-    url: siteUrl,
-  },
-  twitter: {
-    card: "summary_large_image",
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-  manifest: "/manifest.json",
-  icons: {
-    icon: [
-      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-      { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
-    ],
-    apple: [{ url: "/apple-icon-180x180.png", sizes: "180x180" }],
-  },
-};
+// Titel und Beschreibung hängen am Mandanten — und der am aufgerufenen Host.
+// Deshalb generateMetadata() statt eines statischen metadata-Objekts.
+export async function generateMetadata(): Promise<Metadata> {
+  const tenant = await getRequestTenant();
+  return {
+    metadataBase: new URL(siteUrl),
+    title: {
+      default: tenant.siteTitle,
+      template: `%s · ${tenant.productName}`,
+    },
+    description: tenant.siteDescription,
+    applicationName: tenant.productName,
+    openGraph: {
+      type: "website",
+      siteName: tenant.productName,
+      locale: "de_DE",
+      url: siteUrl,
+    },
+    twitter: {
+      card: "summary_large_image",
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
+    manifest: "/manifest.json",
+    icons: {
+      icon: [
+        { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+        { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+      ],
+      apple: [{ url: "/apple-icon-180x180.png", sizes: "180x180" }],
+    },
+  };
+}
 
 export default async function RootLayout({
   children,
@@ -72,6 +77,7 @@ export default async function RootLayout({
   // Header-Einbindung: User serverseitig holen und als Prop an die
   // Client-Kopfzeile durchreichen (Logout-Klick passiert dort).
   const user = await getAuthService().getCurrentUser();
+  const tenant = await getRequestTenant();
 
   // Mandanten-Theme: Schrift-Variable auf die gewählte Familie mappen,
   // Brand-Palette als CSS-Variablen überschreiben (Tailwind v4 liest --color-brand-*).

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ChevronLeft } from "lucide-react";
 import { getRepository } from "@/lib/data";
-import { getTenant } from "@/lib/tenants/config";
+import { getRequestTenant } from "@/lib/tenants/server";
 import {
   ExamSeoContent,
   ExamStructuredData,
@@ -34,6 +34,7 @@ export default async function ExamDetailPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
+  const tenant = await getRequestTenant();
   const repo = getRepository();
   const exam = await repo.getExam(slug);
   if (!exam) notFound();
@@ -112,7 +113,7 @@ export default async function ExamDetailPage({
         config={config}
         questions={questions}
         siteUrl={process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"}
-        providerName={getTenant().name}
+        providerName={tenant.name}
       />
     </main>
   );

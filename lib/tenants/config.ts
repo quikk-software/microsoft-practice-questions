@@ -69,7 +69,7 @@ export interface Tenant {
 const STRATEGIC_IT: Tenant = {
   id: "strategic-it",
   name: "Strategic IT GmbH",
-  hosts: [],
+  hosts: ["microsoft-practice-questions.vercel.app"],
   logo: { light: "/strategic-it/logo.svg" },
   productName: "Practice Exams",
   siteTitle: "Microsoft Practice Exams — kostenlose Test-Examen",
@@ -151,21 +151,45 @@ function hostFromSiteUrl(siteUrl: string | undefined): string | null {
 }
 
 /**
- * Aktiver Mandant. Auflösung:
+ * Fest zugeordneter Mandant für einen Host (aus Tenant.hosts).
+ *
+ * Diese Zuordnung ist die spezifischste Angabe, die es gibt, und schlägt
+ * deshalb die ENV: Eine Domain, die in `hosts` steht, zeigt immer ihren
+ * Mandanten — auch wenn dieselbe Bereitstellung per NEXT_PUBLIC_TENANT_ID
+ * einen anderen Standard-Mandanten setzt. Hosts ohne Eintrag bleiben von
+ * dieser Regel unberührt und laufen weiter über getTenant().
+ *
+ * Akzeptiert den rohen Header-Wert (mit Port, ggf. mehrfach kommagetrennt).
+ */
+export function resolveTenantByHost(
+  host: string | null | undefined
+): Tenant | null {
+  if (!host) return null;
+  // "a.example, b.example:443" -> "a.example"
+  const hostname = host.split(",")[0].trim().split(":")[0].toLowerCase();
+  if (!hostname) return null;
+  return Object.values(TENANTS).find((t) => t.hosts.includes(hostname)) ?? null;
+}
+
+/**
+ * Mandant aus der Konfiguration (ohne Request-Kontext). Auflösung:
  * 1. NEXT_PUBLIC_TENANT_ID (explizit)
  * 2. Host aus NEXT_PUBLIC_SITE_URL gegen Tenant.hosts
  * 3. DEFAULT_TENANT_ID
  * Beide ENV-Variablen sind NEXT_PUBLIC_*, also auch im Client verfügbar.
+ *
+ * Serverseitig stattdessen getRequestTenant() aus lib/tenants/server.ts
+ * verwenden — die berücksichtigt zusätzlich den tatsächlich aufgerufenen Host.
  */
 export function getTenant(): Tenant {
   const explicit = process.env.NEXT_PUBLIC_TENANT_ID;
   if (explicit && TENANTS[explicit]) return TENANTS[explicit];
 
-  const host = hostFromSiteUrl(process.env.NEXT_PUBLIC_SITE_URL);
-  if (host) {
-    const match = Object.values(TENANTS).find((t) => t.hosts.includes(host));
-    if (match) return match;
-  }
+  const match = resolveTenantByHost(
+    hostFromSiteUrl(process.env.NEXT_PUBLIC_SITE_URL)
+  );
+  if (match) return match;
+
   return TENANTS[DEFAULT_TENANT_ID];
 }
 
