@@ -43,3 +43,8 @@ next-env.d.ts
 # Lokale User-Daten (fs-Treiber)
 /data/attempts/
 /data/ai-settings/
+
+# RAG-Embeddings: aus data/exams/<slug>/content/ reproduzierbar
+# (scripts/embed.mjs) und produktiv ohnehin in Supabase/pgvector.
+# Mehrere MB pro Examen — gehören nicht in die Historie.
+/data/exams/*/embeddings.json
