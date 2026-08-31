@@ -1,0 +1,1325 @@
+[
+  {
+    "uid": "learn.philanthropies.create-prompts-for-generative-ai-training-tools.introduction",
+    "title": "Introduction",
+    "url": "https://learn.microsoft.com/en-us/training/modules/create-prompts-for-generative-ai-training-tools/1-introduction",
+    "module": "create-prompts-for-generative-ai-training-tools",
+    "moduleTitle": "Create effective prompts for generative AI training tools",
+    "file": "content/create-prompts-for-generative-ai-training-tools/01-1-introduction.md",
+    "chars": 1551
+  },
+  {
+    "uid": "learn.philanthropies.create-prompts-for-generative-ai-training-tools.prompt-based-generative-ai-model",
+    "title": "Prompt-based generative AI model",
+    "url": "https://learn.microsoft.com/en-us/training/modules/create-prompts-for-generative-ai-training-tools/2-prompt-based-generative-ai-model",
+    "module": "create-prompts-for-generative-ai-training-tools",
+    "moduleTitle": "Create effective prompts for generative AI training tools",
+    "file": "content/create-prompts-for-generative-ai-training-tools/02-2-prompt-based-generative-ai-model.md",
+    "chars": 2308
+  },
+  {
+    "uid": "learn.philanthropies.create-prompts-for-generative-ai-training-tools.what-is-prompt-engineering",
+    "title": "What is prompt engineering?",
+    "url": "https://learn.microsoft.com/en-us/training/modules/create-prompts-for-generative-ai-training-tools/3-what-is-prompt-engineering",
+    "module": "create-prompts-for-generative-ai-training-tools",
+    "moduleTitle": "Create effective prompts for generative AI training tools",
+    "file": "content/create-prompts-for-generative-ai-training-tools/03-3-what-is-prompt-engineering.md",
+    "chars": 3635
+  },
+  {
+    "uid": "learn.philanthropies.create-prompts-for-generative-ai-training-tools.identify-the-types-of-prompt-instructions",
+    "title": "Identify the types of prompt instructions",
+    "url": "https://learn.microsoft.com/en-us/training/modules/create-prompts-for-generative-ai-training-tools/4-identify-the-types-of-prompt-instructions",
+    "module": "create-prompts-for-generative-ai-training-tools",
+    "moduleTitle": "Create effective prompts for generative AI training tools",
+    "file": "content/create-prompts-for-generative-ai-training-tools/04-4-identify-the-types-of-prompt-instructions.md",
+    "chars": 1277
+  },
+  {
+    "uid": "learn.philanthropies.create-prompts-for-generative-ai-training-tools.create-effective-prompts",
+    "title": "Create effective prompts",
+    "url": "https://learn.microsoft.com/en-us/training/modules/create-prompts-for-generative-ai-training-tools/5-create-effective-prompts",
+    "module": "create-prompts-for-generative-ai-training-tools",
+    "moduleTitle": "Create effective prompts for generative AI training tools",
+    "file": "content/create-prompts-for-generative-ai-training-tools/05-5-create-effective-prompts.md",
+    "chars": 2029
+  },
+  {
+    "uid": "learn.philanthropies.create-prompts-for-generative-ai-training-tools.knowledge-check",
+    "title": "Module assessment",
+    "url": "https://learn.microsoft.com/en-us/training/modules/create-prompts-for-generative-ai-training-tools/6-knowledge-check",
+    "module": "create-prompts-for-generative-ai-training-tools",
+    "moduleTitle": "Create effective prompts for generative AI training tools",
+    "file": "content/create-prompts-for-generative-ai-training-tools/06-6-knowledge-check.md",
+    "chars": 1092
+  },
+  {
+    "uid": "learn.philanthropies.create-prompts-for-generative-ai-training-tools.summary",
+    "title": "Summary",
+    "url": "https://learn.microsoft.com/en-us/training/modules/create-prompts-for-generative-ai-training-tools/7-summary",
+    "module": "create-prompts-for-generative-ai-training-tools",
+    "moduleTitle": "Create effective prompts for generative AI training tools",
+    "file": "content/create-prompts-for-generative-ai-training-tools/07-7-summary.md",
+    "chars": 2517
+  },
+  {
+    "uid": "learn.wwl.turn-business-ideas-power-platform-solutions-plans.introduction",
+    "title": "Introduction",
+    "url": "https://learn.microsoft.com/en-us/training/modules/turn-business-ideas-power-platform-solutions-plans/1-introduction",
+    "module": "turn-business-ideas-power-platform-solutions-plans",
+    "moduleTitle": "Turn business ideas into Power Platform solutions with Plans",
+    "file": "content/turn-business-ideas-power-platform-solutions-plans/01-1-introduction.md",
+    "chars": 1695
+  },
+  {
+    "uid": "learn.wwl.turn-business-ideas-power-platform-solutions-plans.explore-plans-ai-agents",
+    "title": "Explore plans and the AI agents that power them",
+    "url": "https://learn.microsoft.com/en-us/training/modules/turn-business-ideas-power-platform-solutions-plans/2-explore-plans-ai-agents",
+    "module": "turn-business-ideas-power-platform-solutions-plans",
+    "moduleTitle": "Turn business ideas into Power Platform solutions with Plans",
+    "file": "content/turn-business-ideas-power-platform-solutions-plans/02-2-explore-plans-ai-agents.md",
+    "chars": 3340
+  },
+  {
+    "uid": "learn.wwl.turn-business-ideas-power-platform-solutions-plans.create-plan-refine-requirements",
+    "title": "Create a plan and refine the requirements",
+    "url": "https://learn.microsoft.com/en-us/training/modules/turn-business-ideas-power-platform-solutions-plans/3-create-plan-refine-requirements",
+    "module": "turn-business-ideas-power-platform-solutions-plans",
+    "moduleTitle": "Turn business ideas into Power Platform solutions with Plans",
+    "file": "content/turn-business-ideas-power-platform-solutions-plans/03-3-create-plan-refine-requirements.md",
+    "chars": 5572
+  },
+  {
+    "uid": "learn.wwl.turn-business-ideas-power-platform-solutions-plans.review-data-model-technology-proposal",
+    "title": "Review the data model and technology proposal",
+    "url": "https://learn.microsoft.com/en-us/training/modules/turn-business-ideas-power-platform-solutions-plans/4-review-data-model-technology-proposal",
+    "module": "turn-business-ideas-power-platform-solutions-plans",
+    "moduleTitle": "Turn business ideas into Power Platform solutions with Plans",
+    "file": "content/turn-business-ideas-power-platform-solutions-plans/04-4-review-data-model-technology-proposal.md",
+    "chars": 5008
+  },
+  {
+    "uid": "learn.wwl.turn-business-ideas-power-platform-solutions-plans.build-manage-solution",
+    "title": "Build and manage your solution",
+    "url": "https://learn.microsoft.com/en-us/training/modules/turn-business-ideas-power-platform-solutions-plans/5-build-manage-solution",
+    "module": "turn-business-ideas-power-platform-solutions-plans",
+    "moduleTitle": "Turn business ideas into Power Platform solutions with Plans",
+    "file": "content/turn-business-ideas-power-platform-solutions-plans/05-5-build-manage-solution.md",
+    "chars": 4881
+  },
+  {
+    "uid": "learn.wwl.turn-business-ideas-power-platform-solutions-plans.create-plan-existing-solution",
+    "title": "Create a plan from an existing solution",
+    "url": "https://learn.microsoft.com/en-us/training/modules/turn-business-ideas-power-platform-solutions-plans/6-create-plan-existing-solution",
+    "module": "turn-business-ideas-power-platform-solutions-plans",
+    "moduleTitle": "Turn business ideas into Power Platform solutions with Plans",
+    "file": "content/turn-business-ideas-power-platform-solutions-plans/06-6-create-plan-existing-solution.md",
+    "chars": 4390
+  },
+  {
+    "uid": "learn.wwl.turn-business-ideas-power-platform-solutions-plans.knowledge-check",
+    "title": "Knowledge check",
+    "url": "https://learn.microsoft.com/en-us/training/modules/turn-business-ideas-power-platform-solutions-plans/7-knowledge-check",
+    "module": "turn-business-ideas-power-platform-solutions-plans",
+    "moduleTitle": "Turn business ideas into Power Platform solutions with Plans",
+    "file": "content/turn-business-ideas-power-platform-solutions-plans/07-7-knowledge-check.md",
+    "chars": 1737
+  },
+  {
+    "uid": "learn.wwl.turn-business-ideas-power-platform-solutions-plans.summary",
+    "title": "Summary",
+    "url": "https://learn.microsoft.com/en-us/training/modules/turn-business-ideas-power-platform-solutions-plans/8-summary",
+    "module": "turn-business-ideas-power-platform-solutions-plans",
+    "moduleTitle": "Turn business ideas into Power Platform solutions with Plans",
+    "file": "content/turn-business-ideas-power-platform-solutions-plans/08-8-summary.md",
+    "chars": 1480
+  },
+  {
+    "uid": "learn.wwl.design-ai-powered-solutions-power-platform.introduction",
+    "title": "Introduction",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/1-introduction",
+    "module": "design-ai-powered-solutions-power-platform",
+    "moduleTitle": "Design AI-powered business solutions with Microsoft Power Platform",
+    "file": "content/design-ai-powered-solutions-power-platform/01-1-introduction.md",
+    "chars": 1518
+  },
+  {
+    "uid": "learn.wwl.design-ai-powered-solutions-power-platform.explore-ai-first-power-platform",
+    "title": "Explore the AI-first Power Platform",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/2-explore-ai-first-power-platform",
+    "module": "design-ai-powered-solutions-power-platform",
+    "moduleTitle": "Design AI-powered business solutions with Microsoft Power Platform",
+    "file": "content/design-ai-powered-solutions-power-platform/02-2-explore-ai-first-power-platform.md",
+    "chars": 5391
+  },
+  {
+    "uid": "learn.wwl.design-ai-powered-solutions-power-platform.recommend-power-platform-components",
+    "title": "Recommend Power Platform components for business solutions",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/3-recommend-power-platform-components",
+    "module": "design-ai-powered-solutions-power-platform",
+    "moduleTitle": "Design AI-powered business solutions with Microsoft Power Platform",
+    "file": "content/design-ai-powered-solutions-power-platform/03-3-recommend-power-platform-components.md",
+    "chars": 8502
+  },
+  {
+    "uid": "learn.wwl.design-ai-powered-solutions-power-platform.map-business-processes-ai-first-patterns",
+    "title": "Map business processes to AI-first solution patterns",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/4-map-business-processes-ai-first-patterns",
+    "module": "design-ai-powered-solutions-power-platform",
+    "moduleTitle": "Design AI-powered business solutions with Microsoft Power Platform",
+    "file": "content/design-ai-powered-solutions-power-platform/04-4-map-business-processes-ai-first-patterns.md",
+    "chars": 5485
+  },
+  {
+    "uid": "learn.wwl.design-ai-powered-solutions-power-platform.explore-extensibility-options",
+    "title": "Explore extensibility options in Power Platform",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/5-explore-extensibility-options",
+    "module": "design-ai-powered-solutions-power-platform",
+    "moduleTitle": "Design AI-powered business solutions with Microsoft Power Platform",
+    "file": "content/design-ai-powered-solutions-power-platform/05-5-explore-extensibility-options.md",
+    "chars": 4809
+  },
+  {
+    "uid": "learn.wwl.design-ai-powered-solutions-power-platform.knowledge-check",
+    "title": "Knowledge check",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/6-knowledge-check",
+    "module": "design-ai-powered-solutions-power-platform",
+    "moduleTitle": "Design AI-powered business solutions with Microsoft Power Platform",
+    "file": "content/design-ai-powered-solutions-power-platform/06-6-knowledge-check.md",
+    "chars": 1494
+  },
+  {
+    "uid": "learn.wwl.design-ai-powered-solutions-power-platform.summary",
+    "title": "Summary",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/7-summary",
+    "module": "design-ai-powered-solutions-power-platform",
+    "moduleTitle": "Design AI-powered business solutions with Microsoft Power Platform",
+    "file": "content/design-ai-powered-solutions-power-platform/07-7-summary.md",
+    "chars": 1460
+  },
+  {
+    "uid": "learn-bizapps.powerapps-common-data-service.1-introduction",
+    "title": "Introduction to Microsoft Dataverse",
+    "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps-common-data-service/1-introduction",
+    "module": "get-started-with-powerapps-common-data-service",
+    "moduleTitle": "Create tables in Dataverse",
+    "file": "content/get-started-with-powerapps-common-data-service/01-1-introduction.md",
+    "chars": 3201
+  },
+  {
+    "uid": "learn-bizapps.powerapps-common-data-service.2-learn-about-entities",
+    "title": "Table characteristics",
+    "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps-common-data-service/2-learn-about-entities",
+    "module": "get-started-with-powerapps-common-data-service",
+    "moduleTitle": "Create tables in Dataverse",
+    "file": "content/get-started-with-powerapps-common-data-service/02-2-learn-about-entities.md",
+    "chars": 7601
+  },
+  {
+    "uid": "learn-bizapps.powerapps-common-data-service.2b-dual-write-vs-virtual-table",
+    "title": "Dual-write vs. virtual tables",
+    "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps-common-data-service/2b-dual-write-vs-virtual-table",
+    "module": "get-started-with-powerapps-common-data-service",
+    "moduleTitle": "Create tables in Dataverse",
+    "file": "content/get-started-with-powerapps-common-data-service/03-2b-dual-write-vs-virtual-table.md",
+    "chars": 3677
+  },
+  {
+    "uid": "learn-bizapps.powerapps-common-data-service.3-create-a-cds-entity",
+    "title": "Exercise - Create a Microsoft Dataverse table",
+    "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps-common-data-service/3-create-a-cds-entity",
+    "module": "get-started-with-powerapps-common-data-service",
+    "moduleTitle": "Create tables in Dataverse",
+    "file": "content/get-started-with-powerapps-common-data-service/04-3-create-a-cds-entity.md",
+    "chars": 4631
+  },
+  {
+    "uid": "learn-bizapps.powerapps-common-data-service.4-import-data-into-your-database",
+    "title": "Exercise - Import data into your Microsoft Dataverse database",
+    "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps-common-data-service/4-import-data-into-your-database",
+    "module": "get-started-with-powerapps-common-data-service",
+    "moduleTitle": "Create tables in Dataverse",
+    "file": "content/get-started-with-powerapps-common-data-service/05-4-import-data-into-your-database.md",
+    "chars": 5445
+  },
+  {
+    "uid": "learn-bizapps.powerapps-common-data-service.learn-about-relationships",
+    "title": "Table relationships",
+    "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps-common-data-service/learn-about-relationships",
+    "module": "get-started-with-powerapps-common-data-service",
+    "moduleTitle": "Create tables in Dataverse",
+    "file": "content/get-started-with-powerapps-common-data-service/06-learn-about-relationships.md",
+    "chars": 4673
+  },
+  {
+    "uid": "learn-bizapps.powerapps-common-data-service.create-table-relationships",
+    "title": "Exercise - Create table relationships",
+    "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps-common-data-service/create-table-relationships",
+    "module": "get-started-with-powerapps-common-data-service",
+    "moduleTitle": "Create tables in Dataverse",
+    "file": "content/get-started-with-powerapps-common-data-service/07-create-table-relationships.md",
+    "chars": 3699
+  },
+  {
+    "uid": "learn-bizapps.powerapps-common-data-service.logic-security",
+    "title": "Dataverse logic and security",
+    "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps-common-data-service/logic-security",
+    "module": "get-started-with-powerapps-common-data-service",
+    "moduleTitle": "Create tables in Dataverse",
+    "file": "content/get-started-with-powerapps-common-data-service/08-logic-security.md",
+    "chars": 6105
+  },
+  {
+    "uid": "learn-bizapps.powerapps-common-data-service.4a-use-data-cds-exercise",
+    "title": "Exercise - Create a custom table and import data",
+    "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps-common-data-service/4a-use-data-cds-exercise",
+    "module": "get-started-with-powerapps-common-data-service",
+    "moduleTitle": "Create tables in Dataverse",
+    "file": "content/get-started-with-powerapps-common-data-service/09-4a-use-data-cds-exercise.md",
+    "chars": 8211
+  },
+  {
+    "uid": "learn-bizapps.powerapps-common-data-service.auditing",
+    "title": "Dataverse auditing",
+    "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps-common-data-service/auditing",
+    "module": "get-started-with-powerapps-common-data-service",
+    "moduleTitle": "Create tables in Dataverse",
+    "file": "content/get-started-with-powerapps-common-data-service/10-auditing.md",
+    "chars": 4538
+  },
+  {
+    "uid": "learn-bizapps.powerapps-common-data-service.4b-check",
+    "title": "Check your knowledge",
+    "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps-common-data-service/4b-check",
+    "module": "get-started-with-powerapps-common-data-service",
+    "moduleTitle": "Create tables in Dataverse",
+    "file": "content/get-started-with-powerapps-common-data-service/11-4b-check.md",
+    "chars": 613
+  },
+  {
+    "uid": "learn-bizapps.powerapps-common-data-service.5-summary",
+    "title": "Summary",
+    "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps-common-data-service/5-summary",
+    "module": "get-started-with-powerapps-common-data-service",
+    "moduleTitle": "Create tables in Dataverse",
+    "file": "content/get-started-with-powerapps-common-data-service/12-5-summary.md",
+    "chars": 707
+  },
+  {
+    "uid": "learn-dynamics.create-manage-fields-within-entity.1-fields",
+    "title": "Define columns in Microsoft Dataverse",
+    "url": "https://learn.microsoft.com/en-us/training/modules/create-manage-fields-within-entity/1-fields",
+    "module": "create-manage-fields-within-entity",
+    "moduleTitle": "Create and manage columns within a table in Dataverse",
+    "file": "content/create-manage-fields-within-entity/01-1-fields.md",
+    "chars": 1146
+  },
+  {
+    "uid": "learn-dynamics.create-manage-fields-within-entity.2-field-types",
+    "title": "Column types in Microsoft Dataverse",
+    "url": "https://learn.microsoft.com/en-us/training/modules/create-manage-fields-within-entity/2-field-types",
+    "module": "create-manage-fields-within-entity",
+    "moduleTitle": "Create and manage columns within a table in Dataverse",
+    "file": "content/create-manage-fields-within-entity/02-2-field-types.md",
+    "chars": 11718
+  },
+  {
+    "uid": "learn-dynamics.create-manage-fields-within-entity.3-add-field",
+    "title": "Add a column to a table",
+    "url": "https://learn.microsoft.com/en-us/training/modules/create-manage-fields-within-entity/3-add-field",
+    "module": "create-manage-fields-within-entity",
+    "moduleTitle": "Create and manage columns within a table in Dataverse",
+    "file": "content/create-manage-fields-within-entity/03-3-add-field.md",
+    "chars": 3259
+  },
+  {
+    "uid": "learn-dynamics.create-manage-fields-within-entity.prompt-columns",
+    "title": "Work with Prompt columns and row summaries",
+    "url": "https://learn.microsoft.com/en-us/training/modules/create-manage-fields-within-entity/prompt-columns",
+    "module": "create-manage-fields-within-entity",
+    "moduleTitle": "Create and manage columns within a table in Dataverse",
+    "file": "content/create-manage-fields-within-entity/04-prompt-columns.md",
+    "chars": 6704
+  },
+  {
+    "uid": "learn-dynamics.create-manage-fields-within-entity.4-primary-name",
+    "title": "Primary column",
+    "url": "https://learn.microsoft.com/en-us/training/modules/create-manage-fields-within-entity/4-primary-name",
+    "module": "create-manage-fields-within-entity",
+    "moduleTitle": "Create and manage columns within a table in Dataverse",
+    "file": "content/create-manage-fields-within-entity/05-4-primary-name.md",
+    "chars": 1675
+  },
+  {
+    "uid": "learn-dynamics.create-manage-fields-within-entity.5-restrictions",
+    "title": "Restrictions that apply to columns in a table",
+    "url": "https://learn.microsoft.com/en-us/training/modules/create-manage-fields-within-entity/5-restrictions",
+    "module": "create-manage-fields-within-entity",
+    "moduleTitle": "Create and manage columns within a table in Dataverse",
+    "file": "content/create-manage-fields-within-entity/06-5-restrictions.md",
+    "chars": 2664
+  },
+  {
+    "uid": "learn-dynamics.create-manage-fields-within-entity.6-auto-numbering",
+    "title": "Create an auto numbering column",
+    "url": "https://learn.microsoft.com/en-us/training/modules/create-manage-fields-within-entity/6-auto-numbering",
+    "module": "create-manage-fields-within-entity",
+    "moduleTitle": "Create and manage columns within a table in Dataverse",
+    "file": "content/create-manage-fields-within-entity/07-6-auto-numbering.md",
+    "chars": 2835
+  },
+  {
+    "uid": "learn-dynamics.create-manage-fields-within-entity.7-alternate-key",
+    "title": "Create an alternate key",
+    "url": "https://learn.microsoft.com/en-us/training/modules/create-manage-fields-within-entity/7-alternate-key",
+    "module": "create-manage-fields-within-entity",
+    "moduleTitle": "Create and manage columns within a table in Dataverse",
+    "file": "content/create-manage-fields-within-entity/08-7-alternate-key.md",
+    "chars": 2825
+  },
+  {
+    "uid": "learn-dynamics.create-manage-fields-within-entity.8-exercise",
+    "title": "Exercises",
+    "url": "https://learn.microsoft.com/en-us/training/modules/create-manage-fields-within-entity/8-exercise",
+    "module": "create-manage-fields-within-entity",
+    "moduleTitle": "Create and manage columns within a table in Dataverse",
+    "file": "content/create-manage-fields-within-entity/09-8-exercise.md",
+    "chars": 4523
+  },
+  {
+    "uid": "learn-dynamics.create-manage-fields-within-entity.9-check",
+    "title": "Check your knowledge",
+    "url": "https://learn.microsoft.com/en-us/training/modules/create-manage-fields-within-entity/9-check",
+    "module": "create-manage-fields-within-entity",
+    "moduleTitle": "Create and manage columns within a table in Dataverse",
+    "file": "content/create-manage-fields-within-entity/10-9-check.md",
+    "chars": 803
+  },
+  {
+    "uid": "learn-dynamics.create-manage-fields-within-entity.10-summary",
+    "title": "Summary",
+    "url": "https://learn.microsoft.com/en-us/training/modules/create-manage-fields-within-entity/10-summary",
+    "module": "create-manage-fields-within-entity",
+    "moduleTitle": "Create and manage columns within a table in Dataverse",
+    "file": "content/create-manage-fields-within-entity/11-10-summary.md",
+    "chars": 386
+  },
+  {
+    "uid": "learn-dynamics.get-started-security-roles.1-intro",
+    "title": "Introduction to environment roles",
+    "url": "https://learn.microsoft.com/en-us/training/modules/get-started-security-roles/1-intro",
+    "module": "get-started-security-roles",
+    "moduleTitle": "Get started with security roles in Dataverse",
+    "file": "content/get-started-security-roles/01-1-intro.md",
+    "chars": 379
+  },
+  {
+    "uid": "learn-dynamics.get-started-security-roles.2-roles",
+    "title": "Understand environment roles",
+    "url": "https://learn.microsoft.com/en-us/training/modules/get-started-security-roles/2-roles",
+    "module": "get-started-security-roles",
+    "moduleTitle": "Get started with security roles in Dataverse",
+    "file": "content/get-started-security-roles/02-2-roles.md",
+    "chars": 8011
+  },
+  {
+    "uid": "learn-dynamics.get-started-security-roles.3-user",
+    "title": "Adding or disabling an environment user",
+    "url": "https://learn.microsoft.com/en-us/training/modules/get-started-security-roles/3-user",
+    "module": "get-started-security-roles",
+    "moduleTitle": "Get started with security roles in Dataverse",
+    "file": "content/get-started-security-roles/03-3-user.md",
+    "chars": 2173
+  },
+  {
+    "uid": "learn-dynamics.get-started-security-roles.4a-security-role",
+    "title": "Understand user security roles and security role defaults",
+    "url": "https://learn.microsoft.com/en-us/training/modules/get-started-security-roles/4a-security-role",
+    "module": "get-started-security-roles",
+    "moduleTitle": "Get started with security roles in Dataverse",
+    "file": "content/get-started-security-roles/04-4a-security-role.md",
+    "chars": 7410
+  },
+  {
+    "uid": "learn-dynamics.get-started-security-roles.5-custom",
+    "title": "Exercise - Create a custom role",
+    "url": "https://learn.microsoft.com/en-us/training/modules/get-started-security-roles/5-custom",
+    "module": "get-started-security-roles",
+    "moduleTitle": "Get started with security roles in Dataverse",
+    "file": "content/get-started-security-roles/05-5-custom.md",
+    "chars": 5269
+  },
+  {
+    "uid": "learn-dynamics.get-started-security-roles.6-checking",
+    "title": "Check the roles that a user belongs to",
+    "url": "https://learn.microsoft.com/en-us/training/modules/get-started-security-roles/6-checking",
+    "module": "get-started-security-roles",
+    "moduleTitle": "Get started with security roles in Dataverse",
+    "file": "content/get-started-security-roles/06-6-checking.md",
+    "chars": 2395
+  },
+  {
+    "uid": "learn-dynamics.get-started-security-roles.6a-teams",
+    "title": "Configure Dataverse teams for security",
+    "url": "https://learn.microsoft.com/en-us/training/modules/get-started-security-roles/6a-teams",
+    "module": "get-started-security-roles",
+    "moduleTitle": "Get started with security roles in Dataverse",
+    "file": "content/get-started-security-roles/07-6a-teams.md",
+    "chars": 4702
+  },
+  {
+    "uid": "learn-dynamics.get-started-security-roles.6b-teams-group",
+    "title": "Configure Dataverse group teams for security",
+    "url": "https://learn.microsoft.com/en-us/training/modules/get-started-security-roles/6b-teams-group",
+    "module": "get-started-security-roles",
+    "moduleTitle": "Get started with security roles in Dataverse",
+    "file": "content/get-started-security-roles/08-6b-teams-group.md",
+    "chars": 5322
+  },
+  {
+    "uid": "learn-dynamics.get-started-security-roles.7-check",
+    "title": "Check your knowledge",
+    "url": "https://learn.microsoft.com/en-us/training/modules/get-started-security-roles/7-check",
+    "module": "get-started-security-roles",
+    "moduleTitle": "Get started with security roles in Dataverse",
+    "file": "content/get-started-security-roles/09-7-check.md",
+    "chars": 853
+  },
+  {
+    "uid": "learn-dynamics.get-started-security-roles.8-summary",
+    "title": "Summary",
+    "url": "https://learn.microsoft.com/en-us/training/modules/get-started-security-roles/8-summary",
+    "module": "get-started-security-roles",
+    "moduleTitle": "Get started with security roles in Dataverse",
+    "file": "content/get-started-security-roles/10-8-summary.md",
+    "chars": 1028
+  },
+  {
+    "uid": "learn-bizapps.powerapps-design-model-driven-apps.1-introduction",
+    "title": "Introducing model-driven apps",
+    "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-model-driven-apps-in-powerapps/1-introduction",
+    "module": "get-started-with-model-driven-apps-in-powerapps",
+    "moduleTitle": "Get started with model-driven apps in Power Apps",
+    "file": "content/get-started-with-model-driven-apps-in-powerapps/01-1-introduction.md",
+    "chars": 3504
+  },
+  {
+    "uid": "learn-bizapps.powerapps-design-model-driven-apps.2-building-blocks-of-model-driven-apps",
+    "title": "Components of model-driven apps",
+    "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-model-driven-apps-in-powerapps/2-building-blocks-of-model-driven-apps",
+    "module": "get-started-with-model-driven-apps-in-powerapps",
+    "moduleTitle": "Get started with model-driven apps in Power Apps",
+    "file": "content/get-started-with-model-driven-apps-in-powerapps/02-2-building-blocks-of-model-driven-apps.md",
+    "chars": 6909
+  },
+  {
+    "uid": "learn-bizapps.powerapps-design-model-driven-apps.2b-design-apps",
+    "title": "Design model-driven apps",
+    "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-model-driven-apps-in-powerapps/2b-design-apps",
+    "module": "get-started-with-model-driven-apps-in-powerapps",
+    "moduleTitle": "Get started with model-driven apps in Power Apps",
+    "file": "content/get-started-with-model-driven-apps-in-powerapps/03-2b-design-apps.md",
+    "chars": 7960
+  },
+  {
+    "uid": "learn-bizapps.powerapps-design-model-driven-apps.3-create-a-model-driven-app",
+    "title": "Exercise - Create a model-driven app",
+    "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-model-driven-apps-in-powerapps/3-create-a-model-driven-app",
+    "module": "get-started-with-model-driven-apps-in-powerapps",
+    "moduleTitle": "Get started with model-driven apps in Power Apps",
+    "file": "content/get-started-with-model-driven-apps-in-powerapps/04-3-create-a-model-driven-app.md",
+    "chars": 8544
+  },
+  {
+    "uid": "learn-bizapps.powerapps-design-model-driven-apps.generative-pages",
+    "title": "Build pages with generative AI",
+    "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-model-driven-apps-in-powerapps/generative-pages",
+    "module": "get-started-with-model-driven-apps-in-powerapps",
+    "moduleTitle": "Get started with model-driven apps in Power Apps",
+    "file": "content/get-started-with-model-driven-apps-in-powerapps/05-generative-pages.md",
+    "chars": 3236
+  },
+  {
+    "uid": "learn-bizapps.powerapps-design-model-driven-apps.5-control-security-when-sharing-model-driven-apps",
+    "title": "Exercise - Control security when sharing model-driven apps",
+    "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-model-driven-apps-in-powerapps/5-control-security-when-sharing-model-driven-apps",
+    "module": "get-started-with-model-driven-apps-in-powerapps",
+    "moduleTitle": "Get started with model-driven apps in Power Apps",
+    "file": "content/get-started-with-model-driven-apps-in-powerapps/06-5-control-security-when-sharing-model-driven-apps.md",
+    "chars": 11072
+  },
+  {
+    "uid": "learn-bizapps.powerapps-design-model-driven-apps.business-process-flows",
+    "title": "Incorporate business process flows",
+    "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-model-driven-apps-in-powerapps/business-process-flows",
+    "module": "get-started-with-model-driven-apps-in-powerapps",
+    "moduleTitle": "Get started with model-driven apps in Power Apps",
+    "file": "content/get-started-with-model-driven-apps-in-powerapps/07-business-process-flows.md",
+    "chars": 2814
+  },
+  {
+    "uid": "learn-bizapps.powerapps-design-model-driven-apps.power-fx-commands",
+    "title": "Add logic to commands with Power Fx",
+    "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-model-driven-apps-in-powerapps/power-fx-commands",
+    "module": "get-started-with-model-driven-apps-in-powerapps",
+    "moduleTitle": "Get started with model-driven apps in Power Apps",
+    "file": "content/get-started-with-model-driven-apps-in-powerapps/08-power-fx-commands.md",
+    "chars": 2599
+  },
+  {
+    "uid": "learn-bizapps.powerapps-design-model-driven-apps.5b-create-model-driven-application",
+    "title": "Exercise - Create a model-driven app",
+    "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-model-driven-apps-in-powerapps/5b-create-model-driven-application",
+    "module": "get-started-with-model-driven-apps-in-powerapps",
+    "moduleTitle": "Get started with model-driven apps in Power Apps",
+    "file": "content/get-started-with-model-driven-apps-in-powerapps/09-5b-create-model-driven-application.md",
+    "chars": 7759
+  },
+  {
+    "uid": "learn-bizapps.powerapps-design-model-driven-apps.copilot-chat",
+    "title": "Enable Copilot chat for app users",
+    "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-model-driven-apps-in-powerapps/copilot-chat",
+    "module": "get-started-with-model-driven-apps-in-powerapps",
+    "moduleTitle": "Get started with model-driven apps in Power Apps",
+    "file": "content/get-started-with-model-driven-apps-in-powerapps/10-copilot-chat.md",
+    "chars": 2309
+  },
+  {
+    "uid": "learn-bizapps.powerapps-design-model-driven-apps.add-agents",
+    "title": "Add agents to your model-driven app",
+    "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-model-driven-apps-in-powerapps/add-agents",
+    "module": "get-started-with-model-driven-apps-in-powerapps",
+    "moduleTitle": "Get started with model-driven apps in Power Apps",
+    "file": "content/get-started-with-model-driven-apps-in-powerapps/11-add-agents.md",
+    "chars": 2845
+  },
+  {
+    "uid": "learn-bizapps.powerapps-design-model-driven-apps.6-knowledge-check",
+    "title": "Module assessment",
+    "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-model-driven-apps-in-powerapps/6-knowledge-check",
+    "module": "get-started-with-model-driven-apps-in-powerapps",
+    "moduleTitle": "Get started with model-driven apps in Power Apps",
+    "file": "content/get-started-with-model-driven-apps-in-powerapps/12-6-knowledge-check.md",
+    "chars": 1051
+  },
+  {
+    "uid": "learn-bizapps.powerapps-design-model-driven-apps.7-summary",
+    "title": "Summary",
+    "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-model-driven-apps-in-powerapps/7-summary",
+    "module": "get-started-with-model-driven-apps-in-powerapps",
+    "moduleTitle": "Get started with model-driven apps in Power Apps",
+    "file": "content/get-started-with-model-driven-apps-in-powerapps/13-7-summary.md",
+    "chars": 1955
+  },
+  {
+    "uid": "learn-bizapps.publish-share-maintain-app.1-introduction",
+    "title": "Introduction",
+    "url": "https://learn.microsoft.com/en-us/training/modules/publish-share-maintain-app/1-introduction",
+    "module": "publish-share-maintain-app",
+    "moduleTitle": "Publish, share, and maintain a canvas app",
+    "file": "content/publish-share-maintain-app/01-1-introduction.md",
+    "chars": 918
+  },
+  {
+    "uid": "learn-bizapps.publish-share-maintain-app.2-publish-app",
+    "title": "Publish your app",
+    "url": "https://learn.microsoft.com/en-us/training/modules/publish-share-maintain-app/2-publish-app",
+    "module": "publish-share-maintain-app",
+    "moduleTitle": "Publish, share, and maintain a canvas app",
+    "file": "content/publish-share-maintain-app/02-2-publish-app.md",
+    "chars": 3661
+  },
+  {
+    "uid": "learn-bizapps.publish-share-maintain-app.3-share-app",
+    "title": "Share your app",
+    "url": "https://learn.microsoft.com/en-us/training/modules/publish-share-maintain-app/3-share-app",
+    "module": "publish-share-maintain-app",
+    "moduleTitle": "Publish, share, and maintain a canvas app",
+    "file": "content/publish-share-maintain-app/03-3-share-app.md",
+    "chars": 5132
+  },
+  {
+    "uid": "learn-bizapps.publish-share-maintain-app.4-maintain-app",
+    "title": "Maintain your app",
+    "url": "https://learn.microsoft.com/en-us/training/modules/publish-share-maintain-app/4-maintain-app",
+    "module": "publish-share-maintain-app",
+    "moduleTitle": "Publish, share, and maintain a canvas app",
+    "file": "content/publish-share-maintain-app/04-4-maintain-app.md",
+    "chars": 2491
+  },
+  {
+    "uid": "learn-bizapps.publish-share-maintain-app.5-lifecycle-management",
+    "title": "Application lifecycle management",
+    "url": "https://learn.microsoft.com/en-us/training/modules/publish-share-maintain-app/5-lifecycle-management",
+    "module": "publish-share-maintain-app",
+    "moduleTitle": "Publish, share, and maintain a canvas app",
+    "file": "content/publish-share-maintain-app/05-5-lifecycle-management.md",
+    "chars": 2814
+  },
+  {
+    "uid": "learn-bizapps.publish-share-maintain-app.knowledge-check",
+    "title": "Check your knowledge",
+    "url": "https://learn.microsoft.com/en-us/training/modules/publish-share-maintain-app/knowledge-check",
+    "module": "publish-share-maintain-app",
+    "moduleTitle": "Publish, share, and maintain a canvas app",
+    "file": "content/publish-share-maintain-app/06-knowledge-check.md",
+    "chars": 833
+  },
+  {
+    "uid": "learn-bizapps.publish-share-maintain-app.7-summary",
+    "title": "Summary",
+    "url": "https://learn.microsoft.com/en-us/training/modules/publish-share-maintain-app/7-summary",
+    "module": "publish-share-maintain-app",
+    "moduleTitle": "Publish, share, and maintain a canvas app",
+    "file": "content/publish-share-maintain-app/07-7-summary.md",
+    "chars": 856
+  },
+  {
+    "uid": "learn-bizapps.power-pages-studio.design-studio",
+    "title": "Introduction to Power Pages design studio",
+    "url": "https://learn.microsoft.com/en-us/training/modules/power-pages-studio/design-studio",
+    "module": "power-pages-studio",
+    "moduleTitle": "Explore Power Pages design studio",
+    "file": "content/power-pages-studio/01-design-studio.md",
+    "chars": 4117
+  },
+  {
+    "uid": "learn-bizapps.power-pages-studio.web-pages",
+    "title": "Work with pages",
+    "url": "https://learn.microsoft.com/en-us/training/modules/power-pages-studio/web-pages",
+    "module": "power-pages-studio",
+    "moduleTitle": "Explore Power Pages design studio",
+    "file": "content/power-pages-studio/02-web-pages.md",
+    "chars": 2347
+  },
+  {
+    "uid": "learn-bizapps.power-pages-studio.components",
+    "title": "Page components",
+    "url": "https://learn.microsoft.com/en-us/training/modules/power-pages-studio/components",
+    "module": "power-pages-studio",
+    "moduleTitle": "Explore Power Pages design studio",
+    "file": "content/power-pages-studio/03-components.md",
+    "chars": 6273
+  },
+  {
+    "uid": "learn-bizapps.power-pages-studio.styling",
+    "title": "Site styling and templates",
+    "url": "https://learn.microsoft.com/en-us/training/modules/power-pages-studio/styling",
+    "module": "power-pages-studio",
+    "moduleTitle": "Explore Power Pages design studio",
+    "file": "content/power-pages-studio/04-styling.md",
+    "chars": 2491
+  },
+  {
+    "uid": "learn-bizapps.power-pages-studio.security",
+    "title": "Secure your Power Pages site",
+    "url": "https://learn.microsoft.com/en-us/training/modules/power-pages-studio/security",
+    "module": "power-pages-studio",
+    "moduleTitle": "Explore Power Pages design studio",
+    "file": "content/power-pages-studio/05-security.md",
+    "chars": 2648
+  },
+  {
+    "uid": "learn-bizapps.power-pages-studio.ai-agent",
+    "title": "Add an AI-powered agent to your site",
+    "url": "https://learn.microsoft.com/en-us/training/modules/power-pages-studio/ai-agent",
+    "module": "power-pages-studio",
+    "moduleTitle": "Explore Power Pages design studio",
+    "file": "content/power-pages-studio/06-ai-agent.md",
+    "chars": 2518
+  },
+  {
+    "uid": "learn-bizapps.power-pages-studio.exercise",
+    "title": "Exercise - Edit pages",
+    "url": "https://learn.microsoft.com/en-us/training/modules/power-pages-studio/exercise",
+    "module": "power-pages-studio",
+    "moduleTitle": "Explore Power Pages design studio",
+    "file": "content/power-pages-studio/07-exercise.md",
+    "chars": 4491
+  },
+  {
+    "uid": "learn-bizapps.power-pages-studio.knowledge-check",
+    "title": "Knowledge check",
+    "url": "https://learn.microsoft.com/en-us/training/modules/power-pages-studio/knowledge-check",
+    "module": "power-pages-studio",
+    "moduleTitle": "Explore Power Pages design studio",
+    "file": "content/power-pages-studio/08-knowledge-check.md",
+    "chars": 801
+  },
+  {
+    "uid": "learn-bizapps.power-pages-studio.summary",
+    "title": "Summary",
+    "url": "https://learn.microsoft.com/en-us/training/modules/power-pages-studio/summary",
+    "module": "power-pages-studio",
+    "moduleTitle": "Explore Power Pages design studio",
+    "file": "content/power-pages-studio/09-summary.md",
+    "chars": 944
+  },
+  {
+    "uid": "learn-bizapps.powerapps-get-started.1-powerapps-introduction",
+    "title": "Introduction to Power Apps",
+    "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps/1-powerapps-introduction",
+    "module": "get-started-with-powerapps",
+    "moduleTitle": "Get started with Power Apps canvas apps",
+    "file": "content/get-started-with-powerapps/01-1-powerapps-introduction.md",
+    "chars": 3504
+  },
+  {
+    "uid": "learn-bizapps.powerapps-get-started.2-powerapps-building-blocks",
+    "title": "Start Power Apps",
+    "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps/2-powerapps-building-blocks",
+    "module": "get-started-with-powerapps",
+    "moduleTitle": "Get started with Power Apps canvas apps",
+    "file": "content/get-started-with-powerapps/02-2-powerapps-building-blocks.md",
+    "chars": 3246
+  },
+  {
+    "uid": "learn-bizapps.powerapps-get-started.5-powerapps-create-first",
+    "title": "Exercise - Create your first app in Power Apps",
+    "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps/5-powerapps-create-first",
+    "module": "get-started-with-powerapps",
+    "moduleTitle": "Get started with Power Apps canvas apps",
+    "file": "content/get-started-with-powerapps/03-5-powerapps-create-first.md",
+    "chars": 23079
+  },
+  {
+    "uid": "learn-bizapps.powerapps-get-started.4-powerapps-ways-to-build",
+    "title": "Power Apps data sources",
+    "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps/4-powerapps-ways-to-build",
+    "module": "get-started-with-powerapps",
+    "moduleTitle": "Get started with Power Apps canvas apps",
+    "file": "content/get-started-with-powerapps/04-4-powerapps-ways-to-build.md",
+    "chars": 6250
+  },
+  {
+    "uid": "learn-bizapps.powerapps-get-started.create-app-copilot",
+    "title": "Exercise - Create an app from Excel using Copilot",
+    "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps/create-app-copilot",
+    "module": "get-started-with-powerapps",
+    "moduleTitle": "Get started with Power Apps canvas apps",
+    "file": "content/get-started-with-powerapps/05-create-app-copilot.md",
+    "chars": 10692
+  },
+  {
+    "uid": "learn-bizapps.powerapps-get-started.3-powerapps-related-technologies",
+    "title": "Use Power Apps with Power Automate and Power BI",
+    "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps/3-powerapps-related-technologies",
+    "module": "get-started-with-powerapps",
+    "moduleTitle": "Get started with Power Apps canvas apps",
+    "file": "content/get-started-with-powerapps/06-3-powerapps-related-technologies.md",
+    "chars": 5509
+  },
+  {
+    "uid": "learn-bizapps.powerapps-get-started.4-5-design-app",
+    "title": "Designing a Power Apps app",
+    "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps/4-5-design-app",
+    "module": "get-started-with-powerapps",
+    "moduleTitle": "Get started with Power Apps canvas apps",
+    "file": "content/get-started-with-powerapps/07-4-5-design-app.md",
+    "chars": 3813
+  },
+  {
+    "uid": "learn-bizapps.powerapps-get-started.knowledge-check",
+    "title": "Check your knowledge",
+    "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps/knowledge-check",
+    "module": "get-started-with-powerapps",
+    "moduleTitle": "Get started with Power Apps canvas apps",
+    "file": "content/get-started-with-powerapps/08-knowledge-check.md",
+    "chars": 874
+  },
+  {
+    "uid": "learn-bizapps.powerapps-get-started.7-summary-cleanup",
+    "title": "Summary",
+    "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps/7-summary-cleanup",
+    "module": "get-started-with-powerapps",
+    "moduleTitle": "Get started with Power Apps canvas apps",
+    "file": "content/get-started-with-powerapps/09-7-summary-cleanup.md",
+    "chars": 1215
+  },
+  {
+    "uid": "learn-bizapps.powerapps-customize.introduction",
+    "title": "Introduction",
+    "url": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/introduction",
+    "module": "customize-apps-in-powerapps",
+    "moduleTitle": "Customize a canvas app in Power Apps",
+    "file": "content/customize-apps-in-powerapps/01-introduction.md",
+    "chars": 2120
+  },
+  {
+    "uid": "learn-bizapps.powerapps-customize.1-powerapps-customize",
+    "title": "Improve your app by making basic customizations",
+    "url": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/1-improve-apps-with-customization",
+    "module": "customize-apps-in-powerapps",
+    "moduleTitle": "Customize a canvas app in Power Apps",
+    "file": "content/customize-apps-in-powerapps/02-1-improve-apps-with-customization.md",
+    "chars": 4847
+  },
+  {
+    "uid": "learn-bizapps.powerapps-customize.2-powerapps-explore",
+    "title": "Explore controls and screens in canvas apps",
+    "url": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/2-explore-screens-and-controls",
+    "module": "customize-apps-in-powerapps",
+    "moduleTitle": "Customize a canvas app in Power Apps",
+    "file": "content/customize-apps-in-powerapps/03-2-explore-screens-and-controls.md",
+    "chars": 12093
+  },
+  {
+    "uid": "learn-bizapps.powerapps-customize.3-powerapps-functions",
+    "title": "Apply Power Fx formulas to canvas app controls",
+    "url": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/3-get-started-with-functions",
+    "module": "customize-apps-in-powerapps",
+    "moduleTitle": "Customize a canvas app in Power Apps",
+    "file": "content/customize-apps-in-powerapps/04-3-get-started-with-functions.md",
+    "chars": 7951
+  },
+  {
+    "uid": "learn-bizapps.powerapps-customize.power-fx-formulas",
+    "title": "Work with Power Fx formulas in canvas apps",
+    "url": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/power-fx-formulas",
+    "module": "customize-apps-in-powerapps",
+    "moduleTitle": "Customize a canvas app in Power Apps",
+    "file": "content/customize-apps-in-powerapps/05-power-fx-formulas.md",
+    "chars": 14620
+  },
+  {
+    "uid": "learn-bizapps.powerapps-customize.2-1-create-navigation-model",
+    "title": "Create screen navigation in a canvas app",
+    "url": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/2-1-create-navigation-model",
+    "module": "customize-apps-in-powerapps",
+    "moduleTitle": "Customize a canvas app in Power Apps",
+    "file": "content/customize-apps-in-powerapps/06-2-1-create-navigation-model.md",
+    "chars": 5992
+  },
+  {
+    "uid": "learn-bizapps.powerapps-customize.reusable-components",
+    "title": "Build reusable components and formulas in canvas apps",
+    "url": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/reusable-components",
+    "module": "customize-apps-in-powerapps",
+    "moduleTitle": "Customize a canvas app in Power Apps",
+    "file": "content/customize-apps-in-powerapps/07-reusable-components.md",
+    "chars": 5231
+  },
+  {
+    "uid": "learn-bizapps.powerapps-customize.knowledge-check",
+    "title": "Check your knowledge",
+    "url": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/knowledge-check",
+    "module": "customize-apps-in-powerapps",
+    "moduleTitle": "Customize a canvas app in Power Apps",
+    "file": "content/customize-apps-in-powerapps/08-knowledge-check.md",
+    "chars": 884
+  },
+  {
+    "uid": "learn-bizapps.powerapps-customize.5-summary-cleanup",
+    "title": "Summary",
+    "url": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/5-summary",
+    "module": "customize-apps-in-powerapps",
+    "moduleTitle": "Customize a canvas app in Power Apps",
+    "file": "content/customize-apps-in-powerapps/09-5-summary.md",
+    "chars": 2932
+  },
+  {
+    "uid": "learn-bizapps.power-pages-intro.introduction",
+    "title": "Introduction to Power Pages",
+    "url": "https://learn.microsoft.com/en-us/training/modules/power-pages-intro/introduction",
+    "module": "power-pages-intro",
+    "moduleTitle": "Core components of Power Pages",
+    "file": "content/power-pages-intro/01-introduction.md",
+    "chars": 3623
+  },
+  {
+    "uid": "learn-bizapps.power-pages-intro.get-started",
+    "title": "Get started with Power Pages",
+    "url": "https://learn.microsoft.com/en-us/training/modules/power-pages-intro/get-started",
+    "module": "power-pages-intro",
+    "moduleTitle": "Core components of Power Pages",
+    "file": "content/power-pages-intro/02-get-started.md",
+    "chars": 6148
+  },
+  {
+    "uid": "learn-bizapps.power-pages-intro.core-components",
+    "title": "Core tools and components of Power Pages",
+    "url": "https://learn.microsoft.com/en-us/training/modules/power-pages-intro/core-components",
+    "module": "power-pages-intro",
+    "moduleTitle": "Core components of Power Pages",
+    "file": "content/power-pages-intro/03-core-components.md",
+    "chars": 6269
+  },
+  {
+    "uid": "learn-bizapps.power-pages-intro.security",
+    "title": "Overview of Power Pages security",
+    "url": "https://learn.microsoft.com/en-us/training/modules/power-pages-intro/security",
+    "module": "power-pages-intro",
+    "moduleTitle": "Core components of Power Pages",
+    "file": "content/power-pages-intro/04-security.md",
+    "chars": 4248
+  },
+  {
+    "uid": "learn-bizapps.power-pages-intro.extensibility-overview",
+    "title": "Overview of Power Pages extensibility",
+    "url": "https://learn.microsoft.com/en-us/training/modules/power-pages-intro/extensibility-overview",
+    "module": "power-pages-intro",
+    "moduleTitle": "Core components of Power Pages",
+    "file": "content/power-pages-intro/05-extensibility-overview.md",
+    "chars": 4696
+  },
+  {
+    "uid": "learn-bizapps.power-pages-intro.knowledge-check",
+    "title": "Check your knowledge",
+    "url": "https://learn.microsoft.com/en-us/training/modules/power-pages-intro/knowledge-check",
+    "module": "power-pages-intro",
+    "moduleTitle": "Core components of Power Pages",
+    "file": "content/power-pages-intro/06-knowledge-check.md",
+    "chars": 1009
+  },
+  {
+    "uid": "learn-bizapps.power-pages-intro.summary",
+    "title": "Summary",
+    "url": "https://learn.microsoft.com/en-us/training/modules/power-pages-intro/summary",
+    "module": "power-pages-intro",
+    "moduleTitle": "Core components of Power Pages",
+    "file": "content/power-pages-intro/07-summary.md",
+    "chars": 1420
+  },
+  {
+    "uid": "learn-dynamics.configure-model-driven-apps-customer-engagement.01-forms-overview",
+    "title": "Forms overview",
+    "url": "https://learn.microsoft.com/en-us/training/modules/configure-model-driven-apps-customer-engagement-apps/01-forms-overview",
+    "module": "configure-model-driven-apps-customer-engagement-apps",
+    "moduleTitle": "Configure forms, charts, and dashboards in model-driven apps",
+    "file": "content/configure-model-driven-apps-customer-engagement-apps/01-01-forms-overview.md",
+    "chars": 1794
+  },
+  {
+    "uid": "learn-dynamics.configure-model-driven-apps-customer-engagement.02-forms-elements",
+    "title": "Form elements",
+    "url": "https://learn.microsoft.com/en-us/training/modules/configure-model-driven-apps-customer-engagement-apps/02-forms-elements",
+    "module": "configure-model-driven-apps-customer-engagement-apps",
+    "moduleTitle": "Configure forms, charts, and dashboards in model-driven apps",
+    "file": "content/configure-model-driven-apps-customer-engagement-apps/02-02-forms-elements.md",
+    "chars": 8391
+  },
+  {
+    "uid": "learn-dynamics.configure-model-driven-apps-customer-engagement.03-configure-multiple-forms",
+    "title": "Configure multiple forms",
+    "url": "https://learn.microsoft.com/en-us/training/modules/configure-model-driven-apps-customer-engagement-apps/03-configure-multiple-forms",
+    "module": "configure-model-driven-apps-customer-engagement-apps",
+    "moduleTitle": "Configure forms, charts, and dashboards in model-driven apps",
+    "file": "content/configure-model-driven-apps-customer-engagement-apps/03-03-configure-multiple-forms.md",
+    "chars": 7135
+  },
+  {
+    "uid": "learn-dynamics.configure-model-driven-apps-customer-engagement.04-specialized-form-components",
+    "title": "Use specialized form components",
+    "url": "https://learn.microsoft.com/en-us/training/modules/configure-model-driven-apps-customer-engagement-apps/04-specialized-form-components",
+    "module": "configure-model-driven-apps-customer-engagement-apps",
+    "moduleTitle": "Configure forms, charts, and dashboards in model-driven apps",
+    "file": "content/configure-model-driven-apps-customer-engagement-apps/04-04-specialized-form-components.md",
+    "chars": 5622
+  },
+  {
+    "uid": "learn-dynamics.configure-model-driven-apps-customer-engagement.custom-pages",
+    "title": "Extend model-driven apps with custom pages",
+    "url": "https://learn.microsoft.com/en-us/training/modules/configure-model-driven-apps-customer-engagement-apps/custom-pages",
+    "module": "configure-model-driven-apps-customer-engagement-apps",
+    "moduleTitle": "Configure forms, charts, and dashboards in model-driven apps",
+    "file": "content/configure-model-driven-apps-customer-engagement-apps/05-custom-pages.md",
+    "chars": 3793
+  },
+  {
+    "uid": "learn-dynamics.configure-model-driven-apps-customer-engagement.05-configure-views",
+    "title": "Configure views overview",
+    "url": "https://learn.microsoft.com/en-us/training/modules/configure-model-driven-apps-customer-engagement-apps/05-configure-views",
+    "module": "configure-model-driven-apps-customer-engagement-apps",
+    "moduleTitle": "Configure forms, charts, and dashboards in model-driven apps",
+    "file": "content/configure-model-driven-apps-customer-engagement-apps/06-05-configure-views.md",
+    "chars": 12381
+  },
+  {
+    "uid": "learn-dynamics.configure-model-driven-apps-customer-engagement.08-configure-charts",
+    "title": "Configure charts overview",
+    "url": "https://learn.microsoft.com/en-us/training/modules/configure-model-driven-apps-customer-engagement-apps/08-configure-charts",
+    "module": "configure-model-driven-apps-customer-engagement-apps",
+    "moduleTitle": "Configure forms, charts, and dashboards in model-driven apps",
+    "file": "content/configure-model-driven-apps-customer-engagement-apps/07-08-configure-charts.md",
+    "chars": 9142
+  },
+  {
+    "uid": "learn-dynamics.configure-model-driven-apps-customer-engagement.11-knowledge-check",
+    "title": "Module assessment",
+    "url": "https://learn.microsoft.com/en-us/training/modules/configure-model-driven-apps-customer-engagement-apps/11-knowledge-check",
+    "module": "configure-model-driven-apps-customer-engagement-apps",
+    "moduleTitle": "Configure forms, charts, and dashboards in model-driven apps",
+    "file": "content/configure-model-driven-apps-customer-engagement-apps/08-11-knowledge-check.md",
+    "chars": 1109
+  },
+  {
+    "uid": "learn-dynamics.configure-model-driven-apps-customer-engagement.12-summary",
+    "title": "Summary",
+    "url": "https://learn.microsoft.com/en-us/training/modules/configure-model-driven-apps-customer-engagement-apps/12-summary",
+    "module": "configure-model-driven-apps-customer-engagement-apps",
+    "moduleTitle": "Configure forms, charts, and dashboards in model-driven apps",
+    "file": "content/configure-model-driven-apps-customer-engagement-apps/09-12-summary.md",
+    "chars": 1442
+  },
+  {
+    "uid": "learn-bizapps.build-approval-flows.1-introduction",
+    "title": "Introduction to approval flows",
+    "url": "https://learn.microsoft.com/en-us/training/modules/build-approval-flows/1-introduction",
+    "module": "build-approval-flows",
+    "moduleTitle": "Build approval flows with Power Automate",
+    "file": "content/build-approval-flows/01-1-introduction.md",
+    "chars": 2615
+  },
+  {
+    "uid": "learn-bizapps.build-approval-flows.2-create-approval-request",
+    "title": "Build an approval request",
+    "url": "https://learn.microsoft.com/en-us/training/modules/build-approval-flows/2-create-approval-request",
+    "module": "build-approval-flows",
+    "moduleTitle": "Build approval flows with Power Automate",
+    "file": "content/build-approval-flows/02-2-create-approval-request.md",
+    "chars": 7813
+  },
+  {
+    "uid": "learn-bizapps.build-approval-flows.5-create-business-process-flow",
+    "title": "Create a business process flow",
+    "url": "https://learn.microsoft.com/en-us/training/modules/build-approval-flows/5-create-business-process-flow",
+    "module": "build-approval-flows",
+    "moduleTitle": "Build approval flows with Power Automate",
+    "file": "content/build-approval-flows/03-5-create-business-process-flow.md",
+    "chars": 20202
+  },
+  {
+    "uid": "learn-bizapps.build-approval-flows.6-branching",
+    "title": "Create a business process flow with conditions",
+    "url": "https://learn.microsoft.com/en-us/training/modules/build-approval-flows/6-branching",
+    "module": "build-approval-flows",
+    "moduleTitle": "Build approval flows with Power Automate",
+    "file": "content/build-approval-flows/04-6-branching.md",
+    "chars": 10687
+  },
+  {
+    "uid": "learn-bizapps.build-approval-flows.7-check",
+    "title": "Check your knowledge",
+    "url": "https://learn.microsoft.com/en-us/training/modules/build-approval-flows/7-check",
+    "module": "build-approval-flows",
+    "moduleTitle": "Build approval flows with Power Automate",
+    "file": "content/build-approval-flows/05-7-check.md",
+    "chars": 986
+  },
+  {
+    "uid": "learn-bizapps.build-approval-flows.8-summary",
+    "title": "Summary",
+    "url": "https://learn.microsoft.com/en-us/training/modules/build-approval-flows/8-summary",
+    "module": "build-approval-flows",
+    "moduleTitle": "Build approval flows with Power Automate",
+    "file": "content/build-approval-flows/06-8-summary.md",
+    "chars": 1507
+  },
+  {
+    "uid": "learn-bizapps.ai-builder-grounded-prompts.introduction",
+    "title": "Introduction",
+    "url": "https://learn.microsoft.com/en-us/training/modules/ai-builder-grounded-prompts/introduction",
+    "module": "ai-builder-grounded-prompts",
+    "moduleTitle": "Create AI Builder prompts using your own Dataverse data",
+    "file": "content/ai-builder-grounded-prompts/01-introduction.md",
+    "chars": 505
+  },
+  {
+    "uid": "learn-bizapps.ai-builder-grounded-prompts.create-grounded-prompt",
+    "title": "Exercise - Create a grounded prompt in AI Builder",
+    "url": "https://learn.microsoft.com/en-us/training/modules/ai-builder-grounded-prompts/create-grounded-prompt",
+    "module": "ai-builder-grounded-prompts",
+    "moduleTitle": "Create AI Builder prompts using your own Dataverse data",
+    "file": "content/ai-builder-grounded-prompts/02-create-grounded-prompt.md",
+    "chars": 5580
+  },
+  {
+    "uid": "learn-bizapps.ai-builder-grounded-prompts.use-grounded-prompt-cloud-flow",
+    "title": "Use a grounded prompt in a cloud flow",
+    "url": "https://learn.microsoft.com/en-us/training/modules/ai-builder-grounded-prompts/use-grounded-prompt-cloud-flow",
+    "module": "ai-builder-grounded-prompts",
+    "moduleTitle": "Create AI Builder prompts using your own Dataverse data",
+    "file": "content/ai-builder-grounded-prompts/03-use-grounded-prompt-cloud-flow.md",
+    "chars": 1632
+  },
+  {
+    "uid": "learn-bizapps.ai-builder-grounded-prompts.use-grounded-prompt-canvas-app",
+    "title": "Use a grounded prompt in a canvas app",
+    "url": "https://learn.microsoft.com/en-us/training/modules/ai-builder-grounded-prompts/use-grounded-prompt-canvas-app",
+    "module": "ai-builder-grounded-prompts",
+    "moduleTitle": "Create AI Builder prompts using your own Dataverse data",
+    "file": "content/ai-builder-grounded-prompts/04-use-grounded-prompt-canvas-app.md",
+    "chars": 1632
+  },
+  {
+    "uid": "learn-bizapps.ai-builder-grounded-prompts.use-grounded-prompt-custom-copilot",
+    "title": "Use a grounded prompt in a custom copilot",
+    "url": "https://learn.microsoft.com/en-us/training/modules/ai-builder-grounded-prompts/use-grounded-prompt-custom-copilot",
+    "module": "ai-builder-grounded-prompts",
+    "moduleTitle": "Create AI Builder prompts using your own Dataverse data",
+    "file": "content/ai-builder-grounded-prompts/05-use-grounded-prompt-custom-copilot.md",
+    "chars": 5583
+  },
+  {
+    "uid": "learn-bizapps.ai-builder-grounded-prompts.check",
+    "title": "Check your knowledge",
+    "url": "https://learn.microsoft.com/en-us/training/modules/ai-builder-grounded-prompts/check",
+    "module": "ai-builder-grounded-prompts",
+    "moduleTitle": "Create AI Builder prompts using your own Dataverse data",
+    "file": "content/ai-builder-grounded-prompts/06-check.md",
+    "chars": 956
+  },
+  {
+    "uid": "learn-bizapps.ai-builder-grounded-prompts.summary",
+    "title": "Summary",
+    "url": "https://learn.microsoft.com/en-us/training/modules/ai-builder-grounded-prompts/summary",
+    "module": "ai-builder-grounded-prompts",
+    "moduleTitle": "Create AI Builder prompts using your own Dataverse data",
+    "file": "content/ai-builder-grounded-prompts/07-summary.md",
+    "chars": 369
+  },
+  {
+    "uid": "learn-bizapps.flow-get-started.1-flow-introduction",
+    "title": "Introducing Power Automate",
+    "url": "https://learn.microsoft.com/en-us/training/modules/get-started-flows/1-introduction",
+    "module": "get-started-flows",
+    "moduleTitle": "Get started with Power Automate",
+    "file": "content/get-started-flows/01-1-introduction.md",
+    "chars": 6689
+  },
+  {
+    "uid": "learn-bizapps.flow-get-started.2-flow-create-first",
+    "title": "Create a cloud flow",
+    "url": "https://learn.microsoft.com/en-us/training/modules/get-started-flows/2-create-first-flow",
+    "module": "get-started-flows",
+    "moduleTitle": "Get started with Power Automate",
+    "file": "content/get-started-flows/02-2-create-first-flow.md",
+    "chars": 4168
+  },
+  {
+    "uid": "learn-bizapps.flow-get-started.6-flow-scheduled-flows",
+    "title": "Exercise - Create recurring flows",
+    "url": "https://learn.microsoft.com/en-us/training/modules/get-started-flows/6-flow-scheduled-flows",
+    "module": "get-started-flows",
+    "moduleTitle": "Get started with Power Automate",
+    "file": "content/get-started-flows/03-6-flow-scheduled-flows.md",
+    "chars": 6938
+  },
+  {
+    "uid": "learn-bizapps.flow-get-started.flow-monitor-incoming-emails",
+    "title": "Exercise - Monitor incoming emails",
+    "url": "https://learn.microsoft.com/en-us/training/modules/get-started-flows/flow-monitor-incoming-emails",
+    "module": "get-started-flows",
+    "moduleTitle": "Get started with Power Automate",
+    "file": "content/get-started-flows/04-flow-monitor-incoming-emails.md",
+    "chars": 3420
+  },
+  {
+    "uid": "learn-bizapps.flow-get-started.8-flow-share-flows",
+    "title": "Exercise - Share flows",
+    "url": "https://learn.microsoft.com/en-us/training/modules/get-started-flows/8-flow-share-flows",
+    "module": "get-started-flows",
+    "moduleTitle": "Get started with Power Automate",
+    "file": "content/get-started-flows/05-8-flow-share-flows.md",
+    "chars": 4937
+  },
+  {
+    "uid": "learn-bizapps.flow-get-started.9-troubleshoot-flows",
+    "title": "Troubleshoot flows",
+    "url": "https://learn.microsoft.com/en-us/training/modules/get-started-flows/9-troubleshoot-flows",
+    "module": "get-started-flows",
+    "moduleTitle": "Get started with Power Automate",
+    "file": "content/get-started-flows/06-9-troubleshoot-flows.md",
+    "chars": 4770
+  },
+  {
+    "uid": "learn-bizapps.flow-get-started.agent-flows",
+    "title": "Convert a flow to an agent flow",
+    "url": "https://learn.microsoft.com/en-us/training/modules/get-started-flows/agent-flows",
+    "module": "get-started-flows",
+    "moduleTitle": "Get started with Power Automate",
+    "file": "content/get-started-flows/07-agent-flows.md",
+    "chars": 2753
+  },
+  {
+    "uid": "learn-bizapps.flow-get-started.10-knowledge-check",
+    "title": "Module assessment",
+    "url": "https://learn.microsoft.com/en-us/training/modules/get-started-flows/10-knowledge-check",
+    "module": "get-started-flows",
+    "moduleTitle": "Get started with Power Automate",
+    "file": "content/get-started-flows/08-10-knowledge-check.md",
+    "chars": 1334
+  },
+  {
+    "uid": "learn-bizapps.flow-get-started.11-summary-cleanup",
+    "title": "Summary",
+    "url": "https://learn.microsoft.com/en-us/training/modules/get-started-flows/11-summary-cleanup",
+    "module": "get-started-flows",
+    "moduleTitle": "Get started with Power Automate",
+    "file": "content/get-started-flows/09-11-summary-cleanup.md",
+    "chars": 1212
+  },
+  {
+    "uid": "learn-bizapps.use-dataverse-triggers-actions.introduction",
+    "title": "Introduction",
+    "url": "https://learn.microsoft.com/en-us/training/modules/use-dataverse-triggers-actions/introduction",
+    "module": "use-dataverse-triggers-actions",
+    "moduleTitle": "Use Dataverse triggers and actions in Power Automate",
+    "file": "content/use-dataverse-triggers-actions/01-introduction.md",
+    "chars": 3559
+  },
+  {
+    "uid": "learn-bizapps.use-dataverse-triggers-actions.triggers",
+    "title": "Dataverse triggers",
+    "url": "https://learn.microsoft.com/en-us/training/modules/use-dataverse-triggers-actions/triggers",
+    "module": "use-dataverse-triggers-actions",
+    "moduleTitle": "Use Dataverse triggers and actions in Power Automate",
+    "file": "content/use-dataverse-triggers-actions/02-triggers.md",
+    "chars": 8802
+  },
+  {
+    "uid": "learn-bizapps.use-dataverse-triggers-actions.query-data",
+    "title": "Query data",
+    "url": "https://learn.microsoft.com/en-us/training/modules/use-dataverse-triggers-actions/query-data",
+    "module": "use-dataverse-triggers-actions",
+    "moduleTitle": "Use Dataverse triggers and actions in Power Automate",
+    "file": "content/use-dataverse-triggers-actions/03-query-data.md",
+    "chars": 9012
+  },
+  {
+    "uid": "learn-bizapps.use-dataverse-triggers-actions.create-update-delete-relate",
+    "title": "Create, update, delete, and relate actions",
+    "url": "https://learn.microsoft.com/en-us/training/modules/use-dataverse-triggers-actions/create-update-delete-relate",
+    "module": "use-dataverse-triggers-actions",
+    "moduleTitle": "Use Dataverse triggers and actions in Power Automate",
+    "file": "content/use-dataverse-triggers-actions/04-create-update-delete-relate.md",
+    "chars": 7365
+  },
+  {
+    "uid": "learn-bizapps.use-dataverse-triggers-actions.exercise",
+    "title": "Exercise - Create a cloud flow with a Dataverse connector",
+    "url": "https://learn.microsoft.com/en-us/training/modules/use-dataverse-triggers-actions/exercise",
+    "module": "use-dataverse-triggers-actions",
+    "moduleTitle": "Use Dataverse triggers and actions in Power Automate",
+    "file": "content/use-dataverse-triggers-actions/05-exercise.md",
+    "chars": 5735
+  },
+  {
+    "uid": "learn-bizapps.use-dataverse-triggers-actions.check",
+    "title": "Check your knowledge",
+    "url": "https://learn.microsoft.com/en-us/training/modules/use-dataverse-triggers-actions/check",
+    "module": "use-dataverse-triggers-actions",
+    "moduleTitle": "Use Dataverse triggers and actions in Power Automate",
+    "file": "content/use-dataverse-triggers-actions/06-check.md",
+    "chars": 969
+  },
+  {
+    "uid": "learn-bizapps.use-dataverse-triggers-actions.summary",
+    "title": "Summary",
+    "url": "https://learn.microsoft.com/en-us/training/modules/use-dataverse-triggers-actions/summary",
+    "module": "use-dataverse-triggers-actions",
+    "moduleTitle": "Use Dataverse triggers and actions in Power Automate",
+    "file": "content/use-dataverse-triggers-actions/07-summary.md",
+    "chars": 892
+  }
+]

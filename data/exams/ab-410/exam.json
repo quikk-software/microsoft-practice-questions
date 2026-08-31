@@ -1,0 +1,69 @@
+{
+  "slug": "ab-410",
+  "code": "AB-410",
+  "title": "Microsoft Certified: Intelligent Applications Builder Associate",
+  "description": "Building Intelligent Applications with Microsoft Power Platform. Umfasst den Entwurf KI-gestützter Lösungen und Plans, Datenmodelle in Microsoft Dataverse inklusive Sicherheitsrollen, Canvas- und modellgesteuerte Apps sowie Power Pages, dazu Cloud-Flows, Genehmigungen, Geschäftslogik und Prompts bzw. KI-Modelle im AI Hub.",
+  "seo": {
+    "intro": [
+      "Die AB-410 ist Microsofts Associate-Zertifizierung für alle, die KI-gestützte Geschäftslösungen mit der Power Platform bauen. Im Mittelpunkt stehen drei Dinge: ein tragfähiges Fundament (Lösungsentwurf mit KI-Werkzeugen, Umgebungs- und ALM-Strategie, Datenmodelle in Microsoft Dataverse), die eigentlichen Anwendungen (Canvas-Apps, modellgesteuerte Apps, generative Seiten, Power Pages) und die Logik dahinter (Cloud-Flows, Genehmigungen, Business Rules, Business Process Flows sowie Prompts und KI-Modelle aus dem AI Hub).",
+      "Anders als bei einer Fundamentals-Prüfung wird hier Umsetzungswissen erwartet: Welcher Spaltentyp passt, wie greifen Sicherheitsrollen und Business Units ineinander, wann ist ein Trigger der richtige, wie wird ein Prompt mit eigenen Dataverse-Daten geerdet und in App oder Flow konsumiert? Die Prüfung dauert 120 Minuten und richtet sich an Entwicklerinnen und Entwickler, die Copilot, natürliche Sprache und Low-Code-Werkzeuge zusammenbringen.",
+      "Unser Fragen-Pool stammt vollständig aus den vier offiziellen Microsoft-Learn-Lernpfaden zur AB-410. Nach jeder Antwort siehst du sofort, ob sie richtig war, bekommst eine Erklärung auf Deutsch und den wörtlichen Textausschnitt aus dem Lernmaterial, der die Antwort belegt — mit Link zur Original-Unit."
+    ],
+    "faq": [
+      {
+        "question": "Wie lange dauert die AB-410?",
+        "answer": "Laut Microsoft hast du 120 Minuten Zeit für die Prüfung. Unsere Test-Examen bilden den Umfang ab, laufen aber ohne Zeitlimit, damit du Erklärungen und Quellen in Ruhe durcharbeiten kannst."
+      },
+      {
+        "question": "Wie viele Fragen hat die AB-410-Prüfung?",
+        "answer": "Microsoft-Associate-Prüfungen umfassen typischerweise 40 bis 60 Fragen. Unser Test-Examen stellt 40 Fragen aus dem Pool zusammen, sodass sich jeder Durchlauf unterscheidet."
+      },
+      {
+        "question": "Wie viele Punkte braucht man zum Bestehen?",
+        "answer": "Wie bei allen Microsoft-Zertifizierungen sind 700 von 1000 Punkten zum Bestehen nötig. Unsere Auswertung nutzt dieselbe Skala und zeigt zusätzlich deine Leistung je Skill-Bereich."
+      },
+      {
+        "question": "Welche Themen werden geprüft?",
+        "answer": "Drei Bereiche: ein Fundament für intelligente Anwendungen schaffen — Lösungsentwurf, Umgebungen, ALM und Dataverse-Datenmodelle (25–30 %), intelligente Anwendungen erstellen — modellgesteuerte Apps, Canvas-Apps und Power Pages (25–30 %) sowie Geschäftslogik und Automatisierung — Cloud-Flows, Prompts und KI-Modelle im AI Hub, Business Rules und Business Process Flows (40–45 %)."
+      },
+      {
+        "question": "Welche Vorkenntnisse brauche ich für die AB-410?",
+        "answer": "Du solltest die Power Platform bereits praktisch nutzen: Dataverse-Grundlagen, Erfahrung mit Power Apps und Power Automate sowie ein Gefühl dafür, wie Copilot- und Agent-Funktionen in Lösungen eingebettet werden. Die PL-900 ist keine formale Voraussetzung, aber ein guter Einstieg."
+      },
+      {
+        "question": "Auf welchen Lernpfaden basieren die Fragen?",
+        "answer": "Auf allen vier Lernpfaden, die Microsoft auf der Zertifizierungsseite zur AB-410 verlinkt: „Get started with AI-first solutions in Microsoft Power Platform“, „Build your data model with Microsoft Dataverse“, „Build intelligent apps and portals with Microsoft Power Apps“ und „Automate and extend your solutions with AI in Microsoft Power Automate“ — zusammen 17 Module."
+      },
+      {
+        "question": "Kostet dieses Test-Examen etwas?",
+        "answer": "Nein. Die Test-Examen sind kostenlos und ohne Anmeldung nutzbar. Ein Konto brauchst du nur für den gespeicherten Prüfungsverlauf, den Lern-Modus mit Fortschritt und die KI-Erklärungen mit deinem eigenen API-Key."
+      }
+    ]
+  },
+  "questionCount": 40,
+  "durationMinutes": 120,
+  "passScore": 700,
+  "maxScore": 1000,
+  "skillAreas": [
+    {
+      "id": "foundation",
+      "name": "Create a foundation for intelligent applications",
+      "weight": 0.28
+    },
+    {
+      "id": "applications",
+      "name": "Create intelligent applications",
+      "weight": 0.28
+    },
+    {
+      "id": "logic-automation",
+      "name": "Build business application logic and automation",
+      "weight": 0.44
+    }
+  ],
+  "difficultyCurve": {
+    "easy": 0.3,
+    "medium": 0.45,
+    "hard": 0.25
+  }
+}

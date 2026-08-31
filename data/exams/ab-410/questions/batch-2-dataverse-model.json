@@ -1,0 +1,480 @@
+[
+  {
+    "id": "abb2-001",
+    "type": "multiple-choice",
+    "skillArea": "foundation",
+    "topic": "Immutable table settings",
+    "difficulty": "hard",
+    "prompt": "Which three table settings cannot be changed after a Dataverse table is created? Each correct answer presents part of the solution.",
+    "options": [
+      { "id": "a", "text": "Schema name" },
+      { "id": "b", "text": "Table type" },
+      { "id": "c", "text": "Table ownership" },
+      { "id": "d", "text": "Display name" },
+      { "id": "e", "text": "Description" }
+    ],
+    "correct": ["a", "b", "c"],
+    "explanation": "Schema-Name, Tabellentyp (Standard, Activity, Virtual, Elastic) und Besitzverhältnis (User or Team bzw. Organization) sind nach dem Anlegen fix. Anzeigename und Beschreibung lassen sich dagegen jederzeit ändern — deshalb müssen die drei unveränderlichen Angaben vor dem Erstellen stimmen.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps-common-data-service/2-learn-about-entities",
+    "source": {
+      "title": "Table characteristics",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps-common-data-service/2-learn-about-entities",
+      "quote": "The following settings can't be changed after creation: Schema name Table type Table ownership"
+    }
+  },
+  {
+    "id": "abb2-002",
+    "type": "matching",
+    "skillArea": "foundation",
+    "topic": "Dataverse table types",
+    "difficulty": "medium",
+    "prompt": "Match each Dataverse custom table type to its description.",
+    "left": [
+      { "id": "l1", "text": "Standard" },
+      { "id": "l2", "text": "Activity" },
+      { "id": "l3", "text": "Virtual" },
+      { "id": "l4", "text": "Elastic" }
+    ],
+    "right": [
+      { "id": "r1", "text": "Default table type for most use cases" },
+      {
+        "id": "r2",
+        "text": "Used for records with time-bound interactions, such as tasks or calls"
+      },
+      { "id": "r3", "text": "External data presented as if native to Dataverse" },
+      {
+        "id": "r4",
+        "text": "High-scale tables powered by Azure Cosmos DB, for datasets with tens of millions of rows"
+      }
+    ],
+    "correct": { "l1": "r1", "l2": "r2", "l3": "r3", "l4": "r4" },
+    "explanation": "Standard ist der Regelfall. Activity-Tabellen halten zeitgebundene Interaktionen wie Aufgaben oder Anrufe. Virtual-Tabellen zeigen externe Daten, als lägen sie in Dataverse. Elastic-Tabellen laufen auf Azure Cosmos DB und sind für zweistellige Millionen-Zeilenzahlen gedacht.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps-common-data-service/2-learn-about-entities",
+    "source": {
+      "title": "Table characteristics",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps-common-data-service/2-learn-about-entities",
+      "quote": "Standard: Default table type for most use cases Activity: Used for records with time-bound interactions (e.g., tasks, calls) Virtual: External data presented as if native to Dataverse Elastic: High-scale tables powered by Azure Cosmos DB, suitable for datasets with tens of millions of rows"
+    }
+  },
+  {
+    "id": "abb2-003",
+    "type": "single-choice",
+    "skillArea": "foundation",
+    "topic": "Primary key and primary column",
+    "difficulty": "easy",
+    "prompt": "What uniquely identifies a row in a Dataverse table, and what is the primary column used for?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A GUID generated automatically by Dataverse is the primary key; the primary column is a readable text field representing rows in apps and flows"
+      },
+      {
+        "id": "b",
+        "text": "The primary column is the primary key; the GUID is only used for auditing"
+      },
+      {
+        "id": "c",
+        "text": "An auto-incrementing integer is the primary key; the primary column stores the row's owner"
+      },
+      {
+        "id": "d",
+        "text": "Both the GUID and the primary column must be entered manually when a row is created"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Dataverse erzeugt beim Anlegen einer Zeile automatisch eine GUID als Primärschlüssel. Zusätzlich hat jede Tabelle eine Primärspalte — ein lesbares Textfeld, das Zeilen in Apps und Flows repräsentiert und standardmäßig „Name“ heißt.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps-common-data-service/2-learn-about-entities",
+    "source": {
+      "title": "Table characteristics",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps-common-data-service/2-learn-about-entities",
+      "quote": "In Dataverse, this key is a Globally Unique Identifier (GUID), such as 123e4567-e89b-12d3-a456-426655440000. Dataverse automatically generates the GUID when a new row is created. To improve usability, each table also includes a primary column—a readable text field used to represent rows in apps and flows."
+    }
+  },
+  {
+    "id": "abb2-004",
+    "type": "single-choice",
+    "skillArea": "foundation",
+    "topic": "Many-to-many relationships",
+    "difficulty": "medium",
+    "prompt": "How does Dataverse manage a many-to-many relationship, and what is true about that mechanism?",
+    "options": [
+      {
+        "id": "a",
+        "text": "It uses a hidden intersect table that isn't user-editable and doesn't support custom forms or columns"
+      },
+      {
+        "id": "b",
+        "text": "It creates a lookup column on each of the two tables"
+      },
+      {
+        "id": "c",
+        "text": "It duplicates rows in both tables to keep them in sync"
+      },
+      {
+        "id": "d",
+        "text": "It stores the associations in a formula column on the parent table"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Relationale Datenbanken unterstützen N:N nicht direkt. Dataverse legt dafür eine verborgene Intersect-Tabelle an, die die Zuordnungen verwaltet — sie ist nicht bearbeitbar und unterstützt keine eigenen Formulare oder Spalten. Verknüpfte Datensätze zeigt man stattdessen über ein Subgrid im Formular.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps-common-data-service/learn-about-relationships",
+    "source": {
+      "title": "Table relationships",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps-common-data-service/learn-about-relationships",
+      "quote": "Many-to-many relationships aren't directly supported by relational databases. Dataverse uses a hidden intersect table to manage these relationships. This intersect table isn't user-editable and doesn't support custom forms or columns."
+    }
+  },
+  {
+    "id": "abb2-005",
+    "type": "yes-no",
+    "skillArea": "foundation",
+    "topic": "Relationships and lookup columns",
+    "difficulty": "medium",
+    "prompt": "For each of the following statements about Dataverse table relationships, select Yes if the statement is true. Otherwise, select No.",
+    "statements": [
+      {
+        "id": "s1",
+        "text": "Adding a column with the Lookup data type automatically creates a many-to-one relationship.",
+        "correct": true
+      },
+      {
+        "id": "s2",
+        "text": "A many-to-one relationship is a fundamentally different relationship type from a one-to-many relationship.",
+        "correct": false
+      },
+      {
+        "id": "s3",
+        "text": "In a one-to-many relationship, the referenced row is often called the parent and rows in the referencing table are the children.",
+        "correct": true
+      }
+    ],
+    "explanation": "Eine Lookup-Spalte erzeugt automatisch eine N:1-Beziehung. N:1 und 1:N sind dabei nicht verschieden — es ist dieselbe Beziehung aus Sicht der jeweils anderen Tabelle, eine Frage der Oberflächen-Perspektive. Die referenzierte Zeile ist der Parent, die referenzierenden Zeilen sind die Children.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps-common-data-service/learn-about-relationships",
+    "source": {
+      "title": "Table relationships",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps-common-data-service/learn-about-relationships",
+      "quote": "A common way to create a table relationship is by adding a column with the Lookup data type. This automatically creates a many-to-one relationship. The referenced row is often called the parent, while rows in the referencing table are the children. This is a matter of interface perspective, not a separate relationship type."
+    }
+  },
+  {
+    "id": "abb2-006",
+    "type": "single-choice",
+    "skillArea": "foundation",
+    "topic": "Prompt columns",
+    "difficulty": "medium",
+    "prompt": "What is a Prompt column in Dataverse?",
+    "options": [
+      {
+        "id": "a",
+        "text": "An AI-powered column that stores the result of a natural language prompt run against other column values in the same row"
+      },
+      {
+        "id": "b",
+        "text": "A column that prompts the user with a validation message before saving"
+      },
+      {
+        "id": "c",
+        "text": "A column that stores the text of questions asked to a Copilot Studio agent"
+      },
+      {
+        "id": "d",
+        "text": "A calculated column that aggregates values from related rows"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Eine Prompt-Spalte ist ein KI-gestützter Spaltentyp: Beim Anlegen oder Ändern eines Datensatzes wertet Dataverse den Prompt gegen andere Spaltenwerte derselben Zeile aus und speichert das Ergebnis direkt in der Spalte — nutzbar in Apps, Flows und Ansichten, ganz ohne manuelle Eingabe.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/create-manage-fields-within-entity/prompt-columns",
+    "source": {
+      "title": "Work with Prompt columns and row summaries",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-manage-fields-within-entity/prompt-columns",
+      "quote": "A Prompt column is an AI-powered column type in Dataverse that stores the result of a natural language prompt run against other column values in the same row. When a record is created or updated, Dataverse evaluates the prompt and stores the generated output directly in the column — ready to be used in apps, flows, or views without any manual entry."
+    }
+  },
+  {
+    "id": "abb2-007",
+    "type": "yes-no",
+    "skillArea": "foundation",
+    "topic": "Prompt column limits",
+    "difficulty": "hard",
+    "prompt": "For each of the following statements about Prompt columns, select Yes if the statement is true. Otherwise, select No.",
+    "statements": [
+      {
+        "id": "s1",
+        "text": "You can create up to five Prompt columns per table.",
+        "correct": true
+      },
+      {
+        "id": "s2",
+        "text": "Formula columns, File columns, Image columns, and other Prompt columns can be used as input columns for a prompt.",
+        "correct": false
+      },
+      {
+        "id": "s3",
+        "text": "The Copilot and AI Prompts features must be turned on in the environment's Feature settings.",
+        "correct": true
+      }
+    ],
+    "explanation": "Pro Tabelle sind maximal fünf Prompt-Spalten möglich. Als Eingabespalten ausgeschlossen sind Formula-, File-, Image- und andere Prompt-Spalten — ihre Werte werden ignoriert. Voraussetzung sind aktivierte Copilot- und AI-Prompts-Funktionen in den Feature settings der Umgebung.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/create-manage-fields-within-entity/prompt-columns",
+    "source": {
+      "title": "Work with Prompt columns and row summaries",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-manage-fields-within-entity/prompt-columns",
+      "quote": "Select + Add new prompt. You can create up to five Prompt columns per table. Input columns can't be Formula columns, File columns, Image columns, or other Prompt columns — their values are ignored if selected. Copilot and AI Prompts features must be turned on in the environment's Feature settings."
+    }
+  },
+  {
+    "id": "abb2-008",
+    "type": "single-choice",
+    "skillArea": "foundation",
+    "topic": "Row summaries",
+    "difficulty": "hard",
+    "prompt": "How does a row summary differ from a Prompt column?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A row summary isn't stored as a column value — it's generated on demand when a user views the record"
+      },
+      {
+        "id": "b",
+        "text": "A row summary is stored in a hidden column and refreshed nightly"
+      },
+      {
+        "id": "c",
+        "text": "A row summary can only be configured per form, never per table"
+      },
+      {
+        "id": "d",
+        "text": "A row summary requires a Copilot Studio agent to be published first"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Die Row Summary ist eine von Copilot erzeugte Übersicht in einer einklappbaren Leiste oben im Hauptformular oder direkt aus Ansichten. Anders als eine Prompt-Spalte wird sie nicht gespeichert, sondern beim Betrachten des Datensatzes erzeugt. Konfiguriert wird sie auf Tabellenebene und gilt dann für alle Hauptformulare und Ansichten.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/create-manage-fields-within-entity/prompt-columns",
+    "source": {
+      "title": "Work with Prompt columns and row summaries",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-manage-fields-within-entity/prompt-columns",
+      "quote": "A row summary is a Copilot-generated overview of a record that appears in a collapsible bar at the top of a model-driven app main form, or directly from views. Unlike a Prompt column, a row summary isn't stored as a column value — it's generated on demand when a user views the record."
+    }
+  },
+  {
+    "id": "abb2-009",
+    "type": "dropdown",
+    "skillArea": "foundation",
+    "topic": "Text column limits",
+    "difficulty": "medium",
+    "prompt": "Complete the statement about text column lengths in Dataverse.",
+    "textParts": [
+      "The maximum length of a single line of text column is ",
+      " characters, while the maximum length of a multiple lines of text column is ",
+      " characters."
+    ],
+    "blanks": [
+      {
+        "id": "b1",
+        "options": [
+          { "id": "o1", "text": "4,000" },
+          { "id": "o2", "text": "100" },
+          { "id": "o3", "text": "2,000" }
+        ],
+        "correct": "o1"
+      },
+      {
+        "id": "b2",
+        "options": [
+          { "id": "o1", "text": "4,000" },
+          { "id": "o2", "text": "1,048,576" },
+          { "id": "o3", "text": "65,536" }
+        ],
+        "correct": "o2"
+      }
+    ],
+    "explanation": "Single line of text fasst maximal 4.000 Zeichen (Standard 100). Multiple lines of text fasst maximal 1.048.576 Zeichen (Standard 2.000). Beide Längen lassen sich vor und nach dem Anlegen der Spalte ändern.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/create-manage-fields-within-entity/2-field-types",
+    "source": {
+      "title": "Column types in Microsoft Dataverse",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-manage-fields-within-entity/2-field-types",
+      "quote": "The maximum length of a single line of text column is 4,000 characters. The default length is 100 characters. The maximum length of multiple lines of text column is 1,048,576 characters. The default length is 2,000 characters."
+    }
+  },
+  {
+    "id": "abb2-010",
+    "type": "single-choice",
+    "skillArea": "foundation",
+    "topic": "Numeric column types",
+    "difficulty": "hard",
+    "prompt": "Why does the guidance recommend using the Float data type only when necessary?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Floating point numbers store a close approximation of the value, and several Dataverse features such as calculated columns don't support float"
+      },
+      {
+        "id": "b",
+        "text": "Float columns cannot be indexed and slow down every view"
+      },
+      {
+        "id": "c",
+        "text": "Float columns are limited to two decimal places"
+      },
+      {
+        "id": "d",
+        "text": "Float columns can't be used in model-driven apps at all"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Float speichert nur eine Näherung des Wertes, und mehrere Dataverse-Funktionen — etwa berechnete Spalten — unterstützen Float nicht. Decimal speichert dagegen bis zu 10 Nachkommastellen exakt so, wie angegeben.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/create-manage-fields-within-entity/2-field-types",
+    "source": {
+      "title": "Column types in Microsoft Dataverse",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-manage-fields-within-entity/2-field-types",
+      "quote": "You should only use float when necessary as floating point numbers store a close approximation of the value and several Dataverse features don't support float such as calculated columns."
+    }
+  },
+  {
+    "id": "abb2-011",
+    "type": "single-choice",
+    "skillArea": "foundation",
+    "topic": "Alternate keys",
+    "difficulty": "medium",
+    "prompt": "An organization integrates Dataverse with an external system that identifies records by its own order number rather than a GUID. Which Dataverse feature addresses this?",
+    "options": [
+      {
+        "id": "a",
+        "text": "An alternate key — Dataverse enforces that every entry in that key column is required and unique"
+      },
+      { "id": "b", "text": "An autonumber column with a date prefix" },
+      { "id": "c", "text": "A rollup column on the related table" },
+      { "id": "d", "text": "A business rule that validates the order number" }
+    ],
+    "correct": "a",
+    "explanation": "Ein Alternate Key identifiziert Datensätze über eine für Nutzer aussagekräftige Spalte. Dataverse erzwingt dafür Pflicht und Eindeutigkeit — Duplikate lassen sich nicht speichern. Das hilft besonders bei der Integration mit Fremdsystemen und verbessert Suche und Filterung, weil Alternate-Key-Spalten immer indiziert sind.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/create-manage-fields-within-entity/7-alternate-key",
+    "source": {
+      "title": "Create an alternate key",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-manage-fields-within-entity/7-alternate-key",
+      "quote": "When you define a column as a key, Dataverse makes sure that every entry in that key column is required and unique so you can use the key column to distinctively identify a specific record. It also improves the search and filtering on the particular column because alternate key fields are always indexed."
+    }
+  },
+  {
+    "id": "abb2-012",
+    "type": "single-choice",
+    "skillArea": "foundation",
+    "topic": "Autonumber seed",
+    "difficulty": "medium",
+    "prompt": "What is the default seed value of an autonumber column in Dataverse?",
+    "options": [
+      { "id": "a", "text": "1000" },
+      { "id": "b", "text": "1" },
+      { "id": "c", "text": "100" },
+      { "id": "d", "text": "10000" }
+    ],
+    "correct": "a",
+    "explanation": "Der Seed ist die Startzahl des Nummernteils. Autonumber-Spalten starten standardmäßig bei 1000 — daher Werte wie Contoso-1000, Contoso-1001 — ein eigener Seed lässt sich aber festlegen.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/create-manage-fields-within-entity/6-auto-numbering",
+    "source": {
+      "title": "Create an auto numbering column",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-manage-fields-within-entity/6-auto-numbering",
+      "quote": "Autonumber columns have a default seed value of 1000, but you can set a custom seed value if you want."
+    }
+  },
+  {
+    "id": "abb2-013",
+    "type": "yes-no",
+    "skillArea": "foundation",
+    "topic": "Dataverse auditing",
+    "difficulty": "hard",
+    "prompt": "For each of the following statements about Dataverse auditing, select Yes if the statement is true. Otherwise, select No.",
+    "statements": [
+      {
+        "id": "s1",
+        "text": "Auditing can be configured at three levels: environment, table, and column.",
+        "correct": true
+      },
+      {
+        "id": "s2",
+        "text": "Column-level auditing works even when environment-level auditing is disabled.",
+        "correct": false
+      },
+      {
+        "id": "s3",
+        "text": "You need the System Administrator or System Customizer role to enable or disable auditing.",
+        "correct": true
+      }
+    ],
+    "explanation": "Auditing ist auf drei Ebenen konfigurierbar: Umgebung, Tabelle, Spalte. Die Ebenen bauen aufeinander auf — Tabellen-Auditing setzt Umgebungs-Auditing voraus, Spalten-Auditing beides. Zum Ein- oder Ausschalten braucht es die Rolle System Administrator oder System Customizer (oder gleichwertige Rechte).",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps-common-data-service/auditing",
+    "source": {
+      "title": "Dataverse auditing",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps-common-data-service/auditing",
+      "quote": "Auditing can be configured at three levels: environment, table, and column. Table-level auditing requires that environment-level auditing be enabled. Column-level auditing requires that both environment-level and table-level auditing be enabled. You must have the System Administrator or System Customizer role—or equivalent permissions—to enable or disable auditing."
+    }
+  },
+  {
+    "id": "abb2-014",
+    "type": "single-choice",
+    "skillArea": "foundation",
+    "topic": "Virtual tables",
+    "difficulty": "medium",
+    "prompt": "Which statement about virtual tables in Dataverse is correct?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Virtual table data remains in the source application and isn't duplicated in Dataverse, while full CRUD operations are supported"
+      },
+      {
+        "id": "b",
+        "text": "Virtual tables copy the source data into Dataverse on a nightly schedule"
+      },
+      {
+        "id": "c",
+        "text": "Virtual tables are read-only and cannot participate in relationships"
+      },
+      {
+        "id": "d",
+        "text": "Virtual tables can only be used by Power BI, not by apps or flows"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Virtuelle Tabellen lassen die Daten in der Quellanwendung — sie werden nicht nach Dataverse dupliziert — und unterstützen dennoch vollständige CRUD-Operationen direkt auf den Quelldaten. Sie können außerdem an Beziehungen zu nativen wie zu anderen virtuellen Tabellen teilnehmen.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps-common-data-service/2b-dual-write-vs-virtual-table",
+    "source": {
+      "title": "Dual-write vs. virtual tables",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps-common-data-service/2b-dual-write-vs-virtual-table",
+      "quote": "By design, virtual table data remains in the source application and isn't duplicated in Dataverse. Full CRUD capabilities are supported directly on the source data."
+    }
+  },
+  {
+    "id": "abb2-015",
+    "type": "single-choice",
+    "skillArea": "foundation",
+    "topic": "Dual-write",
+    "difficulty": "medium",
+    "prompt": "What does Dual-write provide?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Near-real-time, bidirectional synchronization between finance and operations apps and Dataverse"
+      },
+      {
+        "id": "b",
+        "text": "A one-way nightly export from Dataverse to Azure Data Lake"
+      },
+      {
+        "id": "c",
+        "text": "Automatic duplication of every Dataverse table into a backup environment"
+      },
+      {
+        "id": "d",
+        "text": "Simultaneous writing of audit logs to Dataverse and Microsoft Purview"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Dual-write ist eine eingebaute Integration mit nahezu Echtzeit-Synchronisierung zwischen Customer-Engagement-Apps und Finance-and-Operations-Apps. Änderungen fließen in beide Richtungen automatisch, online wie offline, und folgen dem Low-Code-/No-Code-Prinzip.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps-common-data-service/2b-dual-write-vs-virtual-table",
+    "source": {
+      "title": "Dual-write vs. virtual tables",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps-common-data-service/2b-dual-write-vs-virtual-table",
+      "quote": "Dual-write is a built-in integration feature that provides near-real-time synchronization between customer engagement apps and finance and operations apps. Dual-write delivers tightly coupled, bidirectional integration between finance and operations apps and Dataverse."
+    }
+  }
+]

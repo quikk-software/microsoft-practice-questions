@@ -1,0 +1,412 @@
+[
+  {
+    "id": "abb4-001",
+    "type": "single-choice",
+    "skillArea": "applications",
+    "topic": "Power Fx Filter",
+    "difficulty": "easy",
+    "prompt": "Which Power Fx function returns only the records from a data source that match a condition, and on which gallery property do you set it?",
+    "options": [
+      { "id": "a", "text": "Filter() — set on the gallery's Items property" },
+      { "id": "b", "text": "Search() — set on the gallery's Default property" },
+      { "id": "c", "text": "LookUp() — set on the gallery's Selected property" },
+      { "id": "d", "text": "Patch() — set on the gallery's OnSelect property" }
+    ],
+    "correct": "a",
+    "explanation": "Filter(DataSource, Condition) liefert nur die passenden Datensätze zurück. Gesetzt wird die Formel auf der Items-Eigenschaft der Galerie — sie bestimmt, welche Datensätze angezeigt werden.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/power-fx-formulas",
+    "source": {
+      "title": "Work with Power Fx formulas in canvas apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/power-fx-formulas",
+      "quote": "The Filter() function returns only the records from a data source that match a condition you specify. Set this formula on the Items property of a gallery to control which records appear."
+    }
+  },
+  {
+    "id": "abb4-002",
+    "type": "single-choice",
+    "skillArea": "applications",
+    "topic": "Patch and Defaults",
+    "difficulty": "medium",
+    "prompt": "You want to create a brand-new record with Patch(). What should you pass as the BaseRecord argument?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Defaults(DataSource) — it returns a blank record with all default values for that table"
+      },
+      { "id": "b", "text": "Gallery1.Selected" },
+      { "id": "c", "text": "Blank()" },
+      { "id": "d", "text": "First(DataSource)" }
+    ],
+    "correct": "a",
+    "explanation": "Patch(DataSource, BaseRecord, ChangeRecord) legt an oder aktualisiert. Für einen neuen Datensatz übergibt man Defaults(DataSource) als BaseRecord — das liefert einen leeren Datensatz mit allen Standardwerten der Tabelle. Gallery1.Selected würde stattdessen den bestehenden Datensatz aktualisieren.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/power-fx-formulas",
+    "source": {
+      "title": "Work with Power Fx formulas in canvas apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/power-fx-formulas",
+      "quote": "Defaults(DataSource) returns a blank record with all default values for that table. Use it as the BaseRecord argument when creating new records rather than updating existing ones."
+    }
+  },
+  {
+    "id": "abb4-003",
+    "type": "matching",
+    "skillArea": "applications",
+    "topic": "Screen transitions",
+    "difficulty": "medium",
+    "prompt": "Match each Navigate() screen transition to its effect.",
+    "left": [
+      { "id": "l1", "text": "ScreenTransition.Slide" },
+      { "id": "l2", "text": "ScreenTransition.Fade" },
+      { "id": "l3", "text": "ScreenTransition.None" }
+    ],
+    "right": [
+      { "id": "r1", "text": "Slides new screen in from the side" },
+      { "id": "r2", "text": "Fades out and in" },
+      { "id": "r3", "text": "Instant switch, no animation" }
+    ],
+    "correct": { "l1": "r1", "l2": "r2", "l3": "r3" },
+    "explanation": "Der zweite Parameter von Navigate() steuert die Animation: Slide schiebt den neuen Bildschirm seitlich herein (gut beim Vorwärtsgehen), Fade blendet weich um (unauffällig, richtungsneutral), None wechselt sofort (schnelle Navigation, Barrierefreiheit). Back() kehrt unabhängig davon immer zum Ursprungsbildschirm zurück.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/power-fx-formulas",
+    "source": {
+      "title": "Work with Power Fx formulas in canvas apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/power-fx-formulas",
+      "quote": "ScreenTransition.Slide Slides new screen in from the side Moving forward through a flow ScreenTransition.Fade Fades out and in Subtle, nondirectional changes ScreenTransition.None Instant switch, no animation Fast navigation or accessibility"
+    }
+  },
+  {
+    "id": "abb4-004",
+    "type": "single-choice",
+    "skillArea": "applications",
+    "topic": "Named formulas",
+    "difficulty": "medium",
+    "prompt": "In which property do you define a named formula so it can be referenced by name anywhere in a canvas app?",
+    "options": [
+      { "id": "a", "text": "App.Formulas" },
+      { "id": "b", "text": "App.OnStart" },
+      { "id": "c", "text": "Screen.OnVisible" },
+      { "id": "d", "text": "App.StartScreen" }
+    ],
+    "correct": "a",
+    "explanation": "Named Formulas werden einmal in der Eigenschaft App.Formulas definiert und überall in der App per Name referenziert. Ändert sich der Wert — etwa eine Markenfarbe — passt man ihn an genau einer Stelle an, und alle referenzierenden Steuerelemente aktualisieren sich automatisch.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/reusable-components",
+    "source": {
+      "title": "Build reusable components and formulas in canvas apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/reusable-components",
+      "quote": "A named formula is a formula you define once in the App object and reference by name anywhere in your app, instead of rewriting the same logic in every control. Named formulas are defined in the App.Formulas property."
+    }
+  },
+  {
+    "id": "abb4-005",
+    "type": "single-choice",
+    "skillArea": "applications",
+    "topic": "User-defined functions",
+    "difficulty": "hard",
+    "prompt": "How do user-defined functions (UDFs) differ from named formulas in Power Fx?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A UDF accepts parameters and returns a value, similar to a function in traditional programming"
+      },
+      {
+        "id": "b",
+        "text": "A UDF can only be used inside component libraries"
+      },
+      {
+        "id": "c",
+        "text": "A UDF is defined per screen rather than per app"
+      },
+      {
+        "id": "d",
+        "text": "A UDF stores its result in the data source automatically"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Named Formulas liefern einen benannten Wert; User-defined Functions nehmen zusätzlich Parameter entgegen und geben einen typisierten Rückgabewert zurück — Syntax: FunctionName(Parameter1: Type): ReturnType = Expression. Beide werden in App.Formulas definiert. UDFs lohnen sich, wenn dieselbe mehrstufige Logik an mehreren Stellen auftaucht.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/reusable-components",
+    "source": {
+      "title": "Build reusable components and formulas in canvas apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/reusable-components",
+      "quote": "User-defined functions (UDFs) let you define a custom formula that accepts parameters and returns a value, similar to a function in traditional programming. UDFs are also defined in the App.Formulas property"
+    }
+  },
+  {
+    "id": "abb4-006",
+    "type": "single-choice",
+    "skillArea": "applications",
+    "topic": "Component libraries",
+    "difficulty": "medium",
+    "prompt": "How do component libraries differ from named formulas and user-defined functions?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Components are visual building blocks with their own controls, properties, and behaviors — not just formula logic"
+      },
+      {
+        "id": "b",
+        "text": "Components can only be used in model-driven apps"
+      },
+      {
+        "id": "c",
+        "text": "Components are limited to a single app and cannot be shared"
+      },
+      {
+        "id": "d",
+        "text": "Components are written in C# rather than Power Fx"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Eine Component Library sammelt wiederverwendbare UI-Komponenten wie Header, Navigationsleisten oder Karten, die einmal gebaut und über mehrere Apps der Umgebung geteilt werden. Anders als Named Formulas und UDFs sind das visuelle Bausteine mit eigenen Steuerelementen, Eigenschaften und Verhalten.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/reusable-components",
+    "source": {
+      "title": "Build reusable components and formulas in canvas apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/reusable-components",
+      "quote": "Components are different from named formulas and UDFs: they're visual building blocks with their own controls, properties, and behaviors, not just formula logic."
+    }
+  },
+  {
+    "id": "abb4-007",
+    "type": "single-choice",
+    "skillArea": "applications",
+    "topic": "Save vs. publish",
+    "difficulty": "easy",
+    "prompt": "What is the difference between saving and publishing a canvas app?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Saving stores your changes but users running the app don't see them yet; publishing pushes a new version live"
+      },
+      {
+        "id": "b",
+        "text": "Saving makes changes live immediately; publishing only creates a backup"
+      },
+      {
+        "id": "c",
+        "text": "Saving and publishing are the same action with different names"
+      },
+      {
+        "id": "d",
+        "text": "Publishing stores a draft; saving releases it to users"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Speichern und Veröffentlichen sind zwei getrennte Aktionen: Speichern sichert den Arbeitsstand, ohne dass Nutzer die Änderungen sehen — wie ein Entwurf. Veröffentlichen bringt eine neue Version live, also die eigentliche Freigabe.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/publish-share-maintain-app/2-publish-app",
+    "source": {
+      "title": "Publish your app",
+      "url": "https://learn.microsoft.com/en-us/training/modules/publish-share-maintain-app/2-publish-app",
+      "quote": "When you save, you're capturing your work in progress — your changes are stored, but users running the app don't see them yet. When you publish, you push a new version live. Think of saving as committing to a draft, and publishing as releasing it."
+    }
+  },
+  {
+    "id": "abb4-008",
+    "type": "yes-no",
+    "skillArea": "applications",
+    "topic": "Sharing permissions",
+    "difficulty": "medium",
+    "prompt": "For each of the following statements about sharing a canvas app, select Yes if the statement is true. Otherwise, select No.",
+    "statements": [
+      {
+        "id": "s1",
+        "text": "A user with the User permission can run the app but can't edit it or share it with others.",
+        "correct": true
+      },
+      {
+        "id": "s2",
+        "text": "A co-owner can edit, share, and delete the app, but can't delete the original owner.",
+        "correct": true
+      },
+      {
+        "id": "s3",
+        "text": "You must publish an app before you can manage its permissions and share it.",
+        "correct": false
+      }
+    ],
+    "explanation": "User dürfen die App nur ausführen, Co-Owner bearbeiten, teilen und löschen — aber nicht den ursprünglichen Besitzer entfernen. Berechtigungen lassen sich auch ohne Veröffentlichung verwalten und die App teilen, etwa zur Zusammenarbeit mit einem anderen Entwickler.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/publish-share-maintain-app/3-share-app",
+    "source": {
+      "title": "Share your app",
+      "url": "https://learn.microsoft.com/en-us/training/modules/publish-share-maintain-app/3-share-app",
+      "quote": "User — the person can run the app but can't edit it or share it with others. Co-owner — the person can edit, share, and delete the app. A co-owner can't delete the original owner. You can manage app permissions and share the app without publishing it, for example, if you want to collaborate with another developer."
+    }
+  },
+  {
+    "id": "abb4-009",
+    "type": "matching",
+    "skillArea": "applications",
+    "topic": "App-level security roles",
+    "difficulty": "hard",
+    "prompt": "When app-level security roles are enabled, Dataverse-backed apps show additional role options. Match each role to the access it grants.",
+    "left": [
+      { "id": "l1", "text": "App reader" },
+      { "id": "l2", "text": "App user" },
+      { "id": "l3", "text": "App maker" },
+      { "id": "l4", "text": "App admin" }
+    ],
+    "right": [
+      { "id": "r1", "text": "Read-only access to all records" },
+      { "id": "r2", "text": "Full access to own records" },
+      { "id": "r3", "text": "Create and read all records" },
+      { "id": "r4", "text": "Full access to all records" }
+    ],
+    "correct": { "l1": "r1", "l2": "r2", "l3": "r3", "l4": "r4" },
+    "explanation": "Hat der Administrator App-Level-Sicherheitsrollen im Power Platform Admin Center aktiviert, steuern diese vier Rollen, was ein Nutzer in den zugrunde liegenden Dataverse-Tabellen lesen und schreiben darf — von reinem Lesezugriff (App reader) bis zum Vollzugriff auf alle Datensätze (App admin).",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/publish-share-maintain-app/3-share-app",
+    "source": {
+      "title": "Share your app",
+      "url": "https://learn.microsoft.com/en-us/training/modules/publish-share-maintain-app/3-share-app",
+      "quote": "Dataverse-backed apps show additional role options: App reader (read-only access to all records), App user (full access to own records), App maker (create and read all records), and App admin (full access to all records)."
+    }
+  },
+  {
+    "id": "abb4-010",
+    "type": "single-choice",
+    "skillArea": "applications",
+    "topic": "AutoSave",
+    "difficulty": "medium",
+    "prompt": "How often does Power Apps save your work automatically by default, and where can you turn this off?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Every two minutes; under Settings > General > Auto save"
+      },
+      { "id": "b", "text": "Every 30 seconds; under Settings > Advanced" },
+      { "id": "c", "text": "Every 10 minutes; it cannot be turned off" },
+      { "id": "d", "text": "Only when you publish; there is no AutoSave" }
+    ],
+    "correct": "a",
+    "explanation": "Power Apps speichert standardmäßig alle zwei Minuten automatisch, damit bei einem unerwarteten Browser-Schluss nichts verloren geht. Ein- und ausschalten lässt sich das unter Settings > General > Auto save. Trotzdem gilt: vor dem Schließen des Tabs lieber manuell speichern.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/publish-share-maintain-app/2-publish-app",
+    "source": {
+      "title": "Publish your app",
+      "url": "https://learn.microsoft.com/en-us/training/modules/publish-share-maintain-app/2-publish-app",
+      "quote": "Power Apps saves your work automatically every two minutes by default. AutoSave helps prevent lost changes if your browser closes unexpectedly. You can turn AutoSave on or off in Settings > General > Auto save."
+    }
+  },
+  {
+    "id": "abb4-011",
+    "type": "single-choice",
+    "skillArea": "applications",
+    "topic": "SubmitForm",
+    "difficulty": "easy",
+    "prompt": "You use an Edit form control in a canvas app. Which function writes the record, and where do you typically navigate away after success?",
+    "options": [
+      {
+        "id": "a",
+        "text": "SubmitForm(Form1) in the button's OnSelect; navigate in the form's OnSuccess property"
+      },
+      {
+        "id": "b",
+        "text": "Patch() in the form's OnVisible; navigate in the button's OnSelect"
+      },
+      {
+        "id": "c",
+        "text": "Collect() in the form's Items; navigate in App.OnStart"
+      },
+      {
+        "id": "d",
+        "text": "Filter() in the button's OnSelect; navigate in the screen's OnHidden"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Bei einem Edit-Form-Steuerelement schreibt SubmitForm(FormName) den Datensatz — nicht Patch(). Der Aufruf gehört in die OnSelect-Eigenschaft der Speichern-Schaltfläche; nach erfolgreicher Übermittlung navigiert man über die OnSuccess-Eigenschaft des Formulars weiter.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/power-fx-formulas",
+    "source": {
+      "title": "Work with Power Fx formulas in canvas apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/power-fx-formulas",
+      "quote": "When you use an Edit form control, you write the record by calling SubmitForm() rather than Patch(). After a successful submission, you can navigate away automatically using the form's OnSuccess property"
+    }
+  },
+  {
+    "id": "abb4-012",
+    "type": "dropdown",
+    "skillArea": "applications",
+    "topic": "Context variables",
+    "difficulty": "hard",
+    "prompt": "Complete the statement about passing the selected record to a detail screen.",
+    "textParts": [
+      "You can pass data between screens using ",
+      ", set as the third argument of Navigate(). Alternatively, setting the form's ",
+      " property directly to Gallery1.Selected passes the selected record automatically."
+    ],
+    "blanks": [
+      {
+        "id": "b1",
+        "options": [
+          { "id": "o1", "text": "context variables" },
+          { "id": "o2", "text": "named formulas" },
+          { "id": "o3", "text": "collections" }
+        ],
+        "correct": "o1"
+      },
+      {
+        "id": "b2",
+        "options": [
+          { "id": "o1", "text": "Item" },
+          { "id": "o2", "text": "Items" },
+          { "id": "o3", "text": "Default" }
+        ],
+        "correct": "o1"
+      }
+    ],
+    "explanation": "Navigate(DetailScreen, ScreenTransition.Slide, {SelectedMachine: Gallery1.Selected}) übergibt eine Kontextvariable an den Zielbildschirm. Einfacher geht es oft ohne: Setzt man die Item-Eigenschaft des Formulars direkt auf Gallery1.Selected, reicht Power Fx den ausgewählten Datensatz automatisch durch.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/power-fx-formulas",
+    "source": {
+      "title": "Work with Power Fx formulas in canvas apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/power-fx-formulas",
+      "quote": "You can do this using context variables. Alternatively, if you set the form's Item property directly to Gallery1.Selected, Power Fx automatically passes the selected record to the form, no context variable needed."
+    }
+  },
+  {
+    "id": "abb4-013",
+    "type": "single-choice",
+    "skillArea": "applications",
+    "topic": "Current user in Power Fx",
+    "difficulty": "medium",
+    "prompt": "Which built-in Power Fx expression returns the display name of the currently signed-in user?",
+    "options": [
+      { "id": "a", "text": "User().FullName" },
+      { "id": "b", "text": "User().Email" },
+      { "id": "c", "text": "CurrentUser.Name" },
+      { "id": "d", "text": "Office365Users.MyProfile()" }
+    ],
+    "correct": "a",
+    "explanation": "User().FullName liefert den Anzeigenamen des angemeldeten Nutzers, User().Email dessen E-Mail-Adresse. Damit lässt sich zum Beispiel eine Galerie auf die eigenen Datensätze filtern: Filter('Coffee Machines', 'Created By' = User().FullName).",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/power-fx-formulas",
+    "source": {
+      "title": "Work with Power Fx formulas in canvas apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/power-fx-formulas",
+      "quote": "User().FullName is a built-in Power Fx expression that returns the display name of the currently signed-in user. User().Email returns their email address."
+    }
+  },
+  {
+    "id": "abb4-014",
+    "type": "yes-no",
+    "skillArea": "applications",
+    "topic": "Publishing notifications",
+    "difficulty": "hard",
+    "prompt": "For each of the following statements about what users see when you publish an update, select Yes if the statement is true. Otherwise, select No.",
+    "statements": [
+      {
+        "id": "s1",
+        "text": "Users already running the app see two sequential notifications and select Refresh to load the new version.",
+        "correct": true
+      },
+      {
+        "id": "s2",
+        "text": "These notifications appear when the app is embedded in Microsoft Teams, Power BI, or SharePoint form customizations.",
+        "correct": false
+      },
+      {
+        "id": "s3",
+        "text": "In managed environments, Copilot can generate an app description automatically if you don't enter one before publishing.",
+        "correct": true
+      }
+    ],
+    "explanation": "Laufende Nutzer bekommen zwei Hinweise nacheinander und laden per Refresh die neue Fassung. Diese Benachrichtigungen erscheinen für Canvas-Apps im Web und in iframes — nicht aber bei Einbettung in Teams, Power BI oder SharePoint-Formularanpassungen. In Managed Environments erzeugt Copilot beim Veröffentlichen bei Bedarf automatisch eine Beschreibung.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/publish-share-maintain-app/2-publish-app",
+    "source": {
+      "title": "Publish your app",
+      "url": "https://learn.microsoft.com/en-us/training/modules/publish-share-maintain-app/2-publish-app",
+      "quote": "Users select Refresh to load the new version. These notifications appear for canvas apps on the web and in iframes, but not when the app is embedded in Microsoft Teams, Power BI, or SharePoint form customizations. If you don't enter a description before publishing, Copilot generates one automatically — you can always edit it afterward."
+    }
+  }
+]

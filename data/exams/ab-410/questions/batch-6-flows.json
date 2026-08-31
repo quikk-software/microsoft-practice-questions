@@ -1,0 +1,444 @@
+[
+  {
+    "id": "abb6-001",
+    "type": "matching",
+    "skillArea": "logic-automation",
+    "topic": "Dataverse triggers",
+    "difficulty": "medium",
+    "prompt": "The Dataverse connector supports four triggers. Match each trigger to when it starts a flow.",
+    "left": [
+      { "id": "l1", "text": "When a row is added, modified or deleted" },
+      { "id": "l2", "text": "When an action is performed" },
+      { "id": "l3", "text": "When a flow step is run from a business process flow" },
+      { "id": "l4", "text": "When a row is selected" }
+    ],
+    "right": [
+      { "id": "r1", "text": "A row is added, modified, or deleted in a Dataverse table" },
+      { "id": "r2", "text": "A Dataverse action completes, such as a custom business event" },
+      {
+        "id": "r3",
+        "text": "Someone selects the Run Flow button in a business process flow step"
+      },
+      {
+        "id": "r4",
+        "text": "A user in a model-driven app selects a row and runs the flow"
+      }
+    ],
+    "correct": { "l1": "r1", "l2": "r2", "l3": "r3", "l4": "r4" },
+    "explanation": "Die vier Dataverse-Trigger decken unterschiedliche Ereignisquellen ab: Datenzeilen-Änderungen, abgeschlossene Dataverse-Aktionen (z. B. ein selbst definiertes Ereignis wie EmployeeOnboarded), den Run-Flow-Schritt eines Business Process Flow und die manuelle Auswahl einer Zeile in einer modellgesteuerten App.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/use-dataverse-triggers-actions/triggers",
+    "source": {
+      "title": "Dataverse triggers",
+      "url": "https://learn.microsoft.com/en-us/training/modules/use-dataverse-triggers-actions/triggers",
+      "quote": "When a row is added, modified or deleted - Use this trigger to start a flow when a row is added, modified, or deleted in a Dataverse table. When an action is performed - This trigger occurs when a Dataverse action completes. When a flow step is run from a business process flow - With this trigger, you can start a flow when someone selects the Run Flow button in a business process flow step. When a row is selected - This trigger starts a flow when a user in a Power Apps model-driven app selects a row and runs the flow."
+    }
+  },
+  {
+    "id": "abb6-002",
+    "type": "matching",
+    "skillArea": "logic-automation",
+    "topic": "Trigger scope",
+    "difficulty": "hard",
+    "prompt": "Match each scope option of the \"When a row is added, modified or deleted\" trigger to what it means.",
+    "left": [
+      { "id": "l1", "text": "Organization" },
+      { "id": "l2", "text": "User" },
+      { "id": "l3", "text": "Business Unit" },
+      { "id": "l4", "text": "Parent: Child Business Unit" }
+    ],
+    "right": [
+      {
+        "id": "r1",
+        "text": "The default — any user who owns a row and modifies it can trigger the flow"
+      },
+      { "id": "r2", "text": "The most limiting — the flow only runs if you own the modified row" },
+      {
+        "id": "r3",
+        "text": "Triggers if anyone in your business unit owns the modified row"
+      },
+      {
+        "id": "r4",
+        "text": "Also includes users of any child business units"
+      }
+    ],
+    "correct": { "l1": "r1", "l2": "r2", "l3": "r3", "l4": "r4" },
+    "explanation": "Der Scope legt fest, wessen Datensatzbesitz den Flow auslösen darf. Organization ist der Standard und am weitesten, User am engsten. Business Unit und Parent:Child Business Unit liegen dazwischen. Bei organisationseigenen Tabellen ist Organization die einzige Option.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/use-dataverse-triggers-actions/triggers",
+    "source": {
+      "title": "Dataverse triggers",
+      "url": "https://learn.microsoft.com/en-us/training/modules/use-dataverse-triggers-actions/triggers",
+      "quote": "Organization - This option is the default. Any user who owns a row and modifies it can trigger your flow. User - This option is the most limiting; your flow only runs if you own the modified row. Business Unit - This option triggers your flow if anyone in your business unit owns the modified row. Parent: Child Business Unit - This option includes any child business unit users in determining whose actions can trigger your flow."
+    }
+  },
+  {
+    "id": "abb6-003",
+    "type": "single-choice",
+    "skillArea": "logic-automation",
+    "topic": "Avoiding infinite loops",
+    "difficulty": "hard",
+    "prompt": "A flow triggers on modified rows and later uses an update row action to update columns on the same row. How do you avoid an infinite loop?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Make sure the columns you update are not included in the trigger's Select columns option"
+      },
+      { "id": "b", "text": "Set the trigger scope to Organization" },
+      { "id": "c", "text": "Turn on pagination in the update row action" },
+      { "id": "d", "text": "Add a Terminate action at the end of the flow" }
+    ],
+    "correct": "a",
+    "explanation": "Die Option „Select columns“ begrenzt, welche Spaltenänderungen den Flow starten. Aktualisiert der Flow später Spalten derselben Zeile, dürfen genau diese Spalten nicht in Select columns stehen — sonst löst die eigene Aktualisierung den Flow erneut aus. Achtung: Lookup-Spalten werden im Select-columns-Filter nicht unterstützt.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/use-dataverse-triggers-actions/triggers",
+    "source": {
+      "title": "Dataverse triggers",
+      "url": "https://learn.microsoft.com/en-us/training/modules/use-dataverse-triggers-actions/triggers",
+      "quote": "It's also important to use this feature if your flow intends to use an update row action later to update columns on the row that triggered the flow. To avoid an infinite loop, make sure that you don't include the columns that you update in the Select columns option."
+    }
+  },
+  {
+    "id": "abb6-004",
+    "type": "single-choice",
+    "skillArea": "logic-automation",
+    "topic": "Run as",
+    "difficulty": "hard",
+    "prompt": "Which Dataverse privilege must the flow owner have to use the \"run as\" option, and which security role includes it by default?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Act on Behalf of Another User — included in the Delegate security role"
+      },
+      {
+        "id": "b",
+        "text": "Assign — included in the System Customizer security role"
+      },
+      {
+        "id": "c",
+        "text": "Share — included in the Basic User security role"
+      },
+      {
+        "id": "d",
+        "text": "Append To — included in the Environment Maker role"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Für „run as“ braucht der Flow-Besitzer das Dataverse-Privileg „Act on Behalf of Another User“. Standardmäßig steckt es in der Sicherheitsrolle Delegate, lässt sich aber jeder Rolle hinzufügen. Pro Aktion aktiviert man dann auf dem Settings-Tab „Use invoker's connection“.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/use-dataverse-triggers-actions/triggers",
+    "source": {
+      "title": "Dataverse triggers",
+      "url": "https://learn.microsoft.com/en-us/training/modules/use-dataverse-triggers-actions/triggers",
+      "quote": "The flow owner must have the Act on Behalf of Another User Dataverse privilege. The Delegate security role includes this privilege by default, but you can add it to any security role."
+    }
+  },
+  {
+    "id": "abb6-005",
+    "type": "single-choice",
+    "skillArea": "logic-automation",
+    "topic": "List rows pagination",
+    "difficulty": "medium",
+    "prompt": "By default, how many rows does the Dataverse List rows action return, and what happens when that limit is reached?",
+    "options": [
+      {
+        "id": "a",
+        "text": "5,000 rows — reaching the limit doesn't produce an error, so you silently don't receive all data"
+      },
+      { "id": "b", "text": "100,000 rows — the action fails with a pagination error" },
+      { "id": "c", "text": "500 rows — the flow retries automatically" },
+      { "id": "d", "text": "There is no default limit" }
+    ],
+    "correct": "a",
+    "explanation": "List rows liefert standardmäßig höchstens 5.000 Zeilen. Kritisch: Das Erreichen der Grenze wirft keinen Fehler — man bekommt einfach nicht alle Daten. Über die Einstellung Pagination lassen sich bis zu 100.000 Zeilen pro Seite abrufen; mehrere Seiten muss der Flow dann selbst per Paging-Token abarbeiten.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/use-dataverse-triggers-actions/query-data",
+    "source": {
+      "title": "Query data",
+      "url": "https://learn.microsoft.com/en-us/training/modules/use-dataverse-triggers-actions/query-data",
+      "quote": "By default, the action doesn't return more than 5,000 rows. You can turn on the Pagination feature from the Settings tab if you need to return more data. When you turn on pagination, you can specify a page size of up to 100,000 rows. Make sure that you consider your future needs because reaching 5,000 rows doesn't produce an error."
+    }
+  },
+  {
+    "id": "abb6-006",
+    "type": "single-choice",
+    "skillArea": "logic-automation",
+    "topic": "Select columns in queries",
+    "difficulty": "medium",
+    "prompt": "When you set the Select columns option on a Dataverse retrieve action, which column name must you use?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The column's logical name, found under Advanced options of the column properties"
+      },
+      { "id": "b", "text": "The column's display name as shown in the form" },
+      { "id": "c", "text": "The column's schema name including the publisher prefix in upper case" },
+      { "id": "d", "text": "The column's GUID" }
+    ],
+    "correct": "a",
+    "explanation": "Für Select columns wird der logische Spaltenname gebraucht — zu finden im Abschnitt Advanced options der Spalteneigenschaften, z. B. „firstname,lastname“. Die Angabe begrenzt auch, welche Spalten später als Dynamic Content auftauchen: Fehlt eine erwartete Spalte, lohnt der Blick auf diese Option.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/use-dataverse-triggers-actions/query-data",
+    "source": {
+      "title": "Query data",
+      "url": "https://learn.microsoft.com/en-us/training/modules/use-dataverse-triggers-actions/query-data",
+      "quote": "Make sure that you use the table column logical name, which you can find on the Advanced options section of the column properties."
+    }
+  },
+  {
+    "id": "abb6-007",
+    "type": "single-choice",
+    "skillArea": "logic-automation",
+    "topic": "Get a row by ID",
+    "difficulty": "medium",
+    "prompt": "A flow pauses for an approval step that may take days. Why might you add a \"Get a row by ID\" action after the approval completes?",
+    "options": [
+      {
+        "id": "a",
+        "text": "To get the latest data and prevent the flow from acting on stale data"
+      },
+      { "id": "b", "text": "To reset the trigger so the flow can run again" },
+      { "id": "c", "text": "To release the approval lock on the record" },
+      { "id": "d", "text": "To convert the row into an agent flow task" }
+    ],
+    "correct": "a",
+    "explanation": "Nach einer mehrtägigen Genehmigungspause können die ursprünglich gelesenen Daten veraltet sein. Ein erneutes „Get a row by ID“ holt den aktuellen Stand und verhindert, dass der Flow auf Basis alter Werte handelt. Ist die Zeilen-ID möglicherweise null, sollte man vorher eine Bedingung prüfen — sonst schlägt der Schritt fehl.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/use-dataverse-triggers-actions/query-data",
+    "source": {
+      "title": "Query data",
+      "url": "https://learn.microsoft.com/en-us/training/modules/use-dataverse-triggers-actions/query-data",
+      "quote": "You might want to use the Get a row by ID action to get the latest data after the approval happens. This approach would prevent your flow from taking action based on stale data."
+    }
+  },
+  {
+    "id": "abb6-008",
+    "type": "ordering",
+    "skillArea": "logic-automation",
+    "topic": "Approval flow pattern",
+    "difficulty": "medium",
+    "prompt": "An approval flow follows a predictable three-part pattern. Place the parts in the correct order.",
+    "items": [
+      { "id": "i1", "text": "A trigger fires" },
+      {
+        "id": "i2",
+        "text": "The flow sends an approval request and waits for a response"
+      },
+      {
+        "id": "i3",
+        "text": "A condition routes the outcome down the right branch"
+      }
+    ],
+    "correctOrder": ["i1", "i2", "i3"],
+    "explanation": "Erst löst ein Trigger aus, dann sendet „Start and wait for an approval“ die Anfrage und pausiert den Flow, und schließlich liest eine Condition den Outcome (Approve/Reject) und verzweigt: True-Zweig für Genehmigungen, False-Zweig für Ablehnungen.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/build-approval-flows/2-create-approval-request",
+    "source": {
+      "title": "Build an approval request",
+      "url": "https://learn.microsoft.com/en-us/training/modules/build-approval-flows/2-create-approval-request",
+      "quote": "An approval flow follows a predictable three-part pattern: a trigger fires, the flow sends an approval request and waits for a response, and then a condition routes the outcome down the right branch."
+    }
+  },
+  {
+    "id": "abb6-009",
+    "type": "single-choice",
+    "skillArea": "logic-automation",
+    "topic": "Approval notifications",
+    "difficulty": "medium",
+    "prompt": "When the \"Start and wait for an approval\" action runs, where does Power Automate notify the people in the Assigned to field?",
+    "options": [
+      {
+        "id": "a",
+        "text": "By email, in the Power Automate Approvals center, and optionally in Microsoft Teams"
+      },
+      { "id": "b", "text": "Only by email" },
+      { "id": "c", "text": "Only in the Power Automate mobile app" },
+      { "id": "d", "text": "Only through a Power Apps canvas app notification" }
+    ],
+    "correct": "a",
+    "explanation": "Die Aktion benachrichtigt alle im Feld „Assigned to“ per E-Mail, im Approvals-Center von Power Automate und optional in Microsoft Teams. Danach pausiert der Flow, bis die nötigen Antworten vorliegen; anschließend steht der Outcome als Dynamic Content bereit.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/build-approval-flows/2-create-approval-request",
+    "source": {
+      "title": "Build an approval request",
+      "url": "https://learn.microsoft.com/en-us/training/modules/build-approval-flows/2-create-approval-request",
+      "quote": "When it runs, Power Automate sends a notification to everyone in the Assigned to field — by email, in the Power Automate Approvals center, and optionally in Microsoft Teams. The flow then pauses until the required responses arrive."
+    }
+  },
+  {
+    "id": "abb6-010",
+    "type": "yes-no",
+    "skillArea": "logic-automation",
+    "topic": "Agent flows",
+    "difficulty": "hard",
+    "prompt": "For each of the following statements about converting a cloud flow to an agent flow, select Yes if the statement is true. Otherwise, select No.",
+    "statements": [
+      {
+        "id": "s1",
+        "text": "Converting a flow to an agent flow is a one-way operation that can't be reversed.",
+        "correct": true
+      },
+      {
+        "id": "s2",
+        "text": "The flow must be in a solution before it can be converted.",
+        "correct": true
+      },
+      {
+        "id": "s3",
+        "text": "Agent flows consume Power Automate capacity, just like cloud flows.",
+        "correct": false
+      }
+    ],
+    "explanation": "Die Umwandlung ist einseitig, weil sich die Abrechnung von Power Automate auf Copilot Studio verschiebt. Voraussetzungen: Es muss ein Cloud-Flow (kein Desktop-Flow) sein, er muss in einer Solution liegen, und die Umgebung braucht Copilot-Studio-Kapazität. Agent Flows verbrauchen entsprechend Copilot-Studio- statt Power-Automate-Kapazität.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/get-started-flows/agent-flows",
+    "source": {
+      "title": "Convert a flow to an agent flow",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-flows/agent-flows",
+      "quote": "Converting a flow to an agent flow is a one-way operation. It can't be reversed because the flow's billing changes from Power Automate to Copilot Studio. The flow is in a solution. Consumes Copilot Studio capacity rather than Power Automate capacity."
+    }
+  },
+  {
+    "id": "abb6-011",
+    "type": "single-choice",
+    "skillArea": "logic-automation",
+    "topic": "Agent flow capacity",
+    "difficulty": "hard",
+    "prompt": "Which agent flow activity does NOT consume Copilot Studio capacity?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Testing the flow in the designer or from an agent's test chat"
+      },
+      { "id": "b", "text": "Every action the agent flow executes in production" },
+      { "id": "c", "text": "Actions triggered by an autonomous agent" },
+      { "id": "d", "text": "Actions triggered from a conversation" }
+    ],
+    "correct": "a",
+    "explanation": "Jede ausgeführte Aktion eines Agent Flow verbraucht Copilot-Studio-Kapazität — Tests im Designer oder aus dem Test-Chat eines Agents jedoch nicht. Ist die vorausbezahlte Kapazität aufgebraucht, werden neue Agent-Flow-Läufe blockiert, bis wieder Kapazität verfügbar ist.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/get-started-flows/agent-flows",
+    "source": {
+      "title": "Convert a flow to an agent flow",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-flows/agent-flows",
+      "quote": "Every action your agent flow executes consumes Copilot Studio capacity. Testing the flow in the designer or from an agent's test chat doesn't consume capacity."
+    }
+  },
+  {
+    "id": "abb6-012",
+    "type": "matching",
+    "skillArea": "logic-automation",
+    "topic": "Flow troubleshooting",
+    "difficulty": "hard",
+    "prompt": "Match each flow failure symptom to its cause and fix.",
+    "left": [
+      { "id": "l1", "text": "\"Unauthorized\", error code 401 or 403" },
+      { "id": "l2", "text": "\"Bad request\" or \"Not found\", error code 400 or 404" },
+      { "id": "l3", "text": "Error code 500 or 502" }
+    ],
+    "right": [
+      { "id": "r1", "text": "An authentication error — usually fixed by updating the connection" },
+      {
+        "id": "r2",
+        "text": "An action configuration issue — edit the flow definition and resubmit"
+      },
+      { "id": "r3", "text": "A temporary or transient failure — select Resubmit" }
+    ],
+    "correct": { "l1": "r1", "l2": "r2", "l3": "r3" },
+    "explanation": "401/403 deuten auf Authentifizierung — Verbindung reparieren („Fix connection“) und den Lauf erneut senden. 400/404 stehen für falsch konfigurierte Aktionen: Flow bearbeiten, speichern, erneut senden. 500/502 sind vorübergehende Störungen; hier genügt Resubmit.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/get-started-flows/9-troubleshoot-flows",
+    "source": {
+      "title": "Troubleshoot flows",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-flows/9-troubleshoot-flows",
+      "quote": "If this type of error occurs, the error message includes the word \"Unauthorized,\" or an error code of 401 or 403 appears. You can usually fix authentication errors by updating the connection. In this case, the error message includes the phrase \"Bad request\" or \"Not found,\" or an error code 400 or 404 appears. If error code 500 or 502 appears, the failure is temporary or transient."
+    }
+  },
+  {
+    "id": "abb6-013",
+    "type": "single-choice",
+    "skillArea": "logic-automation",
+    "topic": "Filter rows efficiency",
+    "difficulty": "medium",
+    "prompt": "Why is using the trigger's Filter rows option preferable to adding a condition check in the flow's actions?",
+    "options": [
+      {
+        "id": "a",
+        "text": "It is more efficient — the flow only runs when the OData expression evaluates to true"
+      },
+      {
+        "id": "b",
+        "text": "Conditions cannot evaluate Dataverse column values at all"
+      },
+      { "id": "c", "text": "Filter rows is the only place where lookup columns are supported" },
+      { "id": "d", "text": "Conditions require a premium connector licence" }
+    ],
+    "correct": "a",
+    "explanation": "Mit „Filter rows“ und einem OData-Ausdruck startet der Flow nur, wenn die Bedingung nach dem Speichern in Dataverse wahr ist. Eine Bedingungsprüfung in den Aktionen erreicht dasselbe Ergebnis, ist aber weniger effizient, weil der Flow trotzdem für jede Änderung anläuft.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/use-dataverse-triggers-actions/triggers",
+    "source": {
+      "title": "Dataverse triggers",
+      "url": "https://learn.microsoft.com/en-us/training/modules/use-dataverse-triggers-actions/triggers",
+      "quote": "While adding a condition check to your flow actions could accomplish the same task, it's less efficient than using a filter rows expression. The flow runs only when the system evaluates the expression to be true after you save the change in Dataverse."
+    }
+  },
+  {
+    "id": "abb6-014",
+    "type": "dropdown",
+    "skillArea": "logic-automation",
+    "topic": "Expand query",
+    "difficulty": "hard",
+    "prompt": "Complete the statement about retrieving related table data in a Dataverse action.",
+    "textParts": [
+      "By default, retrieve data actions only retrieve data from the primary table. Use the ",
+      " option with an OData-style expression to include data from related tables — but the related columns don't appear in the ",
+      " pane, so you need a workflow expression to access them."
+    ],
+    "blanks": [
+      {
+        "id": "b1",
+        "options": [
+          { "id": "o1", "text": "Expand Query" },
+          { "id": "o2", "text": "Select columns" },
+          { "id": "o3", "text": "Filter rows" }
+        ],
+        "correct": "o1"
+      },
+      {
+        "id": "b2",
+        "options": [
+          { "id": "o1", "text": "Dynamic content" },
+          { "id": "o2", "text": "Settings" },
+          { "id": "o3", "text": "Run history" }
+        ],
+        "correct": "o1"
+      }
+    ],
+    "explanation": "Expand Query (unter Advanced parameters) holt per OData-Ausdruck wie primarycontactid($select=contactid,fullname) Daten verknüpfter Tabellen mit. Diese Spalten erscheinen aber nicht im Dynamic-Content-Bereich — der Zugriff erfolgt über einen Workflow-Ausdruck.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/use-dataverse-triggers-actions/query-data",
+    "source": {
+      "title": "Query data",
+      "url": "https://learn.microsoft.com/en-us/training/modules/use-dataverse-triggers-actions/query-data",
+      "quote": "You can use the Expand Query option to provide an OData-style expression to include data from related tables. While this expression includes data in the output of the actions, it doesn't include the data columns in the Dynamic content pane for selection. To use the related data, you need to use a workflow expression to access the data."
+    }
+  },
+  {
+    "id": "abb6-015",
+    "type": "single-choice",
+    "skillArea": "logic-automation",
+    "topic": "Change type expression",
+    "difficulty": "hard",
+    "prompt": "A flow triggers on multiple change types and needs conditional logic depending on which one occurred. Which expression returns the change type, and what values does it contain?",
+    "options": [
+      {
+        "id": "a",
+        "text": "triggerBody()?['SdkMessage'] — it contains Create, Update, or Delete"
+      },
+      {
+        "id": "b",
+        "text": "triggerOutputs()?['ChangeType'] — it contains Added, Modified, or Removed"
+      },
+      {
+        "id": "c",
+        "text": "body('Trigger')?['Operation'] — it contains Insert, Edit, or Drop"
+      },
+      { "id": "d", "text": "variables('changeType') — it must be set manually" }
+    ],
+    "correct": "a",
+    "explanation": "Der Ausdruck triggerBody()?['SdkMessage'] liefert den auslösenden Änderungstyp; die Eigenschaft SdkMessage enthält Create, Update oder Delete. Wichtig außerdem: Bei mehreren Aktualisierungen derselben Zeile kann der Flow mehrfach starten, auch wenn sich Werte nicht ändern — die Flow-Logik muss das berücksichtigen.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/use-dataverse-triggers-actions/triggers",
+    "source": {
+      "title": "Dataverse triggers",
+      "url": "https://learn.microsoft.com/en-us/training/modules/use-dataverse-triggers-actions/triggers",
+      "quote": "If you trigger your flow on multiple change types, and if you need conditional logic depending on the type, then you can use the following expression to get the change type that triggered the flow. The SdkMessage property contains Create, Update, or Delete."
+    }
+  }
+]

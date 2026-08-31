@@ -1,0 +1,457 @@
+[
+  {
+    "id": "abb1-001",
+    "type": "single-choice",
+    "skillArea": "foundation",
+    "topic": "Power Platform components",
+    "difficulty": "easy",
+    "prompt": "Which component sits at the heart of the AI-first Power Platform architecture as the unified, governed data layer that AI capabilities are grounded in?",
+    "options": [
+      { "id": "a", "text": "Microsoft Dataverse" },
+      { "id": "b", "text": "Power BI" },
+      { "id": "c", "text": "AI Builder" },
+      { "id": "d", "text": "Power Pages" }
+    ],
+    "correct": "a",
+    "explanation": "Dataverse ist die vereinheitlichte Datenschicht der Plattform. Wenn ein Agent einen Kundendatensatz nachschlägt, ein Prompt Geschäftskontext braucht oder eine modellgesteuerte App Vorschläge einblendet, greift das jeweils auf Dataverse zu — deshalb ist AI-first-Design immer auch Datenarchitektur.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/2-explore-ai-first-power-platform",
+    "source": {
+      "title": "Explore the AI-first Power Platform",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/2-explore-ai-first-power-platform",
+      "quote": "Dataverse sits at the heart of this architecture. It's the platform's unified data layer: a governed, enterprise-grade foundation that AI capabilities are grounded in."
+    }
+  },
+  {
+    "id": "abb1-002",
+    "type": "matching",
+    "skillArea": "foundation",
+    "topic": "AI-first process patterns",
+    "difficulty": "medium",
+    "prompt": "Match each AI-first process pattern to its description.",
+    "left": [
+      { "id": "l1", "text": "Human-assisted" },
+      { "id": "l2", "text": "Agent-assisted" },
+      { "id": "l3", "text": "Fully autonomous" }
+    ],
+    "right": [
+      {
+        "id": "r1",
+        "text": "Primarily human-driven, but AI reduces friction at key points — the human still decides, AI does the prep work"
+      },
+      {
+        "id": "r2",
+        "text": "An agent handles frontline interaction or routine steps and escalates to a human only when judgment is required"
+      },
+      {
+        "id": "r3",
+        "text": "Runs from trigger to completion without human input; a human only sees it if an exception is flagged"
+      }
+    ],
+    "correct": { "l1": "r1", "l2": "r2", "l3": "r3" },
+    "explanation": "Human-assisted: Der Mensch entscheidet, die KI bereitet vor (Felder extrahieren, Anomalien prüfen, Richtlinien einblenden). Agent-assisted: Der Agent löst die Masse selbst und eskaliert mit vollem Kontext. Fully autonomous: Trigger bis Abschluss ohne Menschen, nur Ausnahmen landen beim Menschen. Reale Lösungen mischen meist alle drei.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/4-map-business-processes-ai-first-patterns",
+    "source": {
+      "title": "Map business processes to AI-first solution patterns",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/4-map-business-processes-ai-first-patterns",
+      "quote": "Human-assisted processes are primarily human-driven, but AI reduces friction at key points. Agent-assisted processes let an agent handle frontline interaction or routine steps, escalating to a human only when the situation requires judgment. Fully autonomous processes run from trigger to completion without human input."
+    }
+  },
+  {
+    "id": "abb1-003",
+    "type": "single-choice",
+    "skillArea": "foundation",
+    "topic": "Requirements-to-components framework",
+    "difficulty": "medium",
+    "prompt": "Contoso's finance team receives vendor invoices by email in mixed formats (PDFs and scanned images), keys the fields manually, and routes them for approval with no status visibility. Which combination does the learning content recommend?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AI Builder to extract document fields, Power Automate to orchestrate routing and approval, and a model-driven app for reviewers"
+      },
+      {
+        "id": "b",
+        "text": "A Power Pages portal with a Web Agent and Power BI reporting"
+      },
+      {
+        "id": "c",
+        "text": "A canvas app with an embedded Copilot Studio agent only"
+      },
+      {
+        "id": "d",
+        "text": "Desktop flows that retype the invoice data into the existing spreadsheet"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Unstrukturierte Dokumente sind der Fall für AI Builder (Feldextraktion aus beliebigen Rechnungsformaten). Power Automate übernimmt Routing und Genehmigungslogik nach Lieferant, Betrag oder Kategorie, und eine modellgesteuerte App gibt Prüfern die Dataverse-Datensätze mit vollem Statusüberblick.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/3-recommend-power-platform-components",
+    "source": {
+      "title": "Recommend Power Platform components for business solutions",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/3-recommend-power-platform-components",
+      "quote": "The right approach combines AI Builder (to extract document fields automatically from any invoice format) with Power Automate (to orchestrate routing and approval logic based on vendor, amount, or category) and a Power Apps model-driven app (for reviewers to manage invoice records in Dataverse with full status visibility)."
+    }
+  },
+  {
+    "id": "abb1-004",
+    "type": "multiple-choice",
+    "skillArea": "foundation",
+    "topic": "Requirements framework dimensions",
+    "difficulty": "medium",
+    "prompt": "According to the requirements-to-components framework, which three of the following dimensions should you work through when you receive a business requirement? Each correct answer presents part of the solution.",
+    "options": [
+      { "id": "a", "text": "Who uses it — internal employees or external users?" },
+      {
+        "id": "b",
+        "text": "What data is involved — structured transactional, unstructured documents, or analytical aggregations?"
+      },
+      {
+        "id": "c",
+        "text": "Is the process human-driven or automated?" },
+      {
+        "id": "d",
+        "text": "Which Microsoft partner will be contracted to deliver it?"
+      },
+      {
+        "id": "e",
+        "text": "How many Dataverse storage gigabytes are currently unused?"
+      }
+    ],
+    "correct": ["a", "b", "c"],
+    "explanation": "Das Framework fragt vier Dimensionen ab: Wer nutzt es (intern/extern)? Welche Daten sind im Spiel (strukturiert, unstrukturiert, analytisch)? Ist der Prozess menschgetrieben oder automatisiert? Und ist natürliche Sprache beteiligt? Vertrags- oder Kapazitätsfragen gehören nicht dazu.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/3-recommend-power-platform-components",
+    "source": {
+      "title": "Recommend Power Platform components for business solutions",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/3-recommend-power-platform-components",
+      "quote": "Who uses it? Internal employees (Power Apps, Power Automate, Copilot Studio) or external users (Power Pages, Power Pages Web Agents)? What data is involved? Structured transactional data (Dataverse, model-driven app), unstructured documents (AI Builder), or analytical aggregations (Power BI)? Is the process human-driven or automated?"
+    }
+  },
+  {
+    "id": "abb1-005",
+    "type": "matching",
+    "skillArea": "foundation",
+    "topic": "Extensibility options",
+    "difficulty": "hard",
+    "prompt": "Match each Power Platform extensibility option to when you should use it.",
+    "left": [
+      { "id": "l1", "text": "Custom connector" },
+      { "id": "l2", "text": "PCF component" },
+      { "id": "l3", "text": "Dataverse plug-in" },
+      { "id": "l4", "text": "Custom API" }
+    ],
+    "right": [
+      { "id": "r1", "text": "External API not in the connector catalog" },
+      { "id": "r2", "text": "UI control not available natively" },
+      { "id": "r3", "text": "Server-side business logic" },
+      { "id": "r4", "text": "Reusable business operation endpoint" }
+    ],
+    "correct": { "l1": "r1", "l2": "r2", "l3": "r3", "l4": "r4" },
+    "explanation": "Custom Connectors binden externe APIs an, die der Katalog nicht abdeckt. PCF-Komponenten liefern fehlende UI-Steuerelemente. Dataverse-Plug-ins (C#) erzwingen serverseitige Geschäftslogik kanalunabhängig. Custom APIs erweitern die Dataverse-API um benannte Geschäftsoperationen wie CalculateInvoiceRisk.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/5-explore-extensibility-options",
+    "source": {
+      "title": "Explore extensibility options in Power Platform",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/5-explore-extensibility-options",
+      "quote": "Custom connector External API not in the connector catalog Developer (IT or ISV) PCF component UI control not available natively Developer Dataverse plug-in Server-side business logic Developer Custom API Reusable business operation endpoint Developer"
+    }
+  },
+  {
+    "id": "abb1-006",
+    "type": "single-choice",
+    "skillArea": "foundation",
+    "topic": "No cliffs principle",
+    "difficulty": "medium",
+    "prompt": "What does Microsoft's \"no cliffs\" principle mean for Power Platform solutions?",
+    "options": [
+      {
+        "id": "a",
+        "text": "You should never reach a dead end — if a built-in capability doesn't meet the requirement, there is always a supported way to extend it"
+      },
+      {
+        "id": "b",
+        "text": "Solutions must never use pro-code extensions of any kind"
+      },
+      {
+        "id": "c",
+        "text": "Every solution must be delivered without exceeding its licensed capacity"
+      },
+      {
+        "id": "d",
+        "text": "Apps must degrade gracefully when the network connection drops"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Das „no cliffs\"-Prinzip: Man landet auf der Power Platform nie in einer Sackgasse. Reicht eine eingebaute Funktion nicht, gibt es immer einen unterstützten Erweiterungsweg — und die Erweiterung lässt sich anderen Low-Code-Makern über Connectors, Komponenten und Plug-ins bereitstellen, ohne dass diese selbst Code schreiben.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/5-explore-extensibility-options",
+    "source": {
+      "title": "Explore extensibility options in Power Platform",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/5-explore-extensibility-options",
+      "quote": "Microsoft describes this as the \"no cliffs\" principle. You should never reach a dead end on Power Platform. If a built-in capability doesn't quite meet the requirement, there's always a supported way to extend it."
+    }
+  },
+  {
+    "id": "abb1-007",
+    "type": "single-choice",
+    "skillArea": "foundation",
+    "topic": "Bring Your Own Model",
+    "difficulty": "hard",
+    "prompt": "A team needs a fine-tuned model for a specialized domain that the built-in Power Platform models don't cover. Which extensibility option applies?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Bring Your Own Model (BYOM) in Prompt Builder — connect any model deployed in Azure AI Foundry"
+      },
+      { "id": "b", "text": "A Dataverse plug-in written in C#" },
+      { "id": "c", "text": "A Liquid template in Power Pages" },
+      { "id": "d", "text": "A desktop flow using RPA" }
+    ],
+    "correct": "a",
+    "explanation": "BYOM im Prompt Builder verbindet beliebige in Azure AI Foundry bereitgestellte Modelle. Damit werden die über 1.800 Modelle des Foundry-Katalogs für Prompts, Flows und Agents über dieselbe Low-Code-Oberfläche nutzbar. Gebaut wird das typischerweise von KI-/ML-Engineers.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/5-explore-extensibility-options",
+    "source": {
+      "title": "Explore extensibility options in Power Platform",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/5-explore-extensibility-options",
+      "quote": "Bring Your Own Model (BYOM) in Prompt Builder lets you connect any model deployed in Azure AI Foundry. The 1,800+ models in the Azure AI Foundry catalog become accessible to your prompts, flows, and agents through the same low-code interface."
+    }
+  },
+  {
+    "id": "abb1-008",
+    "type": "ordering",
+    "skillArea": "foundation",
+    "topic": "Plans AI agents",
+    "difficulty": "medium",
+    "prompt": "Plans in Power Apps uses three specialized AI agents that work in sequence. Place them in the order they run.",
+    "items": [
+      {
+        "id": "i1",
+        "text": "Requirement Agent — generates user roles and user needs from the business problem"
+      },
+      {
+        "id": "i2",
+        "text": "Data Agent — suggests Dataverse tables with columns, data types, and relationships"
+      },
+      {
+        "id": "i3",
+        "text": "Solution Agent — creates the technology proposal mapping components to roles and tables"
+      }
+    ],
+    "correctOrder": ["i1", "i2", "i3"],
+    "explanation": "Der Requirement Agent läuft zuerst und erzeugt Benutzerrollen und Bedürfnisse. Nach deren Freigabe schlägt der Data Agent das Dataverse-Datenmodell vor. Zuletzt wertet der Solution Agent Anforderungen, Prozesse und Datenmodell aus und erstellt den Technologievorschlag.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/turn-business-ideas-power-platform-solutions-plans/2-explore-plans-ai-agents",
+    "source": {
+      "title": "Explore plans and the AI agents that power them",
+      "url": "https://learn.microsoft.com/en-us/training/modules/turn-business-ideas-power-platform-solutions-plans/2-explore-plans-ai-agents",
+      "quote": "The Requirement Agent is the first to run after you enter your prompt. It examines your business problem and generates user roles and user needs (similar to user stories). After requirements are defined, the Data Agent suggests a set of Dataverse tables to store the business information. The Solution Agent evaluates the requirements, processes, and data model to create a technology proposal."
+    }
+  },
+  {
+    "id": "abb1-009",
+    "type": "yes-no",
+    "skillArea": "foundation",
+    "topic": "Plans prerequisites and sharing",
+    "difficulty": "hard",
+    "prompt": "For each of the following statements about Plans in Power Apps, select Yes if the statement is true. Otherwise, select No.",
+    "statements": [
+      {
+        "id": "s1",
+        "text": "To use Plans, the environment needs a Dataverse database, enabled Copilot features, and an eligible locale.",
+        "correct": true
+      },
+      {
+        "id": "s2",
+        "text": "Up to 100 makers can view the same plan simultaneously, but only one can edit at a time.",
+        "correct": true
+      },
+      {
+        "id": "s3",
+        "text": "A maker shared at Co-Owner level can delete the plan and change its ownership.",
+        "correct": false
+      }
+    ],
+    "explanation": "Plans setzt Dataverse, aktivierte Copilot-Funktionen und ein zugelassenes Gebietsschema voraus. Copresence erlaubt bis zu 100 gleichzeitige Betrachter, aber nur einen Bearbeiter — der erste, der den Plan öffnet. Co-Owner dürfen nutzen, bearbeiten und teilen, aber weder löschen noch die Eigentümerschaft ändern.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/turn-business-ideas-power-platform-solutions-plans/2-explore-plans-ai-agents",
+    "source": {
+      "title": "Explore plans and the AI agents that power them",
+      "url": "https://learn.microsoft.com/en-us/training/modules/turn-business-ideas-power-platform-solutions-plans/2-explore-plans-ai-agents",
+      "quote": "To use Plans, your environment needs a Dataverse database, enabled Copilot features, and an eligible locale. Copresence: Up to 100 makers can view the same plan simultaneously, though only one can edit at a time. Sharing: Share a plan with other makers at the Viewer level (view only) or Co-Owner level (can use, edit, and share the plan, but not delete it or change ownership)."
+    }
+  },
+  {
+    "id": "abb1-010",
+    "type": "matching",
+    "skillArea": "foundation",
+    "topic": "Process diagram nodes",
+    "difficulty": "medium",
+    "prompt": "Process diagrams generated by Plans use three types of nodes. Match each node type to its purpose.",
+    "left": [
+      { "id": "l1", "text": "Events" },
+      { "id": "l2", "text": "Gateways" },
+      { "id": "l3", "text": "Activities" }
+    ],
+    "right": [
+      { "id": "r1", "text": "Mark the start, middle, or end of a process" },
+      { "id": "r2", "text": "Represent decisions with branching paths" },
+      { "id": "r3", "text": "Represent tasks performed by a user or system" }
+    ],
+    "correct": { "l1": "r1", "l2": "r2", "l3": "r3" },
+    "explanation": "Events markieren Anfang, Mitte und Ende eines Prozesses (z. B. Start bei Antragseinreichung). Gateways bilden Entscheidungen mit Verzweigungen ab (etwa genehmigt/abgelehnt). Activities sind Aufgaben, die ein Benutzer oder System ausführt.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/turn-business-ideas-power-platform-solutions-plans/3-create-plan-refine-requirements",
+    "source": {
+      "title": "Create a plan and refine the requirements",
+      "url": "https://learn.microsoft.com/en-us/training/modules/turn-business-ideas-power-platform-solutions-plans/3-create-plan-refine-requirements",
+      "quote": "Events Mark the start, middle, or end of a process A start event triggers when an employee submits a request Gateways Represent decisions with branching paths An exclusive gateway routes to \"approved\" or \"rejected\" Activities Represent tasks performed by a user or system Manager reviews the request details"
+    }
+  },
+  {
+    "id": "abb1-011",
+    "type": "single-choice",
+    "skillArea": "foundation",
+    "topic": "Effective prompts for Plans",
+    "difficulty": "easy",
+    "prompt": "Which prompt is the better starting point for a plan, according to the guidance on writing an effective prompt?",
+    "options": [
+      {
+        "id": "a",
+        "text": "\"Employees need to submit time-off requests and managers need to approve them.\""
+      },
+      { "id": "b", "text": "\"Create a canvas app with a form.\"" },
+      { "id": "c", "text": "\"Build three apps, two portals, and a reporting layer.\"" },
+      { "id": "d", "text": "\"Use Dataverse and Power Automate.\"" }
+    ],
+    "correct": "a",
+    "explanation": "Ein guter Prompt beschreibt das Geschäftsproblem statt der gewünschten Technik, nennt die beteiligten Rollen, liefert genug Ablaufkontext und bleibt bei einem klar umrissenen Szenario. „Create a canvas app with a form\" beschreibt Technik, nicht das Problem.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/turn-business-ideas-power-platform-solutions-plans/3-create-plan-refine-requirements",
+    "source": {
+      "title": "Create a plan and refine the requirements",
+      "url": "https://learn.microsoft.com/en-us/training/modules/turn-business-ideas-power-platform-solutions-plans/3-create-plan-refine-requirements",
+      "quote": "Describes the business problem, not just the technology you want. Instead of \"Create a canvas app with a form,\" write \"Employees need to submit time-off requests and managers need to approve them.\""
+    }
+  },
+  {
+    "id": "abb1-012",
+    "type": "dropdown",
+    "skillArea": "foundation",
+    "topic": "Prompt components",
+    "difficulty": "easy",
+    "prompt": "Complete the statement about the two main components of a prompt.",
+    "textParts": [
+      "The ",
+      " is the written part of the prompt that states the task and the objective for the model, while the ",
+      " is the part that provides information for the model's output, such as the intended audience and tone."
+    ],
+    "blanks": [
+      {
+        "id": "b1",
+        "options": [
+          { "id": "o1", "text": "instruction" },
+          { "id": "o2", "text": "context" },
+          { "id": "o3", "text": "completion" }
+        ],
+        "correct": "o1"
+      },
+      {
+        "id": "b2",
+        "options": [
+          { "id": "o1", "text": "instruction" },
+          { "id": "o2", "text": "context" },
+          { "id": "o3", "text": "grounding" }
+        ],
+        "correct": "o2"
+      }
+    ],
+    "explanation": "Ein Prompt besteht aus Instruction und Context. Die Instruction benennt Aufgabe und Ziel („Summarize this email in three bullets\"), der Context liefert die nötigen Rahmeninformationen („The email contains customer feedback from the past week\") — Zielgruppe, Ton, Komplexitätsgrad.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/create-prompts-for-generative-ai-training-tools/3-what-is-prompt-engineering",
+    "source": {
+      "title": "What is prompt engineering?",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-prompts-for-generative-ai-training-tools/3-what-is-prompt-engineering",
+      "quote": "A prompt consists of two main components: instruction and context. Instruction: The instruction is the written part of the prompt that states the task and the objective for the model. Context: The context is the part of the prompt that provides information for the model's output."
+    }
+  },
+  {
+    "id": "abb1-013",
+    "type": "single-choice",
+    "skillArea": "foundation",
+    "topic": "Built-in agents in Power Apps",
+    "difficulty": "medium",
+    "prompt": "Which statement about the Power Apps built-in extensible agents (data entry, data exploration, data summarization) is correct?",
+    "options": [
+      {
+        "id": "a",
+        "text": "They are embedded in the Power Apps runtime and require no Copilot Studio license or custom configuration"
+      },
+      {
+        "id": "b",
+        "text": "Each one requires its own Copilot Studio agent to be published first"
+      },
+      {
+        "id": "c",
+        "text": "They only work in Power Pages sites, not in Power Apps"
+      },
+      {
+        "id": "d",
+        "text": "They must be rebuilt from scratch for every app that uses them"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Die aufgabenbezogenen Agents in modellgesteuerten und Canvas-Apps sind in die Power-Apps-Laufzeit eingebettet. Sie brauchen weder eine Copilot-Studio-Lizenz noch eigene Konfiguration und lassen sich direkt für die App-Nutzer aktivieren.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/4-map-business-processes-ai-first-patterns",
+    "source": {
+      "title": "Map business processes to AI-first solution patterns",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/4-map-business-processes-ai-first-patterns",
+      "quote": "These agents don't require a Copilot Studio license or custom configuration. They're embedded in the Power Apps runtime and can be enabled for your app users directly."
+    }
+  },
+  {
+    "id": "abb1-014",
+    "type": "single-choice",
+    "skillArea": "foundation",
+    "topic": "Plans and Power Pages ALM",
+    "difficulty": "hard",
+    "prompt": "When you create a Power Pages site from a plan, what does the guidance say about where to save it?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Save it to the same solution as the plan for healthy application lifecycle management"
+      },
+      {
+        "id": "b",
+        "text": "Save it to a separate solution so the site can be deployed independently"
+      },
+      {
+        "id": "c",
+        "text": "Save it outside any solution — Power Pages sites are not solution-aware"
+      },
+      {
+        "id": "d",
+        "text": "Save it to the default solution of the production environment"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Für sauberes ALM gehört die Power-Pages-Site in dieselbe Solution wie der Plan. Speichert man in eine neue Solution, sollte man „Set this as your preferred solution in this environment\" wählen, damit alles zusammenbleibt. Das Erstellen setzt außerdem die Rolle System administrator und Rechte zur App-Registrierung in Microsoft Entra voraus.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/turn-business-ideas-power-platform-solutions-plans/5-build-manage-solution",
+    "source": {
+      "title": "Build and manage your solution",
+      "url": "https://learn.microsoft.com/en-us/training/modules/turn-business-ideas-power-platform-solutions-plans/5-build-manage-solution",
+      "quote": "When saving a Power Pages site, save it to the same solution as your plan for healthy application lifecycle management (ALM). If you're saving to a new solution, select \"Set this as your preferred solution in this environment\" to keep everything aligned."
+    }
+  },
+  {
+    "id": "abb1-015",
+    "type": "single-choice",
+    "skillArea": "foundation",
+    "topic": "Creating agents from a plan",
+    "difficulty": "medium",
+    "prompt": "When you create a Copilot Studio agent from a plan, which field is populated automatically with all tables created by the plan?",
+    "options": [
+      { "id": "a", "text": "Knowledge" },
+      { "id": "b", "text": "Channels" },
+      { "id": "c", "text": "Security roles" },
+      { "id": "d", "text": "Environment variables" }
+    ],
+    "correct": "a",
+    "explanation": "Beim Erstellen aus einem Plan füllt Copilot Studio Name, Beschreibung und Instructions vor — und trägt alle vom Plan erzeugten Tabellen automatisch als Wissensquellen (Knowledge) ein. Danach Instructions prüfen, Trigger und Aktionen ergänzen und den Agent vor dem Veröffentlichen testen.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/turn-business-ideas-power-platform-solutions-plans/5-build-manage-solution",
+    "source": {
+      "title": "Build and manage your solution",
+      "url": "https://learn.microsoft.com/en-us/training/modules/turn-business-ideas-power-platform-solutions-plans/5-build-manage-solution",
+      "quote": "Knowledge: all tables created by the plan are automatically added as knowledge sources"
+    }
+  }
+]

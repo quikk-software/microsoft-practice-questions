@@ -1,0 +1,375 @@
+[
+  {
+    "id": "abb8-001",
+    "type": "single-choice",
+    "skillArea": "logic-automation",
+    "topic": "Flow building blocks",
+    "difficulty": "easy",
+    "prompt": "What does every cloud flow in Power Automate consist of?",
+    "options": [
+      { "id": "a", "text": "A trigger and one or more actions" },
+      { "id": "b", "text": "A schedule and a connector" },
+      { "id": "c", "text": "A form and a view" },
+      { "id": "d", "text": "A solution and a publisher" }
+    ],
+    "correct": "a",
+    "explanation": "Jeder Flow beginnt mit einem Trigger — dem auslösenden Ereignis, etwa einer neuen E-Mail — und enthält eine oder mehrere Aktionen, die daraufhin passieren, zum Beispiel den Anhang in OneDrive speichern oder eine Nachricht in Teams posten.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/get-started-flows/2-create-first-flow",
+    "source": {
+      "title": "Create a cloud flow",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-flows/2-create-first-flow",
+      "quote": "Every flow starts with a trigger and includes one or more actions. The trigger is the event that starts the flow, such as a new email arriving in your inbox."
+    }
+  },
+  {
+    "id": "abb8-002",
+    "type": "single-choice",
+    "skillArea": "logic-automation",
+    "topic": "Copilot in Power Automate",
+    "difficulty": "easy",
+    "prompt": "When you create a cloud flow with Copilot in Power Automate, what does Copilot do on your behalf?",
+    "options": [
+      {
+        "id": "a",
+        "text": "It generates a flow from your prompt, automatically configures connections, and applies the necessary parameters"
+      },
+      {
+        "id": "b",
+        "text": "It only writes a description; the trigger and actions must be added manually"
+      },
+      {
+        "id": "c",
+        "text": "It converts the flow into a desktop flow automatically"
+      },
+      {
+        "id": "d",
+        "text": "It publishes the flow to production without review"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Copilot versteht die Absicht hinter dem Prompt, erzeugt daraus einen Flow, richtet Verbindungen selbstständig ein, setzt die nötigen Parameter, ersetzt oder aktualisiert Aktionen auf Zuruf und schlägt beim Bearbeiten der Details eine Beschreibung vor.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/get-started-flows/2-create-first-flow",
+    "source": {
+      "title": "Create a cloud flow",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-flows/2-create-first-flow",
+      "quote": "Understand your intent and generate a flow based on the prompt you provide. Automatically configure connections on your behalf. Apply the necessary parameters in the flow based on your prompt."
+    }
+  },
+  {
+    "id": "abb8-003",
+    "type": "single-choice",
+    "skillArea": "logic-automation",
+    "topic": "Connection status",
+    "difficulty": "easy",
+    "prompt": "In the Copilot flow creation experience, how can you tell that a connection is ready to use?",
+    "options": [
+      { "id": "a", "text": "It shows a green check mark" },
+      { "id": "b", "text": "It shows a red exclamation mark" },
+      { "id": "c", "text": "It shows an amber warning triangle" },
+      { "id": "d", "text": "It disappears from the connection list" }
+    ],
+    "correct": "a",
+    "explanation": "Verbindungen mit grünem Häkchen sind einsatzbereit. Ein rotes Ausrufezeichen bedeutet, dass die Verbindung Aufmerksamkeit braucht — dann auswählen und den Anweisungen folgen, bevor der Flow erstellt wird.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/get-started-flows/2-create-first-flow",
+    "source": {
+      "title": "Create a cloud flow",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-flows/2-create-first-flow",
+      "quote": "Verify that the connections in the flow are configured correctly. Connections that are ready show a green check mark. Connections that need attention show a red exclamation mark."
+    }
+  },
+  {
+    "id": "abb8-004",
+    "type": "single-choice",
+    "skillArea": "logic-automation",
+    "topic": "Shared flows",
+    "difficulty": "easy",
+    "prompt": "Where do co-owners find a flow that has been shared with them in Power Automate?",
+    "options": [
+      { "id": "a", "text": "On the Shared with me tab" },
+      { "id": "b", "text": "On the Cloud flows tab" },
+      { "id": "c", "text": "In the Approvals center" },
+      { "id": "d", "text": "In the Solutions area only" }
+    ],
+    "correct": "a",
+    "explanation": "Für Ersteller und Besitzer bleibt der Flow auf dem Tab „Cloud flows“ gelistet. Hinzugefügte Co-Owner finden ihn dagegen unter „Shared with me“.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/get-started-flows/8-flow-share-flows",
+    "source": {
+      "title": "Exercise - Share flows",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-flows/8-flow-share-flows",
+      "quote": "As the creator or an owner of a shared flow, your flow remains listed on the Cloud flows tab. Co-owners you add can find the flow listed on their Shared with me tab"
+    }
+  },
+  {
+    "id": "abb8-005",
+    "type": "yes-no",
+    "skillArea": "logic-automation",
+    "topic": "Shared flow ownership",
+    "difficulty": "easy",
+    "prompt": "For each of the following statements about shared flows, select Yes if the statement is true. Otherwise, select No.",
+    "statements": [
+      {
+        "id": "s1",
+        "text": "If the creator of a shared flow leaves the organization, the other owners can continue to run it.",
+        "correct": true
+      },
+      {
+        "id": "s2",
+        "text": "All owners of a shared flow can view its history, edit it, and add or remove owners.",
+        "correct": true
+      },
+      {
+        "id": "s3",
+        "text": "An owner can change the credentials for a connection that another owner created.",
+        "correct": false
+      }
+    ],
+    "explanation": "Geteilte Flows überleben den Weggang des Erstellers — die übrigen Besitzer führen sie weiter. Alle Besitzer sehen den Verlauf, verwalten Eigenschaften, bearbeiten, ergänzen oder entfernen Besitzer und dürfen löschen. Anmeldedaten einer Verbindung, die ein anderer Besitzer angelegt hat, kann jedoch niemand sonst ändern.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/get-started-flows/8-flow-share-flows",
+    "source": {
+      "title": "Exercise - Share flows",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-flows/8-flow-share-flows",
+      "quote": "If the creator of a shared flow leaves the organization, the other owners of the flow can continue to run it. All owners of a shared flow can view its history, manage its properties, edit it, add and remove owners, and delete it. Owners can use services in a flow, but they can't change the credentials for a connection that another owner created."
+    }
+  },
+  {
+    "id": "abb8-006",
+    "type": "single-choice",
+    "skillArea": "logic-automation",
+    "topic": "Flow run history",
+    "difficulty": "easy",
+    "prompt": "Where do you look first to find out why a cloud flow failed?",
+    "options": [
+      {
+        "id": "a",
+        "text": "In the 28-day run history, open the failed run and expand the failed step to read the error message"
+      },
+      { "id": "b", "text": "In the Power Platform admin center capacity report" },
+      { "id": "c", "text": "In the Dataverse Audit Summary View" },
+      { "id": "d", "text": "In the solution's publisher settings" }
+    ],
+    "correct": "a",
+    "explanation": "Über „My flows“ den fehlgeschlagenen Flow öffnen, im Abschnitt „28-day run history“ das Datum des fehlgeschlagenen Laufs wählen und den mit rotem Ausrufezeichen markierten Schritt aufklappen — dort steht die Fehlermeldung samt Hinweis zur Behebung.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/get-started-flows/9-troubleshoot-flows",
+    "source": {
+      "title": "Troubleshoot flows",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-flows/9-troubleshoot-flows",
+      "quote": "In the 28-day run history section, select the date of the failed run. Expand the failed step (marked with a red exclamation point icon) and review the error message to understand what happened and how to fix your flow."
+    }
+  },
+  {
+    "id": "abb8-007",
+    "type": "single-choice",
+    "skillArea": "logic-automation",
+    "topic": "Approval outcome",
+    "difficulty": "easy",
+    "prompt": "After an approval resolves, which value becomes available as dynamic content for subsequent steps?",
+    "options": [
+      { "id": "a", "text": "The Outcome value (Approve or Reject)" },
+      { "id": "b", "text": "The approver's security role" },
+      { "id": "c", "text": "The flow's run ID only" },
+      { "id": "d", "text": "The item's Dataverse GUID only" }
+    ],
+    "correct": "a",
+    "explanation": "Sobald die Genehmigung entschieden ist, steht der Outcome — Approve oder Reject — als Dynamic Content für die Folgeschritte bereit. Genau diesen Wert liest die anschließende Condition aus, um in den True- oder False-Zweig zu verzweigen.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/build-approval-flows/2-create-approval-request",
+    "source": {
+      "title": "Build an approval request",
+      "url": "https://learn.microsoft.com/en-us/training/modules/build-approval-flows/2-create-approval-request",
+      "quote": "Once the approval resolves, the Outcome value (Approve or Reject) becomes available as dynamic content for subsequent steps."
+    }
+  },
+  {
+    "id": "abb8-008",
+    "type": "single-choice",
+    "skillArea": "logic-automation",
+    "topic": "Business rules and code",
+    "difficulty": "easy",
+    "prompt": "What is a key benefit of using business rules in Dataverse?",
+    "options": [
+      {
+        "id": "a",
+        "text": "They reduce the need for code such as JavaScript in model-driven app forms"
+      },
+      { "id": "b", "text": "They replace the need for security roles" },
+      { "id": "c", "text": "They allow flows to run without connections" },
+      { "id": "d", "text": "They automatically deploy solutions to production" }
+    ],
+    "correct": "a",
+    "explanation": "Business Rules sind eine zentrale Low-Code-Fähigkeit von Dataverse: Sie ersetzen Code wie JavaScript in modellgesteuerten Formularen und werden über eine deklarative Drag-and-drop-Oberfläche erstellt, in der man Bedingungen und die zugehörigen Aktionen definiert.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps-common-data-service/logic-security",
+    "source": {
+      "title": "Dataverse logic and security",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps-common-data-service/logic-security",
+      "quote": "Business rules reduce the need for code such as JavaScript in model-driven app forms. They're a key low-code capability in Dataverse."
+    }
+  },
+  {
+    "id": "abb8-009",
+    "type": "single-choice",
+    "skillArea": "logic-automation",
+    "topic": "Security role requirement",
+    "difficulty": "easy",
+    "prompt": "What is required before a user can access Dataverse and run apps?",
+    "options": [
+      { "id": "a", "text": "They must be assigned at least one security role" },
+      { "id": "b", "text": "They must be a co-owner of every app" },
+      { "id": "c", "text": "They must have a custom connector configured" },
+      { "id": "d", "text": "They must belong to at least two teams" }
+    ],
+    "correct": "a",
+    "explanation": "Ohne mindestens eine Sicherheitsrolle kein Zugriff: Dataverse nutzt rollenbasierte Zugriffskontrolle, bei der Rollen Sammlungen von Privilegien und Zugriffsebenen sind. Statt einzelne Privilegien zu vergeben, weist man Nutzern eine oder mehrere Rollen zu.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps-common-data-service/logic-security",
+    "source": {
+      "title": "Dataverse logic and security",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps-common-data-service/logic-security",
+      "quote": "Users must be assigned at least one security role to access Dataverse and run apps."
+    }
+  },
+  {
+    "id": "abb8-010",
+    "type": "single-choice",
+    "skillArea": "logic-automation",
+    "topic": "Testing a prompt",
+    "difficulty": "easy",
+    "prompt": "In the AI Builder prompt builder, how do you check the output of a prompt before using it in an app or flow?",
+    "options": [
+      { "id": "a", "text": "Select Test prompt in the left pane" },
+      { "id": "b", "text": "Publish the prompt and run a flow" },
+      { "id": "c", "text": "Export the prompt to a solution" },
+      { "id": "d", "text": "Add the prompt as a column to a table" }
+    ],
+    "correct": "a",
+    "explanation": "Nach dem Festlegen der Ausgabe (Output > Text) genügt „Test prompt“ im linken Bereich, um die Prompt-Antwort direkt zu prüfen — ohne den Prompt vorher in einem Flow oder einer App einzubinden.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/ai-builder-grounded-prompts/create-grounded-prompt",
+    "source": {
+      "title": "Exercise - Create a grounded prompt in AI Builder",
+      "url": "https://learn.microsoft.com/en-us/training/modules/ai-builder-grounded-prompts/create-grounded-prompt",
+      "quote": "In the right pane in the prompt settings, select Output > Text. Select Test prompt in the left pane."
+    }
+  },
+  {
+    "id": "abb8-011",
+    "type": "single-choice",
+    "skillArea": "applications",
+    "topic": "Model-driven app agents",
+    "difficulty": "easy",
+    "prompt": "Which two types of agents can be added to a model-driven app?",
+    "options": [
+      { "id": "a", "text": "Autonomous agents and app assistant agents" },
+      { "id": "b", "text": "Desktop agents and cloud agents" },
+      { "id": "c", "text": "Web agents and portal agents" },
+      { "id": "d", "text": "Data agents and solution agents" }
+    ],
+    "correct": "a",
+    "explanation": "Modellgesteuerte Apps können zwei Agent-Typen aufnehmen: autonome Agents (in Copilot Studio erstellt, mit dem Power Apps MCP Server verbunden, arbeiten im Hintergrund und stellen Aufgaben in den Agent Feed) und App-Assistant-Agents, die den Copilot-Chat-Bereich der App mit eigenen Topics und Wissensquellen versorgen.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/get-started-with-model-driven-apps-in-powerapps/add-agents",
+    "source": {
+      "title": "Add agents to your model-driven app",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-model-driven-apps-in-powerapps/add-agents",
+      "quote": "There are two types of agents you can add to a model-driven app: Autonomous agents — Created in Microsoft Copilot Studio and connected to the Power Apps MCP (Model Context Protocol) server. App assistant agents — Provide custom topics, knowledge sources, and conversational capabilities within the Copilot chat pane of the app."
+    }
+  },
+  {
+    "id": "abb8-012",
+    "type": "single-choice",
+    "skillArea": "applications",
+    "topic": "Agent feed sections",
+    "difficulty": "easy",
+    "prompt": "Which two sections does the agent feed in a model-driven app have?",
+    "options": [
+      { "id": "a", "text": "Needs Attention and Completed" },
+      { "id": "b", "text": "Pending and Rejected" },
+      { "id": "c", "text": "Active and Archived" },
+      { "id": "d", "text": "Draft and Published" }
+    ],
+    "correct": "a",
+    "explanation": "Der Agent Feed teilt sich in „Needs Attention“ — Aufgaben, die auf Benutzereingaben warten, wo man Vorschläge des Agents übernehmen oder Einträge verwerfen kann — und „Completed“ für bereits erledigte oder rein passiv protokollierte Aufgaben.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/get-started-with-model-driven-apps-in-powerapps/add-agents",
+    "source": {
+      "title": "Add agents to your model-driven app",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-model-driven-apps-in-powerapps/add-agents",
+      "quote": "The agent feed has two sections: Needs Attention — Tasks that are waiting for user input. Completed — Tasks the agent logged for passive review or tasks that have already been handled."
+    }
+  },
+  {
+    "id": "abb8-013",
+    "type": "single-choice",
+    "skillArea": "foundation",
+    "topic": "Power Platform components",
+    "difficulty": "easy",
+    "prompt": "Which six components make up the Power Platform according to the AI-first overview?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Power Apps, Power Automate, Power Pages, Microsoft Copilot Studio, AI Builder, and Power BI"
+      },
+      {
+        "id": "b",
+        "text": "Power Apps, Power Automate, Dataverse, Azure Functions, Power BI, and SharePoint"
+      },
+      {
+        "id": "c",
+        "text": "Power Apps, Power Pages, Dynamics 365, Teams, Outlook, and Power BI"
+      },
+      {
+        "id": "d",
+        "text": "Power Apps, Power Automate, Power Virtual Agents, Power Query, AI Builder, and Excel"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Die sechs Komponenten sind Power Apps, Power Automate, Power Pages, Microsoft Copilot Studio, AI Builder und Power BI. Zusammen decken sie eigene Apps, automatisierte Workflows, externe Portale, konversationelle Agents und datengetriebene Auswertungen ab — mit Dataverse als Datenschicht darunter.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/2-explore-ai-first-power-platform",
+    "source": {
+      "title": "Explore the AI-first Power Platform",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/2-explore-ai-first-power-platform",
+      "quote": "Power Platform consists of six components: Power Apps, Power Automate, Power Pages, Microsoft Copilot Studio, AI Builder, and Power BI."
+    }
+  },
+  {
+    "id": "abb8-014",
+    "type": "single-choice",
+    "skillArea": "foundation",
+    "topic": "Copilot control in canvas apps",
+    "difficulty": "easy",
+    "prompt": "What does adding a Copilot control to a canvas app give end users?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A natural language chat interface connected to the app's data"
+      },
+      { "id": "b", "text": "An automatic translation of the app into all languages" },
+      { "id": "c", "text": "A performance profiler for the app screens" },
+      { "id": "d", "text": "An offline cache of all Dataverse records" }
+    ],
+    "correct": "a",
+    "explanation": "Das Copilot-Steuerelement gibt Nutzern eine Chat-Oberfläche in natürlicher Sprache, die mit den Daten der App verbunden ist: Fragen stellen, Datensätze durchsuchen und Aktionen im Dialog auslösen, statt sich durch Menüs zu klicken.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/2-explore-ai-first-power-platform",
+    "source": {
+      "title": "Explore the AI-first Power Platform",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/2-explore-ai-first-power-platform",
+      "quote": "In Power Apps, a Copilot control added to a canvas app gives users a natural language chat interface connected to the app's data."
+    }
+  },
+  {
+    "id": "abb8-015",
+    "type": "single-choice",
+    "skillArea": "applications",
+    "topic": "Power Pages workspaces",
+    "difficulty": "easy",
+    "prompt": "Which workspaces does the Power Pages design studio provide for customizing a website?",
+    "options": [
+      { "id": "a", "text": "Pages, Styling, Data, Security, and Set up" },
+      { "id": "b", "text": "Tables, Columns, Views, Forms, and Charts" },
+      { "id": "c", "text": "Build, Test, Deploy, Monitor, and Retire" },
+      { "id": "d", "text": "Home, Create, Learn, Apps, and Solutions" }
+    ],
+    "correct": "a",
+    "explanation": "Das Design Studio bündelt die Anpassung in fünf Workspaces: Pages, Styling, Data, Security und Set up. Der Security-Workspace ist dabei die zentrale Oberfläche, um Zugriff auf die Site zu überwachen, zu schützen und zu verwalten.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/power-pages-intro/core-components",
+    "source": {
+      "title": "Core tools and components of Power Pages",
+      "url": "https://learn.microsoft.com/en-us/training/modules/power-pages-intro/core-components",
+      "quote": "Pages, Styling, Data, Security, and Set up workspaces allow customization of many aspects of a website within a single interface."
+    }
+  }
+]

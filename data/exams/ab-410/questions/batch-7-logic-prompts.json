@@ -1,0 +1,405 @@
+[
+  {
+    "id": "abb7-001",
+    "type": "matching",
+    "skillArea": "logic-automation",
+    "topic": "Business rule scope",
+    "difficulty": "hard",
+    "prompt": "Business rules are defined at the table level and applied based on their Scope setting. Match each scope to what it applies to.",
+    "left": [
+      { "id": "l1", "text": "Individual form" },
+      { "id": "l2", "text": "All forms" },
+      { "id": "l3", "text": "Entity" }
+    ],
+    "right": [
+      { "id": "r1", "text": "Applies only to the specified model-driven app form" },
+      { "id": "r2", "text": "Applies to all model-driven app forms" },
+      {
+        "id": "r3",
+        "text": "Applies to all model-driven app forms and to create/update operations on the table — the default scope"
+      }
+    ],
+    "correct": { "l1": "r1", "l2": "r2", "l3": "r3" },
+    "explanation": "Der Scope entscheidet, wo eine Business Rule greift. „Entity“ ist der Standard und wirkt am weitesten: auf allen modellgesteuerten Formularen und zusätzlich bei Create- und Update-Operationen auf der Tabelle — also auch außerhalb von Formularen.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps-common-data-service/logic-security",
+    "source": {
+      "title": "Dataverse logic and security",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps-common-data-service/logic-security",
+      "quote": "Individual form: Applies only to the specified model-driven app form. All forms: Applies to all model-driven app forms. Entity: Applies to all model-driven app forms and to create/update operations on the table. This is the default scope."
+    }
+  },
+  {
+    "id": "abb7-002",
+    "type": "multiple-choice",
+    "skillArea": "logic-automation",
+    "topic": "Business rules in canvas apps",
+    "difficulty": "hard",
+    "prompt": "Business rules defined at the table level apply to both canvas and model-driven apps, but which three actions are NOT available in canvas apps? Each correct answer presents part of the solution.",
+    "options": [
+      { "id": "a", "text": "Show or hide columns" },
+      { "id": "b", "text": "Enable or disable columns" },
+      { "id": "c", "text": "Create business recommendations" },
+      { "id": "d", "text": "Set or clear column values" },
+      { "id": "e", "text": "Validate input and display error messages" }
+    ],
+    "correct": ["a", "b", "c"],
+    "explanation": "Modellgesteuerte Apps unterstützen alle Business-Rule-Aktionen. In Canvas-Apps fehlen drei davon: Spalten ein-/ausblenden, Spalten aktivieren/deaktivieren und Business Recommendations. Werte setzen bzw. leeren und Validierung mit Fehlermeldung funktionieren dagegen in beiden App-Typen.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps-common-data-service/logic-security",
+    "source": {
+      "title": "Dataverse logic and security",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps-common-data-service/logic-security",
+      "quote": "Model-driven apps support all business rule actions. Some actions aren't available in canvas apps: Show or hide columns. Enable or disable columns. Create business recommendations."
+    }
+  },
+  {
+    "id": "abb7-003",
+    "type": "single-choice",
+    "skillArea": "logic-automation",
+    "topic": "Business logic options",
+    "difficulty": "medium",
+    "prompt": "Which Dataverse business logic feature is currently supported only in model-driven apps?",
+    "options": [
+      { "id": "a", "text": "Business process flows" },
+      { "id": "b", "text": "Business rules" },
+      { "id": "c", "text": "Real-time workflows" },
+      { "id": "d", "text": "Formula columns" }
+    ],
+    "correct": "a",
+    "explanation": "Business Process Flows führen Nutzer durch einen standardisierten Prozess und sind derzeit nur in modellgesteuerten Apps verfügbar. Business Rules gelten dagegen tabellenweit für beide App-Typen, Real-time Workflows laufen ohne Benutzerinteraktion.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps-common-data-service/logic-security",
+    "source": {
+      "title": "Dataverse logic and security",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps-common-data-service/logic-security",
+      "quote": "Business process flows: Guide users to enter data consistently and follow a standardized process. Currently supported only in model-driven apps."
+    }
+  },
+  {
+    "id": "abb7-004",
+    "type": "single-choice",
+    "skillArea": "logic-automation",
+    "topic": "Formula columns",
+    "difficulty": "medium",
+    "prompt": "Which statement about Dataverse formula columns is correct?",
+    "options": [
+      {
+        "id": "a",
+        "text": "They use the Power Fx language with Excel-like syntax and are read-only"
+      },
+      { "id": "b", "text": "They use C# expressions and can be edited by users" },
+      { "id": "c", "text": "They aggregate values from related rows on a schedule" },
+      { "id": "d", "text": "They store AI-generated output from a natural language prompt" }
+    ],
+    "correct": "a",
+    "explanation": "Formula-Spalten berechnen ihren Wert mit Power Fx in einer Excel-ähnlichen Syntax und sind schreibgeschützt. Die Aggregation verknüpfter Datensätze übernehmen Rollup-Spalten, KI-generierte Ausgaben speichern Prompt-Spalten.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/create-manage-fields-within-entity/2-field-types",
+    "source": {
+      "title": "Column types in Microsoft Dataverse",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-manage-fields-within-entity/2-field-types",
+      "quote": "Formula columns use the Power Fx language to calculate the value for the column (shown as fx Formula in the portal data type picker). They use a syntax that's similar to Office Excel. Formula columns are read-only."
+    }
+  },
+  {
+    "id": "abb7-005",
+    "type": "single-choice",
+    "skillArea": "logic-automation",
+    "topic": "Prompt column use cases",
+    "difficulty": "medium",
+    "prompt": "According to the column types reference, what happens when a record with a Prompt column is saved?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Dataverse runs the prompt against the row's data and stores the AI-generated output in the column"
+      },
+      {
+        "id": "b",
+        "text": "The prompt text itself is stored in the column for later review"
+      },
+      {
+        "id": "c",
+        "text": "A Power Automate flow is queued to generate the value overnight"
+      },
+      {
+        "id": "d",
+        "text": "The column stays empty until a user selects Generate in the form"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Prompt-Spalten definieren einen KI-Prompt, dessen Ergebnis direkt in der Spalte landet. Beim Speichern des Datensatzes — oder wenn der Prompt ausgelöst wird — führt Dataverse ihn gegen die Zeilendaten aus und speichert die Ausgabe. Typische Einsätze: Zusammenfassungen, Klassifizierungen oder vorgeschlagene Folgeaktionen ohne eigenen Code.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/create-manage-fields-within-entity/2-field-types",
+    "source": {
+      "title": "Column types in Microsoft Dataverse",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-manage-fields-within-entity/2-field-types",
+      "quote": "Prompt columns allow you to define an AI prompt whose generated result is stored directly in the column. When a record is saved or the prompt is triggered, Dataverse runs the prompt against the row's data and stores the AI-generated output in the column."
+    }
+  },
+  {
+    "id": "abb7-006",
+    "type": "single-choice",
+    "skillArea": "logic-automation",
+    "topic": "AI Hub prompts",
+    "difficulty": "medium",
+    "prompt": "Where in Power Apps or Power Automate do you go to create your own AI Builder prompt?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AI hub > Prompts > Build your own prompt"
+      },
+      { "id": "b", "text": "Solutions > New > Automation > Prompt" },
+      { "id": "c", "text": "Tables > New column > Prompt" },
+      { "id": "d", "text": "Settings > Feature settings > Prompts" }
+    ],
+    "correct": "a",
+    "explanation": "Der Weg führt über AI hub im linken Navigationsbereich, dann unter „Discover an AI capability“ auf Prompts und schließlich „Build your own prompt“. Über das Pin-Symbol lässt sich der Eintrag dauerhaft im Menü verankern.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/ai-builder-grounded-prompts/create-grounded-prompt",
+    "source": {
+      "title": "Exercise - Create a grounded prompt in AI Builder",
+      "url": "https://learn.microsoft.com/en-us/training/modules/ai-builder-grounded-prompts/create-grounded-prompt",
+      "quote": "On the left pane, select AI hub. Under Discover an AI capability, select Prompts. Select Build your own prompt."
+    }
+  },
+  {
+    "id": "abb7-007",
+    "type": "single-choice",
+    "skillArea": "logic-automation",
+    "topic": "Consuming a prompt in a flow",
+    "difficulty": "medium",
+    "prompt": "Which AI Builder action do you add to a cloud flow to run a grounded prompt you created?",
+    "options": [
+      { "id": "a", "text": "Create text with GPT using a prompt" },
+      { "id": "b", "text": "Process documents" },
+      { "id": "c", "text": "Extract entities from text" },
+      { "id": "d", "text": "Analyze positive or negative sentiment in text" }
+    ],
+    "correct": "a",
+    "explanation": "Im Flow wählt man AI Builder > „Create text with GPT using a prompt“ und im Prompt-Dropdown den eigenen grounded Prompt. Die definierten Eingaben — im Beispiel „Input ProposalName“ — werden anschließend befüllt, und die Ausgabe steht als Output Text für Folgeschritte bereit.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/ai-builder-grounded-prompts/use-grounded-prompt-cloud-flow",
+    "source": {
+      "title": "Use a grounded prompt in a cloud flow",
+      "url": "https://learn.microsoft.com/en-us/training/modules/ai-builder-grounded-prompts/use-grounded-prompt-cloud-flow",
+      "quote": "Select AI Builder > Create text with GPT using a prompt. From the Prompt dropdown menu, select the grounded prompt that you recently created"
+    }
+  },
+  {
+    "id": "abb7-008",
+    "type": "single-choice",
+    "skillArea": "logic-automation",
+    "topic": "Consuming a prompt in a canvas app",
+    "difficulty": "hard",
+    "prompt": "How do you make a grounded prompt available inside a canvas app?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Add it as a data source via Data > Add Data and search for the prompt by name"
+      },
+      { "id": "b", "text": "Paste the prompt text into the App.OnStart property" },
+      { "id": "c", "text": "Add it as a component from a component library" },
+      { "id": "d", "text": "Create a Prompt column and bind a form to it" }
+    ],
+    "correct": "a",
+    "explanation": "Ein grounded Prompt wird in der Canvas-App wie eine Datenquelle eingebunden: links Data > Add Data wählen und den Prompt namentlich suchen. Danach kann man ihn über Steuerelemente wie Texteingabe, Label und Button nutzen.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/ai-builder-grounded-prompts/use-grounded-prompt-canvas-app",
+    "source": {
+      "title": "Use a grounded prompt in a canvas app",
+      "url": "https://learn.microsoft.com/en-us/training/modules/ai-builder-grounded-prompts/use-grounded-prompt-canvas-app",
+      "quote": "On the left navigation pane, select Data > Add Data, select a data source, and then search for Learning grounded prompt."
+    }
+  },
+  {
+    "id": "abb7-009",
+    "type": "single-choice",
+    "skillArea": "logic-automation",
+    "topic": "Grounding a prompt",
+    "difficulty": "hard",
+    "prompt": "In the AI Builder prompt builder, what is the purpose of selecting \"+ Add content\" and then Dataverse?",
+    "options": [
+      {
+        "id": "a",
+        "text": "To ground the prompt in business data, with filters refining the data so it's relevant to your needs"
+      },
+      { "id": "b", "text": "To choose which GPT model version the prompt uses" },
+      { "id": "c", "text": "To set the output format of the generated text" },
+      { "id": "d", "text": "To publish the prompt to a Copilot Studio agent" }
+    ],
+    "correct": "a",
+    "explanation": "Über „+ Add content“ definiert man Eingaben und verankert den Prompt in Dataverse-Daten. Filter schärfen die verwendete Datenmenge auf das Relevante — Eingaben und Data Grounding sind genau die Stellschrauben, mit denen sich die Prompt-Antwort feinjustieren lässt.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/ai-builder-grounded-prompts/create-grounded-prompt",
+    "source": {
+      "title": "Exercise - Create a grounded prompt in AI Builder",
+      "url": "https://learn.microsoft.com/en-us/training/modules/ai-builder-grounded-prompts/create-grounded-prompt",
+      "quote": "By adding filters, your goal is to refine the data that you're working with, making it more focused on and relevant to your needs. Adding inputs and data grounding in your prompt settings helps you fine-tune your prompt response."
+    }
+  },
+  {
+    "id": "abb7-010",
+    "type": "single-choice",
+    "skillArea": "logic-automation",
+    "topic": "Scheduled flows",
+    "difficulty": "easy",
+    "prompt": "Which trigger do you use to build a prescheduled flow in Power Automate?",
+    "options": [
+      { "id": "a", "text": "Recurrence" },
+      { "id": "b", "text": "When a row is selected" },
+      { "id": "c", "text": "Manually trigger a flow" },
+      { "id": "d", "text": "When an HTTP request is received" }
+    ],
+    "correct": "a",
+    "explanation": "Vorgeplante Flows bauen auf dem Trigger „recurrence“ auf — etwa um täglich E-Mail-Adressen aus einer Excel-Tabelle in OneDrive zu ziehen und eine Informationsmail zu versenden.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/get-started-flows/6-flow-scheduled-flows",
+    "source": {
+      "title": "Exercise - Create recurring flows",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-flows/6-flow-scheduled-flows",
+      "quote": "In this unit, you learn how to build prescheduled flows by using a trigger called recurrence."
+    }
+  },
+  {
+    "id": "abb7-011",
+    "type": "single-choice",
+    "skillArea": "logic-automation",
+    "topic": "Security roles and customization",
+    "difficulty": "medium",
+    "prompt": "Why does the guidance recommend creating custom security roles for the apps you build?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Standard roles can't be customized — only custom roles can be modified, so custom roles let you grant only the required privileges"
+      },
+      {
+        "id": "b",
+        "text": "Custom roles are the only roles that can be assigned to teams"
+      },
+      {
+        "id": "c",
+        "text": "Standard roles expire after 30 days and must be renewed"
+      },
+      {
+        "id": "d",
+        "text": "Custom roles bypass the need for users to have any license"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Standardrollen wie System Administrator, Environment Maker oder Basic user lassen sich nicht anpassen — ändern kann man nur eigene Rollen. Für selbst gebaute Apps empfiehlt sich deshalb eine benutzerdefinierte Rolle mit genau den nötigen Privilegien. Ohne mindestens eine Sicherheitsrolle kommt niemand an Dataverse.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps-common-data-service/logic-security",
+    "source": {
+      "title": "Dataverse logic and security",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps-common-data-service/logic-security",
+      "quote": "However, it's recommended to create custom roles for apps you build to provide only the required privileges. Standard roles can't be customized. You can only modify custom roles."
+    }
+  },
+  {
+    "id": "abb7-012",
+    "type": "multiple-choice",
+    "skillArea": "logic-automation",
+    "topic": "Business rule capabilities",
+    "difficulty": "medium",
+    "prompt": "Which three of the following are common scenarios for business rules when creating or updating table rows? Each correct answer presents part of the solution.",
+    "options": [
+      { "id": "a", "text": "Set values for columns" },
+      { "id": "b", "text": "Validate inputs" },
+      { "id": "c", "text": "Enforce data entry requirements" },
+      { "id": "d", "text": "Send approval emails to managers" },
+      { "id": "e", "text": "Deploy solutions between environments" }
+    ],
+    "correct": ["a", "b", "c"],
+    "explanation": "Business Rules setzen Werte, berechnen, validieren Eingaben, erzwingen Pflichtangaben und fordern Nutzer zur Eingabe auf — deklarativ per Drag-and-drop, ohne JavaScript. Genehmigungs-E-Mails übernimmt Power Automate, Deployments laufen über Solutions und Pipelines.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps-common-data-service/logic-security",
+    "source": {
+      "title": "Dataverse logic and security",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps-common-data-service/logic-security",
+      "quote": "Set values for columns. Perform calculations. Validate inputs. Enforce data entry requirements. Prompt users for input."
+    }
+  },
+  {
+    "id": "abb7-013",
+    "type": "dropdown",
+    "skillArea": "logic-automation",
+    "topic": "OData filter expressions",
+    "difficulty": "hard",
+    "prompt": "Complete the statement about OData filter criteria in the Dataverse List rows action.",
+    "textParts": [
+      "In the Filter rows property you can use logical operators such as and, or, and not, plus ",
+      " to specify the precedence when evaluating a complex expression. The List rows action also supports Dataverse ",
+      " as an alternative criteria style."
+    ],
+    "blanks": [
+      {
+        "id": "b1",
+        "options": [
+          { "id": "o1", "text": "parentheses ()" },
+          { "id": "o2", "text": "square brackets []" },
+          { "id": "o3", "text": "curly braces {}" }
+        ],
+        "correct": "o1"
+      },
+      {
+        "id": "b2",
+        "options": [
+          { "id": "o1", "text": "FetchXML" },
+          { "id": "o2", "text": "GraphQL" },
+          { "id": "o3", "text": "SQL" }
+        ],
+        "correct": "o1"
+      }
+    ],
+    "explanation": "List rows unterstützt zwei Stile: OData-Ausdrücke und Dataverse FetchXML. Bei OData lassen sich Operatoren wie and, or und not mit Klammern kombinieren, um die Auswertungsreihenfolge komplexer Ausdrücke festzulegen. FetchXML hat den Vorteil breiterer Community-Tool-Unterstützung für komplexe Kriterien.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/use-dataverse-triggers-actions/query-data",
+    "source": {
+      "title": "Query data",
+      "url": "https://learn.microsoft.com/en-us/training/modules/use-dataverse-triggers-actions/query-data",
+      "quote": "The action supports two styles for how you specify this criteria: OData style expressions or Dataverse FetchXML. You can use parentheses () with logical operators to specify the precedence so that you can evaluate a complex expression"
+    }
+  },
+  {
+    "id": "abb7-014",
+    "type": "yes-no",
+    "skillArea": "logic-automation",
+    "topic": "Trigger behaviour",
+    "difficulty": "hard",
+    "prompt": "For each of the following statements about the \"When a row is added, modified or deleted\" trigger, select Yes if the statement is true. Otherwise, select No.",
+    "statements": [
+      {
+        "id": "s1",
+        "text": "If you set the change type to delete, only the row ID of the Dataverse row is available as output.",
+        "correct": true
+      },
+      {
+        "id": "s2",
+        "text": "Lookup columns are supported in the Select columns filter.",
+        "correct": false
+      },
+      {
+        "id": "s3",
+        "text": "Your flow is only triggered for rows you have privileges to read, even if the scope covers more rows.",
+        "correct": true
+      }
+    ],
+    "explanation": "Bei Add/Modify steht die ganze Zeile als Ausgabe bereit, beim Löschen nur die Row-ID. Lookup-Spalten unterstützt der Select-columns-Filter nicht — Änderungen daran lösen den Flow nicht aus; zu verwenden sind skalare Typen wie Text, Zahl, Datum/Uhrzeit und Choice. Und der Scope kann nie mehr abdecken als die eigenen Leseberechtigungen.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/use-dataverse-triggers-actions/triggers",
+    "source": {
+      "title": "Dataverse triggers",
+      "url": "https://learn.microsoft.com/en-us/training/modules/use-dataverse-triggers-actions/triggers",
+      "quote": "If you delete the change type, only the row ID of the Dataverse row is available. Lookup columns (columns that store references to other table rows) aren't supported in the Select columns filter. While you could set up scope to include more data rows than you have privileges to read, your flow is only triggered for the rows that you have privileges to read."
+    }
+  },
+  {
+    "id": "abb7-015",
+    "type": "single-choice",
+    "skillArea": "logic-automation",
+    "topic": "Approval condition branches",
+    "difficulty": "medium",
+    "prompt": "In the document approval scenario, what does the False branch of the Condition action handle?",
+    "options": [
+      { "id": "a", "text": "Rejections — the document moves to a designated folder" },
+      { "id": "b", "text": "Approvals — the document stays in place" },
+      { "id": "c", "text": "Timeouts — the approval is resent to a backup approver" },
+      { "id": "d", "text": "Errors — the flow terminates with a Failed status" }
+    ],
+    "correct": "a",
+    "explanation": "Die Condition liest den Outcome der Genehmigung. Der True-Zweig behandelt Genehmigungen — das Dokument bleibt in der Bibliothek. Der False-Zweig behandelt Ablehnungen und verschiebt das Dokument in einen dafür vorgesehenen Ordner.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/build-approval-flows/2-create-approval-request",
+    "source": {
+      "title": "Build an approval request",
+      "url": "https://learn.microsoft.com/en-us/training/modules/build-approval-flows/2-create-approval-request",
+      "quote": "The True branch handles approvals — in this scenario, the document stays in place. The False branch handles rejections — the document moves to a designated folder."
+    }
+  }
+]

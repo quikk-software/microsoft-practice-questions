@@ -1,0 +1,429 @@
+[
+  {
+    "id": "abb5-001",
+    "type": "matching",
+    "skillArea": "applications",
+    "topic": "Model-driven form types",
+    "difficulty": "medium",
+    "prompt": "Match each model-driven app form type to its description.",
+    "left": [
+      { "id": "l1", "text": "Main" },
+      { "id": "l2", "text": "Quick Create" },
+      { "id": "l3", "text": "Quick View" },
+      { "id": "l4", "text": "Card" }
+    ],
+    "right": [
+      {
+        "id": "r1",
+        "text": "Provides the main user interface for viewing and interacting with table data"
+      },
+      { "id": "r2", "text": "A basic form optimized for creating new records" },
+      {
+        "id": "r3",
+        "text": "Appears within the main form to display more data for a row that a lookup column references"
+      },
+      {
+        "id": "r4",
+        "text": "Presents information in a compact format suitable for mobile devices"
+      }
+    ],
+    "correct": { "l1": "r1", "l2": "r2", "l3": "r3", "l4": "r4" },
+    "explanation": "Main-Formulare sind die Hauptoberfläche für Tabellendaten. Quick Create ist auf das schnelle Anlegen optimiert. Quick View zeigt innerhalb des Hauptformulars zusätzliche Daten eines per Lookup referenzierten Datensatzes — ohne das Formular zu verlassen. Card-Formulare sind kompakt für mobile Geräte.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/configure-model-driven-apps-customer-engagement-apps/01-forms-overview",
+    "source": {
+      "title": "Forms overview",
+      "url": "https://learn.microsoft.com/en-us/training/modules/configure-model-driven-apps-customer-engagement-apps/01-forms-overview",
+      "quote": "These forms provide the main user interface for viewing and interacting with table data. For updated tables, these forms provide a basic form optimized for creating new records. For updated tables, these forms appear within the main form to display more data for a row that a lookup column in the form references. Card forms present information in a compact format suitable for mobile devices."
+    }
+  },
+  {
+    "id": "abb5-002",
+    "type": "matching",
+    "skillArea": "applications",
+    "topic": "View types",
+    "difficulty": "medium",
+    "prompt": "Match each model-driven app view type to its description.",
+    "left": [
+      { "id": "l1", "text": "Personal view" },
+      { "id": "l2", "text": "System view" },
+      { "id": "l3", "text": "Public view" }
+    ],
+    "right": [
+      {
+        "id": "r1",
+        "text": "Individually created and only visible to the person creating it, unless shared"
+      },
+      {
+        "id": "r2",
+        "text": "Special views the application depends on, only editable by system admins or system customizers"
+      },
+      {
+        "id": "r3",
+        "text": "General purpose, customizable views all app users can access through the view selector"
+      }
+    ],
+    "correct": { "l1": "r1", "l2": "r2", "l3": "r3" },
+    "explanation": "Personal Views gehören einem Nutzer und sind nur nach Freigabe für andere sichtbar. System Views braucht die Anwendung selbst; sie sind nur von System-Admins bzw. System Customizern bearbeitbar. Public Views sind anpassbar, für alle App-Nutzer über den View-Selector erreichbar und lassen sich in Subgrids und Dashboards einsetzen.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/configure-model-driven-apps-customer-engagement-apps/05-configure-views",
+    "source": {
+      "title": "Configure views overview",
+      "url": "https://learn.microsoft.com/en-us/training/modules/configure-model-driven-apps-customer-engagement-apps/05-configure-views",
+      "quote": "Personal view - individually created and only visible to the person creating that view, unless they share the view with others. System view - special views the application depends on, which exist for system tables or are automatically created when you create custom tables. They're only editable by system admins or system customizers. Public view - general purpose views that are customizable."
+    }
+  },
+  {
+    "id": "abb5-003",
+    "type": "yes-no",
+    "skillArea": "applications",
+    "topic": "Business process flow limits",
+    "difficulty": "hard",
+    "prompt": "For each of the following statements about business process flows, select Yes if the statement is true. Otherwise, select No.",
+    "statements": [
+      {
+        "id": "s1",
+        "text": "A business process flow can tie together rows for up to five different tables into a single process.",
+        "correct": true
+      },
+      {
+        "id": "s2",
+        "text": "You can have up to 10 active business process flows per table.",
+        "correct": true
+      },
+      {
+        "id": "s3",
+        "text": "Business process flows are managed in Power Automate, not in Power Apps.",
+        "correct": false
+      }
+    ],
+    "explanation": "Ein Business Process Flow kann Datensätze aus bis zu fünf Tabellen zu einem Prozess verbinden, und pro Tabelle sind bis zu 10 aktive Flows möglich — für unterschiedliche Situationen und Nutzergruppen. Verwaltet werden sie in Power Apps unter Flows > Business process flows, ausdrücklich nicht in Power Automate.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/get-started-with-model-driven-apps-in-powerapps/business-process-flows",
+    "source": {
+      "title": "Incorporate business process flows",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-model-driven-apps-in-powerapps/business-process-flows",
+      "quote": "You can design business process flows that tie together the rows for up to five different tables into a single process. You can have up to 10 active business process flows per table to provide appropriate processes for different situations and users. Business process flows are managed in Power Apps under Flows > Business process flows, not in Power Automate."
+    }
+  },
+  {
+    "id": "abb5-004",
+    "type": "single-choice",
+    "skillArea": "applications",
+    "topic": "Generative pages",
+    "difficulty": "medium",
+    "prompt": "What is a generative page in a model-driven app?",
+    "options": [
+      {
+        "id": "a",
+        "text": "An AI-generated, React-based page created by describing what you want to an app agent in the app designer"
+      },
+      {
+        "id": "b",
+        "text": "A page that regenerates its data every time a user opens it"
+      },
+      {
+        "id": "c",
+        "text": "A Power Pages site page embedded into a model-driven app"
+      },
+      {
+        "id": "d",
+        "text": "A dashboard automatically produced from a Power BI dataset"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Eine generative Seite ist eine KI-erzeugte, React-basierte Seite innerhalb einer modellgesteuerten App. Man beschreibt sie im App Designer im Dialog mit einem App-Agent — optional mit angehängtem Layout-Bild —, verfeinert sie im Gespräch und veröffentlicht sie. Generative Seiten sind solution-aware und lassen sich zwischen Umgebungen verschieben.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/get-started-with-model-driven-apps-in-powerapps/generative-pages",
+    "source": {
+      "title": "Build pages with generative AI",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-model-driven-apps-in-powerapps/generative-pages",
+      "quote": "A generative page is an AI-generated, React-based page that lives inside a model-driven app. Generative pages are solution-aware, which means they can be packaged into a solution and moved between environments like any other app component."
+    }
+  },
+  {
+    "id": "abb5-005",
+    "type": "single-choice",
+    "skillArea": "applications",
+    "topic": "Generative pages data limits",
+    "difficulty": "hard",
+    "prompt": "When creating a generative page, how many Dataverse tables can you link via Add data?",
+    "options": [
+      { "id": "a", "text": "Up to six" },
+      { "id": "b", "text": "Exactly one" },
+      { "id": "c", "text": "Up to three" },
+      { "id": "d", "text": "There is no limit" }
+    ],
+    "correct": "a",
+    "explanation": "Über Add data > Add table lassen sich bis zu sechs Dataverse-Tabellen verknüpfen; alternativ kann man per Add data > Attach image eine Skizze oder ein Wireframe hochladen, das das Layout leitet.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/get-started-with-model-driven-apps-in-powerapps/generative-pages",
+    "source": {
+      "title": "Build pages with generative AI",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-model-driven-apps-in-powerapps/generative-pages",
+      "quote": "Optionally, select Add data > Add table to link up to six Dataverse tables, or Add data > Attach image to upload a sketch or wireframe to guide the layout."
+    }
+  },
+  {
+    "id": "abb5-006",
+    "type": "single-choice",
+    "skillArea": "applications",
+    "topic": "Agents in model-driven apps",
+    "difficulty": "medium",
+    "prompt": "In a model-driven app, where does an autonomous agent post tasks when it needs a human to step in?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The agent feed — a task list that appears at the top of the app's site map"
+      },
+      { "id": "b", "text": "The Copilot chat pane" },
+      { "id": "c", "text": "A Power Automate approval in Outlook" },
+      { "id": "d", "text": "The Audit History tab of the record" }
+    ],
+    "correct": "a",
+    "explanation": "Autonome Agents nutzen den Power Apps MCP Server, arbeiten auf Dataverse-Daten und legen bei Bedarf Aufgaben im Agent Feed an — einer Aufgabenliste oben in der Sitemap. Der Feed hat die Abschnitte „Needs Attention“ (wartet auf Eingabe) und „Completed“.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/get-started-with-model-driven-apps-in-powerapps/add-agents",
+    "source": {
+      "title": "Add agents to your model-driven app",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-model-driven-apps-in-powerapps/add-agents",
+      "quote": "When an agent needs a human to step in, it creates a task in the agent feed — a task list that appears at the top of the app's site map."
+    }
+  },
+  {
+    "id": "abb5-007",
+    "type": "single-choice",
+    "skillArea": "applications",
+    "topic": "Agent feed access",
+    "difficulty": "hard",
+    "prompt": "By default, which users can see the agent feed in a model-driven app?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Users with the System Administrator or System Customizer roles"
+      },
+      { "id": "b", "text": "All users who can open the app" },
+      { "id": "c", "text": "Only the app's owner" },
+      { "id": "d", "text": "Only users with a Copilot Studio license" }
+    ],
+    "correct": "a",
+    "explanation": "Der Zugriff auf den Agent Feed ist standardmäßig auf System Administrator und System Customizer beschränkt. Sollen weitere Nutzer ihn sehen, brauchen sie Lese-/Schreibrechte auf den Tabellen Agent Task, Agent Hub Goal, Agent Hub Insight, Agent Hub Metric und Copilot.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/get-started-with-model-driven-apps-in-powerapps/add-agents",
+    "source": {
+      "title": "Add agents to your model-driven app",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-model-driven-apps-in-powerapps/add-agents",
+      "quote": "Access to the agent feed is limited by default to users with the System Administrator or System Customizer roles. To allow other users to see the feed, grant them read/write permissions on the Agent Task, Agent Hub Goal, Agent Hub Insight, Agent Hub Metric, and Copilot tables."
+    }
+  },
+  {
+    "id": "abb5-008",
+    "type": "multiple-choice",
+    "skillArea": "applications",
+    "topic": "Power Pages security components",
+    "difficulty": "medium",
+    "prompt": "Which three of the following are components of the Power Pages security model? Each correct answer presents part of the solution.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Table permissions — define access to rows in Dataverse tables"
+      },
+      {
+        "id": "b",
+        "text": "Page permissions — grant or deny access to individual pages"
+      },
+      {
+        "id": "c",
+        "text": "Web roles — link together users and permissions"
+      },
+      { "id": "d", "text": "Business process flows" },
+      { "id": "e", "text": "Rollup columns" }
+    ],
+    "correct": ["a", "b", "c"],
+    "explanation": "Zum Power-Pages-Sicherheitsmodell gehören Site visibility, authentifizierte Nutzer (als Dataverse-Kontakte), Table permissions, Page permissions, Web roles sowie HTTPS-Header und Security scan. Business Process Flows und Rollup-Spalten sind Dataverse-Funktionen ohne Bezug zur Portalsicherheit.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/power-pages-intro/security",
+    "source": {
+      "title": "Overview of Power Pages security",
+      "url": "https://learn.microsoft.com/en-us/training/modules/power-pages-intro/security",
+      "quote": "Table permissions define access to rows in Dataverse tables regardless of how and where they are accessed in Power Pages. Page permissions are used to grant or deny access to the individual pages on the website. Web roles link together users and permissions to define user access to Dataverse data and website content."
+    }
+  },
+  {
+    "id": "abb5-009",
+    "type": "single-choice",
+    "skillArea": "applications",
+    "topic": "Power Pages site visibility",
+    "difficulty": "medium",
+    "prompt": "What is the default site visibility for all new sites created in Power Pages?",
+    "options": [
+      { "id": "a", "text": "Private" },
+      { "id": "b", "text": "Public" },
+      { "id": "c", "text": "Public but not indexed by search engines" },
+      { "id": "d", "text": "Visibility must be chosen before the site can be created" }
+    ],
+    "correct": "a",
+    "explanation": "Neue Power-Pages-Sites sind standardmäßig privat — praktisch, solange die Site in Entwicklung ist und nur bestimmte Personen der Organisation Zugriff haben sollen. Ist sie startklar, stellt man die Sichtbarkeit auf öffentlich um.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/power-pages-intro/security",
+    "source": {
+      "title": "Overview of Power Pages security",
+      "url": "https://learn.microsoft.com/en-us/training/modules/power-pages-intro/security",
+      "quote": "All new sites created in Power Pages are private by default. When the website is ready to go live, you can change the site visibility to public."
+    }
+  },
+  {
+    "id": "abb5-010",
+    "type": "single-choice",
+    "skillArea": "applications",
+    "topic": "Power Pages authentication",
+    "difficulty": "medium",
+    "prompt": "How are authenticated Power Pages users represented in Microsoft Dataverse, and which identity provider is recommended for external authentication?",
+    "options": [
+      {
+        "id": "a",
+        "text": "As contacts; Microsoft Entra External ID is the recommended provider"
+      },
+      {
+        "id": "b",
+        "text": "As system users; Microsoft Entra ID (workforce) is the recommended provider"
+      },
+      { "id": "c", "text": "As accounts; LinkedIn is the recommended provider" },
+      { "id": "d", "text": "As teams; local sign in is the recommended provider" }
+    ],
+    "correct": "a",
+    "explanation": "Authentifizierte Power-Pages-Nutzer werden in Dataverse als Contacts abgebildet. Für externe Authentifizierung empfiehlt Microsoft ausdrücklich Microsoft Entra External ID; daneben stehen lokale Anmeldung sowie Anbieter wie Microsoft, LinkedIn und Facebook zur Verfügung.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/power-pages-intro/security",
+    "source": {
+      "title": "Overview of Power Pages security",
+      "url": "https://learn.microsoft.com/en-us/training/modules/power-pages-intro/security",
+      "quote": "Authenticated users in Power Pages are represented in Microsoft Dataverse by contacts. Microsoft Entra External ID is the recommended identity provider for external authentication in Power Pages."
+    }
+  },
+  {
+    "id": "abb5-011",
+    "type": "single-choice",
+    "skillArea": "applications",
+    "topic": "Power Pages data storage",
+    "difficulty": "easy",
+    "prompt": "Where does Power Pages store the structure, layout, content, and functionality of a site?",
+    "options": [
+      { "id": "a", "text": "In Microsoft Dataverse" },
+      { "id": "b", "text": "In Azure Blob Storage" },
+      { "id": "c", "text": "In a SharePoint document library" },
+      { "id": "d", "text": "In the browser's local storage" }
+    ],
+    "correct": "a",
+    "explanation": "Power Pages legt alle Informationen in Microsoft Dataverse ab — Struktur, Layout, Inhalte und Funktionalität. Deshalb erbt es auch Reichhaltigkeit und Erweiterbarkeit von Dataverse.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/power-pages-intro/core-components",
+    "source": {
+      "title": "Core tools and components of Power Pages",
+      "url": "https://learn.microsoft.com/en-us/training/modules/power-pages-intro/core-components",
+      "quote": "Power Pages stores all information in Microsoft Dataverse including structure, layout, content, and functionality of the site."
+    }
+  },
+  {
+    "id": "abb5-012",
+    "type": "yes-no",
+    "skillArea": "applications",
+    "topic": "Power Pages agents",
+    "difficulty": "hard",
+    "prompt": "For each of the following statements about adding an AI-powered agent to a Power Pages site, select Yes if the statement is true. Otherwise, select No.",
+    "statements": [
+      {
+        "id": "s1",
+        "text": "The tenant admin must turn on the Publish Copilots with AI features setting in the Power Platform admin center.",
+        "correct": true
+      },
+      {
+        "id": "s2",
+        "text": "A site can include multiple agents, with visibility controlled by assigning different web roles.",
+        "correct": true
+      },
+      {
+        "id": "s3",
+        "text": "The HTTP connector may be blocked in the environment without affecting agents.",
+        "correct": false
+      }
+    ],
+    "explanation": "Voraussetzung ist die Tenant-Einstellung „Publish Copilots with AI features“ — und der HTTP-Connector darf in der Umgebung nicht blockiert sein, weil Agents darüber mit der Site kommunizieren. Mehrere Agents pro Site sind möglich; welche Nutzer welchen sehen, steuern die zugewiesenen Web Roles.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/power-pages-studio/ai-agent",
+    "source": {
+      "title": "Add an AI-powered agent to your site",
+      "url": "https://learn.microsoft.com/en-us/training/modules/power-pages-studio/ai-agent",
+      "quote": "The tenant admin must turn on the Publish Copilots with AI features setting in the Power Platform admin center. The HTTP connector must not be blocked in the selected environment, as agents use it to communicate with the site. A site can include multiple agents. You can control the visibility of each agent by assigning different web roles."
+    }
+  },
+  {
+    "id": "abb5-013",
+    "type": "single-choice",
+    "skillArea": "applications",
+    "topic": "Managed solutions and views",
+    "difficulty": "hard",
+    "prompt": "A maker wants to create or edit a public view for a table in their model-driven app. What restriction applies?",
+    "options": [
+      {
+        "id": "a",
+        "text": "You cannot create or edit a view within a managed solution"
+      },
+      {
+        "id": "b",
+        "text": "Only personal views can be edited outside a managed solution"
+      },
+      {
+        "id": "c",
+        "text": "Public views can only be created by the environment owner"
+      },
+      {
+        "id": "d",
+        "text": "Views can only be edited while the app is unpublished"
+      }
+    ],
+    "correct": "a",
+    "explanation": "In einer Managed Solution lassen sich Views weder anlegen noch bearbeiten. Man muss also sicherstellen, dass die App in einer unmanaged Solution liegt — in der Solutions-Tabelle erkennbar an der Spalte „Managed“ mit dem Wert „No“.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/configure-model-driven-apps-customer-engagement-apps/05-configure-views",
+    "source": {
+      "title": "Configure views overview",
+      "url": "https://learn.microsoft.com/en-us/training/modules/configure-model-driven-apps-customer-engagement-apps/05-configure-views",
+      "quote": "You cannot create/edit a view within a managed solution. Ensure that the app you want to create/edit a view is not in a managed solution"
+    }
+  },
+  {
+    "id": "abb5-014",
+    "type": "single-choice",
+    "skillArea": "applications",
+    "topic": "Power Pages lists",
+    "difficulty": "medium",
+    "prompt": "What defines how a list of Dataverse rows is displayed on Power Pages site pages?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Lists — defined by one or more table views, including pagination, filtering, and sorting"
+      },
+      { "id": "b", "text": "Web roles — defined by table permissions" },
+      { "id": "c", "text": "Liquid templates only" },
+      { "id": "d", "text": "Charts defined in the model-driven app designer" }
+    ],
+    "correct": "a",
+    "explanation": "Lists legen fest, wie eine Menge von Dataverse-Zeilen auf den Seiten dargestellt wird. Sie beruhen auf einer oder mehreren Tabellenansichten und bringen Funktionen wie Paginierung, Filterung und Sortierung mit.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/power-pages-intro/core-components",
+    "source": {
+      "title": "Core tools and components of Power Pages",
+      "url": "https://learn.microsoft.com/en-us/training/modules/power-pages-intro/core-components",
+      "quote": "Lists define how a list of Dataverse rows is displayed on the site pages. They're defined by one or more table views and include functionality like pagination, filtering, and sorting."
+    }
+  },
+  {
+    "id": "abb5-015",
+    "type": "single-choice",
+    "skillArea": "applications",
+    "topic": "Power Pages design studio",
+    "difficulty": "easy",
+    "prompt": "Which tool is the primary maker's tool for creating and customizing a Power Pages website?",
+    "options": [
+      { "id": "a", "text": "Power Pages design studio" },
+      { "id": "b", "text": "The Portal Management app" },
+      { "id": "c", "text": "The Power Pages admin center" },
+      { "id": "d", "text": "Power Apps Studio" }
+    ],
+    "correct": "a",
+    "explanation": "Das Power Pages design studio ist das zentrale Maker-Werkzeug mit den Workspaces Pages, Styling, Data, Security und Set up. Die Portal Management App deckt fortgeschrittene Konfigurationen ab, die das Studio nicht bietet; das Admin Center übernimmt administrative Aufgaben wie Netzwerkkonfiguration und Logging.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/power-pages-intro/core-components",
+    "source": {
+      "title": "Core tools and components of Power Pages",
+      "url": "https://learn.microsoft.com/en-us/training/modules/power-pages-intro/core-components",
+      "quote": "Power Pages design studio is the primary maker's tool that allows you to quickly create and customize a website."
+    }
+  }
+]
