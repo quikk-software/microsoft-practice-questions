@@ -9,15 +9,15 @@
     "options": [
       {
         "id": "a",
-        "text": "An AI Builder document processing model — it extracts the right fields from unstructured documents like invoices automatically"
+        "text": "An AI Builder document processing model that extracts the fields from each attachment"
       },
       {
         "id": "b",
-        "text": "An AI Builder prompt with the attachment's file name as input, asking the model for the totals"
+        "text": "An AI Builder prompt that takes the file name as input and returns the totals"
       },
       {
         "id": "c",
-        "text": "The Parse JSON action on the attachment content, followed by a Filter array for currency values"
+        "text": "A Parse JSON action on the attachment content followed by a Filter array for amounts"
       },
       {
         "id": "d",
@@ -43,11 +43,20 @@
     "options": [
       {
         "id": "a",
-        "text": "AI Hub in Microsoft Copilot Studio — the central place to create and manage prompts and AI models"
+        "text": "AI Hub in Microsoft Copilot Studio, under Prompts and Models"
       },
-      { "id": "b", "text": "The Solutions area in Power Apps under New > Automation" },
-      { "id": "c", "text": "The Power Platform admin center under Copilot > Models" },
-      { "id": "d", "text": "The Data workspace of the Power Pages design studio" }
+      {
+        "id": "b",
+        "text": "The Solutions area in Power Apps under New > Automation > Prompt"
+      },
+      {
+        "id": "c",
+        "text": "The Power Platform admin center under Copilot > Models and prompts"
+      },
+      {
+        "id": "d",
+        "text": "The Data workspace of the Power Pages design studio under AI"
+      }
     ],
     "correct": "a",
     "explanation": "AI-Builder-Fähigkeiten werden über den AI Hub in Microsoft Copilot Studio bereitgestellt (erreichbar auch aus Power Apps und Power Automate). Dort werden Prompts und KI-Modelle zentral erstellt und verwaltet. Das Admin Center steuert nur die Verfügbarkeit von Copilot-Funktionen.",
@@ -68,15 +77,15 @@
     "options": [
       {
         "id": "a",
-        "text": "The Document Processing Agent in Copilot Studio — a prebuilt agent that provides the orchestration layer, configured to the team's document types and validation rules"
+        "text": "The Document Processing Agent in Copilot Studio, configured with their document types and rules"
       },
       {
         "id": "b",
-        "text": "Plan Designer, which generates the entire intake pipeline including validation rules from a description"
+        "text": "Plan Designer, which generates the whole intake pipeline including validation rules"
       },
       {
         "id": "c",
-        "text": "A Power Pages Web Agent that reads uploaded contracts and posts them to Dataverse"
+        "text": "A Power Pages Web Agent that reads uploaded contracts and posts them into Dataverse"
       },
       {
         "id": "d",
@@ -100,10 +109,22 @@
     "difficulty": "medium",
     "prompt": "Support requests arrive as free-text emails that never follow a template. A flow must decide at runtime which of several actions to call based on the message content, without a hardcoded branch for every case. Which Power Automate capability is designed for this?",
     "options": [
-      { "id": "a", "text": "Generative actions" },
-      { "id": "b", "text": "A Switch action keyed on the email subject" },
-      { "id": "c", "text": "Trigger conditions on the Outlook trigger" },
-      { "id": "d", "text": "A Do until loop that retries each action until one succeeds" }
+      {
+        "id": "a",
+        "text": "Generative actions in the cloud flow"
+      },
+      {
+        "id": "b",
+        "text": "A Switch action keyed on the email subject"
+      },
+      {
+        "id": "c",
+        "text": "Trigger conditions on the Outlook trigger"
+      },
+      {
+        "id": "d",
+        "text": "A Do until loop that retries each action"
+      }
     ],
     "correct": "a",
     "explanation": "Generative Actions lassen einen Flow zur Laufzeit dynamisch entscheiden, welche Plug-ins er aufruft — statt jede Verzweigung fest zu verdrahten. Switch, Trigger-Bedingungen und Schleifen sind starre Logik und scheitern an unstrukturierten, uneinheitlichen Eingaben.",
@@ -124,19 +145,19 @@
     "options": [
       {
         "id": "a",
-        "text": "Delete \"EMEA Key Accounts\" — custom public views in an unmanaged solution can be deleted — but \"Active Accounts\" can't be deleted because it is system-defined"
+        "text": "Delete EMEA Key Accounts only; the system-defined Active Accounts view can't be deleted"
       },
       {
         "id": "b",
-        "text": "Delete both — any public view can be deleted from an unmanaged solution"
+        "text": "Delete both, since any public view in an unmanaged solution can be removed by its maker"
       },
       {
         "id": "c",
-        "text": "Delete neither — public views can only be deactivated, never deleted"
+        "text": "Delete neither, since public views can only be deactivated and never deleted from a table"
       },
       {
         "id": "d",
-        "text": "Delete \"Active Accounts\" only, since custom views are locked to their creator"
+        "text": "Delete Active Accounts only, since custom views are locked to the user who created them"
       }
     ],
     "correct": "a",
@@ -168,7 +189,7 @@
       },
       {
         "id": "s3",
-        "text": "System views can be edited by any user who can open the app.",
+        "text": "System views can be edited by any user who can open the app, without a customizer role.",
         "correct": false
       }
     ],
@@ -190,19 +211,19 @@
     "options": [
       {
         "id": "a",
-        "text": "A Power Apps canvas app that unifies the four data sources in one interface, with an embedded Copilot Studio agent surfacing answers inline"
+        "text": "A canvas app unifying the four sources, with an embedded Copilot Studio agent for answers"
       },
       {
         "id": "b",
-        "text": "A model-driven app on Dataverse after migrating all four systems into custom tables"
+        "text": "A model-driven app on Dataverse after migrating the four systems into custom tables up front"
       },
       {
         "id": "c",
-        "text": "A Power Pages portal with a Web Agent so agents and clients share one front door"
+        "text": "A Power Pages portal with a Web Agent so call center agents and clients share a single front door"
       },
       {
         "id": "d",
-        "text": "Four Power Automate desktop flows that copy each system's data into a Teams channel"
+        "text": "Four Power Automate desktop flows that copy each system's data into a shared Teams channel"
       }
     ],
     "correct": "a",
@@ -224,11 +245,11 @@
     "options": [
       {
         "id": "a",
-        "text": "A Power Pages external portal backed by Dataverse, with a Copilot Studio Web Agent embedded for FAQ and document guidance"
+        "text": "A Power Pages portal backed by Dataverse, with a Copilot Studio Web Agent for FAQ"
       },
       {
         "id": "b",
-        "text": "A canvas app shared with clients as guest users, with a Copilot control for questions"
+        "text": "A canvas app shared with clients as guests, with a Copilot control for questions"
       },
       {
         "id": "c",
@@ -236,7 +257,7 @@
       },
       {
         "id": "d",
-        "text": "A Microsoft Forms survey per client, with a flow creating Dataverse rows"
+        "text": "A Microsoft Forms survey per client, with a flow creating the Dataverse rows"
       }
     ],
     "correct": "a",
@@ -263,7 +284,7 @@
       },
       {
         "id": "s2",
-        "text": "Step 3 uses a mixed pattern: in-policy invoices are validated and routed automatically, exceptions go to a human-in-the-loop approval in Teams.",
+        "text": "Step 3 uses a mixed pattern: in-policy invoices route automatically, exceptions go to a Teams approval.",
         "correct": true
       },
       {
@@ -290,19 +311,19 @@
     "options": [
       {
         "id": "a",
-        "text": "A Dataverse plug-in written in C#, executing as an event handler on the data operation"
+        "text": "A Dataverse plug-in in C# running as an event handler on the save operation"
       },
       {
         "id": "b",
-        "text": "A business rule with Entity scope, which covers all apps and API calls"
+        "text": "A business rule with Entity scope, which also covers API calls"
       },
       {
         "id": "c",
-        "text": "JavaScript on the Account main form's OnSave event"
+        "text": "JavaScript registered on the Account main form's OnSave event handler"
       },
       {
         "id": "d",
-        "text": "An automated cloud flow on \"When a row is added, modified or deleted\" that rolls back invalid saves"
+        "text": "An automated cloud flow on row changes that rolls back invalid saves"
       }
     ],
     "correct": "a",
@@ -328,7 +349,7 @@
       },
       {
         "id": "b",
-        "text": "Make the section visible by default and let the script hide it when the condition fails"
+        "text": "Make the section visible by default and let the script hide it when the condition isn't met"
       },
       {
         "id": "c",
@@ -336,7 +357,7 @@
       },
       {
         "id": "d",
-        "text": "Scripts can't change section visibility — only business rules can hide sections"
+        "text": "Scripts can't change section visibility, so a business rule has to hide it"
       }
     ],
     "correct": "a",
@@ -358,19 +379,19 @@
     "options": [
       {
         "id": "a",
-        "text": "Use Choose columns in the Power Query editor to keep only the four, and select Refresh manually in the Refresh settings step"
+        "text": "Choose columns in Power Query for the four, and Refresh manually in the refresh step"
       },
       {
         "id": "b",
-        "text": "Delete the five extra columns from the SharePoint list, and select Load to new table"
+        "text": "Delete the five extra columns from the SharePoint list, and choose Load to new table instead"
       },
       {
         "id": "c",
-        "text": "Map the extra columns to the table's primary key so they're ignored, and disable Auto map"
+        "text": "Map the extra columns to the primary key so they're skipped, and turn off the Auto map option"
       },
       {
         "id": "d",
-        "text": "Set the table's ownership to Organization, and choose Refresh daily"
+        "text": "Set the table's ownership to Organization, and choose Refresh daily in the refresh step"
       }
     ],
     "correct": "a",
@@ -392,19 +413,19 @@
     "options": [
       {
         "id": "a",
-        "text": "Workflows are specific to model-driven apps and a legacy feature without a modern interface; Power Automate flows reach across multiple applications and services"
+        "text": "Workflows are a model-driven-only legacy feature; flows span multiple applications and services"
       },
       {
         "id": "b",
-        "text": "Workflows run client-side in the browser; Power Automate flows run on the server"
+        "text": "Workflows run client-side in the browser, while flows run on the Power Automate cloud service instead"
       },
       {
         "id": "c",
-        "text": "Workflows can only send email; Power Automate flows can update Dataverse"
+        "text": "Workflows are limited to sending email and creating tasks, while flows can also update Dataverse rows"
       },
       {
         "id": "d",
-        "text": "Workflows require a premium license; Power Automate flows are included with all plans"
+        "text": "Workflows require a premium license, while flows are included with every Power Apps plan by default"
       }
     ],
     "correct": "a",
@@ -426,19 +447,19 @@
     "options": [
       {
         "id": "a",
-        "text": "Power BI reports are private by default — both the creator and every viewer need a Power BI Pro license to share content"
+        "text": "Power BI reports are private by default, so the creator and each viewer need Power BI Pro"
       },
       {
         "id": "b",
-        "text": "Embedded tiles require each viewer to hold a Power Apps Per User license"
+        "text": "Embedded tiles require each viewer to hold a Power Apps Per User license in addition to Power BI"
       },
       {
         "id": "c",
-        "text": "Canvas apps can only embed Power BI tiles for users in the same Dataverse security role as the maker"
+        "text": "Canvas apps embed Power BI tiles for users who share the maker's security role and nobody else"
       },
       {
         "id": "d",
-        "text": "Power BI tiles can only be embedded in model-driven apps, not canvas apps"
+        "text": "Power BI tiles can be embedded in model-driven apps but not in canvas apps"
       }
     ],
     "correct": "a",
@@ -460,19 +481,19 @@
     "options": [
       {
         "id": "a",
-        "text": "Use a Connected-to-data component for the list, a Standard component for the text, and Edit code to open the page in Visual Studio Code for the Web"
+        "text": "A Connected-to-data component for the list, a Standard component for the text, and Edit code"
       },
       {
         "id": "b",
-        "text": "Use Standard components for both, then bind the list via the Data workspace; HTML edits require the Portal Management app"
+        "text": "Standard components for both, with the list bound in the Data workspace and HTML in Portal Management"
       },
       {
         "id": "c",
-        "text": "Use a Liquid template for the list and a Connected-to-data component for the text; HTML is edited in the Styling workspace"
+        "text": "A Liquid template for the list, a Connected-to-data component for the text, and CSS in Styling"
       },
       {
         "id": "d",
-        "text": "Components can't mix data and static content on one page — split them across two pages"
+        "text": "Two separate pages, since components don't mix data and static content on the same page"
       }
     ],
     "correct": "a",
@@ -494,19 +515,19 @@
     "options": [
       {
         "id": "a",
-        "text": "The display name can be changed at any time, but the schema name can't be changed once the table exists"
+        "text": "The display name can still be changed, but the schema name is fixed once the table exists"
       },
       {
         "id": "b",
-        "text": "Both the display name and the schema name can be changed at any time"
+        "text": "Both the display name and the schema name can be changed after the table is created"
       },
       {
         "id": "c",
-        "text": "Neither can be changed after creation — the table must be recreated"
+        "text": "Neither can be changed after creation, so the table has to be deleted and recreated"
       },
       {
         "id": "d",
-        "text": "The schema name can be changed, but the display name is fixed to Name"
+        "text": "The schema name can still be changed, but the display name stays fixed to Name"
       }
     ],
     "correct": "a",
@@ -526,10 +547,22 @@
     "difficulty": "medium",
     "prompt": "Each Machine row stores its brand color as text (for example \"DarkGreen\" or \"#0050A0\"). A gallery label's Color property must reflect that value per row. Which formula?",
     "options": [
-      { "id": "a", "text": "ColorValue(ThisItem.'Primary Color')" },
-      { "id": "b", "text": "Text(ThisItem.'Primary Color', \"Color\")" },
-      { "id": "c", "text": "RGBA(ThisItem.'Primary Color')" },
-      { "id": "d", "text": "Color.ThisItem.'Primary Color'" }
+      {
+        "id": "a",
+        "text": "ColorValue(ThisItem.'Primary Color')"
+      },
+      {
+        "id": "b",
+        "text": "Text(ThisItem.'Primary Color', \"Color\")"
+      },
+      {
+        "id": "c",
+        "text": "RGBA(ThisItem.'Primary Color')"
+      },
+      {
+        "id": "d",
+        "text": "Color.ThisItem.'Primary Color'"
+      }
     ],
     "correct": "a",
     "explanation": "ColorValue() wandelt einen Farbnamen oder Hex-Code als Text in einen Color-Wert um, den Color, Fill oder BorderColor verarbeiten. So lässt sich das Styling direkt aus Dataverse-Daten steuern. Text() formatiert Zahlen und Daten, RGBA() erwartet vier Zahlen.",
@@ -550,19 +583,19 @@
     "options": [
       {
         "id": "a",
-        "text": "Removing security roles doesn't remove the license — it must be removed from the user account in the Microsoft 365 admin center"
+        "text": "Removing roles doesn't remove the license; it must be removed in the Microsoft 365 admin center"
       },
       {
         "id": "b",
-        "text": "Licenses are bound to the environment and are released only when the environment is reset"
+        "text": "Licenses are bound to the environment and are released once an admin resets that environment"
       },
       {
         "id": "c",
-        "text": "The user must first be removed from every owner team before the license frees up"
+        "text": "The user must first be removed from each owner team before the license frees up"
       },
       {
         "id": "d",
-        "text": "Licenses are released automatically after the 28-day run history expires"
+        "text": "Licenses are released automatically once the user's 28-day run history has expired"
       }
     ],
     "correct": "a",
@@ -584,19 +617,19 @@
     "options": [
       {
         "id": "a",
-        "text": "For more than five changes, use the natural language update first — it saves time and improves AI accuracy; batch small manual edits three to five at a time before validating"
+        "text": "Use the natural language update for the batch, reserving manual edits for three to five changes"
       },
       {
         "id": "b",
-        "text": "Make all changes manually in one pass, then validate once at the end"
+        "text": "Make the changes manually in a single pass, then validate the whole diagram once at the very end"
       },
       {
         "id": "c",
-        "text": "Delete the diagram and regenerate the plan from an updated prompt"
+        "text": "Delete the diagram and regenerate the plan from an updated prompt that describes the changes in full"
       },
       {
         "id": "d",
-        "text": "Export the diagram to PDF and mark up changes for the Data Agent"
+        "text": "Export the diagram to PDF, mark up the changes, and attach it for the Data Agent to apply them later"
       }
     ],
     "correct": "a",
@@ -618,19 +651,19 @@
     "options": [
       {
         "id": "a",
-        "text": "Plans can recommend Power BI dashboards, but connecting a report with plan context isn't currently supported — the report is created manually after the rest of the solution"
+        "text": "A Power BI report can't be connected with plan context yet, so it's created manually afterwards"
       },
       {
         "id": "b",
-        "text": "Power BI Desktop opens with the plan's Dataverse tables preloaded as a semantic model"
+        "text": "Power BI Desktop opens with the plan's Dataverse tables already loaded as a ready semantic model"
       },
       {
         "id": "c",
-        "text": "The tile generates an embedded Power BI report inside the model-driven app automatically"
+        "text": "The tile generates an embedded Power BI report inside the model-driven app automatically for HR"
       },
       {
         "id": "d",
-        "text": "Plans replaces the Power BI tile with a model-driven dashboard, since Power BI isn't part of the technology proposal"
+        "text": "Plans swaps the Power BI tile for a model-driven dashboard, since Power BI isn't supported in plans"
       }
     ],
     "correct": "a",

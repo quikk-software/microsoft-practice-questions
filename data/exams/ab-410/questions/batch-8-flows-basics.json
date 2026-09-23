@@ -13,7 +13,7 @@
       },
       {
         "id": "b",
-        "text": "A schedule and a connector"
+        "text": "A schedule, a connector, and a run history"
       },
       {
         "id": "c",
@@ -43,19 +43,19 @@
     "options": [
       {
         "id": "a",
-        "text": "It generates a flow from your prompt, automatically configures connections, and applies the necessary parameters"
+        "text": "It generates the flow, configures connections, and applies the parameters from your prompt"
       },
       {
         "id": "b",
-        "text": "It only writes a description; the trigger and actions must be added manually"
+        "text": "It writes a description; the trigger and actions must still be added by hand afterwards"
       },
       {
         "id": "c",
-        "text": "It converts the flow into a desktop flow automatically"
+        "text": "It converts the generated cloud flow into a desktop flow for local execution"
       },
       {
         "id": "d",
-        "text": "It creates the trigger and actions but leaves every connection unconfigured for security reasons"
+        "text": "It creates the trigger and actions but leaves the connections unconfigured"
       }
     ],
     "correct": "a",
@@ -123,7 +123,7 @@
       },
       {
         "id": "d",
-        "text": "In the Solutions area only"
+        "text": "In the Solutions area, under the flow's solution"
       }
     ],
     "correct": "a",
@@ -177,19 +177,19 @@
     "options": [
       {
         "id": "a",
-        "text": "In the 28-day run history, open the failed run and expand the failed step to read the error message"
+        "text": "In the 28-day run history, by expanding the failed step of the failed run"
       },
       {
         "id": "b",
-        "text": "In the Power Platform admin center capacity report"
+        "text": "In the Power Platform admin center's capacity report for the environment and flow"
       },
       {
         "id": "c",
-        "text": "In the Dataverse Audit Summary View"
+        "text": "In the Dataverse Audit Summary View filtered to the flow's run time"
       },
       {
         "id": "d",
-        "text": "In the solution's publisher settings"
+        "text": "In the solution's publisher settings under the flow's Advanced options"
       }
     ],
     "correct": "a",
@@ -215,15 +215,15 @@
       },
       {
         "id": "b",
-        "text": "The approver's security role"
+        "text": "The approver's security role and business unit"
       },
       {
         "id": "c",
-        "text": "The flow's run ID only"
+        "text": "The flow's run ID and start time"
       },
       {
         "id": "d",
-        "text": "The item's Dataverse GUID only"
+        "text": "The item's Dataverse GUID and OData ID"
       }
     ],
     "correct": "a",
@@ -245,15 +245,15 @@
     "options": [
       {
         "id": "a",
-        "text": "They reduce the need for code such as JavaScript in model-driven app forms"
+        "text": "They cut down on JavaScript needed in model-driven app forms"
       },
       {
         "id": "b",
-        "text": "They replace the need for security roles"
+        "text": "They replace security roles for controlling who edits a column"
       },
       {
         "id": "c",
-        "text": "They can post a Teams notification when a column changes"
+        "text": "They post a Teams notification whenever a column value changes"
       },
       {
         "id": "d",
@@ -279,11 +279,11 @@
     "options": [
       {
         "id": "a",
-        "text": "They must be assigned at least one security role"
+        "text": "They must hold at least one security role"
       },
       {
         "id": "b",
-        "text": "They must be a co-owner of every app"
+        "text": "They must be a co-owner of at least one app"
       },
       {
         "id": "c",
@@ -351,7 +351,7 @@
       },
       {
         "id": "b",
-        "text": "Desktop agents and cloud agents"
+        "text": "Desktop agents and cloud agents in the agent feed"
       },
       {
         "id": "c",
@@ -385,7 +385,7 @@
       },
       {
         "id": "b",
-        "text": "Pending and Rejected"
+        "text": "Pending, Rejected, and Completed"
       },
       {
         "id": "c",
@@ -427,7 +427,7 @@
       },
       {
         "id": "d",
-        "text": "Power Apps, Power Automate, Power Virtual Agents, Power Query, AI Builder, and Excel"
+        "text": "Power Apps, Power Automate, Power Virtual Agents, Power Query, AI Builder, Excel, and Power BI"
       }
     ],
     "correct": "a",
@@ -449,19 +449,19 @@
     "options": [
       {
         "id": "a",
-        "text": "A natural language chat interface connected to the app's data"
+        "text": "A natural language chat pane over the app's data"
       },
       {
         "id": "b",
-        "text": "An automatic translation of the app into all languages"
+        "text": "An automatic translation of the app into the user's language"
       },
       {
         "id": "c",
-        "text": "A performance profiler for the app screens"
+        "text": "A performance profiler for slow app screens"
       },
       {
         "id": "d",
-        "text": "An offline cache of all Dataverse records"
+        "text": "An offline cache of the app's Dataverse records"
       }
     ],
     "correct": "a",
@@ -487,7 +487,7 @@
       },
       {
         "id": "b",
-        "text": "Tables, Columns, Views, Forms, and Charts"
+        "text": "Tables, Columns, Views, Forms, Charts, and Dashboards"
       },
       {
         "id": "c",

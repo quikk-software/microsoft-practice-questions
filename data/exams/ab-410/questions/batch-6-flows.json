@@ -123,19 +123,19 @@
     "options": [
       {
         "id": "a",
-        "text": "Make sure the columns you update are not included in the trigger's Select columns option"
+        "text": "Exclude the columns the flow updates from the trigger's Select columns option"
       },
       {
         "id": "b",
-        "text": "Set the trigger scope to Organization"
+        "text": "Set the trigger scope to Organization so the flow's own updates are ignored"
       },
       {
         "id": "c",
-        "text": "Add a Filter rows expression that excludes rows last modified by the flow owner"
+        "text": "Add a Filter rows expression that excludes rows modified by the flow owner"
       },
       {
         "id": "d",
-        "text": "Add a Terminate action at the end of the flow"
+        "text": "Add a Terminate action after the update so the run ends before retriggering"
       }
     ],
     "correct": "a",
@@ -157,19 +157,19 @@
     "options": [
       {
         "id": "a",
-        "text": "The flow owner needs the Act on Behalf of Another User privilege — included in the Delegate role by default, or added to any role"
+        "text": "The flow owner lacks the Act on Behalf of Another User privilege, found in the Delegate role"
       },
       {
         "id": "b",
-        "text": "The flow owner needs the Assign privilege on the Task table so ownership can be transferred"
+        "text": "The flow owner lacks the Assign privilege on the Task table needed to transfer ownership"
       },
       {
         "id": "c",
-        "text": "The modifying user must be a co-owner of the flow"
+        "text": "The modifying user must be added as a co-owner of the flow before the option works"
       },
       {
         "id": "d",
-        "text": "The trigger scope must be set to User so the invoker's context is available"
+        "text": "The trigger scope must be set to User so the invoker's context is available to actions"
       }
     ],
     "correct": "a",
@@ -191,19 +191,19 @@
     "options": [
       {
         "id": "a",
-        "text": "5,000 rows — reaching the limit doesn't produce an error, so you silently don't receive all data"
+        "text": "5,000 rows, and reaching the limit silently returns incomplete data without an error"
       },
       {
         "id": "b",
-        "text": "100,000 rows — the action fails with a pagination error"
+        "text": "100,000 rows, and reaching the limit fails the action with a pagination error"
       },
       {
         "id": "c",
-        "text": "500 rows — the flow retries automatically"
+        "text": "500 rows, and reaching the limit makes the flow retry the action automatically"
       },
       {
         "id": "d",
-        "text": "There is no default limit"
+        "text": "There is no default limit; all matching rows are returned in a single page"
       }
     ],
     "correct": "a",
@@ -225,19 +225,19 @@
     "options": [
       {
         "id": "a",
-        "text": "The column's logical name, found under Advanced options of the column properties"
+        "text": "The column's logical name, listed under the column's Advanced options"
       },
       {
         "id": "b",
-        "text": "The column's display name as shown in the form"
+        "text": "The column's display name exactly as it appears on the main form and in views"
       },
       {
         "id": "c",
-        "text": "The column's schema name including the publisher prefix in upper case"
+        "text": "The column's schema name with the publisher prefix written in upper case"
       },
       {
         "id": "d",
-        "text": "The column's GUID"
+        "text": "The column's GUID, copied from the column properties pane in the maker portal"
       }
     ],
     "correct": "a",
@@ -259,19 +259,19 @@
     "options": [
       {
         "id": "a",
-        "text": "To get the latest data and prevent the flow from acting on stale data"
+        "text": "To reload the latest data so the flow doesn't act on stale values"
       },
       {
         "id": "b",
-        "text": "To reset the trigger so the flow can run again"
+        "text": "To reset the trigger so the flow can run again for the same row after approval"
       },
       {
         "id": "c",
-        "text": "To release the approval lock on the record"
+        "text": "To release the approval lock that Dataverse places on the record during review"
       },
       {
         "id": "d",
-        "text": "To convert the row into an agent flow task"
+        "text": "To convert the pending row into an agent flow task for review by the manager"
       }
     ],
     "correct": "a",
@@ -327,19 +327,19 @@
     "options": [
       {
         "id": "a",
-        "text": "By email, in the Power Automate Approvals center, and optionally in Microsoft Teams"
+        "text": "By email, in the Approvals center, and optionally in Microsoft Teams"
       },
       {
         "id": "b",
-        "text": "Only by email"
+        "text": "By email and in the Power Automate mobile app as push notifications, without Teams"
       },
       {
         "id": "c",
-        "text": "Only in the Power Automate mobile app"
+        "text": "In the Approvals center and in the Power Automate mobile app"
       },
       {
         "id": "d",
-        "text": "Only through a Power Apps canvas app notification"
+        "text": "Through a Power Apps canvas app notification and by email"
       }
     ],
     "correct": "a",
@@ -397,15 +397,15 @@
       },
       {
         "id": "b",
-        "text": "Every action the agent flow executes in production"
+        "text": "Actions the flow executes when triggered in a production environment"
       },
       {
         "id": "c",
-        "text": "Actions triggered by an autonomous agent"
+        "text": "Actions the flow executes when an autonomous agent triggers it"
       },
       {
         "id": "d",
-        "text": "Actions triggered from a conversation"
+        "text": "Actions the flow executes when triggered from a Copilot Studio conversation"
       }
     ],
     "correct": "a",
@@ -475,19 +475,19 @@
     "options": [
       {
         "id": "a",
-        "text": "It is more efficient — the flow only runs when the OData expression evaluates to true"
+        "text": "The flow only runs when the OData expression is true, which is more efficient"
       },
       {
         "id": "b",
-        "text": "Filter rows supports FetchXML, while a Condition action only supports OData"
+        "text": "Filter rows supports FetchXML, while a Condition action supports OData filters alone"
       },
       {
         "id": "c",
-        "text": "Filter rows is the only place where lookup columns are supported"
+        "text": "Filter rows is the only place where lookup columns can be used in a filter"
       },
       {
         "id": "d",
-        "text": "A Condition action can't reference the trigger's Dataverse outputs"
+        "text": "A Condition action can't reference the trigger's Dataverse outputs directly"
       }
     ],
     "correct": "a",

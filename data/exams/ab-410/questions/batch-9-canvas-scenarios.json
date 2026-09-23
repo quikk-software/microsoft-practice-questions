@@ -9,7 +9,7 @@
     "options": [
       {
         "id": "a",
-        "text": "Use Set(UserRole, Dropdown1.Selected.Value) instead — a global variable is accessible from any screen"
+        "text": "Use Set(UserRole, Dropdown1.Selected.Value) so the value is global to the app"
       },
       {
         "id": "b",
@@ -17,7 +17,7 @@
       },
       {
         "id": "c",
-        "text": "Pass UserRole as the third argument of Navigate() every time the user changes screens"
+        "text": "Pass UserRole as the third argument of Navigate() each time the user changes screens"
       },
       {
         "id": "d",
@@ -43,7 +43,7 @@
     "statements": [
       {
         "id": "s1",
-        "text": "Setting UpdateContext({ShowConfirm: true}) in the button's OnSelect and the dialog container's Visible property to ShowConfirm meets the requirement.",
+        "text": "UpdateContext({ShowConfirm: true}) on the button with the dialog's Visible set to ShowConfirm meets the goal.",
         "correct": true
       },
       {
@@ -75,11 +75,11 @@
     "options": [
       {
         "id": "a",
-        "text": "Add ClearCollect(MachineTypes, 'Machine Types') to App.OnStart and point the five screens at the collection"
+        "text": "Add ClearCollect(MachineTypes, 'Machine Types') to App.OnStart and use the collection"
       },
       {
         "id": "b",
-        "text": "Wrap each lookup in IfError() so slow calls fall back to a cached value"
+        "text": "Wrap each lookup in IfError() so slow calls fall back to a previously cached value"
       },
       {
         "id": "c",
@@ -109,7 +109,7 @@
     "options": [
       {
         "id": "a",
-        "text": "IfError(Patch('Coffee Machines', Gallery1.Selected, {'Product Summary': TextInput1.Text}), Notify(\"Unable to update the machine. Please try again.\", NotificationType.Error))"
+        "text": "IfError(Patch('Coffee Machines', Gallery1.Selected, {'Product Summary': TextInput1.Text}), Notify(\"Update failed. Try again.\", NotificationType.Error))"
       },
       {
         "id": "b",
@@ -141,18 +141,47 @@
     "difficulty": "easy",
     "prompt": "Match each NotificationType to the situation it is intended for.",
     "left": [
-      { "id": "l1", "text": "NotificationType.Success" },
-      { "id": "l2", "text": "NotificationType.Error" },
-      { "id": "l3", "text": "NotificationType.Warning" },
-      { "id": "l4", "text": "NotificationType.Information" }
+      {
+        "id": "l1",
+        "text": "NotificationType.Success"
+      },
+      {
+        "id": "l2",
+        "text": "NotificationType.Error"
+      },
+      {
+        "id": "l3",
+        "text": "NotificationType.Warning"
+      },
+      {
+        "id": "l4",
+        "text": "NotificationType.Information"
+      }
     ],
     "right": [
-      { "id": "r1", "text": "Confirming a successful save or action (green)" },
-      { "id": "r2", "text": "Reporting a failure (red)" },
-      { "id": "r3", "text": "Alerting the user to something they should know (yellow)" },
-      { "id": "r4", "text": "General informational messages (blue)" }
+      {
+        "id": "r1",
+        "text": "Confirming a successful save or action (green)"
+      },
+      {
+        "id": "r2",
+        "text": "Reporting a failure (red)"
+      },
+      {
+        "id": "r3",
+        "text": "Alerting the user to something they should know (yellow)"
+      },
+      {
+        "id": "r4",
+        "text": "General informational messages (blue)"
+      }
     ],
-    "correct": { "l1": "r1", "l2": "r2", "l3": "r3", "l4": "r4" },
+    "correct": {
+      "l1": "r1",
+      "l2": "r2",
+      "l3": "r3",
+      "l4": "r4"
+    },
     "explanation": "Notify() kennt vier Typen mit fester Farbe und Bedeutung: Success (grün) für erfolgreiche Aktionen, Error (rot) für Fehlschläge, Warning (gelb) für Hinweise, Information (blau) für neutrale Meldungen.",
     "reference": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/power-fx-formulas",
     "source": {
@@ -171,7 +200,7 @@
     "options": [
       {
         "id": "a",
-        "text": "Chain the statements with semicolons: SubmitForm(Form1); Notify(\"Saved.\", NotificationType.Success); Navigate(ListScreen)"
+        "text": "Chain them with semicolons: SubmitForm(Form1); Notify(\"Saved.\"); Navigate(ListScreen)"
       },
       {
         "id": "b",
@@ -179,7 +208,7 @@
       },
       {
         "id": "c",
-        "text": "Only one function is allowed per property — put Notify() and Navigate() on separate hidden buttons and Select() them"
+        "text": "A property accepts one function; put Notify() and Navigate() on hidden buttons and Select() them"
       },
       {
         "id": "d",
@@ -205,19 +234,19 @@
     "options": [
       {
         "id": "a",
-        "text": "SQL Server is a premium connector requiring Per App or Per User licenses, and on-premises access needs an on-premises data gateway"
+        "text": "SQL Server is a premium connector needing Per App or Per User licenses, plus an on-premises gateway"
       },
       {
         "id": "b",
-        "text": "SQL Server is a standard connector, but on-premises databases cannot be reached from Power Apps at all"
+        "text": "SQL Server is a standard connector, but on-premises SQL databases are out of reach for Power Apps"
       },
       {
         "id": "c",
-        "text": "The design works as-is because Microsoft 365 licenses include all connectors when the data stays inside the corporate network"
+        "text": "The design works as-is, since Microsoft 365 licenses cover connectors for data inside the network"
       },
       {
         "id": "d",
-        "text": "Export the SQL data to an Excel file in OneDrive so the app can use a standard connector without extra licensing"
+        "text": "Export the SQL data to Excel in OneDrive so the app can use a standard connector at no extra cost"
       }
     ],
     "correct": "a",
@@ -243,11 +272,11 @@
       },
       {
         "id": "b",
-        "text": "The SharePoint list uses mandatory columns, which Power Apps cannot read"
+        "text": "The SharePoint list uses mandatory columns, which Power Apps is unable to read"
       },
       {
         "id": "c",
-        "text": "SharePoint is a premium connector and the users' licenses only load a preview of the data"
+        "text": "SharePoint is a premium connector and the users' licenses load a preview of the data alone"
       },
       {
         "id": "d",
@@ -273,19 +302,19 @@
     "options": [
       {
         "id": "a",
-        "text": "Move the data to SharePoint or Dataverse — Excel operations can be blocked while another user has the file open and it isn't recommended as a live multi-user source"
+        "text": "Move the data to SharePoint or Dataverse, since Excel isn't recommended as a live multi-user source"
       },
       {
         "id": "b",
-        "text": "Format the worksheet data as a table so Power Apps can lock rows individually"
+        "text": "Format the worksheet data as a table so Power Apps can lock individual rows during writes"
       },
       {
         "id": "c",
-        "text": "Add the [image] suffix to every column header so Power Apps treats the workbook as a database"
+        "text": "Add the [image] suffix to each column header so Power Apps treats the workbook as a proper database"
       },
       {
         "id": "d",
-        "text": "Enable AutoSave in Power Apps Studio so the workbook is flushed every two minutes"
+        "text": "Enable AutoSave in Power Apps Studio so the workbook is flushed to OneDrive every two minutes"
       }
     ],
     "correct": "a",
@@ -305,10 +334,22 @@
     "difficulty": "medium",
     "prompt": "When evaluating which connector to use for a scenario, match each factor to the question it raises.",
     "left": [
-      { "id": "l1", "text": "Licensing" },
-      { "id": "l2", "text": "Volume and performance" },
-      { "id": "l3", "text": "Read vs. read/write" },
-      { "id": "l4", "text": "Security" }
+      {
+        "id": "l1",
+        "text": "Licensing"
+      },
+      {
+        "id": "l2",
+        "text": "Volume and performance"
+      },
+      {
+        "id": "l3",
+        "text": "Read vs. read/write"
+      },
+      {
+        "id": "l4",
+        "text": "Security"
+      }
     ],
     "right": [
       {
@@ -328,7 +369,12 @@
         "text": "Are there compliance or data residency requirements that rule out certain connectors?"
       }
     ],
-    "correct": { "l1": "r1", "l2": "r2", "l3": "r3", "l4": "r4" },
+    "correct": {
+      "l1": "r1",
+      "l2": "r2",
+      "l3": "r3",
+      "l4": "r4"
+    },
     "explanation": "Die Bewertungsfaktoren sind Datenort, Lizenzierung, Volumen/Performance (Delegation!), Lese- vs. Schreibzugriff und Sicherheit. Wer diese Fragen vorab beantwortet, vermeidet den klassischen Fehler, ein Werkzeug zu wählen, bevor das Problem verstanden ist.",
     "reference": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps/4-powerapps-ways-to-build",
     "source": {
@@ -347,7 +393,7 @@
     "options": [
       {
         "id": "a",
-        "text": "The data card's Update property still references the deleted text input — it must point to the slider's value, with matching data type"
+        "text": "The card's Update property still points at the deleted text input instead of the slider"
       },
       {
         "id": "b",
@@ -355,7 +401,7 @@
       },
       {
         "id": "c",
-        "text": "SubmitForm() only writes cards that contain a text input — use Patch() for slider values"
+        "text": "SubmitForm() writes cards that contain a text input, so Patch() is needed for slider values"
       },
       {
         "id": "d",
@@ -381,19 +427,19 @@
     "options": [
       {
         "id": "a",
-        "text": "Change Status to a Choice column now — fixing the type after the app is built means updating every formula that references it"
+        "text": "Change Status to a Choice column before saving, since later type changes ripple into formulas"
       },
       {
         "id": "b",
-        "text": "Save and open the app first; column types can be switched freely later without affecting the generated screens"
+        "text": "Save and open the app first, because column types can be switched later without side effects"
       },
       {
         "id": "c",
-        "text": "Mark Status as Business required so the table enforces one of the three values"
+        "text": "Mark Status as Business required so the table itself enforces one of the three values"
       },
       {
         "id": "d",
-        "text": "Keep it as text — Choice columns cannot be used in galleries generated by Copilot"
+        "text": "Keep it as text, because Choice columns aren't usable in galleries generated by Copilot"
       }
     ],
     "correct": "a",
@@ -427,7 +473,7 @@
       },
       {
         "id": "d",
-        "text": "Restore is unavailable because only versions from the last seven days can be restored"
+        "text": "Restore is unavailable because versions older than seven days aren't restorable"
       }
     ],
     "correct": "a",
@@ -449,19 +495,19 @@
     "options": [
       {
         "id": "a",
-        "text": "Microsoft 365 Copilot in canvas apps for (1) — enabled in app Settings, no controls needed; an AI Builder prompt called from the button's formula for (2)"
+        "text": "Microsoft 365 Copilot in canvas apps for (1) and an AI Builder prompt called from the button for (2)"
       },
       {
         "id": "b",
-        "text": "AI Builder prompts for both — insert a chat control for (1) and call the prompt from the button for (2)"
+        "text": "AI Builder prompts for both, with a chat control for (1) and a prompt call from the button for (2)"
       },
       {
         "id": "c",
-        "text": "Microsoft 365 Copilot for both — its output can be redirected into any label via the Copilot control's Text property"
+        "text": "Microsoft 365 Copilot for both, redirecting its output into the label via the Copilot control"
       },
       {
         "id": "d",
-        "text": "A Copilot Studio agent for (2) and an AI Builder prompt for (1), because prompts cannot be triggered from buttons"
+        "text": "A Copilot Studio agent for (2) and an AI Builder prompt for (1), since prompts aren't triggerable from buttons"
       }
     ],
     "correct": "a",
@@ -483,15 +529,15 @@
     "options": [
       {
         "id": "a",
-        "text": "Back() needs navigation history — when preview starts on a screen the user didn't reach via Navigate(), there is nothing to return to"
+        "text": "Back() has no navigation history when preview starts on a screen not reached via Navigate()"
       },
       {
         "id": "b",
-        "text": "Back() only works with ScreenTransition.Slide; the Catalog screen was reached with Fade"
+        "text": "Back() works with ScreenTransition.Slide; the Catalog screen was reached with Fade instead"
       },
       {
         "id": "c",
-        "text": "Back() is disabled in preview mode and only runs in the published app"
+        "text": "Back() is disabled in preview mode and takes effect in the published app alone"
       },
       {
         "id": "d",
@@ -521,7 +567,7 @@
       },
       {
         "id": "b",
-        "text": "Ensure the design supports users with vision, hearing, or motor impairments using Power Apps' built-in accessibility support"
+        "text": "Support users with vision, hearing, or motor impairments via built-in accessibility features"
       },
       {
         "id": "c",
@@ -529,14 +575,18 @@
       },
       {
         "id": "d",
-        "text": "Store all inspection photos in Excel so they load faster than from Dataverse"
+        "text": "Store inspection photos in an Excel workbook so they load faster than from Dataverse"
       },
       {
         "id": "e",
-        "text": "Disable localization so decimal separators are always rendered the same way"
+        "text": "Disable localization so decimal separators render the same way in every region"
       }
     ],
-    "correct": ["a", "b", "c"],
+    "correct": [
+      "a",
+      "b",
+      "c"
+    ],
     "explanation": "Die Design-Leitlinien nennen genau diese Punkte: Performance auf Mobilgeräten (keine schweren Bilder/Animationen), Barrierefreiheit für Seh-, Hör- und Motorik-Einschränkungen sowie Einfachheit statt Komplexität (z. B. Slider statt Tipparbeit). Excel als Bildspeicher und abgeschaltete Lokalisierung widersprechen der Guidance.",
     "reference": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps/4-5-design-app",
     "source": {
@@ -553,10 +603,22 @@
     "difficulty": "easy",
     "prompt": "An app's Tree view lists Catalog, Admin, and Dashboard screens in that order. Users should always land on Dashboard. What is the cleanest way to achieve this?",
     "options": [
-      { "id": "a", "text": "Set the App.StartScreen property to Dashboard" },
-      { "id": "b", "text": "Add Navigate(Dashboard) to the Catalog screen's OnVisible property" },
-      { "id": "c", "text": "Rename Dashboard to \"1-Dashboard\" so it sorts first" },
-      { "id": "d", "text": "Publish the app while the Dashboard screen is selected in Studio" }
+      {
+        "id": "a",
+        "text": "Set the App.StartScreen property of the app to Dashboard"
+      },
+      {
+        "id": "b",
+        "text": "Add Navigate(Dashboard) to the Catalog screen's OnVisible property"
+      },
+      {
+        "id": "c",
+        "text": "Rename Dashboard to \"1-Dashboard\" so it sorts first"
+      },
+      {
+        "id": "d",
+        "text": "Publish the app while the Dashboard screen is selected in Studio"
+      }
     ],
     "correct": "a",
     "explanation": "Ohne weitere Angabe startet die App auf dem obersten Bildschirm der Tree View. App.StartScreen überschreibt das sauber. Ein Navigate() in OnVisible erzeugt einen unnötigen Bildschirmwechsel beim Start, Umbenennen ändert die Reihenfolge nicht zwingend, und der beim Veröffentlichen gewählte Bildschirm ist irrelevant.",
@@ -575,10 +637,22 @@
     "difficulty": "easy",
     "prompt": "A highlight rectangle inside a gallery template should be visible only for the item the user has selected. Which Visible formula does this?",
     "options": [
-      { "id": "a", "text": "ThisItem.IsSelected" },
-      { "id": "b", "text": "Gallery1.Selected = true" },
-      { "id": "c", "text": "CountRows(Gallery1.AllItems) = 1" },
-      { "id": "d", "text": "Self.Selected.Item <> Blank()" }
+      {
+        "id": "a",
+        "text": "ThisItem.IsSelected"
+      },
+      {
+        "id": "b",
+        "text": "Gallery1.Selected = true"
+      },
+      {
+        "id": "c",
+        "text": "CountRows(Gallery1.AllItems) = 1"
+      },
+      {
+        "id": "d",
+        "text": "Self.Selected.Item <> Blank()"
+      }
     ],
     "correct": "a",
     "explanation": "IsSelected ist ein boolescher Wert je Galerie-Element, der nur für das aktuell ausgewählte Element true ist — ideal für die Visible-Eigenschaft eines Hervorhebungs-Rechtecks. Gallery1.Selected ist ein Datensatz, kein Boolean; Self.Selected gehört zu Model-driven-Commands.",
@@ -599,19 +673,19 @@
     "options": [
       {
         "id": "a",
-        "text": "Templates aren't designed to work with your own data out of the box, but they are a good starting point to explore and then modify"
+        "text": "Templates aren't meant for your own data out of the box, but they're a good starting point to modify"
       },
       {
         "id": "b",
-        "text": "Templates automatically remap to any Dataverse table with matching column names"
+        "text": "Templates remap automatically to any Dataverse table whose column names match the sample data set"
       },
       {
         "id": "c",
-        "text": "Templates can only be used with Excel data and cannot be connected to Dataverse"
+        "text": "Templates work with Excel data alone and aren't connectable to Dataverse after creation"
       },
       {
         "id": "d",
-        "text": "Templates are read-only samples that cannot be copied into an environment"
+        "text": "Templates are read-only samples that can be explored but not copied into an environment"
       }
     ],
     "correct": "a",

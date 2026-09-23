@@ -9,19 +9,19 @@
     "options": [
       {
         "id": "a",
-        "text": "Create a Microsoft Entra ID group team in the environment, assign it the security role, and have HR add new hires to the Entra group when they're licensed"
+        "text": "Create an Entra ID group team with the security role, and add new hires to the Entra group"
       },
       {
         "id": "b",
-        "text": "Create an owner team, assign it the role, and have the team administrator add each new hire manually"
+        "text": "Create an owner team with the security role, and have its administrator add each new hire"
       },
       {
         "id": "c",
-        "text": "Assign every new hire the Environment Maker role by default, which grants app access"
+        "text": "Assign each new hire the Environment Maker role by default, which also grants app access"
       },
       {
         "id": "d",
-        "text": "Share the app with an access team so members inherit its security role"
+        "text": "Share the app with an access team so its members inherit the team's security role"
       }
     ],
     "correct": "a",
@@ -43,7 +43,7 @@
     "options": [
       {
         "id": "a",
-        "text": "Assign the team a security role configured with member's privilege inheritance, so members get User-level privileges as if the role were assigned directly"
+        "text": "Give the team a security role that has member's privilege inheritance enabled"
       },
       {
         "id": "b",
@@ -51,11 +51,11 @@
       },
       {
         "id": "c",
-        "text": "Convert the group team to an access team, which grants members full CRUD rights"
+        "text": "Convert the group team to an access team, which grants its members full CRUD rights"
       },
       {
         "id": "d",
-        "text": "Add the Environment Admin role to the team so its privileges cascade to members"
+        "text": "Add the Environment Admin role to the team so its privileges cascade to the members"
       }
     ],
     "correct": "a",
@@ -77,19 +77,19 @@
     "options": [
       {
         "id": "a",
-        "text": "It won't work — only Assigned and Dynamic User membership types are supported for group teams"
+        "text": "It won't work, because only Assigned and Dynamic User membership types are supported"
       },
       {
         "id": "b",
-        "text": "It works, but only for Microsoft 365 groups, not security groups"
+        "text": "It works, but only for Microsoft 365 groups and not for security groups of that type"
       },
       {
         "id": "c",
-        "text": "It works for read access but members can't own records"
+        "text": "It works for read access, but members of a Dynamic Device group can't own records"
       },
       {
         "id": "d",
-        "text": "It works after the group is converted to an owner team"
+        "text": "It works once the Entra group has been converted to an owner team in the environment"
       }
     ],
     "correct": "a",
@@ -109,16 +109,32 @@
     "difficulty": "medium",
     "prompt": "A licensed user reports they cannot open the environment. An admin selects Run diagnostics on the user in the Power Platform admin center. Which three checks does it perform? Each correct answer presents part of the solution.",
     "options": [
-      { "id": "a", "text": "The user is enabled for sign-in in Microsoft Entra ID" },
-      { "id": "b", "text": "The user is a member of the environment's Microsoft Entra ID group" },
+      {
+        "id": "a",
+        "text": "The user is enabled for sign-in in Microsoft Entra ID"
+      },
+      {
+        "id": "b",
+        "text": "The user is a member of the environment's Microsoft Entra ID group"
+      },
       {
         "id": "c",
         "text": "The user has at least one Dataverse security role, directly or via a group team"
       },
-      { "id": "d", "text": "The user's device is enrolled in Intune" },
-      { "id": "e", "text": "The user has published at least one app in the environment" }
+      {
+        "id": "d",
+        "text": "The user's device is enrolled in Microsoft Intune device management"
+      },
+      {
+        "id": "e",
+        "text": "The user has published at least one app in the environment"
+      }
     ],
-    "correct": ["a", "b", "c"],
+    "correct": [
+      "a",
+      "b",
+      "c"
+    ],
     "explanation": "Run diagnostics prüft vier Dinge: Sign-in in Entra ID aktiviert, gültige Lizenz, Mitgliedschaft in der Entra-Gruppe der Umgebung und mindestens eine Dataverse-Sicherheitsrolle (direkt oder über ein Gruppenteam). Geräte-Enrollment und App-Veröffentlichung gehören nicht dazu.",
     "reference": "https://learn.microsoft.com/en-us/training/modules/get-started-security-roles/6-checking",
     "source": {
@@ -135,10 +151,22 @@
     "difficulty": "medium",
     "prompt": "A manager can see a specific Opportunity row that, by role, they shouldn't have access to. A maker needs to find out whether the access comes from ownership, a role, sharing, or hierarchy security — for that exact row. Which tool?",
     "options": [
-      { "id": "a", "text": "Access Checker in the model-driven app command bar" },
-      { "id": "b", "text": "Run diagnostics in the Power Platform admin center" },
-      { "id": "c", "text": "The Audit Summary View" },
-      { "id": "d", "text": "The Solution Checker" }
+      {
+        "id": "a",
+        "text": "Access Checker in the model-driven app command bar"
+      },
+      {
+        "id": "b",
+        "text": "Run diagnostics in the Power Platform admin center"
+      },
+      {
+        "id": "c",
+        "text": "The Audit Summary View"
+      },
+      {
+        "id": "d",
+        "text": "The Solution Checker"
+      }
     ],
     "correct": "a",
     "explanation": "Access Checker zeigt für eine konkrete Zeile, woher der Zugriff eines Nutzers stammt: Besitz, Sicherheitsrolle, Freigabe oder Hierarchie. Run diagnostics prüft nur den Umgebungszugang, das Audit zeigt Änderungen, der Solution Checker prüft Lösungen.",
@@ -159,19 +187,19 @@
     "options": [
       {
         "id": "a",
-        "text": "Add the app to a solution — apps built outside a solution can't be deployed as part of a structured release process"
+        "text": "Add the app to a solution, since apps outside a solution can't go through a release process"
       },
       {
         "id": "b",
-        "text": "Publish the app; pipelines deploy the latest published version of any app"
+        "text": "Publish the app, because pipelines deploy the latest published version of any canvas app"
       },
       {
         "id": "c",
-        "text": "Export the app as a .msapp file and import it in each environment"
+        "text": "Export the app as a .msapp file and import it manually in each target environment"
       },
       {
         "id": "d",
-        "text": "Share the app with the pipeline's service principal as co-owner"
+        "text": "Share the app with the pipeline's service principal as a co-owner before deploying"
       }
     ],
     "correct": "a",
@@ -191,10 +219,22 @@
     "difficulty": "medium",
     "prompt": "A development team wants branching and pull requests for their Power Platform solutions alongside pipeline deployments, without leaving the Microsoft ecosystem. Which capability does the guidance point to?",
     "options": [
-      { "id": "a", "text": "Power Platform Git integration" },
-      { "id": "b", "text": "The Center of Excellence Starter Kit" },
-      { "id": "c", "text": "Managed Environments" },
-      { "id": "d", "text": "Dataverse auditing" }
+      {
+        "id": "a",
+        "text": "Power Platform Git integration"
+      },
+      {
+        "id": "b",
+        "text": "The Center of Excellence Starter Kit"
+      },
+      {
+        "id": "c",
+        "text": "Managed Environments"
+      },
+      {
+        "id": "d",
+        "text": "Dataverse auditing"
+      }
     ],
     "correct": "a",
     "explanation": "Für professionelles ALM mit Quellcodeverwaltung synchronisiert die Power Platform Git-Integration Solutions in ein Git-Repository, sodass Teams Branching und Pull Requests zusammen mit Pipelines nutzen können.",
@@ -249,9 +289,18 @@
         "id": "a",
         "text": "The System Administrator role in the selected Dataverse environment"
       },
-      { "id": "b", "text": "A Power Pages Per User license assigned to the maker" },
-      { "id": "c", "text": "The Basic User role plus a Power Automate premium license" },
-      { "id": "d", "text": "Co-owner rights on at least one canvas app in the environment" }
+      {
+        "id": "b",
+        "text": "A Power Pages Per User license assigned to the maker in the environment"
+      },
+      {
+        "id": "c",
+        "text": "The Basic User role plus a Power Automate premium license in the environment"
+      },
+      {
+        "id": "d",
+        "text": "Co-owner rights on at least one canvas app in the environment plus a site license"
+      }
     ],
     "correct": "a",
     "explanation": "Das Bereitstellen einer Site setzt die Rolle System Administrator in der gewählten Dataverse-Umgebung voraus. Die Site entsteht zunächst immer als Trial und kann später in eine Produktions-Site umgewandelt werden.",
@@ -270,16 +319,38 @@
     "difficulty": "hard",
     "prompt": "The Power Pages Security workspace is organized into three sections. Match each task to the section where it lives.",
     "left": [
-      { "id": "l1", "text": "Run a security scan for common vulnerabilities" },
-      { "id": "l2", "text": "Configure web roles, page permissions, table permissions, and the Web Application Firewall" },
-      { "id": "l3", "text": "Configure identity providers, site visibility, CSP and CORS settings" }
+      {
+        "id": "l1",
+        "text": "Run a security scan for common vulnerabilities"
+      },
+      {
+        "id": "l2",
+        "text": "Configure web roles, page permissions, table permissions, and the Web Application Firewall"
+      },
+      {
+        "id": "l3",
+        "text": "Configure identity providers, site visibility, CSP and CORS settings"
+      }
     ],
     "right": [
-      { "id": "r1", "text": "Monitor" },
-      { "id": "r2", "text": "Protect" },
-      { "id": "r3", "text": "Manage" }
+      {
+        "id": "r1",
+        "text": "Monitor"
+      },
+      {
+        "id": "r2",
+        "text": "Protect"
+      },
+      {
+        "id": "r3",
+        "text": "Manage"
+      }
     ],
-    "correct": { "l1": "r1", "l2": "r2", "l3": "r3" },
+    "correct": {
+      "l1": "r1",
+      "l2": "r2",
+      "l3": "r3"
+    },
     "explanation": "Monitor enthält den Security Scan. Protect bündelt Zugriffssteuerung auf Inhalte und Daten — Web Roles, Page- und Table-Permissions, WAF. Manage regelt den Zugang zur Site selbst: Identitätsanbieter, Sichtbarkeit und erweiterte Einstellungen wie CSP/CORS.",
     "reference": "https://learn.microsoft.com/en-us/training/modules/power-pages-studio/security",
     "source": {
@@ -298,11 +369,20 @@
     "options": [
       {
         "id": "a",
-        "text": "Apply the Anonymous Users web role in the page permissions — web roles can be applied to unauthenticated users that way"
+        "text": "Apply the Anonymous Users web role to the page's permissions"
       },
-      { "id": "b", "text": "Set site visibility to Private and share the page URL externally" },
-      { "id": "c", "text": "Create a local sign-in account named Guest and share its password" },
-      { "id": "d", "text": "Remove all table permissions from the page so it renders without a role" }
+      {
+        "id": "b",
+        "text": "Set site visibility to Private and share the page URL externally"
+      },
+      {
+        "id": "c",
+        "text": "Create a local sign-in account named Guest and share its password"
+      },
+      {
+        "id": "d",
+        "text": "Remove the table permissions from the page so it renders without a role"
+      }
     ],
     "correct": "a",
     "explanation": "Web Roles gelten für authentifizierte Nutzer, lassen sich über die Rolle „Anonymous Users“ aber auch auf nicht angemeldete Besucher anwenden. Seitenberechtigungen können auf „Allow everyone“ oder auf bestimmte Web Roles beschränkt werden. Private Sites verlangen immer eine Anmeldung.",
@@ -323,19 +403,19 @@
     "options": [
       {
         "id": "a",
-        "text": "Open the page with Edit code in Visual Studio Code for the Web and change its CSS file — those changes apply to the selected page only"
+        "text": "Open the page with Edit code and change its CSS file, which applies to that page only"
       },
       {
         "id": "b",
-        "text": "Upload a custom CSS file in the Styling workspace — uploaded files apply per page by default"
+        "text": "Upload a custom CSS file in the Styling workspace, which applies to each page by default"
       },
       {
         "id": "c",
-        "text": "Generate a new theme with Copilot and assign it to the landing page"
+        "text": "Generate a new theme with Copilot in the Styling workspace and assign it to the landing page"
       },
       {
         "id": "d",
-        "text": "Create a page template in the Portal Management app; templates carry their own scoped styles"
+        "text": "Create a page template in the Portal Management app, which carries its own scoped styles"
       }
     ],
     "correct": "a",
@@ -357,7 +437,7 @@
     "options": [
       {
         "id": "a",
-        "text": "Custom JavaScript embedded in the page or form — noting that Power Pages scripts don't reuse model-driven app form scripts"
+        "text": "Custom JavaScript embedded in the page or form, separate from model-driven app scripts"
       },
       {
         "id": "b",
@@ -369,7 +449,7 @@
       },
       {
         "id": "d",
-        "text": "Reuse the model-driven app's OnSave JavaScript web resource, which Power Pages loads automatically"
+        "text": "The model-driven app's OnSave JavaScript web resource, which Power Pages loads too"
       }
     ],
     "correct": "a",
@@ -391,11 +471,20 @@
     "options": [
       {
         "id": "a",
-        "text": "Copy the Basic User role and modify the copy — standard roles can't be edited directly"
+        "text": "Copy the Basic User role and add the two privileges to the copy"
       },
-      { "id": "b", "text": "Edit the Basic User role directly and add the privileges" },
-      { "id": "c", "text": "Create a blank custom role and re-enter every Basic User privilege" },
-      { "id": "d", "text": "Assign Basic User plus System Customizer to cover the extra privileges" }
+      {
+        "id": "b",
+        "text": "Edit the Basic User role directly and add the two privileges"
+      },
+      {
+        "id": "c",
+        "text": "Create a blank custom role and re-enter each Basic User privilege by hand"
+      },
+      {
+        "id": "d",
+        "text": "Assign Basic User plus System Customizer to cover the extra privileges"
+      }
     ],
     "correct": "a",
     "explanation": "Vordefinierte Rollen lassen sich nicht direkt ändern, aber kopieren. Eine Kopie zu erweitern ist deutlich einfacher als eine leere Rolle nachzubauen — Standardrollen bringen die Verknüpfung zu den Standardtabellen bereits mit. System Customizer wäre viel zu weitreichend.",

@@ -107,7 +107,7 @@
       },
       {
         "id": "c",
-        "text": "Real-time workflows"
+        "text": "Real-time workflows on tables"
       },
       {
         "id": "d",
@@ -133,7 +133,7 @@
     "options": [
       {
         "id": "a",
-        "text": "A Formula column using Power Fx"
+        "text": "A Formula column defined with a Power Fx expression"
       },
       {
         "id": "b",
@@ -167,19 +167,19 @@
     "options": [
       {
         "id": "a",
-        "text": "Dataverse runs the prompt against the row's data and stores the AI-generated output in the column"
+        "text": "Dataverse runs the prompt over the row's data and stores the generated output in the column"
       },
       {
         "id": "b",
-        "text": "The prompt text itself is stored in the column for later review"
+        "text": "The prompt text is stored in the column and the generated output is shown in the main form"
       },
       {
         "id": "c",
-        "text": "A Power Automate flow is queued to generate the value overnight"
+        "text": "A Power Automate flow is queued and generates the value during the nightly run"
       },
       {
         "id": "d",
-        "text": "The column stays empty until a user selects Generate in the form"
+        "text": "The column stays empty until a user selects Generate on the record's main form"
       }
     ],
     "correct": "a",
@@ -205,7 +205,7 @@
       },
       {
         "id": "b",
-        "text": "Solutions > New > Automation > Prompt"
+        "text": "Solutions > New > Automation > Prompt (AI Builder)"
       },
       {
         "id": "c",
@@ -269,19 +269,19 @@
     "options": [
       {
         "id": "a",
-        "text": "Add it as a data source via Data > Add Data and search for the prompt by name"
+        "text": "Add it as a data source via Data > Add Data and search by name"
       },
       {
         "id": "b",
-        "text": "Paste the prompt text into the App.OnStart property"
+        "text": "Paste the prompt text into the App.OnStart property of the app"
       },
       {
         "id": "c",
-        "text": "Add it as a component from a component library"
+        "text": "Insert it as a component from a component library"
       },
       {
         "id": "d",
-        "text": "Create a Prompt column and bind a form to it"
+        "text": "Create a Prompt column on the table and bind a form to it"
       }
     ],
     "correct": "a",
@@ -303,19 +303,19 @@
     "options": [
       {
         "id": "a",
-        "text": "To ground the prompt in business data, with filters refining the data so it's relevant to your needs"
+        "text": "To ground the prompt in business data and refine it with filters"
       },
       {
         "id": "b",
-        "text": "To choose which GPT model version the prompt uses"
+        "text": "To choose which GPT model version the prompt runs against"
       },
       {
         "id": "c",
-        "text": "To set the output format of the generated text"
+        "text": "To set the output format and length of the generated text"
       },
       {
         "id": "d",
-        "text": "To publish the prompt to a Copilot Studio agent"
+        "text": "To publish the prompt as an action to a Copilot Studio agent's topic"
       }
     ],
     "correct": "a",
@@ -371,19 +371,19 @@
     "options": [
       {
         "id": "a",
-        "text": "Standard roles can't be customized — only custom roles can be modified, so custom roles let you grant only the required privileges"
+        "text": "Standard roles can't be customized, so a custom role is the way to grant only what's required"
       },
       {
         "id": "b",
-        "text": "Custom roles are the only roles that can be assigned to teams"
+        "text": "Custom roles are the only roles that can be assigned to owner teams and Entra group teams"
       },
       {
         "id": "c",
-        "text": "Standard roles can only be assigned to owner teams, not to individual users"
+        "text": "Standard roles can be assigned to owner teams but not directly to individual users"
       },
       {
         "id": "d",
-        "text": "Apps can only be shared with users who hold a custom role"
+        "text": "Apps can be shared only with users who hold a custom role in the target environment"
       }
     ],
     "correct": "a",
@@ -405,15 +405,15 @@
     "options": [
       {
         "id": "a",
-        "text": "Set values for columns"
+        "text": "Set values for columns based on conditions"
       },
       {
         "id": "b",
-        "text": "Validate inputs"
+        "text": "Validate inputs and show error messages"
       },
       {
         "id": "c",
-        "text": "Enforce data entry requirements"
+        "text": "Enforce data entry requirements on a form"
       },
       {
         "id": "d",
@@ -510,7 +510,7 @@
       },
       {
         "id": "s2",
-        "text": "Lookup columns are supported in the Select columns filter.",
+        "text": "Lookup columns are supported in the Select columns filter, so lookup changes trigger the flow.",
         "correct": false
       },
       {

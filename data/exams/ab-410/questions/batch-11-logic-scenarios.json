@@ -41,19 +41,19 @@
     "options": [
       {
         "id": "a",
-        "text": "Branching rules must be based on the steps in the stage that immediately precedes the condition"
+        "text": "Branching rules can only use steps from the stage immediately before the condition"
       },
       {
         "id": "b",
-        "text": "Currency fields can't be used in branching rules"
+        "text": "Currency fields can't be referenced in branching rules, so Budget never appears as an option"
       },
       {
         "id": "c",
-        "text": "Conditions can only reference fields on the process's primary table, and stage 1 uses a related table"
+        "text": "Conditions can only reference the primary table's fields, and stage 1 uses a related table"
       },
       {
         "id": "d",
-        "text": "The Budget step must be marked Required before it appears in conditions"
+        "text": "The Budget step must be marked Required before it can be referenced in a condition"
       }
     ],
     "correct": "a",
@@ -75,19 +75,19 @@
     "options": [
       {
         "id": "a",
-        "text": "Split the process into two separate business process flows and use a workflow to synchronize the Approve/Deny decision back to the Request record"
+        "text": "Split it into two business process flows and sync the decision back with a workflow"
       },
       {
         "id": "b",
-        "text": "Add column-level security to every field in the Investigation stages"
+        "text": "Add column-level security to each field used in the Investigation and Legal Action stages"
       },
       {
         "id": "c",
-        "text": "Disable security roles on the process so stage visibility follows table access"
+        "text": "Disable security roles on the process so stage visibility follows the users' table access"
       },
       {
         "id": "d",
-        "text": "Move the investigative stages into a nested condition so they collapse by default"
+        "text": "Move the investigative stages into a nested condition so they're collapsed for loan officers"
       }
     ],
     "correct": "a",
@@ -109,19 +109,19 @@
     "options": [
       {
         "id": "a",
-        "text": "The BPF is still a draft — it must be validated and then activated before anyone can use it"
+        "text": "The BPF is still a draft; it must be validated and activated before anyone can use it"
       },
       {
         "id": "b",
-        "text": "Business process flows only render in canvas apps, not model-driven apps"
+        "text": "Business process flows render in canvas apps alone, so the model-driven form never shows one"
       },
       {
         "id": "c",
-        "text": "The BPF must be published from Power Automate, not from Power Apps"
+        "text": "The BPF must be published from Power Automate, not from the Power Apps solution view"
       },
       {
         "id": "d",
-        "text": "The Table setting must be changed to the app's primary table after saving"
+        "text": "The Table setting must be changed to the app's primary table after the process is saved"
       }
     ],
     "correct": "a",
@@ -143,19 +143,19 @@
     "options": [
       {
         "id": "a",
-        "text": "Select Enable Security Roles on the process and grant the reps' role create, read, update, or delete privileges on the Business Process Flows tab"
+        "text": "Enable Security Roles on the process and grant the reps' role privileges on the BPF"
       },
       {
         "id": "b",
-        "text": "Deactivate and reactivate the process so it republishes to all roles"
+        "text": "Deactivate and reactivate the process so it's republished to each existing security role"
       },
       {
         "id": "c",
-        "text": "Assign the reps the System Customizer role, which is required to see any BPF"
+        "text": "Assign the reps the System Customizer role, which is required to see any process"
       },
       {
         "id": "d",
-        "text": "Set the process's Order Process Flow so it is first for new records"
+        "text": "Set the process's Order Process Flow so it's assigned first to the reps' new records"
       }
     ],
     "correct": "a",
@@ -177,19 +177,19 @@
     "options": [
       {
         "id": "a",
-        "text": "Only pass columns whose values actually change — passing an unchanged column still counts as a modification and triggers other automations"
+        "text": "Pass only columns whose values change, since an unchanged column still counts as a modification"
       },
       {
         "id": "b",
-        "text": "Switch the nightly flow's trigger scope to User so it doesn't affect other flows"
+        "text": "Switch the nightly flow's trigger scope to User so it doesn't affect the other flow's account rows"
       },
       {
         "id": "c",
-        "text": "Use Upsert a row instead of Update a row, which skips unchanged columns automatically"
+        "text": "Use Upsert a row instead of Update a row, since Upsert skips columns whose values haven't changed"
       },
       {
         "id": "d",
-        "text": "Set Account Name to null in the update so the other flow's filter never matches"
+        "text": "Set Account Name to null in the update so the other flow's trigger filter never matches again"
       }
     ],
     "correct": "a",
@@ -209,10 +209,22 @@
     "difficulty": "medium",
     "prompt": "A flow receives supplier records from an external system that provides a stable ID. Each record must be updated if it already exists in Dataverse or created if it doesn't, without a lookup step first. Which action?",
     "options": [
-      { "id": "a", "text": "Upsert a row" },
-      { "id": "b", "text": "Add a new row inside a Condition that checks List rows" },
-      { "id": "c", "text": "Update a row with the row ID set to the external ID" },
-      { "id": "d", "text": "Relate rows with the external ID as Row ID" }
+      {
+        "id": "a",
+        "text": "Upsert a row with the external ID as the Row ID"
+      },
+      {
+        "id": "b",
+        "text": "Add a new row inside a Condition that checks List rows"
+      },
+      {
+        "id": "c",
+        "text": "Update a row with the row ID set to the external ID"
+      },
+      {
+        "id": "d",
+        "text": "Relate rows with the external ID as the Row ID"
+      }
     ],
     "correct": "a",
     "explanation": "Upsert a row ändert die Zeile, wenn die Row ID existiert, und legt sie sonst an — ohne vorherige Abfrage. Update a row schlägt bei fehlender Zeile fehl, und ein List-rows-Umweg ist genau das, was Upsert überflüssig macht.",
@@ -233,7 +245,7 @@
     "options": [
       {
         "id": "a",
-        "text": "Use the Relate rows action — many-to-many relationships can only be established that way, because neither table has a lookup column"
+        "text": "Use Relate rows, because a many-to-many relationship has no lookup column to set"
       },
       {
         "id": "b",
@@ -241,11 +253,11 @@
       },
       {
         "id": "c",
-        "text": "Use Update a row on the Project table and set its Employee column"
+        "text": "Use Update a row on each Project and set its Employee column to the new employee"
       },
       {
         "id": "d",
-        "text": "Write directly to the intersect table with Add a new row"
+        "text": "Write the three associations directly to the intersect table with Add a new row"
       }
     ],
     "correct": "a",
@@ -273,18 +285,36 @@
       {
         "id": "b1",
         "options": [
-          { "id": "o1", "text": "GUID only" },
-          { "id": "o2", "text": "row URL" },
-          { "id": "o3", "text": "display name" }
+          {
+            "id": "o1",
+            "text": "GUID only"
+          },
+          {
+            "id": "o2",
+            "text": "row URL"
+          },
+          {
+            "id": "o3",
+            "text": "display name"
+          }
         ],
         "correct": "o1"
       },
       {
         "id": "b2",
         "options": [
-          { "id": "o1", "text": "GUID only" },
-          { "id": "o2", "text": "row URL (OData ID)" },
-          { "id": "o3", "text": "logical table name" }
+          {
+            "id": "o1",
+            "text": "GUID only"
+          },
+          {
+            "id": "o2",
+            "text": "row URL (OData ID)"
+          },
+          {
+            "id": "o3",
+            "text": "logical table name"
+          }
         ],
         "correct": "o2"
       }
@@ -305,10 +335,22 @@
     "difficulty": "medium",
     "prompt": "A flow must remove the assigned technician from a service request when it is reopened. Which approach clears the lookup column in an Update a row action?",
     "options": [
-      { "id": "a", "text": "Set the column to an expression that evaluates to null" },
-      { "id": "b", "text": "Leave the column empty in the action — empty inputs clear the value" },
-      { "id": "c", "text": "Pass an empty string \"\" to the column" },
-      { "id": "d", "text": "Use Delete a row on the technician record" }
+      {
+        "id": "a",
+        "text": "Set the column to an expression that evaluates to null"
+      },
+      {
+        "id": "b",
+        "text": "Leave the column empty in the action so the value is cleared"
+      },
+      {
+        "id": "c",
+        "text": "Pass an empty string \"\" to the column in the Update a row action"
+      },
+      {
+        "id": "d",
+        "text": "Use Delete a row on the technician's own record in the same flow"
+      }
     ],
     "correct": "a",
     "explanation": "Ein leeres Feld in der Aktion bedeutet „nicht ändern“, kein Löschen. Um einen bestehenden Wert zu leeren, setzt man die Spalte auf einen Ausdruck, der null ergibt. Delete a row würde den Techniker selbst löschen.",
@@ -333,7 +375,7 @@
       },
       {
         "id": "b",
-        "text": "Nothing — the flow will pick up the new requirement automatically on its next run"
+        "text": "Nothing; the flow picks up the new requirement automatically on its next run"
       },
       {
         "id": "c",
@@ -363,19 +405,19 @@
     "options": [
       {
         "id": "a",
-        "text": "Create file was wrapped in an Apply to each — an email can carry multiple attachments, so a file is created for each one"
+        "text": "Create file was wrapped in an Apply to each, because an email can carry several attachments"
       },
       {
         "id": "b",
-        "text": "The action was moved into a Scope for error handling on attachment downloads"
+        "text": "Create file was moved into a Scope so errors while downloading attachments can be handled"
       },
       {
         "id": "c",
-        "text": "A Condition was added to skip emails without attachments"
+        "text": "A Condition was added before Create file to skip emails that have no attachments"
       },
       {
         "id": "d",
-        "text": "The trigger was switched to \"For a selected message\" to expose attachment fields"
+        "text": "The trigger was switched to For a selected message so the attachment fields are exposed"
       }
     ],
     "correct": "a",
@@ -402,7 +444,7 @@
       },
       {
         "id": "s2",
-        "text": "A table can have at most 10 rollup columns.",
+        "text": "A table can have at most 10 rollup columns, and an organization at most 100.",
         "correct": true
       },
       {
@@ -427,10 +469,22 @@
     "difficulty": "medium",
     "prompt": "A Phone Number column should be strongly encouraged on the form but must never block saving a record. Which Required setting fits?",
     "options": [
-      { "id": "a", "text": "Business recommended" },
-      { "id": "b", "text": "Business required" },
-      { "id": "c", "text": "Optional with a business rule that shows an error" },
-      { "id": "d", "text": "System required" }
+      {
+        "id": "a",
+        "text": "Business recommended"
+      },
+      {
+        "id": "b",
+        "text": "Business required"
+      },
+      {
+        "id": "c",
+        "text": "Optional with a business rule that shows an error"
+      },
+      {
+        "id": "d",
+        "text": "System required"
+      }
     ],
     "correct": "a",
     "explanation": "Business recommended signalisiert, dass die Spalte einen Wert haben sollte, blockiert das Speichern aber nicht. Business required verhindert das Speichern ohne Wert. Ein Fehler per Business Rule würde ebenfalls blockieren.",
@@ -449,10 +503,22 @@
     "difficulty": "medium",
     "prompt": "Users building personal views complain that Advanced Find lists dozens of internal integration columns they never need. What should the maker change on those columns?",
     "options": [
-      { "id": "a", "text": "Clear the Searchable checkbox" },
-      { "id": "b", "text": "Set them to Business recommended" },
-      { "id": "c", "text": "Reduce their Maximum character count" },
-      { "id": "d", "text": "Disable Allow form fill assistance" }
+      {
+        "id": "a",
+        "text": "Clear the Searchable checkbox"
+      },
+      {
+        "id": "b",
+        "text": "Set them to Business recommended"
+      },
+      {
+        "id": "c",
+        "text": "Reduce their Maximum character count"
+      },
+      {
+        "id": "d",
+        "text": "Disable Allow form fill assistance"
+      }
     ],
     "correct": "a",
     "explanation": "Nur durchsuchbare Spalten erscheinen in Advanced Find und bei der Anpassung von Ansichten. Das Abwählen von Searchable entfernt ungenutzte Spalten aus diesen Listen — die Daten bleiben erhalten.",
@@ -473,7 +539,7 @@
     "options": [
       {
         "id": "a",
-        "text": "Model manufacturers as a separate table and use a Lookup column — Choice columns are for categories, not for separate items of data"
+        "text": "Model manufacturers as their own table and reference them with a Lookup column"
       },
       {
         "id": "b",
@@ -481,11 +547,11 @@
       },
       {
         "id": "c",
-        "text": "Use a Choice column; Dataverse handles hundreds of options without usability issues"
+        "text": "Use a Choice column, since Dataverse handles hundreds of options without usability issues"
       },
       {
         "id": "d",
-        "text": "Use a Single line of text column with an autonumber format"
+        "text": "Use a Single line of text column with an autonumber format for the manufacturer code"
       }
     ],
     "correct": "a",
@@ -518,7 +584,11 @@
         "text": "Send a message node — inserting the prompt output variable's text"
       }
     ],
-    "correctOrder": ["i1", "i2", "i3"],
+    "correctOrder": [
+      "i1",
+      "i2",
+      "i3"
+    ],
     "explanation": "Der Prompt wird nach Finalize prompt als AI-Plug-in bereitgestellt und im Topic als Aktion aufgerufen. Erst die Frage nach dem Namen (Eingabe), dann der Aktionsaufruf mit dieser Eingabe, zuletzt die Ausgabe des Ergebnisses.",
     "reference": "https://learn.microsoft.com/en-us/training/modules/ai-builder-grounded-prompts/use-grounded-prompt-custom-copilot",
     "source": {
@@ -537,19 +607,19 @@
     "options": [
       {
         "id": "a",
-        "text": "Configure the trigger's From, Only with Attachments, and Subject Filter options so the flow doesn't start for non-matching emails"
+        "text": "Filter in the trigger with From, Only with Attachments, and Subject Filter"
       },
       {
         "id": "b",
-        "text": "Keep the Condition but add a Terminate action in the false branch"
+        "text": "Keep the Condition but add a Terminate action in the false branch to end the run"
       },
       {
         "id": "c",
-        "text": "Switch to a Recurrence trigger and poll the mailbox hourly"
+        "text": "Switch to a Recurrence trigger and poll the mailbox for matching emails hourly"
       },
       {
         "id": "d",
-        "text": "Wrap the Condition in a Scope so failed runs aren't counted"
+        "text": "Wrap the Condition in a Scope so runs that fail the check aren't counted"
       }
     ],
     "correct": "a",

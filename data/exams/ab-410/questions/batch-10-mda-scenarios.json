@@ -28,7 +28,11 @@
         "text": "Convert the sales form to a Quick create form so it can be role-restricted"
       }
     ],
-    "correct": ["a", "b", "c"],
+    "correct": [
+      "a",
+      "b",
+      "c"
+    ],
     "explanation": "Das Muster aus dem Lernmaterial: Hauptformular kopieren und anpassen, jedem Formular über Form settings > Security role Rollen zuweisen, und über Form order festlegen, welches Formular für welche Rollen zuerst erscheint. Eine zweite Tabelle spaltet die Daten; Quick-Create-Formulare lassen sich gar nicht an Rollen binden.",
     "reference": "https://learn.microsoft.com/en-us/training/modules/configure-model-driven-apps-customer-engagement-apps/03-configure-multiple-forms",
     "source": {
@@ -79,19 +83,19 @@
     "options": [
       {
         "id": "a",
-        "text": "Only one Quick create form can be designated for use via form order; they can't be assigned to security roles and users can't switch forms"
+        "text": "Only one Quick create form can be in use, and they can't be role-restricted or switched"
       },
       {
         "id": "b",
-        "text": "Quick create forms are generated automatically from the main form and cannot be authored manually"
+        "text": "Quick create forms are generated from the main form and can't be authored manually"
       },
       {
         "id": "c",
-        "text": "Quick create forms are only available in Dynamics 365 mobile apps, not in model-driven apps"
+        "text": "Quick create forms exist in Dynamics 365 mobile apps but not in model-driven apps"
       },
       {
         "id": "d",
-        "text": "Quick create forms cannot be added to solutions, so security roles never apply to them"
+        "text": "Quick create forms can't be added to solutions, so security roles never apply to them"
       }
     ],
     "correct": "a",
@@ -113,15 +117,15 @@
     "options": [
       {
         "id": "a",
-        "text": "The control is hidden while the Account lookup is empty, the data is read-only, and form scripts aren't supported on the quick view form"
+        "text": "The control stays hidden while the lookup is empty, is read-only, and doesn't run form scripts"
       },
       {
         "id": "b",
-        "text": "Users can edit the address inline, and changes are saved to the Account when the Contact is saved"
+        "text": "Users can edit the address inline, and the Account is updated when the Contact is saved"
       },
       {
         "id": "c",
-        "text": "The control always shows, displaying blank fields until the lookup is set"
+        "text": "The control always shows, displaying blank fields until the Account lookup is set"
       },
       {
         "id": "d",
@@ -147,19 +151,19 @@
     "options": [
       {
         "id": "a",
-        "text": "A custom page — it can be shown as a side pane, integrates more tightly than an embedded canvas app, and is the recommended approach in most cases"
+        "text": "A custom page, which can open as a side pane and integrates more tightly than an embedded canvas app"
       },
       {
         "id": "b",
-        "text": "An embedded canvas app on the main form, because custom pages can only be full pages"
+        "text": "An embedded canvas app on the main form, because custom pages are limited to full-page display"
       },
       {
         "id": "c",
-        "text": "A generative page, because custom pages cannot use connector data"
+        "text": "A generative page, because custom pages are limited to Dataverse data and lack connector access"
       },
       {
         "id": "d",
-        "text": "A dashboard with an iframe pointing to a separately published canvas app"
+        "text": "A dashboard with an iframe pointing to a separately published canvas app that holds the three tables"
       }
     ],
     "correct": "a",
@@ -181,19 +185,19 @@
     "options": [
       {
         "id": "a",
-        "text": "Migrate to the Power Apps grid control with Enable editing set to Yes — Editable Grid is deprecated and only receives critical security fixes"
+        "text": "Migrate the subgrid to the Power Apps grid control and set Enable editing to Yes"
       },
       {
         "id": "b",
-        "text": "Keep Editable Grid and add a rollup column for the sum; grouping requires a separate view"
+        "text": "Keep Editable Grid and add a rollup column for the sum, with a separate grouped view"
       },
       {
         "id": "c",
-        "text": "Switch to the Power Apps Read-Only Grid, which supports grouping and aggregation"
+        "text": "Switch to the Power Apps Read-Only Grid, which adds grouping and aggregation to the subgrid"
       },
       {
         "id": "d",
-        "text": "Replace the subgrid with an embedded Power BI tile that supports totals"
+        "text": "Replace the subgrid with an embedded Power BI tile that supports grouped totals"
       }
     ],
     "correct": "a",
@@ -213,10 +217,22 @@
     "difficulty": "medium",
     "prompt": "Service managers want a home page that shows real-time streams from Cases, Tasks, and Phone Calls side by side, with visual filters on top and the option to switch to tile counts. Which dashboard type fits?",
     "options": [
-      { "id": "a", "text": "A multi-stream interactive dashboard" },
-      { "id": "b", "text": "A single-stream interactive dashboard" },
-      { "id": "c", "text": "A Power BI embedded dashboard" },
-      { "id": "d", "text": "A table-specific single-stream dashboard on the Case table" }
+      {
+        "id": "a",
+        "text": "A multi-stream interactive dashboard"
+      },
+      {
+        "id": "b",
+        "text": "A single-stream interactive dashboard"
+      },
+      {
+        "id": "c",
+        "text": "A Power BI embedded dashboard"
+      },
+      {
+        "id": "d",
+        "text": "A table-specific single-stream dashboard on the Case table"
+      }
     ],
     "correct": "a",
     "explanation": "Multi-Stream-Dashboards zeigen mehrere Echtzeit-Streams, wobei jeder Stream auf einer anderen Tabelle basieren kann — mit visuellen Filtern oben und Tile View per Umschalter. Single-Stream-Dashboards zeigen genau einen Stream auf Basis einer Ansicht und eignen sich für kleinere, komplexere Datenmengen.",
@@ -237,11 +253,20 @@
     "options": [
       {
         "id": "a",
-        "text": "Median isn't offered — the available aggregates are Average, Count:All, Count:Non-empty, Max, Min, and Sum"
+        "text": "Median isn't available; the aggregates are Average, Count:All, Count:Non-empty, Max, Min, and Sum"
       },
-      { "id": "b", "text": "Median is available but only for Currency columns" },
-      { "id": "c", "text": "Median is available once the chart is added to a dashboard" },
-      { "id": "d", "text": "Any aggregate can be typed as a Power Fx expression in the series box" }
+      {
+        "id": "b",
+        "text": "Median is available in the series dropdown, but only for Currency and Decimal columns"
+      },
+      {
+        "id": "c",
+        "text": "Median becomes available once the chart is added to an interactive dashboard as a chart component"
+      },
+      {
+        "id": "d",
+        "text": "Any aggregate, including Median, can be typed as a Power Fx expression in the series box"
+      }
     ],
     "correct": "a",
     "explanation": "Der Chart-Designer bietet für Legendeneinträge genau sechs Aggregate: Average, Count:All, Count:Non-empty, Max, Min und Sum. Median gehört nicht dazu — dafür wäre Power BI die passende Wahl.",
@@ -262,19 +287,19 @@
     "options": [
       {
         "id": "a",
-        "text": "Set(), Collect(), and UpdateContext() rely on canvas-specific state management and aren't supported in commanding"
+        "text": "Set(), Collect(), and UpdateContext() depend on canvas state management and aren't supported"
       },
       {
         "id": "b",
-        "text": "Command buttons only support JavaScript web resources, not Power Fx"
+        "text": "Command buttons accept JavaScript web resources rather than Power Fx expressions in OnSelect"
       },
       {
         "id": "c",
-        "text": "Set() is supported, but the variable name must be prefixed with Self."
+        "text": "Set() is supported, but variable names in commands must be prefixed with Self. to resolve"
       },
       {
         "id": "d",
-        "text": "Commands can't read the selected record, so no state function works"
+        "text": "Commands have no access to the selected record, so no state function has anything to store or update"
       }
     ],
     "correct": "a",
@@ -296,19 +321,19 @@
     "options": [
       {
         "id": "a",
-        "text": "Iterate over Self.Selected.AllItems — Self.Selected.Item is blank when multiple records are selected"
+        "text": "Iterate over Self.Selected.AllItems, since Self.Selected.Item is blank for multiple selection"
       },
       {
         "id": "b",
-        "text": "Set the button's Visible property to Self.Selected.State = 0 so it only shows in Edit state"
+        "text": "Set the button's Visible property to Self.Selected.State = 0 so it appears in Edit state"
       },
       {
         "id": "c",
-        "text": "Wrap the Patch in Confirm() so the user acknowledges each record"
+        "text": "Wrap the Patch in Confirm() so the user acknowledges the update for each selected record"
       },
       {
         "id": "d",
-        "text": "Replace Patch with Navigate(Accounts) to refresh the grid before updating"
+        "text": "Replace Patch with Navigate(Accounts) so the grid refreshes before the update is applied"
       }
     ],
     "correct": "a",
@@ -330,7 +355,7 @@
     "statements": [
       {
         "id": "s1",
-        "text": "Users can create and update records through the Copilot chat pane.",
+        "text": "Users can create and update records through the Copilot chat pane once it's enabled for the app.",
         "correct": false
       },
       {
@@ -362,19 +387,19 @@
     "options": [
       {
         "id": "a",
-        "text": "Privileges on custom tables must be granted explicitly — a custom security role with Pet table privileges must be created and assigned"
+        "text": "Privileges on the custom Pet table must be granted through a security role assigned to the users"
       },
       {
         "id": "b",
-        "text": "The app was shared without publishing; republishing will propagate table access"
+        "text": "The app was shared before publishing, so republishing is needed to propagate table access to users"
       },
       {
         "id": "c",
-        "text": "Custom tables are organization-owned by default, so only System Administrators can read rows"
+        "text": "Custom tables are organization-owned by default, so reading their rows is reserved for System Administrators"
       },
       {
         "id": "d",
-        "text": "The users need the Environment Maker role, which grants read access to all custom tables"
+        "text": "The users need the Environment Maker role, which includes read access to every custom table"
       }
     ],
     "correct": "a",
@@ -396,19 +421,19 @@
     "options": [
       {
         "id": "a",
-        "text": "The Include App Opener privileges for running Model-Driven apps toggle was turned off when the role was created"
+        "text": "The Include App Opener privileges toggle was turned off when the role was created"
       },
       {
         "id": "b",
-        "text": "Organization-level access is too broad and is rejected by the app at runtime"
+        "text": "Organization-level access is too broad and is rejected by the model-driven app at runtime"
       },
       {
         "id": "c",
-        "text": "The role was created with Team privileges only inheritance, which blocks direct assignment"
+        "text": "The role was created with Team privileges inheritance, which blocks direct assignment to users"
       },
       {
         "id": "d",
-        "text": "Custom roles cannot open apps until they are copied from a standard role"
+        "text": "Custom roles are unable to open apps until they've been copied from a standard role and published"
       }
     ],
     "correct": "a",
@@ -428,10 +453,22 @@
     "difficulty": "medium",
     "prompt": "Grooming technicians must open Pet rows, update them, and attach notes to them — nothing more. Following least privilege, which privilege set should their role have on the Pet table?",
     "options": [
-      { "id": "a", "text": "Read, Write, Append" },
-      { "id": "b", "text": "Create, Read, Write, Delete" },
-      { "id": "c", "text": "Read, Append To, Share" },
-      { "id": "d", "text": "Read, Write, Assign, Share" }
+      {
+        "id": "a",
+        "text": "Read, Write, Append"
+      },
+      {
+        "id": "b",
+        "text": "Create, Read, Write, Delete"
+      },
+      {
+        "id": "c",
+        "text": "Read, Append To, Share"
+      },
+      {
+        "id": "d",
+        "text": "Read, Write, Assign, Share"
+      }
     ],
     "correct": "a",
     "explanation": "Öffnen = Read, Ändern = Write, eigene Notiz an einen Datensatz anhängen = Append. Create, Delete, Assign und Share gehen darüber hinaus und gehören zur Scheduler-Rolle. Append To wäre nötig, wenn an den Pet-Datensatz etwas angehängt wird — hier wird die Notiz jedoch mit dem Pet verknüpft.",
@@ -450,21 +487,47 @@
     "difficulty": "medium",
     "prompt": "A developer must attach JavaScript to form events. Match each event to when it fires.",
     "left": [
-      { "id": "l1", "text": "OnLoad" },
-      { "id": "l2", "text": "OnSave" },
-      { "id": "l3", "text": "TabStateChange" },
-      { "id": "l4", "text": "OnChange" }
+      {
+        "id": "l1",
+        "text": "OnLoad"
+      },
+      {
+        "id": "l2",
+        "text": "OnSave"
+      },
+      {
+        "id": "l3",
+        "text": "TabStateChange"
+      },
+      {
+        "id": "l4",
+        "text": "OnChange"
+      }
     ],
     "right": [
-      { "id": "r1", "text": "When the form loads" },
-      { "id": "r2", "text": "When data is saved" },
-      { "id": "r3", "text": "When a tab is expanded or collapsed" },
+      {
+        "id": "r1",
+        "text": "When the form loads"
+      },
+      {
+        "id": "r2",
+        "text": "When data is saved"
+      },
+      {
+        "id": "r3",
+        "text": "When a tab is expanded or collapsed"
+      },
       {
         "id": "r4",
         "text": "When data in a column changes and the control loses focus"
       }
     ],
-    "correct": { "l1": "r1", "l2": "r2", "l3": "r3", "l4": "r4" },
+    "correct": {
+      "l1": "r1",
+      "l2": "r2",
+      "l3": "r3",
+      "l4": "r4"
+    },
     "explanation": "Event-Handler verweisen auf eine JavaScript-Webressource plus Funktion und werden im Events-Tab konfiguriert — nach dem Hinzufügen einer Bibliothek. Pro Element sind bis zu 50 Handler möglich. OnChange feuert erst, wenn das Steuerelement den Fokus verliert.",
     "reference": "https://learn.microsoft.com/en-us/training/modules/configure-model-driven-apps-customer-engagement-apps/02-forms-elements",
     "source": {
@@ -481,10 +544,22 @@
     "difficulty": "medium",
     "prompt": "After an upgrade, an outdated main form still appears in the form selector for some users. The maker wants it invisible to everyone, regardless of security role, without deleting it. What should they do?",
     "options": [
-      { "id": "a", "text": "Designate the main form as inactive" },
-      { "id": "b", "text": "Remove it from the fallback form list" },
-      { "id": "c", "text": "Set its security role to Everyone and move it to the bottom of the form order" },
-      { "id": "d", "text": "Convert it to a Card form" }
+      {
+        "id": "a",
+        "text": "Designate the main form as inactive in its form settings"
+      },
+      {
+        "id": "b",
+        "text": "Remove it from the fallback form list in its form settings"
+      },
+      {
+        "id": "c",
+        "text": "Set its security role to Everyone and move it to the bottom of the order"
+      },
+      {
+        "id": "d",
+        "text": "Convert it to a Card form so it no longer appears in the selector"
+      }
     ],
     "correct": "a",
     "explanation": "Ein inaktives Main-Formular ist für alle Nutzer unsichtbar, unabhängig von der Rolle — genau für Upgrade-Reste gedacht. Aus dem Fallback zu entfernen oder ans Ende zu sortieren blendet es nicht aus; ein Formulartyp lässt sich nicht umwandeln.",
@@ -505,19 +580,19 @@
     "options": [
       {
         "id": "a",
-        "text": "The column must be deleted and recreated as Choice, which loses all data in the column — plan a migration first"
+        "text": "Delete and recreate the column as Choice, accepting that its data is lost, after migrating it"
       },
       {
         "id": "b",
-        "text": "Change the Data type in the column properties; Dataverse converts existing text values into choices automatically"
+        "text": "Change the Data type in the column properties and let Dataverse convert the existing values"
       },
       {
         "id": "c",
-        "text": "Add a business rule that maps the text values to a dropdown at form load"
+        "text": "Add a business rule that maps the existing text values to a dropdown when the form loads"
       },
       {
         "id": "d",
-        "text": "Enable Autonumber on the column, which allows any type switch without data loss"
+        "text": "Enable Autonumber on the column, which allows switching the type without losing data"
       }
     ],
     "correct": "a",
@@ -537,10 +612,22 @@
     "difficulty": "easy",
     "prompt": "Users of a model-driven app want to type \"Visualize high priority cases by origin\" on a view and get a chart without configuring anything. Which capability provides this?",
     "options": [
-      { "id": "a", "text": "The data exploration agent" },
-      { "id": "b", "text": "The chart designer" },
-      { "id": "c", "text": "A single-stream dashboard" },
-      { "id": "d", "text": "The Visualize this view option in Power BI" }
+      {
+        "id": "a",
+        "text": "The data exploration agent"
+      },
+      {
+        "id": "b",
+        "text": "The chart designer"
+      },
+      {
+        "id": "c",
+        "text": "A single-stream dashboard"
+      },
+      {
+        "id": "d",
+        "text": "The Visualize this view option in Power BI"
+      }
     ],
     "correct": "a",
     "explanation": "Der Data Exploration Agent bringt Copilot-Fähigkeiten in Ansichten: Daten per natürlicher Sprache filtern und sortieren, sofort interaktive Diagramme erzeugen und speichern — ohne manuelle Konfiguration im Chart-Designer.",

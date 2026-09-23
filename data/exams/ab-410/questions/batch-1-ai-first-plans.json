@@ -13,15 +13,15 @@
       },
       {
         "id": "b",
-        "text": "Power BI"
+        "text": "Microsoft Power BI"
       },
       {
         "id": "c",
-        "text": "AI Builder"
+        "text": "Microsoft AI Builder"
       },
       {
         "id": "d",
-        "text": "Power Pages"
+        "text": "Microsoft Power Pages"
       }
     ],
     "correct": "a",
@@ -91,19 +91,19 @@
     "options": [
       {
         "id": "a",
-        "text": "AI Builder to extract document fields, Power Automate to orchestrate routing and approval, and a model-driven app for reviewers"
+        "text": "AI Builder document extraction, a Power Automate approval flow, and a model-driven review app"
       },
       {
         "id": "b",
-        "text": "A Power Pages portal with a Web Agent and Power BI reporting"
+        "text": "A Power Pages portal with a Web Agent for vendors and a Power BI dashboard for approvers"
       },
       {
         "id": "c",
-        "text": "A canvas app with an embedded Copilot Studio agent only"
+        "text": "A canvas app with an embedded Copilot Studio agent that reads the invoice PDFs"
       },
       {
         "id": "d",
-        "text": "A Power Automate flow with one Condition per vendor, plus a canvas app in which finance staff key the invoice fields manually"
+        "text": "A Power Automate flow with one Condition per vendor and a canvas app for manual keying"
       }
     ],
     "correct": "a",
@@ -125,11 +125,11 @@
     "options": [
       {
         "id": "a",
-        "text": "Who uses it — internal employees or external users?"
+        "text": "Who uses it: internal employees or external users?"
       },
       {
         "id": "b",
-        "text": "What data is involved — structured transactional, unstructured documents, or analytical aggregations?"
+        "text": "What data is involved: structured, unstructured, or analytical?"
       },
       {
         "id": "c",
@@ -141,7 +141,7 @@
       },
       {
         "id": "e",
-        "text": "How many makers will maintain the solution after go-live?"
+        "text": "How many makers will maintain it after go-live?"
       }
     ],
     "correct": [
@@ -224,11 +224,11 @@
     "options": [
       {
         "id": "a",
-        "text": "The \"no cliffs\" principle — you should never reach a dead end, because there is always a supported way to extend the platform (custom connectors, components, plug-ins)"
+        "text": "The \"no cliffs\" principle — a supported extension path exists for every requirement beyond built-in capabilities"
       },
       {
         "id": "b",
-        "text": "The \"fusion team\" principle — professional developers must sign off before any low-code solution is extended"
+        "text": "The \"fusion team\" principle — professional developers must sign off before any low-code solution is extended further"
       },
       {
         "id": "c",
@@ -258,19 +258,19 @@
     "options": [
       {
         "id": "a",
-        "text": "Bring Your Own Model (BYOM) in Prompt Builder — connect any model deployed in Azure AI Foundry"
+        "text": "Bring Your Own Model in Prompt Builder with an Azure AI Foundry deployment"
       },
       {
         "id": "b",
-        "text": "A Dataverse plug-in written in C#"
+        "text": "A Dataverse plug-in in C# that calls the fine-tuned model's endpoint on every save"
       },
       {
         "id": "c",
-        "text": "A custom connector that wraps the model's REST endpoint so flows can call it"
+        "text": "A custom connector that wraps the fine-tuned model's REST endpoint for use in flows"
       },
       {
         "id": "d",
-        "text": "The Microsoft 365 Agents SDK for full pro-code orchestration"
+        "text": "The Microsoft 365 Agents SDK with the fine-tuned model wired into a pro-code agent"
       }
     ],
     "correct": "a",
@@ -410,15 +410,15 @@
       },
       {
         "id": "b",
-        "text": "\"Create a canvas app with a form.\""
+        "text": "\"Create a canvas app with a form for the HR team to record employee time-off requests.\""
       },
       {
         "id": "c",
-        "text": "\"Build three apps, two portals, and a reporting layer.\""
+        "text": "\"Build three apps, two portals, and a reporting layer for the HR department.\""
       },
       {
         "id": "d",
-        "text": "\"Use Dataverse and Power Automate.\""
+        "text": "\"Use Dataverse and Power Automate to store and route employee requests.\""
       }
     ],
     "correct": "a",
@@ -498,19 +498,19 @@
     "options": [
       {
         "id": "a",
-        "text": "No — the built-in data summarization and data exploration agents are embedded in the Power Apps runtime and require neither a Copilot Studio license nor custom configuration"
+        "text": "No — both agents are built into the Power Apps runtime and need neither a license nor configuration"
       },
       {
         "id": "b",
-        "text": "Yes — each built-in agent must first be created and published in Copilot Studio, then added to the app"
+        "text": "Yes — each built-in agent must be created and published in Copilot Studio before use"
       },
       {
         "id": "c",
-        "text": "Only the summarization agent is built in; chart generation requires a custom Copilot Studio agent with a Power BI tool"
+        "text": "Partly — summarization is built in, but chart generation needs a custom Copilot Studio agent"
       },
       {
         "id": "d",
-        "text": "No configuration is needed, but each user consumes Copilot Studio message capacity per interaction"
+        "text": "No — no configuration is needed, but each user interaction consumes Copilot Studio message capacity"
       }
     ],
     "correct": "a",
@@ -532,7 +532,7 @@
     "options": [
       {
         "id": "a",
-        "text": "Save it to the same solution as the plan for healthy application lifecycle management"
+        "text": "Save it to the same solution as the plan to keep ALM healthy"
       },
       {
         "id": "b",
@@ -540,7 +540,7 @@
       },
       {
         "id": "c",
-        "text": "Save it outside any solution — Power Pages sites are not solution-aware"
+        "text": "Save it outside any solution, since Power Pages sites aren't solution-aware"
       },
       {
         "id": "d",

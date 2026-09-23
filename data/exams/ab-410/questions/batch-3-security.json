@@ -9,19 +9,19 @@
     "options": [
       {
         "id": "a",
-        "text": "Tenant-level admin roles do not automatically grant access to Dataverse data — a System Administrator security role must still be explicitly assigned per environment"
+        "text": "Tenant admin roles don't grant Dataverse data access; a System Administrator role is still needed"
       },
       {
         "id": "b",
-        "text": "The role automatically grants System Administrator access in every environment"
+        "text": "The role automatically grants System Administrator access in each environment of the tenant"
       },
       {
         "id": "c",
-        "text": "The role grants read-only access to Dataverse data in all environments"
+        "text": "The role grants read-only access to Dataverse data in each environment of the tenant"
       },
       {
         "id": "d",
-        "text": "The role replaces the need for any environment-level roles"
+        "text": "The role replaces environment-level roles, so no Dataverse role assignment is required"
       }
     ],
     "correct": "a",
@@ -380,19 +380,19 @@
     "options": [
       {
         "id": "a",
-        "text": "They aren't automatically given access to the database — access must be granted separately by a Database owner"
+        "text": "They aren't given database access automatically; a Database owner must grant it separately"
       },
       {
         "id": "b",
-        "text": "They automatically receive Basic User access to all tables"
+        "text": "They automatically receive Basic User access to the tables in the environment's Dataverse database"
       },
       {
         "id": "c",
-        "text": "They receive read-only access to the database"
+        "text": "They receive read-only access to the database until an admin upgrades the role manually"
       },
       {
         "id": "d",
-        "text": "Their environment role is converted to System Administrator automatically"
+        "text": "Their environment role is converted to System Administrator when the database is provisioned"
       }
     ],
     "correct": "a",

@@ -21,11 +21,11 @@
       },
       {
         "id": "d",
-        "text": "Primary column display name"
+        "text": "Primary column name"
       },
       {
         "id": "e",
-        "text": "Enable attachments"
+        "text": "Attachments setting"
       }
     ],
     "correct": [
@@ -108,19 +108,19 @@
     "options": [
       {
         "id": "a",
-        "text": "A GUID generated automatically by Dataverse is the primary key; the primary column is a readable text field representing rows in apps and flows"
+        "text": "A GUID is the primary key; the primary column is a readable text field shown in apps and flows"
       },
       {
         "id": "b",
-        "text": "The primary column is the primary key; the GUID is only used for auditing"
+        "text": "The primary column is the primary key, and the GUID is kept for audit history alone"
       },
       {
         "id": "c",
-        "text": "An auto-incrementing integer is the primary key; the primary column stores the row's owner"
+        "text": "An auto-incrementing integer is the primary key; the primary column stores the row owner"
       },
       {
         "id": "d",
-        "text": "Both the GUID and the primary column must be entered manually when a row is created"
+        "text": "Both the GUID and the primary column must be entered by the user when a row is created"
       }
     ],
     "correct": "a",
@@ -142,19 +142,19 @@
     "options": [
       {
         "id": "a",
-        "text": "It uses a hidden intersect table that isn't user-editable and doesn't support custom forms or columns"
+        "text": "It uses a hidden intersect table that can't be edited or given custom forms"
       },
       {
         "id": "b",
-        "text": "It creates a lookup column on each of the two tables"
+        "text": "It adds a lookup column to each of the two tables that reference each other"
       },
       {
         "id": "c",
-        "text": "It duplicates rows in both tables to keep them in sync"
+        "text": "It duplicates the associated rows in both tables and keeps them in sync"
       },
       {
         "id": "d",
-        "text": "It creates a one-to-many relationship in each direction, with a lookup column on both tables"
+        "text": "It creates two one-to-many relationships, one per direction, with lookups"
       }
     ],
     "correct": "a",
@@ -208,19 +208,19 @@
     "options": [
       {
         "id": "a",
-        "text": "A Prompt column — Dataverse evaluates the natural language prompt against the row's other columns and stores the output"
+        "text": "A Prompt column that stores the AI-generated output of a prompt over the row's columns"
       },
       {
         "id": "b",
-        "text": "A Formula column — a Power Fx expression that concatenates the description fields"
+        "text": "A Formula column with a Power Fx expression that concatenates the description and title fields"
       },
       {
         "id": "c",
-        "text": "A Rollup column — aggregates the related activity text into a summary"
+        "text": "A Rollup column that aggregates the related activity text into one summary on the request"
       },
       {
         "id": "d",
-        "text": "A Multiple lines of text column populated by a scheduled flow using Create text with GPT"
+        "text": "A Multiple lines of text column filled by a scheduled flow using the Create text with GPT action"
       }
     ],
     "correct": "a",
@@ -274,19 +274,19 @@
     "options": [
       {
         "id": "a",
-        "text": "A row summary isn't stored as a column value — it's generated on demand when a user views the record"
+        "text": "A row summary isn't stored as a column value but generated on demand when the record is viewed"
       },
       {
         "id": "b",
-        "text": "A row summary is stored in a hidden column and refreshed nightly"
+        "text": "A row summary is stored in a hidden column and refreshed by a nightly system job"
       },
       {
         "id": "c",
-        "text": "A row summary can only be configured per form, never per table"
+        "text": "A row summary is configured per main form, whereas a Prompt column is configured once for the table"
       },
       {
         "id": "d",
-        "text": "A row summary is refreshed only when a Prompt column on the same table changes"
+        "text": "A row summary is refreshed when a Prompt column on the same table changes, and at no other time"
       }
     ],
     "correct": "a",
@@ -366,19 +366,19 @@
     "options": [
       {
         "id": "a",
-        "text": "Floating point numbers store a close approximation of the value, and several Dataverse features such as calculated columns don't support float"
+        "text": "Float stores only an approximation, and features such as calculated columns don't support it"
       },
       {
         "id": "b",
-        "text": "Float values are stored exactly but consume twice the storage of Decimal values"
+        "text": "Float values are stored exactly but consume twice the storage space of an equivalent Decimal"
       },
       {
         "id": "c",
-        "text": "Float columns can't have minimum and maximum values configured"
+        "text": "Float columns don't allow the maker to configure minimum and maximum values"
       },
       {
         "id": "d",
-        "text": "Float columns aren't supported as inputs to business rules"
+        "text": "Float columns aren't accepted as inputs to business rules or as view columns"
       }
     ],
     "correct": "a",
@@ -400,7 +400,7 @@
     "options": [
       {
         "id": "a",
-        "text": "An alternate key — Dataverse enforces that every entry in that key column is required and unique"
+        "text": "An alternate key on the order number column"
       },
       {
         "id": "b",
@@ -408,11 +408,11 @@
       },
       {
         "id": "c",
-        "text": "A rollup column on the related table"
+        "text": "A rollup column on the related order table"
       },
       {
         "id": "d",
-        "text": "A business rule that validates the order number"
+        "text": "A business rule on the order number"
       }
     ],
     "correct": "a",
@@ -434,7 +434,7 @@
     "options": [
       {
         "id": "a",
-        "text": "Set the column's seed value to 5000"
+        "text": "Set the autonumber column's seed value to 5000 in the column properties"
       },
       {
         "id": "b",
@@ -500,19 +500,19 @@
     "options": [
       {
         "id": "a",
-        "text": "Virtual table data remains in the source application and isn't duplicated in Dataverse, while full CRUD operations are supported"
+        "text": "Data stays in the source application and isn't duplicated, yet full CRUD is supported"
       },
       {
         "id": "b",
-        "text": "Virtual tables copy the source data into Dataverse on a nightly schedule"
+        "text": "Source data is copied into Dataverse on a nightly schedule and updated from there afterwards"
       },
       {
         "id": "c",
-        "text": "Virtual tables are read-only and cannot participate in relationships"
+        "text": "Virtual tables are read-only and don't take part in relationships with native Dataverse tables"
       },
       {
         "id": "d",
-        "text": "Virtual tables support read and update operations but not create or delete"
+        "text": "Virtual tables support read and update operations but not create or delete on the source"
       }
     ],
     "correct": "a",
@@ -534,7 +534,7 @@
     "options": [
       {
         "id": "a",
-        "text": "Dual-write"
+        "text": "Dual-write between finance and operations apps and Dataverse"
       },
       {
         "id": "b",
@@ -542,11 +542,11 @@
       },
       {
         "id": "c",
-        "text": "Two scheduled cloud flows that copy changed rows in each direction"
+        "text": "Two scheduled cloud flows copying changed rows in each direction"
       },
       {
         "id": "d",
-        "text": "A Power Query dataflow refreshed every hour"
+        "text": "A Power Query dataflow that refreshes the Dataverse tables every hour"
       }
     ],
     "correct": "a",

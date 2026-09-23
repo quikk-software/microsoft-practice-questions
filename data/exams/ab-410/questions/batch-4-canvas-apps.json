@@ -43,7 +43,7 @@
     "options": [
       {
         "id": "a",
-        "text": "Defaults(DataSource) — it returns a blank record with all default values for that table"
+        "text": "Defaults('Coffee Machines')"
       },
       {
         "id": "b",
@@ -55,7 +55,7 @@
       },
       {
         "id": "d",
-        "text": "First(DataSource)"
+        "text": "LookUp('Coffee Machines', true)"
       }
     ],
     "correct": "a",
@@ -159,19 +159,19 @@
     "options": [
       {
         "id": "a",
-        "text": "A UDF accepts parameters and returns a value, similar to a function in traditional programming"
+        "text": "It accepts parameters and returns a value, like a function in traditional programming"
       },
       {
         "id": "b",
-        "text": "A UDF is evaluated once when the app starts and its result is cached for the session"
+        "text": "It is evaluated once when the app starts and its result is cached for the whole session"
       },
       {
         "id": "c",
-        "text": "A UDF can only return Text values, while named formulas can return any type"
+        "text": "It is limited to returning Text values, while a named formula can return any data type"
       },
       {
         "id": "d",
-        "text": "A UDF must be defined in a component library before it can be called"
+        "text": "It must be defined in a component library before any screen can call it"
       }
     ],
     "correct": "a",
@@ -193,19 +193,19 @@
     "options": [
       {
         "id": "a",
-        "text": "Components are visual building blocks with their own controls, properties, and behaviors — not just formula logic"
+        "text": "They are visual building blocks with their own controls and properties, not just formula logic"
       },
       {
         "id": "b",
-        "text": "Components can only be used in model-driven apps"
+        "text": "They are restricted to model-driven apps, whereas named formulas work in canvas apps as well"
       },
       {
         "id": "c",
-        "text": "Components are limited to a single app and cannot be shared"
+        "text": "They are limited to a single app and aren't shareable across the environment"
       },
       {
         "id": "d",
-        "text": "Components can be reused across apps but cannot expose custom properties to the caller"
+        "text": "They can be reused across apps but don't expose custom properties to the caller"
       }
     ],
     "correct": "a",
@@ -227,19 +227,19 @@
     "options": [
       {
         "id": "a",
-        "text": "Saving stores your changes but users running the app don't see them yet; publishing pushes a new version live"
+        "text": "Saving stores changes without showing them to users; publishing pushes a new version live"
       },
       {
         "id": "b",
-        "text": "Saving makes changes live immediately; publishing only creates a backup"
+        "text": "Saving makes changes live immediately; publishing creates a restorable backup version"
       },
       {
         "id": "c",
-        "text": "Saving and publishing are the same action with different names"
+        "text": "Saving and publishing are the same action, reached from two different buttons"
       },
       {
         "id": "d",
-        "text": "Publishing stores a draft; saving releases it to users"
+        "text": "Publishing stores a draft for review; saving releases the version to users"
       }
     ],
     "correct": "a",
@@ -354,15 +354,15 @@
       },
       {
         "id": "b",
-        "text": "Every 30 seconds; under Settings > Advanced"
+        "text": "Every 30 seconds; under Settings > Advanced > Save"
       },
       {
         "id": "c",
-        "text": "Every 10 minutes; it cannot be turned off"
+        "text": "Every 10 minutes; under Settings > General > Auto save interval"
       },
       {
         "id": "d",
-        "text": "Only when you publish; there is no AutoSave"
+        "text": "Only when you publish; there is no AutoSave option"
       }
     ],
     "correct": "a",
@@ -384,15 +384,15 @@
     "options": [
       {
         "id": "a",
-        "text": "SubmitForm(Form1) in the button's OnSelect; navigate in the form's OnSuccess property"
+        "text": "SubmitForm(Form1) in the button's OnSelect; navigate in the form's OnSuccess"
       },
       {
         "id": "b",
-        "text": "Patch() in the form's OnVisible; navigate in the button's OnSelect"
+        "text": "Patch() in the form's OnVisible; navigate in the button's OnSelect property"
       },
       {
         "id": "c",
-        "text": "Collect() in the form's Items; navigate in App.OnStart"
+        "text": "Collect() in the form's Items; navigate in the App.OnStart property"
       },
       {
         "id": "d",

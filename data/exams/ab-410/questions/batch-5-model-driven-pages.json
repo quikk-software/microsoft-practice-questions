@@ -124,7 +124,7 @@
       },
       {
         "id": "s3",
-        "text": "Business process flows are managed in Power Automate, not in Power Apps.",
+        "text": "Business process flows are created and managed in Power Automate rather than in Power Apps.",
         "correct": false
       }
     ],
@@ -146,19 +146,19 @@
     "options": [
       {
         "id": "a",
-        "text": "A generative page — described in natural language with the wireframe attached, generated as solution-aware React code"
+        "text": "A generative page described in natural language, with the wireframe attached as guidance"
       },
       {
         "id": "b",
-        "text": "A custom page built in Power Apps Studio with a gallery control"
+        "text": "A custom page built in Power Apps Studio with a gallery control bound to the Accounts table"
       },
       {
         "id": "c",
-        "text": "An embedded canvas app placed on the Account main form"
+        "text": "An embedded canvas app placed on the Account main form with a gallery control for cards"
       },
       {
         "id": "d",
-        "text": "A dashboard with a chart component bound to the Accounts view"
+        "text": "A dashboard with a chart component and a list bound to the Active Accounts view for cards"
       }
     ],
     "correct": "a",
@@ -180,11 +180,11 @@
     "options": [
       {
         "id": "a",
-        "text": "Generative pages can link up to six Dataverse tables"
+        "text": "Generative pages can link at most six Dataverse tables per page"
       },
       {
         "id": "b",
-        "text": "Generative pages can only connect to a single table; related data must come through lookups"
+        "text": "Generative pages connect to a single table; related data comes through lookups"
       },
       {
         "id": "c",
@@ -192,7 +192,7 @@
       },
       {
         "id": "d",
-        "text": "Tables from different publishers can't be combined on one generative page"
+        "text": "Tables from different publishers aren't combinable on one generative page"
       }
     ],
     "correct": "a",
@@ -214,11 +214,11 @@
     "options": [
       {
         "id": "a",
-        "text": "The agent feed — a task list that appears at the top of the app's site map"
+        "text": "The agent feed, a task list shown at the top of the app's site map"
       },
       {
         "id": "b",
-        "text": "The Copilot chat pane"
+        "text": "The Copilot chat pane, as a pinned message at the top of the conversation"
       },
       {
         "id": "c",
@@ -226,7 +226,7 @@
       },
       {
         "id": "d",
-        "text": "A task activity on the record's timeline"
+        "text": "A task activity on the record's timeline, assigned to the record owner"
       }
     ],
     "correct": "a",
@@ -248,19 +248,19 @@
     "options": [
       {
         "id": "a",
-        "text": "Users with the System Administrator or System Customizer roles"
+        "text": "Users with the System Administrator or System Customizer role"
       },
       {
         "id": "b",
-        "text": "All users who can open the app"
+        "text": "Every user who can open the app in the environment"
       },
       {
         "id": "c",
-        "text": "Only the app's owner"
+        "text": "The app's owner and the users it was shared with"
       },
       {
         "id": "d",
-        "text": "Only users with a Copilot Studio license"
+        "text": "Users who hold a Copilot Studio license in the tenant, regardless of role"
       }
     ],
     "correct": "a",
@@ -282,15 +282,15 @@
     "options": [
       {
         "id": "a",
-        "text": "Table permissions — define access to rows in Dataverse tables"
+        "text": "Table permissions for Dataverse rows"
       },
       {
         "id": "b",
-        "text": "Page permissions — grant or deny access to individual pages"
+        "text": "Page permissions for individual pages"
       },
       {
         "id": "c",
-        "text": "Web roles — link together users and permissions"
+        "text": "Web roles linking users and permissions"
       },
       {
         "id": "d",
@@ -298,7 +298,7 @@
       },
       {
         "id": "e",
-        "text": "Business units"
+        "text": "Business unit hierarchies"
       }
     ],
     "correct": [
@@ -324,7 +324,7 @@
     "options": [
       {
         "id": "a",
-        "text": "New sites are private by default — site visibility must be switched to Public before going live"
+        "text": "New sites are private by default, so site visibility must be switched to Public before going live"
       },
       {
         "id": "b",
@@ -436,7 +436,7 @@
       },
       {
         "id": "s3",
-        "text": "The HTTP connector may be blocked in the environment without affecting agents.",
+        "text": "The HTTP connector can be blocked in the environment without any effect on site agents.",
         "correct": false
       }
     ],
@@ -492,19 +492,19 @@
     "options": [
       {
         "id": "a",
-        "text": "Lists — defined by one or more table views, including pagination, filtering, and sorting"
+        "text": "Lists, which are based on one or more table views and support paging and filtering"
       },
       {
         "id": "b",
-        "text": "Web roles — defined by table permissions"
+        "text": "Web roles, which define the rows each visitor may see through table permissions"
       },
       {
         "id": "c",
-        "text": "Liquid templates only"
+        "text": "Liquid templates, which render Dataverse rows through server-side markup"
       },
       {
         "id": "d",
-        "text": "Charts defined in the model-driven app designer"
+        "text": "Charts, which are defined in the model-driven app designer and embedded"
       }
     ],
     "correct": "a",
