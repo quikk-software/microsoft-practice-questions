@@ -50,3 +50,30 @@ Study Guide); der Study Guide liefert nur Struktur und Gewichtung.
 - [ ] 8. Verifizieren: Startseite listet AB-410, `/exams/ab-410` (SEO-Text,
       FAQ, JSON-LD per SSR), Lern-Modus bietet AB-410 an, Sitemap-Eintrag,
       Test-Examen startet und bewertet
+
+## Überarbeitung nach der echten Prüfung (23.09.2026)
+
+Auslöser: Joyce hat die AB-410 mit 650/700 nicht bestanden; der Pool war
+„viel zu einfach“. Befund gegen den ursprünglichen Pool (114 Fragen):
+46 % reine Wissensabfrage, nur 14 % Szenarien, 42 % der Units genutzt,
+7 von 33 Study-Guide-Punkten ohne Frage.
+
+Vorgehen:
+- alle 102 Inhalts-Units gelesen (vorher ~40 %)
+- 89 neue Szenariofragen (Batch 9–13): Anforderung + Randbedingung +
+  Entscheidung; Distraktoren nur aus real existierenden Optionen
+- Bestand (Batch 1–8) überarbeitet: 33 Fragen neu gelabelt (Denkanforderung
+  statt Faktenobskurität), 24 Distraktoren ersetzt, 10 Definitionsfragen in
+  Szenarien umgebaut; keine ID entfernt
+- Schwierigkeitskurve auf easy 0.20 / medium 0.45 / hard 0.35
+
+Ergebnis (203 Fragen, 203 wortgetreue Zitate, 0 Validierungsfehler):
+- Definitions-Einstieg 28 % (vorher 46 %)
+- Units als Quelle: 83 von 96 (vorher 43 von 102)
+- Study-Guide-Punkte ohne Frage: 0 (vorher 7)
+- je Skill-Area alle drei Stufen über Bedarf gedeckt
+- Seed: 203 Fragen in Supabase, keine verwaisten IDs
+
+Bekannte Grenzen der Lernpfade (nicht im Material enthalten, daher nicht
+abgedeckt): „Test canvas apps using Monitor“ (Monitor-Tool kommt nicht vor),
+„Recommend environment types“ (nur Power-Pages-Trial/Production erwähnt).

@@ -1,0 +1,626 @@
+[
+  {
+    "id": "abb9-001",
+    "type": "single-choice",
+    "skillArea": "applications",
+    "topic": "Variables: scope",
+    "difficulty": "hard",
+    "prompt": "A canvas app has a Home screen where users choose their role, plus Catalog and Admin screens that must show or hide controls based on that role. The maker sets the role on the Home screen with UpdateContext({UserRole: Dropdown1.Selected.Value}), but on the Admin screen UserRole is always blank. What should the maker change?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Use Set(UserRole, Dropdown1.Selected.Value) instead — a global variable is accessible from any screen"
+      },
+      {
+        "id": "b",
+        "text": "Repeat the same UpdateContext() call in App.OnStart so the value is initialized before any screen loads"
+      },
+      {
+        "id": "c",
+        "text": "Pass UserRole as the third argument of Navigate() every time the user changes screens"
+      },
+      {
+        "id": "d",
+        "text": "Store the role in a collection with Collect() and read it with First() on the Admin screen"
+      }
+    ],
+    "correct": "a",
+    "explanation": "UpdateContext() legt eine Kontextvariable an, die nur auf dem Bildschirm gilt, auf dem sie gesetzt wurde — der Admin-Bildschirm sieht sie nie. Für Werte, die über Bildschirme hinweg gelten (Rolle, Bearbeitungsmodus, ausgewählter Datensatz), ist Set() die richtige Wahl. Die Übergabe per Navigate() funktioniert zwar für einen Zielbildschirm, ist aber für einen app-weiten Zustand umständlich und fehleranfällig; eine Collection ist eine In-Memory-Tabelle und für einen einzelnen Wert das falsche Werkzeug.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/power-fx-formulas",
+    "source": {
+      "title": "Work with Power Fx formulas in canvas apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/power-fx-formulas",
+      "quote": "A global variable holds a single value and is accessible from any screen in your app. A context variable is scoped to the screen where it's set. It's useful for temporary state that only one screen needs."
+    }
+  },
+  {
+    "id": "abb9-002",
+    "type": "yes-no",
+    "skillArea": "applications",
+    "topic": "Variables: choosing the right kind",
+    "difficulty": "medium",
+    "prompt": "You need a confirmation dialog that appears on the Catalog screen when the user presses Delete. The dialog state must not leak to other screens. For each statement, select Yes if it is true. Otherwise, select No.",
+    "statements": [
+      {
+        "id": "s1",
+        "text": "Setting UpdateContext({ShowConfirm: true}) in the button's OnSelect and the dialog container's Visible property to ShowConfirm meets the requirement.",
+        "correct": true
+      },
+      {
+        "id": "s2",
+        "text": "A variable set with UpdateContext() on the Catalog screen can be read directly from the Admin screen.",
+        "correct": false
+      },
+      {
+        "id": "s3",
+        "text": "A global variable set with Set() persists for the lifetime of the app session.",
+        "correct": true
+      }
+    ],
+    "explanation": "Ein Dialog-Zustand, der nur einen Bildschirm betrifft, ist der klassische Fall für UpdateContext(): Die Kontextvariable ist auf diesen Bildschirm begrenzt und von anderen Bildschirmen nicht lesbar. Globale Variablen aus Set() leben dagegen für die gesamte App-Sitzung — passend für Rolle oder ausgewählten Datensatz, nicht für lokalen UI-Zustand.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/power-fx-formulas",
+    "source": {
+      "title": "Work with Power Fx formulas in canvas apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/power-fx-formulas",
+      "quote": "To show or hide a confirmation dialog: UpdateContext({ShowConfirm: true}) Then set the Visible property of the dialog container to ShowConfirm. Global variables persist for the lifetime of the app session."
+    }
+  },
+  {
+    "id": "abb9-003",
+    "type": "single-choice",
+    "skillArea": "applications",
+    "topic": "Collections: preloading data",
+    "difficulty": "medium",
+    "prompt": "A canvas app uses a Machine Types lookup table on five different screens. Users on slow connections complain that every screen takes time to load, and the Dataverse call count is high. Which change addresses this with the least rework?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Add ClearCollect(MachineTypes, 'Machine Types') to App.OnStart and point the five screens at the collection"
+      },
+      {
+        "id": "b",
+        "text": "Wrap each lookup in IfError() so slow calls fall back to a cached value"
+      },
+      {
+        "id": "c",
+        "text": "Replace the lookups with Set() variables on each screen's OnVisible property"
+      },
+      {
+        "id": "d",
+        "text": "Convert the Machine Types table to a virtual table so it isn't stored in Dataverse"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Eine Collection ist eine lokale In-Memory-Tabelle. Mit ClearCollect() in App.OnStart wird die Nachschlagetabelle einmal beim Start geladen und danach von allen Bildschirmen aus der Collection gelesen — genau das reduziert die Zahl der Dataverse-Aufrufe. IfError() behandelt Fehler, keine Latenz; Set() hält einen Einzelwert, keine Tabelle; virtuelle Tabellen ändern den Speicherort, nicht die Aufrufhäufigkeit.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/power-fx-formulas",
+    "source": {
+      "title": "Work with Power Fx formulas in canvas apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/power-fx-formulas",
+      "quote": "A collection is a local in-memory table that you can build, modify, and use as a data source, without writing anything to Dataverse. Use ClearCollect() in the App.OnStart property to preload data when the app launches (for example, loading lookup data you need throughout the session). This reduces the number of calls to Dataverse during use."
+    }
+  },
+  {
+    "id": "abb9-004",
+    "type": "single-choice",
+    "skillArea": "applications",
+    "topic": "Error handling",
+    "difficulty": "hard",
+    "prompt": "A Save button calls Patch() to update a Dataverse record. When Dataverse rejects the update, users see a confusing red error and the app appears to hang. The requirement: show a friendly banner and keep the app usable. Which OnSelect formula meets the requirement?",
+    "options": [
+      {
+        "id": "a",
+        "text": "IfError(Patch('Coffee Machines', Gallery1.Selected, {'Product Summary': TextInput1.Text}), Notify(\"Unable to update the machine. Please try again.\", NotificationType.Error))"
+      },
+      {
+        "id": "b",
+        "text": "Notify(\"Saving…\", NotificationType.Information); Patch('Coffee Machines', Gallery1.Selected, {'Product Summary': TextInput1.Text})"
+      },
+      {
+        "id": "c",
+        "text": "If(IsBlank(TextInput1.Text), Notify(\"Enter a summary\", NotificationType.Warning), Patch('Coffee Machines', Gallery1.Selected, {'Product Summary': TextInput1.Text}))"
+      },
+      {
+        "id": "d",
+        "text": "Set(SaveFailed, true); Patch('Coffee Machines', Gallery1.Selected, {'Product Summary': TextInput1.Text}); Set(SaveFailed, false)"
+      }
+    ],
+    "correct": "a",
+    "explanation": "IfError() wertet die Formel aus und liefert bei einem Fehler den Fallback — hier ein Notify() mit verständlicher Meldung. Option b zeigt nur einen Hinweis vor dem Speichern und fängt nichts ab. Option c prüft eine Eingabe, nicht das Ergebnis von Patch(). Option d setzt eine Variable, die nach einem Fehler nie wieder auf false gesetzt wird, weil die Ausführung beim Fehler stoppt.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/power-fx-formulas",
+    "source": {
+      "title": "Work with Power Fx formulas in canvas apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/power-fx-formulas",
+      "quote": "IfError() evaluates a formula and returns a fallback value if it produces an error. Notify() displays a banner message at the top of the screen — useful for confirming an action completed successfully or explaining why something failed."
+    }
+  },
+  {
+    "id": "abb9-005",
+    "type": "matching",
+    "skillArea": "applications",
+    "topic": "Notification types",
+    "difficulty": "easy",
+    "prompt": "Match each NotificationType to the situation it is intended for.",
+    "left": [
+      { "id": "l1", "text": "NotificationType.Success" },
+      { "id": "l2", "text": "NotificationType.Error" },
+      { "id": "l3", "text": "NotificationType.Warning" },
+      { "id": "l4", "text": "NotificationType.Information" }
+    ],
+    "right": [
+      { "id": "r1", "text": "Confirming a successful save or action (green)" },
+      { "id": "r2", "text": "Reporting a failure (red)" },
+      { "id": "r3", "text": "Alerting the user to something they should know (yellow)" },
+      { "id": "r4", "text": "General informational messages (blue)" }
+    ],
+    "correct": { "l1": "r1", "l2": "r2", "l3": "r3", "l4": "r4" },
+    "explanation": "Notify() kennt vier Typen mit fester Farbe und Bedeutung: Success (grün) für erfolgreiche Aktionen, Error (rot) für Fehlschläge, Warning (gelb) für Hinweise, Information (blau) für neutrale Meldungen.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/power-fx-formulas",
+    "source": {
+      "title": "Work with Power Fx formulas in canvas apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/power-fx-formulas",
+      "quote": "NotificationType.Success Green Confirming a successful save or action NotificationType.Error Red Reporting a failure NotificationType.Warning Yellow Alerting the user to something they should know NotificationType.Information Blue General informational messages"
+    }
+  },
+  {
+    "id": "abb9-006",
+    "type": "single-choice",
+    "skillArea": "applications",
+    "topic": "Chaining statements",
+    "difficulty": "medium",
+    "prompt": "A single Save button must submit the edit form, show a green confirmation banner, and then return to the list screen. How do you express this in one OnSelect property?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Chain the statements with semicolons: SubmitForm(Form1); Notify(\"Saved.\", NotificationType.Success); Navigate(ListScreen)"
+      },
+      {
+        "id": "b",
+        "text": "Nest them: Navigate(ListScreen, Notify(\"Saved.\", SubmitForm(Form1)))"
+      },
+      {
+        "id": "c",
+        "text": "Only one function is allowed per property — put Notify() and Navigate() on separate hidden buttons and Select() them"
+      },
+      {
+        "id": "d",
+        "text": "Use a comma-separated list: SubmitForm(Form1), Notify(\"Saved.\"), Navigate(ListScreen)"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Power Fx erlaubt mehrere Anweisungen in einer Eigenschaft, getrennt durch Semikolon; sie laufen der Reihe nach. Das ist genau das Muster, um Patch() oder SubmitForm() mit Notify() und Navigate() in einer Schaltfläche zu kombinieren. Kommas trennen Argumente, keine Anweisungen; Verschachtelung ergibt hier keine gültigen Typen.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/power-fx-formulas",
+    "source": {
+      "title": "Work with Power Fx formulas in canvas apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/power-fx-formulas",
+      "quote": "In Power Fx, you can chain multiple statements on consecutive lines using a semicolon (;). The statements run in order, useful for combining a Patch() or SubmitForm() with a Notify() and a Navigate() in a single button."
+    }
+  },
+  {
+    "id": "abb9-007",
+    "type": "single-choice",
+    "skillArea": "logic-automation",
+    "topic": "Connector evaluation: licensing and location",
+    "difficulty": "hard",
+    "prompt": "A warehouse app must read and update 200,000 rows in an on-premises SQL Server database. The 60 intended users only have Microsoft 365 licenses that include Power Apps. What must you tell the project sponsor before committing to the design?",
+    "options": [
+      {
+        "id": "a",
+        "text": "SQL Server is a premium connector requiring Per App or Per User licenses, and on-premises access needs an on-premises data gateway"
+      },
+      {
+        "id": "b",
+        "text": "SQL Server is a standard connector, but on-premises databases cannot be reached from Power Apps at all"
+      },
+      {
+        "id": "c",
+        "text": "The design works as-is because Microsoft 365 licenses include all connectors when the data stays inside the corporate network"
+      },
+      {
+        "id": "d",
+        "text": "Export the SQL data to an Excel file in OneDrive so the app can use a standard connector without extra licensing"
+      }
+    ],
+    "correct": "a",
+    "explanation": "SQL Server zählt zu den Premium-Connectors und setzt Per-App- oder Per-User-Lizenzen voraus — Microsoft-365-Lizenzen reichen nicht. Lokale Datenbanken sind erreichbar, aber nur über das On-Premises Data Gateway. Excel ist für 60 Nutzer und 200.000 Zeilen als Live-Datenquelle ungeeignet.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps/4-powerapps-ways-to-build",
+    "source": {
+      "title": "Power Apps data sources",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps/4-powerapps-ways-to-build",
+      "quote": "Premium connectors — Require a Power Apps Per App or Per User license. Examples include Dataverse, SQL Server, Salesforce, SAP, ServiceNow, and HTTP with Microsoft Entra ID. If hosted on-premises, you can use an on-premises Data Gateway to securely connect Power Apps to local SQL databases."
+    }
+  },
+  {
+    "id": "abb9-008",
+    "type": "single-choice",
+    "skillArea": "logic-automation",
+    "topic": "Connector evaluation: delegation",
+    "difficulty": "medium",
+    "prompt": "A gallery bound to a SharePoint list with 8,000 items shows a yellow warning triangle in Power Apps Studio, and users report that some records never appear even though they exist. What is the most likely cause?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The query exceeds SharePoint's delegation limit, so results are incomplete"
+      },
+      {
+        "id": "b",
+        "text": "The SharePoint list uses mandatory columns, which Power Apps cannot read"
+      },
+      {
+        "id": "c",
+        "text": "SharePoint is a premium connector and the users' licenses only load a preview of the data"
+      },
+      {
+        "id": "d",
+        "text": "The list has a relational lookup column, which blocks the gallery from rendering"
+      }
+    ],
+    "correct": "a",
+    "explanation": "SharePoint unterliegt einem Delegationslimit: Abfragen, die mehr Daten liefern würden, kommen unvollständig zurück — genau das signalisiert das Warnsymbol in der App. Pflichtspalten und Lookups verhindern das Lesen nicht, und SharePoint ist ein Standard-Connector ohne lizenzabhängige Vorschau.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps/4-powerapps-ways-to-build",
+    "source": {
+      "title": "Power Apps data sources",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps/4-powerapps-ways-to-build",
+      "quote": "SharePoint is subject to a delegation limit. Queries returning more data than this limit may result in incomplete results, indicated by a warning icon in the app."
+    }
+  },
+  {
+    "id": "abb9-009",
+    "type": "single-choice",
+    "skillArea": "logic-automation",
+    "topic": "Connector evaluation: Excel as live source",
+    "difficulty": "medium",
+    "prompt": "A team of 15 inspectors uses a canvas app whose data source is an Excel workbook stored in OneDrive. Inspectors intermittently get errors when saving records. What should you recommend?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Move the data to SharePoint or Dataverse — Excel operations can be blocked while another user has the file open and it isn't recommended as a live multi-user source"
+      },
+      {
+        "id": "b",
+        "text": "Format the worksheet data as a table so Power Apps can lock rows individually"
+      },
+      {
+        "id": "c",
+        "text": "Add the [image] suffix to every column header so Power Apps treats the workbook as a database"
+      },
+      {
+        "id": "d",
+        "text": "Enable AutoSave in Power Apps Studio so the workbook is flushed every two minutes"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Ist die Excel-Datei bei einem anderen Nutzer geöffnet, können Lese- und Schreibvorgänge blockiert werden — bei 15 gleichzeitigen Nutzern ist das der Normalfall. Für Mehrbenutzer-Apps wird Excel als Live-Datenquelle ausdrücklich nicht empfohlen. Das Tabellenformat ist zwar Pflicht, löst aber keine Sperrkonflikte; das [image]-Suffix betrifft nur Bildspalten; AutoSave betrifft die App-Definition, nicht die Daten.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps/4-powerapps-ways-to-build",
+    "source": {
+      "title": "Power Apps data sources",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps/4-powerapps-ways-to-build",
+      "quote": "If the Excel file is open by another user, read/write operations may be blocked. For apps with multiple users, Excel isn't recommended as a live data source."
+    }
+  },
+  {
+    "id": "abb9-010",
+    "type": "matching",
+    "skillArea": "logic-automation",
+    "topic": "Connector evaluation factors",
+    "difficulty": "medium",
+    "prompt": "When evaluating which connector to use for a scenario, match each factor to the question it raises.",
+    "left": [
+      { "id": "l1", "text": "Licensing" },
+      { "id": "l2", "text": "Volume and performance" },
+      { "id": "l3", "text": "Read vs. read/write" },
+      { "id": "l4", "text": "Security" }
+    ],
+    "right": [
+      {
+        "id": "r1",
+        "text": "Does the connector require premium licensing, and what licenses do the users have?"
+      },
+      {
+        "id": "r2",
+        "text": "How many records must the app handle, and does the connector support delegation?"
+      },
+      {
+        "id": "r3",
+        "text": "Will users create and update records, and does the connector support write operations?"
+      },
+      {
+        "id": "r4",
+        "text": "Are there compliance or data residency requirements that rule out certain connectors?"
+      }
+    ],
+    "correct": { "l1": "r1", "l2": "r2", "l3": "r3", "l4": "r4" },
+    "explanation": "Die Bewertungsfaktoren sind Datenort, Lizenzierung, Volumen/Performance (Delegation!), Lese- vs. Schreibzugriff und Sicherheit. Wer diese Fragen vorab beantwortet, vermeidet den klassischen Fehler, ein Werkzeug zu wählen, bevor das Problem verstanden ist.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps/4-powerapps-ways-to-build",
+    "source": {
+      "title": "Power Apps data sources",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps/4-powerapps-ways-to-build",
+      "quote": "Does the connector require premium licensing? Who will use the app, and what licenses do they have? How many records does the app need to handle? Some connectors support delegation (server-side filtering of large datasets); others don't. Does the app only need to display data, or will users create and update records? Not all connectors support write operations. Some scenarios have compliance or data residency requirements that rule out certain connectors."
+    }
+  },
+  {
+    "id": "abb9-011",
+    "type": "single-choice",
+    "skillArea": "applications",
+    "topic": "Form data cards: Default and Update",
+    "difficulty": "hard",
+    "prompt": "A maker unlocks the Rating data card of an edit form, deletes the text input, and inserts a Slider control. The form still submits without error, but the Rating column is never updated. What is missing?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The data card's Update property still references the deleted text input — it must point to the slider's value, with matching data type"
+      },
+      {
+        "id": "b",
+        "text": "The data card's Default property must be cleared so the slider isn't overwritten on load"
+      },
+      {
+        "id": "c",
+        "text": "SubmitForm() only writes cards that contain a text input — use Patch() for slider values"
+      },
+      {
+        "id": "d",
+        "text": "The form's Item property must be changed from Gallery1.Selected to the slider control"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Die Update-Eigenschaft einer Data Card bestimmt, aus welchem Steuerelement der Wert beim Speichern stammt. Nach dem Austausch des Steuerelements zeigt sie ins Leere — der Wert wird nie geschrieben. Wichtig dabei: Der neue Wert muss zum Datentyp der Spalte passen. Default liefert den Anfangswert aus dem Datensatz und bleibt; Item definiert den bearbeiteten Datensatz, nicht das Eingabeelement.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/2-explore-screens-and-controls",
+    "source": {
+      "title": "Explore controls and screens in canvas apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/2-explore-screens-and-controls",
+      "quote": "The Update property tells from which input control comes the data that Power Apps uses to update that record's data. That input control provides data to the same column in the Default property, so it's important that the data types match!"
+    }
+  },
+  {
+    "id": "abb9-012",
+    "type": "single-choice",
+    "skillArea": "applications",
+    "topic": "Copilot: evaluating generated columns",
+    "difficulty": "medium",
+    "prompt": "Copilot generated a Dataverse table from an uploaded Excel file. The Status column (values: Open, Closed, Pending) was created as Single line of text, and the maker is about to select Save and open app. What is the right move?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Change Status to a Choice column now — fixing the type after the app is built means updating every formula that references it"
+      },
+      {
+        "id": "b",
+        "text": "Save and open the app first; column types can be switched freely later without affecting the generated screens"
+      },
+      {
+        "id": "c",
+        "text": "Mark Status as Business required so the table enforces one of the three values"
+      },
+      {
+        "id": "d",
+        "text": "Keep it as text — Choice columns cannot be used in galleries generated by Copilot"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Kategorien mit festem Wertevorrat gehören in eine Choice-Spalte. Copilot-Vorschläge sind vor dem Speichern zu prüfen, weil nachträgliche Umbenennungen und Typänderungen alle referenzierenden Formeln nach sich ziehen. Pflichtfeld erzwingt kein Werteset, und Choice-Spalten funktionieren in generierten Galerien problemlos.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps/create-app-copilot",
+    "source": {
+      "title": "Exercise - Create an app from Excel using Copilot",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps/create-app-copilot",
+      "quote": "Columns that represent categories with a fixed set of values (like Status, Type, or Region) should be Choice, not Single line of text. Rename it now if not; renaming a column after an app is built requires updating every formula that references it."
+    }
+  },
+  {
+    "id": "abb9-013",
+    "type": "single-choice",
+    "skillArea": "applications",
+    "topic": "Version restore",
+    "difficulty": "medium",
+    "prompt": "Version 7 of a canvas app was published yesterday and introduced a bug. Version 5 (from three weeks ago) worked correctly. The maker selects Restore this version on version 5. What happens?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A new version is created as a copy of version 5, which the maker must then publish"
+      },
+      {
+        "id": "b",
+        "text": "Version 5 immediately becomes the live version and versions 6 and 7 are deleted"
+      },
+      {
+        "id": "c",
+        "text": "Version 5 is republished in place and marked Live without creating a new version"
+      },
+      {
+        "id": "d",
+        "text": "Restore is unavailable because only versions from the last seven days can be restored"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Wiederherstellen rückt die alte Version nicht nach vorn, sondern erzeugt eine neue Version als Kopie — die muss anschließend veröffentlicht werden. Versionen der letzten sechs Monate lassen sich wiederherstellen; bei älteren repackt Power Apps aus der ältesten verfügbaren Version, was sich anders verhalten kann.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/publish-share-maintain-app/4-maintain-app",
+    "source": {
+      "title": "Maintain your app",
+      "url": "https://learn.microsoft.com/en-us/training/modules/publish-share-maintain-app/4-maintain-app",
+      "quote": "You can restore or delete any version that was created in the last six months. Restoring a previous version doesn't move up the version; instead, it creates a new version that you can then publish."
+    }
+  },
+  {
+    "id": "abb9-014",
+    "type": "single-choice",
+    "skillArea": "applications",
+    "topic": "Microsoft 365 Copilot vs. AI Builder prompts",
+    "difficulty": "hard",
+    "prompt": "Two requirements for the same canvas app: (1) sales users want to ask free-form questions about catalog data in a chat pane; (2) when a user presses Generate, a summary must be written into a label on the screen. Which combination fits?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Microsoft 365 Copilot in canvas apps for (1) — enabled in app Settings, no controls needed; an AI Builder prompt called from the button's formula for (2)"
+      },
+      {
+        "id": "b",
+        "text": "AI Builder prompts for both — insert a chat control for (1) and call the prompt from the button for (2)"
+      },
+      {
+        "id": "c",
+        "text": "Microsoft 365 Copilot for both — its output can be redirected into any label via the Copilot control's Text property"
+      },
+      {
+        "id": "d",
+        "text": "A Copilot Studio agent for (2) and an AI Builder prompt for (1), because prompts cannot be triggered from buttons"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Microsoft 365 Copilot in Canvas-Apps ist der feste Chat-Bereich für Q&A der Endnutzer über App-Daten — per App-Einstellung aktiviert, ohne Steuerelemente. AI-Builder-Prompts sind entwicklergesteuerte KI-Aufrufe aus Formeln oder Flows, deren Ausgabe der Maker platziert, wo er will — also in ein Label. Copilot-Ausgaben lassen sich nicht in beliebige Steuerelemente umleiten.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/2-explore-screens-and-controls",
+    "source": {
+      "title": "Explore controls and screens in canvas apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/2-explore-screens-and-controls",
+      "quote": "Best for End-user natural-language Q&A grounded in app data Developer-controlled AI calls triggered by formulas or flows Configuration Enabled via app Settings—no controls to insert Configured in AI hub, called via formula or Power Automate User experience Chat pane alongside the app Output appears wherever the maker places it"
+    }
+  },
+  {
+    "id": "abb9-015",
+    "type": "single-choice",
+    "skillArea": "applications",
+    "topic": "Testing: navigation history",
+    "difficulty": "medium",
+    "prompt": "While testing, a maker starts the preview on the Catalog screen and reports that the Back button (OnSelect: Back()) does nothing. In the published app it works. Why?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Back() needs navigation history — when preview starts on a screen the user didn't reach via Navigate(), there is nothing to return to"
+      },
+      {
+        "id": "b",
+        "text": "Back() only works with ScreenTransition.Slide; the Catalog screen was reached with Fade"
+      },
+      {
+        "id": "c",
+        "text": "Back() is disabled in preview mode and only runs in the published app"
+      },
+      {
+        "id": "d",
+        "text": "The Catalog screen must be set as App.StartScreen before Back() can find the Home screen"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Back() kehrt zum Bildschirm zurück, von dem der Nutzer per Navigate() kam. Startet die Vorschau direkt auf einem Unterbildschirm, existiert dieser Verlauf nicht. Deshalb: Vorschau immer vom Startbildschirm aus beginnen. Die Übergangsart ist für Back() irrelevant, und App.StartScreen legt nur fest, wo die App startet.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/2-1-create-navigation-model",
+    "source": {
+      "title": "Create screen navigation in a canvas app",
+      "url": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/2-1-create-navigation-model",
+      "quote": "Back() only works if the user arrived at the current screen via Navigate(). If you start previewing your app from a screen that isn't the home screen, Back() has no history to return to."
+    }
+  },
+  {
+    "id": "abb9-016",
+    "type": "multiple-choice",
+    "skillArea": "applications",
+    "topic": "Design for performance and accessibility",
+    "difficulty": "medium",
+    "prompt": "A field inspection app will be used on phones over slow rural networks by staff that includes users with visual impairments. Which three design considerations from the guidance apply? Each correct answer presents part of the solution.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Avoid high-resolution images and animations, which hinder mobile experiences on slower networks"
+      },
+      {
+        "id": "b",
+        "text": "Ensure the design supports users with vision, hearing, or motor impairments using Power Apps' built-in accessibility support"
+      },
+      {
+        "id": "c",
+        "text": "Prefer simple controls such as a slider over manual numeric entry where it reduces effort"
+      },
+      {
+        "id": "d",
+        "text": "Store all inspection photos in Excel so they load faster than from Dataverse"
+      },
+      {
+        "id": "e",
+        "text": "Disable localization so decimal separators are always rendered the same way"
+      }
+    ],
+    "correct": ["a", "b", "c"],
+    "explanation": "Die Design-Leitlinien nennen genau diese Punkte: Performance auf Mobilgeräten (keine schweren Bilder/Animationen), Barrierefreiheit für Seh-, Hör- und Motorik-Einschränkungen sowie Einfachheit statt Komplexität (z. B. Slider statt Tipparbeit). Excel als Bildspeicher und abgeschaltete Lokalisierung widersprechen der Guidance.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps/4-5-design-app",
+    "source": {
+      "title": "Designing a Power Apps app",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps/4-5-design-app",
+      "quote": "High-resolution images and animations can hinder mobile experiences, especially on slower networks. Accessibility – Ensure your design supports users with vision, hearing, or motor impairments. Power Apps offers built-in support for accessible design. For example, entering a room temperature manually can be simplified with a slider control."
+    }
+  },
+  {
+    "id": "abb9-017",
+    "type": "single-choice",
+    "skillArea": "applications",
+    "topic": "App.StartScreen",
+    "difficulty": "easy",
+    "prompt": "An app's Tree view lists Catalog, Admin, and Dashboard screens in that order. Users should always land on Dashboard. What is the cleanest way to achieve this?",
+    "options": [
+      { "id": "a", "text": "Set the App.StartScreen property to Dashboard" },
+      { "id": "b", "text": "Add Navigate(Dashboard) to the Catalog screen's OnVisible property" },
+      { "id": "c", "text": "Rename Dashboard to \"1-Dashboard\" so it sorts first" },
+      { "id": "d", "text": "Publish the app while the Dashboard screen is selected in Studio" }
+    ],
+    "correct": "a",
+    "explanation": "Ohne weitere Angabe startet die App auf dem obersten Bildschirm der Tree View. App.StartScreen überschreibt das sauber. Ein Navigate() in OnVisible erzeugt einen unnötigen Bildschirmwechsel beim Start, Umbenennen ändert die Reihenfolge nicht zwingend, und der beim Veröffentlichen gewählte Bildschirm ist irrelevant.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/2-1-create-navigation-model",
+    "source": {
+      "title": "Create screen navigation in a canvas app",
+      "url": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/2-1-create-navigation-model",
+      "quote": "When a user opens your app, Power Apps displays the screen at the top of the Tree view, unless you define a different launch screen in the App.StartScreen property."
+    }
+  },
+  {
+    "id": "abb9-018",
+    "type": "single-choice",
+    "skillArea": "applications",
+    "topic": "Gallery: IsSelected",
+    "difficulty": "easy",
+    "prompt": "A highlight rectangle inside a gallery template should be visible only for the item the user has selected. Which Visible formula does this?",
+    "options": [
+      { "id": "a", "text": "ThisItem.IsSelected" },
+      { "id": "b", "text": "Gallery1.Selected = true" },
+      { "id": "c", "text": "CountRows(Gallery1.AllItems) = 1" },
+      { "id": "d", "text": "Self.Selected.Item <> Blank()" }
+    ],
+    "correct": "a",
+    "explanation": "IsSelected ist ein boolescher Wert je Galerie-Element, der nur für das aktuell ausgewählte Element true ist — ideal für die Visible-Eigenschaft eines Hervorhebungs-Rechtecks. Gallery1.Selected ist ein Datensatz, kein Boolean; Self.Selected gehört zu Model-driven-Commands.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/2-explore-screens-and-controls",
+    "source": {
+      "title": "Explore controls and screens in canvas apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/2-explore-screens-and-controls",
+      "quote": "IsSelected is a Boolean value, evaluating to \"true\" or \"false\", for whether this item in the Gallery is selected or not. Only one item in our Gallery can be selected at any time, so this value can only be \"true\" for one item."
+    }
+  },
+  {
+    "id": "abb9-019",
+    "type": "single-choice",
+    "skillArea": "applications",
+    "topic": "Templates",
+    "difficulty": "easy",
+    "prompt": "A maker wants to start an expense-tracking app from a Power Apps template and immediately connect it to the company's own Dataverse tables. What does the guidance say about templates?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Templates aren't designed to work with your own data out of the box, but they are a good starting point to explore and then modify"
+      },
+      {
+        "id": "b",
+        "text": "Templates automatically remap to any Dataverse table with matching column names"
+      },
+      {
+        "id": "c",
+        "text": "Templates can only be used with Excel data and cannot be connected to Dataverse"
+      },
+      {
+        "id": "d",
+        "text": "Templates are read-only samples that cannot be copied into an environment"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Vorlagen zeigen bewährte Muster (Spesen, Assets, Onboarding) und lassen sich in die Umgebung kopieren und anpassen — aber sie sind nicht dafür gedacht, unverändert mit eigenen Daten zu laufen. Datenquelle, Bildschirme und Steuerelemente müssen angepasst werden.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps/5-powerapps-create-first",
+    "source": {
+      "title": "Exercise - Create your first app in Power Apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps/5-powerapps-create-first",
+      "quote": "Templates aren't designed to be used with your own data directly out of the box, but they're an excellent starting point to explore and modify."
+    }
+  }
+]

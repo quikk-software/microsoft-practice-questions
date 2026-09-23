@@ -7,14 +7,32 @@
     "difficulty": "medium",
     "prompt": "The Dataverse connector supports four triggers. Match each trigger to when it starts a flow.",
     "left": [
-      { "id": "l1", "text": "When a row is added, modified or deleted" },
-      { "id": "l2", "text": "When an action is performed" },
-      { "id": "l3", "text": "When a flow step is run from a business process flow" },
-      { "id": "l4", "text": "When a row is selected" }
+      {
+        "id": "l1",
+        "text": "When a row is added, modified or deleted"
+      },
+      {
+        "id": "l2",
+        "text": "When an action is performed"
+      },
+      {
+        "id": "l3",
+        "text": "When a flow step is run from a business process flow"
+      },
+      {
+        "id": "l4",
+        "text": "When a row is selected"
+      }
     ],
     "right": [
-      { "id": "r1", "text": "A row is added, modified, or deleted in a Dataverse table" },
-      { "id": "r2", "text": "A Dataverse action completes, such as a custom business event" },
+      {
+        "id": "r1",
+        "text": "A row is added, modified, or deleted in a Dataverse table"
+      },
+      {
+        "id": "r2",
+        "text": "A Dataverse action completes, such as a custom business event"
+      },
       {
         "id": "r3",
         "text": "Someone selects the Run Flow button in a business process flow step"
@@ -24,7 +42,12 @@
         "text": "A user in a model-driven app selects a row and runs the flow"
       }
     ],
-    "correct": { "l1": "r1", "l2": "r2", "l3": "r3", "l4": "r4" },
+    "correct": {
+      "l1": "r1",
+      "l2": "r2",
+      "l3": "r3",
+      "l4": "r4"
+    },
     "explanation": "Die vier Dataverse-Trigger decken unterschiedliche Ereignisquellen ab: Datenzeilen-Änderungen, abgeschlossene Dataverse-Aktionen (z. B. ein selbst definiertes Ereignis wie EmployeeOnboarded), den Run-Flow-Schritt eines Business Process Flow und die manuelle Auswahl einer Zeile in einer modellgesteuerten App.",
     "reference": "https://learn.microsoft.com/en-us/training/modules/use-dataverse-triggers-actions/triggers",
     "source": {
@@ -41,17 +64,32 @@
     "difficulty": "hard",
     "prompt": "Match each scope option of the \"When a row is added, modified or deleted\" trigger to what it means.",
     "left": [
-      { "id": "l1", "text": "Organization" },
-      { "id": "l2", "text": "User" },
-      { "id": "l3", "text": "Business Unit" },
-      { "id": "l4", "text": "Parent: Child Business Unit" }
+      {
+        "id": "l1",
+        "text": "Organization"
+      },
+      {
+        "id": "l2",
+        "text": "User"
+      },
+      {
+        "id": "l3",
+        "text": "Business Unit"
+      },
+      {
+        "id": "l4",
+        "text": "Parent: Child Business Unit"
+      }
     ],
     "right": [
       {
         "id": "r1",
         "text": "The default — any user who owns a row and modifies it can trigger the flow"
       },
-      { "id": "r2", "text": "The most limiting — the flow only runs if you own the modified row" },
+      {
+        "id": "r2",
+        "text": "The most limiting — the flow only runs if you own the modified row"
+      },
       {
         "id": "r3",
         "text": "Triggers if anyone in your business unit owns the modified row"
@@ -61,7 +99,12 @@
         "text": "Also includes users of any child business units"
       }
     ],
-    "correct": { "l1": "r1", "l2": "r2", "l3": "r3", "l4": "r4" },
+    "correct": {
+      "l1": "r1",
+      "l2": "r2",
+      "l3": "r3",
+      "l4": "r4"
+    },
     "explanation": "Der Scope legt fest, wessen Datensatzbesitz den Flow auslösen darf. Organization ist der Standard und am weitesten, User am engsten. Business Unit und Parent:Child Business Unit liegen dazwischen. Bei organisationseigenen Tabellen ist Organization die einzige Option.",
     "reference": "https://learn.microsoft.com/en-us/training/modules/use-dataverse-triggers-actions/triggers",
     "source": {
@@ -82,9 +125,18 @@
         "id": "a",
         "text": "Make sure the columns you update are not included in the trigger's Select columns option"
       },
-      { "id": "b", "text": "Set the trigger scope to Organization" },
-      { "id": "c", "text": "Turn on pagination in the update row action" },
-      { "id": "d", "text": "Add a Terminate action at the end of the flow" }
+      {
+        "id": "b",
+        "text": "Set the trigger scope to Organization"
+      },
+      {
+        "id": "c",
+        "text": "Add a Filter rows expression that excludes rows last modified by the flow owner"
+      },
+      {
+        "id": "d",
+        "text": "Add a Terminate action at the end of the flow"
+      }
     ],
     "correct": "a",
     "explanation": "Die Option „Select columns“ begrenzt, welche Spaltenänderungen den Flow starten. Aktualisiert der Flow später Spalten derselben Zeile, dürfen genau diese Spalten nicht in Select columns stehen — sonst löst die eigene Aktualisierung den Flow erneut aus. Achtung: Lookup-Spalten werden im Select-columns-Filter nicht unterstützt.",
@@ -100,28 +152,28 @@
     "type": "single-choice",
     "skillArea": "logic-automation",
     "topic": "Run as",
-    "difficulty": "hard",
-    "prompt": "Which Dataverse privilege must the flow owner have to use the \"run as\" option, and which security role includes it by default?",
+    "difficulty": "medium",
+    "prompt": "A flow creates follow-up tasks whenever a Project row is added, and the tasks should show the person who created the project as their creator. The maker sets Run as to Modifying user and enables Use invoker's connection on the action, but the flow fails with a privilege error. What is missing?",
     "options": [
       {
         "id": "a",
-        "text": "Act on Behalf of Another User — included in the Delegate security role"
+        "text": "The flow owner needs the Act on Behalf of Another User privilege — included in the Delegate role by default, or added to any role"
       },
       {
         "id": "b",
-        "text": "Assign — included in the System Customizer security role"
+        "text": "The flow owner needs the Assign privilege on the Task table so ownership can be transferred"
       },
       {
         "id": "c",
-        "text": "Share — included in the Basic User security role"
+        "text": "The modifying user must be a co-owner of the flow"
       },
       {
         "id": "d",
-        "text": "Append To — included in the Environment Maker role"
+        "text": "The trigger scope must be set to User so the invoker's context is available"
       }
     ],
     "correct": "a",
-    "explanation": "Für „run as“ braucht der Flow-Besitzer das Dataverse-Privileg „Act on Behalf of Another User“. Standardmäßig steckt es in der Sicherheitsrolle Delegate, lässt sich aber jeder Rolle hinzufügen. Pro Aktion aktiviert man dann auf dem Settings-Tab „Use invoker's connection“.",
+    "explanation": "„Run as“ lässt Dataverse-Aktionen im Kontext eines anderen Nutzers laufen. Dafür braucht der Flow-Besitzer das Privileg „Act on Behalf of Another User“ — standardmäßig in der Rolle Delegate enthalten, aber jeder Rolle hinzufügbar. Assign, Co-Ownership und der Trigger-Scope spielen dafür keine Rolle.",
     "reference": "https://learn.microsoft.com/en-us/training/modules/use-dataverse-triggers-actions/triggers",
     "source": {
       "title": "Dataverse triggers",
@@ -141,9 +193,18 @@
         "id": "a",
         "text": "5,000 rows — reaching the limit doesn't produce an error, so you silently don't receive all data"
       },
-      { "id": "b", "text": "100,000 rows — the action fails with a pagination error" },
-      { "id": "c", "text": "500 rows — the flow retries automatically" },
-      { "id": "d", "text": "There is no default limit" }
+      {
+        "id": "b",
+        "text": "100,000 rows — the action fails with a pagination error"
+      },
+      {
+        "id": "c",
+        "text": "500 rows — the flow retries automatically"
+      },
+      {
+        "id": "d",
+        "text": "There is no default limit"
+      }
     ],
     "correct": "a",
     "explanation": "List rows liefert standardmäßig höchstens 5.000 Zeilen. Kritisch: Das Erreichen der Grenze wirft keinen Fehler — man bekommt einfach nicht alle Daten. Über die Einstellung Pagination lassen sich bis zu 100.000 Zeilen pro Seite abrufen; mehrere Seiten muss der Flow dann selbst per Paging-Token abarbeiten.",
@@ -159,16 +220,25 @@
     "type": "single-choice",
     "skillArea": "logic-automation",
     "topic": "Select columns in queries",
-    "difficulty": "medium",
+    "difficulty": "easy",
     "prompt": "When you set the Select columns option on a Dataverse retrieve action, which column name must you use?",
     "options": [
       {
         "id": "a",
         "text": "The column's logical name, found under Advanced options of the column properties"
       },
-      { "id": "b", "text": "The column's display name as shown in the form" },
-      { "id": "c", "text": "The column's schema name including the publisher prefix in upper case" },
-      { "id": "d", "text": "The column's GUID" }
+      {
+        "id": "b",
+        "text": "The column's display name as shown in the form"
+      },
+      {
+        "id": "c",
+        "text": "The column's schema name including the publisher prefix in upper case"
+      },
+      {
+        "id": "d",
+        "text": "The column's GUID"
+      }
     ],
     "correct": "a",
     "explanation": "Für Select columns wird der logische Spaltenname gebraucht — zu finden im Abschnitt Advanced options der Spalteneigenschaften, z. B. „firstname,lastname“. Die Angabe begrenzt auch, welche Spalten später als Dynamic Content auftauchen: Fehlt eine erwartete Spalte, lohnt der Blick auf diese Option.",
@@ -191,9 +261,18 @@
         "id": "a",
         "text": "To get the latest data and prevent the flow from acting on stale data"
       },
-      { "id": "b", "text": "To reset the trigger so the flow can run again" },
-      { "id": "c", "text": "To release the approval lock on the record" },
-      { "id": "d", "text": "To convert the row into an agent flow task" }
+      {
+        "id": "b",
+        "text": "To reset the trigger so the flow can run again"
+      },
+      {
+        "id": "c",
+        "text": "To release the approval lock on the record"
+      },
+      {
+        "id": "d",
+        "text": "To convert the row into an agent flow task"
+      }
     ],
     "correct": "a",
     "explanation": "Nach einer mehrtägigen Genehmigungspause können die ursprünglich gelesenen Daten veraltet sein. Ein erneutes „Get a row by ID“ holt den aktuellen Stand und verhindert, dass der Flow auf Basis alter Werte handelt. Ist die Zeilen-ID möglicherweise null, sollte man vorher eine Bedingung prüfen — sonst schlägt der Schritt fehl.",
@@ -212,7 +291,10 @@
     "difficulty": "medium",
     "prompt": "An approval flow follows a predictable three-part pattern. Place the parts in the correct order.",
     "items": [
-      { "id": "i1", "text": "A trigger fires" },
+      {
+        "id": "i1",
+        "text": "A trigger fires"
+      },
       {
         "id": "i2",
         "text": "The flow sends an approval request and waits for a response"
@@ -222,7 +304,11 @@
         "text": "A condition routes the outcome down the right branch"
       }
     ],
-    "correctOrder": ["i1", "i2", "i3"],
+    "correctOrder": [
+      "i1",
+      "i2",
+      "i3"
+    ],
     "explanation": "Erst löst ein Trigger aus, dann sendet „Start and wait for an approval“ die Anfrage und pausiert den Flow, und schließlich liest eine Condition den Outcome (Approve/Reject) und verzweigt: True-Zweig für Genehmigungen, False-Zweig für Ablehnungen.",
     "reference": "https://learn.microsoft.com/en-us/training/modules/build-approval-flows/2-create-approval-request",
     "source": {
@@ -236,16 +322,25 @@
     "type": "single-choice",
     "skillArea": "logic-automation",
     "topic": "Approval notifications",
-    "difficulty": "medium",
+    "difficulty": "easy",
     "prompt": "When the \"Start and wait for an approval\" action runs, where does Power Automate notify the people in the Assigned to field?",
     "options": [
       {
         "id": "a",
         "text": "By email, in the Power Automate Approvals center, and optionally in Microsoft Teams"
       },
-      { "id": "b", "text": "Only by email" },
-      { "id": "c", "text": "Only in the Power Automate mobile app" },
-      { "id": "d", "text": "Only through a Power Apps canvas app notification" }
+      {
+        "id": "b",
+        "text": "Only by email"
+      },
+      {
+        "id": "c",
+        "text": "Only in the Power Automate mobile app"
+      },
+      {
+        "id": "d",
+        "text": "Only through a Power Apps canvas app notification"
+      }
     ],
     "correct": "a",
     "explanation": "Die Aktion benachrichtigt alle im Feld „Assigned to“ per E-Mail, im Approvals-Center von Power Automate und optional in Microsoft Teams. Danach pausiert der Flow, bis die nötigen Antworten vorliegen; anschließend steht der Outcome als Dynamic Content bereit.",
@@ -261,7 +356,7 @@
     "type": "yes-no",
     "skillArea": "logic-automation",
     "topic": "Agent flows",
-    "difficulty": "hard",
+    "difficulty": "medium",
     "prompt": "For each of the following statements about converting a cloud flow to an agent flow, select Yes if the statement is true. Otherwise, select No.",
     "statements": [
       {
@@ -293,16 +388,25 @@
     "type": "single-choice",
     "skillArea": "logic-automation",
     "topic": "Agent flow capacity",
-    "difficulty": "hard",
+    "difficulty": "medium",
     "prompt": "Which agent flow activity does NOT consume Copilot Studio capacity?",
     "options": [
       {
         "id": "a",
         "text": "Testing the flow in the designer or from an agent's test chat"
       },
-      { "id": "b", "text": "Every action the agent flow executes in production" },
-      { "id": "c", "text": "Actions triggered by an autonomous agent" },
-      { "id": "d", "text": "Actions triggered from a conversation" }
+      {
+        "id": "b",
+        "text": "Every action the agent flow executes in production"
+      },
+      {
+        "id": "c",
+        "text": "Actions triggered by an autonomous agent"
+      },
+      {
+        "id": "d",
+        "text": "Actions triggered from a conversation"
+      }
     ],
     "correct": "a",
     "explanation": "Jede ausgeführte Aktion eines Agent Flow verbraucht Copilot-Studio-Kapazität — Tests im Designer oder aus dem Test-Chat eines Agents jedoch nicht. Ist die vorausbezahlte Kapazität aufgebraucht, werden neue Agent-Flow-Läufe blockiert, bis wieder Kapazität verfügbar ist.",
@@ -318,22 +422,41 @@
     "type": "matching",
     "skillArea": "logic-automation",
     "topic": "Flow troubleshooting",
-    "difficulty": "hard",
+    "difficulty": "medium",
     "prompt": "Match each flow failure symptom to its cause and fix.",
     "left": [
-      { "id": "l1", "text": "\"Unauthorized\", error code 401 or 403" },
-      { "id": "l2", "text": "\"Bad request\" or \"Not found\", error code 400 or 404" },
-      { "id": "l3", "text": "Error code 500 or 502" }
+      {
+        "id": "l1",
+        "text": "\"Unauthorized\", error code 401 or 403"
+      },
+      {
+        "id": "l2",
+        "text": "\"Bad request\" or \"Not found\", error code 400 or 404"
+      },
+      {
+        "id": "l3",
+        "text": "Error code 500 or 502"
+      }
     ],
     "right": [
-      { "id": "r1", "text": "An authentication error — usually fixed by updating the connection" },
+      {
+        "id": "r1",
+        "text": "An authentication error — usually fixed by updating the connection"
+      },
       {
         "id": "r2",
         "text": "An action configuration issue — edit the flow definition and resubmit"
       },
-      { "id": "r3", "text": "A temporary or transient failure — select Resubmit" }
+      {
+        "id": "r3",
+        "text": "A temporary or transient failure — select Resubmit"
+      }
     ],
-    "correct": { "l1": "r1", "l2": "r2", "l3": "r3" },
+    "correct": {
+      "l1": "r1",
+      "l2": "r2",
+      "l3": "r3"
+    },
     "explanation": "401/403 deuten auf Authentifizierung — Verbindung reparieren („Fix connection“) und den Lauf erneut senden. 400/404 stehen für falsch konfigurierte Aktionen: Flow bearbeiten, speichern, erneut senden. 500/502 sind vorübergehende Störungen; hier genügt Resubmit.",
     "reference": "https://learn.microsoft.com/en-us/training/modules/get-started-flows/9-troubleshoot-flows",
     "source": {
@@ -356,10 +479,16 @@
       },
       {
         "id": "b",
-        "text": "Conditions cannot evaluate Dataverse column values at all"
+        "text": "Filter rows supports FetchXML, while a Condition action only supports OData"
       },
-      { "id": "c", "text": "Filter rows is the only place where lookup columns are supported" },
-      { "id": "d", "text": "Conditions require a premium connector licence" }
+      {
+        "id": "c",
+        "text": "Filter rows is the only place where lookup columns are supported"
+      },
+      {
+        "id": "d",
+        "text": "A Condition action can't reference the trigger's Dataverse outputs"
+      }
     ],
     "correct": "a",
     "explanation": "Mit „Filter rows“ und einem OData-Ausdruck startet der Flow nur, wenn die Bedingung nach dem Speichern in Dataverse wahr ist. Eine Bedingungsprüfung in den Aktionen erreicht dasselbe Ergebnis, ist aber weniger effizient, weil der Flow trotzdem für jede Änderung anläuft.",
@@ -375,7 +504,7 @@
     "type": "dropdown",
     "skillArea": "logic-automation",
     "topic": "Expand query",
-    "difficulty": "hard",
+    "difficulty": "medium",
     "prompt": "Complete the statement about retrieving related table data in a Dataverse action.",
     "textParts": [
       "By default, retrieve data actions only retrieve data from the primary table. Use the ",
@@ -386,18 +515,36 @@
       {
         "id": "b1",
         "options": [
-          { "id": "o1", "text": "Expand Query" },
-          { "id": "o2", "text": "Select columns" },
-          { "id": "o3", "text": "Filter rows" }
+          {
+            "id": "o1",
+            "text": "Expand Query"
+          },
+          {
+            "id": "o2",
+            "text": "Select columns"
+          },
+          {
+            "id": "o3",
+            "text": "Filter rows"
+          }
         ],
         "correct": "o1"
       },
       {
         "id": "b2",
         "options": [
-          { "id": "o1", "text": "Dynamic content" },
-          { "id": "o2", "text": "Settings" },
-          { "id": "o3", "text": "Run history" }
+          {
+            "id": "o1",
+            "text": "Dynamic content"
+          },
+          {
+            "id": "o2",
+            "text": "Settings"
+          },
+          {
+            "id": "o3",
+            "text": "Run history"
+          }
         ],
         "correct": "o1"
       }
@@ -415,7 +562,7 @@
     "type": "single-choice",
     "skillArea": "logic-automation",
     "topic": "Change type expression",
-    "difficulty": "hard",
+    "difficulty": "medium",
     "prompt": "A flow triggers on multiple change types and needs conditional logic depending on which one occurred. Which expression returns the change type, and what values does it contain?",
     "options": [
       {
@@ -430,7 +577,10 @@
         "id": "c",
         "text": "body('Trigger')?['Operation'] — it contains Insert, Edit, or Drop"
       },
-      { "id": "d", "text": "variables('changeType') — it must be set manually" }
+      {
+        "id": "d",
+        "text": "variables('changeType') — it must be set manually"
+      }
     ],
     "correct": "a",
     "explanation": "Der Ausdruck triggerBody()?['SdkMessage'] liefert den auslösenden Änderungstyp; die Eigenschaft SdkMessage enthält Create, Update oder Delete. Wichtig außerdem: Bei mehreren Aktualisierungen derselben Zeile kann der Flow mehrfach starten, auch wenn sich Werte nicht ändern — die Flow-Logik muss das berücksichtigen.",

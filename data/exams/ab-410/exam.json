@@ -16,7 +16,7 @@
       },
       {
         "question": "Wie viele Fragen hat die AB-410-Prüfung?",
-        "answer": "Microsoft-Associate-Prüfungen umfassen typischerweise 40 bis 60 Fragen. Unser Test-Examen stellt 40 Fragen aus dem Pool zusammen, sodass sich jeder Durchlauf unterscheidet."
+        "answer": "Microsoft-Associate-Prüfungen umfassen typischerweise 40 bis 60 Fragen. Unser Test-Examen stellt 40 Fragen aus dem Pool zusammen — überwiegend Szenariofragen mit einer Anforderung, einer Randbedingung und einer Entscheidung, wie in der echten Prüfung. Jeder Durchlauf unterscheidet sich."
       },
       {
         "question": "Wie viele Punkte braucht man zum Bestehen?",
@@ -62,8 +62,8 @@
     }
   ],
   "difficultyCurve": {
-    "easy": 0.3,
+    "easy": 0.2,
     "medium": 0.45,
-    "hard": 0.25
+    "hard": 0.35
   }
 }

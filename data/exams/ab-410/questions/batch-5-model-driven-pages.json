@@ -7,17 +7,32 @@
     "difficulty": "medium",
     "prompt": "Match each model-driven app form type to its description.",
     "left": [
-      { "id": "l1", "text": "Main" },
-      { "id": "l2", "text": "Quick Create" },
-      { "id": "l3", "text": "Quick View" },
-      { "id": "l4", "text": "Card" }
+      {
+        "id": "l1",
+        "text": "Main"
+      },
+      {
+        "id": "l2",
+        "text": "Quick Create"
+      },
+      {
+        "id": "l3",
+        "text": "Quick View"
+      },
+      {
+        "id": "l4",
+        "text": "Card"
+      }
     ],
     "right": [
       {
         "id": "r1",
         "text": "Provides the main user interface for viewing and interacting with table data"
       },
-      { "id": "r2", "text": "A basic form optimized for creating new records" },
+      {
+        "id": "r2",
+        "text": "A basic form optimized for creating new records"
+      },
       {
         "id": "r3",
         "text": "Appears within the main form to display more data for a row that a lookup column references"
@@ -27,7 +42,12 @@
         "text": "Presents information in a compact format suitable for mobile devices"
       }
     ],
-    "correct": { "l1": "r1", "l2": "r2", "l3": "r3", "l4": "r4" },
+    "correct": {
+      "l1": "r1",
+      "l2": "r2",
+      "l3": "r3",
+      "l4": "r4"
+    },
     "explanation": "Main-Formulare sind die Hauptoberfläche für Tabellendaten. Quick Create ist auf das schnelle Anlegen optimiert. Quick View zeigt innerhalb des Hauptformulars zusätzliche Daten eines per Lookup referenzierten Datensatzes — ohne das Formular zu verlassen. Card-Formulare sind kompakt für mobile Geräte.",
     "reference": "https://learn.microsoft.com/en-us/training/modules/configure-model-driven-apps-customer-engagement-apps/01-forms-overview",
     "source": {
@@ -44,9 +64,18 @@
     "difficulty": "medium",
     "prompt": "Match each model-driven app view type to its description.",
     "left": [
-      { "id": "l1", "text": "Personal view" },
-      { "id": "l2", "text": "System view" },
-      { "id": "l3", "text": "Public view" }
+      {
+        "id": "l1",
+        "text": "Personal view"
+      },
+      {
+        "id": "l2",
+        "text": "System view"
+      },
+      {
+        "id": "l3",
+        "text": "Public view"
+      }
     ],
     "right": [
       {
@@ -62,7 +91,11 @@
         "text": "General purpose, customizable views all app users can access through the view selector"
       }
     ],
-    "correct": { "l1": "r1", "l2": "r2", "l3": "r3" },
+    "correct": {
+      "l1": "r1",
+      "l2": "r2",
+      "l3": "r3"
+    },
     "explanation": "Personal Views gehören einem Nutzer und sind nur nach Freigabe für andere sichtbar. System Views braucht die Anwendung selbst; sie sind nur von System-Admins bzw. System Customizern bearbeitbar. Public Views sind anpassbar, für alle App-Nutzer über den View-Selector erreichbar und lassen sich in Subgrids und Dashboards einsetzen.",
     "reference": "https://learn.microsoft.com/en-us/training/modules/configure-model-driven-apps-customer-engagement-apps/05-configure-views",
     "source": {
@@ -76,7 +109,7 @@
     "type": "yes-no",
     "skillArea": "applications",
     "topic": "Business process flow limits",
-    "difficulty": "hard",
+    "difficulty": "medium",
     "prompt": "For each of the following statements about business process flows, select Yes if the statement is true. Otherwise, select No.",
     "statements": [
       {
@@ -109,27 +142,27 @@
     "skillArea": "applications",
     "topic": "Generative pages",
     "difficulty": "medium",
-    "prompt": "What is a generative page in a model-driven app?",
+    "prompt": "A maker must deliver a card-style gallery page of Account records inside a model-driven app within a day, with the layout guided by a wireframe image the business provided. The page must be deployable to other environments with the app. Which page type fits?",
     "options": [
       {
         "id": "a",
-        "text": "An AI-generated, React-based page created by describing what you want to an app agent in the app designer"
+        "text": "A generative page — described in natural language with the wireframe attached, generated as solution-aware React code"
       },
       {
         "id": "b",
-        "text": "A page that regenerates its data every time a user opens it"
+        "text": "A custom page built in Power Apps Studio with a gallery control"
       },
       {
         "id": "c",
-        "text": "A Power Pages site page embedded into a model-driven app"
+        "text": "An embedded canvas app placed on the Account main form"
       },
       {
         "id": "d",
-        "text": "A dashboard automatically produced from a Power BI dataset"
+        "text": "A dashboard with a chart component bound to the Accounts view"
       }
     ],
     "correct": "a",
-    "explanation": "Eine generative Seite ist eine KI-erzeugte, React-basierte Seite innerhalb einer modellgesteuerten App. Man beschreibt sie im App Designer im Dialog mit einem App-Agent — optional mit angehängtem Layout-Bild —, verfeinert sie im Gespräch und veröffentlicht sie. Generative Seiten sind solution-aware und lassen sich zwischen Umgebungen verschieben.",
+    "explanation": "Generative Seiten werden im App Designer per Beschreibung erzeugt, optional mit angehängtem Layout-Bild, und sind solution-aware. Eine Custom Page wäre möglich, aber Handarbeit; eingebettete Canvas-Apps sind auf Formulare beschränkt; ein Dashboard liefert keine Kartengalerie.",
     "reference": "https://learn.microsoft.com/en-us/training/modules/get-started-with-model-driven-apps-in-powerapps/generative-pages",
     "source": {
       "title": "Build pages with generative AI",
@@ -142,16 +175,28 @@
     "type": "single-choice",
     "skillArea": "applications",
     "topic": "Generative pages data limits",
-    "difficulty": "hard",
-    "prompt": "When creating a generative page, how many Dataverse tables can you link via Add data?",
+    "difficulty": "medium",
+    "prompt": "While creating a generative page, a maker selects Add data > Add table and tries to link seven Dataverse tables. The designer refuses the seventh. Why?",
     "options": [
-      { "id": "a", "text": "Up to six" },
-      { "id": "b", "text": "Exactly one" },
-      { "id": "c", "text": "Up to three" },
-      { "id": "d", "text": "There is no limit" }
+      {
+        "id": "a",
+        "text": "Generative pages can link up to six Dataverse tables"
+      },
+      {
+        "id": "b",
+        "text": "Generative pages can only connect to a single table; related data must come through lookups"
+      },
+      {
+        "id": "c",
+        "text": "The seventh table is not solution-aware and must be added to the solution first"
+      },
+      {
+        "id": "d",
+        "text": "Tables from different publishers can't be combined on one generative page"
+      }
     ],
     "correct": "a",
-    "explanation": "Über Add data > Add table lassen sich bis zu sechs Dataverse-Tabellen verknüpfen; alternativ kann man per Add data > Attach image eine Skizze oder ein Wireframe hochladen, das das Layout leitet.",
+    "explanation": "Generative Seiten verbinden sich ausschließlich mit Dataverse-Tabellen und erlauben maximal sechs pro Seite. Wer mehr braucht, teilt die Anforderung auf mehrere Seiten auf oder nutzt eine Custom Page.",
     "reference": "https://learn.microsoft.com/en-us/training/modules/get-started-with-model-driven-apps-in-powerapps/generative-pages",
     "source": {
       "title": "Build pages with generative AI",
@@ -171,9 +216,18 @@
         "id": "a",
         "text": "The agent feed — a task list that appears at the top of the app's site map"
       },
-      { "id": "b", "text": "The Copilot chat pane" },
-      { "id": "c", "text": "A Power Automate approval in Outlook" },
-      { "id": "d", "text": "The Audit History tab of the record" }
+      {
+        "id": "b",
+        "text": "The Copilot chat pane"
+      },
+      {
+        "id": "c",
+        "text": "A Teams adaptive card posted through the Power Apps MCP server"
+      },
+      {
+        "id": "d",
+        "text": "A task activity on the record's timeline"
+      }
     ],
     "correct": "a",
     "explanation": "Autonome Agents nutzen den Power Apps MCP Server, arbeiten auf Dataverse-Daten und legen bei Bedarf Aufgaben im Agent Feed an — einer Aufgabenliste oben in der Sitemap. Der Feed hat die Abschnitte „Needs Attention“ (wartet auf Eingabe) und „Completed“.",
@@ -189,16 +243,25 @@
     "type": "single-choice",
     "skillArea": "applications",
     "topic": "Agent feed access",
-    "difficulty": "hard",
+    "difficulty": "medium",
     "prompt": "By default, which users can see the agent feed in a model-driven app?",
     "options": [
       {
         "id": "a",
         "text": "Users with the System Administrator or System Customizer roles"
       },
-      { "id": "b", "text": "All users who can open the app" },
-      { "id": "c", "text": "Only the app's owner" },
-      { "id": "d", "text": "Only users with a Copilot Studio license" }
+      {
+        "id": "b",
+        "text": "All users who can open the app"
+      },
+      {
+        "id": "c",
+        "text": "Only the app's owner"
+      },
+      {
+        "id": "d",
+        "text": "Only users with a Copilot Studio license"
+      }
     ],
     "correct": "a",
     "explanation": "Der Zugriff auf den Agent Feed ist standardmäßig auf System Administrator und System Customizer beschränkt. Sollen weitere Nutzer ihn sehen, brauchen sie Lese-/Schreibrechte auf den Tabellen Agent Task, Agent Hub Goal, Agent Hub Insight, Agent Hub Metric und Copilot.",
@@ -229,10 +292,20 @@
         "id": "c",
         "text": "Web roles — link together users and permissions"
       },
-      { "id": "d", "text": "Business process flows" },
-      { "id": "e", "text": "Rollup columns" }
+      {
+        "id": "d",
+        "text": "Column-level security profiles"
+      },
+      {
+        "id": "e",
+        "text": "Business units"
+      }
     ],
-    "correct": ["a", "b", "c"],
+    "correct": [
+      "a",
+      "b",
+      "c"
+    ],
     "explanation": "Zum Power-Pages-Sicherheitsmodell gehören Site visibility, authentifizierte Nutzer (als Dataverse-Kontakte), Table permissions, Page permissions, Web roles sowie HTTPS-Header und Security scan. Business Process Flows und Rollup-Spalten sind Dataverse-Funktionen ohne Bezug zur Portalsicherheit.",
     "reference": "https://learn.microsoft.com/en-us/training/modules/power-pages-intro/security",
     "source": {
@@ -247,15 +320,27 @@
     "skillArea": "applications",
     "topic": "Power Pages site visibility",
     "difficulty": "medium",
-    "prompt": "What is the default site visibility for all new sites created in Power Pages?",
+    "prompt": "A maker finishes a customer portal in Power Pages and sends the URL to a pilot customer, who reports being asked to sign in with an organizational account before seeing anything. Nothing has been changed in the Security workspace. What is the cause?",
     "options": [
-      { "id": "a", "text": "Private" },
-      { "id": "b", "text": "Public" },
-      { "id": "c", "text": "Public but not indexed by search engines" },
-      { "id": "d", "text": "Visibility must be chosen before the site can be created" }
+      {
+        "id": "a",
+        "text": "New sites are private by default — site visibility must be switched to Public before going live"
+      },
+      {
+        "id": "b",
+        "text": "The customer's contact record has no web role, so the Anonymous Users role is blocking the home page"
+      },
+      {
+        "id": "c",
+        "text": "The site is still a trial; trials require organizational sign-in until converted to production"
+      },
+      {
+        "id": "d",
+        "text": "External authentication was never configured, so the site falls back to Entra ID workforce sign-in"
+      }
     ],
     "correct": "a",
-    "explanation": "Neue Power-Pages-Sites sind standardmäßig privat — praktisch, solange die Site in Entwicklung ist und nur bestimmte Personen der Organisation Zugriff haben sollen. Ist sie startklar, stellt man die Sichtbarkeit auf öffentlich um.",
+    "explanation": "Alle neuen Power-Pages-Sites sind standardmäßig privat: Nicht angemeldete Nutzer werden zum Sign-in aufgefordert. Vor dem Go-live muss die Sichtbarkeit auf Public gestellt werden. Trial-Status und Web Roles haben damit nichts zu tun.",
     "reference": "https://learn.microsoft.com/en-us/training/modules/power-pages-intro/security",
     "source": {
       "title": "Overview of Power Pages security",
@@ -279,8 +364,14 @@
         "id": "b",
         "text": "As system users; Microsoft Entra ID (workforce) is the recommended provider"
       },
-      { "id": "c", "text": "As accounts; LinkedIn is the recommended provider" },
-      { "id": "d", "text": "As teams; local sign in is the recommended provider" }
+      {
+        "id": "c",
+        "text": "As accounts; LinkedIn is the recommended provider"
+      },
+      {
+        "id": "d",
+        "text": "As teams; local sign in is the recommended provider"
+      }
     ],
     "correct": "a",
     "explanation": "Authentifizierte Power-Pages-Nutzer werden in Dataverse als Contacts abgebildet. Für externe Authentifizierung empfiehlt Microsoft ausdrücklich Microsoft Entra External ID; daneben stehen lokale Anmeldung sowie Anbieter wie Microsoft, LinkedIn und Facebook zur Verfügung.",
@@ -299,10 +390,22 @@
     "difficulty": "easy",
     "prompt": "Where does Power Pages store the structure, layout, content, and functionality of a site?",
     "options": [
-      { "id": "a", "text": "In Microsoft Dataverse" },
-      { "id": "b", "text": "In Azure Blob Storage" },
-      { "id": "c", "text": "In a SharePoint document library" },
-      { "id": "d", "text": "In the browser's local storage" }
+      {
+        "id": "a",
+        "text": "In Microsoft Dataverse"
+      },
+      {
+        "id": "b",
+        "text": "In Azure Blob Storage"
+      },
+      {
+        "id": "c",
+        "text": "In a SharePoint document library"
+      },
+      {
+        "id": "d",
+        "text": "In the browser's local storage"
+      }
     ],
     "correct": "a",
     "explanation": "Power Pages legt alle Informationen in Microsoft Dataverse ab — Struktur, Layout, Inhalte und Funktionalität. Deshalb erbt es auch Reichhaltigkeit und Erweiterbarkeit von Dataverse.",
@@ -318,7 +421,7 @@
     "type": "yes-no",
     "skillArea": "applications",
     "topic": "Power Pages agents",
-    "difficulty": "hard",
+    "difficulty": "medium",
     "prompt": "For each of the following statements about adding an AI-powered agent to a Power Pages site, select Yes if the statement is true. Otherwise, select No.",
     "statements": [
       {
@@ -350,7 +453,7 @@
     "type": "single-choice",
     "skillArea": "applications",
     "topic": "Managed solutions and views",
-    "difficulty": "hard",
+    "difficulty": "medium",
     "prompt": "A maker wants to create or edit a public view for a table in their model-driven app. What restriction applies?",
     "options": [
       {
@@ -384,16 +487,25 @@
     "type": "single-choice",
     "skillArea": "applications",
     "topic": "Power Pages lists",
-    "difficulty": "medium",
+    "difficulty": "easy",
     "prompt": "What defines how a list of Dataverse rows is displayed on Power Pages site pages?",
     "options": [
       {
         "id": "a",
         "text": "Lists — defined by one or more table views, including pagination, filtering, and sorting"
       },
-      { "id": "b", "text": "Web roles — defined by table permissions" },
-      { "id": "c", "text": "Liquid templates only" },
-      { "id": "d", "text": "Charts defined in the model-driven app designer" }
+      {
+        "id": "b",
+        "text": "Web roles — defined by table permissions"
+      },
+      {
+        "id": "c",
+        "text": "Liquid templates only"
+      },
+      {
+        "id": "d",
+        "text": "Charts defined in the model-driven app designer"
+      }
     ],
     "correct": "a",
     "explanation": "Lists legen fest, wie eine Menge von Dataverse-Zeilen auf den Seiten dargestellt wird. Sie beruhen auf einer oder mehreren Tabellenansichten und bringen Funktionen wie Paginierung, Filterung und Sortierung mit.",
@@ -412,10 +524,22 @@
     "difficulty": "easy",
     "prompt": "Which tool is the primary maker's tool for creating and customizing a Power Pages website?",
     "options": [
-      { "id": "a", "text": "Power Pages design studio" },
-      { "id": "b", "text": "The Portal Management app" },
-      { "id": "c", "text": "The Power Pages admin center" },
-      { "id": "d", "text": "Power Apps Studio" }
+      {
+        "id": "a",
+        "text": "Power Pages design studio"
+      },
+      {
+        "id": "b",
+        "text": "The Portal Management app"
+      },
+      {
+        "id": "c",
+        "text": "The Power Pages admin center"
+      },
+      {
+        "id": "d",
+        "text": "Power Apps Studio"
+      }
     ],
     "correct": "a",
     "explanation": "Das Power Pages design studio ist das zentrale Maker-Werkzeug mit den Workspaces Pages, Styling, Data, Security und Set up. Die Portal Management App deckt fortgeschrittene Konfigurationen ab, die das Studio nicht bietet; das Admin Center übernimmt administrative Aufgaben wie Netzwerkkonfiguration und Logging.",

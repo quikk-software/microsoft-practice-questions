@@ -1,0 +1,554 @@
+[
+  {
+    "id": "abb10-001",
+    "type": "multiple-choice",
+    "skillArea": "applications",
+    "topic": "Role-tailored forms",
+    "difficulty": "hard",
+    "prompt": "Sales users need a Contact main form with LinkedIn Sales Navigator widgets; all other users should see a lean form without those blank areas. Each group must land on its form by default. Which three actions implement this? Each correct answer presents part of the solution.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Copy the main Contact form and add or remove components on the copy"
+      },
+      {
+        "id": "b",
+        "text": "In Form settings > Security role, assign Specific security roles to each form"
+      },
+      {
+        "id": "c",
+        "text": "In Form settings > Form order, arrange which form appears first for the Main Form set"
+      },
+      {
+        "id": "d",
+        "text": "Create a second Contact table for sales users with its own form"
+      },
+      {
+        "id": "e",
+        "text": "Convert the sales form to a Quick create form so it can be role-restricted"
+      }
+    ],
+    "correct": ["a", "b", "c"],
+    "explanation": "Das Muster aus dem Lernmaterial: Hauptformular kopieren und anpassen, jedem Formular über Form settings > Security role Rollen zuweisen, und über Form order festlegen, welches Formular für welche Rollen zuerst erscheint. Eine zweite Tabelle spaltet die Daten; Quick-Create-Formulare lassen sich gar nicht an Rollen binden.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/configure-model-driven-apps-customer-engagement-apps/03-configure-multiple-forms",
+    "source": {
+      "title": "Configure multiple forms",
+      "url": "https://learn.microsoft.com/en-us/training/modules/configure-model-driven-apps-customer-engagement-apps/03-configure-multiple-forms",
+      "quote": "You could copy the main contact row and then add or remove the components to the copy, and then assign security roles to each of the forms. Choose Everyone to allow all users, or choose Specific security roles and select the roles you want to grant access to. When you have multiple forms of the same type for a table, form order determines which form is shown by default to users"
+    }
+  },
+  {
+    "id": "abb10-002",
+    "type": "yes-no",
+    "skillArea": "applications",
+    "topic": "Form access: limits and fallback",
+    "difficulty": "hard",
+    "prompt": "A compliance officer proposes hiding salary data from most users by restricting the Salary form to the HR security role. For each statement, select Yes if it is true. Otherwise, select No.",
+    "statements": [
+      {
+        "id": "s1",
+        "text": "Restricting access to the form is a secure way to prevent users from reading the salary data.",
+        "correct": false
+      },
+      {
+        "id": "s2",
+        "text": "Each table must have a designated fallback form, and fallback forms apply to main forms only.",
+        "correct": true
+      },
+      {
+        "id": "s3",
+        "text": "A user who has access to only one form for the table won't see the form selector.",
+        "correct": true
+      }
+    ],
+    "explanation": "Formularzugriff zu beschränken ist keine Datensicherheit: Nutzer kommen über Advanced Find, Ansichten oder Automatisierungen weiterhin an die Spalten — dafür braucht es Sicherheitsrollen und Spaltensicherheit. Die Aussagen zu Fallback-Formularen (nur Main) und zum ausgeblendeten Formular-Selektor bei genau einem Formular sind korrekt.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/configure-model-driven-apps-customer-engagement-apps/03-configure-multiple-forms",
+    "source": {
+      "title": "Configure multiple forms",
+      "url": "https://learn.microsoft.com/en-us/training/modules/configure-model-driven-apps-customer-engagement-apps/03-configure-multiple-forms",
+      "quote": "Controlling user access to forms is not necessarily a secure means to prevent access to data. Fallback forms apply to main forms only. If a user has access to only a single form for a given table, they won't see the form selector."
+    }
+  },
+  {
+    "id": "abb10-003",
+    "type": "single-choice",
+    "skillArea": "applications",
+    "topic": "Quick create form constraints",
+    "difficulty": "hard",
+    "prompt": "A maker creates two Quick create forms for the Case table and plans to show one to the Sales role and the other to the Service role, letting users switch between them. Why won't this work?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Only one Quick create form can be designated for use via form order; they can't be assigned to security roles and users can't switch forms"
+      },
+      {
+        "id": "b",
+        "text": "Quick create forms are generated automatically from the main form and cannot be authored manually"
+      },
+      {
+        "id": "c",
+        "text": "Quick create forms are only available in Dynamics 365 mobile apps, not in model-driven apps"
+      },
+      {
+        "id": "d",
+        "text": "Quick create forms cannot be added to solutions, so security roles never apply to them"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Für Quick-Create-Formulare gelten drei harte Grenzen: Es gibt zwar mehrere, aber nur eines wird über die Formularreihenfolge verwendet; sie lassen sich nicht an Sicherheitsrollen binden; und Nutzer können nicht zwischen ihnen wechseln. Rollenspezifische Erfahrungen gehören in Main-Formulare.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/configure-model-driven-apps-customer-engagement-apps/03-configure-multiple-forms",
+    "source": {
+      "title": "Configure multiple forms",
+      "url": "https://learn.microsoft.com/en-us/training/modules/configure-model-driven-apps-customer-engagement-apps/03-configure-multiple-forms",
+      "quote": "Though you can create multiple quick-create forms, you can only designate one for use, as set by the form order. You can't assign them to security roles and they don't allow the user to switch forms."
+    }
+  },
+  {
+    "id": "abb10-004",
+    "type": "single-choice",
+    "skillArea": "applications",
+    "topic": "Quick view forms",
+    "difficulty": "medium",
+    "prompt": "On the Contact main form, users should see the related Account's address without leaving the record. The maker adds a quick view form bound to the Account lookup. Which behavior should the maker expect?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The control is hidden while the Account lookup is empty, the data is read-only, and form scripts aren't supported on the quick view form"
+      },
+      {
+        "id": "b",
+        "text": "Users can edit the address inline, and changes are saved to the Account when the Contact is saved"
+      },
+      {
+        "id": "c",
+        "text": "The control always shows, displaying blank fields until the lookup is set"
+      },
+      {
+        "id": "d",
+        "text": "The quick view form must be assigned a security role or it won't render for any user"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Ein Quick-View-Steuerelement hängt an einer Lookup-Spalte und ist unsichtbar, solange diese leer ist. Die Daten sind nicht bearbeitbar, und Quick-View-Formulare unterstützen keine Formularskripte — sie sind reine Anzeigeformulare für verknüpfte Datensätze.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/configure-model-driven-apps-customer-engagement-apps/03-configure-multiple-forms",
+    "source": {
+      "title": "Configure multiple forms",
+      "url": "https://learn.microsoft.com/en-us/training/modules/configure-model-driven-apps-customer-engagement-apps/03-configure-multiple-forms",
+      "quote": "If the lookup column value isn't set, the quick view control isn't visible. Users can't edit data in quick view controls and quick view forms don't support form scripts."
+    }
+  },
+  {
+    "id": "abb10-005",
+    "type": "single-choice",
+    "skillArea": "applications",
+    "topic": "Custom pages vs. embedded canvas apps",
+    "difficulty": "medium",
+    "prompt": "A model-driven app needs a side pane that combines data from three tables with connector data and low-code Power Fx logic, and it must feel tightly integrated with the app. Which approach does the guidance recommend?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A custom page — it can be shown as a side pane, integrates more tightly than an embedded canvas app, and is the recommended approach in most cases"
+      },
+      {
+        "id": "b",
+        "text": "An embedded canvas app on the main form, because custom pages can only be full pages"
+      },
+      {
+        "id": "c",
+        "text": "A generative page, because custom pages cannot use connector data"
+      },
+      {
+        "id": "d",
+        "text": "A dashboard with an iframe pointing to a separately published canvas app"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Custom Pages bringen Canvas-Fähigkeiten in modellgesteuerte Apps — als Vollseite, zentrierter Dialog oder Seitenbereich — mit Ausdrücken, Connectors und PCF-Steuerelementen. Sie beheben die Integrationsgrenzen eingebetteter Canvas-Apps, die nur auf Formularen platziert werden können. Faustregel: nicht mehr als 25 Custom Pages pro App.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/configure-model-driven-apps-customer-engagement-apps/custom-pages",
+    "source": {
+      "title": "Extend model-driven apps with custom pages",
+      "url": "https://learn.microsoft.com/en-us/training/modules/configure-model-driven-apps-customer-engagement-apps/custom-pages",
+      "quote": "Embedded canvas apps can only be placed on a model-driven form, acting like a low-code component. Custom pages address integration limits of embedded canvas apps and are the recommended approach in most cases. Don't exceed 25 custom pages in a model-driven app."
+    }
+  },
+  {
+    "id": "abb10-006",
+    "type": "single-choice",
+    "skillArea": "applications",
+    "topic": "Grid controls",
+    "difficulty": "hard",
+    "prompt": "An existing app uses the Editable Grid control on the Orders subgrid. Users now also want grouping by status and a sum of order totals in the same grid. What should the maker do?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Migrate to the Power Apps grid control with Enable editing set to Yes — Editable Grid is deprecated and only receives critical security fixes"
+      },
+      {
+        "id": "b",
+        "text": "Keep Editable Grid and add a rollup column for the sum; grouping requires a separate view"
+      },
+      {
+        "id": "c",
+        "text": "Switch to the Power Apps Read-Only Grid, which supports grouping and aggregation"
+      },
+      {
+        "id": "d",
+        "text": "Replace the subgrid with an embedded Power BI tile that supports totals"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Der Power Apps grid control ist die empfohlene Lösung für alle Grid-Szenarien: Inline-Bearbeitung (Enable editing = Yes), Gruppierung, Aggregation (Summe, Min, Max, Durchschnitt), verschachtelte Grids und Infinite Scrolling. Editable Grid und Read-Only Grid sind seit März 2026 veraltet und sollten migriert werden.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/configure-model-driven-apps-customer-engagement-apps/04-specialized-form-components",
+    "source": {
+      "title": "Use specialized form components",
+      "url": "https://learn.microsoft.com/en-us/training/modules/configure-model-driven-apps-customer-engagement-apps/04-specialized-form-components",
+      "quote": "The Power Apps grid control is the recommended solution for all grid scenarios. By default it operates in read-only mode, but you can set the Enable editing property to Yes to allow inline editing directly from views and subgrids. The Editable Grid control and Power Apps Read-Only Grid control were deprecated in March 2026."
+    }
+  },
+  {
+    "id": "abb10-007",
+    "type": "single-choice",
+    "skillArea": "applications",
+    "topic": "Dashboards",
+    "difficulty": "medium",
+    "prompt": "Service managers want a home page that shows real-time streams from Cases, Tasks, and Phone Calls side by side, with visual filters on top and the option to switch to tile counts. Which dashboard type fits?",
+    "options": [
+      { "id": "a", "text": "A multi-stream interactive dashboard" },
+      { "id": "b", "text": "A single-stream interactive dashboard" },
+      { "id": "c", "text": "A Power BI embedded dashboard" },
+      { "id": "d", "text": "A table-specific single-stream dashboard on the Case table" }
+    ],
+    "correct": "a",
+    "explanation": "Multi-Stream-Dashboards zeigen mehrere Echtzeit-Streams, wobei jeder Stream auf einer anderen Tabelle basieren kann — mit visuellen Filtern oben und Tile View per Umschalter. Single-Stream-Dashboards zeigen genau einen Stream auf Basis einer Ansicht und eignen sich für kleinere, komplexere Datenmengen.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/configure-model-driven-apps-customer-engagement-apps/08-configure-charts",
+    "source": {
+      "title": "Configure charts overview",
+      "url": "https://learn.microsoft.com/en-us/training/modules/configure-model-driven-apps-customer-engagement-apps/08-configure-charts",
+      "quote": "Multi-stream dashboards display data in real-time over multiple streams. There's no limit on how many streams you can configure on the dashboard. The data in a stream can be based on a single table, but each stream can be based on a different table."
+    }
+  },
+  {
+    "id": "abb10-008",
+    "type": "single-choice",
+    "skillArea": "applications",
+    "topic": "Chart aggregation",
+    "difficulty": "easy",
+    "prompt": "In the chart designer, a maker wants the Legend Entries (series) to show the median Contract Amount by Stage. What will they find?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Median isn't offered — the available aggregates are Average, Count:All, Count:Non-empty, Max, Min, and Sum"
+      },
+      { "id": "b", "text": "Median is available but only for Currency columns" },
+      { "id": "c", "text": "Median is available once the chart is added to a dashboard" },
+      { "id": "d", "text": "Any aggregate can be typed as a Power Fx expression in the series box" }
+    ],
+    "correct": "a",
+    "explanation": "Der Chart-Designer bietet für Legendeneinträge genau sechs Aggregate: Average, Count:All, Count:Non-empty, Max, Min und Sum. Median gehört nicht dazu — dafür wäre Power BI die passende Wahl.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/configure-model-driven-apps-customer-engagement-apps/08-configure-charts",
+    "source": {
+      "title": "Configure charts overview",
+      "url": "https://learn.microsoft.com/en-us/training/modules/configure-model-driven-apps-customer-engagement-apps/08-configure-charts",
+      "quote": "Under Legend Entries (series) you can select the data you wish to graph along with how you wish to itemize that data: Average, Count:All, Count:Non-empty, Max, Min or Sum."
+    }
+  },
+  {
+    "id": "abb10-009",
+    "type": "single-choice",
+    "skillArea": "applications",
+    "topic": "Commanding: unsupported functions",
+    "difficulty": "hard",
+    "prompt": "A maker copies a working canvas app formula that uses Set(SelectedAccount, ...) into the OnSelect of a custom command bar button in a model-driven app. The command designer reports an error. Why?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Set(), Collect(), and UpdateContext() rely on canvas-specific state management and aren't supported in commanding"
+      },
+      {
+        "id": "b",
+        "text": "Command buttons only support JavaScript web resources, not Power Fx"
+      },
+      {
+        "id": "c",
+        "text": "Set() is supported, but the variable name must be prefixed with Self."
+      },
+      {
+        "id": "d",
+        "text": "Commands can't read the selected record, so no state function works"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Commanding nutzt Power Fx, aber nicht den kompletten Canvas-Funktionsumfang: Zustandsfunktionen wie Set(), Collect() und UpdateContext() fehlen. Den ausgewählten Datensatz liefert stattdessen Self.Selected.Item bzw. Self.Selected.AllItems direkt im Ausdruck.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/get-started-with-model-driven-apps-in-powerapps/power-fx-commands",
+    "source": {
+      "title": "Add logic to commands with Power Fx",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-model-driven-apps-in-powerapps/power-fx-commands",
+      "quote": "Some functions are not supported, including Set(), Collect(), UpdateContext(), and others that rely on canvas-specific state management."
+    }
+  },
+  {
+    "id": "abb10-010",
+    "type": "single-choice",
+    "skillArea": "applications",
+    "topic": "Commanding: selection",
+    "difficulty": "hard",
+    "prompt": "A custom Close Account button must work when a user multi-selects rows in the Accounts view. The maker's OnSelect uses Patch(Accounts, Self.Selected.Item, {Status: \"Closed\"}) and nothing happens when several rows are selected. What should change?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Iterate over Self.Selected.AllItems — Self.Selected.Item is blank when multiple records are selected"
+      },
+      {
+        "id": "b",
+        "text": "Set the button's Visible property to Self.Selected.State = 0 so it only shows in Edit state"
+      },
+      {
+        "id": "c",
+        "text": "Wrap the Patch in Confirm() so the user acknowledges each record"
+      },
+      {
+        "id": "d",
+        "text": "Replace Patch with Navigate(Accounts) to refresh the grid before updating"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Self.Selected.Item liefert den einen ausgewählten Datensatz — und ist leer, wenn nichts oder mehrere Datensätze ausgewählt sind. Für Mehrfachauswahl steht Self.Selected.AllItems als Tabelle bereit. State beschreibt nur Edit/New/View des Formulars, Confirm() ändert nichts an der Auswahl.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/get-started-with-model-driven-apps-in-powerapps/power-fx-commands",
+    "source": {
+      "title": "Add logic to commands with Power Fx",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-model-driven-apps-in-powerapps/power-fx-commands",
+      "quote": "The currently selected record. Blank if nothing is selected or if multiple records are selected. All currently selected records. Empty if nothing is selected."
+    }
+  },
+  {
+    "id": "abb10-011",
+    "type": "yes-no",
+    "skillArea": "applications",
+    "topic": "Copilot chat in model-driven apps",
+    "difficulty": "medium",
+    "prompt": "Copilot chat is enabled for an environment. For each statement, select Yes if it is true. Otherwise, select No.",
+    "statements": [
+      {
+        "id": "s1",
+        "text": "Users can create and update records through the Copilot chat pane.",
+        "correct": false
+      },
+      {
+        "id": "s2",
+        "text": "A maker can turn Copilot chat off for one specific app in the app designer's Settings > Upcoming tab, then save and publish.",
+        "correct": true
+      },
+      {
+        "id": "s3",
+        "text": "Copilot chat is being deprecated for model-driven apps in environments that aren't enabled for Dynamics 365 apps.",
+        "correct": true
+      }
+    ],
+    "explanation": "Copilot Chat ist schreibgeschützt — Nutzer fragen und navigieren, legen aber nichts an. Pro App lässt es sich über Settings > Upcoming > Copilot control abschalten (Off) oder der Umgebung folgen (Default). In Umgebungen ohne Dynamics-365-Apps wird die Funktion zugunsten von Microsoft 365 Copilot abgekündigt.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/get-started-with-model-driven-apps-in-powerapps/copilot-chat",
+    "source": {
+      "title": "Enable Copilot chat for app users",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-model-driven-apps-in-powerapps/copilot-chat",
+      "quote": "Copilot chat is read-only. Users can retrieve and explore data through Copilot, but they can't create or update records through it. Copilot chat in Power Apps is being deprecated for model-driven apps in environments that are not enabled for Dynamics 365 apps."
+    }
+  },
+  {
+    "id": "abb10-012",
+    "type": "single-choice",
+    "skillArea": "applications",
+    "topic": "Sharing apps on custom tables",
+    "difficulty": "medium",
+    "prompt": "A model-driven app built on the custom Pet table is shared with the grooming team. Users can open the app but see \"You don't have permission\" when opening any Pet record. What is the cause?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Privileges on custom tables must be granted explicitly — a custom security role with Pet table privileges must be created and assigned"
+      },
+      {
+        "id": "b",
+        "text": "The app was shared without publishing; republishing will propagate table access"
+      },
+      {
+        "id": "c",
+        "text": "Custom tables are organization-owned by default, so only System Administrators can read rows"
+      },
+      {
+        "id": "d",
+        "text": "The users need the Environment Maker role, which grants read access to all custom tables"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Bei benutzerdefinierten Tabellen greift keine Standardrolle: Die Rechte müssen ausdrücklich über eine (eigene) Sicherheitsrolle vergeben und den Nutzern — z. B. beim Teilen der App — zugewiesen werden. Environment Maker hat keine Datenrechte, und Besitz ist nicht standardmäßig Organisation.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/get-started-with-model-driven-apps-in-powerapps/5-control-security-when-sharing-model-driven-apps",
+    "source": {
+      "title": "Exercise - Control security when sharing model-driven apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-model-driven-apps-in-powerapps/5-control-security-when-sharing-model-driven-apps",
+      "quote": "Because the table is custom, you must explicitly grant privileges before users access its data. You must create a custom security role to manage privileges for app users."
+    }
+  },
+  {
+    "id": "abb10-013",
+    "type": "single-choice",
+    "skillArea": "applications",
+    "topic": "App Opener privileges",
+    "difficulty": "hard",
+    "prompt": "A new custom role grants full Organization-level privileges on all tables the app uses, yet users assigned only this role cannot open the model-driven app at all. What is the most likely cause?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The Include App Opener privileges for running Model-Driven apps toggle was turned off when the role was created"
+      },
+      {
+        "id": "b",
+        "text": "Organization-level access is too broad and is rejected by the app at runtime"
+      },
+      {
+        "id": "c",
+        "text": "The role was created with Team privileges only inheritance, which blocks direct assignment"
+      },
+      {
+        "id": "d",
+        "text": "Custom roles cannot open apps until they are copied from a standard role"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Tabellenrechte allein reichen nicht: Zum Öffnen modellgesteuerter Apps braucht die Rolle die App-Opener-Privilegien. Der Schalter „Include App Opener privileges for running Model-Driven apps“ muss beim Anlegen der Rolle eingeschaltet bleiben.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/get-started-with-model-driven-apps-in-powerapps/5-control-security-when-sharing-model-driven-apps",
+    "source": {
+      "title": "Exercise - Control security when sharing model-driven apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-model-driven-apps-in-powerapps/5-control-security-when-sharing-model-driven-apps",
+      "quote": "Leave the toggle On — it's required for users to be able to open model-driven apps."
+    }
+  },
+  {
+    "id": "abb10-014",
+    "type": "single-choice",
+    "skillArea": "applications",
+    "topic": "Minimum privilege sets",
+    "difficulty": "medium",
+    "prompt": "Grooming technicians must open Pet rows, update them, and attach notes to them — nothing more. Following least privilege, which privilege set should their role have on the Pet table?",
+    "options": [
+      { "id": "a", "text": "Read, Write, Append" },
+      { "id": "b", "text": "Create, Read, Write, Delete" },
+      { "id": "c", "text": "Read, Append To, Share" },
+      { "id": "d", "text": "Read, Write, Assign, Share" }
+    ],
+    "correct": "a",
+    "explanation": "Öffnen = Read, Ändern = Write, eigene Notiz an einen Datensatz anhängen = Append. Create, Delete, Assign und Share gehen darüber hinaus und gehören zur Scheduler-Rolle. Append To wäre nötig, wenn an den Pet-Datensatz etwas angehängt wird — hier wird die Notiz jedoch mit dem Pet verknüpft.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/get-started-with-model-driven-apps-in-powerapps/5-control-security-when-sharing-model-driven-apps",
+    "source": {
+      "title": "Exercise - Control security when sharing model-driven apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-model-driven-apps-in-powerapps/5-control-security-when-sharing-model-driven-apps",
+      "quote": "Pet grooming technicians need to read, update, and attach other rows. Therefore, their security role has read, write, and append privileges."
+    }
+  },
+  {
+    "id": "abb10-015",
+    "type": "matching",
+    "skillArea": "applications",
+    "topic": "Form event handlers",
+    "difficulty": "medium",
+    "prompt": "A developer must attach JavaScript to form events. Match each event to when it fires.",
+    "left": [
+      { "id": "l1", "text": "OnLoad" },
+      { "id": "l2", "text": "OnSave" },
+      { "id": "l3", "text": "TabStateChange" },
+      { "id": "l4", "text": "OnChange" }
+    ],
+    "right": [
+      { "id": "r1", "text": "When the form loads" },
+      { "id": "r2", "text": "When data is saved" },
+      { "id": "r3", "text": "When a tab is expanded or collapsed" },
+      {
+        "id": "r4",
+        "text": "When data in a column changes and the control loses focus"
+      }
+    ],
+    "correct": { "l1": "r1", "l2": "r2", "l3": "r3", "l4": "r4" },
+    "explanation": "Event-Handler verweisen auf eine JavaScript-Webressource plus Funktion und werden im Events-Tab konfiguriert — nach dem Hinzufügen einer Bibliothek. Pro Element sind bis zu 50 Handler möglich. OnChange feuert erst, wenn das Steuerelement den Fokus verliert.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/configure-model-driven-apps-customer-engagement-apps/02-forms-elements",
+    "source": {
+      "title": "Form elements",
+      "url": "https://learn.microsoft.com/en-us/training/modules/configure-model-driven-apps-customer-engagement-apps/02-forms-elements",
+      "quote": "Occurs when the form loads. Occurs when data is saved. Occurs when the tab is expanded or collapsed. Occurs when data in the column changes and the control loses focus."
+    }
+  },
+  {
+    "id": "abb10-016",
+    "type": "single-choice",
+    "skillArea": "applications",
+    "topic": "Hiding a form for everyone",
+    "difficulty": "medium",
+    "prompt": "After an upgrade, an outdated main form still appears in the form selector for some users. The maker wants it invisible to everyone, regardless of security role, without deleting it. What should they do?",
+    "options": [
+      { "id": "a", "text": "Designate the main form as inactive" },
+      { "id": "b", "text": "Remove it from the fallback form list" },
+      { "id": "c", "text": "Set its security role to Everyone and move it to the bottom of the form order" },
+      { "id": "d", "text": "Convert it to a Card form" }
+    ],
+    "correct": "a",
+    "explanation": "Ein inaktives Main-Formular ist für alle Nutzer unsichtbar, unabhängig von der Rolle — genau für Upgrade-Reste gedacht. Aus dem Fallback zu entfernen oder ans Ende zu sortieren blendet es nicht aus; ein Formulartyp lässt sich nicht umwandeln.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/configure-model-driven-apps-customer-engagement-apps/03-configure-multiple-forms",
+    "source": {
+      "title": "Configure multiple forms",
+      "url": "https://learn.microsoft.com/en-us/training/modules/configure-model-driven-apps-customer-engagement-apps/03-configure-multiple-forms",
+      "quote": "You can designate a main form as inactive. This makes it invisible to all users, regardless of their security role."
+    }
+  },
+  {
+    "id": "abb10-017",
+    "type": "single-choice",
+    "skillArea": "foundation",
+    "topic": "Changing a column's data type",
+    "difficulty": "medium",
+    "prompt": "A Priority column was created as Single line of text and already holds 1,200 values. The business now wants it as a Choice column so it renders as a dropdown. What does the guidance say?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The column must be deleted and recreated as Choice, which loses all data in the column — plan a migration first"
+      },
+      {
+        "id": "b",
+        "text": "Change the Data type in the column properties; Dataverse converts existing text values into choices automatically"
+      },
+      {
+        "id": "c",
+        "text": "Add a business rule that maps the text values to a dropdown at form load"
+      },
+      {
+        "id": "d",
+        "text": "Enable Autonumber on the column, which allows any type switch without data loss"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Ein Typwechsel Text → Choice ist in Dataverse kein Umschalten: Die Spalte muss gelöscht und neu angelegt werden, und dabei gehen die Daten verloren. Deshalb vorher exportieren und nachher zurückspielen. Autonumber gilt nur für Textspalten, und Business Rules ändern keinen Datentyp.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/get-started-with-model-driven-apps-in-powerapps/2b-design-apps",
+    "source": {
+      "title": "Design model-driven apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-model-driven-apps-in-powerapps/2b-design-apps",
+      "quote": "If a column type needs to be changed to a different column type, (i.e. text column to a choice), then you'll need to delete the column and recreate with the correct column type. Doing this causes you to lose all the data in the column."
+    }
+  },
+  {
+    "id": "abb10-018",
+    "type": "single-choice",
+    "skillArea": "applications",
+    "topic": "Data exploration agent",
+    "difficulty": "easy",
+    "prompt": "Users of a model-driven app want to type \"Visualize high priority cases by origin\" on a view and get a chart without configuring anything. Which capability provides this?",
+    "options": [
+      { "id": "a", "text": "The data exploration agent" },
+      { "id": "b", "text": "The chart designer" },
+      { "id": "c", "text": "A single-stream dashboard" },
+      { "id": "d", "text": "The Visualize this view option in Power BI" }
+    ],
+    "correct": "a",
+    "explanation": "Der Data Exploration Agent bringt Copilot-Fähigkeiten in Ansichten: Daten per natürlicher Sprache filtern und sortieren, sofort interaktive Diagramme erzeugen und speichern — ohne manuelle Konfiguration im Chart-Designer.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/configure-model-driven-apps-customer-engagement-apps/08-configure-charts",
+    "source": {
+      "title": "Configure charts overview",
+      "url": "https://learn.microsoft.com/en-us/training/modules/configure-model-driven-apps-customer-engagement-apps/08-configure-charts",
+      "quote": "The data exploration agent brings AI-powered Copilot capabilities to model-driven apps, allowing users to analyze and visualize data directly from views without leaving the app."
+    }
+  }
+]

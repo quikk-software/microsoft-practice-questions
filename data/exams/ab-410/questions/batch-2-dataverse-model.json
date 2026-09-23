@@ -4,16 +4,35 @@
     "type": "multiple-choice",
     "skillArea": "foundation",
     "topic": "Immutable table settings",
-    "difficulty": "hard",
+    "difficulty": "medium",
     "prompt": "Which three table settings cannot be changed after a Dataverse table is created? Each correct answer presents part of the solution.",
     "options": [
-      { "id": "a", "text": "Schema name" },
-      { "id": "b", "text": "Table type" },
-      { "id": "c", "text": "Table ownership" },
-      { "id": "d", "text": "Display name" },
-      { "id": "e", "text": "Description" }
+      {
+        "id": "a",
+        "text": "Schema name"
+      },
+      {
+        "id": "b",
+        "text": "Table type"
+      },
+      {
+        "id": "c",
+        "text": "Table ownership"
+      },
+      {
+        "id": "d",
+        "text": "Primary column display name"
+      },
+      {
+        "id": "e",
+        "text": "Enable attachments"
+      }
     ],
-    "correct": ["a", "b", "c"],
+    "correct": [
+      "a",
+      "b",
+      "c"
+    ],
     "explanation": "Schema-Name, Tabellentyp (Standard, Activity, Virtual, Elastic) und Besitzverhältnis (User or Team bzw. Organization) sind nach dem Anlegen fix. Anzeigename und Beschreibung lassen sich dagegen jederzeit ändern — deshalb müssen die drei unveränderlichen Angaben vor dem Erstellen stimmen.",
     "reference": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps-common-data-service/2-learn-about-entities",
     "source": {
@@ -30,24 +49,47 @@
     "difficulty": "medium",
     "prompt": "Match each Dataverse custom table type to its description.",
     "left": [
-      { "id": "l1", "text": "Standard" },
-      { "id": "l2", "text": "Activity" },
-      { "id": "l3", "text": "Virtual" },
-      { "id": "l4", "text": "Elastic" }
+      {
+        "id": "l1",
+        "text": "Standard"
+      },
+      {
+        "id": "l2",
+        "text": "Activity"
+      },
+      {
+        "id": "l3",
+        "text": "Virtual"
+      },
+      {
+        "id": "l4",
+        "text": "Elastic"
+      }
     ],
     "right": [
-      { "id": "r1", "text": "Default table type for most use cases" },
+      {
+        "id": "r1",
+        "text": "Default table type for most use cases"
+      },
       {
         "id": "r2",
         "text": "Used for records with time-bound interactions, such as tasks or calls"
       },
-      { "id": "r3", "text": "External data presented as if native to Dataverse" },
+      {
+        "id": "r3",
+        "text": "External data presented as if native to Dataverse"
+      },
       {
         "id": "r4",
         "text": "High-scale tables powered by Azure Cosmos DB, for datasets with tens of millions of rows"
       }
     ],
-    "correct": { "l1": "r1", "l2": "r2", "l3": "r3", "l4": "r4" },
+    "correct": {
+      "l1": "r1",
+      "l2": "r2",
+      "l3": "r3",
+      "l4": "r4"
+    },
     "explanation": "Standard ist der Regelfall. Activity-Tabellen halten zeitgebundene Interaktionen wie Aufgaben oder Anrufe. Virtual-Tabellen zeigen externe Daten, als lägen sie in Dataverse. Elastic-Tabellen laufen auf Azure Cosmos DB und sind für zweistellige Millionen-Zeilenzahlen gedacht.",
     "reference": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps-common-data-service/2-learn-about-entities",
     "source": {
@@ -112,7 +154,7 @@
       },
       {
         "id": "d",
-        "text": "It stores the associations in a formula column on the parent table"
+        "text": "It creates a one-to-many relationship in each direction, with a lookup column on both tables"
       }
     ],
     "correct": "a",
@@ -162,27 +204,27 @@
     "skillArea": "foundation",
     "topic": "Prompt columns",
     "difficulty": "medium",
-    "prompt": "What is a Prompt column in Dataverse?",
+    "prompt": "Service requests need a two-sentence summary of the customer's complaint that is generated automatically when the record is saved and stored in the row, so views and flows can use it without anyone typing it. Which column type meets this requirement?",
     "options": [
       {
         "id": "a",
-        "text": "An AI-powered column that stores the result of a natural language prompt run against other column values in the same row"
+        "text": "A Prompt column — Dataverse evaluates the natural language prompt against the row's other columns and stores the output"
       },
       {
         "id": "b",
-        "text": "A column that prompts the user with a validation message before saving"
+        "text": "A Formula column — a Power Fx expression that concatenates the description fields"
       },
       {
         "id": "c",
-        "text": "A column that stores the text of questions asked to a Copilot Studio agent"
+        "text": "A Rollup column — aggregates the related activity text into a summary"
       },
       {
         "id": "d",
-        "text": "A calculated column that aggregates values from related rows"
+        "text": "A Multiple lines of text column populated by a scheduled flow using Create text with GPT"
       }
     ],
     "correct": "a",
-    "explanation": "Eine Prompt-Spalte ist ein KI-gestützter Spaltentyp: Beim Anlegen oder Ändern eines Datensatzes wertet Dataverse den Prompt gegen andere Spaltenwerte derselben Zeile aus und speichert das Ergebnis direkt in der Spalte — nutzbar in Apps, Flows und Ansichten, ganz ohne manuelle Eingabe.",
+    "explanation": "Genau dafür gibt es Prompt-Spalten: Beim Anlegen oder Ändern wertet Dataverse den Prompt gegen andere Spaltenwerte derselben Zeile aus und speichert das Ergebnis in der Spalte. Formula-Spalten können Text zusammensetzen, aber nicht zusammenfassen; Rollups aggregieren Zahlen; der Flow-Umweg ist möglich, aber weder sofortig noch nötig.",
     "reference": "https://learn.microsoft.com/en-us/training/modules/create-manage-fields-within-entity/prompt-columns",
     "source": {
       "title": "Work with Prompt columns and row summaries",
@@ -227,7 +269,7 @@
     "type": "single-choice",
     "skillArea": "foundation",
     "topic": "Row summaries",
-    "difficulty": "hard",
+    "difficulty": "medium",
     "prompt": "How does a row summary differ from a Prompt column?",
     "options": [
       {
@@ -244,7 +286,7 @@
       },
       {
         "id": "d",
-        "text": "A row summary requires a Copilot Studio agent to be published first"
+        "text": "A row summary is refreshed only when a Prompt column on the same table changes"
       }
     ],
     "correct": "a",
@@ -272,18 +314,36 @@
       {
         "id": "b1",
         "options": [
-          { "id": "o1", "text": "4,000" },
-          { "id": "o2", "text": "100" },
-          { "id": "o3", "text": "2,000" }
+          {
+            "id": "o1",
+            "text": "4,000"
+          },
+          {
+            "id": "o2",
+            "text": "100"
+          },
+          {
+            "id": "o3",
+            "text": "2,000"
+          }
         ],
         "correct": "o1"
       },
       {
         "id": "b2",
         "options": [
-          { "id": "o1", "text": "4,000" },
-          { "id": "o2", "text": "1,048,576" },
-          { "id": "o3", "text": "65,536" }
+          {
+            "id": "o1",
+            "text": "4,000"
+          },
+          {
+            "id": "o2",
+            "text": "1,048,576"
+          },
+          {
+            "id": "o3",
+            "text": "65,536"
+          }
         ],
         "correct": "o2"
       }
@@ -301,7 +361,7 @@
     "type": "single-choice",
     "skillArea": "foundation",
     "topic": "Numeric column types",
-    "difficulty": "hard",
+    "difficulty": "medium",
     "prompt": "Why does the guidance recommend using the Float data type only when necessary?",
     "options": [
       {
@@ -310,15 +370,15 @@
       },
       {
         "id": "b",
-        "text": "Float columns cannot be indexed and slow down every view"
+        "text": "Float values are stored exactly but consume twice the storage of Decimal values"
       },
       {
         "id": "c",
-        "text": "Float columns are limited to two decimal places"
+        "text": "Float columns can't have minimum and maximum values configured"
       },
       {
         "id": "d",
-        "text": "Float columns can't be used in model-driven apps at all"
+        "text": "Float columns aren't supported as inputs to business rules"
       }
     ],
     "correct": "a",
@@ -342,9 +402,18 @@
         "id": "a",
         "text": "An alternate key — Dataverse enforces that every entry in that key column is required and unique"
       },
-      { "id": "b", "text": "An autonumber column with a date prefix" },
-      { "id": "c", "text": "A rollup column on the related table" },
-      { "id": "d", "text": "A business rule that validates the order number" }
+      {
+        "id": "b",
+        "text": "An autonumber column with a date prefix"
+      },
+      {
+        "id": "c",
+        "text": "A rollup column on the related table"
+      },
+      {
+        "id": "d",
+        "text": "A business rule that validates the order number"
+      }
     ],
     "correct": "a",
     "explanation": "Ein Alternate Key identifiziert Datensätze über eine für Nutzer aussagekräftige Spalte. Dataverse erzwingt dafür Pflicht und Eindeutigkeit — Duplikate lassen sich nicht speichern. Das hilft besonders bei der Integration mit Fremdsystemen und verbessert Suche und Filterung, weil Alternate-Key-Spalten immer indiziert sind.",
@@ -361,15 +430,27 @@
     "skillArea": "foundation",
     "topic": "Autonumber seed",
     "difficulty": "medium",
-    "prompt": "What is the default seed value of an autonumber column in Dataverse?",
+    "prompt": "Purchase orders must be numbered PO-5000, PO-5001, and so on. A maker creates an autonumber column with the prefix PO, but the first saved record receives PO-1000. What should the maker change?",
     "options": [
-      { "id": "a", "text": "1000" },
-      { "id": "b", "text": "1" },
-      { "id": "c", "text": "100" },
-      { "id": "d", "text": "10000" }
+      {
+        "id": "a",
+        "text": "Set the column's seed value to 5000"
+      },
+      {
+        "id": "b",
+        "text": "Switch the format from String prefixed number to Date prefixed number"
+      },
+      {
+        "id": "c",
+        "text": "Recreate the column as Single line of text and enforce the number with a business rule"
+      },
+      {
+        "id": "d",
+        "text": "Create 4,000 placeholder records so the sequence advances to 5000"
+      }
     ],
     "correct": "a",
-    "explanation": "Der Seed ist die Startzahl des Nummernteils. Autonumber-Spalten starten standardmäßig bei 1000 — daher Werte wie Contoso-1000, Contoso-1001 — ein eigener Seed lässt sich aber festlegen.",
+    "explanation": "Der Seed ist die Startzahl des Nummernteils; Autonumber-Spalten beginnen standardmäßig bei 1000. Ein eigener Seed von 5000 liefert PO-5000 als ersten Wert. Das Datumsformat ändert das Präfix, nicht den Startwert.",
     "reference": "https://learn.microsoft.com/en-us/training/modules/create-manage-fields-within-entity/6-auto-numbering",
     "source": {
       "title": "Create an auto numbering column",
@@ -382,7 +463,7 @@
     "type": "yes-no",
     "skillArea": "foundation",
     "topic": "Dataverse auditing",
-    "difficulty": "hard",
+    "difficulty": "medium",
     "prompt": "For each of the following statements about Dataverse auditing, select Yes if the statement is true. Otherwise, select No.",
     "statements": [
       {
@@ -431,7 +512,7 @@
       },
       {
         "id": "d",
-        "text": "Virtual tables can only be used by Power BI, not by apps or flows"
+        "text": "Virtual tables support read and update operations but not create or delete"
       }
     ],
     "correct": "a",
@@ -449,27 +530,27 @@
     "skillArea": "foundation",
     "topic": "Dual-write",
     "difficulty": "medium",
-    "prompt": "What does Dual-write provide?",
+    "prompt": "A company runs Dynamics 365 finance and operations apps alongside Dataverse-based customer engagement apps. Changes made in either system must appear in the other in near real time, in a tightly coupled, bidirectional integration that also supports offline scenarios. Which capability fits?",
     "options": [
       {
         "id": "a",
-        "text": "Near-real-time, bidirectional synchronization between finance and operations apps and Dataverse"
+        "text": "Dual-write"
       },
       {
         "id": "b",
-        "text": "A one-way nightly export from Dataverse to Azure Data Lake"
+        "text": "Virtual tables exposing the finance and operations data in Dataverse"
       },
       {
         "id": "c",
-        "text": "Automatic duplication of every Dataverse table into a backup environment"
+        "text": "Two scheduled cloud flows that copy changed rows in each direction"
       },
       {
         "id": "d",
-        "text": "Simultaneous writing of audit logs to Dataverse and Microsoft Purview"
+        "text": "A Power Query dataflow refreshed every hour"
       }
     ],
     "correct": "a",
-    "explanation": "Dual-write ist eine eingebaute Integration mit nahezu Echtzeit-Synchronisierung zwischen Customer-Engagement-Apps und Finance-and-Operations-Apps. Änderungen fließen in beide Richtungen automatisch, online wie offline, und folgen dem Low-Code-/No-Code-Prinzip.",
+    "explanation": "Dual-write ist die eingebaute, eng gekoppelte bidirektionale Integration zwischen Finance-and-Operations-Apps und Dataverse mit nahezu Echtzeit-Synchronisierung, online wie offline. Virtuelle Tabellen duplizieren keine Daten — sie zeigen sie nur; Flows und Dataflows sind weder Echtzeit noch eng gekoppelt.",
     "reference": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps-common-data-service/2b-dual-write-vs-virtual-table",
     "source": {
       "title": "Dual-write vs. virtual tables",

@@ -1,0 +1,645 @@
+[
+  {
+    "id": "abb13-001",
+    "type": "single-choice",
+    "skillArea": "logic-automation",
+    "topic": "AI models in flows: document processing",
+    "difficulty": "hard",
+    "prompt": "Vendor invoices arrive by email as PDFs and scanned images in a dozen different layouts. Before a flow can route each invoice by amount, it must reliably obtain vendor, invoice number, and total from the attachment. Which AI capability belongs in the flow?",
+    "options": [
+      {
+        "id": "a",
+        "text": "An AI Builder document processing model — it extracts the right fields from unstructured documents like invoices automatically"
+      },
+      {
+        "id": "b",
+        "text": "An AI Builder prompt with the attachment's file name as input, asking the model for the totals"
+      },
+      {
+        "id": "c",
+        "text": "The Parse JSON action on the attachment content, followed by a Filter array for currency values"
+      },
+      {
+        "id": "d",
+        "text": "A Copilot Studio conversational agent that asks the vendor to confirm the amounts"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Unstrukturierte Dokumente — Rechnungen, Belege, Formulare, Bilder — sind der Einsatzfall für AI-Builder-Dokumentverarbeitungsmodelle; sie extrahieren die richtigen Felder automatisch, unabhängig vom Layout. Prompts erzeugen, klassifizieren oder fassen Text zusammen, brauchen den Text aber als Eingabe; Parse JSON verarbeitet strukturierte Daten, keine Scans.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/3-recommend-power-platform-components",
+    "source": {
+      "title": "Recommend Power Platform components for business solutions",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/3-recommend-power-platform-components",
+      "quote": "When a process involves unstructured data like invoices, receipts, forms, images, AI Builder's document processing models extract the right fields automatically. When you need to generate, classify, summarize, or translate text as part of a workflow, Prompt Builder gives you a reusable, deployable prompt that flows and apps can call."
+    }
+  },
+  {
+    "id": "abb13-002",
+    "type": "single-choice",
+    "skillArea": "logic-automation",
+    "topic": "Where AI models live",
+    "difficulty": "medium",
+    "prompt": "A maker looks for the place to create and manage both AI Builder prompts and AI models. Where does the guidance direct them?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AI Hub in Microsoft Copilot Studio — the central place to create and manage prompts and AI models"
+      },
+      { "id": "b", "text": "The Solutions area in Power Apps under New > Automation" },
+      { "id": "c", "text": "The Power Platform admin center under Copilot > Models" },
+      { "id": "d", "text": "The Data workspace of the Power Pages design studio" }
+    ],
+    "correct": "a",
+    "explanation": "AI-Builder-Fähigkeiten werden über den AI Hub in Microsoft Copilot Studio bereitgestellt (erreichbar auch aus Power Apps und Power Automate). Dort werden Prompts und KI-Modelle zentral erstellt und verwaltet. Das Admin Center steuert nur die Verfügbarkeit von Copilot-Funktionen.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/3-recommend-power-platform-components",
+    "source": {
+      "title": "Recommend Power Platform components for business solutions",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/3-recommend-power-platform-components",
+      "quote": "AI Builder capabilities are accessed through AI Hub in Microsoft Copilot Studio. When you navigate to Copilot Studio, you'll find AI Hub as the central place to create and manage prompts and AI models."
+    }
+  },
+  {
+    "id": "abb13-003",
+    "type": "single-choice",
+    "skillArea": "logic-automation",
+    "topic": "Document Processing Agent vs. building from scratch",
+    "difficulty": "hard",
+    "prompt": "A team must build document intake that monitors incoming contracts, validates them against defined rules, and routes them. They estimate two weeks to wire AI Builder and Power Automate together from scratch. What faster option does the guidance describe?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The Document Processing Agent in Copilot Studio — a prebuilt agent that provides the orchestration layer, configured to the team's document types and validation rules"
+      },
+      {
+        "id": "b",
+        "text": "Plan Designer, which generates the entire intake pipeline including validation rules from a description"
+      },
+      {
+        "id": "c",
+        "text": "A Power Pages Web Agent that reads uploaded contracts and posts them to Dataverse"
+      },
+      {
+        "id": "d",
+        "text": "Generative actions in a cloud flow, which learn the validation rules from sample documents"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Statt Dokumentaufnahme aus AI Builder und Power Automate selbst zu bauen, stellt der Document Processing Agent in Copilot Studio die Orchestrierung fertig bereit: Er überwacht eingehende Dokumente, prüft sie gegen vordefinierte Regeln und steuert das Routing — konfiguriert auf die eigenen Dokumenttypen und Validierungsregeln.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/4-map-business-processes-ai-first-patterns",
+    "source": {
+      "title": "Map business processes to AI-first solution patterns",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/4-map-business-processes-ai-first-patterns",
+      "quote": "The Document Processing Agent in Copilot Studio is a prebuilt agent that monitors incoming documents, validates them against predefined rules, and controls the routing workflow. Rather than building document intake from scratch with AI Builder and Power Automate, this agent provides the orchestration layer, and you configure it to your document types and validation rules."
+    }
+  },
+  {
+    "id": "abb13-004",
+    "type": "single-choice",
+    "skillArea": "logic-automation",
+    "topic": "Generative actions",
+    "difficulty": "medium",
+    "prompt": "Support requests arrive as free-text emails that never follow a template. A flow must decide at runtime which of several actions to call based on the message content, without a hardcoded branch for every case. Which Power Automate capability is designed for this?",
+    "options": [
+      { "id": "a", "text": "Generative actions" },
+      { "id": "b", "text": "A Switch action keyed on the email subject" },
+      { "id": "c", "text": "Trigger conditions on the Outlook trigger" },
+      { "id": "d", "text": "A Do until loop that retries each action until one succeeds" }
+    ],
+    "correct": "a",
+    "explanation": "Generative Actions lassen einen Flow zur Laufzeit dynamisch entscheiden, welche Plug-ins er aufruft — statt jede Verzweigung fest zu verdrahten. Switch, Trigger-Bedingungen und Schleifen sind starre Logik und scheitern an unstrukturierten, uneinheitlichen Eingaben.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/2-explore-ai-first-power-platform",
+    "source": {
+      "title": "Explore the AI-first Power Platform",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/2-explore-ai-first-power-platform",
+      "quote": "For complex scenarios, generative actions let flows dynamically decide at runtime which plugins to call, rather than requiring you to hardcode every branch."
+    }
+  },
+  {
+    "id": "abb13-005",
+    "type": "single-choice",
+    "skillArea": "applications",
+    "topic": "Public views: deletion rules",
+    "difficulty": "medium",
+    "prompt": "In an unmanaged solution, a maker wants to remove two public views from the Account table: \"Active Accounts\" (system-defined) and \"EMEA Key Accounts\" (created by the maker). What can they do?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Delete \"EMEA Key Accounts\" — custom public views in an unmanaged solution can be deleted — but \"Active Accounts\" can't be deleted because it is system-defined"
+      },
+      {
+        "id": "b",
+        "text": "Delete both — any public view can be deleted from an unmanaged solution"
+      },
+      {
+        "id": "c",
+        "text": "Delete neither — public views can only be deactivated, never deleted"
+      },
+      {
+        "id": "d",
+        "text": "Delete \"Active Accounts\" only, since custom views are locked to their creator"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Eigene öffentliche Ansichten lassen sich in einer unverwalteten Lösung löschen; systemdefinierte öffentliche Ansichten nicht. Bei einer verwalteten Lösung geht beides nicht — dort können Ansichten weder erstellt noch bearbeitet werden.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/configure-model-driven-apps-customer-engagement-apps/05-configure-views",
+    "source": {
+      "title": "Configure views overview",
+      "url": "https://learn.microsoft.com/en-us/training/modules/configure-model-driven-apps-customer-engagement-apps/05-configure-views",
+      "quote": "Users can also delete any custom public views they've created in an un-managed solution. However, any system-defined public views can't be deleted."
+    }
+  },
+  {
+    "id": "abb13-006",
+    "type": "yes-no",
+    "skillArea": "applications",
+    "topic": "Views: visibility and placement",
+    "difficulty": "medium",
+    "prompt": "A sales rep built a useful filtered view of Opportunities. For each statement, select Yes if it is true. Otherwise, select No.",
+    "statements": [
+      {
+        "id": "s1",
+        "text": "If the rep created it as a personal view, other users only see it if the rep shares it with them.",
+        "correct": true
+      },
+      {
+        "id": "s2",
+        "text": "A public view can be added to a subgrid on a form or as a list in a dashboard.",
+        "correct": true
+      },
+      {
+        "id": "s3",
+        "text": "System views can be edited by any user who can open the app.",
+        "correct": false
+      }
+    ],
+    "explanation": "Persönliche Ansichten gehören ihrem Ersteller und sind nur nach Freigabe für andere sichtbar. Öffentliche Ansichten sind für alle App-Nutzer über den View-Selector erreichbar und lassen sich in Subgrids und Dashboards einbetten. Systemansichten bearbeiten nur System-Admins bzw. System Customizer.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/configure-model-driven-apps-customer-engagement-apps/05-configure-views",
+    "source": {
+      "title": "Configure views overview",
+      "url": "https://learn.microsoft.com/en-us/training/modules/configure-model-driven-apps-customer-engagement-apps/05-configure-views",
+      "quote": "Personal view - individually created and only visible to the person creating that view, unless they share the view with others. You can add public views to subgrids in a form or as a list in a dashboard. They're only editable by system admins or system customizers."
+    }
+  },
+  {
+    "id": "abb13-007",
+    "type": "single-choice",
+    "skillArea": "foundation",
+    "topic": "Component recommendation: call center",
+    "difficulty": "hard",
+    "prompt": "Call center agents answer client questions by switching between a project tracker, a billing tool, a document repository, and a client database. Resolution times are slow and answers inconsistent. Which recommendation follows the requirements-to-components framework?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A Power Apps canvas app that unifies the four data sources in one interface, with an embedded Copilot Studio agent surfacing answers inline"
+      },
+      {
+        "id": "b",
+        "text": "A model-driven app on Dataverse after migrating all four systems into custom tables"
+      },
+      {
+        "id": "c",
+        "text": "A Power Pages portal with a Web Agent so agents and clients share one front door"
+      },
+      {
+        "id": "d",
+        "text": "Four Power Automate desktop flows that copy each system's data into a Teams channel"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Interne Nutzer, mehrere heterogene Datenquellen, maßgeschneiderte Oberfläche und natürlichsprachliche Antworten: Das ergibt eine Canvas-App (verbindet viele Quellen in einer UI) plus eingebetteten Copilot-Studio-Agent. Eine Migration in Dataverse wäre unverhältnismäßig, Power Pages zielt auf externe Nutzer, Desktop-Flows lösen kein UI-Problem.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/3-recommend-power-platform-components",
+    "source": {
+      "title": "Recommend Power Platform components for business solutions",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/3-recommend-power-platform-components",
+      "quote": "This problem calls for a Power Apps canvas app that brings all four data sources into a single unified interface. An embedded Copilot Studio agent surfaces answers from knowledge sources inline, so agents can respond to common questions without leaving the app or switching windows."
+    }
+  },
+  {
+    "id": "abb13-008",
+    "type": "single-choice",
+    "skillArea": "foundation",
+    "topic": "Component recommendation: external self-service",
+    "difficulty": "hard",
+    "prompt": "Clients phone and email account managers to check engagement status and submit documents. The company wants clients to do this themselves, with common questions answered automatically, and the data landing in the same store the internal apps use. Which combination?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A Power Pages external portal backed by Dataverse, with a Copilot Studio Web Agent embedded for FAQ and document guidance"
+      },
+      {
+        "id": "b",
+        "text": "A canvas app shared with clients as guest users, with a Copilot control for questions"
+      },
+      {
+        "id": "c",
+        "text": "A model-driven app exposed publicly through an iframe on the corporate website"
+      },
+      {
+        "id": "d",
+        "text": "A Microsoft Forms survey per client, with a flow creating Dataverse rows"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Externe Nutzer sind das Kriterium für Power Pages; Dataverse als Backing Store hält die Daten bei den internen Apps; der Web Agent übernimmt FAQ und Anleitung. Canvas- und modellgesteuerte Apps sind für interne Nutzer gedacht; Formulare bieten weder Status noch Dokumente.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/3-recommend-power-platform-components",
+    "source": {
+      "title": "Recommend Power Platform components for business solutions",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/3-recommend-power-platform-components",
+      "quote": "A Power Pages external portal with Dataverse as the backing store gives clients direct access to their engagement status and document submission workflows. A Copilot Studio Web Agent embedded in the portal handles FAQ and document guidance, reducing the volume of inbound requests."
+    }
+  },
+  {
+    "id": "abb13-009",
+    "type": "yes-no",
+    "skillArea": "foundation",
+    "topic": "Mapping a process to AI-first patterns",
+    "difficulty": "hard",
+    "prompt": "Contoso's invoice process: (1) finance receives an email with a PDF, (2) staff key the fields into Dataverse, (3) a manager approves by email, (4) finance triggers payment. For each statement about the recommended AI-first redesign, select Yes if it is true. Otherwise, select No.",
+    "statements": [
+      {
+        "id": "s1",
+        "text": "Steps 1–2 become fully autonomous: a flow triggers on email arrival and AI extraction creates the Dataverse record.",
+        "correct": true
+      },
+      {
+        "id": "s2",
+        "text": "Step 3 uses a mixed pattern: in-policy invoices are validated and routed automatically, exceptions go to a human-in-the-loop approval in Teams.",
+        "correct": true
+      },
+      {
+        "id": "s3",
+        "text": "Step 4 becomes fully autonomous, with payment released without any human review.",
+        "correct": false
+      }
+    ],
+    "explanation": "Die Empfehlung: Eingang und Erfassung laufen vollautonom, die Prüfung mischt autonome Validierung mit menschlicher Freigabe nur für Ausnahmen, und die Zahlung bleibt human-assisted — der Manager prüft einen vorausgefüllten Datensatz statt einer PDF. Menschliche Aufmerksamkeit wird für echte Ausnahmen reserviert, nicht abgeschafft.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/4-map-business-processes-ai-first-patterns",
+    "source": {
+      "title": "Map business processes to AI-first solution patterns",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/4-map-business-processes-ai-first-patterns",
+      "quote": "Steps 1–2 become fully autonomous. Step 3 uses a mixed pattern. Step 4 remains human-assisted, but now the manager reviews a structured record in Power Apps with all data prefilled, rather than interpreting a PDF."
+    }
+  },
+  {
+    "id": "abb13-010",
+    "type": "single-choice",
+    "skillArea": "logic-automation",
+    "topic": "Choosing server-side logic",
+    "difficulty": "hard",
+    "prompt": "A credit-limit rule is complex and transactional and must be enforced identically whether an Account is saved from the model-driven app, a canvas app, a cloud flow, or an external system calling the API. Which extension type does the guidance prescribe?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A Dataverse plug-in written in C#, executing as an event handler on the data operation"
+      },
+      {
+        "id": "b",
+        "text": "A business rule with Entity scope, which covers all apps and API calls"
+      },
+      {
+        "id": "c",
+        "text": "JavaScript on the Account main form's OnSave event"
+      },
+      {
+        "id": "d",
+        "text": "An automated cloud flow on \"When a row is added, modified or deleted\" that rolls back invalid saves"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Komplexe, transaktionale Regeln, die serverseitig und kanalunabhängig greifen müssen, sind der definierte Fall für Dataverse-Plug-ins (C#). Sie laufen als Event-Handler bei Save/Update/Delete, unsichtbar für den Nutzer und für jeden Kanal gleich. Formular-JavaScript greift nur im Formular; ein Flow läuft nach dem Speichern und kann die Transaktion nicht verhindern.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/5-explore-extensibility-options",
+    "source": {
+      "title": "Explore extensibility options in Power Platform",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/5-explore-extensibility-options",
+      "quote": "When your business rules are complex, transactional, or need to run server-side regardless of which app or interface triggered them, Dataverse plug-ins are the right approach. Written in C#, plug-ins execute as event handlers on Dataverse data operations: a record save, an update, a delete."
+    }
+  },
+  {
+    "id": "abb13-011",
+    "type": "single-choice",
+    "skillArea": "applications",
+    "topic": "Dynamic form visibility: scripts vs. business rules",
+    "difficulty": "medium",
+    "prompt": "A model-driven form must show a Refund Details section only under a complex condition that business rules can't express. A developer will write JavaScript. What does the guidance say about how to set up the section?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Make the section hidden by default and let the script show it only when the logic calls for it"
+      },
+      {
+        "id": "b",
+        "text": "Make the section visible by default and let the script hide it when the condition fails"
+      },
+      {
+        "id": "c",
+        "text": "Duplicate the section on a second form and switch forms in the script"
+      },
+      {
+        "id": "d",
+        "text": "Scripts can't change section visibility — only business rules can hide sections"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Die Leitlinie: Wenn Skripte Sichtbarkeit steuern, müssen Elemente standardmäßig ausgeblendet sein und nur per Logik eingeblendet werden — sonst erscheinen sie in Darstellungen, die keine Skripte unterstützen. Wo möglich, ist eine Business Rule oder ein anderes Formular dem Skript vorzuziehen.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/configure-model-driven-apps-customer-engagement-apps/02-forms-elements",
+    "source": {
+      "title": "Form elements",
+      "url": "https://learn.microsoft.com/en-us/training/modules/configure-model-driven-apps-customer-engagement-apps/02-forms-elements",
+      "quote": "Rather than designing forms that depend on scripts to control visibility options, you can apply a business rule (or switch to a different form) to meet your requirements. If you use scripts, make sure that any element that might be hidden is hidden by default. Only show an element with scripts when your logic calls for it."
+    }
+  },
+  {
+    "id": "abb13-012",
+    "type": "single-choice",
+    "skillArea": "foundation",
+    "topic": "Importing data into Dataverse",
+    "difficulty": "medium",
+    "prompt": "A maker imports a SharePoint list into an existing Dataverse table with Import > Import data. The list has nine columns, but only four should land in Dataverse, and the import must not run on a schedule. Which two settings are involved?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Use Choose columns in the Power Query editor to keep only the four, and select Refresh manually in the Refresh settings step"
+      },
+      {
+        "id": "b",
+        "text": "Delete the five extra columns from the SharePoint list, and select Load to new table"
+      },
+      {
+        "id": "c",
+        "text": "Map the extra columns to the table's primary key so they're ignored, and disable Auto map"
+      },
+      {
+        "id": "d",
+        "text": "Set the table's ownership to Organization, and choose Refresh daily"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Im Power-Query-Importer werden Spalten per Choose columns (oder Remove columns) gefiltert — die Quelle bleibt unverändert. Unter Load settings wählt man Load to existing table und die Zieltabelle; im Schritt Refresh settings verhindert Refresh manually eine geplante Wiederholung.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps-common-data-service/4-import-data-into-your-database",
+    "source": {
+      "title": "Exercise - Import data into your Microsoft Dataverse database",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps-common-data-service/4-import-data-into-your-database",
+      "quote": "You can choose the columns you want to import by selecting Choose columns. At the Map tables step under Load settings, choose Load to existing table. In the Refresh settings step, choose Refresh manually."
+    }
+  },
+  {
+    "id": "abb13-013",
+    "type": "single-choice",
+    "skillArea": "logic-automation",
+    "topic": "Workflows vs. Power Automate flows",
+    "difficulty": "medium",
+    "prompt": "A business process flow stage must trigger automation when the stage is entered. The maker can attach a classic Workflow or use the Power Automate flow step. How does the learning content distinguish the two?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Workflows are specific to model-driven apps and a legacy feature without a modern interface; Power Automate flows reach across multiple applications and services"
+      },
+      {
+        "id": "b",
+        "text": "Workflows run client-side in the browser; Power Automate flows run on the server"
+      },
+      {
+        "id": "c",
+        "text": "Workflows can only send email; Power Automate flows can update Dataverse"
+      },
+      {
+        "id": "d",
+        "text": "Workflows require a premium license; Power Automate flows are included with all plans"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Klassische Workflows sind ein auf modellgesteuerte Apps beschränktes Legacy-Feature, das viele Organisationen noch nutzen, aber ohne moderne Oberfläche. Power Automate leistet Ähnliches mit modernem Designer und arbeitet über Anwendungs- und Dienstgrenzen hinweg; Microsoft baut den Flow-Schritt in BPFs weiter aus.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/get-started-with-model-driven-apps-in-powerapps/2-building-blocks-of-model-driven-apps",
+    "source": {
+      "title": "Components of model-driven apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-model-driven-apps-in-powerapps/2-building-blocks-of-model-driven-apps",
+      "quote": "Workflows (discussed above) are specifically for Model Driven apps, while Power Automate flows reach across multiple applications and services."
+    }
+  },
+  {
+    "id": "abb13-014",
+    "type": "single-choice",
+    "skillArea": "applications",
+    "topic": "Power BI integration and licensing",
+    "difficulty": "medium",
+    "prompt": "A maker embeds a Power BI tile in a canvas app so 40 warehouse staff can see a KPI. The tile renders for the maker but not for the staff. What is the most likely licensing cause?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Power BI reports are private by default — both the creator and every viewer need a Power BI Pro license to share content"
+      },
+      {
+        "id": "b",
+        "text": "Embedded tiles require each viewer to hold a Power Apps Per User license"
+      },
+      {
+        "id": "c",
+        "text": "Canvas apps can only embed Power BI tiles for users in the same Dataverse security role as the maker"
+      },
+      {
+        "id": "d",
+        "text": "Power BI tiles can only be embedded in model-driven apps, not canvas apps"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Power-BI-Berichte sind standardmäßig privat. Zum Teilen brauchen Ersteller und Betrachter eine Power-BI-Pro-Lizenz — ein zusätzlicher Kauf, den man bei der Wahl von Power BI gegenüber den einfachen Power-Apps-Diagrammen einplanen muss.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps/3-powerapps-related-technologies",
+    "source": {
+      "title": "Use Power Apps with Power Automate and Power BI",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps/3-powerapps-related-technologies",
+      "quote": "Reports created in Power BI are private by default. To share them, both the report creator and viewers must have a Power BI Pro license, which requires an additional purchase."
+    }
+  },
+  {
+    "id": "abb13-015",
+    "type": "single-choice",
+    "skillArea": "applications",
+    "topic": "Power Pages page components",
+    "difficulty": "medium",
+    "prompt": "A page must show a live, filterable list of Dataverse service requests next to static company text, and a designer needs to tweak the page's HTML beyond what the components offer. How does this map to the Pages workspace?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Use a Connected-to-data component for the list, a Standard component for the text, and Edit code to open the page in Visual Studio Code for the Web"
+      },
+      {
+        "id": "b",
+        "text": "Use Standard components for both, then bind the list via the Data workspace; HTML edits require the Portal Management app"
+      },
+      {
+        "id": "c",
+        "text": "Use a Liquid template for the list and a Connected-to-data component for the text; HTML is edited in the Styling workspace"
+      },
+      {
+        "id": "d",
+        "text": "Components can't mix data and static content on one page — split them across two pages"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Standard-Komponenten erzeugen Layout und statische Inhalte, Connected-to-data-Komponenten zeigen dynamische Dataverse-Daten. Für alles darüber hinaus öffnet Edit code die Seite in Visual Studio Code for the Web mit HTML, CSS und JavaScript; Änderungen synchronisieren zurück auf die Canvas.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/power-pages-studio/components",
+    "source": {
+      "title": "Page components",
+      "url": "https://learn.microsoft.com/en-us/training/modules/power-pages-studio/components",
+      "quote": "Standard components create the page layout and static content. Connected to data components display dynamic and interactive content based on Dataverse data. To view the source code of the page, select Edit code in the command bar."
+    }
+  },
+  {
+    "id": "abb13-016",
+    "type": "single-choice",
+    "skillArea": "foundation",
+    "topic": "Primary column rules",
+    "difficulty": "medium",
+    "prompt": "After creating the Vehicle table, a maker wants to rename the primary column from \"Name\" to \"Registration\" and change its schema name to match. What is possible?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The display name can be changed at any time, but the schema name can't be changed once the table exists"
+      },
+      {
+        "id": "b",
+        "text": "Both the display name and the schema name can be changed at any time"
+      },
+      {
+        "id": "c",
+        "text": "Neither can be changed after creation — the table must be recreated"
+      },
+      {
+        "id": "d",
+        "text": "The schema name can be changed, but the display name is fixed to Name"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Schema- und Anzeigename der Primärspalte lassen sich nur bis zum Erstellen der Tabelle festlegen. Danach bleibt der Schemaname fix; der Anzeigename ist weiterhin änderbar. Außerdem kann man den Datentyp der Primärspalte später zwischen Text und Autonumber wechseln.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/create-manage-fields-within-entity/4-primary-name",
+    "source": {
+      "title": "Primary column",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-manage-fields-within-entity/4-primary-name",
+      "quote": "You can only update the schema name and display name of the Primary column until you create the table. After the table is created, you can't update the schema name. You can change the display name of the Primary column to make it friendlier for business users."
+    }
+  },
+  {
+    "id": "abb13-017",
+    "type": "single-choice",
+    "skillArea": "applications",
+    "topic": "Driving control styling from data",
+    "difficulty": "medium",
+    "prompt": "Each Machine row stores its brand color as text (for example \"DarkGreen\" or \"#0050A0\"). A gallery label's Color property must reflect that value per row. Which formula?",
+    "options": [
+      { "id": "a", "text": "ColorValue(ThisItem.'Primary Color')" },
+      { "id": "b", "text": "Text(ThisItem.'Primary Color', \"Color\")" },
+      { "id": "c", "text": "RGBA(ThisItem.'Primary Color')" },
+      { "id": "d", "text": "Color.ThisItem.'Primary Color'" }
+    ],
+    "correct": "a",
+    "explanation": "ColorValue() wandelt einen Farbnamen oder Hex-Code als Text in einen Color-Wert um, den Color, Fill oder BorderColor verarbeiten. So lässt sich das Styling direkt aus Dataverse-Daten steuern. Text() formatiert Zahlen und Daten, RGBA() erwartet vier Zahlen.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/3-get-started-with-functions",
+    "source": {
+      "title": "Apply Power Fx formulas to canvas app controls",
+      "url": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/3-get-started-with-functions",
+      "quote": "ColorValue(TextColor) converts a text string or hex code into a Color value that Power Apps can apply to a control's Color, Fill, or BorderColor property. Storing colors as text in Dataverse and reading them with ColorValue() lets you drive the visual style of your controls directly from your data."
+    }
+  },
+  {
+    "id": "abb13-018",
+    "type": "single-choice",
+    "skillArea": "foundation",
+    "topic": "Removing users and licenses",
+    "difficulty": "medium",
+    "prompt": "An admin removes all security roles from a departing employee in the Power Platform admin center so the license can be reassigned to a new hire. The new hire still can't be licensed. Why?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Removing security roles doesn't remove the license — it must be removed from the user account in the Microsoft 365 admin center"
+      },
+      {
+        "id": "b",
+        "text": "Licenses are bound to the environment and are released only when the environment is reset"
+      },
+      {
+        "id": "c",
+        "text": "The user must first be removed from every owner team before the license frees up"
+      },
+      {
+        "id": "d",
+        "text": "Licenses are released automatically after the 28-day run history expires"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Sicherheitsrollen und Lizenz sind getrennt: Das Entfernen der Rollen macht die Lizenz nicht frei. Lizenz entziehen, Nutzer deaktivieren und aus Sicherheitsgruppen entfernen geschieht im Microsoft 365 Admin Center.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/get-started-security-roles/3-user",
+    "source": {
+      "title": "Adding or disabling an environment user",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-security-roles/3-user",
+      "quote": "Removing a user from the security roles doesn't remove the user's license. If you want to make the license available to another user, you have to remove the license from the user account that was disabled."
+    }
+  },
+  {
+    "id": "abb13-019",
+    "type": "single-choice",
+    "skillArea": "foundation",
+    "topic": "Plans: editing process diagrams",
+    "difficulty": "medium",
+    "prompt": "After Plans generated a process diagram, a consultant needs to make about a dozen changes to stages and decision points. What does the guidance recommend?",
+    "options": [
+      {
+        "id": "a",
+        "text": "For more than five changes, use the natural language update first — it saves time and improves AI accuracy; batch small manual edits three to five at a time before validating"
+      },
+      {
+        "id": "b",
+        "text": "Make all changes manually in one pass, then validate once at the end"
+      },
+      {
+        "id": "c",
+        "text": "Delete the diagram and regenerate the plan from an updated prompt"
+      },
+      {
+        "id": "d",
+        "text": "Export the diagram to PDF and mark up changes for the Data Agent"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Kleine Anpassungen sollten in Paketen von drei bis fünf manuellen Änderungen mit anschließender Validierung erfolgen; bei mehr als fünf Änderungen ist die Aktualisierung per natürlicher Sprache der schnellere und genauere Weg. Änderungen am Diagramm werden erst nach der Validierung gespeichert.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/turn-business-ideas-power-platform-solutions-plans/3-create-plan-refine-requirements",
+    "source": {
+      "title": "Create a plan and refine the requirements",
+      "url": "https://learn.microsoft.com/en-us/training/modules/turn-business-ideas-power-platform-solutions-plans/3-create-plan-refine-requirements",
+      "quote": "For small adjustments, batch three to five manual changes at a time, then validate. For larger changes (more than five), use the natural language update first—it saves time and improves AI accuracy."
+    }
+  },
+  {
+    "id": "abb13-020",
+    "type": "single-choice",
+    "skillArea": "foundation",
+    "topic": "Plans: Power BI limitation",
+    "difficulty": "hard",
+    "prompt": "The Solution Agent's technology proposal includes a Power BI dashboard for HR. When the team selects Create on that tile, what should they expect?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Plans can recommend Power BI dashboards, but connecting a report with plan context isn't currently supported — the report is created manually after the rest of the solution"
+      },
+      {
+        "id": "b",
+        "text": "Power BI Desktop opens with the plan's Dataverse tables preloaded as a semantic model"
+      },
+      {
+        "id": "c",
+        "text": "The tile generates an embedded Power BI report inside the model-driven app automatically"
+      },
+      {
+        "id": "d",
+        "text": "Plans replaces the Power BI tile with a model-driven dashboard, since Power BI isn't part of the technology proposal"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Plans kann Power BI empfehlen, aber der Bericht lässt sich nicht mit Plan-Kontext verbinden — er wird nach dem Bau der übrigen Komponenten manuell erstellt. Bei Apps, Flows und Agents füllt Create dagegen den jeweiligen Designer mit Plan-Kontext vor.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/turn-business-ideas-power-platform-solutions-plans/4-review-data-model-technology-proposal",
+    "source": {
+      "title": "Review the data model and technology proposal",
+      "url": "https://learn.microsoft.com/en-us/training/modules/turn-business-ideas-power-platform-solutions-plans/4-review-data-model-technology-proposal",
+      "quote": "Plans can recommend Power BI dashboards, but connecting a Power BI report with plan context isn't currently supported. You can still create the report manually after building the rest of the solution."
+    }
+  }
+]

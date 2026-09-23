@@ -1,0 +1,564 @@
+[
+  {
+    "id": "abb11-001",
+    "type": "yes-no",
+    "skillArea": "logic-automation",
+    "topic": "Business process flow limits",
+    "difficulty": "hard",
+    "prompt": "You are designing a branching business process flow for a loan process that spans Request, Investigation, and Decision tables. For each statement, select Yes if it is true. Otherwise, select No.",
+    "statements": [
+      {
+        "id": "s1",
+        "text": "A process can have up to 30 stages and up to 30 steps per stage.",
+        "correct": true
+      },
+      {
+        "id": "s2",
+        "text": "A single branching rule can combine conditions with both AND and OR operators.",
+        "correct": false
+      },
+      {
+        "id": "s3",
+        "text": "A table relationship selected in the process must be a one-to-many (1:N) relationship.",
+        "correct": true
+      }
+    ],
+    "explanation": "Die Grenzen: maximal 5 Tabellen, 30 Stufen pro Prozess, 30 Schritte pro Stufe, 10 Verzweigungsebenen. Bedingungen einer Regel lassen sich mit AND oder OR kombinieren — aber nicht beides in derselben Regel. Tabellenbeziehungen im Prozess müssen 1:N sein.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/build-approval-flows/6-branching",
+    "source": {
+      "title": "Create a business process flow with conditions",
+      "url": "https://learn.microsoft.com/en-us/training/modules/build-approval-flows/6-branching",
+      "quote": "You can use a maximum of 30 stages per process and a maximum of 30 steps per stage. You can combine multiple conditions in a rule by using the AND operator or the OR operator, but not both. This table relationship must be a one-to-many (1:N) relationship."
+    }
+  },
+  {
+    "id": "abb11-002",
+    "type": "single-choice",
+    "skillArea": "logic-automation",
+    "topic": "Branching rules",
+    "difficulty": "hard",
+    "prompt": "In a four-stage business process flow, a maker wants the branch after stage 3 to depend on the Budget field the user filled in during stage 1. The condition editor doesn't offer that field. Why?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Branching rules must be based on the steps in the stage that immediately precedes the condition"
+      },
+      {
+        "id": "b",
+        "text": "Currency fields can't be used in branching rules"
+      },
+      {
+        "id": "c",
+        "text": "Conditions can only reference fields on the process's primary table, and stage 1 uses a related table"
+      },
+      {
+        "id": "d",
+        "text": "The Budget step must be marked Required before it appears in conditions"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Verzweigungsregeln beziehen sich ausschließlich auf Schritte der unmittelbar vorausgehenden Stufe. Soll ein Wert aus Stufe 1 später entscheiden, muss er als Schritt in der Stufe direkt vor der Bedingung wiederholt werden.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/build-approval-flows/6-branching",
+    "source": {
+      "title": "Create a business process flow with conditions",
+      "url": "https://learn.microsoft.com/en-us/training/modules/build-approval-flows/6-branching",
+      "quote": "Branching rules must be based on the steps in the stage that immediately precedes them."
+    }
+  },
+  {
+    "id": "abb11-003",
+    "type": "single-choice",
+    "skillArea": "logic-automation",
+    "topic": "Preventing information disclosure",
+    "difficulty": "hard",
+    "prompt": "A bank's loan business process flow branches into Fraud Investigation and Legal Action stages. Loan officers have no security role access to the Investigation table, yet when they open a Request record they can still see those stage names and preview their steps. What does the guidance recommend?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Split the process into two separate business process flows and use a workflow to synchronize the Approve/Deny decision back to the Request record"
+      },
+      {
+        "id": "b",
+        "text": "Add column-level security to every field in the Investigation stages"
+      },
+      {
+        "id": "c",
+        "text": "Disable security roles on the process so stage visibility follows table access"
+      },
+      {
+        "id": "d",
+        "text": "Move the investigative stages into a nested condition so they collapse by default"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Tabellenrechte verbergen die Daten, nicht die Prozessstruktur: Stufennamen und Schrittvorschau bleiben sichtbar und verraten, dass ermittelt wurde. Deshalb den Prozess in zwei eigenständige Flows trennen — einen für die Anfrage, einen für die Ermittlung — und die Entscheidung per Workflow zurücksynchronisieren.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/build-approval-flows/6-branching",
+    "source": {
+      "title": "Create a business process flow with conditions",
+      "url": "https://learn.microsoft.com/en-us/training/modules/build-approval-flows/6-branching",
+      "quote": "In our example, to prevent information disclosure, split the process into two separate processes: one for the request processing and one for the fraud investigation. You have to provide a workflow to synchronize the Approve/Deny decision from the Investigation record to the Request record."
+    }
+  },
+  {
+    "id": "abb11-004",
+    "type": "single-choice",
+    "skillArea": "logic-automation",
+    "topic": "BPF lifecycle",
+    "difficulty": "medium",
+    "prompt": "A maker saved a new business process flow and shared the app, but users report the process bar never appears on the form. The maker confirms the BPF is in the solution. What is the most likely reason?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The BPF is still a draft — it must be validated and then activated before anyone can use it"
+      },
+      {
+        "id": "b",
+        "text": "Business process flows only render in canvas apps, not model-driven apps"
+      },
+      {
+        "id": "c",
+        "text": "The BPF must be published from Power Automate, not from Power Apps"
+      },
+      {
+        "id": "d",
+        "text": "The Table setting must be changed to the app's primary table after saving"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Ein BPF lässt sich als Entwurf speichern, ist dann aber für niemanden nutzbar. Erst nach erfolgreicher Validierung wird Activate freigeschaltet. Die Tabelle lässt sich nach dem Speichern ohnehin nicht mehr ändern, und BPFs gibt es nur in modellgesteuerten Apps.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/build-approval-flows/5-create-business-process-flow",
+    "source": {
+      "title": "Create a business process flow",
+      "url": "https://learn.microsoft.com/en-us/training/modules/build-approval-flows/5-create-business-process-flow",
+      "quote": "No one can use a BPF while it's a draft. Once you've validated your BPF, the Activate button in your action bar becomes enabled, and you can activate the BPF for use in your model-driven apps."
+    }
+  },
+  {
+    "id": "abb11-005",
+    "type": "single-choice",
+    "skillArea": "logic-automation",
+    "topic": "BPF security roles",
+    "difficulty": "medium",
+    "prompt": "An activated business process flow is visible to the admin who built it but not to customer service reps. Which action fixes this?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Select Enable Security Roles on the process and grant the reps' role create, read, update, or delete privileges on the Business Process Flows tab"
+      },
+      {
+        "id": "b",
+        "text": "Deactivate and reactivate the process so it republishes to all roles"
+      },
+      {
+        "id": "c",
+        "text": "Assign the reps the System Customizer role, which is required to see any BPF"
+      },
+      {
+        "id": "d",
+        "text": "Set the process's Order Process Flow so it is first for new records"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Neue BPFs sehen standardmäßig nur System Administrator und System Customizer. Über Enable/Edit Security Roles vergibt man den anderen Rollen CRUD-Rechte auf die Prozessinstanz — z. B. Vollzugriff für Service, nur Lesen für Vertrieb. System Customizer an alle zu vergeben widerspricht Least Privilege.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/build-approval-flows/5-create-business-process-flow",
+    "source": {
+      "title": "Create a business process flow",
+      "url": "https://learn.microsoft.com/en-us/training/modules/build-approval-flows/5-create-business-process-flow",
+      "quote": "By default, the System Administrator and System Customizer security roles have access to new business process flows. To set security for a business process flow definition that you create, select Enable Security Roles on the action bar."
+    }
+  },
+  {
+    "id": "abb11-006",
+    "type": "single-choice",
+    "skillArea": "logic-automation",
+    "topic": "Update a row: side effects",
+    "difficulty": "hard",
+    "prompt": "A nightly flow updates the Credit Limit on every Account and, for convenience, also passes the unchanged Account Name into the Update a row action. Since deployment, an unrelated \"notify sales when account name changes\" flow fires for every account each night. What should change?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Only pass columns whose values actually change — passing an unchanged column still counts as a modification and triggers other automations"
+      },
+      {
+        "id": "b",
+        "text": "Switch the nightly flow's trigger scope to User so it doesn't affect other flows"
+      },
+      {
+        "id": "c",
+        "text": "Use Upsert a row instead of Update a row, which skips unchanged columns automatically"
+      },
+      {
+        "id": "d",
+        "text": "Set Account Name to null in the update so the other flow's filter never matches"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Das Lernmaterial nennt genau dieses Beispiel: Wird der Kontoname mitgeschickt, obwohl er sich nicht ändert, laufen andere Automatisierungen los, die auf Änderungen an Konten warten. Update a row verlangt keine Spalten — man übergibt nur, was sich wirklich ändert. null würde den Namen löschen.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/use-dataverse-triggers-actions/create-update-delete-relate",
+    "source": {
+      "title": "Create, update, delete, and relate actions",
+      "url": "https://learn.microsoft.com/en-us/training/modules/use-dataverse-triggers-actions/create-update-delete-relate",
+      "quote": "However, you should only change values for columns when the data changes. For example, passing the Account name column when it isn't changed would result in other automations looking for changes on the account table to be run."
+    }
+  },
+  {
+    "id": "abb11-007",
+    "type": "single-choice",
+    "skillArea": "logic-automation",
+    "topic": "Upsert",
+    "difficulty": "medium",
+    "prompt": "A flow receives supplier records from an external system that provides a stable ID. Each record must be updated if it already exists in Dataverse or created if it doesn't, without a lookup step first. Which action?",
+    "options": [
+      { "id": "a", "text": "Upsert a row" },
+      { "id": "b", "text": "Add a new row inside a Condition that checks List rows" },
+      { "id": "c", "text": "Update a row with the row ID set to the external ID" },
+      { "id": "d", "text": "Relate rows with the external ID as Row ID" }
+    ],
+    "correct": "a",
+    "explanation": "Upsert a row ändert die Zeile, wenn die Row ID existiert, und legt sie sonst an — ohne vorherige Abfrage. Update a row schlägt bei fehlender Zeile fehl, und ein List-rows-Umweg ist genau das, was Upsert überflüssig macht.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/use-dataverse-triggers-actions/create-update-delete-relate",
+    "source": {
+      "title": "Create, update, delete, and relate actions",
+      "url": "https://learn.microsoft.com/en-us/training/modules/use-dataverse-triggers-actions/create-update-delete-relate",
+      "quote": "Use the Upsert a row action to modify an existing row or create a new row if one doesn't exist. If the provided Row ID matches an existing row, the action updates that row. If no match is found, the action creates a new row instead."
+    }
+  },
+  {
+    "id": "abb11-008",
+    "type": "single-choice",
+    "skillArea": "logic-automation",
+    "topic": "Relating rows in N:N relationships",
+    "difficulty": "hard",
+    "prompt": "Employees and Projects have a many-to-many relationship. A flow must assign a newly created employee to three projects. The maker tries to set the relationship in the Add a new row action but finds no suitable column. What should they do?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Use the Relate rows action — many-to-many relationships can only be established that way, because neither table has a lookup column"
+      },
+      {
+        "id": "b",
+        "text": "Add a lookup column from Employee to Project and set it in Add a new row"
+      },
+      {
+        "id": "c",
+        "text": "Use Update a row on the Project table and set its Employee column"
+      },
+      {
+        "id": "d",
+        "text": "Write directly to the intersect table with Add a new row"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Lookup-Spalten gibt es nur bei N:1/1:N — dort kann man die Beziehung direkt in Add/Update a row setzen. Bei N:N hat keine Seite ein Lookup, und die Intersect-Tabelle ist nicht bearbeitbar. Deshalb ist Relate rows der einzige Weg.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/use-dataverse-triggers-actions/create-update-delete-relate",
+    "source": {
+      "title": "Create, update, delete, and relate actions",
+      "url": "https://learn.microsoft.com/en-us/training/modules/use-dataverse-triggers-actions/create-update-delete-relate",
+      "quote": "You can only establish many-to-many relationships by using the Relate rows action. The reason is because none of the rows in the relationship has a lookup column to which you can set the value in the Add a new row or Update a row actions."
+    }
+  },
+  {
+    "id": "abb11-009",
+    "type": "dropdown",
+    "skillArea": "logic-automation",
+    "topic": "Relate rows: identifiers",
+    "difficulty": "hard",
+    "prompt": "Complete the statement about the identifiers used in the Relate rows action.",
+    "textParts": [
+      "In Relate rows, the Row ID property expects a ",
+      ", while the Relate With property expects a ",
+      " such as contoso_projects(fd140aaf-4df4-11dd-bd17-0019b9312238)."
+    ],
+    "blanks": [
+      {
+        "id": "b1",
+        "options": [
+          { "id": "o1", "text": "GUID only" },
+          { "id": "o2", "text": "row URL" },
+          { "id": "o3", "text": "display name" }
+        ],
+        "correct": "o1"
+      },
+      {
+        "id": "b2",
+        "options": [
+          { "id": "o1", "text": "GUID only" },
+          { "id": "o2", "text": "row URL (OData ID)" },
+          { "id": "o3", "text": "logical table name" }
+        ],
+        "correct": "o2"
+      }
+    ],
+    "explanation": "Die beiden Felder erwarten unterschiedliche Formate: Row ID nur die GUID, Relate With eine Zeilen-URL aus Entity-Set-Name plus GUID (aus dem OData-ID-Feld oder manuell zusammengesetzt). Das Vertauschen führt zu einem Fehler.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/use-dataverse-triggers-actions/create-update-delete-relate",
+    "source": {
+      "title": "Create, update, delete, and relate actions",
+      "url": "https://learn.microsoft.com/en-us/training/modules/use-dataverse-triggers-actions/create-update-delete-relate",
+      "quote": "This value is a row ID, not a URL, so you need to provide only the GUID (for example, fd140aaf-4df4-11dd-bd17-0019b9312238). This property is a row URL, so you can use the OData ID column from a previous step or provide the full URL manually"
+    }
+  },
+  {
+    "id": "abb11-010",
+    "type": "single-choice",
+    "skillArea": "logic-automation",
+    "topic": "Clearing a column value",
+    "difficulty": "medium",
+    "prompt": "A flow must remove the assigned technician from a service request when it is reopened. Which approach clears the lookup column in an Update a row action?",
+    "options": [
+      { "id": "a", "text": "Set the column to an expression that evaluates to null" },
+      { "id": "b", "text": "Leave the column empty in the action — empty inputs clear the value" },
+      { "id": "c", "text": "Pass an empty string \"\" to the column" },
+      { "id": "d", "text": "Use Delete a row on the technician record" }
+    ],
+    "correct": "a",
+    "explanation": "Ein leeres Feld in der Aktion bedeutet „nicht ändern“, kein Löschen. Um einen bestehenden Wert zu leeren, setzt man die Spalte auf einen Ausdruck, der null ergibt. Delete a row würde den Techniker selbst löschen.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/use-dataverse-triggers-actions/create-update-delete-relate",
+    "source": {
+      "title": "Create, update, delete, and relate actions",
+      "url": "https://learn.microsoft.com/en-us/training/modules/use-dataverse-triggers-actions/create-update-delete-relate",
+      "quote": "To clear an existing column value, change the column on the action to use an expression of null."
+    }
+  },
+  {
+    "id": "abb11-011",
+    "type": "single-choice",
+    "skillArea": "logic-automation",
+    "topic": "Required columns in Add a new row",
+    "difficulty": "medium",
+    "prompt": "A flow that creates Project rows worked for months. After an admin marked the Sponsor column Business Required, the flow now fails on Add a new row. What must the maker do?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Open the flow and update the Add a new row action to provide a value for Sponsor"
+      },
+      {
+        "id": "b",
+        "text": "Nothing — the flow will pick up the new requirement automatically on its next run"
+      },
+      {
+        "id": "c",
+        "text": "Change the flow's Run as setting to Row owner to bypass table-level requirements"
+      },
+      {
+        "id": "d",
+        "text": "Switch the action to Update a row, which doesn't require any columns"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Business-Required-Spalten sind in Add a new row Pflicht. Wird eine Spalte nachträglich als Pflicht markiert, muss die Flow-Aktion angepasst werden. Run as beeinflusst nur den Kontext, nicht die Validierung; Update a row erzeugt keine neuen Zeilen.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/use-dataverse-triggers-actions/create-update-delete-relate",
+    "source": {
+      "title": "Create, update, delete, and relate actions",
+      "url": "https://learn.microsoft.com/en-us/training/modules/use-dataverse-triggers-actions/create-update-delete-relate",
+      "quote": "A required column is any column on the table that's set up as Business Required. If you mark other columns as Business Required in your table after you create a flow, you'll need to update your flow action the next time you update the column."
+    }
+  },
+  {
+    "id": "abb11-012",
+    "type": "single-choice",
+    "skillArea": "logic-automation",
+    "topic": "Apply to each with attachments",
+    "difficulty": "medium",
+    "prompt": "A flow triggered by \"When a new email arrives (V3)\" saves attachments to SharePoint with Create file. When the maker inserts Attachments Name as the file name, the designer restructures the flow. What happened, and why?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Create file was wrapped in an Apply to each — an email can carry multiple attachments, so a file is created for each one"
+      },
+      {
+        "id": "b",
+        "text": "The action was moved into a Scope for error handling on attachment downloads"
+      },
+      {
+        "id": "c",
+        "text": "A Condition was added to skip emails without attachments"
+      },
+      {
+        "id": "d",
+        "text": "The trigger was switched to \"For a selected message\" to expose attachment fields"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Attachments ist eine Sammlung. Sobald ein Feld daraus verwendet wird, legt Power Automate automatisch eine Apply-to-each-Schleife um die Aktion — pro Anhang eine Datei.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/get-started-flows/flow-monitor-incoming-emails",
+    "source": {
+      "title": "Exercise - Monitor incoming emails",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-flows/flow-monitor-incoming-emails",
+      "quote": "Once the Attachments Name is added, the Create file action is automatically added inside of an Apply to each action. This means that if there are multiple attachments with the email, the flow creates a file for each attachment."
+    }
+  },
+  {
+    "id": "abb11-013",
+    "type": "yes-no",
+    "skillArea": "logic-automation",
+    "topic": "Rollup column limitations",
+    "difficulty": "hard",
+    "prompt": "A maker wants a rollup column on Account that sums Opportunity revenue and then triggers a flow when the total crosses a threshold. For each statement, select Yes if it is true. Otherwise, select No.",
+    "statements": [
+      {
+        "id": "s1",
+        "text": "A rollup column can trigger a cloud flow when its value is updated.",
+        "correct": false
+      },
+      {
+        "id": "s2",
+        "text": "A table can have at most 10 rollup columns.",
+        "correct": true
+      },
+      {
+        "id": "s3",
+        "text": "A rollup column can aggregate records across a many-to-many (N:N) relationship.",
+        "correct": false
+      }
+    ],
+    "explanation": "Rollup-Spalten können weder Workflows noch Flows auslösen und aktualisieren auch ModifiedOn nicht — für die Schwellenwert-Logik braucht es einen anderen Trigger. Es gilt: max. 10 pro Tabelle, 100 pro Organisation, nur 1:N-Beziehungen, keine Referenz auf andere Rollup- oder komplexe Formelspalten.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/create-manage-fields-within-entity/5-restrictions",
+    "source": {
+      "title": "Restrictions that apply to columns in a table",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-manage-fields-within-entity/5-restrictions",
+      "quote": "Max of 10 for each table Max of 100 for each organization Can't trigger workflows or flows Can't reference another rollup column, a complex calculated or formula column. It must reference a simple column."
+    }
+  },
+  {
+    "id": "abb11-014",
+    "type": "single-choice",
+    "skillArea": "foundation",
+    "topic": "Column requirement levels",
+    "difficulty": "medium",
+    "prompt": "A Phone Number column should be strongly encouraged on the form but must never block saving a record. Which Required setting fits?",
+    "options": [
+      { "id": "a", "text": "Business recommended" },
+      { "id": "b", "text": "Business required" },
+      { "id": "c", "text": "Optional with a business rule that shows an error" },
+      { "id": "d", "text": "System required" }
+    ],
+    "correct": "a",
+    "explanation": "Business recommended signalisiert, dass die Spalte einen Wert haben sollte, blockiert das Speichern aber nicht. Business required verhindert das Speichern ohne Wert. Ein Fehler per Business Rule würde ebenfalls blockieren.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/create-manage-fields-within-entity/3-add-field",
+    "source": {
+      "title": "Add a column to a table",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-manage-fields-within-entity/3-add-field",
+      "quote": "Business recommended means that the column should have a value but it is not mandatory before saving a record. Business required means that the record or form must have a value for this column before saving the record."
+    }
+  },
+  {
+    "id": "abb11-015",
+    "type": "single-choice",
+    "skillArea": "foundation",
+    "topic": "Searchable columns",
+    "difficulty": "medium",
+    "prompt": "Users building personal views complain that Advanced Find lists dozens of internal integration columns they never need. What should the maker change on those columns?",
+    "options": [
+      { "id": "a", "text": "Clear the Searchable checkbox" },
+      { "id": "b", "text": "Set them to Business recommended" },
+      { "id": "c", "text": "Reduce their Maximum character count" },
+      { "id": "d", "text": "Disable Allow form fill assistance" }
+    ],
+    "correct": "a",
+    "explanation": "Nur durchsuchbare Spalten erscheinen in Advanced Find und bei der Anpassung von Ansichten. Das Abwählen von Searchable entfernt ungenutzte Spalten aus diesen Listen — die Daten bleiben erhalten.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/create-manage-fields-within-entity/3-add-field",
+    "source": {
+      "title": "Add a column to a table",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-manage-fields-within-entity/3-add-field",
+      "quote": "When a column is searchable, it appears in Advanced Find and is available when you're customizing views. Clearing this check box reduces the number of options that are shown to people who are using Advanced Find, and helps make it easier for users to create custom views without seeing unused columns."
+    }
+  },
+  {
+    "id": "abb11-016",
+    "type": "single-choice",
+    "skillArea": "foundation",
+    "topic": "Choice vs. lookup",
+    "difficulty": "medium",
+    "prompt": "An Equipment table needs a Manufacturer field. There are about 400 manufacturers and the list changes monthly. A maker proposes a Choice column. What does the guidance say?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Model manufacturers as a separate table and use a Lookup column — Choice columns are for categories, not for separate items of data"
+      },
+      {
+        "id": "b",
+        "text": "Use a Choices (multi-select) column so several manufacturers can be selected at once"
+      },
+      {
+        "id": "c",
+        "text": "Use a Choice column; Dataverse handles hundreds of options without usability issues"
+      },
+      {
+        "id": "d",
+        "text": "Use a Single line of text column with an autonumber format"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Choice-Spalten definieren Kategorien. Hunderte Optionen, die eigenständige Datensätze darstellen — wie Hersteller — gehören in eine eigene Tabelle mit Lookup. Zu viele Optionen verschlechtern die Nutzbarkeit und verhindern sogar einen Standardwert.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/create-manage-fields-within-entity/5-restrictions",
+    "source": {
+      "title": "Restrictions that apply to columns in a table",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-manage-fields-within-entity/5-restrictions",
+      "quote": "For example, rather than maintaining a Choice column that stores each of hundreds of possible manufacturers of a type of equipment, consider creating a table that stores references to each manufacturer and use a Lookup column instead of a Choice column."
+    }
+  },
+  {
+    "id": "abb11-017",
+    "type": "ordering",
+    "skillArea": "logic-automation",
+    "topic": "Calling a prompt from a Copilot Studio topic",
+    "difficulty": "hard",
+    "prompt": "A custom copilot topic \"Summarize Proposal\" should ask for the proposal name, run a grounded AI Builder prompt with that name, and reply with the generated text. Place the topic nodes in the correct order.",
+    "items": [
+      {
+        "id": "i1",
+        "text": "Ask a question node — \"What is the name of the proposal?\" saved to a variable"
+      },
+      {
+        "id": "i2",
+        "text": "Call an action node — the grounded prompt, with the variable as input"
+      },
+      {
+        "id": "i3",
+        "text": "Send a message node — inserting the prompt output variable's text"
+      }
+    ],
+    "correctOrder": ["i1", "i2", "i3"],
+    "explanation": "Der Prompt wird nach Finalize prompt als AI-Plug-in bereitgestellt und im Topic als Aktion aufgerufen. Erst die Frage nach dem Namen (Eingabe), dann der Aktionsaufruf mit dieser Eingabe, zuletzt die Ausgabe des Ergebnisses.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/ai-builder-grounded-prompts/use-grounded-prompt-custom-copilot",
+    "source": {
+      "title": "Use a grounded prompt in a custom copilot",
+      "url": "https://learn.microsoft.com/en-us/training/modules/ai-builder-grounded-prompts/use-grounded-prompt-custom-copilot",
+      "quote": "Now, you can use this prompt plug-in to add content generation behaviors to your copilots. Congratulations, you successfully created a custom copilot and used Topics to call a grounded prompt as an action."
+    }
+  },
+  {
+    "id": "abb11-018",
+    "type": "single-choice",
+    "skillArea": "logic-automation",
+    "topic": "Trigger condition vs. Condition action",
+    "difficulty": "medium",
+    "prompt": "A flow on the Outlook trigger should only process emails from a specific supplier that have attachments. The maker adds a Condition action as the first step. A reviewer says this wastes runs. What is the better design?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Configure the trigger's From, Only with Attachments, and Subject Filter options so the flow doesn't start for non-matching emails"
+      },
+      {
+        "id": "b",
+        "text": "Keep the Condition but add a Terminate action in the false branch"
+      },
+      {
+        "id": "c",
+        "text": "Switch to a Recurrence trigger and poll the mailbox hourly"
+      },
+      {
+        "id": "d",
+        "text": "Wrap the Condition in a Scope so failed runs aren't counted"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Der Trigger „When a new email arrives (V3)“ bietet Filteroptionen wie From, Subject Filter, Only with Attachments und Folder. Wer dort filtert, verhindert unnötige Läufe, statt sie mit einer Bedingung erst zu starten und dann zu beenden.",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/get-started-flows/flow-monitor-incoming-emails",
+    "source": {
+      "title": "Exercise - Monitor incoming emails",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-flows/flow-monitor-incoming-emails",
+      "quote": "You have successfully built a Power Automate flow, which will monitor your Outlook inbox for any emails that have the text Daily report in their Subject line and have Attachments."
+    }
+  }
+]

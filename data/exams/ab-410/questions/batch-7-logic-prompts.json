@@ -4,22 +4,41 @@
     "type": "matching",
     "skillArea": "logic-automation",
     "topic": "Business rule scope",
-    "difficulty": "hard",
+    "difficulty": "medium",
     "prompt": "Business rules are defined at the table level and applied based on their Scope setting. Match each scope to what it applies to.",
     "left": [
-      { "id": "l1", "text": "Individual form" },
-      { "id": "l2", "text": "All forms" },
-      { "id": "l3", "text": "Entity" }
+      {
+        "id": "l1",
+        "text": "Individual form"
+      },
+      {
+        "id": "l2",
+        "text": "All forms"
+      },
+      {
+        "id": "l3",
+        "text": "Entity"
+      }
     ],
     "right": [
-      { "id": "r1", "text": "Applies only to the specified model-driven app form" },
-      { "id": "r2", "text": "Applies to all model-driven app forms" },
+      {
+        "id": "r1",
+        "text": "Applies only to the specified model-driven app form"
+      },
+      {
+        "id": "r2",
+        "text": "Applies to all model-driven app forms"
+      },
       {
         "id": "r3",
         "text": "Applies to all model-driven app forms and to create/update operations on the table — the default scope"
       }
     ],
-    "correct": { "l1": "r1", "l2": "r2", "l3": "r3" },
+    "correct": {
+      "l1": "r1",
+      "l2": "r2",
+      "l3": "r3"
+    },
     "explanation": "Der Scope entscheidet, wo eine Business Rule greift. „Entity“ ist der Standard und wirkt am weitesten: auf allen modellgesteuerten Formularen und zusätzlich bei Create- und Update-Operationen auf der Tabelle — also auch außerhalb von Formularen.",
     "reference": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps-common-data-service/logic-security",
     "source": {
@@ -33,16 +52,35 @@
     "type": "multiple-choice",
     "skillArea": "logic-automation",
     "topic": "Business rules in canvas apps",
-    "difficulty": "hard",
+    "difficulty": "medium",
     "prompt": "Business rules defined at the table level apply to both canvas and model-driven apps, but which three actions are NOT available in canvas apps? Each correct answer presents part of the solution.",
     "options": [
-      { "id": "a", "text": "Show or hide columns" },
-      { "id": "b", "text": "Enable or disable columns" },
-      { "id": "c", "text": "Create business recommendations" },
-      { "id": "d", "text": "Set or clear column values" },
-      { "id": "e", "text": "Validate input and display error messages" }
+      {
+        "id": "a",
+        "text": "Show or hide columns"
+      },
+      {
+        "id": "b",
+        "text": "Enable or disable columns"
+      },
+      {
+        "id": "c",
+        "text": "Create business recommendations"
+      },
+      {
+        "id": "d",
+        "text": "Set or clear column values"
+      },
+      {
+        "id": "e",
+        "text": "Validate input and display error messages"
+      }
     ],
-    "correct": ["a", "b", "c"],
+    "correct": [
+      "a",
+      "b",
+      "c"
+    ],
     "explanation": "Modellgesteuerte Apps unterstützen alle Business-Rule-Aktionen. In Canvas-Apps fehlen drei davon: Spalten ein-/ausblenden, Spalten aktivieren/deaktivieren und Business Recommendations. Werte setzen bzw. leeren und Validierung mit Fehlermeldung funktionieren dagegen in beiden App-Typen.",
     "reference": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps-common-data-service/logic-security",
     "source": {
@@ -56,13 +94,25 @@
     "type": "single-choice",
     "skillArea": "logic-automation",
     "topic": "Business logic options",
-    "difficulty": "medium",
+    "difficulty": "easy",
     "prompt": "Which Dataverse business logic feature is currently supported only in model-driven apps?",
     "options": [
-      { "id": "a", "text": "Business process flows" },
-      { "id": "b", "text": "Business rules" },
-      { "id": "c", "text": "Real-time workflows" },
-      { "id": "d", "text": "Formula columns" }
+      {
+        "id": "a",
+        "text": "Business process flows"
+      },
+      {
+        "id": "b",
+        "text": "Business rules"
+      },
+      {
+        "id": "c",
+        "text": "Real-time workflows"
+      },
+      {
+        "id": "d",
+        "text": "Formula columns"
+      }
     ],
     "correct": "a",
     "explanation": "Business Process Flows führen Nutzer durch einen standardisierten Prozess und sind derzeit nur in modellgesteuerten Apps verfügbar. Business Rules gelten dagegen tabellenweit für beide App-Typen, Real-time Workflows laufen ohne Benutzerinteraktion.",
@@ -79,18 +129,27 @@
     "skillArea": "logic-automation",
     "topic": "Formula columns",
     "difficulty": "medium",
-    "prompt": "Which statement about Dataverse formula columns is correct?",
+    "prompt": "An Order Line table needs a Total column equal to Unit Price × Quantity × (1 − Discount %), calculated from the same row, always current when the row is read, read-only for users, and defined with Excel-like syntax. Which option fits?",
     "options": [
       {
         "id": "a",
-        "text": "They use the Power Fx language with Excel-like syntax and are read-only"
+        "text": "A Formula column using Power Fx"
       },
-      { "id": "b", "text": "They use C# expressions and can be edited by users" },
-      { "id": "c", "text": "They aggregate values from related rows on a schedule" },
-      { "id": "d", "text": "They store AI-generated output from a natural language prompt" }
+      {
+        "id": "b",
+        "text": "A Rollup column aggregating the row's own columns"
+      },
+      {
+        "id": "c",
+        "text": "A Prompt column that asks the model to multiply the values"
+      },
+      {
+        "id": "d",
+        "text": "A business rule that sets a Decimal column whenever the form loads"
+      }
     ],
     "correct": "a",
-    "explanation": "Formula-Spalten berechnen ihren Wert mit Power Fx in einer Excel-ähnlichen Syntax und sind schreibgeschützt. Die Aggregation verknüpfter Datensätze übernehmen Rollup-Spalten, KI-generierte Ausgaben speichern Prompt-Spalten.",
+    "explanation": "Formula-Spalten berechnen ihren Wert mit Power Fx in Excel-ähnlicher Syntax aus Spalten derselben Zeile und sind schreibgeschützt — genau die Anforderung. Rollups aggregieren verknüpfte Datensätze, Prompt-Spalten sind für Text, und eine Business Rule wirkt nur im Formular, nicht bei API- oder Flow-Zugriffen.",
     "reference": "https://learn.microsoft.com/en-us/training/modules/create-manage-fields-within-entity/2-field-types",
     "source": {
       "title": "Column types in Microsoft Dataverse",
@@ -103,7 +162,7 @@
     "type": "single-choice",
     "skillArea": "logic-automation",
     "topic": "Prompt column use cases",
-    "difficulty": "medium",
+    "difficulty": "easy",
     "prompt": "According to the column types reference, what happens when a record with a Prompt column is saved?",
     "options": [
       {
@@ -137,16 +196,25 @@
     "type": "single-choice",
     "skillArea": "logic-automation",
     "topic": "AI Hub prompts",
-    "difficulty": "medium",
+    "difficulty": "easy",
     "prompt": "Where in Power Apps or Power Automate do you go to create your own AI Builder prompt?",
     "options": [
       {
         "id": "a",
         "text": "AI hub > Prompts > Build your own prompt"
       },
-      { "id": "b", "text": "Solutions > New > Automation > Prompt" },
-      { "id": "c", "text": "Tables > New column > Prompt" },
-      { "id": "d", "text": "Settings > Feature settings > Prompts" }
+      {
+        "id": "b",
+        "text": "Solutions > New > Automation > Prompt"
+      },
+      {
+        "id": "c",
+        "text": "Tables > New column > Prompt"
+      },
+      {
+        "id": "d",
+        "text": "Settings > Feature settings > Prompts"
+      }
     ],
     "correct": "a",
     "explanation": "Der Weg führt über AI hub im linken Navigationsbereich, dann unter „Discover an AI capability“ auf Prompts und schließlich „Build your own prompt“. Über das Pin-Symbol lässt sich der Eintrag dauerhaft im Menü verankern.",
@@ -162,13 +230,25 @@
     "type": "single-choice",
     "skillArea": "logic-automation",
     "topic": "Consuming a prompt in a flow",
-    "difficulty": "medium",
+    "difficulty": "easy",
     "prompt": "Which AI Builder action do you add to a cloud flow to run a grounded prompt you created?",
     "options": [
-      { "id": "a", "text": "Create text with GPT using a prompt" },
-      { "id": "b", "text": "Process documents" },
-      { "id": "c", "text": "Extract entities from text" },
-      { "id": "d", "text": "Analyze positive or negative sentiment in text" }
+      {
+        "id": "a",
+        "text": "Create text with GPT using a prompt"
+      },
+      {
+        "id": "b",
+        "text": "Process documents"
+      },
+      {
+        "id": "c",
+        "text": "Extract entities from text"
+      },
+      {
+        "id": "d",
+        "text": "Analyze positive or negative sentiment in text"
+      }
     ],
     "correct": "a",
     "explanation": "Im Flow wählt man AI Builder > „Create text with GPT using a prompt“ und im Prompt-Dropdown den eigenen grounded Prompt. Die definierten Eingaben — im Beispiel „Input ProposalName“ — werden anschließend befüllt, und die Ausgabe steht als Output Text für Folgeschritte bereit.",
@@ -184,16 +264,25 @@
     "type": "single-choice",
     "skillArea": "logic-automation",
     "topic": "Consuming a prompt in a canvas app",
-    "difficulty": "hard",
+    "difficulty": "medium",
     "prompt": "How do you make a grounded prompt available inside a canvas app?",
     "options": [
       {
         "id": "a",
         "text": "Add it as a data source via Data > Add Data and search for the prompt by name"
       },
-      { "id": "b", "text": "Paste the prompt text into the App.OnStart property" },
-      { "id": "c", "text": "Add it as a component from a component library" },
-      { "id": "d", "text": "Create a Prompt column and bind a form to it" }
+      {
+        "id": "b",
+        "text": "Paste the prompt text into the App.OnStart property"
+      },
+      {
+        "id": "c",
+        "text": "Add it as a component from a component library"
+      },
+      {
+        "id": "d",
+        "text": "Create a Prompt column and bind a form to it"
+      }
     ],
     "correct": "a",
     "explanation": "Ein grounded Prompt wird in der Canvas-App wie eine Datenquelle eingebunden: links Data > Add Data wählen und den Prompt namentlich suchen. Danach kann man ihn über Steuerelemente wie Texteingabe, Label und Button nutzen.",
@@ -209,16 +298,25 @@
     "type": "single-choice",
     "skillArea": "logic-automation",
     "topic": "Grounding a prompt",
-    "difficulty": "hard",
+    "difficulty": "medium",
     "prompt": "In the AI Builder prompt builder, what is the purpose of selecting \"+ Add content\" and then Dataverse?",
     "options": [
       {
         "id": "a",
         "text": "To ground the prompt in business data, with filters refining the data so it's relevant to your needs"
       },
-      { "id": "b", "text": "To choose which GPT model version the prompt uses" },
-      { "id": "c", "text": "To set the output format of the generated text" },
-      { "id": "d", "text": "To publish the prompt to a Copilot Studio agent" }
+      {
+        "id": "b",
+        "text": "To choose which GPT model version the prompt uses"
+      },
+      {
+        "id": "c",
+        "text": "To set the output format of the generated text"
+      },
+      {
+        "id": "d",
+        "text": "To publish the prompt to a Copilot Studio agent"
+      }
     ],
     "correct": "a",
     "explanation": "Über „+ Add content“ definiert man Eingaben und verankert den Prompt in Dataverse-Daten. Filter schärfen die verwendete Datenmenge auf das Relevante — Eingaben und Data Grounding sind genau die Stellschrauben, mit denen sich die Prompt-Antwort feinjustieren lässt.",
@@ -237,10 +335,22 @@
     "difficulty": "easy",
     "prompt": "Which trigger do you use to build a prescheduled flow in Power Automate?",
     "options": [
-      { "id": "a", "text": "Recurrence" },
-      { "id": "b", "text": "When a row is selected" },
-      { "id": "c", "text": "Manually trigger a flow" },
-      { "id": "d", "text": "When an HTTP request is received" }
+      {
+        "id": "a",
+        "text": "Recurrence"
+      },
+      {
+        "id": "b",
+        "text": "When a row is selected"
+      },
+      {
+        "id": "c",
+        "text": "Manually trigger a flow"
+      },
+      {
+        "id": "d",
+        "text": "When an HTTP request is received"
+      }
     ],
     "correct": "a",
     "explanation": "Vorgeplante Flows bauen auf dem Trigger „recurrence“ auf — etwa um täglich E-Mail-Adressen aus einer Excel-Tabelle in OneDrive zu ziehen und eine Informationsmail zu versenden.",
@@ -269,11 +379,11 @@
       },
       {
         "id": "c",
-        "text": "Standard roles expire after 30 days and must be renewed"
+        "text": "Standard roles can only be assigned to owner teams, not to individual users"
       },
       {
         "id": "d",
-        "text": "Custom roles bypass the need for users to have any license"
+        "text": "Apps can only be shared with users who hold a custom role"
       }
     ],
     "correct": "a",
@@ -290,16 +400,35 @@
     "type": "multiple-choice",
     "skillArea": "logic-automation",
     "topic": "Business rule capabilities",
-    "difficulty": "medium",
+    "difficulty": "easy",
     "prompt": "Which three of the following are common scenarios for business rules when creating or updating table rows? Each correct answer presents part of the solution.",
     "options": [
-      { "id": "a", "text": "Set values for columns" },
-      { "id": "b", "text": "Validate inputs" },
-      { "id": "c", "text": "Enforce data entry requirements" },
-      { "id": "d", "text": "Send approval emails to managers" },
-      { "id": "e", "text": "Deploy solutions between environments" }
+      {
+        "id": "a",
+        "text": "Set values for columns"
+      },
+      {
+        "id": "b",
+        "text": "Validate inputs"
+      },
+      {
+        "id": "c",
+        "text": "Enforce data entry requirements"
+      },
+      {
+        "id": "d",
+        "text": "Route records to a different business unit"
+      },
+      {
+        "id": "e",
+        "text": "Trigger a cloud flow when a row is saved"
+      }
     ],
-    "correct": ["a", "b", "c"],
+    "correct": [
+      "a",
+      "b",
+      "c"
+    ],
     "explanation": "Business Rules setzen Werte, berechnen, validieren Eingaben, erzwingen Pflichtangaben und fordern Nutzer zur Eingabe auf — deklarativ per Drag-and-drop, ohne JavaScript. Genehmigungs-E-Mails übernimmt Power Automate, Deployments laufen über Solutions und Pipelines.",
     "reference": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps-common-data-service/logic-security",
     "source": {
@@ -313,7 +442,7 @@
     "type": "dropdown",
     "skillArea": "logic-automation",
     "topic": "OData filter expressions",
-    "difficulty": "hard",
+    "difficulty": "medium",
     "prompt": "Complete the statement about OData filter criteria in the Dataverse List rows action.",
     "textParts": [
       "In the Filter rows property you can use logical operators such as and, or, and not, plus ",
@@ -324,18 +453,36 @@
       {
         "id": "b1",
         "options": [
-          { "id": "o1", "text": "parentheses ()" },
-          { "id": "o2", "text": "square brackets []" },
-          { "id": "o3", "text": "curly braces {}" }
+          {
+            "id": "o1",
+            "text": "parentheses ()"
+          },
+          {
+            "id": "o2",
+            "text": "square brackets []"
+          },
+          {
+            "id": "o3",
+            "text": "curly braces {}"
+          }
         ],
         "correct": "o1"
       },
       {
         "id": "b2",
         "options": [
-          { "id": "o1", "text": "FetchXML" },
-          { "id": "o2", "text": "GraphQL" },
-          { "id": "o3", "text": "SQL" }
+          {
+            "id": "o1",
+            "text": "FetchXML"
+          },
+          {
+            "id": "o2",
+            "text": "GraphQL"
+          },
+          {
+            "id": "o3",
+            "text": "SQL"
+          }
         ],
         "correct": "o1"
       }
@@ -385,13 +532,25 @@
     "type": "single-choice",
     "skillArea": "logic-automation",
     "topic": "Approval condition branches",
-    "difficulty": "medium",
+    "difficulty": "easy",
     "prompt": "In the document approval scenario, what does the False branch of the Condition action handle?",
     "options": [
-      { "id": "a", "text": "Rejections — the document moves to a designated folder" },
-      { "id": "b", "text": "Approvals — the document stays in place" },
-      { "id": "c", "text": "Timeouts — the approval is resent to a backup approver" },
-      { "id": "d", "text": "Errors — the flow terminates with a Failed status" }
+      {
+        "id": "a",
+        "text": "Rejections — the document moves to a designated folder"
+      },
+      {
+        "id": "b",
+        "text": "Approvals — the document stays in place"
+      },
+      {
+        "id": "c",
+        "text": "Timeouts — the approval is resent to a backup approver"
+      },
+      {
+        "id": "d",
+        "text": "Errors — the flow terminates with a Failed status"
+      }
     ],
     "correct": "a",
     "explanation": "Die Condition liest den Outcome der Genehmigung. Der True-Zweig behandelt Genehmigungen — das Dokument bleibt in der Bibliothek. Der False-Zweig behandelt Ablehnungen und verschiebt das Dokument in einen dafür vorgesehenen Ordner.",

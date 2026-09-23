@@ -7,10 +7,22 @@
     "difficulty": "easy",
     "prompt": "Which Power Fx function returns only the records from a data source that match a condition, and on which gallery property do you set it?",
     "options": [
-      { "id": "a", "text": "Filter() — set on the gallery's Items property" },
-      { "id": "b", "text": "Search() — set on the gallery's Default property" },
-      { "id": "c", "text": "LookUp() — set on the gallery's Selected property" },
-      { "id": "d", "text": "Patch() — set on the gallery's OnSelect property" }
+      {
+        "id": "a",
+        "text": "Filter() — set on the gallery's Items property"
+      },
+      {
+        "id": "b",
+        "text": "Search() — set on the gallery's Default property"
+      },
+      {
+        "id": "c",
+        "text": "LookUp() — set on the gallery's Selected property"
+      },
+      {
+        "id": "d",
+        "text": "Patch() — set on the gallery's OnSelect property"
+      }
     ],
     "correct": "a",
     "explanation": "Filter(DataSource, Condition) liefert nur die passenden Datensätze zurück. Gesetzt wird die Formel auf der Items-Eigenschaft der Galerie — sie bestimmt, welche Datensätze angezeigt werden.",
@@ -33,9 +45,18 @@
         "id": "a",
         "text": "Defaults(DataSource) — it returns a blank record with all default values for that table"
       },
-      { "id": "b", "text": "Gallery1.Selected" },
-      { "id": "c", "text": "Blank()" },
-      { "id": "d", "text": "First(DataSource)" }
+      {
+        "id": "b",
+        "text": "Gallery1.Selected"
+      },
+      {
+        "id": "c",
+        "text": "Blank()"
+      },
+      {
+        "id": "d",
+        "text": "First(DataSource)"
+      }
     ],
     "correct": "a",
     "explanation": "Patch(DataSource, BaseRecord, ChangeRecord) legt an oder aktualisiert. Für einen neuen Datensatz übergibt man Defaults(DataSource) als BaseRecord — das liefert einen leeren Datensatz mit allen Standardwerten der Tabelle. Gallery1.Selected würde stattdessen den bestehenden Datensatz aktualisieren.",
@@ -54,16 +75,38 @@
     "difficulty": "medium",
     "prompt": "Match each Navigate() screen transition to its effect.",
     "left": [
-      { "id": "l1", "text": "ScreenTransition.Slide" },
-      { "id": "l2", "text": "ScreenTransition.Fade" },
-      { "id": "l3", "text": "ScreenTransition.None" }
+      {
+        "id": "l1",
+        "text": "ScreenTransition.Slide"
+      },
+      {
+        "id": "l2",
+        "text": "ScreenTransition.Fade"
+      },
+      {
+        "id": "l3",
+        "text": "ScreenTransition.None"
+      }
     ],
     "right": [
-      { "id": "r1", "text": "Slides new screen in from the side" },
-      { "id": "r2", "text": "Fades out and in" },
-      { "id": "r3", "text": "Instant switch, no animation" }
+      {
+        "id": "r1",
+        "text": "Slides new screen in from the side"
+      },
+      {
+        "id": "r2",
+        "text": "Fades out and in"
+      },
+      {
+        "id": "r3",
+        "text": "Instant switch, no animation"
+      }
     ],
-    "correct": { "l1": "r1", "l2": "r2", "l3": "r3" },
+    "correct": {
+      "l1": "r1",
+      "l2": "r2",
+      "l3": "r3"
+    },
     "explanation": "Der zweite Parameter von Navigate() steuert die Animation: Slide schiebt den neuen Bildschirm seitlich herein (gut beim Vorwärtsgehen), Fade blendet weich um (unauffällig, richtungsneutral), None wechselt sofort (schnelle Navigation, Barrierefreiheit). Back() kehrt unabhängig davon immer zum Ursprungsbildschirm zurück.",
     "reference": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/power-fx-formulas",
     "source": {
@@ -77,13 +120,25 @@
     "type": "single-choice",
     "skillArea": "applications",
     "topic": "Named formulas",
-    "difficulty": "medium",
+    "difficulty": "easy",
     "prompt": "In which property do you define a named formula so it can be referenced by name anywhere in a canvas app?",
     "options": [
-      { "id": "a", "text": "App.Formulas" },
-      { "id": "b", "text": "App.OnStart" },
-      { "id": "c", "text": "Screen.OnVisible" },
-      { "id": "d", "text": "App.StartScreen" }
+      {
+        "id": "a",
+        "text": "App.Formulas"
+      },
+      {
+        "id": "b",
+        "text": "App.OnStart"
+      },
+      {
+        "id": "c",
+        "text": "Screen.OnVisible"
+      },
+      {
+        "id": "d",
+        "text": "App.StartScreen"
+      }
     ],
     "correct": "a",
     "explanation": "Named Formulas werden einmal in der Eigenschaft App.Formulas definiert und überall in der App per Name referenziert. Ändert sich der Wert — etwa eine Markenfarbe — passt man ihn an genau einer Stelle an, und alle referenzierenden Steuerelemente aktualisieren sich automatisch.",
@@ -99,7 +154,7 @@
     "type": "single-choice",
     "skillArea": "applications",
     "topic": "User-defined functions",
-    "difficulty": "hard",
+    "difficulty": "medium",
     "prompt": "How do user-defined functions (UDFs) differ from named formulas in Power Fx?",
     "options": [
       {
@@ -108,15 +163,15 @@
       },
       {
         "id": "b",
-        "text": "A UDF can only be used inside component libraries"
+        "text": "A UDF is evaluated once when the app starts and its result is cached for the session"
       },
       {
         "id": "c",
-        "text": "A UDF is defined per screen rather than per app"
+        "text": "A UDF can only return Text values, while named formulas can return any type"
       },
       {
         "id": "d",
-        "text": "A UDF stores its result in the data source automatically"
+        "text": "A UDF must be defined in a component library before it can be called"
       }
     ],
     "correct": "a",
@@ -150,7 +205,7 @@
       },
       {
         "id": "d",
-        "text": "Components are written in C# rather than Power Fx"
+        "text": "Components can be reused across apps but cannot expose custom properties to the caller"
       }
     ],
     "correct": "a",
@@ -233,21 +288,50 @@
     "type": "matching",
     "skillArea": "applications",
     "topic": "App-level security roles",
-    "difficulty": "hard",
+    "difficulty": "medium",
     "prompt": "When app-level security roles are enabled, Dataverse-backed apps show additional role options. Match each role to the access it grants.",
     "left": [
-      { "id": "l1", "text": "App reader" },
-      { "id": "l2", "text": "App user" },
-      { "id": "l3", "text": "App maker" },
-      { "id": "l4", "text": "App admin" }
+      {
+        "id": "l1",
+        "text": "App reader"
+      },
+      {
+        "id": "l2",
+        "text": "App user"
+      },
+      {
+        "id": "l3",
+        "text": "App maker"
+      },
+      {
+        "id": "l4",
+        "text": "App admin"
+      }
     ],
     "right": [
-      { "id": "r1", "text": "Read-only access to all records" },
-      { "id": "r2", "text": "Full access to own records" },
-      { "id": "r3", "text": "Create and read all records" },
-      { "id": "r4", "text": "Full access to all records" }
+      {
+        "id": "r1",
+        "text": "Read-only access to all records"
+      },
+      {
+        "id": "r2",
+        "text": "Full access to own records"
+      },
+      {
+        "id": "r3",
+        "text": "Create and read all records"
+      },
+      {
+        "id": "r4",
+        "text": "Full access to all records"
+      }
     ],
-    "correct": { "l1": "r1", "l2": "r2", "l3": "r3", "l4": "r4" },
+    "correct": {
+      "l1": "r1",
+      "l2": "r2",
+      "l3": "r3",
+      "l4": "r4"
+    },
     "explanation": "Hat der Administrator App-Level-Sicherheitsrollen im Power Platform Admin Center aktiviert, steuern diese vier Rollen, was ein Nutzer in den zugrunde liegenden Dataverse-Tabellen lesen und schreiben darf — von reinem Lesezugriff (App reader) bis zum Vollzugriff auf alle Datensätze (App admin).",
     "reference": "https://learn.microsoft.com/en-us/training/modules/publish-share-maintain-app/3-share-app",
     "source": {
@@ -261,16 +345,25 @@
     "type": "single-choice",
     "skillArea": "applications",
     "topic": "AutoSave",
-    "difficulty": "medium",
+    "difficulty": "easy",
     "prompt": "How often does Power Apps save your work automatically by default, and where can you turn this off?",
     "options": [
       {
         "id": "a",
         "text": "Every two minutes; under Settings > General > Auto save"
       },
-      { "id": "b", "text": "Every 30 seconds; under Settings > Advanced" },
-      { "id": "c", "text": "Every 10 minutes; it cannot be turned off" },
-      { "id": "d", "text": "Only when you publish; there is no AutoSave" }
+      {
+        "id": "b",
+        "text": "Every 30 seconds; under Settings > Advanced"
+      },
+      {
+        "id": "c",
+        "text": "Every 10 minutes; it cannot be turned off"
+      },
+      {
+        "id": "d",
+        "text": "Only when you publish; there is no AutoSave"
+      }
     ],
     "correct": "a",
     "explanation": "Power Apps speichert standardmäßig alle zwei Minuten automatisch, damit bei einem unerwarteten Browser-Schluss nichts verloren geht. Ein- und ausschalten lässt sich das unter Settings > General > Auto save. Trotzdem gilt: vor dem Schließen des Tabs lieber manuell speichern.",
@@ -320,7 +413,7 @@
     "type": "dropdown",
     "skillArea": "applications",
     "topic": "Context variables",
-    "difficulty": "hard",
+    "difficulty": "medium",
     "prompt": "Complete the statement about passing the selected record to a detail screen.",
     "textParts": [
       "You can pass data between screens using ",
@@ -331,18 +424,36 @@
       {
         "id": "b1",
         "options": [
-          { "id": "o1", "text": "context variables" },
-          { "id": "o2", "text": "named formulas" },
-          { "id": "o3", "text": "collections" }
+          {
+            "id": "o1",
+            "text": "context variables"
+          },
+          {
+            "id": "o2",
+            "text": "named formulas"
+          },
+          {
+            "id": "o3",
+            "text": "collections"
+          }
         ],
         "correct": "o1"
       },
       {
         "id": "b2",
         "options": [
-          { "id": "o1", "text": "Item" },
-          { "id": "o2", "text": "Items" },
-          { "id": "o3", "text": "Default" }
+          {
+            "id": "o1",
+            "text": "Item"
+          },
+          {
+            "id": "o2",
+            "text": "Items"
+          },
+          {
+            "id": "o3",
+            "text": "Default"
+          }
         ],
         "correct": "o1"
       }
@@ -360,13 +471,25 @@
     "type": "single-choice",
     "skillArea": "applications",
     "topic": "Current user in Power Fx",
-    "difficulty": "medium",
+    "difficulty": "easy",
     "prompt": "Which built-in Power Fx expression returns the display name of the currently signed-in user?",
     "options": [
-      { "id": "a", "text": "User().FullName" },
-      { "id": "b", "text": "User().Email" },
-      { "id": "c", "text": "CurrentUser.Name" },
-      { "id": "d", "text": "Office365Users.MyProfile()" }
+      {
+        "id": "a",
+        "text": "User().FullName"
+      },
+      {
+        "id": "b",
+        "text": "User().Email"
+      },
+      {
+        "id": "c",
+        "text": "CurrentUser.Name"
+      },
+      {
+        "id": "d",
+        "text": "Office365Users.MyProfile()"
+      }
     ],
     "correct": "a",
     "explanation": "User().FullName liefert den Anzeigenamen des angemeldeten Nutzers, User().Email dessen E-Mail-Adresse. Damit lässt sich zum Beispiel eine Galerie auf die eigenen Datensätze filtern: Filter('Coffee Machines', 'Created By' = User().FullName).",

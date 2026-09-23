@@ -4,7 +4,7 @@
     "type": "single-choice",
     "skillArea": "foundation",
     "topic": "Tenant vs. Dataverse roles",
-    "difficulty": "hard",
+    "difficulty": "medium",
     "prompt": "A user has the Power Platform administrator role at tenant level. What does the learning content say about their access to Dataverse data?",
     "options": [
       {
@@ -41,17 +41,32 @@
     "difficulty": "hard",
     "prompt": "Match each Dataverse access level to what it allows.",
     "left": [
-      { "id": "l1", "text": "User" },
-      { "id": "l2", "text": "Business Unit" },
-      { "id": "l3", "text": "Parent: Child Business Unit" },
-      { "id": "l4", "text": "Organization" }
+      {
+        "id": "l1",
+        "text": "User"
+      },
+      {
+        "id": "l2",
+        "text": "Business Unit"
+      },
+      {
+        "id": "l3",
+        "text": "Parent: Child Business Unit"
+      },
+      {
+        "id": "l4",
+        "text": "Organization"
+      }
     ],
     "right": [
       {
         "id": "r1",
         "text": "Access to records they own, shared with them, or shared with a team they belong to"
       },
-      { "id": "r2", "text": "Access to records in their business unit" },
+      {
+        "id": "r2",
+        "text": "Access to records in their business unit"
+      },
       {
         "id": "r3",
         "text": "Access to records in their business unit and all business units subordinate to it"
@@ -61,7 +76,12 @@
         "text": "Access to all records in the organization, regardless of business unit"
       }
     ],
-    "correct": { "l1": "r1", "l2": "r2", "l3": "r3", "l4": "r4" },
+    "correct": {
+      "l1": "r1",
+      "l2": "r2",
+      "l3": "r3",
+      "l4": "r4"
+    },
     "explanation": "Die Zugriffsebenen bestimmen, wie tief in der Business-Unit-Hierarchie ein Privileg greift, und bauen aufeinander auf: Business Unit schließt User ein, Parent:Child schließt Business Unit und User ein, Organization schließt alles ein. Für Endanwender ist User die typische Stufe.",
     "reference": "https://learn.microsoft.com/en-us/training/modules/get-started-security-roles/4a-security-role",
     "source": {
@@ -78,21 +98,47 @@
     "difficulty": "hard",
     "prompt": "Match each Dataverse table privilege to what it is required for.",
     "left": [
-      { "id": "l1", "text": "Append" },
-      { "id": "l2", "text": "Append To" },
-      { "id": "l3", "text": "Assign" },
-      { "id": "l4", "text": "Share" }
+      {
+        "id": "l1",
+        "text": "Append"
+      },
+      {
+        "id": "l2",
+        "text": "Append To"
+      },
+      {
+        "id": "l3",
+        "text": "Assign"
+      },
+      {
+        "id": "l4",
+        "text": "Share"
+      }
     ],
     "right": [
-      { "id": "r1", "text": "Associate the current record with another record" },
-      { "id": "r2", "text": "Associate a record with the current record" },
-      { "id": "r3", "text": "Give ownership of a row to another user" },
+      {
+        "id": "r1",
+        "text": "Associate the current record with another record"
+      },
+      {
+        "id": "r2",
+        "text": "Associate a record with the current record"
+      },
+      {
+        "id": "r3",
+        "text": "Give ownership of a row to another user"
+      },
       {
         "id": "r4",
         "text": "Give access to a record to another user while keeping your own access"
       }
     ],
-    "correct": { "l1": "r1", "l2": "r2", "l3": "r3", "l4": "r4" },
+    "correct": {
+      "l1": "r1",
+      "l2": "r2",
+      "l3": "r3",
+      "l4": "r4"
+    },
     "explanation": "Append verknüpft den aktuellen Datensatz mit einem anderen, Append To erlaubt umgekehrt, dass etwas an den aktuellen Datensatz angehängt wird. Bei N:N-Beziehungen braucht man Append für beide Tabellen. Assign überträgt den Besitz, Share gewährt zusätzlichen Zugriff ohne den eigenen aufzugeben.",
     "reference": "https://learn.microsoft.com/en-us/training/modules/get-started-security-roles/4a-security-role",
     "source": {
@@ -106,7 +152,7 @@
     "type": "yes-no",
     "skillArea": "foundation",
     "topic": "Organization-owned tables",
-    "difficulty": "hard",
+    "difficulty": "medium",
     "prompt": "For each of the following statements about organization-owned Dataverse tables, select Yes if the statement is true. Otherwise, select No.",
     "statements": [
       {
@@ -141,18 +187,47 @@
     "difficulty": "medium",
     "prompt": "Match each predefined permission setting to the access it grants.",
     "left": [
-      { "id": "l1", "text": "Full Access" },
-      { "id": "l2", "text": "Collaborate" },
-      { "id": "l3", "text": "Private" },
-      { "id": "l4", "text": "Reference" }
+      {
+        "id": "l1",
+        "text": "Full Access"
+      },
+      {
+        "id": "l2",
+        "text": "Collaborate"
+      },
+      {
+        "id": "l3",
+        "text": "Private"
+      },
+      {
+        "id": "l4",
+        "text": "Reference"
+      }
     ],
     "right": [
-      { "id": "r1", "text": "Users can view and edit all records in the table" },
-      { "id": "r2", "text": "Users can view all records, but they can only edit their own" },
-      { "id": "r3", "text": "Users can only view and edit their own records" },
-      { "id": "r4", "text": "Users can only view records, not edit them" }
+      {
+        "id": "r1",
+        "text": "Users can view and edit all records in the table"
+      },
+      {
+        "id": "r2",
+        "text": "Users can view all records, but they can only edit their own"
+      },
+      {
+        "id": "r3",
+        "text": "Users can only view and edit their own records"
+      },
+      {
+        "id": "r4",
+        "text": "Users can only view records, not edit them"
+      }
     ],
-    "correct": { "l1": "r1", "l2": "r2", "l3": "r3", "l4": "r4" },
+    "correct": {
+      "l1": "r1",
+      "l2": "r2",
+      "l3": "r3",
+      "l4": "r4"
+    },
     "explanation": "Die vordefinierten Berechtigungsgruppen fassen Privilegien und Zugriffsebenen zusammen: Full Access (alles sehen und bearbeiten), Collaborate (alles sehen, nur Eigenes bearbeiten), Private (nur Eigenes sehen und bearbeiten), Reference (nur lesen). No Access sperrt die Tabelle komplett.",
     "reference": "https://learn.microsoft.com/en-us/training/modules/get-started-security-roles/4a-security-role",
     "source": {
@@ -169,10 +244,22 @@
     "difficulty": "medium",
     "prompt": "A maker needs to build apps that connect to the environment's database and must be able to create or update tables and security roles. Which role must be assigned in addition to Environment Maker?",
     "options": [
-      { "id": "a", "text": "System Customizer" },
-      { "id": "b", "text": "App Opener" },
-      { "id": "c", "text": "Basic User" },
-      { "id": "d", "text": "Environment Admin" }
+      {
+        "id": "a",
+        "text": "System Customizer"
+      },
+      {
+        "id": "b",
+        "text": "App Opener"
+      },
+      {
+        "id": "c",
+        "text": "Basic User"
+      },
+      {
+        "id": "d",
+        "text": "Environment Admin"
+      }
     ],
     "correct": "a",
     "explanation": "Die Rolle Environment Maker hat keine Privilegien auf den Daten der Umgebung. Wer Apps gegen die Datenbank baut und Tabellen oder Sicherheitsrollen anlegen bzw. ändern muss, braucht deshalb zusätzlich die Rolle System Customizer.",
@@ -189,27 +276,27 @@
     "skillArea": "foundation",
     "topic": "Owner vs. access teams",
     "difficulty": "medium",
-    "prompt": "What distinguishes an access team from an owner team in Dataverse?",
+    "prompt": "A small group of sales reps must collaborate on a handful of specific Opportunity rows. The group itself should not own records and should not carry security roles — the reps' individual roles are sufficient, and the rows are simply shared with the group with Read, Write, and Append rights. Which team type fits?",
     "options": [
       {
         "id": "a",
-        "text": "An access team doesn't own records and doesn't have security roles assigned to the team"
+        "text": "An access team"
       },
       {
         "id": "b",
-        "text": "An access team can own records but cannot have members from other business units"
+        "text": "An owner team"
       },
       {
         "id": "c",
-        "text": "An access team is derived dynamically from Microsoft Entra ID group membership"
+        "text": "A Microsoft Entra ID group team"
       },
       {
         "id": "d",
-        "text": "An access team can only be created by a Global Administrator"
+        "text": "A child business unit"
       }
     ],
     "correct": "a",
-    "explanation": "Owner Teams besitzen Datensätze und bekommen Sicherheitsrollen zugewiesen; Mitglieder werden manuell hinzugefügt. Access Teams besitzen keine Datensätze und haben keine Rollen — Datensätze werden mit ihnen geteilt, und das Team erhält Zugriffsrechte (Read, Write, Append). Dynamisch aus Entra-ID-Gruppen abgeleitet werden dagegen Group Teams.",
+    "explanation": "Access Teams besitzen keine Datensätze und haben keine Rollen. Datensätze werden mit ihnen geteilt, und das Team erhält Zugriffsrechte (Read, Write, Append); die Privilegien der Mitglieder kommen aus deren eigenen Rollen. Owner Teams und Entra-Gruppenteams besitzen Datensätze und tragen Rollen.",
     "reference": "https://learn.microsoft.com/en-us/training/modules/get-started-security-roles/6a-teams",
     "source": {
       "title": "Configure Dataverse teams for security",
@@ -257,10 +344,22 @@
     "difficulty": "easy",
     "prompt": "Which role is a user automatically associated with when they are added to an environment?",
     "options": [
-      { "id": "a", "text": "Environment Maker" },
-      { "id": "b", "text": "Environment Admin" },
-      { "id": "c", "text": "System Administrator" },
-      { "id": "d", "text": "Basic User" }
+      {
+        "id": "a",
+        "text": "Environment Maker"
+      },
+      {
+        "id": "b",
+        "text": "Environment Admin"
+      },
+      {
+        "id": "c",
+        "text": "System Administrator"
+      },
+      {
+        "id": "d",
+        "text": "Basic User"
+      }
     ],
     "correct": "a",
     "explanation": "Jede Umgebung hat die zwei vordefinierten Rollen Environment Admin und Environment Maker. Beim Hinzufügen zu einer Umgebung wird ein Nutzer automatisch der Rolle Environment Maker zugeordnet.",

@@ -7,10 +7,22 @@
     "difficulty": "easy",
     "prompt": "What does every cloud flow in Power Automate consist of?",
     "options": [
-      { "id": "a", "text": "A trigger and one or more actions" },
-      { "id": "b", "text": "A schedule and a connector" },
-      { "id": "c", "text": "A form and a view" },
-      { "id": "d", "text": "A solution and a publisher" }
+      {
+        "id": "a",
+        "text": "A trigger and one or more actions"
+      },
+      {
+        "id": "b",
+        "text": "A schedule and a connector"
+      },
+      {
+        "id": "c",
+        "text": "A form and a view"
+      },
+      {
+        "id": "d",
+        "text": "A solution and a publisher"
+      }
     ],
     "correct": "a",
     "explanation": "Jeder Flow beginnt mit einem Trigger — dem auslösenden Ereignis, etwa einer neuen E-Mail — und enthält eine oder mehrere Aktionen, die daraufhin passieren, zum Beispiel den Anhang in OneDrive speichern oder eine Nachricht in Teams posten.",
@@ -43,7 +55,7 @@
       },
       {
         "id": "d",
-        "text": "It publishes the flow to production without review"
+        "text": "It creates the trigger and actions but leaves every connection unconfigured for security reasons"
       }
     ],
     "correct": "a",
@@ -63,10 +75,22 @@
     "difficulty": "easy",
     "prompt": "In the Copilot flow creation experience, how can you tell that a connection is ready to use?",
     "options": [
-      { "id": "a", "text": "It shows a green check mark" },
-      { "id": "b", "text": "It shows a red exclamation mark" },
-      { "id": "c", "text": "It shows an amber warning triangle" },
-      { "id": "d", "text": "It disappears from the connection list" }
+      {
+        "id": "a",
+        "text": "It shows a green check mark"
+      },
+      {
+        "id": "b",
+        "text": "It shows a red exclamation mark"
+      },
+      {
+        "id": "c",
+        "text": "It shows an amber warning triangle"
+      },
+      {
+        "id": "d",
+        "text": "It disappears from the connection list"
+      }
     ],
     "correct": "a",
     "explanation": "Verbindungen mit grünem Häkchen sind einsatzbereit. Ein rotes Ausrufezeichen bedeutet, dass die Verbindung Aufmerksamkeit braucht — dann auswählen und den Anweisungen folgen, bevor der Flow erstellt wird.",
@@ -85,10 +109,22 @@
     "difficulty": "easy",
     "prompt": "Where do co-owners find a flow that has been shared with them in Power Automate?",
     "options": [
-      { "id": "a", "text": "On the Shared with me tab" },
-      { "id": "b", "text": "On the Cloud flows tab" },
-      { "id": "c", "text": "In the Approvals center" },
-      { "id": "d", "text": "In the Solutions area only" }
+      {
+        "id": "a",
+        "text": "On the Shared with me tab"
+      },
+      {
+        "id": "b",
+        "text": "On the Cloud flows tab"
+      },
+      {
+        "id": "c",
+        "text": "In the Approvals center"
+      },
+      {
+        "id": "d",
+        "text": "In the Solutions area only"
+      }
     ],
     "correct": "a",
     "explanation": "Für Ersteller und Besitzer bleibt der Flow auf dem Tab „Cloud flows“ gelistet. Hinzugefügte Co-Owner finden ihn dagegen unter „Shared with me“.",
@@ -143,9 +179,18 @@
         "id": "a",
         "text": "In the 28-day run history, open the failed run and expand the failed step to read the error message"
       },
-      { "id": "b", "text": "In the Power Platform admin center capacity report" },
-      { "id": "c", "text": "In the Dataverse Audit Summary View" },
-      { "id": "d", "text": "In the solution's publisher settings" }
+      {
+        "id": "b",
+        "text": "In the Power Platform admin center capacity report"
+      },
+      {
+        "id": "c",
+        "text": "In the Dataverse Audit Summary View"
+      },
+      {
+        "id": "d",
+        "text": "In the solution's publisher settings"
+      }
     ],
     "correct": "a",
     "explanation": "Über „My flows“ den fehlgeschlagenen Flow öffnen, im Abschnitt „28-day run history“ das Datum des fehlgeschlagenen Laufs wählen und den mit rotem Ausrufezeichen markierten Schritt aufklappen — dort steht die Fehlermeldung samt Hinweis zur Behebung.",
@@ -164,10 +209,22 @@
     "difficulty": "easy",
     "prompt": "After an approval resolves, which value becomes available as dynamic content for subsequent steps?",
     "options": [
-      { "id": "a", "text": "The Outcome value (Approve or Reject)" },
-      { "id": "b", "text": "The approver's security role" },
-      { "id": "c", "text": "The flow's run ID only" },
-      { "id": "d", "text": "The item's Dataverse GUID only" }
+      {
+        "id": "a",
+        "text": "The Outcome value (Approve or Reject)"
+      },
+      {
+        "id": "b",
+        "text": "The approver's security role"
+      },
+      {
+        "id": "c",
+        "text": "The flow's run ID only"
+      },
+      {
+        "id": "d",
+        "text": "The item's Dataverse GUID only"
+      }
     ],
     "correct": "a",
     "explanation": "Sobald die Genehmigung entschieden ist, steht der Outcome — Approve oder Reject — als Dynamic Content für die Folgeschritte bereit. Genau diesen Wert liest die anschließende Condition aus, um in den True- oder False-Zweig zu verzweigen.",
@@ -190,9 +247,18 @@
         "id": "a",
         "text": "They reduce the need for code such as JavaScript in model-driven app forms"
       },
-      { "id": "b", "text": "They replace the need for security roles" },
-      { "id": "c", "text": "They allow flows to run without connections" },
-      { "id": "d", "text": "They automatically deploy solutions to production" }
+      {
+        "id": "b",
+        "text": "They replace the need for security roles"
+      },
+      {
+        "id": "c",
+        "text": "They can post a Teams notification when a column changes"
+      },
+      {
+        "id": "d",
+        "text": "They enforce row-level security across business units"
+      }
     ],
     "correct": "a",
     "explanation": "Business Rules sind eine zentrale Low-Code-Fähigkeit von Dataverse: Sie ersetzen Code wie JavaScript in modellgesteuerten Formularen und werden über eine deklarative Drag-and-drop-Oberfläche erstellt, in der man Bedingungen und die zugehörigen Aktionen definiert.",
@@ -211,10 +277,22 @@
     "difficulty": "easy",
     "prompt": "What is required before a user can access Dataverse and run apps?",
     "options": [
-      { "id": "a", "text": "They must be assigned at least one security role" },
-      { "id": "b", "text": "They must be a co-owner of every app" },
-      { "id": "c", "text": "They must have a custom connector configured" },
-      { "id": "d", "text": "They must belong to at least two teams" }
+      {
+        "id": "a",
+        "text": "They must be assigned at least one security role"
+      },
+      {
+        "id": "b",
+        "text": "They must be a co-owner of every app"
+      },
+      {
+        "id": "c",
+        "text": "They must have a custom connector configured"
+      },
+      {
+        "id": "d",
+        "text": "They must belong to at least two teams"
+      }
     ],
     "correct": "a",
     "explanation": "Ohne mindestens eine Sicherheitsrolle kein Zugriff: Dataverse nutzt rollenbasierte Zugriffskontrolle, bei der Rollen Sammlungen von Privilegien und Zugriffsebenen sind. Statt einzelne Privilegien zu vergeben, weist man Nutzern eine oder mehrere Rollen zu.",
@@ -233,10 +311,22 @@
     "difficulty": "easy",
     "prompt": "In the AI Builder prompt builder, how do you check the output of a prompt before using it in an app or flow?",
     "options": [
-      { "id": "a", "text": "Select Test prompt in the left pane" },
-      { "id": "b", "text": "Publish the prompt and run a flow" },
-      { "id": "c", "text": "Export the prompt to a solution" },
-      { "id": "d", "text": "Add the prompt as a column to a table" }
+      {
+        "id": "a",
+        "text": "Select Test prompt in the left pane"
+      },
+      {
+        "id": "b",
+        "text": "Publish the prompt and run a flow"
+      },
+      {
+        "id": "c",
+        "text": "Export the prompt to a solution"
+      },
+      {
+        "id": "d",
+        "text": "Add the prompt as a column to a table"
+      }
     ],
     "correct": "a",
     "explanation": "Nach dem Festlegen der Ausgabe (Output > Text) genügt „Test prompt“ im linken Bereich, um die Prompt-Antwort direkt zu prüfen — ohne den Prompt vorher in einem Flow oder einer App einzubinden.",
@@ -255,10 +345,22 @@
     "difficulty": "easy",
     "prompt": "Which two types of agents can be added to a model-driven app?",
     "options": [
-      { "id": "a", "text": "Autonomous agents and app assistant agents" },
-      { "id": "b", "text": "Desktop agents and cloud agents" },
-      { "id": "c", "text": "Web agents and portal agents" },
-      { "id": "d", "text": "Data agents and solution agents" }
+      {
+        "id": "a",
+        "text": "Autonomous agents and app assistant agents"
+      },
+      {
+        "id": "b",
+        "text": "Desktop agents and cloud agents"
+      },
+      {
+        "id": "c",
+        "text": "Web agents and portal agents"
+      },
+      {
+        "id": "d",
+        "text": "Data agents and solution agents"
+      }
     ],
     "correct": "a",
     "explanation": "Modellgesteuerte Apps können zwei Agent-Typen aufnehmen: autonome Agents (in Copilot Studio erstellt, mit dem Power Apps MCP Server verbunden, arbeiten im Hintergrund und stellen Aufgaben in den Agent Feed) und App-Assistant-Agents, die den Copilot-Chat-Bereich der App mit eigenen Topics und Wissensquellen versorgen.",
@@ -277,10 +379,22 @@
     "difficulty": "easy",
     "prompt": "Which two sections does the agent feed in a model-driven app have?",
     "options": [
-      { "id": "a", "text": "Needs Attention and Completed" },
-      { "id": "b", "text": "Pending and Rejected" },
-      { "id": "c", "text": "Active and Archived" },
-      { "id": "d", "text": "Draft and Published" }
+      {
+        "id": "a",
+        "text": "Needs Attention and Completed"
+      },
+      {
+        "id": "b",
+        "text": "Pending and Rejected"
+      },
+      {
+        "id": "c",
+        "text": "Active and Archived"
+      },
+      {
+        "id": "d",
+        "text": "Draft and Published"
+      }
     ],
     "correct": "a",
     "explanation": "Der Agent Feed teilt sich in „Needs Attention“ — Aufgaben, die auf Benutzereingaben warten, wo man Vorschläge des Agents übernehmen oder Einträge verwerfen kann — und „Completed“ für bereits erledigte oder rein passiv protokollierte Aufgaben.",
@@ -337,9 +451,18 @@
         "id": "a",
         "text": "A natural language chat interface connected to the app's data"
       },
-      { "id": "b", "text": "An automatic translation of the app into all languages" },
-      { "id": "c", "text": "A performance profiler for the app screens" },
-      { "id": "d", "text": "An offline cache of all Dataverse records" }
+      {
+        "id": "b",
+        "text": "An automatic translation of the app into all languages"
+      },
+      {
+        "id": "c",
+        "text": "A performance profiler for the app screens"
+      },
+      {
+        "id": "d",
+        "text": "An offline cache of all Dataverse records"
+      }
     ],
     "correct": "a",
     "explanation": "Das Copilot-Steuerelement gibt Nutzern eine Chat-Oberfläche in natürlicher Sprache, die mit den Daten der App verbunden ist: Fragen stellen, Datensätze durchsuchen und Aktionen im Dialog auslösen, statt sich durch Menüs zu klicken.",
@@ -358,10 +481,22 @@
     "difficulty": "easy",
     "prompt": "Which workspaces does the Power Pages design studio provide for customizing a website?",
     "options": [
-      { "id": "a", "text": "Pages, Styling, Data, Security, and Set up" },
-      { "id": "b", "text": "Tables, Columns, Views, Forms, and Charts" },
-      { "id": "c", "text": "Build, Test, Deploy, Monitor, and Retire" },
-      { "id": "d", "text": "Home, Create, Learn, Apps, and Solutions" }
+      {
+        "id": "a",
+        "text": "Pages, Styling, Data, Security, and Set up"
+      },
+      {
+        "id": "b",
+        "text": "Tables, Columns, Views, Forms, and Charts"
+      },
+      {
+        "id": "c",
+        "text": "Build, Test, Deploy, Monitor, and Retire"
+      },
+      {
+        "id": "d",
+        "text": "Home, Create, Learn, Apps, and Solutions"
+      }
     ],
     "correct": "a",
     "explanation": "Das Design Studio bündelt die Anpassung in fünf Workspaces: Pages, Styling, Data, Security und Set up. Der Security-Workspace ist dabei die zentrale Oberfläche, um Zugriff auf die Site zu überwachen, zu schützen und zu verwalten.",
