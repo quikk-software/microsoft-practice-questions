@@ -11,8 +11,15 @@ import {
   Shuffle,
   SlidersHorizontal,
 } from "lucide-react";
-import type { Answer, Difficulty, PublicQuestion, Question } from "@/lib/types";
+import type {
+  Answer,
+  Difficulty,
+  GlossaryEntry,
+  PublicQuestion,
+  Question,
+} from "@/lib/types";
 import { gradeQuestion, stripAnswers } from "@/lib/engine";
+import { matchGlossary } from "@/lib/glossary";
 import { loadBundle, queueAnswer, type OfflineBundle } from "@/lib/offline/db";
 import {
   cacheProgress,
@@ -49,6 +56,7 @@ interface CheckResult {
   score: number;
   correct: boolean;
   question: Question;
+  glossary?: GlossaryEntry[];
 }
 
 const DIFFICULTIES: { id: Difficulty; label: string; dot: string }[] = [
@@ -102,6 +110,8 @@ export function LearnRunner({
   const [knownAccount, setKnownAccount] = useState(signedIn);
   /** Lösungen aus dem Offline-Paket (nur gefüllt, wenn offline gearbeitet wird) */
   const offlineSolutions = useRef<Map<string, Question>>(new Map());
+  /** Glossar je Examen aus dem Offline-Paket (für lokal bewertete Fragen) */
+  const offlineGlossary = useRef<Map<string, GlossaryEntry[]>>(new Map());
 
   // Online-Status + lokal bekanntes Konto ermitteln (wichtig für die PWA:
   // offline liefert der Service Worker einen Snapshot, in dem signedIn=false
@@ -262,6 +272,9 @@ export function LearnRunner({
       if (!bundle) return false;
 
       offlineSolutions.current = new Map();
+      offlineGlossary.current = new Map(
+        bundle.exams.map((e) => [e.slug, e.glossary ?? []])
+      );
       const masteredIds = new Set(
         progress.filter((p) => p.lastScore === 1).map((p) => p.questionId)
       );
@@ -370,6 +383,9 @@ export function LearnRunner({
           e.questions.map((q) => [q.id, q] as [string, Question])
         )
       );
+      offlineGlossary.current = new Map(
+        bundle.exams.map((e) => [e.slug, e.glossary ?? []])
+      );
     }
     setQuestions(saved.questions as LearnQuestion[]);
     setAnswers(saved.answers as Record<string, Answer | null>);
@@ -409,7 +425,12 @@ export function LearnRunner({
     if (!solution) return null;
     const answer = answers[item.question.id] ?? null;
     const score = gradeQuestion(solution, answer);
-    return { score, correct: score === 1, question: solution };
+    return {
+      score,
+      correct: score === 1,
+      question: solution,
+      glossary: matchGlossary(solution, offlineGlossary.current.get(item.examSlug)),
+    };
   };
 
   const applyCheck = (item: LearnQuestion, check: CheckResult) => {
@@ -799,6 +820,7 @@ export function LearnRunner({
             question={check.question}
             answer={answers[item.question.id] ?? null}
             score={check.score}
+            glossary={check.glossary}
             hideAiExplanation={usingOffline}
           />
         </div>

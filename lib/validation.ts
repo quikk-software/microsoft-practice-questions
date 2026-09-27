@@ -38,10 +38,28 @@ const skillAreaSchema = z.object({
     .max(1, "Gewicht muss <= 1 sein (Anteil, z. B. 0.35)"),
 });
 
+const glossaryEntrySchema = z.object({
+  id: idSchema,
+  term: z.string().min(1, "Begriff fehlt"),
+  aliases: z.array(z.string().min(1)).optional(),
+  definition: z.string().min(1, "Definition fehlt"),
+  source: z.object({
+    title: z.string().min(1, "Quellen-Titel fehlt"),
+    url: z.string().url("Quellen-URL ungültig"),
+  }),
+});
+
 export const examConfigSchema = z
   .object({
     slug: idSchema,
     published: z.boolean().optional(),
+    seo: z
+      .object({
+        intro: z.array(z.string()).optional(),
+        faq: z.array(z.object({ question: z.string(), answer: z.string() })).optional(),
+      })
+      .optional(),
+    glossary: z.array(glossaryEntrySchema).optional(),
     code: z.string().min(1, "Code fehlt"),
     title: z.string().min(1, "Titel fehlt"),
     description: z.string().min(1, "Beschreibung fehlt"),
@@ -74,6 +92,14 @@ export const examConfigSchema = z
         code: "custom",
         path: ["passScore"],
         message: "passScore darf maxScore nicht überschreiten",
+      });
+    }
+    const dupTerm = c.glossary ? findDuplicateId(c.glossary) : null;
+    if (dupTerm) {
+      ctx.addIssue({
+        code: "custom",
+        path: ["glossary"],
+        message: `doppelte Glossar-id: ${dupTerm}`,
       });
     }
     const dup = findDuplicateId(c.skillAreas);

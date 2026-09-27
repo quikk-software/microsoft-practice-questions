@@ -55,8 +55,12 @@ async function seedExam(slug) {
 
   console.log(`\n=== Seede Examen "${slug}" ===`);
 
-  // --- exams ---
+  // --- exams (glossary.json liegt separat und wird in die Config gemischt) ---
   const config = readJson(configPath);
+  const glossaryPath = path.join(examDir, "glossary.json");
+  if (fs.existsSync(glossaryPath)) {
+    config.glossary = readJson(glossaryPath);
+  }
   await upsertBatched(
     "exams",
     [
@@ -69,7 +73,9 @@ async function seedExam(slug) {
     ],
     "slug"
   );
-  console.log(`exams: "${config.slug}" upserted`);
+  console.log(
+    `exams: "${config.slug}" upserted (Glossar: ${config.glossary?.length ?? 0} Begriffe)`
+  );
 
   // --- questions ---
   const qDir = path.join(examDir, "questions");

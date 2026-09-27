@@ -38,12 +38,15 @@ npm run embed -- ab-900    # Chunks + Embeddings erzeugen -> embeddings.json (br
 ```
 data/exams/<slug>/
 ├── exam.json          # Konfiguration: Titel, Skill-Areas + Gewichte, Bestehensgrenze, difficultyCurve
+├── glossary.json      # optional: Fachbegriffe (GlossaryEntry[]) — werden per Begriffs-Matching an Fragen gehängt
 └── questions/
     ├── <beliebig>.json  # Array von Fragen (Question[]), beliebig viele Dateien
     └── ...
 ```
 
 Fragetypen und Felder: siehe [lib/types.ts](lib/types.ts). Jede Frage braucht `id`, `type`, `skillArea` (muss zu einer Area in `exam.json` passen), `difficulty` (`easy`/`medium`/`hard`), `prompt`, `explanation` und die typspezifischen Lösungsfelder.
+
+Glossar: `glossary.json` enthält Einträge mit `id`, `term`, optionalen `aliases`, deutscher `definition` und `source` (Lerninhalt-Unit). Es wird nicht pro Frage gepflegt — [lib/glossary.ts](lib/glossary.ts) matcht Begriff/Aliase (case-insensitiv, Wortgrenzen, Plural) gegen Frage, Antworten und Erklärung. Die Treffer erscheinen unter dem Antwort-Feedback und fließen als Kontext in die AI-Erklärung. `node scripts/validate.mjs <slug>` prüft das Glossar (Eindeutigkeit, Quellen-URLs) und meldet Fragen ohne Treffer sowie ungenutzte Begriffe. Aliase sollten keine Alltagswörter sein (kein bloßes „set“, „if“, „table“), sonst matcht der Eintrag in jeder Frage.
 
 ## Mandanten (White-Label)
 

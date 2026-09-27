@@ -127,6 +127,80 @@ for (const q of all) {
   }
 }
 
+// Glossar (glossary.json): Schema, Eindeutigkeit, Quellen-URLs, Abdeckung der Fragen
+const glossaryPath = path.join(examDir, "glossary.json");
+let glossary = [];
+if (fs.existsSync(glossaryPath)) {
+  try {
+    glossary = JSON.parse(fs.readFileSync(glossaryPath, "utf8"));
+  } catch (e) {
+    errors.push(`  glossary.json: kein valides JSON (${e.message})`);
+  }
+  const unitUrls = new Set(
+    fs.existsSync(path.join(contentDir, "index.json"))
+      ? JSON.parse(fs.readFileSync(path.join(contentDir, "index.json"), "utf8")).map((u) => u.url)
+      : []
+  );
+  const seenGlossaryIds = new Set();
+  const seenTerms = new Map();
+  for (const g of Array.isArray(glossary) ? glossary : []) {
+    const gid = g.id ?? "glossary#?";
+    if (!g.id || !/^[a-z0-9-]+$/.test(g.id)) err(gid, "glossar-id fehlt/ungültig");
+    else if (seenGlossaryIds.has(g.id)) err(gid, "doppelte glossar-id");
+    seenGlossaryIds.add(g.id);
+    if (!g.term) err(gid, "term fehlt");
+    if (!g.definition || g.definition.length < 40) err(gid, "definition fehlt oder zu kurz");
+    if (!g.source?.title || !g.source?.url) err(gid, "source fehlt/unvollständig");
+    else if (unitUrls.size && !unitUrls.has(g.source.url)) err(gid, `source.url ist keine Lerninhalt-Unit: ${g.source.url}`);
+    for (const t of [g.term, ...(g.aliases ?? [])]) {
+      const key = String(t).toLowerCase();
+      if (seenTerms.has(key) && seenTerms.get(key) !== g.id)
+        err(gid, `Begriff "${t}" bereits bei ${seenTerms.get(key)}`);
+      seenTerms.set(key, g.id);
+    }
+  }
+}
+
+// Abdeckung: gleiche Matching-Regel wie lib/glossary.ts
+const patternFor = (term) => {
+  const t = String(term).trim();
+  const escaped = t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&").replace(/[\s-]+/g, "[\\s-]+");
+  const lead = /^\w/.test(t) ? "(?<![\\w])" : "";
+  const tail = /\w$/.test(t) ? "(?:e?s)?(?![\\w])" : "";
+  return new RegExp(`${lead}${escaped}${tail}`, "i");
+};
+const textOf = (q) =>
+  [
+    q.prompt,
+    q.explanation,
+    ...(q.options ?? []).map((o) => o.text),
+    ...(q.statements ?? []).map((s) => s.text),
+    ...(q.items ?? []).map((i) => i.text),
+    ...(q.left ?? []).map((l) => l.text),
+    ...(q.right ?? []).map((r) => r.text),
+    ...(q.textParts ?? []),
+    ...(q.blanks ?? []).flatMap((b) => b.options.map((o) => o.text)),
+  ].join("\n");
+const glossaryHits = {};
+const unmatchedQuestions = [];
+if (glossary.length) {
+  const patterns = glossary.map((g) => ({
+    id: g.id,
+    res: [g.term, ...(g.aliases ?? [])].map(patternFor),
+  }));
+  for (const q of all) {
+    const text = textOf(q);
+    let n = 0;
+    for (const p of patterns) {
+      if (p.res.some((re) => re.test(text))) {
+        n++;
+        glossaryHits[p.id] = (glossaryHits[p.id] ?? 0) + 1;
+      }
+    }
+    if (n === 0) unmatchedQuestions.push(q.id);
+  }
+}
+
 // Zusammenfassung
 const count = (fn) =>
   all.reduce((acc, q) => ((acc[fn(q)] = (acc[fn(q)] ?? 0) + 1), acc), {});
@@ -134,6 +208,12 @@ console.log(`Pool: ${all.length} Fragen`);
 console.log("  nach Typ:        ", JSON.stringify(count((q) => q.type)));
 console.log("  nach Schwierigkeit:", JSON.stringify(count((q) => q.difficulty)));
 console.log("  nach Skill-Area: ", JSON.stringify(count((q) => q.skillArea)));
+if (glossary.length) {
+  const unused = glossary.filter((g) => !glossaryHits[g.id]).map((g) => g.id);
+  console.log(`Glossar: ${glossary.length} Begriffe`);
+  console.log(`  Fragen ohne Glossar-Treffer: ${unmatchedQuestions.length}${unmatchedQuestions.length ? " (" + unmatchedQuestions.join(", ") + ")" : ""}`);
+  console.log(`  Begriffe ohne Frage:         ${unused.length}${unused.length ? " (" + unused.join(", ") + ")" : ""}`);
+}
 if (errors.length) {
   console.error(`\n${errors.length} Problem(e):`);
   errors.forEach((e) => console.error(e));

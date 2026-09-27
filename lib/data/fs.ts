@@ -33,10 +33,18 @@ function questionsDir(slug: string) {
   return path.join(DATA_DIR, slug, "questions");
 }
 
+/** Glossar liegt neben exam.json in glossary.json und wird in die Config gemischt. */
+function glossaryPath(slug: string) {
+  return path.join(DATA_DIR, slug, "glossary.json");
+}
+
 function readExam(slug: string): ExamBundle | null {
   const configPath = path.join(DATA_DIR, slug, "exam.json");
   if (!fs.existsSync(configPath)) return null;
   const config: ExamConfig = JSON.parse(fs.readFileSync(configPath, "utf-8"));
+  if (fs.existsSync(glossaryPath(slug))) {
+    config.glossary = JSON.parse(fs.readFileSync(glossaryPath(slug), "utf-8"));
+  }
   const questions: Question[] = [];
   const qDir = questionsDir(slug);
   if (fs.existsSync(qDir)) {
@@ -107,10 +115,11 @@ export class FsRepository implements DataRepository {
   async upsertExam(config: ExamConfig): Promise<void> {
     const dir = path.join(DATA_DIR, config.slug);
     fs.mkdirSync(dir, { recursive: true });
-    fs.writeFileSync(
-      path.join(dir, "exam.json"),
-      JSON.stringify(config, null, 2)
-    );
+    const { glossary, ...rest } = config;
+    fs.writeFileSync(path.join(dir, "exam.json"), JSON.stringify(rest, null, 2));
+    if (glossary) {
+      fs.writeFileSync(glossaryPath(config.slug), JSON.stringify(glossary, null, 2));
+    }
   }
 
   async deleteExam(slug: string): Promise<void> {

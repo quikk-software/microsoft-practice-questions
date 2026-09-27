@@ -23,6 +23,23 @@ export interface SkillArea {
   weight: number;
 }
 
+/**
+ * Glossar-Eintrag eines Examens. Wird nicht fest an Fragen gebunden, sondern
+ * zur Laufzeit per Begriffs-Matching (lib/glossary.ts) an Frage, Antworten und
+ * Erklärung gehängt — so bleibt jede Definition genau einmal gepflegt.
+ */
+export interface GlossaryEntry {
+  id: string;
+  /** Begriff, wie er in den Fragen vorkommt (englisch) */
+  term: string;
+  /** Weitere Schreibweisen, die ebenfalls matchen sollen (Kurzformen, Synonyme) */
+  aliases?: string[];
+  /** Definition auf Deutsch, aus dem Lerninhalt abgeleitet */
+  definition: string;
+  /** Lerninhalt-Unit, aus der die Definition stammt */
+  source: { title: string; url: string };
+}
+
 /** Redaktionelle Inhalte für die öffentliche Examen-Seite (SEO) */
 export interface ExamSeo {
   /** Eigener Einleitungstext (2–4 Absätze, kein fremder Content) */
@@ -36,6 +53,8 @@ export interface ExamConfig {
   /** Unveröffentlichte Examen sind nur im Admin sichtbar; fehlend = veröffentlicht */
   published?: boolean;
   seo?: ExamSeo;
+  /** Begriffs-Glossar; liegt im Dateitreiber separat in glossary.json */
+  glossary?: GlossaryEntry[];
   code: string;
   title: string;
   description: string;
@@ -143,6 +162,8 @@ export interface QuestionResult {
   correct: boolean;
   question: Question;
   answer: Answer | null;
+  /** Glossar-Einträge, die zu dieser Frage passen (für den Review) */
+  glossary?: GlossaryEntry[];
 }
 
 export interface ExamResult {

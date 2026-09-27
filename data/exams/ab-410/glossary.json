@@ -1,0 +1,3863 @@
+[
+  {
+    "id": "http-error-codes",
+    "term": "401",
+    "aliases": [
+      "403",
+      "400",
+      "404",
+      "500",
+      "502",
+      "Unauthorized",
+      "Bad request",
+      "Not found"
+    ],
+    "definition": "Fehlercodes in Flow-Läufen: 401/403 „Unauthorized“ = Authentifizierungsfehler (Verbindung reparieren), 400 „Bad request“/404 „Not found“ = Konfigurationsfehler in einer Aktion (Flow bearbeiten und Resubmit), 500/502 = vorübergehender Fehler (einfach Resubmit).",
+    "source": {
+      "title": "Troubleshoot flows",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-flows/9-troubleshoot-flows"
+    }
+  },
+  {
+    "id": "access-checker",
+    "term": "Access Checker",
+    "aliases": [
+      "access checker"
+    ],
+    "definition": "Befehl in modellgesteuerten Apps, der für eine Zeile zeigt, woher die Rechte eines Nutzers stammen: Ownership (Besitz durch Nutzer oder sein Team), Security role access, Shared access (Freigabe an Nutzer/Team/Organisation) und Hierarchy access (nur bei aktivierter Hierarchiesicherheit). Standardmäßig für den eigenen Nutzer, wahlweise für andere.",
+    "source": {
+      "title": "Check the roles that a user belongs to",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-security-roles/6-checking"
+    }
+  },
+  {
+    "id": "access-level",
+    "term": "access level",
+    "aliases": [
+      "access levels",
+      "User level",
+      "Business Unit level",
+      "Parent: Child Business Unit",
+      "Organization level"
+    ],
+    "definition": "Legt je Privileg fest, wie tief in der Business-Unit-Hierarchie es gilt: None (kein Zugriff), User (eigene sowie mit dem Nutzer/Team/Organisation geteilte Datensätze – typisch für Endnutzer), Business Unit (alle Datensätze der eigenen Business Unit), Parent: Child Business Unit (eigene plus untergeordnete Business Units) und Organization (alle Datensätze). Organisationseigene Tabellen kennen nur None oder Organization.",
+    "source": {
+      "title": "Understand user security roles and security role defaults",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-security-roles/4a-security-role"
+    }
+  },
+  {
+    "id": "access-team",
+    "term": "access team",
+    "aliases": [
+      "access teams"
+    ],
+    "definition": "Team-Typ, der keine Datensätze besitzt und keine Sicherheitsrollen hat. Stattdessen werden einzelne Datensätze mit dem Team geteilt (Rechte Read, Write, Append); die Mitglieder behalten ihre eigenen Rollen. Geeignet für fallweise Zusammenarbeit an bestimmten Datensätzen statt dauerhafter Rechte.",
+    "source": {
+      "title": "Configure Dataverse teams for security",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-security-roles/6a-teams"
+    }
+  },
+  {
+    "id": "accessibility-localization",
+    "term": "accessibility",
+    "aliases": [
+      "localization",
+      "accessible design"
+    ],
+    "definition": "Zwei Designaspekte für Canvas-Apps: Barrierefreiheit (Unterstützung für Nutzer mit Seh-, Hör- oder motorischen Einschränkungen – Power Apps bietet eingebaute Hilfen, z. B. Übergänge ohne Animation) und Lokalisierung (Zahlen-/Sprachunterschiede wie Dezimaltrennzeichen; in Regionen mit Komma als Dezimalzeichen wird das Semikolon zum Listentrenner).",
+    "source": {
+      "title": "Designing a Power Apps app",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps/4-5-design-app"
+    }
+  },
+  {
+    "id": "activity-logging",
+    "term": "activity logging",
+    "aliases": [
+      "Read logs",
+      "Log access",
+      "Microsoft Purview"
+    ],
+    "definition": "Umgebungseinstellung „Read logs“, die Aktivitätsprotokolle zusätzlich an das Microsoft Purview compliance portal sendet – für zentrale Compliance-Auswertung über Microsoft 365 und Power Platform hinweg. Für In-App-Szenarien genügt die Dataverse-Audit-History; Purview ist die Wahl für unternehmensweite Compliance-Anforderungen.",
+    "source": {
+      "title": "Dataverse auditing",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps-common-data-service/auditing"
+    }
+  },
+  {
+    "id": "adaptive-card",
+    "term": "adaptive card",
+    "aliases": [
+      "adaptive cards",
+      "adaptive card notification"
+    ],
+    "definition": "Interaktive Karte, die ein Genehmigungsflow z. B. in Microsoft Teams postet: zeigt die Kerndaten und die Genehmigen/Ablehnen-Aktion in einer Nachricht, sodass Entscheider nicht in eine separate App wechseln müssen.",
+    "source": {
+      "title": "Recommend Power Platform components for business solutions",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/3-recommend-power-platform-components"
+    }
+  },
+  {
+    "id": "add-a-new-row",
+    "term": "Add a new row",
+    "aliases": [
+      "Add a new row action",
+      "Advanced parameters",
+      "required columns"
+    ],
+    "definition": "Dataverse-Aktion zum Anlegen einer Zeile: Tabelle wählen, dann erscheinen die wichtigsten Spalten; Business-Required-Spalten sind mit rotem Stern markiert und müssen befüllt sein, sonst lässt sich der Flow nicht speichern. Weitere Spalten liegen unter Advanced parameters. Lookup-Spalten werden dabei per Row URL (OData ID) oder GUID gesetzt.",
+    "source": {
+      "title": "Create, update, delete, and relate actions",
+      "url": "https://learn.microsoft.com/en-us/training/modules/use-dataverse-triggers-actions/create-update-delete-relate"
+    }
+  },
+  {
+    "id": "advanced-find",
+    "term": "Advanced Find",
+    "definition": "Such- und Filterwerkzeug in modellgesteuerten Apps, mit dem Nutzer über beliebige (durchsuchbare) Spalten abfragen und daraus persönliche Ansichten erstellen können.",
+    "source": {
+      "title": "Add a column to a table",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-manage-fields-within-entity/3-add-field"
+    }
+  },
+  {
+    "id": "agent-feed",
+    "term": "agent feed",
+    "aliases": [
+      "Agent feed",
+      "Needs Attention",
+      "Agent Task"
+    ],
+    "definition": "Aufgabenliste oben in der Sitemap einer modellgesteuerten App, in die autonome Agenten (über den Power Apps MCP server) Aufgaben posten, wenn Menschen prüfen oder eingreifen sollen. Zwei Bereiche: Needs Attention (wartet auf Eingabe – erledigen, Datenvorschläge übernehmen, verwerfen) und Completed. Standardmäßig nur für System Administrator/System Customizer sichtbar; andere brauchen Rechte auf Agent Task, Agent Hub Goal/Insight/Metric und Copilot.",
+    "source": {
+      "title": "Add agents to your model-driven app",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-model-driven-apps-in-powerapps/add-agents"
+    }
+  },
+  {
+    "id": "agent-flow",
+    "term": "agent flow",
+    "aliases": [
+      "agent flows",
+      "Workflows page",
+      "Copilot Studio capacity"
+    ],
+    "definition": "Cloud-Flow, der in Copilot Studio verwaltet und für Agenten optimiert ist: als Tool in Agenten aufrufbar, unterstützt KI-Aktionen (Text generieren, Dokumente verarbeiten, andere Agenten aufrufen) und verbraucht Copilot-Studio- statt Power-Automate-Kapazität (Tests im Designer kosten nichts; ohne Kapazität werden Läufe blockiert). Konvertierung: Cloud-Flow in einer Lösung, Plan im Designer auf Copilot Studio umstellen – einmalig und nicht umkehrbar.",
+    "source": {
+      "title": "Convert a flow to an agent flow",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-flows/agent-flows"
+    }
+  },
+  {
+    "id": "ai-builder",
+    "term": "AI Builder",
+    "definition": "Power-Platform-Komponente mit vortrainierten KI-Modellen (z. B. Dokumentverarbeitung für Rechnungen, Belege, Formulare) und dem Prompt Builder für generative Aufgaben wie Zusammenfassen, Klassifizieren oder Übersetzen. Die Modelle werden aus Flows und Apps aufgerufen; der Zugriff erfolgt über den AI Hub.",
+    "source": {
+      "title": "Recommend Power Platform components for business solutions",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/3-recommend-power-platform-components"
+    }
+  },
+  {
+    "id": "ai-form-fill",
+    "term": "AI form fill assistance",
+    "aliases": [
+      "form fill assistance (Power Pages)",
+      "AI-assisted form filling"
+    ],
+    "definition": "Option einer Power-Pages-Formularkomponente: Extrahiert Informationen aus hochgeladenen Anhängen, befüllt Felder automatisch und bietet KI-Entwurfshilfe für Mehrzeilentexte. Wird in den Formulareinstellungen aktiviert; Tenant-Governance kann sie überschreiben.",
+    "source": {
+      "title": "Page components",
+      "url": "https://learn.microsoft.com/en-us/training/modules/power-pages-studio/components"
+    }
+  },
+  {
+    "id": "ai-hub",
+    "term": "AI Hub",
+    "definition": "Zentraler Ort (erreichbar aus Power Apps, Power Automate und Copilot Studio), an dem AI-Builder-Prompts und KI-Modelle erstellt und verwaltet werden. Dort liegt auch der Prompt Builder.",
+    "source": {
+      "title": "Recommend Power Platform components for business solutions",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/3-recommend-power-platform-components"
+    }
+  },
+  {
+    "id": "ai-plugin",
+    "term": "AI plug-in",
+    "aliases": [
+      "AI plugin",
+      "prompt plug-in",
+      "prompt action",
+      "Create AI plugin",
+      "New Action"
+    ],
+    "definition": "In Copilot Studio (Library > Add an item > New Action > Prompt) erstellter und finalisierter Prompt, der als Aktion in Agenten verfügbar ist. Er hat Inputs und „Data use“ (Dataverse-Tabellen als Grounding) und wird in Topics per „Call an action“ aufgerufen, um Inhalte zu generieren.",
+    "source": {
+      "title": "Use a grounded prompt in a custom copilot",
+      "url": "https://learn.microsoft.com/en-us/training/modules/ai-builder-grounded-prompts/use-grounded-prompt-custom-copilot"
+    }
+  },
+  {
+    "id": "alm",
+    "term": "ALM",
+    "aliases": [
+      "application lifecycle management"
+    ],
+    "definition": "Application Lifecycle Management: das bewusste Steuern des Zyklus Konzept → Planung → Entwicklung → Test → Bereitstellung → Wartung und wieder von vorn. Werkzeuge in der Power Platform sind Lösungen (Verpackung), Pipelines (Deployment zwischen Umgebungen) und die Git-Integration (Quellcodeverwaltung).",
+    "source": {
+      "title": "Application lifecycle management",
+      "url": "https://learn.microsoft.com/en-us/training/modules/publish-share-maintain-app/5-lifecycle-management"
+    }
+  },
+  {
+    "id": "alternate-key",
+    "term": "alternate key",
+    "aliases": [
+      "alternate keys",
+      "compound key"
+    ],
+    "definition": "Zusätzlicher eindeutiger Schlüssel aus einer oder mehreren Spalten (Decimal, Whole Number, Text, Date Time, Lookup, Choice), z. B. eine Bestellnummer aus einem externen System. Dataverse erzwingt Pflicht und Eindeutigkeit, indiziert die Spalten und ermöglicht Upserts ohne GUID. Bis zu 10 Schlüssel je Tabelle; Anlage scheitert bei vorhandenen Duplikaten.",
+    "source": {
+      "title": "Create an alternate key",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-manage-fields-within-entity/7-alternate-key"
+    }
+  },
+  {
+    "id": "app-assistant-agent",
+    "term": "app assistant agent",
+    "aliases": [
+      "app assistant"
+    ],
+    "definition": "Der Agent hinter dem Copilot-Chatbereich einer modellgesteuerten App. Über den Agents-Tab im App Designer wird er in Copilot Studio geöffnet, um eigene Topics, Wissensquellen und Verhalten für genau diese App zu konfigurieren – im Gegensatz zu autonomen Agenten, die im Hintergrund handeln.",
+    "source": {
+      "title": "Add agents to your model-driven app",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-model-driven-apps-in-powerapps/add-agents"
+    }
+  },
+  {
+    "id": "app-designer",
+    "term": "App Designer",
+    "aliases": [
+      "app designer",
+      "modern app designer"
+    ],
+    "definition": "Werkzeug zum Zusammenstellen einer modellgesteuerten App: Seiten (Dataverse-Tabellen, Dashboards, Custom Pages, generative Seiten) hinzufügen, Navigation/Sitemap anordnen, Formulare, Ansichten und Diagramme wählen, Einstellungen wie Copilot control setzen und die App veröffentlichen.",
+    "source": {
+      "title": "Design model-driven apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-model-driven-apps-in-powerapps/2b-design-apps"
+    }
+  },
+  {
+    "id": "app-opener",
+    "term": "App Opener",
+    "definition": "Geschützte Dataverse-Rolle mit Minimalrechten (Create/Write/Delete self, Read). Sie dient als Kopiervorlage, wenn man eine neue Sicherheitsrolle für eine modellgesteuerte App anlegt und dann Tabellenrechte ergänzt; sie selbst kann nicht bearbeitet werden.",
+    "source": {
+      "title": "Understand environment roles",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-security-roles/2-roles"
+    }
+  },
+  {
+    "id": "app-level-security-roles",
+    "term": "App reader",
+    "aliases": [
+      "App user",
+      "App maker",
+      "App admin",
+      "app-level security roles"
+    ],
+    "definition": "Optionale, vom Admin aktivierbare Rollen beim Teilen Dataverse-basierter Apps: App reader (alle Datensätze lesen), App user (voller Zugriff auf eigene Datensätze), App maker (alle lesen, erstellen) und App admin (voller Zugriff auf alle). Sie steuern die Datenrechte in den zugrunde liegenden Tabellen.",
+    "source": {
+      "title": "Share your app",
+      "url": "https://learn.microsoft.com/en-us/training/modules/publish-share-maintain-app/3-share-app"
+    }
+  },
+  {
+    "id": "apply-to-each",
+    "term": "Apply to each",
+    "aliases": [
+      "Apply to each action"
+    ],
+    "definition": "Schleifenaktion in Power Automate, die nachfolgende Aktionen für jedes Element einer Liste ausführt – z. B. eine E-Mail je Excel-Zeile oder „Create file“ je Anhang. Wird automatisch eingefügt, sobald man dynamischen Inhalt aus einer Sammlung (Attachments, List rows) in einer Aktion verwendet.",
+    "source": {
+      "title": "Exercise - Monitor incoming emails",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-flows/flow-monitor-incoming-emails"
+    }
+  },
+  {
+    "id": "approval-type",
+    "term": "approval type",
+    "aliases": [
+      "Approve/Reject",
+      "Everyone must approve",
+      "First to respond",
+      "custom responses",
+      "Custom responses",
+      "Outcome"
+    ],
+    "definition": "Antwortmodell einer Genehmigung: Approve/Reject mit „Everyone must approve“ (einstimmig, alle müssen zustimmen) oder „First to respond“ (die erste Antwort entscheidet), oder Custom responses mit eigenen Optionen wie „Needs revision“ oder „Escalate“ für feinere Verzweigungen. Nach der Antwort liefert das Feld Outcome den Wert für die Condition.",
+    "source": {
+      "title": "Introduction to approval flows",
+      "url": "https://learn.microsoft.com/en-us/training/modules/build-approval-flows/1-introduction"
+    }
+  },
+  {
+    "id": "approvals-connector",
+    "term": "Approvals connector",
+    "aliases": [
+      "Approvals",
+      "approval action",
+      "approval actions",
+      "approval flow",
+      "approval flows",
+      "Approvals center"
+    ],
+    "definition": "Standard-Connector (in Microsoft-365-Lizenzen enthalten) für den kompletten Lebenszyklus einer Genehmigung. Er hat keinen Trigger – Genehmigungsaktionen werden in Flows eingebaut, die etwas anderes auslöst (neue Datei, neue Dataverse-Zeile). Genehmiger antworten per E-Mail, im Approvals-Bereich von Power Automate oder in Teams; danach steht das Outcome als dynamischer Inhalt für eine Bedingung bereit.",
+    "source": {
+      "title": "Introduction to approval flows",
+      "url": "https://learn.microsoft.com/en-us/training/modules/build-approval-flows/1-introduction"
+    }
+  },
+  {
+    "id": "bpf-relationship",
+    "term": "attribute map",
+    "aliases": [
+      "attribute maps",
+      "Select relationships",
+      "cross-table BPF"
+    ],
+    "definition": "Wenn aufeinanderfolgende Stages eines Geschäftsprozessflusses auf verschiedenen Tabellen basieren, wählt man die Beziehung zwischen ihnen (Select relationships). Vorteile: Attribute Maps der Beziehung übertragen Daten automatisch in die neue Zeile (weniger Eingabe), und beim Klick auf Next Stage werden vorhandene verknüpfte Zeilen zur Wiederverwendung angeboten. Die Tabelle der ersten Stage kann nachträglich nicht geändert werden.",
+    "source": {
+      "title": "Create a business process flow",
+      "url": "https://learn.microsoft.com/en-us/training/modules/build-approval-flows/5-create-business-process-flow"
+    }
+  },
+  {
+    "id": "auditing",
+    "term": "auditing",
+    "aliases": [
+      "audit",
+      "Audit History",
+      "Audit Summary View",
+      "audit log",
+      "audit logs"
+    ],
+    "definition": "Protokollierung von Datenänderungen und Nutzerzugriffen in Dataverse. Wird auf drei Ebenen aktiviert – Umgebung, Tabelle, Spalte – und zwar hierarchisch (Spalte braucht Tabelle braucht Umgebung). Einsehbar pro Datensatz im Audit History-Tab und umgebungsweit in der Audit Summary View; benötigt System Administrator oder System Customizer und verbraucht Log-Speicherkapazität.",
+    "source": {
+      "title": "Dataverse auditing",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps-common-data-service/auditing"
+    }
+  },
+  {
+    "id": "authentication-authorization",
+    "term": "authentication",
+    "aliases": [
+      "authorization",
+      "local sign in",
+      "external authentication"
+    ],
+    "definition": "Authentifizierung klärt, wer auf die Site zugreifen darf (Site-Sichtbarkeit, lokale Anmeldung oder externe Identitätsanbieter wie Microsoft Entra External ID, Microsoft, LinkedIn, Facebook); Autorisierung klärt, was ein angemeldeter Nutzer sehen und tun darf – über Web Roles mit Seiten-, Tabellen- und Spaltenrechten. Rechte mehrerer Web Roles werden kombiniert.",
+    "source": {
+      "title": "Overview of Power Pages security",
+      "url": "https://learn.microsoft.com/en-us/training/modules/power-pages-intro/security"
+    }
+  },
+  {
+    "id": "flow-types",
+    "term": "automated cloud flow",
+    "aliases": [
+      "instant cloud flow",
+      "scheduled cloud flow",
+      "scheduled flow",
+      "Manually trigger a flow",
+      "Recurrence",
+      "recurrence trigger"
+    ],
+    "definition": "Die drei Cloud-Flow-Arten: automated (startet bei einem Ereignis wie „When a new email arrives“ oder „When a row is added“), instant (manuell per Button, App oder Agent gestartet – Trigger „Manually trigger a flow“) und scheduled (läuft nach Zeitplan über den Recurrence-Trigger, z. B. täglich 10:00 Uhr).",
+    "source": {
+      "title": "Exercise - Create recurring flows",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-flows/6-flow-scheduled-flows"
+    }
+  },
+  {
+    "id": "autonomous-agent",
+    "term": "autonomous agent",
+    "aliases": [
+      "autonomous agents",
+      "conversational agent",
+      "conversational agents"
+    ],
+    "definition": "Zwei Agententypen in Copilot Studio: Konversationelle Agenten beantworten Fragen im Dialog; autonome Agenten werden durch Ereignisse ausgelöst (neuer Datensatz, Zeitpunkt, E-Mail) und führen Aktionen ohne menschliche Interaktion aus.",
+    "source": {
+      "title": "Recommend Power Platform components for business solutions",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/3-recommend-power-platform-components"
+    }
+  },
+  {
+    "id": "autonumber",
+    "term": "autonumber",
+    "aliases": [
+      "autonumber column",
+      "auto number",
+      "auto-number",
+      "seed value",
+      "seed",
+      "SEQNUM"
+    ],
+    "definition": "Textspalte, die beim Erstellen einer Zeile automatisch einen alphanumerischen Wert erzeugt. Typen: String prefixed number (Contoso-1000, -1001 …), Date prefixed number (UTC-Datum + laufende Nummer) und Custom (Format mit Konstanten, {SEQNUM:n}, Datum, Zufallszeichen). Der seed value ist der Startwert der Nummer (Standard 1000). Eine bestehende Textspalte kann jederzeit auf Autonumber umgestellt werden.",
+    "source": {
+      "title": "Create an auto numbering column",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-manage-fields-within-entity/6-auto-numbering"
+    }
+  },
+  {
+    "id": "basic-user",
+    "term": "Basic User",
+    "definition": "Dataverse-Sicherheitsrolle für App-Nutzer: Lesen, Erstellen, Schreiben und Löschen nur der eigenen Zeilen (User-Ebene) – und das nur für Standardtabellen wie Account und Contact. Für benutzerdefinierte Tabellen sind zusätzliche (eigene) Rollen nötig.",
+    "source": {
+      "title": "Understand environment roles",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-security-roles/2-roles"
+    }
+  },
+  {
+    "id": "bpf-condition",
+    "term": "BPF condition",
+    "aliases": [
+      "Condition component",
+      "branching",
+      "branch"
+    ],
+    "definition": "Verzweigung in einem Geschäftsprozessfluss: Eine Condition zwischen zwei Stages wertet Regeln über Daten der vorherigen Stage aus und führt in eine Stage für „true“ (grün) und eine für „false“ (orange). Beide Zweige brauchen eine Stage, sonst scheitert die Validierung; die Stages liegen in derselben Category-Spalte.",
+    "source": {
+      "title": "Create a business process flow",
+      "url": "https://learn.microsoft.com/en-us/training/modules/build-approval-flows/5-create-business-process-flow"
+    }
+  },
+  {
+    "id": "bpf-branching-limits",
+    "term": "branching rule",
+    "aliases": [
+      "branching rules",
+      "If-Else",
+      "peer branch",
+      "peer branches",
+      "merge branches"
+    ],
+    "definition": "Regeln in verzweigten Geschäftsprozessflüssen (If-Else): Sie müssen auf Schritten der unmittelbar vorangehenden Stage basieren und dürfen Bedingungen entweder mit AND oder mit OR kombinieren, nicht beides. Grenzen: max. 5 Tabellen, 30 Stages, 30 Steps je Stage, 10 Verzweigungsebenen; Peer-Zweige müssen entweder alle in eine Stage münden oder alle den Prozess beenden. Mehrere aktive Prozesse können auf demselben Datensatz laufen.",
+    "source": {
+      "title": "Create a business process flow with conditions",
+      "url": "https://learn.microsoft.com/en-us/training/modules/build-approval-flows/6-branching"
+    }
+  },
+  {
+    "id": "business-process-flow",
+    "term": "business process flow",
+    "aliases": [
+      "business process flows",
+      "BPF",
+      "BPFs"
+    ],
+    "definition": "Geführter Prozess in modellgesteuerten Apps: Eine Leiste mit Stufen (stages) und Schritten (steps) führt Nutzer Schritt für Schritt durch einen standardisierten Ablauf, z. B. Lead → Opportunity → Quote. Kann bis zu fünf Tabellen verbinden, bis zu zehn aktive BPFs je Tabelle, Bedingungen für Verzweigungen. Wird in Power Apps unter Flows > Business process flows verwaltet, nicht in Power Automate, und ist nur in modellgesteuerten Apps verfügbar.",
+    "source": {
+      "title": "Incorporate business process flows",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-model-driven-apps-in-powerapps/business-process-flows"
+    }
+  },
+  {
+    "id": "column-requirement",
+    "term": "business required",
+    "aliases": [
+      "business recommended",
+      "column requirement",
+      "required level",
+      "requirement level"
+    ],
+    "definition": "Pflichtgrad einer Spalte: Optional (Standard), Business recommended (sollte einen Wert haben, Speichern trotzdem möglich) oder Business required (ohne Wert kann der Datensatz nicht gespeichert werden). Kann auch dynamisch per Geschäftsregel gesetzt werden.",
+    "source": {
+      "title": "Add a column to a table",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-manage-fields-within-entity/3-add-field"
+    }
+  },
+  {
+    "id": "business-rule",
+    "term": "business rule",
+    "aliases": [
+      "business rules"
+    ],
+    "definition": "Deklarative Logik auf Tabellenebene (Drag-and-drop-Designer mit Bedingungen und Aktionen): Werte setzen/leeren, Pflichtgrad ändern, Spalten ein-/ausblenden oder sperren, Eingaben validieren mit Fehlermeldung, Empfehlungen anzeigen. Der Scope bestimmt die Reichweite: einzelnes Formular, alle Formulare oder Entity (Standard: gilt auch bei Create/Update über API und Flows). In Canvas-Apps fehlen Ein-/Ausblenden, Sperren und Empfehlungen.",
+    "source": {
+      "title": "Dataverse logic and security",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps-common-data-service/logic-security"
+    }
+  },
+  {
+    "id": "business-unit",
+    "term": "business unit",
+    "aliases": [
+      "business units"
+    ],
+    "definition": "Organisationseinheit in Dataverse, die die Hierarchie für Zugriffsebenen bildet: Nutzer, Teams und Sicherheitsrollen gehören zu genau einer Business Unit; die Ebenen Business Unit und Parent: Child Business Unit beziehen sich darauf. Jede Umgebung hat mindestens eine (Root-)Business-Unit, die beim Anlegen einer Rolle zwingend gewählt wird.",
+    "source": {
+      "title": "Understand user security roles and security role defaults",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-security-roles/4a-security-role"
+    }
+  },
+  {
+    "id": "byom",
+    "term": "BYOM",
+    "aliases": [
+      "Bring Your Own Model",
+      "bring your own model",
+      "Azure AI Foundry"
+    ],
+    "definition": "Bring Your Own Model im Prompt Builder: Statt der eingebauten Modelle wird ein in Azure AI Foundry bereitgestelltes (z. B. feinabgestimmtes) Modell an Prompts, Flows und Agenten angebunden – über dieselbe Low-Code-Oberfläche. Typisch von KI-/ML-Engineers umgesetzt.",
+    "source": {
+      "title": "Explore extensibility options in Power Platform",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/5-explore-extensibility-options"
+    }
+  },
+  {
+    "id": "canvas-app",
+    "term": "canvas app",
+    "aliases": [
+      "canvas apps"
+    ],
+    "definition": "Power-Apps-Typ mit pixelgenauer Kontrolle über das Layout, gebaut auf einer leeren Leinwand mit Steuerelementen und Power-Fx-Formeln. Geeignet für aufgabenorientierte, mobile Oberflächen und beliebige Datenquellen; das Gegenstück ist die modellgesteuerte App, die aus dem Dataverse-Datenmodell generiert wird.",
+    "source": {
+      "title": "Recommend Power Platform components for business solutions",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/3-recommend-power-platform-components"
+    }
+  },
+  {
+    "id": "custom-page-display",
+    "term": "center dialog",
+    "aliases": [
+      "side dialog",
+      "app side pane",
+      "full page",
+      "side pane"
+    ],
+    "definition": "Die drei Anzeigearten einer Custom Page in einer modellgesteuerten App: Full page (inline als Hauptseite), Center dialog (zentriertes Dialogfenster über der aktuellen Seite) und Side dialog/app side pane (rechts eingeblendet). Custom Pages sind enger integriert und performanter als eingebettete Canvas-Apps, die nur auf einem Formular platziert werden können; nicht mehr als 25 je App.",
+    "source": {
+      "title": "Extend model-driven apps with custom pages",
+      "url": "https://learn.microsoft.com/en-us/training/modules/configure-model-driven-apps-customer-engagement-apps/custom-pages"
+    }
+  },
+  {
+    "id": "chart",
+    "term": "chart",
+    "aliases": [
+      "charts",
+      "system chart",
+      "personal chart"
+    ],
+    "definition": "Einzelne grafische Visualisierung (Balken, Kreis, Linie …) einer Tabelle, die in einer Ansicht („Show Chart“), auf einem Formular oder in einem Dashboard erscheint. Definiert durch Legend Entries (Series) mit Aggregat (Sum, Avg, Min, Max, Count:All, Count:Non-empty) und Horizontal (Category) Axis Labels.",
+    "source": {
+      "title": "Exercise - Create a model-driven app",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-model-driven-apps-in-powerapps/5b-create-model-driven-application"
+    }
+  },
+  {
+    "id": "choice-column",
+    "term": "Choice column",
+    "aliases": [
+      "choice columns",
+      "choice data type",
+      "Choice type",
+      "picklist",
+      "option set",
+      "global choice",
+      "local choice"
+    ],
+    "definition": "Spaltentyp mit fester Optionsliste (Schlüssel/Wert-Paare aus Ganzzahl und Label), im Formular als Dropdown; nur eine Option wählbar. Global choice = wiederverwendbare, eigenständige Komponente für mehrere Spalten/Tabellen; local choice = nur für diese eine Spalte. Für hunderte, eigenständige Werte besser eine Tabelle plus Lookup verwenden.",
+    "source": {
+      "title": "Column types in Microsoft Dataverse",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-manage-fields-within-entity/2-field-types"
+    }
+  },
+  {
+    "id": "choices-column",
+    "term": "Choices column",
+    "aliases": [
+      "multi select choice",
+      "multi-select choice",
+      "multiselect choice",
+      "Choices data type",
+      "Choices type"
+    ],
+    "definition": "Mehrfachauswahl-Variante der Choice-Spalte: Nutzer können mehrere Optionen gleichzeitig wählen. Einschränkungen: nicht nutzbar in Workflows, Geschäftsprozessflüssen, Geschäftsregeln, Diagrammen, Rollup- und berechneten Spalten; nicht in Legacy- und Bulk-Edit-Formularen.",
+    "source": {
+      "title": "Column types in Microsoft Dataverse",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-manage-fields-within-entity/2-field-types"
+    }
+  },
+  {
+    "id": "cloud-flow",
+    "term": "cloud flow",
+    "aliases": [
+      "cloud flows"
+    ],
+    "definition": "Power-Automate-Flow, der in der Cloud läuft und Logik über Connectors und Dienste orchestriert (automatisiert per Trigger, sofort per Knopfdruck oder geplant). Im Gegensatz dazu automatisieren desktop flows Anwendungen ohne API auf dem Desktop (RPA).",
+    "source": {
+      "title": "Recommend Power Platform components for business solutions",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/3-recommend-power-platform-components"
+    }
+  },
+  {
+    "id": "co-owner",
+    "term": "Co-Owner",
+    "aliases": [
+      "co-owner",
+      "co-owners"
+    ],
+    "definition": "Freigabestufe für Pläne, Apps und Flows: Co-Owner dürfen das Objekt nutzen, bearbeiten und weiter teilen, aber nicht löschen und nicht den Besitzer ändern. Viewer bzw. Nutzer dürfen nur ansehen bzw. ausführen.",
+    "source": {
+      "title": "Review the data model and technology proposal",
+      "url": "https://learn.microsoft.com/en-us/training/modules/turn-business-ideas-power-platform-solutions-plans/4-review-data-model-technology-proposal"
+    }
+  },
+  {
+    "id": "coauthoring",
+    "term": "coauthoring",
+    "aliases": [
+      "co-authoring",
+      "coauthor"
+    ],
+    "definition": "Gleichzeitiges Bearbeiten einer Canvas-App durch bis zu zehn Maker (Co-owner) mit sichtbarer Präsenz und Live-Änderungen, ähnlich Word/PowerPoint. Standardmäßig aus; wird je App unter Settings > Updates > New aktiviert. Versionierung und Speicherverhalten bleiben unverändert.",
+    "source": {
+      "title": "Share your app",
+      "url": "https://learn.microsoft.com/en-us/training/modules/publish-share-maintain-app/3-share-app"
+    }
+  },
+  {
+    "id": "collection",
+    "term": "collection",
+    "aliases": [
+      "collections",
+      "Collect",
+      "Collect()",
+      "ClearCollect",
+      "ClearCollect()",
+      "App.OnStart",
+      "OnStart"
+    ],
+    "definition": "Lokale In-Memory-Tabelle in einer Canvas-App, die als Datenquelle dient, ohne etwas nach Dataverse zu schreiben. Collect() fügt Datensätze hinzu, ClearCollect() leert und baut sie neu auf (z. B. in App.OnStart, um Nachschlagedaten einmal beim Start zu laden und Dataverse-Aufrufe zu sparen). In modellgesteuerten Befehlen nicht unterstützt.",
+    "source": {
+      "title": "Work with Power Fx formulas in canvas apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/power-fx-formulas"
+    }
+  },
+  {
+    "id": "column",
+    "term": "column type",
+    "aliases": [
+      "column types",
+      "data type",
+      "data types",
+      "Dataverse column",
+      "custom column",
+      "standard column"
+    ],
+    "definition": "Speichert eine einzelne Information je Zeile und hat genau einen Datentyp (Text, Zahl, Datum, Lookup, Choice …), der die zulässigen Werte bestimmt. Standardspalten von Standardtabellen können nicht gelöscht werden; mehr als einige hundert Spalten pro Tabelle sind ein Zeichen für ein Strukturproblem.",
+    "source": {
+      "title": "Define columns in Microsoft Dataverse",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-manage-fields-within-entity/1-fields"
+    }
+  },
+  {
+    "id": "column-level-security",
+    "term": "column-level security",
+    "aliases": [
+      "column security profile",
+      "column security profiles",
+      "field-level security"
+    ],
+    "definition": "Zusätzlicher Schutz einzelner sensibler Spalten (Gehalt, Ausweisnummer, Gesundheitsdaten) über Column Security Profiles: Das Profil legt fest, welche Spalten gesichert sind und wer lesen/ändern/erstellen darf. Nutzer müssen sowohl die Sicherheitsrolle (Tabelle/Zeile) als auch das Profil (Spalte) erfüllen.",
+    "source": {
+      "title": "Dataverse logic and security",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps-common-data-service/logic-security"
+    }
+  },
+  {
+    "id": "commanding",
+    "term": "commanding",
+    "aliases": [
+      "command bar",
+      "command designer",
+      "command button",
+      "custom command"
+    ],
+    "definition": "Eigene Schaltflächen in der Befehlsleiste modellgesteuerter Apps (oben an Formularen und Ansichten), definiert im command designer mit Power Fx statt JavaScript: OnSelect legt die Aktion fest, Visible die Sichtbarkeit. Nicht unterstützt sind canvas-spezifische Zustandsfunktionen wie Set(), Collect() und UpdateContext().",
+    "source": {
+      "title": "Add logic to commands with Power Fx",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-model-driven-apps-in-powerapps/power-fx-commands"
+    }
+  },
+  {
+    "id": "component-library",
+    "term": "component library",
+    "aliases": [
+      "component libraries",
+      "canvas component",
+      "canvas components",
+      "custom property",
+      "custom properties"
+    ],
+    "definition": "Sammlung wiederverwendbarer UI-Komponenten (Header, Navigationsleiste, Karten) mit eigenen Steuerelementen und benutzerdefinierten Eigenschaften (Input/Output), die einmal gebaut und in mehreren Apps derselben Umgebung importiert werden. Aktualisierungen der Bibliothek können alle nutzenden Apps übernehmen; typischerweise von einem Center-of-Excellence-Team gepflegt.",
+    "source": {
+      "title": "Build reusable components and formulas in canvas apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/reusable-components"
+    }
+  },
+  {
+    "id": "condition-action",
+    "term": "Condition action",
+    "aliases": [
+      "Condition control",
+      "condition step",
+      "True branch",
+      "False branch",
+      "Condition in the flow",
+      "add a Condition"
+    ],
+    "definition": "Kontrollaktion in Power Automate, die den Flow anhand eines Vergleichs (z. B. Outcome is equal to Approve) in einen True- und einen False-Zweig teilt. In Genehmigungsflows bleibt im True-Zweig das Dokument bestehen, im False-Zweig wird es z. B. per „Move file“ in einen Ordner „Rejected Documents“ verschoben.",
+    "source": {
+      "title": "Build an approval request",
+      "url": "https://learn.microsoft.com/en-us/training/modules/build-approval-flows/2-create-approval-request"
+    }
+  },
+  {
+    "id": "confirm",
+    "term": "Confirm function",
+    "aliases": [
+      "Confirm(",
+      "Confirm()"
+    ],
+    "definition": "Power-Fx-Funktion, die einen Bestätigungsdialog anzeigt und true/false zurückgibt, z. B. If(Confirm(\"Are you sure?\", {ConfirmButton: \"Yes\", CancelButton: \"No\"}), Patch(…)). Damit lassen sich riskante Aktionen wie Statusänderungen vor dem Ausführen absichern.",
+    "source": {
+      "title": "Add logic to commands with Power Fx",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-model-driven-apps-in-powerapps/power-fx-commands"
+    }
+  },
+  {
+    "id": "page-components",
+    "term": "connected to data component",
+    "aliases": [
+      "standard component",
+      "standard components",
+      "page component",
+      "page components"
+    ],
+    "definition": "Bausteine einer Power-Pages-Seite: Standard-Komponenten erzeugen Layout und statischen Inhalt (Text, Bild, Spacer, Button); Connected-to-data-Komponenten (List, Form, Multistep form) zeigen dynamische, interaktive Dataverse-Daten. Alle sind auf dem Canvas direkt editierbar; Quellcode (HTML/CSS/JS) bearbeitet man per „Edit code“ in Visual Studio Code for the Web.",
+    "source": {
+      "title": "Page components",
+      "url": "https://learn.microsoft.com/en-us/training/modules/power-pages-studio/components"
+    }
+  },
+  {
+    "id": "connection",
+    "term": "connection",
+    "aliases": [
+      "connections",
+      "embedded connection",
+      "Fix connection",
+      "credentials"
+    ],
+    "definition": "Die authentifizierte Verbindung eines Connectors zu einem Dienst (z. B. OneDrive, Outlook, Dataverse) im Kontext eines Nutzers. Flows unterscheiden Embedded (im Flow genutzt) und Other (definiert, ungenutzt). Wird ein Owner entfernt, dessen Anmeldedaten genutzt werden, müssen die Verbindungen aktualisiert werden; Fehler 401/403 („Unauthorized“) behebt man über View Connections > Fix connection > Resubmit.",
+    "source": {
+      "title": "Troubleshoot flows",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-flows/9-troubleshoot-flows"
+    }
+  },
+  {
+    "id": "connector",
+    "term": "connector",
+    "aliases": [
+      "connectors",
+      "standard connector",
+      "standard connectors",
+      "premium connector",
+      "premium connectors"
+    ],
+    "definition": "Vorgefertigte Integration zu einem Dienst oder System (SharePoint, Outlook, Teams, Salesforce, ServiceNow …). Standard connectors sind in den meisten Lizenzen enthalten (SharePoint, OneDrive, Excel Online, Teams, Outlook); premium connectors wie Dataverse, SQL Server, Salesforce, SAP, ServiceNow oder HTTP mit Entra ID erfordern eine Per-App- oder Per-User-Lizenz. Fehlt ein Connector, hilft ein Custom Connector auf Basis einer OpenAPI-Definition.",
+    "source": {
+      "title": "Power Apps data sources",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps/4-powerapps-ways-to-build"
+    }
+  },
+  {
+    "id": "contact-record",
+    "term": "contact",
+    "aliases": [
+      "contacts",
+      "authenticated user",
+      "authenticated users"
+    ],
+    "definition": "Authentifizierte Power-Pages-Nutzer werden in Dataverse als Contact-Zeilen geführt; Web Roles werden dem Kontakt zugewiesen und Tabellenrechte mit Contact-Scope beziehen sich auf diesen Datensatz. Lokale Anmeldung speichert die Anmeldedaten sicher in der Kontaktzeile, externe Anbieter übernehmen die Passwortverwaltung.",
+    "source": {
+      "title": "Overview of Power Pages security",
+      "url": "https://learn.microsoft.com/en-us/training/modules/power-pages-intro/security"
+    }
+  },
+  {
+    "id": "prompt-context",
+    "term": "prompt context",
+    "definition": "Der Teil eines Prompts, der dem Modell die Informationen für die Ausgabe liefert: Zielgruppe, Tonfall, Fachgebiet, Detailtiefe oder das zu verarbeitende Material (z. B. „Die E-Mail enthält Kundenfeedback der letzten Woche“). Guter Kontext lässt das Modell die Ausgabe passgenau zuschneiden.",
+    "source": {
+      "title": "What is prompt engineering?",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-prompts-for-generative-ai-training-tools/3-what-is-prompt-engineering"
+    },
+    "aliases": [
+      "context component",
+      "context of the prompt",
+      "context part"
+    ]
+  },
+  {
+    "id": "context-variable",
+    "term": "context variable",
+    "aliases": [
+      "context variables",
+      "UpdateContext",
+      "UpdateContext()",
+      "screen variable"
+    ],
+    "definition": "Variable, die nur auf dem Bildschirm gilt, auf dem sie gesetzt wurde: UpdateContext({ShowConfirm: true}) oder als drittes Argument von Navigate(). Geeignet für temporären Zustand eines Bildschirms (Dialog ein-/ausblenden, lokaler Formularstatus). Für bildschirmübergreifende Werte nimmt man globale Variablen mit Set().",
+    "source": {
+      "title": "Work with Power Fx formulas in canvas apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/power-fx-formulas"
+    }
+  },
+  {
+    "id": "control",
+    "term": "control",
+    "aliases": [
+      "controls",
+      "label",
+      "text input",
+      "button control",
+      "media control",
+      "Add picture control"
+    ],
+    "definition": "UI-Element einer Canvas-App, das eine Aktion auslöst oder Informationen zeigt: Labels, Texteingaben, Dropdowns, Buttons, Icons, Formen sowie spezialisierte Steuerelemente wie Galerien, Formulare, Medien (Kamera, Barcode-Scanner, Add picture) und Diagramme (inkl. Power BI). Eingefügt über + Insert; jede Eigenschaft ist per Formel steuerbar.",
+    "source": {
+      "title": "Explore controls and screens in canvas apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/2-explore-screens-and-controls"
+    }
+  },
+  {
+    "id": "conversation-style",
+    "term": "conversation style",
+    "aliases": [
+      "more precise",
+      "more creative",
+      "more balanced"
+    ],
+    "definition": "Die drei Modi von Microsoft Copilot: „more creative“ für fantasievolle Inhalte wie Geschichten, „more precise“ für Fakten (stützt sich eher auf Webquellen) und „more balanced“ für allgemeine Szenarien. Für sachliche Genauigkeit ist „more precise“ die richtige Wahl.",
+    "source": {
+      "title": "Create effective prompts",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-prompts-for-generative-ai-training-tools/5-create-effective-prompts"
+    }
+  },
+  {
+    "id": "copilot-chat-mda",
+    "term": "Copilot chat",
+    "aliases": [
+      "Copilot chat pane",
+      "Copilot in model-driven apps"
+    ],
+    "definition": "KI-Chatbereich in modellgesteuerten Apps, in dem Nutzer Fragen zu ihren Daten stellen („Show me all active cases created this week“) oder navigieren („Take me to online cases“). Schreibgeschützt: Datensätze können nicht erstellt oder geändert werden. Ein Admin aktiviert es je Umgebung (Features), der Maker kann es je App unter Settings > Upcoming > Copilot control abschalten.",
+    "source": {
+      "title": "Enable Copilot chat for app users",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-model-driven-apps-in-powerapps/copilot-chat"
+    }
+  },
+  {
+    "id": "copilot-control",
+    "term": "Copilot control",
+    "definition": "Steuerelement, das man einer Canvas-App hinzufügt: Es gibt Nutzern eine natürlichsprachliche Chat-Oberfläche, die mit den Daten der App verbunden ist – Fragen stellen, Datensätze finden, Aktionen per Konversation statt per Menü.",
+    "source": {
+      "title": "Explore the AI-first Power Platform",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/2-explore-ai-first-power-platform"
+    }
+  },
+  {
+    "id": "copilot-in-power-automate",
+    "term": "Copilot in Power Automate",
+    "aliases": [
+      "Create your automation with Copilot",
+      "Keep it and continue",
+      "Generate"
+    ],
+    "definition": "Beschreibung eines Flows in natürlicher Sprache (am besten im Format „When X happens, do Y“ mit konkreten Connectors); Copilot erzeugt Trigger und Aktionen, konfiguriert Verbindungen (grüner Haken = bereit, rotes Ausrufezeichen = Handlungsbedarf) und kann bestehende Flows im Designer ändern oder erklären. Optimiert für Englisch; basiert auf Azure OpenAI Service.",
+    "source": {
+      "title": "Create a cloud flow",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-flows/2-create-first-flow"
+    }
+  },
+  {
+    "id": "copilot-studio",
+    "term": "Copilot Studio",
+    "aliases": [
+      "Microsoft Copilot Studio"
+    ],
+    "definition": "Power-Platform-Komponente zum Bauen von Agenten: konversationelle Agenten für Frage-Antwort, geführte Fehlerbehebung und Kundenservice sowie autonome Agenten, die auf Trigger (neuer Datensatz, Zeitplan, eingehende E-Mail) hin handeln. Richtige Schicht, sobald natürliche Sprache im Spiel ist oder ein Prozess ohne ständige menschliche Eingabe laufen soll.",
+    "source": {
+      "title": "Recommend Power Platform components for business solutions",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/3-recommend-power-platform-components"
+    }
+  },
+  {
+    "id": "copresence",
+    "term": "copresence",
+    "aliases": [
+      "co-presence"
+    ],
+    "definition": "Zusammenarbeit an einem Plan: Bis zu 100 Maker können denselben Plan gleichzeitig ansehen, aber nur eine Person kann bearbeiten – Bearbeitungsrechte bekommt, wer den Plan zuerst öffnet. Davon zu unterscheiden ist das Teilen als Viewer (nur ansehen) oder Co-Owner (nutzen, bearbeiten, teilen; nicht löschen oder Besitz ändern).",
+    "source": {
+      "title": "Review the data model and technology proposal",
+      "url": "https://learn.microsoft.com/en-us/training/modules/turn-business-ideas-power-platform-solutions-plans/4-review-data-model-technology-proposal"
+    }
+  },
+  {
+    "id": "copilot-formula-bar",
+    "term": "Create a formula",
+    "aliases": [
+      "Explain this formula",
+      "Copilot in the formula bar",
+      "comment-based formula"
+    ],
+    "definition": "Copilot-Funktionen in der Formelleiste: Über „Create a formula“ (Menü neben fx) beschreibt man die gewünschte Logik in Alltagssprache und übernimmt den Vorschlag; alternativ schreibt man einen Kommentar // … direkt in die Formelleiste – das funktioniert nur für allgemeine Funktionen wie Filter(), If(), LookUp(), nicht für Navigate(), SubmitForm() oder Back(). „Explain this formula“ erklärt bestehende Formeln.",
+    "source": {
+      "title": "Work with Power Fx formulas in canvas apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/power-fx-formulas"
+    }
+  },
+  {
+    "id": "create-plan-from-solution",
+    "term": "create plan from a solution",
+    "aliases": [
+      "plan from an existing solution",
+      "create a plan from an existing solution"
+    ],
+    "definition": "Umgekehrter Plans-Workflow: Aus einer bereits vorhandenen Lösung erzeugt Plans ein Plan-Dokument mit Geschäftsproblem, Benutzeranforderungen, Datenmodell und Technologieübersicht – zur Dokumentation, Einarbeitung oder als Ausgangspunkt für Erweiterungen. Die Lösung braucht mindestens eine App mit zugehöriger Tabelle; bei einer verwalteten Lösung landet der Plan in einer neuen nicht verwalteten Lösung.",
+    "source": {
+      "title": "Create a plan from an existing solution",
+      "url": "https://learn.microsoft.com/en-us/training/modules/turn-business-ideas-power-platform-solutions-plans/6-create-plan-existing-solution"
+    }
+  },
+  {
+    "id": "create-text-with-gpt",
+    "term": "Create text with GPT using a prompt",
+    "aliases": [
+      "Create text with GPT",
+      "AI Builder action",
+      "Compose"
+    ],
+    "definition": "AI-Builder-Aktion in Power Automate, die einen gespeicherten Prompt ausführt: Prompt wählen, Eingabewerte (z. B. ProposalName) übergeben, Ergebnis als „Output Text“ in Folgeschritten nutzen – etwa in einer Compose-Aktion zum Anzeigen oder in einer E-Mail.",
+    "source": {
+      "title": "Use a grounded prompt in a cloud flow",
+      "url": "https://learn.microsoft.com/en-us/training/modules/ai-builder-grounded-prompts/use-grounded-prompt-cloud-flow"
+    }
+  },
+  {
+    "id": "crud",
+    "term": "CRUD",
+    "definition": "Create, Read, Update, Delete – die vier Grundoperationen auf Datensätzen. In Dataverse entsprechen sie den Privilegien Create, Read, Write und Delete einer Sicherheitsrolle; virtuelle Tabellen unterstützen sie direkt auf der externen Quelle.",
+    "source": {
+      "title": "Dual-write vs. virtual tables",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps-common-data-service/2b-dual-write-vs-virtual-table"
+    }
+  },
+  {
+    "id": "currency-column",
+    "term": "currency",
+    "aliases": [
+      "currency column",
+      "Currency(Base)",
+      "exchange rate"
+    ],
+    "definition": "Spaltentyp für Geldbeträge. Beim Anlegen entstehen vier Spalten: der Betrag in der gewählten Währung, Currency(Base) (schreibgeschützt, umgerechnet in die Basiswährung der Umgebung), ein Lookup auf die aktive Währung und die Exchange rate. Präzision wählbar; in Formeln mit Decimal() in einen Dezimalwert wandeln.",
+    "source": {
+      "title": "Column types in Microsoft Dataverse",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-manage-fields-within-entity/2-field-types"
+    }
+  },
+  {
+    "id": "custom-api",
+    "term": "custom API",
+    "aliases": [
+      "custom APIs"
+    ],
+    "definition": "Erweiterung der Dataverse-API um einen eigenen, benannten Endpunkt, der Geschäftslogik kapselt (z. B. CalculateInvoiceRisk). Flows oder externe Systeme rufen die Operation auf, statt die Logik selbst nachzubauen.",
+    "source": {
+      "title": "Explore extensibility options in Power Platform",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/5-explore-extensibility-options"
+    }
+  },
+  {
+    "id": "custom-connector",
+    "term": "custom connector",
+    "aliases": [
+      "custom connectors"
+    ],
+    "definition": "Häufigste Erweiterungsoption: Eine beliebige REST-API wird anhand einer OpenAPI-Definition als Connector verpackt und steht danach in Power Apps, Power Automate, Copilot Studio und Logic Apps zur Verfügung – einmal von einem Entwickler gebaut, überall von Makern nutzbar. Für einmalige Integrationen können Copilot-Studio-Agenten alternativ REST-API-Aktionen direkt als Tool aufrufen.",
+    "source": {
+      "title": "Explore extensibility options in Power Platform",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/5-explore-extensibility-options"
+    }
+  },
+  {
+    "id": "custom-page",
+    "term": "custom page",
+    "aliases": [
+      "custom pages"
+    ],
+    "definition": "Seite in einer modellgesteuerten App, die auf Canvas-App-Technik basiert: flexibles Layout, Low-Code-Power-Fx-Funktionen und Zugriff auf Power-Apps-Connectors. Gebaut in Power Apps Studio – die Brücke zwischen Canvas-Freiheit und modellgesteuerter Struktur.",
+    "source": {
+      "title": "Components of model-driven apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-model-driven-apps-in-powerapps/2-building-blocks-of-model-driven-apps"
+    }
+  },
+  {
+    "id": "dashboard",
+    "term": "dashboard",
+    "aliases": [
+      "dashboards",
+      "system dashboard"
+    ],
+    "definition": "Zusammenstellung mehrerer Visualisierungen (Diagramme, Listen, eingebettete Power-BI-Kacheln) in einer modellgesteuerten App, die einen Überblick über handlungsrelevante Daten gibt – mit Filtern und Drilldown. Nicht zu verwechseln mit Power-BI-Berichten, die außerhalb der App in Power BI erstellt werden.",
+    "source": {
+      "title": "Components of model-driven apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-model-driven-apps-in-powerapps/2-building-blocks-of-model-driven-apps"
+    }
+  },
+  {
+    "id": "data-agent",
+    "term": "Data Agent",
+    "definition": "Der zweite Plans-Agent. Er schlägt auf Basis der freigegebenen Anforderungen ein Datenmodell vor: Dataverse-Tabellen mit Spalten, Datentypen und Beziehungen. Das Modell lässt sich im Daten-Workspace inline oder per Copilot-Feedback anpassen, bevor die Tabellen tatsächlich in Dataverse gespeichert werden.",
+    "source": {
+      "title": "Explore plans and the AI agents that power them",
+      "url": "https://learn.microsoft.com/en-us/training/modules/turn-business-ideas-power-platform-solutions-plans/2-explore-plans-ai-agents"
+    }
+  },
+  {
+    "id": "data-card",
+    "term": "data card",
+    "aliases": [
+      "data cards",
+      "DataCard",
+      "DataCardValue",
+      "DataCardKey",
+      "unlock the card"
+    ],
+    "definition": "Container für ein Feld in einem Formular. Enthält DataCardKey (Beschriftung), DataCardValue (Eingabesteuerelement), StarVisible (Pflichtstern) und ErrorMessage. Die Eigenschaft Default nennt die Quellspalte, Update das Steuerelement, dessen Wert beim Absenden zurückgeschrieben wird – die Datentypen müssen passen. Zum Ändern der Steuerelemente muss die Karte entsperrt werden (Unlock).",
+    "source": {
+      "title": "Explore controls and screens in canvas apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/2-explore-screens-and-controls"
+    }
+  },
+  {
+    "id": "built-in-agents",
+    "term": "data entry agent",
+    "aliases": [
+      "data summarization agent",
+      "built-in extensible agent",
+      "built-in extensible agents",
+      "built-in agents"
+    ],
+    "definition": "Die in die Power-Apps-Laufzeit eingebauten, erweiterbaren Agenten für modellgesteuerte und Canvas-Apps: data entry agent (führt beim Erfassen von Datensätzen), data exploration agent (findet und filtert Datensätze per natürlicher Sprache, erzeugt Diagramme aus Ansichtsdaten), data summarization agent (fasst Datensätze, Ansichten oder Datensätze zusammen). Sie brauchen weder Copilot-Studio-Lizenz noch eigene Konfiguration.",
+    "source": {
+      "title": "Map business processes to AI-first solution patterns",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/4-map-business-processes-ai-first-patterns"
+    }
+  },
+  {
+    "id": "data-exploration-agent",
+    "term": "data exploration agent",
+    "aliases": [
+      "explore data",
+      "Explore data"
+    ],
+    "definition": "Eingebauter Power-Apps-Agent für modellgesteuerte Apps: Nutzer finden, filtern und sortieren Daten in Ansichten per natürlicher Sprache und erzeugen daraus sofort interaktive Diagramme („Orders processed by location as a bar chart“), die sie anpassen und speichern können – ohne Copilot-Studio-Lizenz oder Konfiguration.",
+    "source": {
+      "title": "Configure charts overview",
+      "url": "https://learn.microsoft.com/en-us/training/modules/configure-model-driven-apps-customer-engagement-apps/08-configure-charts"
+    }
+  },
+  {
+    "id": "dlp",
+    "term": "data loss prevention",
+    "aliases": [
+      "DLP",
+      "DLP policy",
+      "DLP policies",
+      "data loss prevention policy"
+    ],
+    "definition": "Richtlinien, die Umgebungs- bzw. Tenant-Admins im Power Platform admin center setzen, um festzulegen, welche Connectors gemeinsam in Apps und Flows genutzt werden dürfen (z. B. Geschäftsdaten nicht in soziale Netzwerke). Gehört zu den Aufgaben der Environment-Admin-Rolle.",
+    "source": {
+      "title": "Understand environment roles",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-security-roles/2-roles"
+    }
+  },
+  {
+    "id": "data-source",
+    "term": "data source",
+    "aliases": [
+      "data sources",
+      "DataSource property",
+      "DataSource"
+    ],
+    "definition": "Die Tabelle oder der Dienst, aus dem eine Canvas-App liest und in den sie schreibt – SharePoint-Listen, Excel-Tabellen (OneDrive), Dataverse, SQL oder hunderte Connectors. Die Wahl beeinflusst Volumen, Beziehungen, Delegation, Lizenz (Dataverse/SQL sind Premium) und Copilot-Funktionen. Formulare referenzieren sie in der DataSource-Eigenschaft.",
+    "source": {
+      "title": "Power Apps data sources",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps/4-powerapps-ways-to-build"
+    }
+  },
+  {
+    "id": "dataverse",
+    "term": "Dataverse",
+    "aliases": [
+      "Microsoft Dataverse"
+    ],
+    "definition": "Die Cloud-Datenplattform der Power Platform und deren einheitliche Datenschicht: Daten liegen in Tabellen mit Metadaten, Beziehungen, Sicherheitsrollen, Geschäftsregeln und Auditing. Apps, Flows und Agenten greifen auf dieselben Tabellen zu; KI-Funktionen (Agenten, Prompts, Vorschläge) sind darin verankert.",
+    "source": {
+      "title": "Explore the AI-first Power Platform",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/2-explore-ai-first-power-platform"
+    }
+  },
+  {
+    "id": "dataverse-connector",
+    "term": "Dataverse connector",
+    "aliases": [
+      "Microsoft Dataverse connector",
+      "from selected environment",
+      "current environment"
+    ],
+    "definition": "Premium-Connector, mit dem Cloud-Flows auf Dataverse-Ereignisse reagieren und Zeilen abfragen, anlegen, ändern, löschen oder verknüpfen. Verbindung wahlweise zur aktuellen Umgebung (empfohlen – der Flow passt sich beim Deployment über Dev/Test/Prod an) oder per „…from selected environment“-Aktionen zu einer bestimmten anderen Umgebung (z. B. Integration zweier Umgebungen). Schritte sollten sprechend umbenannt werden.",
+    "source": {
+      "title": "Introduction",
+      "url": "https://learn.microsoft.com/en-us/training/modules/use-dataverse-triggers-actions/introduction"
+    }
+  },
+  {
+    "id": "date-and-time",
+    "term": "date and time",
+    "aliases": [
+      "date only",
+      "user local",
+      "time zone independent",
+      "time zone adjustment"
+    ],
+    "definition": "Spaltentyp mit zwei Einstellungen: Format (Date and time oder Date only – die verborgene Zeit ist dann 00:00) und Time zone adjustment (User local: Anzeige in der Zeitzone des Nutzers; Time zone independent: der Wert wird unverändert angezeigt, z. B. für Geburtstage).",
+    "source": {
+      "title": "Column types in Microsoft Dataverse",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-manage-fields-within-entity/2-field-types"
+    }
+  },
+  {
+    "id": "decimal",
+    "term": "decimal",
+    "aliases": [
+      "decimal number"
+    ],
+    "definition": "Zahlentyp mit bis zu 10 Nachkommastellen, der exakt so gespeichert wird, wie er eingegeben wurde (Standardbereich ±100 Milliarden). Vorzuziehen gegenüber Float, wenn Genauigkeit zählt oder berechnete Spalten den Wert nutzen sollen.",
+    "source": {
+      "title": "Column types in Microsoft Dataverse",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-manage-fields-within-entity/2-field-types"
+    }
+  },
+  {
+    "id": "delay-until",
+    "term": "Delay until",
+    "aliases": [
+      "delay until"
+    ],
+    "definition": "Erweiterte Trigger-Option des Dataverse-Triggers: verzögert die Trigger-Auswertung per OData-Zeitstempel bis zu einer UTC-Zeit. Anders als die Delay-until-Aktion läuft die Trigger-Eigenschaft nie ab und erlaubt sehr lange Wartezeiten.",
+    "source": {
+      "title": "Dataverse triggers",
+      "url": "https://learn.microsoft.com/en-us/training/modules/use-dataverse-triggers-actions/triggers"
+    }
+  },
+  {
+    "id": "delegation",
+    "term": "delegation",
+    "aliases": [
+      "delegation limit",
+      "delegable",
+      "non-delegable",
+      "server-side filtering"
+    ],
+    "definition": "Serverseitiges Filtern und Sortieren großer Datenmengen durch die Datenquelle statt in der App. Quellen und Funktionen unterstützen Delegation unterschiedlich; nicht delegierbare Abfragen (z. B. bei SharePoint über dem Delegationslimit) liefern unvollständige Ergebnisse, erkennbar am Warnsymbol in der App.",
+    "source": {
+      "title": "Power Apps data sources",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps/4-powerapps-ways-to-build"
+    }
+  },
+  {
+    "id": "design-studio",
+    "term": "design studio",
+    "aliases": [
+      "Power Pages design studio",
+      "Pages workspace",
+      "Styling workspace",
+      "Data workspace",
+      "Set up workspace",
+      "Security workspace",
+      "workspace"
+    ],
+    "definition": "Die Maker-Oberfläche von Power Pages, gegliedert in Workspaces: Pages (Seiten und Navigation), Styling (Theme, Branding, CSS), Data (Dataverse-Tabellen), Set up (Site-Einstellungen, Go-live, PWA, Agenten) und Security (Web Roles, Seiten-/Tabellenrechte, WAF, Identitätsanbieter, Sichtbarkeit). Erweiterte Konfiguration übernimmt die Portal Management app.",
+    "source": {
+      "title": "Introduction to Power Pages design studio",
+      "url": "https://learn.microsoft.com/en-us/training/modules/power-pages-studio/design-studio"
+    }
+  },
+  {
+    "id": "desktop-flow",
+    "term": "desktop flow",
+    "aliases": [
+      "desktop flows",
+      "RPA"
+    ],
+    "definition": "Power-Automate-Flow, der Anwendungen ohne API auf dem Desktop per Robotic Process Automation steuert (Klicks, Eingaben). Ergänzt Cloud-Flows für Legacy-Systeme; erfordert eine volle Dataverse-Umgebung und Desktop-Flow-Lizenzen.",
+    "source": {
+      "title": "Recommend Power Platform components for business solutions",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/3-recommend-power-platform-components"
+    }
+  },
+  {
+    "id": "display-controls",
+    "term": "display control",
+    "aliases": [
+      "display controls",
+      "Calendar control",
+      "External website",
+      "iframe",
+      "iframes",
+      "IFrame",
+      "Knowledge search",
+      "embedded canvas app"
+    ],
+    "definition": "Formularkomponenten modellgesteuerter Apps, die Informationen zeigen, die nicht direkt an eine Spalte gebunden sind: Calendar (geplante Aktivitäten), External website/iframe (fremde Webseite per URL), Web resource (HTML-Seite, Bild), eingebettete Canvas-App (Daten anderer Quellen neben dem Formularkontext), Knowledge search (braucht Dynamics 365 Customer Service), Quick view und Timeline.",
+    "source": {
+      "title": "Use specialized form components",
+      "url": "https://learn.microsoft.com/en-us/training/modules/configure-model-driven-apps-customer-engagement-apps/04-specialized-form-components"
+    }
+  },
+  {
+    "id": "document-processing",
+    "term": "document processing",
+    "aliases": [
+      "document processing model",
+      "document intelligence"
+    ],
+    "definition": "AI-Builder-Modelltyp für unstrukturierte Dokumente (Rechnungen, Belege, Formulare, Bilder): extrahiert automatisch die relevanten Felder – unabhängig vom Format (PDF, Scan). Typischerweise kombiniert mit Power Automate (Routing/Genehmigung) und Dataverse (Ablage).",
+    "source": {
+      "title": "Recommend Power Platform components for business solutions",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/3-recommend-power-platform-components"
+    }
+  },
+  {
+    "id": "document-processing-agent",
+    "term": "Document Processing Agent",
+    "definition": "Vorgefertigter Agent in Copilot Studio, der eingehende Dokumente überwacht, gegen definierte Regeln validiert und den Routing-Workflow steuert. Er liefert die Orchestrierungsschicht, die man sonst aus AI Builder plus Power Automate selbst bauen müsste; konfiguriert werden nur Dokumenttypen und Validierungsregeln.",
+    "source": {
+      "title": "Map business processes to AI-first solution patterns",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/4-map-business-processes-ai-first-patterns"
+    }
+  },
+  {
+    "id": "dual-write",
+    "term": "dual-write",
+    "aliases": [
+      "dual write"
+    ],
+    "definition": "Eingebaute, eng gekoppelte bidirektionale Integration zwischen Finance-and-Operations-Apps und Dataverse mit nahezu Echtzeit-Synchronisation: Änderungen werden in beide Richtungen repliziert. Wählen, wenn Offline-Fähigkeit oder ein replizierter Datensatz nötig ist; virtuelle Tabellen dagegen greifen ohne Kopie direkt zu.",
+    "source": {
+      "title": "Dual-write vs. virtual tables",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps-common-data-service/2b-dual-write-vs-virtual-table"
+    }
+  },
+  {
+    "id": "duplicate-detection-flow",
+    "term": "duplicate detection",
+    "aliases": [
+      "duplicate check",
+      "duplicate contacts",
+      "duplicate records",
+      "duplicate rows",
+      "duplicate data"
+    ],
+    "definition": "Muster zum Vermeiden doppelter Datensätze per Flow: Trigger „When a row is added“ → List rows mit Filter auf die E-Mail der neuen Zeile → Condition length(body('List_rows')?['value']) is equal to 1 → im True-Zweig Update a row (Status Active); bei mehr Treffern bleibt der Status New zur manuellen Prüfung. Auf Datenebene erzwingt ein alternate key Eindeutigkeit bereits beim Speichern.",
+    "source": {
+      "title": "Exercise - Create a cloud flow with a Dataverse connector",
+      "url": "https://learn.microsoft.com/en-us/training/modules/use-dataverse-triggers-actions/exercise"
+    }
+  },
+  {
+    "id": "dynamic-content",
+    "term": "dynamic content",
+    "aliases": [
+      "Dynamic Content",
+      "Link to item",
+      "Identifier"
+    ],
+    "definition": "Ausgabewerte vorheriger Trigger und Aktionen, die in spätere Flow-Schritte eingefügt werden (Blitz-Symbol): z. B. „Link to item“ aus dem SharePoint-Trigger im Feld Item Link der Genehmigung, „Identifier“ für „Move file“ oder „Outcome“ der Genehmigung in der Bedingung.",
+    "source": {
+      "title": "Build an approval request",
+      "url": "https://learn.microsoft.com/en-us/training/modules/build-approval-flows/2-create-approval-request"
+    }
+  },
+  {
+    "id": "edit-form",
+    "term": "edit form",
+    "aliases": [
+      "form control",
+      "Edit form control",
+      "display form",
+      "Form1"
+    ],
+    "definition": "Canvas-App-Steuerelement zum Anzeigen, Anlegen und Bearbeiten eines Datensatzes. Wichtigste Eigenschaften: DataSource (Tabelle, in die geschrieben wird) und Item (der angezeigte Datensatz, z. B. Gallery1.Selected). Gespeichert wird per SubmitForm(); danach feuern OnSuccess bzw. OnFailure.",
+    "source": {
+      "title": "Explore controls and screens in canvas apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/2-explore-screens-and-controls"
+    }
+  },
+  {
+    "id": "embedded-power-bi",
+    "term": "embedded Power BI",
+    "aliases": [
+      "Power BI tile",
+      "Power BI tiles",
+      "Power BI dashboard",
+      "Power BI report",
+      "Power BI"
+    ],
+    "definition": "Power-BI-Kacheln und -Dashboards, die in modellgesteuerte Apps eingebettet werden, um Business-Intelligence-Auswertungen direkt in der App anzuzeigen. Power BI ist der cloudbasierte Analysedienst der Power Platform; Plans schlagen Power-BI-Dashboards vor, erzeugen sie aber nicht mit Plan-Kontext.",
+    "source": {
+      "title": "Components of model-driven apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-model-driven-apps-in-powerapps/2-building-blocks-of-model-driven-apps"
+    }
+  },
+  {
+    "id": "environment",
+    "term": "environment",
+    "aliases": [
+      "environments",
+      "default environment",
+      "production environment",
+      "sandbox environment",
+      "developer environment",
+      "trial environment"
+    ],
+    "definition": "Container für Apps, Flows, Daten und Sicherheitsrollen in der Power Platform, meist je Zweck (Entwicklung, Test, Produktion) getrennt; Lösungen werden zwischen Umgebungen transportiert. Erst mit Dataverse-Datenbank gibt es Dataverse-Sicherheitsrollen. Neue Power-Apps-Nutzer werden automatisch Maker der Standardumgebung; Gateways gibt es nur dort.",
+    "source": {
+      "title": "Understand environment roles",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-security-roles/2-roles"
+    }
+  },
+  {
+    "id": "environment-admin",
+    "term": "Environment Admin",
+    "aliases": [
+      "environment administrator"
+    ],
+    "definition": "Umgebungsrolle für Umgebungen ohne Dataverse-Datenbank: Nutzer zu Admin/Maker-Rollen hinzufügen, Dataverse-Datenbank bereitstellen, alle Ressourcen verwalten, DLP-Richtlinien setzen. Sobald eine Dataverse-Datenbank existiert, ist für volle Adminrechte die Rolle System Administrator zuzuweisen.",
+    "source": {
+      "title": "Understand environment roles",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-security-roles/2-roles"
+    }
+  },
+  {
+    "id": "environment-maker",
+    "term": "Environment Maker",
+    "definition": "Umgebungsrolle, die Ressourcen erstellen darf: Apps, Verbindungen, Custom Connectors, Gateways, Flows – und die eigenen Apps teilen. Sie hat keinerlei Privilegien auf die Daten in Dataverse; wer Tabellen anlegen oder Daten lesen soll, braucht zusätzlich System Customizer bzw. eine Datenrolle. Wer einer Umgebung hinzugefügt wird, erhält die Rolle automatisch.",
+    "source": {
+      "title": "Understand environment roles",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-security-roles/2-roles"
+    }
+  },
+  {
+    "id": "form-event-handler",
+    "term": "event handler",
+    "aliases": [
+      "event handlers",
+      "form event handler",
+      "form event handlers",
+      "OnLoad",
+      "OnSave",
+      "OnChange",
+      "form script",
+      "form scripts",
+      "web resource",
+      "web resources",
+      "form libraries",
+      "JavaScript web resource"
+    ],
+    "definition": "Entwicklerlogik, die bei Formularereignissen läuft: Form OnLoad/OnSave, Tab TabStateChange, Column OnChange, IFrame OnReadyStateComplete. Ein Handler verweist auf eine JavaScript-Web-Resource (Bibliothek, zuvor unter Form libraries hinzugefügt) und eine Funktion darin; bis zu 50 Handler je Element. Für Sichtbarkeit und Validierung sind Geschäftsregeln die codefreie Alternative; Skripte gelten nicht in allen Darstellungen.",
+    "source": {
+      "title": "Form elements",
+      "url": "https://learn.microsoft.com/en-us/training/modules/configure-model-driven-apps-customer-engagement-apps/02-forms-elements"
+    }
+  },
+  {
+    "id": "excel-data-source",
+    "term": "Excel",
+    "aliases": [
+      "Excel table",
+      "Excel Online (Business)",
+      "OneDrive"
+    ],
+    "definition": "Nicht-Premium-Datenquelle für Lern- und Kleinszenarien: Die Daten müssen als Tabelle formatiert und z. B. in OneDrive liegen; Bildspalten brauchen den Zusatz „[image]“. Ist die Datei bei jemandem geöffnet, können Lese-/Schreibzugriffe blockiert sein – für Mehrbenutzer-Apps ungeeignet. Alternativ lässt sich Excel nach SharePoint oder Dataverse importieren.",
+    "source": {
+      "title": "Power Apps data sources",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps/4-powerapps-ways-to-build"
+    }
+  },
+  {
+    "id": "expand-query",
+    "term": "Expand Query",
+    "aliases": [
+      "expand query",
+      "$select",
+      "$expand"
+    ],
+    "definition": "Erweiterte OData-Option der Abfrageaktionen, um Spalten verknüpfter Tabellen mitzuladen, z. B. primarycontactid($select=contactid,fullname). Die Daten stehen im Output, erscheinen aber nicht im Dynamic-Content-Bereich – Zugriff per Workflow-Ausdruck.",
+    "source": {
+      "title": "Query data",
+      "url": "https://learn.microsoft.com/en-us/training/modules/use-dataverse-triggers-actions/query-data"
+    }
+  },
+  {
+    "id": "workflow-expression",
+    "term": "workflow expression",
+    "aliases": [
+      "expression editor",
+      "length(",
+      "body(",
+      "triggerBody("
+    ],
+    "definition": "Funktionen der Ausdruckssprache in Power Automate (fx-Symbol), um Werte zu berechnen, die dynamischer Inhalt nicht direkt liefert – z. B. length(body('List_rows')?['value']) für die Trefferzahl einer Abfrage (Duplikatprüfung), triggerBody()?['SdkMessage'] für den Änderungstyp oder null zum Leeren einer Spalte.",
+    "source": {
+      "title": "Exercise - Create a cloud flow with a Dataverse connector",
+      "url": "https://learn.microsoft.com/en-us/training/modules/use-dataverse-triggers-actions/exercise"
+    }
+  },
+  {
+    "id": "fetchxml",
+    "term": "FetchXML",
+    "definition": "Proprietäre XML-Abfragesprache von Dataverse als Alternative zu OData in List rows: fetch/entity/attribute/order/filter/link-entity decken Select columns, Sort by, Expand Query und Filter rows ab. Lässt sich mit Advanced Find in einer modellgesteuerten App zusammenklicken und herunterladen. Aggregationsabfragen werden in List rows mit FetchXML nicht unterstützt.",
+    "source": {
+      "title": "Query data",
+      "url": "https://learn.microsoft.com/en-us/training/modules/use-dataverse-triggers-actions/query-data"
+    }
+  },
+  {
+    "id": "file-image-column",
+    "term": "file column",
+    "aliases": [
+      "image column",
+      "file data type",
+      "image data type",
+      "primary image"
+    ],
+    "definition": "File speichert Dateien bis zu einer konfigurierbaren Maximalgröße (Standard 32.768 KB, Bereich 1–131.072 KB). Image zeigt ein Bild je Datensatz (Standard 10.240 KB, max. 30.720 KB); eine Image-Spalte kann als primäres Bild oben links im Formular erscheinen. Beide sind als Prompt-Eingabespalten nicht nutzbar.",
+    "source": {
+      "title": "Column types in Microsoft Dataverse",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-manage-fields-within-entity/2-field-types"
+    }
+  },
+  {
+    "id": "filter",
+    "term": "Filter function",
+    "aliases": [
+      "Filter(",
+      "Filter()"
+    ],
+    "definition": "Power-Fx-Funktion Filter(DataSource, Condition), die nur die Datensätze zurückgibt, die eine Bedingung erfüllen – typischerweise in der Items-Eigenschaft einer Galerie, z. B. Filter('Coffee Machines', Type = \"Espresso\" || Type = \"Commercial\"). Bei großen Quellen ist zu prüfen, ob die Bedingung delegierbar ist.",
+    "source": {
+      "title": "Work with Power Fx formulas in canvas apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/power-fx-formulas"
+    }
+  },
+  {
+    "id": "filter-rows",
+    "term": "Filter rows",
+    "aliases": [
+      "filter rows",
+      "OData",
+      "OData expression",
+      "OData filter",
+      "eq",
+      "gt",
+      "lt",
+      "contains()"
+    ],
+    "definition": "OData-Ausdruck, der Zeilen einschränkt – im Trigger (Flow läuft nur, wenn der Ausdruck nach dem Speichern true ist, z. B. contoso_amountoverbudget gt 10000; effizienter als eine spätere Condition) und in List rows (firstname eq 'John', contains(firstname,'John'), revenue lt 100000 and revenue gt 2000, Klammern, Filter über Beziehungen wie primarycontactid/fullname eq 'Susanna'). Es werden logische Spaltennamen verwendet.",
+    "source": {
+      "title": "Query data",
+      "url": "https://learn.microsoft.com/en-us/training/modules/use-dataverse-triggers-actions/query-data"
+    }
+  },
+  {
+    "id": "float",
+    "term": "float",
+    "aliases": [
+      "floating point number",
+      "floating point"
+    ],
+    "definition": "Gleitkommazahl mit bis zu fünf Nachkommastellen, die nur eine Näherung des Werts speichert. Nur wenn nötig verwenden: Mehrere Dataverse-Funktionen wie berechnete Spalten unterstützen Float nicht.",
+    "source": {
+      "title": "Column types in Microsoft Dataverse",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-manage-fields-within-entity/2-field-types"
+    }
+  },
+  {
+    "id": "form",
+    "term": "form",
+    "aliases": [
+      "forms"
+    ],
+    "definition": "Definierte Menge von Eingabespalten einer Tabelle, mit der Nutzer modellgesteuerter Apps Zeilen anzeigen und bearbeiten. Formulartypen: Main (vollständiges Bearbeiten), Quick Create (schnelles Anlegen in einem Dialog), Quick View (Daten eines verknüpften Datensatzes schreibgeschützt einblenden) und Card. Mehrere Hauptformulare je Tabelle lassen sich nach Sicherheitsrolle und Form order steuern.",
+    "source": {
+      "title": "Components of model-driven apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-model-driven-apps-in-powerapps/2-building-blocks-of-model-driven-apps"
+    }
+  },
+  {
+    "id": "form-designer",
+    "term": "form designer",
+    "aliases": [
+      "Form designer",
+      "form editor",
+      "Table columns pane"
+    ],
+    "definition": "Editor für Formulare modellgesteuerter Apps: Canvas in der Mitte, Tabellenspalten links (nur ungenutzte oder alle), Eigenschaften rechts. Spalten werden zu Feldern; nicht benötigte Felder lassen sich entfernen oder verbergen, ohne Daten zu beeinflussen. Über Components werden Layout-, Grid-, Anzeige- und Eingabesteuerelemente hinzugefügt – je Formfaktor (Web, Tablet, Phone) unterschiedlich.",
+    "source": {
+      "title": "Form elements",
+      "url": "https://learn.microsoft.com/en-us/training/modules/configure-model-driven-apps-customer-engagement-apps/02-forms-elements"
+    }
+  },
+  {
+    "id": "form-fill-assistance",
+    "term": "form fill assistance",
+    "aliases": [
+      "Allow form fill assistance"
+    ],
+    "definition": "Spalteneinstellung (Vorschau): Ist sie aktiv, schlägt Copilot in Formularen modellgesteuerter Apps KI-generierte Werte für diese Spalte vor. Für Spalten mit sensiblen Daten deaktivieren.",
+    "source": {
+      "title": "Add a column to a table",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-manage-fields-within-entity/3-add-field"
+    }
+  },
+  {
+    "id": "form-settings",
+    "term": "form settings",
+    "aliases": [
+      "Form settings",
+      "form order",
+      "Form order",
+      "fallback form",
+      "fallback forms",
+      "form selector"
+    ],
+    "definition": "Einstellungen zur Steuerung, welches Formular ein Nutzer sieht: Sicherheitsrollen je Formular (Everyone oder bestimmte Rollen), Form order (Reihenfolge innerhalb der erlaubten Formulare – das erste ist der Standard) und Fallback forms (Hauptformular für Nutzer, deren Rolle zu keinem rollenspezifischen Formular passt; nur für Main-Formulare). Bei mehreren erlaubten Formularen erscheint ein Formularwähler; ein Hauptformular kann inaktiv gesetzt werden. Formularzugriff ist kein Datenschutz – Daten bleiben über Advanced Find erreichbar.",
+    "source": {
+      "title": "Configure multiple forms",
+      "url": "https://learn.microsoft.com/en-us/training/modules/configure-model-driven-apps-customer-engagement-apps/03-configure-multiple-forms"
+    }
+  },
+  {
+    "id": "formula-column",
+    "term": "formula column",
+    "aliases": [
+      "formula columns",
+      "formula data type",
+      "calculated column",
+      "calculated columns"
+    ],
+    "definition": "Schreibgeschützte Spalte, deren Wert per Power-Fx-Formel (Excel-ähnliche Syntax) aus anderen Spalten derselben Zeile berechnet wird, z. B. Decimal('Contract Amount') * (Probability / 100). Formelspalten können nicht als Eingabe für Prompt-Spalten dienen.",
+    "source": {
+      "title": "Column types in Microsoft Dataverse",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-manage-fields-within-entity/2-field-types"
+    }
+  },
+  {
+    "id": "gallery",
+    "term": "gallery",
+    "aliases": [
+      "galleries",
+      "gallery control",
+      "vertical gallery",
+      "BrowseGallery"
+    ],
+    "definition": "Canvas-App-Steuerelement, das als Layout-Container eine Menge von Datensätzen aus einer Datenquelle wiederholt darstellt (Items-Eigenschaft). Innerhalb der Galerie verweist ThisItem auf den jeweiligen Datensatz; Gallery1.Selected liefert den vom Nutzer ausgewählten Datensatz, ThisItem.IsSelected ist nur für diesen true.",
+    "source": {
+      "title": "Explore controls and screens in canvas apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/2-explore-screens-and-controls"
+    }
+  },
+  {
+    "id": "generative-actions",
+    "term": "generative actions",
+    "definition": "Funktion in Power Automate für komplexe Szenarien: Der Flow entscheidet zur Laufzeit dynamisch, welche Plugins bzw. Aktionen aufgerufen werden, statt dass jeder Zweig fest im Designer verdrahtet ist.",
+    "source": {
+      "title": "Explore the AI-first Power Platform",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/2-explore-ai-first-power-platform"
+    }
+  },
+  {
+    "id": "generative-ai-search",
+    "term": "Generative AI Search",
+    "aliases": [
+      "search component",
+      "site search with generative AI",
+      "AI summary"
+    ],
+    "definition": "Power-Pages-Suche in natürlicher Sprache mit KI-generierter Zusammenfassung der Treffer (Search-Komponente; erfordert aktivierte Generative AI Search). Verwandt: AI summary und natural language search in Listenkomponenten, die Listendaten zusammenfassen, visualisieren und per Konversation filtern.",
+    "source": {
+      "title": "Page components",
+      "url": "https://learn.microsoft.com/en-us/training/modules/power-pages-studio/components"
+    }
+  },
+  {
+    "id": "generative-answers",
+    "term": "generative answers",
+    "aliases": [
+      "generative AI",
+      "Generative (preview)",
+      "generative orchestration"
+    ],
+    "definition": "Fähigkeit eines Copilot-Studio-Agenten, Antworten automatisch aus verknüpften Wissensquellen (Site-Inhalt, Dataverse-Tabellen, Bing) zu generieren, statt jeden Fall als Topic zu modellieren. Wird in den Agenteneinstellungen unter Generative AI aktiviert; der Power-Pages-Site-Agent wird damit standardmäßig angelegt.",
+    "source": {
+      "title": "Use a grounded prompt in a custom copilot",
+      "url": "https://learn.microsoft.com/en-us/training/modules/ai-builder-grounded-prompts/use-grounded-prompt-custom-copilot"
+    }
+  },
+  {
+    "id": "generative-page",
+    "term": "generative page",
+    "aliases": [
+      "generative pages",
+      "Describe a page"
+    ],
+    "definition": "KI-generierte, React-basierte Seite in einer modellgesteuerten App: Im App Designer („Add a page > Describe a page“) beschreibt man Daten und Layout in natürlicher Sprache (optional mit Skizze/Wireframe und bis zu sechs Dataverse-Tabellen), ein Agent erzeugt den Code, den man per Chat, direkt im Code-Tab oder per Compare-Diff verfeinert. Lösungsfähig; Maker-Erfahrung zunächst nur in US, UK, Australien, Singapur.",
+    "source": {
+      "title": "Build pages with generative AI",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-model-driven-apps-in-powerapps/generative-pages"
+    }
+  },
+  {
+    "id": "get-a-row-by-id",
+    "term": "Get a row by ID",
+    "aliases": [
+      "Get row by ID",
+      "Get a row"
+    ],
+    "definition": "Dataverse-Aktion, die genau eine Zeile anhand ihrer GUID liefert – z. B. den Primärkontakt eines Accounts oder erneut die aktuelle Zeile nach einer längeren Genehmigungspause (gegen veraltete Daten). Unnötig für die auslösende Zeile selbst (steht im Trigger-Output). Scheitert bei null-ID (vorher per Condition prüfen) oder fehlender Leseberechtigung.",
+    "source": {
+      "title": "Query data",
+      "url": "https://learn.microsoft.com/en-us/training/modules/use-dataverse-triggers-actions/query-data"
+    }
+  },
+  {
+    "id": "global-variable",
+    "term": "global variable",
+    "aliases": [
+      "global variables",
+      "Set(",
+      "Set()",
+      "Set function"
+    ],
+    "definition": "Variable mit Gültigkeit in der gesamten App, gesetzt per Set(VariableName, Value), z. B. Set(SelectedMachine, Gallery1.Selected) oder Set(IsEditMode, true). Lebt für die Dauer der App-Sitzung; ideal für Werte, die mehrere Bildschirme teilen (Nutzerrolle, Bearbeitungsmodus). In modellgesteuerten Befehlen nicht unterstützt.",
+    "source": {
+      "title": "Work with Power Fx formulas in canvas apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/power-fx-formulas"
+    }
+  },
+  {
+    "id": "bpf-workflow-step",
+    "term": "Global Workflow",
+    "aliases": [
+      "workflow component",
+      "Workflow component",
+      "stage entry",
+      "stage exit",
+      "Triggered Process",
+      "on-demand workflow"
+    ],
+    "definition": "Automatisierung innerhalb eines Geschäftsprozessflusses: Ein Workflow-Baustein an einer Stage läuft bei Stage entry oder Stage exit (Triggered Process; gleiche Primärtabelle wie die Stage); am Global Workflow läuft er bei Aktivierung oder Archivierung (Completed/Abandoned) des Prozesses. Es muss ein aktiver On-demand-Workflow derselben Tabelle sein; als moderne Alternative gibt es den Power-Automate-Flow-Schritt (Vorschau).",
+    "source": {
+      "title": "Create a business process flow",
+      "url": "https://learn.microsoft.com/en-us/training/modules/build-approval-flows/5-create-business-process-flow"
+    }
+  },
+  {
+    "id": "grounded-prompt",
+    "term": "grounded prompt",
+    "aliases": [
+      "grounded prompts",
+      "data grounding",
+      "grounding",
+      "Add content"
+    ],
+    "definition": "AI-Builder-Prompt, der neben Eingaben (Inputs) direkt Dataverse-Daten als Kontext einbindet („+ Add content > Dataverse“, mit Filter auf den Input und Attributen auch aus verknüpften Tabellen wie Proposal > Issuer > Name). Die Antwort wird so aus den eigenen Daten erzeugt statt aus allgemeinem Modellwissen. Nutzbar in Flows („Create text with GPT using a prompt“), Canvas-Apps (Predict()) und Copilot-Studio-Agenten.",
+    "source": {
+      "title": "Exercise - Create a grounded prompt in AI Builder",
+      "url": "https://learn.microsoft.com/en-us/training/modules/ai-builder-grounded-prompts/create-grounded-prompt"
+    }
+  },
+  {
+    "id": "group-team",
+    "term": "group team",
+    "aliases": [
+      "group teams",
+      "Microsoft Entra ID group team",
+      "Entra ID group team",
+      "Entra group team",
+      "Microsoft Entra group"
+    ],
+    "definition": "Team, das an eine Microsoft-Entra-ID-Gruppe (Security oder Microsoft 365; Mitgliedschaftstyp Assigned oder Dynamic User, nicht Dynamic Device) gebunden ist. Es kann Datensätze besitzen und Sicherheitsrollen tragen; die Mitglieder werden beim Zugriff dynamisch aus der Gruppenmitgliedschaft abgeleitet. Neue Nutzer bekommen so sofort Zugriff, entfernte verlieren ihn beim nächsten Zugriff – ohne manuelle Rollenzuweisung.",
+    "source": {
+      "title": "Configure Dataverse group teams for security",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-security-roles/6b-teams-group"
+    }
+  },
+  {
+    "id": "guid",
+    "term": "GUID",
+    "aliases": [
+      "primary key",
+      "unique identifier"
+    ],
+    "definition": "Globally Unique Identifier – der automatisch erzeugte Primärschlüssel jeder Dataverse-Zeile (z. B. 123e4567-e89b-…). Er trägt den Namen der Tabelle, ist für Menschen nicht sprechend und externen Systemen meist unbekannt; dafür gibt es die primary column (lesbarer Name) und alternate keys.",
+    "source": {
+      "title": "Table characteristics",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps-common-data-service/2-learn-about-entities"
+    }
+  },
+  {
+    "id": "hierarchy-security",
+    "term": "hierarchy security",
+    "aliases": [
+      "hierarchy access",
+      "manager hierarchy"
+    ],
+    "definition": "Optionales Sicherheitsmodell, bei dem Vorgesetzte über die Manager- oder Positionshierarchie Zugriff auf die Datensätze ihrer Untergebenen erhalten. Greift nur, wenn es für Organisation und Tabelle eingeschaltet ist, und ergänzt Rollen, Besitz und Freigaben.",
+    "source": {
+      "title": "Check the roles that a user belongs to",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-security-roles/6-checking"
+    }
+  },
+  {
+    "id": "ai-first-patterns",
+    "term": "human-assisted",
+    "aliases": [
+      "agent-assisted",
+      "fully autonomous",
+      "AI-first pattern",
+      "AI-first patterns"
+    ],
+    "definition": "Die drei AI-first-Prozessmuster: human-assisted (der Mensch entscheidet, KI bereitet vor – Felder extrahiert, Anomalien geprüft), agent-assisted (der Agent erledigt Routine und eskaliert nur Ausnahmen mit Kontext an Menschen) und fully autonomous (vom Trigger bis zum Abschluss ohne menschliche Eingabe; Menschen sehen nur markierte Ausnahmen).",
+    "source": {
+      "title": "Map business processes to AI-first solution patterns",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/4-map-business-processes-ai-first-patterns"
+    }
+  },
+  {
+    "id": "human-in-the-loop",
+    "term": "human-in-the-loop",
+    "aliases": [
+      "human in the loop"
+    ],
+    "definition": "Muster, bei dem ein automatisierter Prozess an definierten Stellen eine menschliche Entscheidung einholt – etwa über die Genehmigungsaktionen von Power Automate für Freigaben, Prüfungen oder Ausnahmen.",
+    "source": {
+      "title": "Recommend Power Platform components for business solutions",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/3-recommend-power-platform-components"
+    }
+  },
+  {
+    "id": "identity-provider",
+    "term": "identity provider",
+    "aliases": [
+      "identity providers",
+      "Microsoft Entra External ID",
+      "Entra External ID",
+      "local login"
+    ],
+    "definition": "Anmeldedienst für Power-Pages-Besucher, konfiguriert im Security-Workspace (Manage). Empfohlen für externe Nutzer ist Microsoft Entra External ID; alternativ andere Anbieter wie LinkedIn oder lokale Anmeldung. Authentifizierte Besucher werden als Kontakte geführt und erhalten Web Roles.",
+    "source": {
+      "title": "Secure your Power Pages site",
+      "url": "https://learn.microsoft.com/en-us/training/modules/power-pages-studio/security"
+    }
+  },
+  {
+    "id": "if-function",
+    "term": "If function",
+    "aliases": [
+      "If(",
+      "IsBlank",
+      "IsBlank("
+    ],
+    "definition": "Power-Fx-Bedingungsfunktion If(Condition, TrueResult, FalseResult), verschachtelbar für mehrere Fälle – z. B. Farben je Typ oder ein Hinweistext, wenn nichts ausgewählt ist: If(IsBlank(Gallery1.Selected), \"Select a machine\", Gallery1.Selected.'Machine Name'). IsBlank() prüft, ob ein Wert leer ist.",
+    "source": {
+      "title": "Work with Power Fx formulas in canvas apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/power-fx-formulas"
+    }
+  },
+  {
+    "id": "iferror",
+    "term": "IfError",
+    "aliases": [
+      "IfError()",
+      "error handling"
+    ],
+    "definition": "Power-Fx-Funktion IfError(Value, FallbackIfError), die eine Formel auswertet und bei einem Fehler (z. B. abgelehnter Patch(), nicht erreichbare Datenquelle) einen Ersatzwert oder eine Aktion wie Notify(…, NotificationType.Error) ausführt – statt die App abstürzen zu lassen.",
+    "source": {
+      "title": "Work with Power Fx formulas in canvas apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/power-fx-formulas"
+    }
+  },
+  {
+    "id": "information-disclosure",
+    "term": "information disclosure",
+    "aliases": [
+      "improper information disclosure"
+    ],
+    "definition": "Risiko bei verzweigten Geschäftsprozessflüssen: Nutzer ohne Zugriff auf eine Tabelle (z. B. Investigation) sehen in der Prozessleiste trotzdem die Namen und Schritte der Stages, die diese Tabelle nutzen, und können daraus Rückschlüsse ziehen (z. B. „Legal Action“). Abhilfe: den Prozess in getrennte Prozesse aufteilen und Ergebnisse per Workflow synchronisieren.",
+    "source": {
+      "title": "Create a business process flow with conditions",
+      "url": "https://learn.microsoft.com/en-us/training/modules/build-approval-flows/6-branching"
+    }
+  },
+  {
+    "id": "input-controls",
+    "term": "input control",
+    "aliases": [
+      "input controls",
+      "Number input",
+      "Pen input",
+      "Rich text editor",
+      "Rich Text Editor Control",
+      "Star rating",
+      "Toggle",
+      "Option set control",
+      "Business card reader"
+    ],
+    "definition": "Formularkomponenten für die Dateneingabe in modellgesteuerten Apps, die das Standard-Steuerelement einer Spalte ersetzen: Checkbox und Toggle (Yes/No), Number input (Plus/Minus in Schritten), Option set (Choice), Pen input (Unterschrift), Rich text editor (formatierter Text), Star rating, Business card reader (Visitenkarte scannen). Beim Einfügen wird eine passende Tabellenspalte und der Formfaktor gewählt.",
+    "source": {
+      "title": "Use specialized form components",
+      "url": "https://learn.microsoft.com/en-us/training/modules/configure-model-driven-apps-customer-engagement-apps/04-specialized-form-components"
+    }
+  },
+  {
+    "id": "dashboard-components",
+    "term": "Insert Chart",
+    "aliases": [
+      "Insert list",
+      "Insert assistant",
+      "Insert IFRAME",
+      "Insert Web Resource",
+      "dashboard editor"
+    ],
+    "definition": "Bausteine beim Zusammenstellen eines Dashboards (Solutions > New > Dashboard, Layout mit Spaltenzahl oder Power BI embedded): Diagramm (Tabelle, Ansicht und Chart wählen), Liste (Ansicht), Assistant (nur eine Kachel), IFrame und Web Resource. Fertige Dashboards werden der App per „+ Add page > Dashboard“ hinzugefügt.",
+    "source": {
+      "title": "Configure charts overview",
+      "url": "https://learn.microsoft.com/en-us/training/modules/configure-model-driven-apps-customer-engagement-apps/08-configure-charts"
+    }
+  },
+  {
+    "id": "prompt-instruction",
+    "term": "prompt instruction",
+    "aliases": [
+      "simple instruction",
+      "complex instruction",
+      "instruction and context"
+    ],
+    "definition": "Der Teil eines Prompts, der die Aufgabe und das Ziel für das Modell benennt (z. B. „Fasse diese E-Mail in drei Stichpunkten zusammen“). Eine simple instruction nennt nur die Aufgabe, eine complex instruction ergänzt konkrete Vorgaben wie Firmenname, zu erwähnende Ereignisse oder Tonalität.",
+    "source": {
+      "title": "Identify the types of prompt instructions",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-prompts-for-generative-ai-training-tools/4-identify-the-types-of-prompt-instructions"
+    }
+  },
+  {
+    "id": "interactive-dashboard",
+    "term": "interactive dashboard",
+    "aliases": [
+      "interactive dashboards",
+      "multi-stream dashboard",
+      "single-stream dashboard",
+      "stream",
+      "streams",
+      "visual filter",
+      "visual filters",
+      "interactive tile",
+      "interactive tiles"
+    ],
+    "definition": "Rollenbasierte Echtzeit-Dashboards modellgesteuerter Apps, auf denen Nutzer direkt handeln können. Multi-stream: beliebig viele Streams (je einer Tabelle/Ansicht) mit visual filters (interaktive Diagramme, die den Inhalt filtern) oben; umschaltbar in eine Tile view mit Zeilenanzahl je Stream. Single-stream: ein Stream mit bereits angewandten Filtern und Kacheln rechts – für kleinere, komplexere Daten. Interaktive Kacheln zeigen aggregierte Zahlen und öffnen per Klick die zugrunde liegenden Zeilen.",
+    "source": {
+      "title": "Configure charts overview",
+      "url": "https://learn.microsoft.com/en-us/training/modules/configure-model-driven-apps-customer-engagement-apps/08-configure-charts"
+    }
+  },
+  {
+    "id": "knowledge-source",
+    "term": "knowledge source",
+    "aliases": [
+      "knowledge sources",
+      "knowledge"
+    ],
+    "definition": "Datenquellen, aus denen ein Copilot-Studio-Agent Antworten generiert (z. B. Dataverse-Tabellen, Dateien, Websites). Beim Erstellen eines Agenten aus einem Plan werden alle vom Plan angelegten Tabellen automatisch als Wissensquellen hinzugefügt.",
+    "source": {
+      "title": "Build and manage your solution",
+      "url": "https://learn.microsoft.com/en-us/training/modules/turn-business-ideas-power-platform-solutions-plans/5-build-manage-solution"
+    }
+  },
+  {
+    "id": "chart-aggregates",
+    "term": "Legend Entries",
+    "aliases": [
+      "Legend Entries (Series)",
+      "Horizontal (Category) Axis Labels",
+      "Count:All",
+      "Count:Non-empty"
+    ],
+    "definition": "Die zwei Definitionen eines Diagramms im Chart-Editor: Legend Entries (Series) nennt die auszuwertende Spalte mit Aggregat – Average, Count:All, Count:Non-empty, Max, Min oder Sum; Horizontal (Category) Axis Labels nennt die Gruppierungsspalte (z. B. Stage). Mit Daten in der Tabelle erscheint sofort eine Vorschau.",
+    "source": {
+      "title": "Configure charts overview",
+      "url": "https://learn.microsoft.com/en-us/training/modules/configure-model-driven-apps-customer-engagement-apps/08-configure-charts"
+    }
+  },
+  {
+    "id": "license",
+    "term": "license",
+    "aliases": [
+      "licenses",
+      "licensing"
+    ],
+    "definition": "Voraussetzung für den Zugriff: Nur Nutzer mit einer Lizenz, die Dataverse erlaubt, lassen sich einer Umgebung hinzufügen. Das Entfernen von Sicherheitsrollen entfernt keine Lizenz – Lizenzen werden im Microsoft 365 admin center verwaltet, Rollen im Power Platform admin center.",
+    "source": {
+      "title": "Adding or disabling an environment user",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-security-roles/3-user"
+    }
+  },
+  {
+    "id": "liquid",
+    "term": "Liquid",
+    "aliases": [
+      "Liquid template",
+      "Liquid templates"
+    ],
+    "definition": "Template-Sprache in Power Pages, mit der dynamische Inhalte serverseitig gerendert werden (z. B. Dataverse-Daten in Seiten einbetten). Teil des Power-Pages-Erweiterungsmodells neben eigenem CSS/JavaScript und der Power Pages Web API.",
+    "source": {
+      "title": "Explore extensibility options in Power Platform",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/5-explore-extensibility-options"
+    }
+  },
+  {
+    "id": "power-pages-list",
+    "term": "list component",
+    "aliases": [
+      "Power Pages list",
+      "Power Pages lists",
+      "data list",
+      "list on the page",
+      "Dataverse list"
+    ],
+    "definition": "Power-Pages-Komponente, die Dataverse-Zeilen auf einer Seite anzeigt – definiert durch eine oder mehrere Tabellenansichten, mit Paginierung, Filterung und Sortierung, optional mit AI summary und natürlichsprachlicher Suche. Ohne passende Tabellenrechte für die Web Role bleibt die Liste leer.",
+    "source": {
+      "title": "Core tools and components of Power Pages",
+      "url": "https://learn.microsoft.com/en-us/training/modules/power-pages-intro/core-components"
+    }
+  },
+  {
+    "id": "list-rows",
+    "term": "List rows",
+    "aliases": [
+      "List rows action",
+      "Row count",
+      "Sort by",
+      "Pagination",
+      "pagination",
+      "5,000 rows"
+    ],
+    "definition": "Dataverse-Aktion, die null bis viele Zeilen nach Kriterien liefert – per OData (Filter rows, Sort by mit asc/desc, Select columns, Expand Query, Row count) oder FetchXML. Standardmäßig max. 5.000 Zeilen ohne Fehler; mit Pagination (Settings) bis 100.000 je Seite, weitere Seiten manuell über das Paging-Token. Row count = 1 genügt für Existenzprüfungen und beschleunigt Tests.",
+    "source": {
+      "title": "Query data",
+      "url": "https://learn.microsoft.com/en-us/training/modules/use-dataverse-triggers-actions/query-data"
+    }
+  },
+  {
+    "id": "lookup-function",
+    "term": "LookUp function",
+    "aliases": [
+      "LookUp("
+    ],
+    "definition": "Power-Fx-Funktion, die den ersten Datensatz einer Tabelle liefert, der eine Bedingung erfüllt – optional reduziert auf eine Spalte: LookUp(Users, Email = User().Email, Role). Nicht zu verwechseln mit der Dataverse-Lookup-Spalte, die eine Beziehung zwischen Tabellen abbildet.",
+    "source": {
+      "title": "Build reusable components and formulas in canvas apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/reusable-components"
+    }
+  },
+  {
+    "id": "lookup-column",
+    "term": "lookup column",
+    "aliases": [
+      "lookup",
+      "lookup columns",
+      "Lookup data type"
+    ],
+    "definition": "Spaltentyp, der auf genau eine Zeile einer anderen Tabelle verweist und damit automatisch eine many-to-one-Beziehung anlegt (z. B. Trick → Pet). Der Sondertyp Customer verweist wahlweise auf Account oder Contact. Faustregel: Lookup auf eine eigene Tabelle statt einer Choice-Spalte mit hunderten Optionen, wenn die Werte eigenständige Datensätze sind.",
+    "source": {
+      "title": "Column types in Microsoft Dataverse",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-manage-fields-within-entity/2-field-types"
+    }
+  },
+  {
+    "id": "form-types",
+    "term": "main form",
+    "aliases": [
+      "Main form",
+      "quick create form",
+      "Quick Create",
+      "quick view form",
+      "Quick View",
+      "card form",
+      "Card form"
+    ],
+    "definition": "Die vier Formulartypen modellgesteuerter Apps: Main (Hauptoberfläche zum Anzeigen/Bearbeiten; responsiv, einmal entwerfen, überall nutzen; AutoSave standardmäßig an), Quick Create (schlankes Anlegen neuer Zeilen aus „+ New“, Lookups oder Subgrids; nur eines aktiv, keine Rollenbindung), Quick View (schreibgeschützte Daten einer per Lookup verknüpften Zeile innerhalb eines anderen Formulars; keine Skripte) und Card (kompakt für Mobilgeräte, über die Read-only-Grid-Steuerung in Ansichten).",
+    "source": {
+      "title": "Configure multiple forms",
+      "url": "https://learn.microsoft.com/en-us/training/modules/configure-model-driven-apps-customer-engagement-apps/03-configure-multiple-forms"
+    }
+  },
+  {
+    "id": "maker",
+    "term": "functional consultant",
+    "aliases": [
+      "pro developer",
+      "pro developers",
+      "citizen developer",
+      "citizen developers"
+    ],
+    "definition": "Rollen rund um Power-Platform-Lösungen: Maker bauen Apps, Flows und Sites low-code; Functional Consultants analysieren Anforderungen und empfehlen die Komponentenkombination; Pro Developers liefern Erweiterungen (Custom Connectors, Plug-ins, PCF), die Maker dann ohne Code nutzen.",
+    "source": {
+      "title": "Explore extensibility options in Power Platform",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/5-explore-extensibility-options"
+    }
+  },
+  {
+    "id": "managed-agent",
+    "term": "managed agent",
+    "aliases": [
+      "managed agents",
+      "add-on",
+      "add-ons"
+    ],
+    "definition": "Fertige, von Microsoft bereitgestellte Agentenlösungen für häufige Geschäftsszenarien, installierbar über die Create-Seite in Copilot Studio – mit vorgefertigten Wissensverbindungen, Flows und Fähigkeiten. Mit add-ons (Paketen domänenspezifischer Skills und Verbindungen) werden sie an die Organisation angepasst.",
+    "source": {
+      "title": "Map business processes to AI-first solution patterns",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/4-map-business-processes-ai-first-patterns"
+    }
+  },
+  {
+    "id": "many-to-many",
+    "term": "many-to-many",
+    "aliases": [
+      "N:N",
+      "intersect table"
+    ],
+    "definition": "Beziehungstyp, bei dem viele Zeilen mit vielen anderen verknüpft sind – die Zeilen sind Peers ohne Eltern-Kind-Hierarchie. Dataverse verwaltet sie über eine verborgene Intersect-Tabelle, die keine eigenen Spalten oder Formulare erlaubt; Rollup-Spalten können N:N-Beziehungen nicht auswerten.",
+    "source": {
+      "title": "Table relationships",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps-common-data-service/learn-about-relationships"
+    }
+  },
+  {
+    "id": "mcp",
+    "term": "MCP",
+    "aliases": [
+      "Model Context Protocol",
+      "MCP server",
+      "MCP tools"
+    ],
+    "definition": "Model Context Protocol: ein Standard, über den Copilot-Studio-Agenten jeden MCP-kompatiblen Dienst als Tool anbinden können – ein aufkommendes Muster für Agentenszenarien mit KI-fähigen externen Diensten.",
+    "source": {
+      "title": "Explore extensibility options in Power Platform",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/5-explore-extensibility-options"
+    }
+  },
+  {
+    "id": "members-privilege-inheritance",
+    "term": "member's privilege inheritance",
+    "aliases": [
+      "privilege inheritance",
+      "team privileges only",
+      "direct user (basic) access level"
+    ],
+    "definition": "Eigenschaft einer Sicherheitsrolle, die bei Zuweisung an ein Team festlegt, ob Mitglieder die Rechte so erhalten, als wäre die Rolle ihnen direkt zugewiesen (User/Basic-Ebene: Mitglieder können eigene Datensätze erstellen und besitzen) oder ob nur Team-Privilegien gelten. Ohne Vererbung braucht jedes Mitglied für eigene Datensätze zusätzlich eine eigene Rolle.",
+    "source": {
+      "title": "Configure Dataverse group teams for security",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-security-roles/6b-teams-group"
+    }
+  },
+  {
+    "id": "metadata",
+    "term": "metadata",
+    "aliases": [
+      "metadata-driven"
+    ],
+    "definition": "„Daten über Daten“: die Definition der Datenstruktur (Tabellen, Spalten, Typen, Beziehungen) in Dataverse. Modellgesteuerte Apps sind metadatengetrieben – ihr Design ergibt sich aus dem Datenmodell, sodass Anpassungen ohne Code möglich sind. Ein Spaltentyp kann nachträglich nicht geändert werden (Löschen und Neuanlegen kostet die Daten).",
+    "source": {
+      "title": "Design model-driven apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-model-driven-apps-in-powerapps/2b-design-apps"
+    }
+  },
+  {
+    "id": "agents-sdk",
+    "term": "Microsoft 365 Agents SDK",
+    "aliases": [
+      "Agents SDK"
+    ],
+    "definition": "Pro-Code-Framework für Agenten, die volle Kontrolle über Orchestrierung und Modellauswahl brauchen. Die so gebauten Agenten sind trotzdem über Copilot Studio bereitstellbar und über dieselben Kanäle erreichbar.",
+    "source": {
+      "title": "Explore extensibility options in Power Platform",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/5-explore-extensibility-options"
+    }
+  },
+  {
+    "id": "m365-copilot-canvas",
+    "term": "Microsoft 365 Copilot in canvas apps",
+    "aliases": [
+      "Copilot component",
+      "Copilot button"
+    ],
+    "definition": "Auf App-Ebene (Settings > Upcoming features > Preview > Copilot component) aktivierter KI-Assistent: Nutzer öffnen über einen Copilot-Button einen Chatbereich und stellen Fragen zu den Dataverse-/SharePoint-Daten der App – ohne dass der Maker ein Steuerelement platziert. Muss vom Admin je Umgebung erlaubt sein; AI-Builder-Prompts sind dagegen vom Maker gesteuerte KI-Aufrufe aus Formeln oder Flows mit frei platzierbarer Ausgabe.",
+    "source": {
+      "title": "Explore controls and screens in canvas apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/2-explore-screens-and-controls"
+    }
+  },
+  {
+    "id": "microsoft-entra-id",
+    "term": "Microsoft Entra ID",
+    "aliases": [
+      "Entra ID",
+      "Azure AD",
+      "Entra security group",
+      "security group",
+      "security groups",
+      "Microsoft 365 group"
+    ],
+    "definition": "Der Identitätsdienst von Microsoft (früher Azure AD). In der Power Platform relevant für Nutzerkonten und Lizenzen, Sicherheits- und Microsoft-365-Gruppen (App-Freigabe, Gruppenteams in Dataverse, Umgebungszugriff), OAuth-/Service-Principal-Verbindungen und die Registrierung von Anwendungen; Microsoft Entra External ID ist die Variante für externe Power-Pages-Nutzer.",
+    "source": {
+      "title": "Configure Dataverse group teams for security",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-security-roles/6b-teams-group"
+    }
+  },
+  {
+    "id": "privacy-misc-privileges",
+    "term": "miscellaneous privileges",
+    "aliases": [
+      "privacy related privileges",
+      "Export to Excel",
+      "Bulk Edit",
+      "Merge",
+      "View Audit History"
+    ],
+    "definition": "Nicht tabellenbezogene Rechte in einer Sicherheitsrolle: Privacy-Privilegien steuern Funktionen wie Export to Excel; Miscellaneous-Privilegien Aktionen wie Bulk Edit, Merge, Export/Import Customizations oder View Audit History. Meist nur mit den Ebenen None oder Organization.",
+    "source": {
+      "title": "Understand user security roles and security role defaults",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-security-roles/4a-security-role"
+    }
+  },
+  {
+    "id": "mockup",
+    "term": "mockup",
+    "aliases": [
+      "mockups",
+      "prototype"
+    ],
+    "definition": "Frühe Skizze der Benutzeroberfläche (Visio, PowerPoint, Papier oder eine leere Canvas-App), um Designentscheidungen vor dem Bau zu validieren. Elemente eines genehmigten Power-Apps-Prototyps können in der finalen App wiederverwendet werden.",
+    "source": {
+      "title": "Designing a Power Apps app",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps/4-5-design-app"
+    }
+  },
+  {
+    "id": "model-driven-app",
+    "term": "model-driven app",
+    "aliases": [
+      "model-driven apps",
+      "model driven app"
+    ],
+    "definition": "Power-Apps-Typ, der aus dem Dataverse-Datenmodell generiert wird: Tabellen, Formulare, Ansichten und Geschäftsprozessflüsse bestimmen die Oberfläche, nicht ein frei gestaltetes Layout. Ideal für datenintensive Szenarien mit verknüpften Datensätzen (z. B. Fallmanagement); setzt Dataverse zwingend voraus.",
+    "source": {
+      "title": "Recommend Power Platform components for business solutions",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/3-recommend-power-platform-components"
+    }
+  },
+  {
+    "id": "multistep-form",
+    "term": "multistep form",
+    "aliases": [
+      "multistep forms",
+      "multi-step form",
+      "advanced form"
+    ],
+    "definition": "Power-Pages-Formularkomponente, die die Dateneingabe über mehrere Schritte/Seiten führt (z. B. Antrag in drei Etappen), optional mit Bedingungen und Copilot-Erstellung aus einer Beschreibung. Basis ist wie beim einfachen Formular eine Dataverse-Tabelle; sichtbar und beschreibbar nur mit passenden Tabellenrechten.",
+    "source": {
+      "title": "Page components",
+      "url": "https://learn.microsoft.com/en-us/training/modules/power-pages-studio/components"
+    }
+  },
+  {
+    "id": "named-formula",
+    "term": "named formula",
+    "aliases": [
+      "named formulas",
+      "App.Formulas"
+    ],
+    "definition": "In App.Formulas einmal definierter Ausdruck ohne Parameter, der überall per Name referenziert wird (EspressoColor = RGBA(101, 67, 33, 1); CurrentUserRole = LookUp(…)). Änderungen an einer Stelle wirken in allen Steuerelementen – im Gegensatz zu Variablen wird der Wert deklarativ berechnet, nicht per Set() gesetzt.",
+    "source": {
+      "title": "Build reusable components and formulas in canvas apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/reusable-components"
+    }
+  },
+  {
+    "id": "navigate",
+    "term": "Navigate function",
+    "aliases": [
+      "Navigate(",
+      "Navigate()",
+      "Back(",
+      "Back()",
+      "ScreenTransition",
+      "App.StartScreen",
+      "StartScreen"
+    ],
+    "definition": "Navigate(Screen, ScreenTransition, {Kontext}) wechselt zu einem Bildschirm – mit Übergang Slide (vorwärts im Ablauf), Fade (dezent) oder None (sofort, gut für Barrierefreiheit) und optionalen Kontextvariablen. Back() kehrt zum vorherigen Bildschirm zurück, funktioniert aber nur, wenn man per Navigate() dorthin kam. Startbildschirm ist der oberste in der Strukturansicht, sofern App.StartScreen nichts anderes festlegt.",
+    "source": {
+      "title": "Create screen navigation in a canvas app",
+      "url": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/2-1-create-navigation-model"
+    }
+  },
+  {
+    "id": "no-cliffs",
+    "term": "no cliffs",
+    "aliases": [
+      "no-cliffs principle",
+      "extensibility"
+    ],
+    "definition": "Microsofts Erweiterungsprinzip für die Power Platform: Es darf keine Sackgasse geben. Reicht eine Low-Code-Funktion nicht, gibt es immer einen unterstützten Erweiterungspunkt (Custom Connector, Plug-in, Custom API, PCF, JavaScript, BYOM, Agents SDK), den Entwickler bauen und Low-Code-Maker dann ohne Code nutzen.",
+    "source": {
+      "title": "Explore extensibility options in Power Platform",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/5-explore-extensibility-options"
+    }
+  },
+  {
+    "id": "notification-type",
+    "term": "NotificationType",
+    "aliases": [
+      "NotificationType.Error",
+      "NotificationType.Success",
+      "NotificationType.Warning",
+      "NotificationType.Information"
+    ],
+    "definition": "Zweites Argument von Notify(): Success (grün, erfolgreiche Aktion), Error (rot, Fehler), Warning (gelb, Hinweis) und Information (blau, allgemein). Mehrere Anweisungen wie SubmitForm(); Notify(…); Navigate(…) lassen sich per Semikolon in einem Button verketten.",
+    "source": {
+      "title": "Work with Power Fx formulas in canvas apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/power-fx-formulas"
+    }
+  },
+  {
+    "id": "notify",
+    "term": "Notify function",
+    "aliases": [
+      "Notify(",
+      "Notify()"
+    ],
+    "definition": "Power-Fx-Funktion, die dem Nutzer eine Bannermeldung anzeigt, z. B. nach einem Befehl oder einem Speichern: Notify(\"Record updated successfully.\"). Mit NotificationType (Error, Warning, Success, Information) lässt sich die Art der Meldung steuern.",
+    "source": {
+      "title": "Add logic to commands with Power Fx",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-model-driven-apps-in-powerapps/power-fx-commands"
+    }
+  },
+  {
+    "id": "objects-view",
+    "term": "Objects view",
+    "definition": "Ansicht in Plans nach dem Speichern: zeigt in Tabs alle Lösungen, die mit dem Plan verknüpft sind, und deren Komponenten. Der Schalter „Only show objects in this plan“ blendet entweder nur die im Plan erzeugten Komponenten ein oder den kompletten Inhalt aller verbundenen Lösungen inklusive Abhängigkeiten.",
+    "source": {
+      "title": "Build and manage your solution",
+      "url": "https://learn.microsoft.com/en-us/training/modules/turn-business-ideas-power-platform-solutions-plans/5-build-manage-solution"
+    }
+  },
+  {
+    "id": "offline-mode",
+    "term": "offline mode",
+    "aliases": [
+      "offline",
+      "Offline Mode"
+    ],
+    "definition": "Verfügbarkeit einer modellgesteuerten App ohne Internetverbindung, unterstützt von Dataverse auf iOS- und Android-Clients. Erfordert zusätzliche Designentscheidungen (welche Tabellen/Filter offline verfügbar sind) und sollte früh in den Anforderungen geklärt werden.",
+    "source": {
+      "title": "Design model-driven apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-model-driven-apps-in-powerapps/2b-design-apps"
+    }
+  },
+  {
+    "id": "on-premises-data-gateway",
+    "term": "on-premises data gateway",
+    "aliases": [
+      "data gateway",
+      "gateway"
+    ],
+    "definition": "Brücke, über die Power Apps und Power Automate sicher auf lokale (on-premises) Datenquellen wie eine SQL-Server-Datenbank im eigenen Rechenzentrum zugreifen. Cloud-gehostete Quellen brauchen kein Gateway.",
+    "source": {
+      "title": "Power Apps data sources",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps/4-powerapps-ways-to-build"
+    }
+  },
+  {
+    "id": "one-to-many",
+    "term": "one-to-many",
+    "aliases": [
+      "1:N",
+      "many-to-one",
+      "N:1",
+      "parent-child"
+    ],
+    "definition": "Beziehungstyp, bei dem viele Zeilen der verweisenden (Kind-)Tabelle auf eine Zeile der referenzierten (Eltern-)Tabelle zeigen. Many-to-one ist dieselbe Beziehung aus Sicht der Kindtabelle – im Maker-Portal erscheint sie unter Tabelle A als one-to-many und unter Tabelle B als many-to-one.",
+    "source": {
+      "title": "Table relationships",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps-common-data-service/learn-about-relationships"
+    }
+  },
+  {
+    "id": "onselect",
+    "term": "OnSelect",
+    "aliases": [
+      "OnSelect property",
+      "Select(Parent)"
+    ],
+    "definition": "Verhaltenseigenschaft eines Steuerelements, die festlegt, was beim Antippen passiert – z. B. Navigate(), SubmitForm(), Patch() oder mehrere Anweisungen per Semikolon. Steuerelemente in einer Galerie haben standardmäßig Select(Parent), sodass ein Tipp das Galerie-Element auswählt.",
+    "source": {
+      "title": "Explore controls and screens in canvas apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/2-explore-screens-and-controls"
+    }
+  },
+  {
+    "id": "owner-column",
+    "term": "Owner column",
+    "aliases": [
+      "Owner field",
+      "record owner",
+      "owner of the row"
+    ],
+    "definition": "System-Lookup-Spalte, die den Benutzer oder das Team referenziert, dem eine Zeile einer user-or-team-owned-Tabelle zugewiesen ist. Sie ist die Grundlage der zeilenbezogenen Zugriffsebenen (User/Business Unit) und der Privilegien Assign und Share.",
+    "source": {
+      "title": "Column types in Microsoft Dataverse",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-manage-fields-within-entity/2-field-types"
+    }
+  },
+  {
+    "id": "owner-team",
+    "term": "owner team",
+    "aliases": [
+      "owner teams"
+    ],
+    "definition": "Team-Typ, der Datensätze besitzen kann und dem Sicherheitsrollen zugewiesen werden; hat volle Rechte auf die eigenen Datensätze. Mitglieder werden manuell hinzugefügt, ihre Rechte ergeben sich aus eigenen Rollen plus Team-Rollen. Gehört zu einer Business Unit, kann aber Nutzer anderer Business Units enthalten.",
+    "source": {
+      "title": "Configure Dataverse teams for security",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-security-roles/6a-teams"
+    }
+  },
+  {
+    "id": "page-permissions",
+    "term": "page permissions",
+    "aliases": [
+      "page permission"
+    ],
+    "definition": "Legen je Seite fest, welche Web Roles sie sehen dürfen – entweder „Allow everyone to see this page“ oder beschränkt auf bestimmte Rollen. Steuern die Sichtbarkeit der Seite, nicht den Datenzugriff (dafür gibt es Tabellenrechte).",
+    "source": {
+      "title": "Secure your Power Pages site",
+      "url": "https://learn.microsoft.com/en-us/training/modules/power-pages-studio/security"
+    }
+  },
+  {
+    "id": "page-template",
+    "term": "page template",
+    "aliases": [
+      "page templates",
+      "custom layout",
+      "custom layouts",
+      "web template"
+    ],
+    "definition": "Vorlage für den Aufbau einer Power-Pages-Seite. Standard-Layouts hängen vom Site-Template ab; eigene Layouts werden als page templates in der Portal Management app definiert (ggf. mit Liquid-Web-Templates) und erscheinen im Design Studio als custom layout.",
+    "source": {
+      "title": "Site styling and templates",
+      "url": "https://learn.microsoft.com/en-us/training/modules/power-pages-studio/styling"
+    }
+  },
+  {
+    "id": "patch",
+    "term": "Patch function",
+    "aliases": [
+      "Patch(",
+      "Patch()",
+      "Defaults(",
+      "Defaults()"
+    ],
+    "definition": "Power-Fx-Funktion, die einen Datensatz direkt per Formel anlegt oder ändert – ohne Formularsteuerelement: Patch(DataSource, BaseRecord, ChangeRecord). Zum Aktualisieren ist BaseRecord ein bestehender Datensatz (z. B. Gallery1.Selected), zum Anlegen Defaults(DataSource), das einen leeren Datensatz mit Standardwerten liefert.",
+    "source": {
+      "title": "Work with Power Fx formulas in canvas apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/power-fx-formulas"
+    }
+  },
+  {
+    "id": "pcf",
+    "term": "PCF",
+    "aliases": [
+      "Power Apps Component Framework",
+      "PCF component",
+      "PCF components",
+      "code component"
+    ],
+    "definition": "Power Apps Component Framework: Entwickler bauen damit wiederverwendbare UI-Steuerelemente, die es nativ nicht gibt. PCF-Komponenten werden in Lösungen verpackt, in Dataverse bereitgestellt und stehen dann allen Makern der Umgebung zur Verfügung.",
+    "source": {
+      "title": "Explore extensibility options in Power Platform",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/5-explore-extensibility-options"
+    }
+  },
+  {
+    "id": "per-app-per-user",
+    "term": "Per App",
+    "aliases": [
+      "Per User",
+      "Per App license",
+      "Per User license",
+      "Per App or Per User",
+      "premium license",
+      "premium licensing"
+    ],
+    "definition": "Power-Apps-Lizenzpläne, die Premium-Datenquellen und -Connectors (Dataverse, SQL, Salesforce, HTTP mit Entra ID …) freischalten: Per App lizenziert einen Nutzer für eine bestimmte App, Per User für beliebig viele Apps. Standard-Connectors sind in den meisten Plänen ohnehin enthalten.",
+    "source": {
+      "title": "Power Apps data sources",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps/4-powerapps-ways-to-build"
+    }
+  },
+  {
+    "id": "permission-settings",
+    "term": "permission settings",
+    "aliases": [
+      "permission setting",
+      "Full Access",
+      "Collaborate",
+      "Reference",
+      "No Access"
+    ],
+    "definition": "Vordefinierte Rechtebündel je Tabelle in der Sicherheitsrollen-Konfiguration: No Access, Full Access (alles sehen und bearbeiten), Collaborate (alles sehen, nur Eigenes bearbeiten), Private (nur Eigenes sehen und bearbeiten), Reference (nur lesen) und Custom (manuell geändert).",
+    "source": {
+      "title": "Understand user security roles and security role defaults",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-security-roles/4a-security-role"
+    }
+  },
+  {
+    "id": "pipelines",
+    "term": "pipeline",
+    "aliases": [
+      "pipelines",
+      "Pipelines in Power Platform",
+      "deployment pipeline"
+    ],
+    "definition": "Eingebautes Low-Code-Deployment-Werkzeug der Power Platform: verbindet Entwicklungs-, Test- und Produktionsumgebung, sodass eine Lösung mit wenigen Klicks direkt aus Power Apps bereitgestellt wird – ohne Azure-DevOps-Kenntnisse. Jeder Lauf protokolliert, wer was wann bereitgestellt hat (Audit-Trail).",
+    "source": {
+      "title": "Application lifecycle management",
+      "url": "https://learn.microsoft.com/en-us/training/modules/publish-share-maintain-app/5-lifecycle-management"
+    }
+  },
+  {
+    "id": "plans",
+    "term": "Plans",
+    "aliases": [
+      "plan designer",
+      "Plans in Power Apps",
+      "create a plan",
+      "plan document",
+      "saved plan",
+      "the plan"
+    ],
+    "definition": "Copilot-first-Entwicklungswerkzeug in Power Apps: Aus einer natürlichsprachlichen Beschreibung des Geschäftsproblems erzeugt es Anforderungen, ein Dataverse-Datenmodell und einen Technologievorschlag (Canvas-App, modellgesteuerte App, Power Pages, Flows, Copilot-Studio-Agent). Voraussetzungen: Umgebung mit Dataverse-Datenbank, aktivierte Copilot-Funktionen und eine unterstützte Sprachregion.",
+    "source": {
+      "title": "Explore plans and the AI agents that power them",
+      "url": "https://learn.microsoft.com/en-us/training/modules/turn-business-ideas-power-platform-solutions-plans/2-explore-plans-ai-agents"
+    }
+  },
+  {
+    "id": "plug-in",
+    "term": "plug-in",
+    "aliases": [
+      "plug-ins",
+      "plugin",
+      "Dataverse plug-in",
+      "Dataverse plug-ins"
+    ],
+    "definition": "In C# geschriebener Ereignishandler, der serverseitig bei Dataverse-Datenoperationen (Erstellen, Aktualisieren, Löschen) ausgeführt wird. Richtig für komplexe, transaktionale Geschäftsregeln, die unabhängig vom auslösenden Kanal (App, Flow, API) garantiert gelten sollen; für den Endnutzer unsichtbar.",
+    "source": {
+      "title": "Explore extensibility options in Power Platform",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/5-explore-extensibility-options"
+    }
+  },
+  {
+    "id": "portal-management-app",
+    "term": "Portal Management app",
+    "aliases": [
+      "Portal Management",
+      "portal management app"
+    ],
+    "definition": "Modellgesteuerte App für erweiterte Power-Pages-Konfiguration, die im Design Studio nicht verfügbar ist – z. B. eigene Seitenvorlagen (page templates), Web Templates mit Liquid, Site-Einstellungen. Erreichbar über das Ellipsen-Menü unten in der Workspace-Navigation.",
+    "source": {
+      "title": "Introduction to Power Pages design studio",
+      "url": "https://learn.microsoft.com/en-us/training/modules/power-pages-studio/design-studio"
+    }
+  },
+  {
+    "id": "power-apps",
+    "term": "Power Apps",
+    "aliases": [
+      "Power Apps Mobile",
+      "maker portal",
+      "Power Apps maker portal"
+    ],
+    "definition": "Suite aus Apps, Diensten und Connectors zum Bauen eigener Business-Apps ohne Code, gestartet über make.powerapps.com (maker portal). Drei App-Typen: Canvas-Apps (freies Layout, beliebige Datenquellen, Power Fx), modellgesteuerte Apps (aus Dataverse generiert) und Power-Pages-Sites (extern). Apps laufen im Browser und in Power Apps Mobile.",
+    "source": {
+      "title": "Introduction to Power Apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps/1-powerapps-introduction"
+    }
+  },
+  {
+    "id": "power-apps-grid-control",
+    "term": "Power Apps grid control",
+    "aliases": [
+      "grid control",
+      "editable grid",
+      "Editable Grid",
+      "read-only grid",
+      "Read-only Grid",
+      "inline editing"
+    ],
+    "definition": "Empfohlenes Grid-Steuerelement für Ansichten und Subgrids modellgesteuerter Apps: standardmäßig schreibgeschützt, mit „Enable editing“ Inline-Bearbeitung; zudem verschachtelte Grids, Gruppierung, Aggregation (Sum/Min/Max/Avg), Infinite Scrolling und konfigurierbare Filter/Sortierung/Farben. Die älteren Steuerelemente Editable Grid und Power Apps Read-Only Grid sind seit März 2026 veraltet (nur noch Sicherheitsfixes).",
+    "source": {
+      "title": "Use specialized form components",
+      "url": "https://learn.microsoft.com/en-us/training/modules/configure-model-driven-apps-customer-engagement-apps/04-specialized-form-components"
+    }
+  },
+  {
+    "id": "power-apps-mcp-server",
+    "term": "Power Apps MCP server",
+    "aliases": [
+      "Power Apps MCP",
+      "MCP-Server"
+    ],
+    "definition": "Model-Context-Protocol-Server, über den ein in Copilot Studio erstellter und veröffentlichter autonomer Agent mit den Daten einer modellgesteuerten App interagiert und Aufgaben in den Agent Feed stellt. Der Agent muss damit verbunden sein, bevor er im App Designer (Agents-Tab > Add to feed) hinzugefügt werden kann.",
+    "source": {
+      "title": "Add agents to your model-driven app",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-model-driven-apps-in-powerapps/add-agents"
+    }
+  },
+  {
+    "id": "power-automate",
+    "term": "Power Automate",
+    "definition": "Online-Workflow-Dienst der Power Platform, der Aktionen über hunderte Apps und Dienste automatisiert (Benachrichtigungen, Dateien kopieren, Daten sammeln, Genehmigungen). Ein Flow besteht aus einem Trigger und Aktionen; erstellt im Browser (make.powerautomate.com, inkl. Copilot-Prompt) oder verwaltet in der mobilen App. Erfordert ein Arbeits- oder Schulkonto.",
+    "source": {
+      "title": "Introducing Power Automate",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-flows/1-introduction"
+    }
+  },
+  {
+    "id": "power-automate-desktop",
+    "term": "Power Automate Desktop",
+    "aliases": [
+      "Power Automate for desktop"
+    ],
+    "definition": "Erweitert Power Automate auf Legacy-Systeme auf einem lokalen Rechner, indem es Benutzerinteraktionen (Klicks, Eingaben) nachbildet. Desktop-Flows können mit Premium-Connectors aus einem Cloud-Flow ausgelöst und so auch aus Power Apps gestartet werden.",
+    "source": {
+      "title": "Use Power Apps with Power Automate and Power BI",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps/3-powerapps-related-technologies"
+    }
+  },
+  {
+    "id": "power-bi-pro",
+    "term": "Power BI Pro",
+    "aliases": [
+      "Power BI Pro license"
+    ],
+    "definition": "Lizenz, die zum Teilen von Power-BI-Berichten nötig ist – sowohl für Ersteller als auch für Betrachter (Berichte sind standardmäßig privat). Power BI selbst ist der Analyse- und Reporting-Dienst für KPI-Dashboards, Trends und aggregierte Kennzahlen; für einfache Diagramme genügt oft Power Apps.",
+    "source": {
+      "title": "Use Power Apps with Power Automate and Power BI",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps/3-powerapps-related-technologies"
+    }
+  },
+  {
+    "id": "power-fx",
+    "term": "Power Fx",
+    "aliases": [
+      "formula bar",
+      "formula",
+      "formulas"
+    ],
+    "definition": "Die Excel-ähnliche, deklarative Formelsprache der Power Platform. In Canvas-Apps kann jede Eigenschaft jedes Steuerelements eine Formel enthalten (Items, Text, OnSelect, Visible …); außerdem wird Power Fx in Formelspalten, modellgesteuerten Befehlen und Copilot-Studio-Agenten genutzt. Formeln werden in der Formelleiste (fx) geschrieben; Copilot kann sie dort erzeugen und erklären.",
+    "source": {
+      "title": "Work with Power Fx formulas in canvas apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/power-fx-formulas"
+    }
+  },
+  {
+    "id": "power-pages",
+    "term": "Power Pages",
+    "definition": "Power-Platform-Komponente für externe Websites: ein konfigurierbares Webportal mit sicherer Authentifizierung für Kunden, Partner oder die Öffentlichkeit. Nutzt Dataverse als Datenspeicher und kann Copilot-Studio-Agenten als Web Agents einbetten.",
+    "source": {
+      "title": "Recommend Power Platform components for business solutions",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/3-recommend-power-platform-components"
+    }
+  },
+  {
+    "id": "power-pages-admin-center",
+    "term": "Power Pages admin center",
+    "aliases": [
+      "Site Checker",
+      "Site Health"
+    ],
+    "definition": "Verwaltungsbereich für Power-Pages-Sites (aus dem Design Studio über Set up > Site details > Open admin center): Netzwerk, Protokollierung, SharePoint-/Power-BI-Integration. Im Power Platform admin center gibt es zudem den Site Checker, ein Diagnosewerkzeug, das Konfigurations-, Performance- und Bereitstellungsprobleme mit Lösungsvorschlägen auflistet.",
+    "source": {
+      "title": "Core tools and components of Power Pages",
+      "url": "https://learn.microsoft.com/en-us/training/modules/power-pages-intro/core-components"
+    }
+  },
+  {
+    "id": "power-pages-web-api",
+    "term": "Power Pages Web API",
+    "aliases": [
+      "portal Web API",
+      "Web API"
+    ],
+    "definition": "Schnittstelle, über die Power-Pages-Seiten per JavaScript direkt aus dem Browser auf Dataverse zugreifen (lesen, schreiben) – für dynamische Frontend-Logik jenseits von Formularen und Listen.",
+    "source": {
+      "title": "Explore extensibility options in Power Platform",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/5-explore-extensibility-options"
+    }
+  },
+  {
+    "id": "power-platform-admin-center",
+    "term": "Power Platform admin center",
+    "aliases": [
+      "admin center",
+      "PPAC"
+    ],
+    "definition": "Verwaltungsportal (admin.powerplatform.microsoft.com) für Umgebungen: Nutzer hinzufügen, Sicherheitsrollen und Teams pflegen, Feature-Einstellungen (z. B. Copilot, AI Prompts), Auditing und DLP-Richtlinien. Lizenzen dagegen werden im Microsoft 365 admin center verwaltet.",
+    "source": {
+      "title": "Adding or disabling an environment user",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-security-roles/3-user"
+    }
+  },
+  {
+    "id": "tenant-admin-roles",
+    "term": "Power Platform administrator",
+    "aliases": [
+      "Global Administrator",
+      "Global Admin",
+      "tenant-level admin role",
+      "tenant-level admin roles",
+      "Dynamics 365 administrator"
+    ],
+    "definition": "Tenant-weite Adminrollen (Global Administrator, Power Platform administrator, Dynamics 365 administrator): Sie erlauben die Verwaltung von Umgebungen, geben aber nicht automatisch Zugriff auf Dataverse-Daten – dafür muss je Umgebung explizit die Rolle System Administrator zugewiesen werden.",
+    "source": {
+      "title": "Understand environment roles",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-security-roles/2-roles"
+    }
+  },
+  {
+    "id": "power-platform-cli",
+    "term": "Power Platform CLI",
+    "aliases": [
+      "pac CLI",
+      "Power Platform Command Line Interface",
+      "Azure Pipelines"
+    ],
+    "definition": "Kommandozeilenwerkzeug, mit dem Maker und Entwickler die Konfiguration einer Power-Pages-Site herunterladen, ändern und hochladen. Zusammen mit Azure Pipelines lassen sich Site-Konfigurationen in die Quellcodeverwaltung einchecken und zwischen Umgebungen bereitstellen – Power Pages wird so Teil von ALM.",
+    "source": {
+      "title": "Overview of Power Pages extensibility",
+      "url": "https://learn.microsoft.com/en-us/training/modules/power-pages-intro/extensibility-overview"
+    }
+  },
+  {
+    "id": "git-integration",
+    "term": "Power Platform Git integration",
+    "aliases": [
+      "Git integration",
+      "source control"
+    ],
+    "definition": "Option für professionelles ALM: Lösungen werden mit einem Git-Repository synchronisiert, sodass Teams Branching und Pull Requests neben Pipelines nutzen können.",
+    "source": {
+      "title": "Application lifecycle management",
+      "url": "https://learn.microsoft.com/en-us/training/modules/publish-share-maintain-app/5-lifecycle-management"
+    }
+  },
+  {
+    "id": "power-query",
+    "term": "Power Query",
+    "aliases": [
+      "dataflow",
+      "dataflows"
+    ],
+    "definition": "Der Datenimporter in Dataverse („Import > Import data“): verbindet sich mit Quellen wie SharePoint-Listen, Excel oder SQL, lässt die Daten im Editor formen (Spalten wählen, Typen setzen; jeder Schritt landet in „Applied steps“) und lädt sie in eine neue oder bestehende Tabelle – mit Spaltenzuordnung (Auto map) und Aktualisierungseinstellungen.",
+    "source": {
+      "title": "Exercise - Import data into your Microsoft Dataverse database",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps-common-data-service/4-import-data-into-your-database"
+    }
+  },
+  {
+    "id": "predict",
+    "term": "Predict method",
+    "aliases": [
+      "Predict(",
+      ".Predict"
+    ],
+    "definition": "Methode, mit der eine Canvas-App einen als Datenquelle hinzugefügten AI-Builder-Prompt oder ein Modell aufruft: Set(var, 'Learning grounded prompt'.Predict(TextInput1.Text)); das Ergebnis steht dann z. B. als var.Text in einem Label bereit.",
+    "source": {
+      "title": "Use a grounded prompt in a canvas app",
+      "url": "https://learn.microsoft.com/en-us/training/modules/ai-builder-grounded-prompts/use-grounded-prompt-canvas-app"
+    }
+  },
+  {
+    "id": "primary-column",
+    "term": "primary column",
+    "aliases": [
+      "primary name column",
+      "primary name"
+    ],
+    "definition": "Die lesbare Textspalte (standardmäßig „Name“), mit der eine Zeile in Apps und Flows dargestellt wird – in Lookups, Formularkopf und Browsertitel. Nicht zu verwechseln mit dem GUID-Primärschlüssel. Schemaname nur bis zur Tabellenerstellung änderbar, Anzeigename jederzeit; Eindeutigkeit erst über einen alternate key.",
+    "source": {
+      "title": "Primary column",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-manage-fields-within-entity/4-primary-name"
+    }
+  },
+  {
+    "id": "privileges",
+    "term": "privilege",
+    "aliases": [
+      "privileges",
+      "Append",
+      "Append To",
+      "Assign privilege",
+      "Share privilege"
+    ],
+    "definition": "Die tabellenbezogenen Rechte einer Sicherheitsrolle: Create (anlegen), Read (öffnen), Write (ändern), Delete (löschen), Append (den aktuellen Datensatz an einen anderen anhängen, z. B. Notiz an Opportunity), Append To (an den aktuellen Datensatz etwas anhängen lassen), Assign (Besitz übertragen) und Share (Zugriff gewähren, ohne eigenen zu verlieren). Bei N:N-Beziehungen ist Append auf beiden Tabellen nötig; organisationseigene Tabellen haben kein Assign/Share.",
+    "source": {
+      "title": "Understand user security roles and security role defaults",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-security-roles/4a-security-role"
+    }
+  },
+  {
+    "id": "process-diagram",
+    "term": "process diagram",
+    "aliases": [
+      "process map",
+      "process stage"
+    ],
+    "definition": "Von Plans automatisch nach den Anforderungen erzeugte Diagramme in zwei Detailstufen: process stages (Überblick aller Prozesse) und process maps (Schritte, Ereignisse, Entscheidungen je Prozess mit zuständiger Rolle). Sie bestehen aus drei Knotentypen: Events (Start/Mitte/Ende), Gateways (Entscheidungen mit Verzweigung) und Activities (Aufgaben). Änderungen gelten erst nach dem Validieren; bei mehr als fünf Änderungen empfiehlt Microsoft die natürlichsprachliche Anpassung.",
+    "source": {
+      "title": "Create a plan and refine the requirements",
+      "url": "https://learn.microsoft.com/en-us/training/modules/turn-business-ideas-power-platform-solutions-plans/3-create-plan-refine-requirements"
+    }
+  },
+  {
+    "id": "prompt",
+    "term": "prompt",
+    "aliases": [
+      "prompts"
+    ],
+    "definition": "Die Texteingabe an ein generatives KI-Modell: Wörter, Phrasen, Symbole und Formatvorgaben, die das Modell zur gewünschten Ausgabe führen. Das Modell folgt keinem festen Frage-Antwort-Pfad, sondern erzeugt die wahrscheinlichste Fortsetzung des Prompts – die Qualität der Ausgabe hängt deshalb direkt von der Qualität des Prompts ab.",
+    "source": {
+      "title": "Prompt-based generative AI model",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-prompts-for-generative-ai-training-tools/2-prompt-based-generative-ai-model"
+    }
+  },
+  {
+    "id": "prompt-builder",
+    "term": "Prompt Builder",
+    "definition": "Grafische Oberfläche im AI Hub, um generative KI-Prompts zu erstellen, zu testen und bereitzustellen. Ein einmal gebauter Prompt ist wiederverwendbar in Apps, Flows, Copilot-Studio-Agenten und Dataverse; über BYOM lassen sich auch eigene Modelle aus Azure AI Foundry anbinden.",
+    "source": {
+      "title": "Explore the AI-first Power Platform",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/2-explore-ai-first-power-platform"
+    }
+  },
+  {
+    "id": "prompt-column",
+    "term": "prompt column",
+    "aliases": [
+      "prompt columns",
+      "prompt data type"
+    ],
+    "definition": "KI-Spaltentyp, der beim Speichern einer Zeile einen natürlichsprachlichen Prompt gegen andere Spalten derselben Zeile ausführt und das Ergebnis asynchron in der Spalte speichert (schreibgeschützt). Max. fünf je Tabelle; Eingaben dürfen keine Formel-, File-, Image- oder andere Prompt-Spalten sein; Filterbedingungen begrenzen, wann der Prompt läuft (spart AI-Credits). Erzeugt Statusspalten _PromptColumnStatus/_PromptColumnDetails. Voraussetzung: Copilot und AI Prompts in den Feature settings der Umgebung aktiviert.",
+    "source": {
+      "title": "Work with Prompt columns and row summaries",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-manage-fields-within-entity/prompt-columns"
+    }
+  },
+  {
+    "id": "prompt-engineering",
+    "term": "prompt engineering",
+    "definition": "Die Fähigkeit, Prompts so zu formulieren, dass ein generatives KI-Modell die gewünschte Ausgabe liefert. Ein Prompt besteht aus zwei Hauptkomponenten: der Instruction (Aufgabe und Ziel) und dem Context (Hintergrundinformationen wie Zielgruppe, Ton, Umfang).",
+    "source": {
+      "title": "What is prompt engineering?",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-prompts-for-generative-ai-training-tools/3-what-is-prompt-engineering"
+    }
+  },
+  {
+    "id": "power-pages-provisioning",
+    "term": "provision",
+    "aliases": [
+      "provisioning",
+      "trial site",
+      "production site",
+      "enhanced data model"
+    ],
+    "definition": "Anlegen einer Power-Pages-Site in einer Umgebung mit Dataverse-Datenbank: Template wählen (oder per Copilot beschreiben), Name, Webadresse und Sprache festlegen. Erfordert die Rolle System Administrator; jede Site startet als Trial und wird später in eine Produktionssite umgewandelt. Dynamics-365-Templates setzen die entsprechenden Apps in der Umgebung voraus.",
+    "source": {
+      "title": "Get started with Power Pages",
+      "url": "https://learn.microsoft.com/en-us/training/modules/power-pages-intro/get-started"
+    }
+  },
+  {
+    "id": "publish",
+    "term": "publish",
+    "aliases": [
+      "Publish this version",
+      "save vs. publish"
+    ],
+    "definition": "Speichern sichert den Arbeitsstand als neue Version (Entwurf), den Nutzer noch nicht sehen; Veröffentlichen schaltet eine Version live. Laufende Nutzer bekommen Hinweise („new version is coming“, „Refresh to use the latest version“) – außer bei Einbettung in Teams, Power BI oder SharePoint. Teilen ist ohne Veröffentlichen möglich, etwa für die Zusammenarbeit mit anderen Makern.",
+    "source": {
+      "title": "Publish your app",
+      "url": "https://learn.microsoft.com/en-us/training/modules/publish-share-maintain-app/2-publish-app"
+    }
+  },
+  {
+    "id": "publisher-prefix",
+    "term": "publisher",
+    "aliases": [
+      "publisher prefix",
+      "solution publisher"
+    ],
+    "definition": "Der Herausgeber einer Lösung; sein Präfix (z. B. cref2_) wird allen darin erstellten Tabellen und Spalten im Schemanamen vorangestellt. Daher sollten Tabellen innerhalb einer Lösung angelegt werden, damit sie das Präfix des Lösungs-Publishers erben.",
+    "source": {
+      "title": "Table characteristics",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps-common-data-service/2-learn-about-entities"
+    }
+  },
+  {
+    "id": "real-time-workflow",
+    "term": "real-time workflow",
+    "aliases": [
+      "real-time workflows",
+      "classic workflow",
+      "classic workflows",
+      "workflow"
+    ],
+    "definition": "Klassische Dataverse-Prozessautomatisierung ohne Benutzerinteraktion, die synchron innerhalb der Datenoperation auf dem Server läuft. Moderne Alternative für die meisten Szenarien sind Cloud-Flows (asynchron, connectorbasiert).",
+    "source": {
+      "title": "Dataverse logic and security",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps-common-data-service/logic-security"
+    }
+  },
+  {
+    "id": "relate-rows",
+    "term": "Relate rows",
+    "aliases": [
+      "Relate rows action",
+      "Relate With",
+      "Unrelate rows",
+      "row URL",
+      "OData ID",
+      "entity set name"
+    ],
+    "definition": "Dataverse-Aktion, um Zeilen zu verknüpfen: Bei 1:N wählt man die Tabelle der Eins-Seite, gibt deren Row ID (GUID) an, wählt die Beziehung und setzt „Relate With“ auf die Row URL der anderen Zeile (OData ID, z. B. contoso_projects(guid); Entity-Set-Name = logischer Name plus „s“). N:N-Beziehungen lassen sich nur so herstellen, da keine Seite eine Lookup-Spalte hat; bei 1:N geht es alternativ über die Lookup-Spalte in Add/Update a row.",
+    "source": {
+      "title": "Create, update, delete, and relate actions",
+      "url": "https://learn.microsoft.com/en-us/training/modules/use-dataverse-triggers-actions/create-update-delete-relate"
+    }
+  },
+  {
+    "id": "relationship",
+    "term": "relationship",
+    "aliases": [
+      "table relationship",
+      "table relationships",
+      "relationships"
+    ],
+    "definition": "Verknüpfung zwischen Tabellenzeilen. Zwei Typen: one-to-many (1:N, eine Elternzeile hat viele Kindzeilen; aus Sicht der Kindtabelle many-to-one, N:1 – dieselbe Beziehung) und many-to-many (N:N, gleichberechtigte Zeilen über eine verborgene Intersect-Tabelle). Ein Lookup-Spalte erzeugt automatisch eine N:1-Beziehung.",
+    "source": {
+      "title": "Table relationships",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps-common-data-service/learn-about-relationships"
+    }
+  },
+  {
+    "id": "requirement-agent",
+    "term": "Requirement Agent",
+    "definition": "Der erste der drei Plans-Agenten. Er analysiert das beschriebene Geschäftsproblem und erzeugt daraus user roles (beteiligte Personengruppen) und user needs (Anforderungen je Rolle, vergleichbar mit User Stories). Erst nach Freigabe dieser Anforderungen läuft der Data Agent.",
+    "source": {
+      "title": "Explore plans and the AI agents that power them",
+      "url": "https://learn.microsoft.com/en-us/training/modules/turn-business-ideas-power-platform-solutions-plans/2-explore-plans-ai-agents"
+    }
+  },
+  {
+    "id": "rollup-column",
+    "term": "rollup column",
+    "aliases": [
+      "rollup",
+      "rollup columns"
+    ],
+    "definition": "Spalte, die Werte aus verknüpften Kindzeilen aggregiert (Summe, Anzahl, Min/Max …) und periodisch vom System berechnet wird. Grenzen: max. 10 je Tabelle, 100 je Organisation; nur 1:N-Beziehungen (keine N:N), keine Referenz auf andere Rollup- oder komplexe Formelspalten; löst keine Workflows/Flows aus und aktualisiert ModifiedOn/ModifiedBy nicht.",
+    "source": {
+      "title": "Restrictions that apply to columns in a table",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-manage-fields-within-entity/5-restrictions"
+    }
+  },
+  {
+    "id": "row-summary",
+    "term": "row summary",
+    "aliases": [
+      "row summaries",
+      "AI insight cards"
+    ],
+    "definition": "Copilot-generierte Zusammenfassung eines Datensatzes in einer einklappbaren Leiste oben im Hauptformular (oder aus Ansichten). Wird bei Bedarf erzeugt und nicht gespeichert – anders als eine Prompt-Spalte. Konfiguriert auf Tabellenebene, gilt für alle Hauptformulare; braucht die Umgebungseinstellung „AI insight cards“ und ist lösungsfähig (Komponente „AI Skill Config“).",
+    "source": {
+      "title": "Work with Prompt columns and row summaries",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-manage-fields-within-entity/prompt-columns"
+    }
+  },
+  {
+    "id": "run-as",
+    "term": "Run as",
+    "aliases": [
+      "run as",
+      "Use invoker's connection",
+      "Act on Behalf of Another User",
+      "Delegate",
+      "modifying user",
+      "row owner"
+    ],
+    "definition": "Trigger-Option, mit der Dataverse-Aktionen im Kontext eines anderen Nutzers laufen: Flow owner (Standard), Row owner (Besitzer der auslösenden Zeile; bei Teambesitz Fallback auf Flow owner) oder Modifying user (wer die Änderung gemacht hat). Je Aktion muss „Use invoker's connection“ gesetzt sein; der Flow-Besitzer braucht das Privileg Act on Behalf of Another User (in der Rolle Delegate enthalten). So erscheint z. B. Mary statt John als Ersteller angelegter Aufgaben.",
+    "source": {
+      "title": "Dataverse triggers",
+      "url": "https://learn.microsoft.com/en-us/training/modules/use-dataverse-triggers-actions/triggers"
+    }
+  },
+  {
+    "id": "run-diagnostics",
+    "term": "Run diagnostics",
+    "aliases": [
+      "run diagnostics",
+      "diagnostics"
+    ],
+    "definition": "Funktion im Nutzerbereich des Power Platform admin center, die prüft, ob ein Nutzer die Umgebung erreichen kann: in Microsoft Entra ID aktiviert, gültige Lizenz, Mitglied der Entra-Sicherheitsgruppe der Umgebung und mindestens eine Dataverse-Sicherheitsrolle (direkt oder über ein Gruppenteam).",
+    "source": {
+      "title": "Check the roles that a user belongs to",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-security-roles/6-checking"
+    }
+  },
+  {
+    "id": "run-history",
+    "term": "run history",
+    "aliases": [
+      "28-day run history",
+      "Resubmit",
+      "flow run",
+      "Cloud flow activity"
+    ],
+    "definition": "Protokoll der Flow-Ausführungen (My flows > Flow > 28-day run history): fehlgeschlagene Schritte sind mit rotem Ausrufezeichen markiert und zeigen die Fehlermeldung. Resubmit führt einen fehlgeschlagenen Lauf mit korrigierter Verbindung/Konfiguration erneut aus. Jede Auslösung zählt als Run; Prüfungen auf neue Daten nicht.",
+    "source": {
+      "title": "Troubleshoot flows",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-flows/9-troubleshoot-flows"
+    }
+  },
+  {
+    "id": "schema-name",
+    "term": "schema name",
+    "aliases": [
+      "logical name",
+      "display name"
+    ],
+    "definition": "Der interne Systemname einer Tabelle oder Spalte (mit Publisher-Präfix, ohne Leerzeichen), automatisch aus dem display name abgeleitet. Er muss vor dem Erstellen festgelegt werden und ist danach unveränderlich; der display name (Anzeigename) kann jederzeit geändert werden.",
+    "source": {
+      "title": "Table characteristics",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps-common-data-service/2-learn-about-entities"
+    }
+  },
+  {
+    "id": "business-rule-scope",
+    "term": "business rule scope",
+    "aliases": [
+      "Entity scope",
+      "All forms scope",
+      "Individual form scope",
+      "Scope setting",
+      "scope of a business rule"
+    ],
+    "definition": "Einstellung einer Geschäftsregel, die festlegt, wo sie greift: Individual form (nur ein bestimmtes Formular), All forms (alle Formulare der modellgesteuerten App) oder Entity (Standard: alle Formulare plus serverseitige Create/Update-Operationen – also auch Importe, Flows und API-Aufrufe). Bei Flow-Triggern bezeichnet scope dagegen, wessen Zeilen den Trigger auslösen.",
+    "source": {
+      "title": "Dataverse logic and security",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps-common-data-service/logic-security"
+    }
+  },
+  {
+    "id": "screen",
+    "term": "screen",
+    "aliases": [
+      "screens",
+      "Tree view",
+      "tree view"
+    ],
+    "definition": "Bildschirm einer Canvas-App, der Steuerelemente enthält; Apps haben meist Start-, Listen-, Detail- und Admin-Bildschirme, verbunden über Navigate()/Back(). Die Strukturansicht (Tree view) listet alle Bildschirme und Steuerelemente; der oberste Bildschirm ist der Startbildschirm, sofern App.StartScreen nichts anderes definiert.",
+    "source": {
+      "title": "Create screen navigation in a canvas app",
+      "url": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/2-1-create-navigation-model"
+    }
+  },
+  {
+    "id": "searchable",
+    "term": "searchable",
+    "definition": "Spalteneinstellung: Nur durchsuchbare Spalten erscheinen in Advanced Find und beim Anpassen von Ansichten. Das Abwählen ungenutzter Spalten verkleinert die Auswahl für Nutzer, die eigene Ansichten bauen.",
+    "source": {
+      "title": "Add a column to a table",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-manage-fields-within-entity/3-add-field"
+    }
+  },
+  {
+    "id": "security-role",
+    "term": "security role",
+    "aliases": [
+      "security roles",
+      "role-based access control",
+      "RBAC"
+    ],
+    "definition": "Sammlung von Privilegien (Create, Read, Write, Delete, Append, Append To, Assign, Share) mit Zugriffsebenen je Tabelle. Dataverse nutzt rollenbasierte Zugriffskontrolle: Nutzer bekommen eine oder mehrere Rollen statt Einzelrechte. Ohne mindestens eine Rolle kein Zugriff auf Dataverse und keine App-Ausführung. Standardrollen sind nicht editierbar – für eigene Apps eigene Rollen anlegen.",
+    "source": {
+      "title": "Dataverse logic and security",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps-common-data-service/logic-security"
+    }
+  },
+  {
+    "id": "select-columns",
+    "term": "Select columns",
+    "aliases": [
+      "select columns",
+      "infinite loop"
+    ],
+    "definition": "Erweiterte Trigger-Option (nur bei Modified): kommagetrennte logische Spaltennamen (firstname,lastname), bei deren Änderung der Flow läuft – reduziert unnötige Läufe. Lookup-Spalten werden nicht unterstützt (nur skalare Typen). Wichtig gegen Endlosschleifen: Spalten, die der Flow selbst per Update a row schreibt, nicht aufnehmen. In Abfrageaktionen begrenzt Select columns die zurückgegebenen Spalten und damit den dynamischen Inhalt.",
+    "source": {
+      "title": "Dataverse triggers",
+      "url": "https://learn.microsoft.com/en-us/training/modules/use-dataverse-triggers-actions/triggers"
+    }
+  },
+  {
+    "id": "self-selected",
+    "term": "Self.Selected",
+    "aliases": [
+      "Self.Selected.Item",
+      "Self.Selected.AllItems",
+      "Self.Selected.State"
+    ],
+    "definition": "Objekt in Power-Fx-Befehlen modellgesteuerter Apps, das die aktuell ausgewählten Datensätze liefert: Self.Selected.Item ist der einzelne ausgewählte Datensatz (leer bei keiner oder mehreren Auswahlen), Self.Selected.AllItems die Tabelle aller ausgewählten Datensätze, Self.Selected.State der Formularzustand (Edit 0, New 1, View 2).",
+    "source": {
+      "title": "Add logic to commands with Power Fx",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-model-driven-apps-in-powerapps/power-fx-commands"
+    }
+  },
+  {
+    "id": "service-principal",
+    "term": "service principal",
+    "aliases": [
+      "application user",
+      "OAuth",
+      "Client Certificate Auth",
+      "client certificate"
+    ],
+    "definition": "Authentifizierungsarten der Dataverse-Verbindung: OAuth (interaktiver Nutzer mit Entra-ID-Konto – für persönliche Produktivitätsflows), Service principal (nicht-interaktiver Anwendungsbenutzer, in Entra ID registriert und in Dataverse als Application User angelegt – für Hintergrundautomatisierungen eines Projekts) und Client Certificate Auth (PFX-Zertifikat plus Passwort über eine registrierte Entra-App; ebenfalls teilbar für Hintergrundflows).",
+    "source": {
+      "title": "Introduction",
+      "url": "https://learn.microsoft.com/en-us/training/modules/use-dataverse-triggers-actions/introduction"
+    }
+  },
+  {
+    "id": "app-sharing",
+    "term": "app sharing",
+    "aliases": [
+      "share the app",
+      "share an app",
+      "sharing the app",
+      "share your app",
+      "User permission",
+      "Everyone group",
+      "Co-owner permission"
+    ],
+    "definition": "Freigabe einer Canvas-App an Nutzer oder Entra-Sicherheitsgruppen mit der Berechtigung User (nur ausführen) oder Co-owner (bearbeiten, teilen, löschen – nicht den Originalbesitzer entfernen). Bei Dataverse-Apps wird beim Teilen zusätzlich die nötige Sicherheitsrolle zugewiesen. Die Everyone-Gruppe ist deaktiviert und unerwünscht; ab 100 Nutzern Sicherheitsgruppen verwenden.",
+    "source": {
+      "title": "Share your app",
+      "url": "https://learn.microsoft.com/en-us/training/modules/publish-share-maintain-app/3-share-app"
+    }
+  },
+  {
+    "id": "flow-sharing",
+    "term": "shared flow",
+    "aliases": [
+      "shared flows",
+      "flow owner",
+      "flow owners",
+      "Shared with me",
+      "run-only user",
+      "run only users"
+    ],
+    "definition": "Ein Flow wird geteilt, indem man Co-Owner (Nutzer, Gruppen oder eine Microsoft-Lists-Liste) hinzufügt; diese sehen ihn unter „Shared with me“, können Verlauf einsehen, Eigenschaften und Definition ändern, Owner hinzufügen/entfernen (nicht den Ersteller) und löschen. Verlässt der Ersteller die Organisation, läuft der Flow weiter. Geteilte Verbindungen gelten nur in diesem Flow; fremde Anmeldedaten sind nicht änderbar. Erfordert einen bezahlten Plan.",
+    "source": {
+      "title": "Exercise - Share flows",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-flows/8-flow-share-flows"
+    }
+  },
+  {
+    "id": "sharepoint-list",
+    "term": "SharePoint list",
+    "aliases": [
+      "SharePoint lists",
+      "SharePoint",
+      "document library"
+    ],
+    "definition": "Listen- bzw. Bibliotheksbasierte Datenquelle ohne Zusatzkosten: funktioniert wie eine Tabelle, aber ohne relationale Beziehungen (Schlüsselfelder manuell anlegen), mit Delegationslimit und der Empfehlung einfacher Spaltentypen und -namen. Pflichtfelder besser in der App statt in SharePoint erzwingen.",
+    "source": {
+      "title": "Power Apps data sources",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps/4-powerapps-ways-to-build"
+    }
+  },
+  {
+    "id": "single-line-of-text",
+    "term": "single line of text",
+    "aliases": [
+      "text column",
+      "text area",
+      "multiple lines of text",
+      "rich text"
+    ],
+    "definition": "Textspaltentyp für bis zu 4.000 Zeichen (Standard 100) mit Formaten wie Plain text, Text area, Email, Phone number, Ticker Symbol und URL; kann nachträglich in eine Autonumber-Spalte umgewandelt werden. Multiple lines of text (Plain oder Rich text) fasst bis 1.048.576 Zeichen (Standard 2.000).",
+    "source": {
+      "title": "Column types in Microsoft Dataverse",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-manage-fields-within-entity/2-field-types"
+    }
+  },
+  {
+    "id": "site-agent",
+    "term": "site agent",
+    "aliases": [
+      "Site agent",
+      "Publish Copilots with AI features"
+    ],
+    "definition": "KI-Agent auf einer Power-Pages-Site (Set up workspace > Agents), der Besucherfragen aus dem Site-Inhalt beantwortet. Voraussetzungen: Tenant-Einstellung „Publish Copilots with AI features“ und ein nicht blockierter HTTP-Connector. Power Pages legt den Agenten in Copilot Studio mit generative answers an (zunächst als Trial); Sichtbarkeit über Web Roles; erweiterbar per Bing-Suche, Omnichannel-Übergabe oder direkt in Copilot Studio.",
+    "source": {
+      "title": "Add an AI-powered agent to your site",
+      "url": "https://learn.microsoft.com/en-us/training/modules/power-pages-studio/ai-agent"
+    }
+  },
+  {
+    "id": "site-map",
+    "term": "site map",
+    "aliases": [
+      "sitemap"
+    ],
+    "definition": "Die Navigationsstruktur einer modellgesteuerten App (Bereiche, Gruppen, Seiten). Sie wird im App Designer durch Hinzufügen und Anordnen von Seiten konfiguriert; Power Apps erzeugt beim Anlegen automatisch eine Standard-Sitemap. Der Agent Feed erscheint oben in der Sitemap.",
+    "source": {
+      "title": "Components of model-driven apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-model-driven-apps-in-powerapps/2-building-blocks-of-model-driven-apps"
+    }
+  },
+  {
+    "id": "site-visibility",
+    "term": "site visibility",
+    "aliases": [
+      "Private site",
+      "Public site",
+      "private",
+      "public"
+    ],
+    "definition": "Einstellung einer Power-Pages-Site: Private (nur Mitglieder der Organisation bzw. ausgewählte Nutzer; Anonyme müssen sich anmelden) oder Public (jeder mit der URL). Beim Go-live wird eine Site typischerweise von Private auf Public umgestellt.",
+    "source": {
+      "title": "Secure your Power Pages site",
+      "url": "https://learn.microsoft.com/en-us/training/modules/power-pages-studio/security"
+    }
+  },
+  {
+    "id": "solution",
+    "term": "solution",
+    "aliases": [
+      "solutions",
+      "unmanaged solution",
+      "managed solution",
+      "default solution"
+    ],
+    "definition": "Der Verpackungs- und Transportmechanismus der Power Platform: Apps, Tabellen, Flows, Verbindungsreferenzen, Agenten usw. werden in einer Lösung gebündelt, exportiert und in Test/Produktion importiert. Unmanaged (nicht verwaltet) ist für die Entwicklung und direkt bearbeitbar; managed (verwaltet) ist für die Verteilung und kann nur über eine neue Version geändert werden. Komponenten außerhalb einer Lösung haben kaum ALM-Unterstützung.",
+    "source": {
+      "title": "Application lifecycle management",
+      "url": "https://learn.microsoft.com/en-us/training/modules/publish-share-maintain-app/5-lifecycle-management"
+    }
+  },
+  {
+    "id": "solution-agent",
+    "term": "Solution Agent",
+    "definition": "Der dritte und letzte Plans-Agent. Er bewertet Anforderungen, Prozessdiagramme und Datenmodell und erstellt den technology proposal: welche Power-Platform-Komponenten eingesetzt werden und welchen Rollen und Tabellen sie zugeordnet sind.",
+    "source": {
+      "title": "Explore plans and the AI agents that power them",
+      "url": "https://learn.microsoft.com/en-us/training/modules/turn-business-ideas-power-platform-solutions-plans/2-explore-plans-ai-agents"
+    }
+  },
+  {
+    "id": "sql-data-source",
+    "term": "SQL",
+    "aliases": [
+      "SQL Server",
+      "Azure SQL"
+    ],
+    "definition": "Premium-Datenquelle für große, relationale Datenmengen und Unternehmenslösungen. Cloud-gehostet direkt anbindbar; lokale Datenbanken über das On-premises data gateway. Erfordert wie Dataverse eine Power Apps Per-App- oder Per-User-Lizenz.",
+    "source": {
+      "title": "Power Apps data sources",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps/4-powerapps-ways-to-build"
+    }
+  },
+  {
+    "id": "bpf-stage",
+    "term": "stage",
+    "aliases": [
+      "stages",
+      "process bar",
+      "stage category",
+      "Stage Category"
+    ],
+    "definition": "Bausteine eines Geschäftsprozessflusses: Stages sind die Meilensteine (bis zu 30), Steps darin verweisen auf Felder der Tabelle (ein Step je Feld; „Required“ erzwingt Ausfüllen vor dem Weitergehen). Die Stage Category (Qualify, Develop …) erscheint als Chevron in der Prozessleiste und gruppiert Stages für Berichte; sie stammt aus einem globalen Choice-Set. Die Prozessleiste oben im Formular zeigt Fortschritt und blockiert das Voranschreiten, bis Pflichtschritte erledigt sind.",
+    "source": {
+      "title": "Create a business process flow",
+      "url": "https://learn.microsoft.com/en-us/training/modules/build-approval-flows/5-create-business-process-flow"
+    }
+  },
+  {
+    "id": "start-and-wait-for-an-approval",
+    "term": "Start and wait for an approval",
+    "aliases": [
+      "Create an approval",
+      "Wait for an approval",
+      "Start and wait for an approval of text"
+    ],
+    "definition": "Die vier Aktionen des Approvals-Connectors: Start and wait for an approval (startet und pausiert den Flow bis alle nötigen Antworten da sind – der Regelfall), Create an approval (startet ohne zu warten; kombiniert mit Wait for an approval, um später fortzusetzen), Start and wait for an approval of text (Genehmiger sehen und bearbeiten einen Textblock) und Wait for an approval.",
+    "source": {
+      "title": "Introduction to approval flows",
+      "url": "https://learn.microsoft.com/en-us/training/modules/build-approval-flows/1-introduction"
+    }
+  },
+  {
+    "id": "start-with-data",
+    "term": "Start with data",
+    "aliases": [
+      "Create new data",
+      "Upload file",
+      "Copilot-generated app"
+    ],
+    "definition": "Einstieg im Maker-Portal, um eine Canvas-App aus Daten zu erzeugen: aus einer bestehenden Quelle, per Excel-Upload (wird als Dataverse-Tabelle importiert) oder per Beschreibung im Gespräch mit Copilot (Copilot entwirft die Tabelle). Beide Copilot-Wege setzen eine Umgebung mit Dataverse voraus; Spaltennamen und -typen sollten vor „Save and open app“ geprüft werden.",
+    "source": {
+      "title": "Exercise - Create an app from Excel using Copilot",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps/create-app-copilot"
+    }
+  },
+  {
+    "id": "status-reason",
+    "term": "status reason",
+    "aliases": [
+      "status column",
+      "Status Reason"
+    ],
+    "definition": "Systemspalten jeder Tabelle: Status hat bei benutzerdefinierten Tabellen nur Active/Inactive; Status Reason liefert Detailoptionen, die jeweils einem Status zugeordnet sind und vom Maker erweitert werden können (z. B. Active → New, In Progress; Inactive → Closed).",
+    "source": {
+      "title": "Column types in Microsoft Dataverse",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-manage-fields-within-entity/2-field-types"
+    }
+  },
+  {
+    "id": "subgrid",
+    "term": "subgrid",
+    "aliases": [
+      "subgrids",
+      "sub-grid"
+    ],
+    "definition": "Formularkomponente in modellgesteuerten Apps, die verknüpfte Zeilen einer anderen Tabelle (1:N oder N:N) als Liste auf dem Formular anzeigt – z. B. alle Tricks eines Pets. So werden auch N:N-Beziehungen sichtbar, obwohl die Intersect-Tabelle verborgen ist.",
+    "source": {
+      "title": "Table relationships",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps-common-data-service/learn-about-relationships"
+    }
+  },
+  {
+    "id": "submitform",
+    "term": "SubmitForm",
+    "aliases": [
+      "SubmitForm()",
+      "OnSuccess",
+      "OnFailure"
+    ],
+    "definition": "Power-Fx-Funktion, die die Änderungen aller Datenkarten eines Edit-Form-Steuerelements in die Datenquelle schreibt: SubmitForm(Form1), typischerweise im OnSelect eines Speichern-Buttons. Bei Erfolg läuft die OnSuccess-Eigenschaft des Formulars (z. B. Navigate zurück), bei Fehlern OnFailure. Ohne Formular nutzt man stattdessen Patch().",
+    "source": {
+      "title": "Work with Power Fx formulas in canvas apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/power-fx-formulas"
+    }
+  },
+  {
+    "id": "system-administrator",
+    "term": "System Administrator",
+    "aliases": [
+      "system admin"
+    ],
+    "definition": "Dataverse-Sicherheitsrolle mit Vollzugriff: Umgebung anpassen und verwalten, Sicherheitsrollen erstellen, ändern und zuweisen, alle Daten sehen. In Umgebungen mit Dataverse-Datenbank ersetzt sie den Environment Admin für volle Adminrechte; Tenant-Adminrollen (Global/Power Platform Admin) erhalten sie nicht automatisch.",
+    "source": {
+      "title": "Understand environment roles",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-security-roles/2-roles"
+    }
+  },
+  {
+    "id": "system-customizer",
+    "term": "System Customizer",
+    "definition": "Dataverse-Sicherheitsrolle mit vollen Anpassungsrechten (Tabellen, Spalten, Sicherheitsrollen, Apps) und Zugriff auf alle Daten benutzerdefinierter Tabellen – bei Account, Contact und Activity jedoch nur die selbst erstellten Zeilen. Maker, die Dataverse-Tabellen anlegen sollen, brauchen sie zusätzlich zum Environment Maker.",
+    "source": {
+      "title": "Understand environment roles",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-security-roles/2-roles"
+    }
+  },
+  {
+    "id": "view-types",
+    "term": "system view",
+    "aliases": [
+      "public view",
+      "personal view"
+    ],
+    "definition": "Drei Ansichtstypen modellgesteuerter Apps: Personal view (vom Nutzer erstellt, nur für ihn sichtbar, teilbar), System view (von der App benötigt, automatisch für jede Tabelle angelegt, nur von System Administrator/System Customizer editierbar, nicht löschbar, nicht in Subgrids/Dashboards nutzbar) und Public view (allgemein, anpassbar, für alle App-Nutzer im View-Selector; auch in Subgrids und Dashboards). Systemdefinierte Public Views können nicht gelöscht werden; in verwalteten Lösungen sind Ansichten nicht editierbar.",
+    "source": {
+      "title": "Configure views overview",
+      "url": "https://learn.microsoft.com/en-us/training/modules/configure-model-driven-apps-customer-engagement-apps/05-configure-views"
+    }
+  },
+  {
+    "id": "form-structure",
+    "term": "form tab",
+    "aliases": [
+      "tabs and sections",
+      "form section",
+      "form sections",
+      "form body",
+      "form header",
+      "form footer"
+    ],
+    "definition": "Aufbau eines Hauptformulars: Header, Body und Footer, wobei der Body in Tabs mit Sections gegliedert ist, die wiederum Spalten von Formularelementen enthalten. Der erste Tab sollte die wichtigsten Daten zeigen; zu viele Tabs schaden Bedienbarkeit und Performance, vor allem mobil. Tabs, Sections, Spalten, iFrames und Web Resources lassen sich per Eigenschaft, Geschäftsregel oder Skript ein-/ausblenden.",
+    "source": {
+      "title": "Form elements",
+      "url": "https://learn.microsoft.com/en-us/training/modules/configure-model-driven-apps-customer-engagement-apps/02-forms-elements"
+    }
+  },
+  {
+    "id": "table",
+    "term": "custom table",
+    "aliases": [
+      "custom tables",
+      "standard table",
+      "standard tables",
+      "Dataverse table",
+      "Dataverse tables"
+    ],
+    "definition": "Grundbaustein von Dataverse: eine logische Struktur aus Zeilen (Datensätzen) und Spalten, ergänzt um Beziehungen, Schlüssel, Formulare, Ansichten, Diagramme, Geschäftsregeln und Befehle. Standardtabellen (z. B. Account, Contact) liefert Dataverse mit; benutzerdefinierte Tabellen legt man für eigene Daten an. Standardtabellen lassen sich nicht löschen, nur per Sicherheitsrolle ausblenden.",
+    "source": {
+      "title": "Table characteristics",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps-common-data-service/2-learn-about-entities"
+    }
+  },
+  {
+    "id": "table-ownership",
+    "term": "table ownership",
+    "aliases": [
+      "record ownership",
+      "user or team owned",
+      "organization-owned",
+      "organization owned"
+    ],
+    "definition": "Beim Erstellen fixierte Eigenschaft: User or team owned bedeutet zeilenbezogene Rechte je Besitzer (Zugriffsebenen User/Business Unit/Parent-Child/Organization greifen); Organization-owned bedeutet, der Zugriff wird nur auf Organisationsebene gesteuert – keine Besitzerspalte, kein Freigeben einzelner Zeilen.",
+    "source": {
+      "title": "Table characteristics",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps-common-data-service/2-learn-about-entities"
+    }
+  },
+  {
+    "id": "table-permissions",
+    "term": "table permissions",
+    "aliases": [
+      "table permission",
+      "Global scope",
+      "Contact scope",
+      "Account scope",
+      "Parent scope",
+      "Self scope"
+    ],
+    "definition": "Definieren, welche Web Roles welche CRUD-Operationen auf Dataverse-Tabellen einer Power-Pages-Site ausführen dürfen. Ein Zugriffstyp (scope) begrenzt die Datensätze: Global (alle), Contact (nur an den angemeldeten Kontakt geknüpfte), Account (an dessen Firma geknüpfte), Parent (über eine übergeordnete Tabellenberechtigung) und Self (der eigene Kontaktdatensatz). Ohne Tabellenrecht zeigen Listen/Formulare keine Daten.",
+    "source": {
+      "title": "Secure your Power Pages site",
+      "url": "https://learn.microsoft.com/en-us/training/modules/power-pages-studio/security"
+    }
+  },
+  {
+    "id": "table-type",
+    "term": "table type",
+    "aliases": [
+      "activity table",
+      "elastic table",
+      "standard table type"
+    ],
+    "definition": "Beim Erstellen festgelegt und danach unveränderlich: Standard (Regelfall), Activity (zeitgebundene Interaktionen wie Aufgaben, Anrufe), Virtual (externe Daten wie native Tabellen) und Elastic (Azure-Cosmos-DB-basiert für zig Millionen Zeilen).",
+    "source": {
+      "title": "Table characteristics",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps-common-data-service/2-learn-about-entities"
+    }
+  },
+  {
+    "id": "technology-proposal",
+    "term": "technology proposal",
+    "definition": "Ergebnis des Solution Agent in Plans: Für jede Anforderung wird eine Power-Platform-Technologie als Kachel vorgeschlagen (z. B. Canvas-App für Mitarbeitende, modellgesteuerte App für HR, Cloud-Flow für Genehmigungen, Copilot-Studio-Agent für Rückfragen). Jede Kachel zeigt, welche Rollen sie bedient und welche Tabellen sie nutzt; Power-BI-Dashboards werden vorgeschlagen, aber nicht mit Plan-Kontext erstellt.",
+    "source": {
+      "title": "Review the data model and technology proposal",
+      "url": "https://learn.microsoft.com/en-us/training/modules/turn-business-ideas-power-platform-solutions-plans/4-review-data-model-technology-proposal"
+    }
+  },
+  {
+    "id": "app-template",
+    "term": "template",
+    "aliases": [
+      "templates",
+      "app template",
+      "app templates",
+      "site template",
+      "site templates"
+    ],
+    "definition": "Vorgefertigte Beispiel-App (Spesenabrechnung, Asset-Tracking, Onboarding …), die zeigt, wie Steuerelemente, Bildschirme und Datenquellen zusammenspielen. Nicht für den direkten Einsatz mit eigenen Daten gedacht, aber ein guter Startpunkt zum Anpassen. In Power Pages sind Templates die Ausgangsbasis für neue Sites (generisch oder Dynamics-365-spezifisch).",
+    "source": {
+      "title": "Exercise - Create your first app in Power Apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps/5-powerapps-create-first"
+    }
+  },
+  {
+    "id": "text-colorvalue",
+    "term": "Text()",
+    "aliases": [
+      "Text function",
+      "ColorValue",
+      "ColorValue()",
+      "Value()",
+      "RGBA",
+      "Color.Purple"
+    ],
+    "definition": "Text(Value, FormatString) wandelt Zahlen oder Datumswerte in formatierten Text (z. B. Text(Value(ThisItem.Price), \"$ ##.00\"); Value() macht aus Text eine Zahl). ColorValue(Text) wandelt einen Farbnamen oder Hex-Code in einen Color-Wert für Color, Fill oder BorderColor – so lassen sich Farben aus Daten steuern. Farben werden sonst als RGBA(r, g, b, a) oder Color.Name angegeben.",
+    "source": {
+      "title": "Apply Power Fx formulas to canvas app controls",
+      "url": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/3-get-started-with-functions"
+    }
+  },
+  {
+    "id": "theme",
+    "term": "theme",
+    "aliases": [
+      "themes",
+      "custom CSS",
+      "site styling"
+    ],
+    "definition": "Farben, Schriften, Abstände und andere Designelemente einer Power-Pages-Site, vorgegeben durch das Template und im Styling-Workspace anpassbar (Presets, Copilot-generierte Themes). Für komplexe Anforderungen werden eigene CSS-Dateien hochgeladen, die für alle Themes gelten; seitenbezogenes CSS wird in Visual Studio Code for the Web bearbeitet.",
+    "source": {
+      "title": "Site styling and templates",
+      "url": "https://learn.microsoft.com/en-us/training/modules/power-pages-studio/styling"
+    }
+  },
+  {
+    "id": "thisitem",
+    "term": "ThisItem",
+    "aliases": [
+      "ThisItem.IsSelected",
+      "IsSelected"
+    ],
+    "definition": "Verweis innerhalb einer Galerie (oder Formular-Datenkarte) auf den aktuellen Datensatz, z. B. ThisItem.'Machine Name'. So zeigt jedes Steuerelement in der Galerie die Daten seines eigenen Elements. ThisItem.IsSelected ist ein boolescher Wert, der nur für das gerade ausgewählte Galerie-Element true ist.",
+    "source": {
+      "title": "Exercise - Create your first app in Power Apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps/5-powerapps-create-first"
+    }
+  },
+  {
+    "id": "throttling",
+    "term": "throttling",
+    "aliases": [
+      "throttle",
+      "throttled",
+      "usage limits",
+      "API request limits",
+      "run limits"
+    ],
+    "definition": "Drosselung von Flow-Läufen, wenn das Daten-/API-Kontingent des Plans überschritten wird (bei bezahlten Plänen werden Runs organisationsweit gepoolt). Der Plan bestimmt außerdem die Polling-Frequenz (z. B. alle 15 Minuten im kostenlosen Plan – frühere Trigger werden eingereiht); manche externe Connectors wie X drosseln zusätzlich. Max. 600 Flows je Konto; Gateways nur in der Standardumgebung.",
+    "source": {
+      "title": "Troubleshoot flows",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-flows/9-troubleshoot-flows"
+    }
+  },
+  {
+    "id": "timeline-control",
+    "term": "timeline",
+    "aliases": [
+      "timeline control",
+      "Timeline control"
+    ],
+    "definition": "Formularsteuerelement, das den gesamten Aktivitätsverlauf zu einer Zeile chronologisch zeigt – Notizen, Termine, E-Mails, Anrufe, Aufgaben – und es erlaubt, neue Aktivitäten direkt daraus zu erstellen. Basis sind die Activity-Tabellen; typischerweise auf Account- und Contact-Formularen.",
+    "source": {
+      "title": "Use specialized form components",
+      "url": "https://learn.microsoft.com/en-us/training/modules/configure-model-driven-apps-customer-engagement-apps/04-specialized-form-components"
+    }
+  },
+  {
+    "id": "topic",
+    "term": "topic",
+    "aliases": [
+      "topics",
+      "Topics",
+      "trigger phrase",
+      "trigger phrases",
+      "Ask a question",
+      "Call an action",
+      "send a message"
+    ],
+    "definition": "Gesprächspfad eines Copilot-Studio-Agenten: ausgelöst durch Trigger-Phrasen („Summarize Proposal“), aufgebaut aus Knoten wie „Ask a question“ (Antwort in Variable speichern, z. B. als „User's entire response“), „Call an action“ (etwa einen Prompt/AI-Plug-in aufrufen) und „Send a message“ (Variable wie VarOutput.text ausgeben).",
+    "source": {
+      "title": "Use a grounded prompt in a custom copilot",
+      "url": "https://learn.microsoft.com/en-us/training/modules/ai-builder-grounded-prompts/use-grounded-prompt-custom-copilot"
+    }
+  },
+  {
+    "id": "trigger",
+    "term": "trigger",
+    "aliases": [
+      "triggers"
+    ],
+    "definition": "Jeder Flow beginnt mit genau einem Trigger – dem Ereignis, das ihn startet (neue E-Mail, neue Dataverse-Zeile, Zeitplan, manueller Start) – und enthält eine oder mehrere Aktionen, die darauf reagieren (Datei speichern, Nachricht posten, Zeile aktualisieren). Der Approvals-Connector hat keinen Trigger, nur Aktionen.",
+    "source": {
+      "title": "Create a cloud flow",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-flows/2-create-first-flow"
+    }
+  },
+  {
+    "id": "trigger-scope",
+    "term": "trigger scope",
+    "aliases": [
+      "scope option",
+      "scope options",
+      "Scope of the trigger",
+      "trigger's scope",
+      "scope to User",
+      "scope to Organization",
+      "scope to Business Unit"
+    ],
+    "definition": "Legt fest, wessen Zeilen den Dataverse-Trigger auslösen, abhängig vom Besitzer der geänderten Zeile: Organization (Standard; jeder), User (nur eigene Zeilen – für persönliche Automatisierungen), Business Unit (Zeilen der eigenen Business Unit) und Parent: Child Business Unit (inkl. untergeordneter Units). Bei organisationseigenen Tabellen gibt es nur Organization. Der Flow feuert ohnehin nur für Zeilen, die der Besitzer lesen darf.",
+    "source": {
+      "title": "Dataverse triggers",
+      "url": "https://learn.microsoft.com/en-us/training/modules/use-dataverse-triggers-actions/triggers"
+    }
+  },
+  {
+    "id": "update-a-row",
+    "term": "Update a row",
+    "aliases": [
+      "Update a row action",
+      "null expression",
+      "Row ID"
+    ],
+    "definition": "Dataverse-Aktion, die eine bestehende Zeile per Row ID (GUID, benannt wie die Tabelle – nicht die OData ID) ändert. Keine Spalte ist Pflicht; nur tatsächlich geänderte Werte übergeben, weil jedes übergebene Feld andere Automatisierungen auslösen kann. Zum Leeren eines Werts den Ausdruck null verwenden.",
+    "source": {
+      "title": "Create, update, delete, and relate actions",
+      "url": "https://learn.microsoft.com/en-us/training/modules/use-dataverse-triggers-actions/create-update-delete-relate"
+    }
+  },
+  {
+    "id": "upsert-a-row",
+    "term": "Upsert a row",
+    "aliases": [
+      "upsert",
+      "Upsert"
+    ],
+    "definition": "Dataverse-Aktion, die eine Zeile aktualisiert, wenn die Row ID (bzw. ein alternate key) existiert, und sonst neu anlegt. Sinnvoll, wenn eine Zeile sicher existieren soll, ohne sie vorher abzufragen.",
+    "source": {
+      "title": "Create, update, delete, and relate actions",
+      "url": "https://learn.microsoft.com/en-us/training/modules/use-dataverse-triggers-actions/create-update-delete-relate"
+    }
+  },
+  {
+    "id": "user-roles-needs",
+    "term": "user need",
+    "aliases": [
+      "user needs",
+      "user role",
+      "user roles"
+    ],
+    "definition": "Die beiden Ausgaben des Requirement Agent: user roles sind die Personengruppen, die mit der Lösung arbeiten (z. B. Employee, Manager, HR Administrator); user needs sind die konkreten Anforderungen je Rolle im Stil von User Stories („Manager needs to approve or reject requests“).",
+    "source": {
+      "title": "Create a plan and refine the requirements",
+      "url": "https://learn.microsoft.com/en-us/training/modules/turn-business-ideas-power-platform-solutions-plans/3-create-plan-refine-requirements"
+    }
+  },
+  {
+    "id": "udf",
+    "term": "user-defined function",
+    "aliases": [
+      "user-defined functions",
+      "UDF",
+      "UDFs",
+      "user defined function"
+    ],
+    "definition": "In App.Formulas definierte eigene Funktion mit Parametern und Rückgabetyp: TypeColor(machineType: Text): Color = If(…). Sinnvoll, wenn dieselbe mehrstufige Berechnung oder Bedingungslogik an mehreren Stellen gebraucht wird; benannte Formeln dagegen sind parameterlose Werte.",
+    "source": {
+      "title": "Build reusable components and formulas in canvas apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/reusable-components"
+    }
+  },
+  {
+    "id": "user-function",
+    "term": "User()",
+    "aliases": [
+      "User().FullName",
+      "User().Email",
+      "User function"
+    ],
+    "definition": "Eingebauter Power-Fx-Ausdruck für den angemeldeten Nutzer: User().FullName liefert den Anzeigenamen, User().Email die E-Mail-Adresse – z. B. für Filter('Coffee Machines', 'Created By' = User().FullName) oder um die Rolle per LookUp zu ermitteln.",
+    "source": {
+      "title": "Work with Power Fx formulas in canvas apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/power-fx-formulas"
+    }
+  },
+  {
+    "id": "bpf-lifecycle",
+    "term": "Validate",
+    "aliases": [
+      "Activate",
+      "Deactivate",
+      "draft",
+      "Enable Security Roles",
+      "Edit Security Roles",
+      "Order Process Flow"
+    ],
+    "definition": "Lebenszyklus eines Geschäftsprozessflusses im Designer: Validate prüft, ob alle Stages/Conditions vollständig sind (Fehlerzahl je Element); speichern geht auch als Entwurf, aber ein Draft ist für niemanden nutzbar; nach erfolgreicher Validierung wird Activate freigeschaltet, Deactivate versetzt ihn in Standby ohne Löschen. Enable/Edit Security Roles vergibt CRUD-Rechte auf Prozessinstanzen (standardmäßig nur System Administrator und System Customizer); Order Process Flow legt bei mehreren BPFs fest, welcher neuen Zeilen zugewiesen wird.",
+    "source": {
+      "title": "Create a business process flow",
+      "url": "https://learn.microsoft.com/en-us/training/modules/build-approval-flows/5-create-business-process-flow"
+    }
+  },
+  {
+    "id": "version-history",
+    "term": "version",
+    "aliases": [
+      "versions",
+      "version history",
+      "restore",
+      "Save with version notes"
+    ],
+    "definition": "Jedes Speichern einer Canvas-App erzeugt eine Version (Details > Versions); die zuletzt veröffentlichte ist als „Live“ markiert. Versionen der letzten sechs Monate lassen sich wiederherstellen – dabei entsteht eine neue Version als Kopie der alten, die dann veröffentlicht werden muss. „Save with version notes“ dokumentiert die Änderung; AutoSave speichert alle zwei Minuten.",
+    "source": {
+      "title": "Maintain your app",
+      "url": "https://learn.microsoft.com/en-us/training/modules/publish-share-maintain-app/4-maintain-app"
+    }
+  },
+  {
+    "id": "view",
+    "term": "view",
+    "aliases": [
+      "views"
+    ],
+    "definition": "Definiert, wie eine Liste von Zeilen einer Tabelle in der App erscheint: welche Spalten, Spaltenbreite, Sortierung und Standardfilter. Public views werden vom Maker angelegt und stehen allen zur Verfügung; personal views erstellen Nutzer selbst (z. B. per Advanced Find). Eine View kann als Standardansicht der App markiert werden.",
+    "source": {
+      "title": "Components of model-driven apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-model-driven-apps-in-powerapps/2-building-blocks-of-model-driven-apps"
+    }
+  },
+  {
+    "id": "view-designer",
+    "term": "view designer",
+    "aliases": [
+      "View designer",
+      "Filter by",
+      "Edit filters"
+    ],
+    "definition": "Editor für Ansichten (Data experiences > Views): Spalten hinzufügen, verschieben, in der Breite ändern; Sortierung und Filter über Spaltenkopf („Filter by“ mit Bedingungen wie Equals, Contains, Begins with) oder „Edit filters…“ für mehrere Bedingungen. Publish speichert die Ansicht und macht sie für andere verfügbar.",
+    "source": {
+      "title": "Configure views overview",
+      "url": "https://learn.microsoft.com/en-us/training/modules/configure-model-driven-apps-customer-engagement-apps/05-configure-views"
+    }
+  },
+  {
+    "id": "virtual-table",
+    "term": "virtual table",
+    "aliases": [
+      "virtual tables"
+    ],
+    "definition": "Tabelle, die externe Daten so darstellt, als lägen sie nativ in Dataverse – die Daten bleiben in der Quelle und werden nicht kopiert. Unterstützt volle CRUD-Operationen auf der Quelle, Beziehungen zu nativen Tabellen (1:N/N:1) und andere virtuelle Tabellen; ideal für Echtzeitzugriff, große Datenmengen und geringe Dataverse-Speichernutzung.",
+    "source": {
+      "title": "Dual-write vs. virtual tables",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-powerapps-common-data-service/2b-dual-write-vs-virtual-table"
+    }
+  },
+  {
+    "id": "visible-property",
+    "term": "Visible",
+    "aliases": [
+      "Visible property"
+    ],
+    "definition": "Eigenschaft jedes Steuerelements (Canvas-Apps und modellgesteuerte Befehle), die per Formel true/false liefert und damit steuert, ob das Element angezeigt wird – z. B. ThisItem.IsSelected, ShowConfirm (Kontextvariable) oder CountRows(Self.Selected.AllItems) > 0.",
+    "source": {
+      "title": "Explore controls and screens in canvas apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/customize-apps-in-powerapps/2-explore-screens-and-controls"
+    }
+  },
+  {
+    "id": "web-agent",
+    "term": "Web Agent",
+    "aliases": [
+      "web agents",
+      "Power Pages Web Agent"
+    ],
+    "definition": "Copilot-Studio-Agent, der in eine Power-Pages-Website eingebettet wird, um externe Nutzer (Kunden, Partner) per Konversation zu bedienen – über Kanäle wie Web, E-Mail, Teams oder WhatsApp, ohne separate Kanalintegrationen zu bauen.",
+    "source": {
+      "title": "Recommend Power Platform components for business solutions",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-powered-solutions-power-platform/3-recommend-power-platform-components"
+    }
+  },
+  {
+    "id": "waf",
+    "term": "Web Application Firewall",
+    "aliases": [
+      "WAF"
+    ],
+    "definition": "Schutzschicht im Security-Workspace von Power Pages, die die Website vor gängigen Web-Exploits und Bedrohungen absichert. Ergänzt wird sie durch das Security-scan-Tool (Monitor), das Fehlkonfigurationen findet, und erweiterte Einstellungen wie CSP, CORS und HTTP-Header.",
+    "source": {
+      "title": "Secure your Power Pages site",
+      "url": "https://learn.microsoft.com/en-us/training/modules/power-pages-studio/security"
+    }
+  },
+  {
+    "id": "web-page",
+    "term": "web page",
+    "aliases": [
+      "web pages",
+      "webpage",
+      "webpages"
+    ],
+    "definition": "Grundbaustein einer Power-Pages-Site: Jede Seite steht für eine URL, Eltern-Kind-Beziehungen bilden die Site-Hierarchie. Alle Inhalte, Layouts und Konfigurationen werden in Dataverse gespeichert und über den Pages-Workspace oder die Portal Management app bearbeitet.",
+    "source": {
+      "title": "Core tools and components of Power Pages",
+      "url": "https://learn.microsoft.com/en-us/training/modules/power-pages-intro/core-components"
+    }
+  },
+  {
+    "id": "web-role",
+    "term": "web role",
+    "aliases": [
+      "web roles",
+      "Anonymous Users"
+    ],
+    "definition": "Power-Pages-Rollen, die steuern, welche Seiten und Daten Besuchergruppen sehen. Sie werden authentifizierten Nutzern (Kontakten) zugewiesen; die Rolle Anonymous Users gilt für nicht angemeldete Besucher. Seiten- und Tabellenrechte sowie Agenten-Sichtbarkeit werden an Web Roles gebunden.",
+    "source": {
+      "title": "Secure your Power Pages site",
+      "url": "https://learn.microsoft.com/en-us/training/modules/power-pages-studio/security"
+    }
+  },
+  {
+    "id": "web-template",
+    "term": "web templates",
+    "aliases": [
+      "Liquid web template"
+    ],
+    "definition": "Vordefinierte Bausteine, die den Aufbau von Power-Pages-Seiten festlegen und statische wie dynamische Inhalte in einem bestimmten Layout darstellen. Sie basieren auf Liquid; Maker können sie anpassen oder neue erstellen und daraus eigene Seitenvorlagen ableiten.",
+    "source": {
+      "title": "Overview of Power Pages extensibility",
+      "url": "https://learn.microsoft.com/en-us/training/modules/power-pages-intro/extensibility-overview"
+    }
+  },
+  {
+    "id": "email-trigger",
+    "term": "When a new email arrives",
+    "aliases": [
+      "When a new email arrives (V3)",
+      "Subject Filter",
+      "Only with Attachments",
+      "Include Attachments"
+    ],
+    "definition": "Outlook-Trigger für automatisierte Flows mit Filteroptionen wie From, Subject Filter, Importance, Folder, Include Attachments und Only with Attachments. Nachfolgend liefert er Attachments Name/Content als dynamischen Inhalt, z. B. für SharePoint „Create file“. Ein Flow läuft bei jeder eingehenden Mail, auch wenn der Filter nicht zutrifft – das zählt als Run.",
+    "source": {
+      "title": "Exercise - Monitor incoming emails",
+      "url": "https://learn.microsoft.com/en-us/training/modules/get-started-flows/flow-monitor-incoming-emails"
+    }
+  },
+  {
+    "id": "row-added-modified-deleted",
+    "term": "When a row is added, modified or deleted",
+    "aliases": [
+      "When a row is added, modified, or deleted",
+      "change type",
+      "Change type",
+      "SdkMessage"
+    ],
+    "definition": "Wichtigster Dataverse-Trigger: Pflichtangaben sind Change type (Added, Modified, Deleted oder Kombinationen), Table name und Scope. Bei Added/Modified steht die ganze Zeile als dynamischer Inhalt bereit, bei Deleted nur die Row ID. triggerBody()?['SdkMessage'] liefert Create/Update/Delete zur Unterscheidung. Mehrfache Updates lösen den Flow mehrfach aus, auch ohne Wertänderung.",
+    "source": {
+      "title": "Dataverse triggers",
+      "url": "https://learn.microsoft.com/en-us/training/modules/use-dataverse-triggers-actions/triggers"
+    }
+  },
+  {
+    "id": "other-dataverse-triggers",
+    "term": "When an action is performed",
+    "aliases": [
+      "When a flow step is run from a business process flow",
+      "When a row is selected",
+      "Run Flow button",
+      "custom business event"
+    ],
+    "definition": "Die weiteren Dataverse-Trigger: „When an action is performed“ (nach Abschluss einer Dataverse-Aktion bzw. eines eigenen Geschäftsereignisses wie EmployeeOnboarded), „When a flow step is run from a business process flow“ (Nutzer klickt in einem BPF-Schritt auf Run Flow, z. B. für eine Managergenehmigung) und „When a row is selected“ (Nutzer wählt in einer modellgesteuerten App eine Zeile und startet den Flow).",
+    "source": {
+      "title": "Dataverse triggers",
+      "url": "https://learn.microsoft.com/en-us/training/modules/use-dataverse-triggers-actions/triggers"
+    }
+  },
+  {
+    "id": "whole-number",
+    "term": "whole number",
+    "aliases": [
+      "integer",
+      "Duration",
+      "Time zone format",
+      "Language code"
+    ],
+    "definition": "Ganzzahl-Spaltentyp (−2.147.483.648 bis 2.147.483.647; mit „Size of number = Big“ bis ±9,2 Trillionen) mit Formaten None, Duration (Zeitintervall in Minuten), Time zone und Language code (speichert die LCID).",
+    "source": {
+      "title": "Column types in Microsoft Dataverse",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-manage-fields-within-entity/2-field-types"
+    }
+  },
+  {
+    "id": "yes-no-column",
+    "term": "yes/no",
+    "aliases": [
+      "yes/no column",
+      "boolean",
+      "two options"
+    ],
+    "definition": "Boolescher Spaltentyp mit genau zwei Optionen, deren Labels frei benannt werden können (Standard: Yes/No). Labels sind bei aktivierten Sprachpaketen lokalisierbar.",
+    "source": {
+      "title": "Column types in Microsoft Dataverse",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-manage-fields-within-entity/2-field-types"
+    }
+  }
+]

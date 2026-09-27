@@ -53,8 +53,11 @@ function toFormState(config?: ExamConfig): FormState {
   };
 }
 
-function toConfig(f: FormState): ExamConfig {
+function toConfig(f: FormState, initial?: ExamConfig): ExamConfig {
   return {
+    // Felder, die das Formular nicht bearbeitet (SEO-Texte, Glossar), unverändert übernehmen
+    ...(initial?.seo ? { seo: initial.seo } : {}),
+    ...(initial?.glossary ? { glossary: initial.glossary } : {}),
     slug: f.slug.trim(),
     published: f.published,
     code: f.code.trim(),
@@ -123,7 +126,7 @@ export function ExamConfigForm({ initial, isNew }: { initial?: ExamConfig; isNew
   async function save() {
     setServerError(null);
     setSaved(false);
-    const result = safeParseExamConfig(toConfig(form));
+    const result = safeParseExamConfig(toConfig(form, initial));
     if (!result.ok) {
       setIssues(result.issues);
       return;

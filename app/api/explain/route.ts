@@ -3,6 +3,7 @@ import { getAuthService } from "@/lib/auth";
 import { getRepository } from "@/lib/data";
 import { decryptApiKey } from "@/lib/ai/crypto";
 import { getProvider } from "@/lib/ai/providers";
+import { matchGlossary } from "@/lib/glossary";
 import { retrieve } from "@/lib/rag";
 import type { Answer, Question } from "@/lib/types";
 
@@ -107,13 +108,21 @@ export async function POST(req: Request) {
   );
 
   const body = (await req.json()) as ExplainRequest;
-  const question = await getRepository().getQuestion(
-    body.examSlug,
-    body.questionId
-  );
-  if (!question) {
+  const exam = await getRepository().getExam(body.examSlug);
+  const question = exam?.questions.find((q) => q.id === body.questionId);
+  if (!exam || !question) {
     return new Response("Question not found", { status: 404 });
   }
+  // Glossar-Einträge zur Frage: geben dem Modell die Definitionen vor, damit
+  // Begriffe in der Erklärung konsistent zum angezeigten Glossar erklärt werden.
+  const glossary = matchGlossary(question, exam.config.glossary);
+  const glossaryBlock =
+    glossary.length > 0
+      ? [
+          "Glossar der Fachbegriffe in dieser Frage (verbindliche Definitionen; nutze sie, wenn du die Begriffe erklärst, und weise auf Verwechslungsgefahr zwischen ähnlichen Begriffen hin):",
+          ...glossary.map((g) => `- ${g.term}: ${g.definition}`),
+        ].join("\n")
+      : "";
 
   const encoder = new TextEncoder();
   const stream = new ReadableStream({
@@ -180,9 +189,12 @@ export async function POST(req: Request) {
         const result = streamText({
           model: userModel,
           system: [
-            "Du bist ein Trainer für Microsoft-Zertifizierungsprüfungen (aktuell: AB-900, Copilot and Agent Administration Fundamentals).",
-            "Erkläre auf Deutsch, präzise und lernorientiert. Beziehe dich konkret auf die Microsoft-365-/Copilot-/Purview-Konzepte hinter der Frage.",
+            `Du bist ein Trainer für Microsoft-Zertifizierungsprüfungen (aktuell: ${exam.config.code}, ${exam.config.title}).`,
+            "Erkläre auf Deutsch, präzise und lernorientiert. Beziehe dich konkret auf die Microsoft-Konzepte hinter der Frage.",
             "Struktur: 1) Kurz: War die Antwort des Users richtig/teilweise richtig/falsch? 2) Warum ist die korrekte Antwort korrekt? 3) Warum sind die Distraktoren falsch bzw. wo lag der Denkfehler? 4) Ein Merksatz für die Prüfung.",
+            glossary.length > 0
+              ? "Die Fachbegriffe der Frage sind im Glossar definiert. Erkläre in 2 und 3 knapp, welcher Begriff hier den Unterschied macht (z. B. Lookup vs. Choice), statt die Definitionen nur zu wiederholen."
+              : "",
             hits.length > 0
               ? [
                   "ZITATIONSPFLICHT: Belege jede inhaltliche Aussage (jeden Stichpunkt in 2 und 3) mit einem Zitations-Marker [1], [2], [3], … direkt am Ende der Aussage. Nummeriere die Marker fortlaufend; derselbe Marker darf mehrfach vorkommen, wenn dieselbe Belegstelle mehrere Aussagen stützt.",
@@ -199,6 +211,7 @@ export async function POST(req: Request) {
               ? `Hinterlegte Kurz-Erklärung: ${question.explanation}`
               : "",
             question.reference ? `Referenz: ${question.reference}` : "",
+            glossaryBlock,
             contextBlock,
             `Antwort des Users (Roh-Format): ${JSON.stringify(body.answer)}`,
           ]

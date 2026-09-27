@@ -77,3 +77,21 @@ Ergebnis (203 Fragen, 203 wortgetreue Zitate, 0 Validierungsfehler):
 Bekannte Grenzen der Lernpfade (nicht im Material enthalten, daher nicht
 abgedeckt): „Test canvas apps using Monitor“ (Monitor-Tool kommt nicht vor),
 „Recommend environment types“ (nur Power-Pages-Trial/Production erwähnt).
+
+## Glossar (27.09.2026)
+
+Auslöser: Beim Lernen fehlten Erklärungen zu Fachbegriffen („lookup column“,
+„business rule scope“ …). Umsetzung generisch für alle Examen, Inhalt für
+AB-410:
+- `data/exams/ab-410/glossary.json`: 278 Begriffe aus allen 96 inhaltlichen
+  Units (Definition deutsch, Quelle = Unit), Aliase für Kurzformen/Synonyme
+- Matching zur Laufzeit (`lib/glossary.ts`) statt Pflege pro Frage; Ergebnis
+  im Antwort-Feedback (Lern-Modus, Sofort-Feedback, End-Review, offline) und
+  als verbindliche Definitionen im Prompt der AI-Erklärung
+- Abdeckung: 203/203 Fragen mit Treffern, Ø 6,6 Begriffe je Frage, 39
+  Begriffe ohne Frage (bewusst behalten — Lerninhalt)
+- Bereinigt: Alltagswörter als Aliase („set“, „if“, „table“, „column“,
+  „step“, „plan“) entfernt, weil sie jede Frage trafen
+- Seed: Glossar liegt in `exams.config.glossary` (kein Schema-Change);
+  Admin-Formular übernimmt `seo` und `glossary` beim Speichern unverändert
+

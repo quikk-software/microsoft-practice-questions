@@ -140,6 +140,7 @@ function ReviewCard({
             question={q}
             answer={result.answer}
             score={result.score}
+            glossary={result.glossary}
             showBanner={false}
           />
         </div>

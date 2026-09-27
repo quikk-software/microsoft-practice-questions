@@ -3,7 +3,13 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
-import type { Answer, ExamResult, PublicQuestion, Question } from "@/lib/types";
+import type {
+  Answer,
+  ExamResult,
+  GlossaryEntry,
+  PublicQuestion,
+  Question,
+} from "@/lib/types";
 import { QuestionView } from "./QuestionView";
 import { ResultView } from "./ResultView";
 import { AnswerFeedback } from "./AnswerFeedback";
@@ -25,6 +31,7 @@ interface CheckResult {
   score: number;
   correct: boolean;
   question: Question;
+  glossary?: GlossaryEntry[];
 }
 
 type Phase = "loading" | "running" | "grading" | "done" | "error";
@@ -290,6 +297,7 @@ export function PracticeRunner({
             question={check.question}
             answer={answers[question.id] ?? null}
             score={check.score}
+            glossary={check.glossary}
           />
         </div>
       )}

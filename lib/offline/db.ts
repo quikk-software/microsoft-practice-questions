@@ -1,7 +1,7 @@
 "use client";
 
 import { openDB, type DBSchema, type IDBPDatabase } from "idb";
-import type { Question } from "@/lib/types";
+import type { GlossaryEntry, Question } from "@/lib/types";
 
 // Offline-Speicher für den Lern-Modus (IndexedDB):
 //  - "bundle": heruntergeladene Fragen inkl. Lösungen
@@ -12,6 +12,8 @@ export interface OfflineExam {
   code: string;
   title: string;
   questions: Question[];
+  /** Fehlt bei Paketen, die vor Einführung des Glossars geladen wurden */
+  glossary?: GlossaryEntry[];
 }
 
 export interface OfflineBundle {

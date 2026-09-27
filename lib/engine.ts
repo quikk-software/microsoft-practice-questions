@@ -7,6 +7,7 @@ import type {
   Question,
   QuestionResult,
 } from "./types";
+import { matchGlossary } from "./glossary";
 
 const DIFFICULTY_ORDER: Difficulty[] = ["easy", "medium", "hard"];
 
@@ -181,7 +182,14 @@ export function gradeExam(
   const results: QuestionResult[] = questions.map((q) => {
     const answer = answers[q.id] ?? null;
     const score = gradeQuestion(q, answer);
-    return { questionId: q.id, score, correct: score === 1, question: q, answer };
+    return {
+      questionId: q.id,
+      score,
+      correct: score === 1,
+      question: q,
+      answer,
+      glossary: matchGlossary(q, config.glossary),
+    };
   });
 
   const totalScore = results.reduce((s, r) => s + r.score, 0);

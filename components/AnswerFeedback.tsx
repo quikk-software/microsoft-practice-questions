@@ -2,12 +2,12 @@
 
 import { useState } from "react";
 import { BookOpen, ExternalLink, Sparkles } from "lucide-react";
-import type { Answer, Question } from "@/lib/types";
+import type { Answer, GlossaryEntry, Question } from "@/lib/types";
 
 /**
  * Gemeinsames Feedback-Panel für eine bewertete Frage:
  * Richtig/Teilweise/Falsch-Banner, Antwort-Vergleich, Erklärung,
- * wörtliches Quellzitat und AI-Erklärung (Streaming).
+ * wörtliches Quellzitat, Glossar der vorkommenden Begriffe und AI-Erklärung (Streaming).
  * Genutzt im Sofort-Feedback (PracticeRunner) und im End-Review (ResultView).
  */
 export function AnswerFeedback({
@@ -15,6 +15,7 @@ export function AnswerFeedback({
   question,
   answer,
   score,
+  glossary,
   showBanner = true,
   hideAiExplanation = false,
 }: {
@@ -22,6 +23,8 @@ export function AnswerFeedback({
   question: Question;
   answer: Answer | null;
   score: number;
+  /** Glossar-Einträge, die in Frage/Antworten/Erklärung vorkommen */
+  glossary?: GlossaryEntry[];
   showBanner?: boolean;
   /** Offline: KI-Erklärungen brauchen Netz und werden ausgeblendet */
   hideAiExplanation?: boolean;
@@ -92,6 +95,8 @@ export function AnswerFeedback({
         )}
       </div>
 
+      {glossary && glossary.length > 0 && <Glossary entries={glossary} />}
+
       {hideAiExplanation ? (
         <p className="mt-4 text-xs text-zinc-500">
           KI-Erklärungen sind offline nicht verfügbar.
@@ -100,6 +105,50 @@ export function AnswerFeedback({
         <AiExplanation slug={slug} questionId={question.id} answer={answer} />
       )}
     </div>
+  );
+}
+
+/**
+ * Glossar der Fachbegriffe, die in Frage, Antworten oder Erklärung vorkommen.
+ * Standardmäßig aufgeklappt — die Definitionen sind der Lernwert.
+ */
+function Glossary({ entries }: { entries: GlossaryEntry[] }) {
+  return (
+    <details
+      open
+      className="group mt-4 rounded-lg border border-zinc-200 bg-zinc-50/60 dark:border-zinc-800 dark:bg-zinc-800/40"
+    >
+      <summary className="flex cursor-pointer select-none items-center gap-2 px-3 py-2 text-xs font-semibold text-zinc-700 dark:text-zinc-300">
+        <BookOpen className="h-3.5 w-3.5" aria-hidden />
+        Glossar ({entries.length} {entries.length === 1 ? "Begriff" : "Begriffe"})
+        <span className="ml-auto text-zinc-400 group-open:hidden">anzeigen</span>
+        <span className="ml-auto hidden text-zinc-400 group-open:inline">
+          ausblenden
+        </span>
+      </summary>
+      <dl className="divide-y divide-zinc-200 border-t border-zinc-200 dark:divide-zinc-800 dark:border-zinc-800">
+        {entries.map((e) => (
+          <div key={e.id} className="px-3 py-2.5">
+            <dt className="font-semibold text-zinc-900 dark:text-zinc-100">
+              {e.term}
+            </dt>
+            <dd className="mt-0.5 text-xs leading-relaxed text-zinc-700 dark:text-zinc-300">
+              {e.definition}{" "}
+              <a
+                href={e.source.url}
+                target="_blank"
+                rel="noreferrer"
+                title={e.source.title}
+                className="inline-flex items-center gap-0.5 whitespace-nowrap text-brand-600 hover:underline dark:text-brand-400"
+              >
+                Quelle
+                <ExternalLink className="h-3 w-3" aria-hidden />
+              </a>
+            </dd>
+          </div>
+        ))}
+      </dl>
+    </details>
   );
 }
 

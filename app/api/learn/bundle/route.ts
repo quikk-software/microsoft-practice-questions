@@ -38,6 +38,7 @@ export async function GET(req: Request) {
     code: exam.config.code,
     title: exam.config.title,
     questions: exam.questions,
+    glossary: exam.config.glossary ?? [],
   }));
 
   return NextResponse.json(
