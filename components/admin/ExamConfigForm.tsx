@@ -58,6 +58,7 @@ function toConfig(f: FormState, initial?: ExamConfig): ExamConfig {
     // Felder, die das Formular nicht bearbeitet (SEO-Texte, Glossar), unverändert übernehmen
     ...(initial?.seo ? { seo: initial.seo } : {}),
     ...(initial?.glossary ? { glossary: initial.glossary } : {}),
+    ...(initial?.compendium ? { compendium: initial.compendium } : {}),
     slug: f.slug.trim(),
     published: f.published,
     code: f.code.trim(),

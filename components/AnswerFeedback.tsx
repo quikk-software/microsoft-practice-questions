@@ -95,7 +95,9 @@ export function AnswerFeedback({
         )}
       </div>
 
-      {glossary && glossary.length > 0 && <Glossary entries={glossary} />}
+      {glossary && glossary.length > 0 && (
+        <Glossary entries={glossary} compendiumHref={`/exams/${slug}/nachschlagewerk`} />
+      )}
 
       {hideAiExplanation ? (
         <p className="mt-4 text-xs text-zinc-500">
@@ -112,7 +114,13 @@ export function AnswerFeedback({
  * Glossar der Fachbegriffe, die in Frage, Antworten oder Erklärung vorkommen.
  * Standardmäßig aufgeklappt — die Definitionen sind der Lernwert.
  */
-function Glossary({ entries }: { entries: GlossaryEntry[] }) {
+function Glossary({
+  entries,
+  compendiumHref,
+}: {
+  entries: GlossaryEntry[];
+  compendiumHref: string;
+}) {
   return (
     <details
       open
@@ -148,6 +156,17 @@ function Glossary({ entries }: { entries: GlossaryEntry[] }) {
           </div>
         ))}
       </dl>
+      <p className="border-t border-zinc-200 px-3 py-2 text-xs dark:border-zinc-800">
+        <a
+          href={compendiumHref}
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex items-center gap-1 text-brand-600 hover:underline dark:text-brand-400"
+        >
+          Zusammenhänge im Nachschlagewerk nachlesen
+          <ExternalLink className="h-3 w-3" aria-hidden />
+        </a>
+      </p>
     </details>
   );
 }

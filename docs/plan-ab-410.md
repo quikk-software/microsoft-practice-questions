@@ -95,3 +95,15 @@ AB-410:
 - Seed: Glossar liegt in `exams.config.glossary` (kein Schema-Change);
   Admin-Formular übernimmt `seo` und `glossary` beim Speichern unverändert
 
+## Nachschlagewerk (28.09.2026)
+
+Auslöser: Joyce wollte die Lerninhalte als zusammenhängende Übersicht mit
+rotem Faden in der App, um auch die Architektur zu verstehen.
+- `data/exams/ab-410/compendium.md`: ~11.500 Wörter, 12 Kapitel, 53
+  Unterkapitel, 22 Tabellen — Reihenfolge Architektur → Plattform/Rollen →
+  Dataverse (Modell, Logik, Sicherheit) → Canvas → modellgesteuert → Power
+  Pages → Power Automate/Approvals/BPF → KI-Schicht → Entscheidungshilfen
+- Seite `/exams/ab-410/nachschlagewerk` mit klebrigem Inhaltsverzeichnis;
+  verlinkt von der Examen-Seite und aus jedem Glossar-Block
+- Speicherung wie Glossar in `exams.config.compendium` (Seed/Fs-Merge)
+

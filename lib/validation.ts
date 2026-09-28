@@ -60,6 +60,7 @@ export const examConfigSchema = z
       })
       .optional(),
     glossary: z.array(glossaryEntrySchema).optional(),
+    compendium: z.string().optional(),
     code: z.string().min(1, "Code fehlt"),
     title: z.string().min(1, "Titel fehlt"),
     description: z.string().min(1, "Beschreibung fehlt"),

@@ -61,6 +61,10 @@ async function seedExam(slug) {
   if (fs.existsSync(glossaryPath)) {
     config.glossary = readJson(glossaryPath);
   }
+  const compendiumPath = path.join(examDir, "compendium.md");
+  if (fs.existsSync(compendiumPath)) {
+    config.compendium = fs.readFileSync(compendiumPath, "utf8");
+  }
   await upsertBatched(
     "exams",
     [
@@ -74,7 +78,7 @@ async function seedExam(slug) {
     "slug"
   );
   console.log(
-    `exams: "${config.slug}" upserted (Glossar: ${config.glossary?.length ?? 0} Begriffe)`
+    `exams: "${config.slug}" upserted (Glossar: ${config.glossary?.length ?? 0} Begriffe, Nachschlagewerk: ${config.compendium ? "ja" : "nein"})`
   );
 
   // --- questions ---

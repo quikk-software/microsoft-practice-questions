@@ -55,6 +55,8 @@ export interface ExamConfig {
   seo?: ExamSeo;
   /** Begriffs-Glossar; liegt im Dateitreiber separat in glossary.json */
   glossary?: GlossaryEntry[];
+  /** Nachschlagewerk (Markdown); liegt im Dateitreiber separat in compendium.md */
+  compendium?: string;
   code: string;
   title: string;
   description: string;

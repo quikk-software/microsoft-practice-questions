@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ChevronLeft } from "lucide-react";
+import { BookOpen, ChevronLeft } from "lucide-react";
 import { getRepository } from "@/lib/data";
 import { getRequestTenant } from "@/lib/tenants/server";
 import {
@@ -98,13 +98,22 @@ export default async function ExamDetailPage({
         })}
       </ul>
 
-      <div className="mt-10">
+      <div className="mt-10 flex flex-wrap items-center gap-3">
         <Link
           href={`/exams/${config.slug}/practice`}
           className="inline-block rounded-lg bg-brand-600 px-6 py-3 font-semibold text-white shadow transition hover:bg-brand-700"
         >
           Test-Examen starten ({config.questionCount} Fragen)
         </Link>
+        {config.compendium && (
+          <Link
+            href={`/exams/${config.slug}/nachschlagewerk`}
+            className="inline-flex items-center gap-2 rounded-lg border border-brand-300 bg-brand-50 px-5 py-3 font-medium text-brand-800 transition hover:bg-brand-100 dark:border-brand-800 dark:bg-brand-950/40 dark:text-brand-300"
+          >
+            <BookOpen className="h-4 w-4" aria-hidden />
+            Nachschlagewerk
+          </Link>
+        )}
       </div>
 
       {/* Öffentliche Inhalte (SSR, indexierbar) */}
