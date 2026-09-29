@@ -1,0 +1,556 @@
+[
+  {
+    "id": "ab620-057",
+    "type": "single-choice",
+    "skillArea": "integrate-extend",
+    "topic": "A2A vs MCP vs connectors",
+    "difficulty": "medium",
+    "prompt": "A logistics partner exposes a shipment-tracking agent on a non-Microsoft platform. The agent reasons about tracking events, interprets delays, and answers in context across multiple turns. Which integration option fits?",
+    "options": [
+      {
+        "id": "a",
+        "text": "An A2A protocol agent connection that delegates the task to the partner agent"
+      },
+      {
+        "id": "b",
+        "text": "An MCP server connection so the orchestrator can call the partner's tracking tools individually"
+      },
+      {
+        "id": "c",
+        "text": "A custom connector over the partner's REST endpoint that returns the tracking record"
+      },
+      {
+        "id": "d",
+        "text": "A child agent in the orchestrator that reimplements the partner's tracking logic"
+      }
+    ],
+    "correct": "a",
+    "explanation": "A2A ist für Agent-zu-Agent-Delegation gebaut: Der externe Agent ist opak, nutzt eigenes Reasoning und eigene Tools und liefert eine agentengenerierte, kontextbezogene Antwort – mit Multi-Turn-Kontext über Context IDs. Ein Connector liefert nur Rohdaten, MCP gibt dem Orchestrator kontrollierten Zugriff auf einzelne Tools.",
+    "source": {
+      "title": "Understand the Agent2Agent (A2A) protocol",
+      "url": "https://learn.microsoft.com/en-us/training/modules/build-cross-platform-multi-agent-solutions-agent2agent-copilot-studio/2-understand-a2a-protocol",
+      "quote": "Choose a connector when you need raw API data from a service without an AI reasoning layer. Choose MCP when you need controlled, orchestrator-governed tool invocations. Choose A2A when you need to delegate a task to an external agent that handles it using its own reasoning and orchestration."
+    }
+  },
+  {
+    "id": "ab620-058",
+    "type": "matching",
+    "skillArea": "integrate-extend",
+    "topic": "A2A core concepts",
+    "difficulty": "medium",
+    "prompt": "Match each A2A concept to its role.",
+    "left": [
+      {
+        "id": "l1",
+        "text": "Agent card"
+      },
+      {
+        "id": "l2",
+        "text": "Task"
+      },
+      {
+        "id": "l3",
+        "text": "Context ID"
+      },
+      {
+        "id": "l4",
+        "text": "Message content parts"
+      }
+    ],
+    "right": [
+      {
+        "id": "r1",
+        "text": "JSON discovery document at /.well-known/agent.json describing name, purpose, capabilities, and endpoint"
+      },
+      {
+        "id": "r2",
+        "text": "The unit of work delegated to the external agent, containing the request and context"
+      },
+      {
+        "id": "r3",
+        "text": "Identifier that ties each delegated task to the same ongoing conversation across turns"
+      },
+      {
+        "id": "r4",
+        "text": "Structured payload carrying text, tool call results, metadata, and conversation history"
+      }
+    ],
+    "correct": {
+      "l1": "r1",
+      "l2": "r2",
+      "l3": "r3",
+      "l4": "r4"
+    },
+    "explanation": "Die Agent Card wird beim Eingeben der Endpoint-URL automatisch abgerufen und füllt Name und Beschreibung; Tasks sind die Arbeitseinheit; Context IDs sichern Gesprächskontinuität über Agentengrenzen; Message Content Parts transportieren den strukturierten Inhalt inklusive Verlauf.",
+    "source": {
+      "title": "Understand the Agent2Agent (A2A) protocol",
+      "url": "https://learn.microsoft.com/en-us/training/modules/build-cross-platform-multi-agent-solutions-agent2agent-copilot-studio/2-understand-a2a-protocol",
+      "quote": "Agent cards are JSON discovery documents published at a well-known URL path (typically /.well-known/agent.json relative to the agent's endpoint)."
+    }
+  },
+  {
+    "id": "ab620-059",
+    "type": "single-choice",
+    "skillArea": "integrate-extend",
+    "topic": "A2A connection setup",
+    "difficulty": "medium",
+    "prompt": "After entering a partner's A2A endpoint URL, the name and description fields stay empty. What should you check first?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Open {endpoint}/.well-known/agent.json in a browser to confirm the card is valid"
+      },
+      {
+        "id": "b",
+        "text": "Switch the authentication method from API key to OAuth 2.0 so discovery can authenticate"
+      },
+      {
+        "id": "c",
+        "text": "Enable Let other agents connect to and use this one on the partner's agent"
+      },
+      {
+        "id": "d",
+        "text": "Publish the orchestrator first, because agent cards need a published agent"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Copilot Studio leitet die Discovery-URL aus dem Endpoint ab und füllt Name und Beschreibung aus der Agent Card. Bleiben die Felder leer, ist die URL falsch oder die Card fehlt/ist fehlerhaft – direkt im Browser prüfen; notfalls Name und Beschreibung manuell eintragen und den Betreiber informieren.",
+    "source": {
+      "title": "Connect a Copilot Studio agent to an A2A-enabled agent",
+      "url": "https://learn.microsoft.com/en-us/training/modules/build-cross-platform-multi-agent-solutions-agent2agent-copilot-studio/3-connect-a2a-enabled-agent",
+      "quote": "Navigate directly to {endpoint}/.well-known/agent.json in a browser to confirm the agent card exists and is valid JSON"
+    }
+  },
+  {
+    "id": "ab620-060",
+    "type": "single-choice",
+    "skillArea": "plan-configure",
+    "topic": "A2A authentication",
+    "difficulty": "easy",
+    "prompt": "A partner requires every request to carry a shared secret in an HTTP header named X-Partner-Key. Which authentication option should you select for the A2A connection, and what do you enter?",
+    "options": [
+      {
+        "id": "a",
+        "text": "API key, entering the header name and the key value supplied by the partner"
+      },
+      {
+        "id": "b",
+        "text": "OAuth 2.0, entering the client ID, client secret, and the partner's token URL"
+      },
+      {
+        "id": "c",
+        "text": "None, because the header is added by the on-premises data gateway"
+      },
+      {
+        "id": "d",
+        "text": "Client certificate, uploading the partner's certificate and private key"
+      }
+    ],
+    "correct": "a",
+    "explanation": "API key deckt ein geteiltes Geheimnis in einem Header oder Query-Parameter ab: Headername (z. B. X-Partner-Key) und Wert eingeben. OAuth 2.0 ist für tokenbasierte Unternehmensszenarien; None nur für Sandbox/Entwicklung. Schlüssel gelten als sensible Anmeldedaten und gehören nicht in Topics oder Flows.",
+    "source": {
+      "title": "Connect a Copilot Studio agent to an A2A-enabled agent",
+      "url": "https://learn.microsoft.com/en-us/training/modules/build-cross-platform-multi-agent-solutions-agent2agent-copilot-studio/3-connect-a2a-enabled-agent",
+      "quote": "API key: Used when the external agent requires a shared secret passed in a specific HTTP header or query parameter."
+    }
+  },
+  {
+    "id": "ab620-061",
+    "type": "single-choice",
+    "skillArea": "plan-configure",
+    "topic": "A2A responsible use",
+    "difficulty": "hard",
+    "prompt": "While testing an A2A integration, you see that the full session history, including a customer's internal account number captured earlier, is sent to the partner's agent, which only needs the shipment query. What should you do before enabling the integration for live users?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Confirm with the partner how session history is retained and review the data processing agreement"
+      },
+      {
+        "id": "b",
+        "text": "Switch the connection to OAuth 2.0 so the account number is encrypted in transit to the partner's endpoint"
+      },
+      {
+        "id": "c",
+        "text": "Move the account lookup into a child agent so its variables are not part of the orchestrator's session"
+      },
+      {
+        "id": "d",
+        "text": "Reduce the A2A message payload by removing the locale and message IDs from the request"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Standardmäßig sendet der Orchestrator den gesamten Gesprächsverlauf mit. Bei einem Agenten einer anderen Organisation ist zu klären, welche Daten er verarbeitet und behält, ob die Datenverarbeitungsvereinbarung das abdeckt und ob sensible Daten überhaupt nötig sind – und die Entscheidung im Governance-Protokoll festzuhalten.",
+    "source": {
+      "title": "Test and validate an A2A agent connection",
+      "url": "https://learn.microsoft.com/en-us/training/modules/build-cross-platform-multi-agent-solutions-agent2agent-copilot-studio/4-test-validate-a2a-connection",
+      "quote": "The maker flags this as a data governance concern and raises it with Northwind Traders' technical contact to confirm how their agent handles session history and what data it retains."
+    }
+  },
+  {
+    "id": "ab620-062",
+    "type": "single-choice",
+    "skillArea": "test-manage",
+    "topic": "A2A troubleshooting",
+    "difficulty": "medium",
+    "prompt": "Prompts that should be answered internally are sometimes delegated to a partner's A2A agent, and the A2A agent occasionally misinterprets requests. Which fix addresses both symptoms according to the learning content?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Refine the A2A agent's description to scope routing more precisely"
+      },
+      {
+        "id": "b",
+        "text": "Replace the API key with OAuth 2.0 so the partner receives user context"
+      },
+      {
+        "id": "c",
+        "text": "Configure the on-premises data gateway to reduce endpoint latency"
+      },
+      {
+        "id": "d",
+        "text": "Disable the partner agent with the Enabled toggle until the partner improves its model"
+      }
+    ],
+    "correct": "a",
+    "explanation": "In der Troubleshooting-Tabelle führen sowohl „keine/falsche Delegation“ als auch „unerwartete A2A-Antworten“ zur selben Maßnahme: die Beschreibung präziser und abgrenzender formulieren (z. B. nur Bestellungen, die über den Partner versendet werden). Authentifizierung und Gateway betreffen andere Symptome.",
+    "source": {
+      "title": "Test and validate an A2A agent connection",
+      "url": "https://learn.microsoft.com/en-us/training/modules/build-cross-platform-multi-agent-solutions-agent2agent-copilot-studio/4-test-validate-a2a-connection",
+      "quote": "If a prompt that should be handled internally is being routed to the A2A agent, refine the agent's description in Copilot Studio to be more specific about the scope of queries it handles."
+    }
+  },
+  {
+    "id": "ab620-063",
+    "type": "single-choice",
+    "skillArea": "integrate-extend",
+    "topic": "Copilot connectors vs real-time connectors",
+    "difficulty": "medium",
+    "prompt": "A bank agent must answer \"What's the current balance on account 4471?\" Regulations prohibit copying account data into the Microsoft 365 tenant, and the answer must reflect the live state. Which knowledge source type should you use?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A real-time Power Platform connector knowledge source over the core banking system"
+      },
+      {
+        "id": "b",
+        "text": "A Copilot connector that indexes the account records into Microsoft Graph with an hourly sync cadence"
+      },
+      {
+        "id": "c",
+        "text": "An Azure AI Search index over exported account statements with semantic ranker enabled"
+      },
+      {
+        "id": "d",
+        "text": "A SharePoint knowledge source fed by a scheduled export of the banking system"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Real-time-Connectors rufen die Quelle zum Zeitpunkt der Frage per Live-API auf; es werden keine Daten nach Microsoft 365 repliziert, nur Metadaten indexiert. Das passt, wenn Aktualität nicht verhandelbar ist oder Replikation aus Compliance-Gründen verboten ist. Nachteil: keine inhärenten Zitate.",
+    "source": {
+      "title": "Choose between Copilot connector and Power Platform connector knowledge sources",
+      "url": "https://learn.microsoft.com/en-us/training/modules/ground-agents-enterprise-knowledge-connectors-azure-ai-search-copilot-studio/2-choose-knowledge-source-approach",
+      "quote": "The second is when replicating data into the Microsoft 365 tenant isn't permitted — for example, when data residency rules, privacy regulations, or compliance requirements prohibit copying sensitive records."
+    }
+  },
+  {
+    "id": "ab620-064",
+    "type": "single-choice",
+    "skillArea": "integrate-extend",
+    "topic": "Copilot connectors",
+    "difficulty": "easy",
+    "prompt": "IT procedure articles in a third-party knowledge base change monthly and must appear in agent answers with inline citations. Which knowledge source type is the best fit?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A Copilot connector, because indexed Graph content is searchable and citable"
+      },
+      {
+        "id": "b",
+        "text": "A real-time Power Platform connector, because it reflects the latest article state"
+      },
+      {
+        "id": "c",
+        "text": "A public website knowledge source pointing at the knowledge base login page"
+      },
+      {
+        "id": "d",
+        "text": "A Dataverse table that a flow populates with the article titles once a month"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Copilot Connectors (früher Graph Connectors) indexieren Inhalte semantisch in Microsoft Graph; Agenten finden sie per semantischer Suche und können einzelne Artikel zitieren. Für statische oder langsam veränderliche Referenzinhalte ist das die richtige Wahl; Real-time-Connectors bieten keine Zitate.",
+    "source": {
+      "title": "Choose between Copilot connector and Power Platform connector knowledge sources",
+      "url": "https://learn.microsoft.com/en-us/training/modules/ground-agents-enterprise-knowledge-connectors-azure-ai-search-copilot-studio/2-choose-knowledge-source-approach",
+      "quote": "Because the content lives in the Graph index, agents retrieve it using semantic search and can cite specific items in their responses."
+    }
+  },
+  {
+    "id": "ab620-065",
+    "type": "single-choice",
+    "skillArea": "integrate-extend",
+    "topic": "Copilot connector prerequisites",
+    "difficulty": "medium",
+    "prompt": "A maker wants to add the company's ITSM system as a Copilot connector knowledge source, but it is not listed in the Add knowledge dialog, even under Advanced. What is required?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A tenant administrator must configure the connector in the Microsoft 365 admin center first"
+      },
+      {
+        "id": "b",
+        "text": "The maker must create a Power Platform connection to the ITSM system in the environment"
+      },
+      {
+        "id": "c",
+        "text": "The environment's DLP policy must be changed to allow the ITSM premium connector"
+      },
+      {
+        "id": "d",
+        "text": "The maker must add the ExternalItem.Read.All scope to the agent's authentication settings"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Copilot Connectors werden auf Tenant-Ebene vom Admin im Microsoft 365 admin center konfiguriert; Maker wählen nur aus den bereits eingerichteten Connectors. Fehlt ein Connector auch unter Advanced, ist der Admin zu kontaktieren. DLP und Power-Platform-Verbindungen betreffen Real-time-Connectors.",
+    "source": {
+      "title": "Add Copilot connectors as knowledge sources",
+      "url": "https://learn.microsoft.com/en-us/training/modules/ground-agents-enterprise-knowledge-connectors-azure-ai-search-copilot-studio/3-add-copilot-connector-knowledge",
+      "quote": "Before you can add a Copilot connector as a knowledge source, the tenant admin must configure it and make it available. As a maker, you select from the connectors your admin has already set up."
+    }
+  },
+  {
+    "id": "ab620-066",
+    "type": "single-choice",
+    "skillArea": "plan-configure",
+    "topic": "Copilot connector authentication scope",
+    "difficulty": "hard",
+    "prompt": "An agent with a Copilot connector knowledge source is published to a Teams channel that uses manual authentication. Users get answers from SharePoint sources but never from the connector. What is missing?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The ExternalItem.Read.All Graph scope in the channel's manual authentication settings"
+      },
+      {
+        "id": "b",
+        "text": "The Sites.Read.All Microsoft Graph scope in the agent's security settings under Authentication"
+      },
+      {
+        "id": "c",
+        "text": "Tenant graph grounding with semantic search, which must be enabled for Teams"
+      },
+      {
+        "id": "d",
+        "text": "A description on the knowledge source so the orchestrator routes questions to it"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Der Agent liest die von Copilot Connectors indexierten Elemente im Namen des angemeldeten Nutzers; dafür braucht er den Graph-Scope ExternalItem.Read.All in der manuellen Authentifizierung des Kanals. Ohne den Scope liefert der Connector zur Laufzeit keine Inhalte, auch wenn er korrekt hinzugefügt ist.",
+    "source": {
+      "title": "Add Copilot connectors as knowledge sources",
+      "url": "https://learn.microsoft.com/en-us/training/modules/ground-agents-enterprise-knowledge-connectors-azure-ai-search-copilot-studio/3-add-copilot-connector-knowledge",
+      "quote": "Without this scope, the agent can't return content from the connector at runtime, even if the connector is correctly added and configured as a knowledge source."
+    }
+  },
+  {
+    "id": "ab620-067",
+    "type": "yes-no",
+    "skillArea": "integrate-extend",
+    "topic": "Real-time connector knowledge",
+    "difficulty": "medium",
+    "prompt": "You add a real-time Power Platform connector knowledge source over the core banking system. Evaluate each statement.",
+    "statements": [
+      {
+        "id": "s1",
+        "text": "Copilot Studio indexes only metadata such as table and column names; the data stays in the source.",
+        "correct": true
+      },
+      {
+        "id": "s2",
+        "text": "Retrieval runs under the identity of the user asking, so source-system access controls are honored.",
+        "correct": true
+      },
+      {
+        "id": "s3",
+        "text": "The agent produces document-level citations for answers from this source.",
+        "correct": false
+      },
+      {
+        "id": "s4",
+        "text": "If a DLP policy later blocks the connector, existing knowledge sources based on it keep working.",
+        "correct": false
+      }
+    ],
+    "explanation": "Real-time-Connectors halten die Daten in der Quelle, indexieren nur Metadaten und rufen zur Laufzeit unter der Identität des Nutzers ab. Sie liefern keine Dokumentzitate. DLP bestimmt, welche Connectors verfügbar sind; wird ein Connector blockiert, funktionieren darauf basierende Wissensquellen nicht mehr. Premium-Connectors brauchen passende Lizenzen.",
+    "source": {
+      "title": "Configure Power Platform connectors as real-time knowledge sources",
+      "url": "https://learn.microsoft.com/en-us/training/modules/ground-agents-enterprise-knowledge-connectors-azure-ai-search-copilot-studio/4-configure-realtime-knowledge-sources",
+      "quote": "If a connector is blocked by DLP, it won't appear as an option, and any existing connector knowledge source using it stops working."
+    }
+  },
+  {
+    "id": "ab620-068",
+    "type": "single-choice",
+    "skillArea": "integrate-extend",
+    "topic": "Azure AI Search connection",
+    "difficulty": "hard",
+    "prompt": "A maker adds Azure AI Search as a knowledge source by typing the service endpoint URL and API key directly into the knowledge source form instead of using Create new connection. What is the likely consequence?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A faulty environment-level connection that can block every agent from adding Azure AI Search"
+      },
+      {
+        "id": "b",
+        "text": "The source works but shows a degraded status until the next index refresh"
+      },
+      {
+        "id": "c",
+        "text": "The source is added, but citations are missing because no URL field is mapped"
+      },
+      {
+        "id": "d",
+        "text": "The connection is rejected immediately because API keys are not an allowed authentication type"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Datenverbindungen für Azure AI Search liegen auf Umgebungsebene. Eine manuell erzeugte, fehlerhafte Verbindung betrifft nicht nur den aktuellen Agenten, sondern kann den Azure-AI-Search-Dialog für alle Agenten der Umgebung blockieren; sie lässt sich nicht im Produkt löschen (Recovery: externen Zugriff zurücksetzen oder Agent neu anlegen).",
+    "source": {
+      "title": "Connect an agent to Azure AI Search",
+      "url": "https://learn.microsoft.com/en-us/training/modules/ground-agents-enterprise-knowledge-connectors-azure-ai-search-copilot-studio/5-connect-azure-ai-search",
+      "quote": "Manual entry creates a faulty environment-level connection that can block all agents in the environment from adding Azure AI Search as a knowledge source."
+    }
+  },
+  {
+    "id": "ab620-069",
+    "type": "single-choice",
+    "skillArea": "integrate-extend",
+    "topic": "Azure AI Search authentication",
+    "difficulty": "medium",
+    "prompt": "A compliance team wants the Azure AI Search knowledge source to inherit the organization's existing identity controls and avoid managing or rotating keys. Which authentication type should they choose?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Microsoft Entra ID Integrated"
+      },
+      {
+        "id": "b",
+        "text": "Access Key"
+      },
+      {
+        "id": "c",
+        "text": "Client Certificate Auth"
+      },
+      {
+        "id": "d",
+        "text": "Service principal"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Microsoft Entra ID Integrated ist die empfohlene Option: Sie nutzt die Identität des angemeldeten Nutzers, erfordert keine Schlüsselverwaltung und passt zu den IAM-Praktiken der Organisation. Access Key ist für schnelle Einrichtung außerhalb der Produktion (mit Rotation), Service Principal für Service-zu-Service-Szenarien.",
+    "source": {
+      "title": "Connect an agent to Azure AI Search",
+      "url": "https://learn.microsoft.com/en-us/training/modules/ground-agents-enterprise-knowledge-connectors-azure-ai-search-copilot-studio/5-connect-azure-ai-search",
+      "quote": "It uses the signed-in user's identity rather than a stored key or certificate, which removes the overhead of key rotation and aligns with your organization's identity and access management practices."
+    }
+  },
+  {
+    "id": "ab620-070",
+    "type": "single-choice",
+    "skillArea": "integrate-extend",
+    "topic": "Azure AI Search citations",
+    "difficulty": "medium",
+    "prompt": "An Azure AI Search index contains both a metadata_storage_path field and a custom source_url field with the full document URL. Which field does Copilot Studio use for citation links?",
+    "options": [
+      {
+        "id": "a",
+        "text": "metadata_storage_path, because Copilot Studio checks for that field first"
+      },
+      {
+        "id": "b",
+        "text": "source_url, because custom URL fields take precedence over system fields"
+      },
+      {
+        "id": "c",
+        "text": "Neither, because citation fields must be mapped explicitly in the knowledge source dialog"
+      },
+      {
+        "id": "d",
+        "text": "Both, because every URL field in the index is rendered as a separate citation"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Copilot Studio prüft zuerst auf metadata_storage_path und nutzt es als Zitat-URL. Nur wenn dieses Feld fehlt, wird ein anderes Feld mit vollständiger URL herangezogen. Nutzer brauchen zudem Zugriff auf die verlinkten Dokumente.",
+    "source": {
+      "title": "Connect an agent to Azure AI Search",
+      "url": "https://learn.microsoft.com/en-us/training/modules/ground-agents-enterprise-knowledge-connectors-azure-ai-search-copilot-studio/5-connect-azure-ai-search",
+      "quote": "Copilot Studio checks for a field named metadata_storage_path first. If that field exists in the index, it uses it as the citation URL."
+    }
+  },
+  {
+    "id": "ab620-071",
+    "type": "single-choice",
+    "skillArea": "integrate-extend",
+    "topic": "Azure AI Search index",
+    "difficulty": "medium",
+    "prompt": "Compliance questions rarely match exact keywords in the regulatory index, and result ranking is poor. The Azure AI Search tier includes an optional re-ranking feature. What should be done so the agent benefits from it?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Enable semantic ranker in Azure AI Search first, then activate it for the knowledge source"
+      },
+      {
+        "id": "b",
+        "text": "Add a second Azure AI Search index to the same connection so the results of both are merged"
+      },
+      {
+        "id": "c",
+        "text": "Switch the index from integrated vectorization to keyword-only search"
+      },
+      {
+        "id": "d",
+        "text": "Increase the number of node-level knowledge sources in the generative answers node"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Der Semantic Ranker verbessert das Ranking natürlichsprachlicher Anfragen durch Re-Ranking mit Sprachmodellen; er muss in Azure AI Search aktiviert sein (tierabhängig), bevor er in Copilot Studio eingeschaltet werden kann. Pro Verbindung ist nur ein Index möglich; integrierte Vektorisierung ist Voraussetzung, kein Hindernis.",
+    "source": {
+      "title": "Connect an agent to Azure AI Search",
+      "url": "https://learn.microsoft.com/en-us/training/modules/ground-agents-enterprise-knowledge-connectors-azure-ai-search-copilot-studio/5-connect-azure-ai-search",
+      "quote": "The semantic ranker feature must be enabled in Azure AI Search before you can configure it in Copilot Studio. Availability depends on the service tier."
+    }
+  },
+  {
+    "id": "ab620-072",
+    "type": "single-choice",
+    "skillArea": "plan-configure",
+    "topic": "Integration categories",
+    "difficulty": "easy",
+    "prompt": "An IT service-desk agent must update tickets in an ITSM system, answer questions from the IT knowledge base, and hand sensitive HR questions to an HR agent. Which mapping of requirements to integration categories is correct?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Ticket updates = tool, knowledge base = knowledge source, HR questions = connected agent"
+      },
+      {
+        "id": "b",
+        "text": "Ticket updates = knowledge source, knowledge base = tool, HR questions = connected agent"
+      },
+      {
+        "id": "c",
+        "text": "Ticket updates = connected agent, knowledge base = knowledge source, HR questions = tool"
+      },
+      {
+        "id": "d",
+        "text": "Ticket updates = tool, knowledge base = connected agent, HR questions = knowledge source"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Tools sind für das Handeln in externen Systemen (Datensatz aktualisieren, Benachrichtigung senden), Wissensquellen für das Beantworten von Fragen aus Inhalten, Agenten für das Delegieren von Reasoning an spezialisierte Agenten. Die Wahl folgt aus dem Zweck, nicht aus Präferenz.",
+    "source": {
+      "title": "Explore the Copilot Studio integration landscape",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-enterprise-integration-strategies-agents-copilot-studio/2-explore-integration-landscape",
+      "quote": "Tools are the integration type for doing things."
+    }
+  }
+]

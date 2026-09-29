@@ -1,0 +1,992 @@
+[
+  {
+    "uid": "learn.wwl.generate-ai-powered-responses-generative-answers-copilot-studio.introduction",
+    "title": "Introduction",
+    "url": "https://learn.microsoft.com/en-us/training/modules/generate-ai-powered-responses-generative-answers-copilot-studio/1-introduction",
+    "module": "generate-ai-powered-responses-generative-answers-copilot-studio",
+    "moduleTitle": "Generate AI-powered agent responses using generative answers in Microsoft Copilot Studio",
+    "file": "content/generate-ai-powered-responses-generative-answers-copilot-studio/01-1-introduction.md",
+    "chars": 2061
+  },
+  {
+    "uid": "learn.wwl.generate-ai-powered-responses-generative-answers-copilot-studio.configure-generative-answers-node",
+    "title": "Configure the generative answers node in a topic",
+    "url": "https://learn.microsoft.com/en-us/training/modules/generate-ai-powered-responses-generative-answers-copilot-studio/2-configure-generative-answers-node",
+    "module": "generate-ai-powered-responses-generative-answers-copilot-studio",
+    "moduleTitle": "Generate AI-powered agent responses using generative answers in Microsoft Copilot Studio",
+    "file": "content/generate-ai-powered-responses-generative-answers-copilot-studio/02-2-configure-generative-answers-node.md",
+    "chars": 5691
+  },
+  {
+    "uid": "learn.wwl.generate-ai-powered-responses-generative-answers-copilot-studio.connect-custom-knowledge-sources",
+    "title": "Connect custom knowledge sources to a generative answers node",
+    "url": "https://learn.microsoft.com/en-us/training/modules/generate-ai-powered-responses-generative-answers-copilot-studio/3-connect-custom-knowledge-sources",
+    "module": "generate-ai-powered-responses-generative-answers-copilot-studio",
+    "moduleTitle": "Generate AI-powered agent responses using generative answers in Microsoft Copilot Studio",
+    "file": "content/generate-ai-powered-responses-generative-answers-copilot-studio/03-3-connect-custom-knowledge-sources.md",
+    "chars": 6306
+  },
+  {
+    "uid": "learn.wwl.generate-ai-powered-responses-generative-answers-copilot-studio.shape-responses-custom-instructions",
+    "title": "Shape AI responses with custom instructions",
+    "url": "https://learn.microsoft.com/en-us/training/modules/generate-ai-powered-responses-generative-answers-copilot-studio/4-shape-responses-custom-instructions",
+    "module": "generate-ai-powered-responses-generative-answers-copilot-studio",
+    "moduleTitle": "Generate AI-powered agent responses using generative answers in Microsoft Copilot Studio",
+    "file": "content/generate-ai-powered-responses-generative-answers-copilot-studio/04-4-shape-responses-custom-instructions.md",
+    "chars": 7768
+  },
+  {
+    "uid": "learn.wwl.generate-ai-powered-responses-generative-answers-copilot-studio.author-custom-prompts-topics",
+    "title": "Author and configure custom prompts in topics",
+    "url": "https://learn.microsoft.com/en-us/training/modules/generate-ai-powered-responses-generative-answers-copilot-studio/5-author-custom-prompts-topics",
+    "module": "generate-ai-powered-responses-generative-answers-copilot-studio",
+    "moduleTitle": "Generate AI-powered agent responses using generative answers in Microsoft Copilot Studio",
+    "file": "content/generate-ai-powered-responses-generative-answers-copilot-studio/05-5-author-custom-prompts-topics.md",
+    "chars": 9175
+  },
+  {
+    "uid": "learn.wwl.generate-ai-powered-responses-generative-answers-copilot-studio.knowledge-check",
+    "title": "Module assessment",
+    "url": "https://learn.microsoft.com/en-us/training/modules/generate-ai-powered-responses-generative-answers-copilot-studio/6-knowledge-check",
+    "module": "generate-ai-powered-responses-generative-answers-copilot-studio",
+    "moduleTitle": "Generate AI-powered agent responses using generative answers in Microsoft Copilot Studio",
+    "file": "content/generate-ai-powered-responses-generative-answers-copilot-studio/06-6-knowledge-check.md",
+    "chars": 3003
+  },
+  {
+    "uid": "learn.wwl.generate-ai-powered-responses-generative-answers-copilot-studio.summary",
+    "title": "Summary",
+    "url": "https://learn.microsoft.com/en-us/training/modules/generate-ai-powered-responses-generative-answers-copilot-studio/7-summary",
+    "module": "generate-ai-powered-responses-generative-answers-copilot-studio",
+    "moduleTitle": "Generate AI-powered agent responses using generative answers in Microsoft Copilot Studio",
+    "file": "content/generate-ai-powered-responses-generative-answers-copilot-studio/07-7-summary.md",
+    "chars": 1891
+  },
+  {
+    "uid": "learn.wwl.take-action-agent-conversations-topics-tools-copilot-studio.introduction",
+    "title": "Introduction",
+    "url": "https://learn.microsoft.com/en-us/training/modules/take-action-agent-topics-tools-flows-copilot-studio/1-introduction",
+    "module": "take-action-agent-topics-tools-flows-copilot-studio",
+    "moduleTitle": "Take action from agent conversations using topics and tools in Microsoft Copilot Studio",
+    "file": "content/take-action-agent-topics-tools-flows-copilot-studio/01-1-introduction.md",
+    "chars": 2508
+  },
+  {
+    "uid": "learn.wwl.take-action-agent-conversations-topics-tools-copilot-studio.call-tools-topics",
+    "title": "Call tools from agent topics",
+    "url": "https://learn.microsoft.com/en-us/training/modules/take-action-agent-topics-tools-flows-copilot-studio/2-call-tools-topics",
+    "module": "take-action-agent-topics-tools-flows-copilot-studio",
+    "moduleTitle": "Take action from agent conversations using topics and tools in Microsoft Copilot Studio",
+    "file": "content/take-action-agent-topics-tools-flows-copilot-studio/02-2-call-tools-topics.md",
+    "chars": 9147
+  },
+  {
+    "uid": "learn.wwl.take-action-agent-conversations-topics-tools-copilot-studio.call-agent-flows-topics",
+    "title": "Call agent flows from agent topics",
+    "url": "https://learn.microsoft.com/en-us/training/modules/take-action-agent-topics-tools-flows-copilot-studio/3-call-agent-flows-topics",
+    "module": "take-action-agent-topics-tools-flows-copilot-studio",
+    "moduleTitle": "Take action from agent conversations using topics and tools in Microsoft Copilot Studio",
+    "file": "content/take-action-agent-topics-tools-flows-copilot-studio/03-3-call-agent-flows-topics.md",
+    "chars": 7517
+  },
+  {
+    "uid": "learn.wwl.take-action-agent-conversations-topics-tools-copilot-studio.configure-http-request-node",
+    "title": "Retrieve and send data using the HTTP request node",
+    "url": "https://learn.microsoft.com/en-us/training/modules/take-action-agent-topics-tools-flows-copilot-studio/4-configure-http-request-node",
+    "module": "take-action-agent-topics-tools-flows-copilot-studio",
+    "moduleTitle": "Take action from agent conversations using topics and tools in Microsoft Copilot Studio",
+    "file": "content/take-action-agent-topics-tools-flows-copilot-studio/04-4-configure-http-request-node.md",
+    "chars": 7584
+  },
+  {
+    "uid": "learn.wwl.take-action-agent-conversations-topics-tools-copilot-studio.knowledge-check",
+    "title": "Module assessment",
+    "url": "https://learn.microsoft.com/en-us/training/modules/take-action-agent-topics-tools-flows-copilot-studio/5-knowledge-check",
+    "module": "take-action-agent-topics-tools-flows-copilot-studio",
+    "moduleTitle": "Take action from agent conversations using topics and tools in Microsoft Copilot Studio",
+    "file": "content/take-action-agent-topics-tools-flows-copilot-studio/05-5-knowledge-check.md",
+    "chars": 2369
+  },
+  {
+    "uid": "learn.wwl.take-action-agent-conversations-topics-tools-copilot-studio.summary",
+    "title": "Summary",
+    "url": "https://learn.microsoft.com/en-us/training/modules/take-action-agent-topics-tools-flows-copilot-studio/6-summary",
+    "module": "take-action-agent-topics-tools-flows-copilot-studio",
+    "moduleTitle": "Take action from agent conversations using topics and tools in Microsoft Copilot Studio",
+    "file": "content/take-action-agent-topics-tools-flows-copilot-studio/06-6-summary.md",
+    "chars": 1980
+  },
+  {
+    "uid": "learn.wwl.deliver-rich-agent-responses-adaptive-cards-copilot-studio.introduction",
+    "title": "Introduction",
+    "url": "https://learn.microsoft.com/en-us/training/modules/deliver-rich-agent-responses-adaptive-cards-copilot-studio/1-introduction",
+    "module": "deliver-rich-agent-responses-adaptive-cards-copilot-studio",
+    "moduleTitle": "Deliver rich agent responses using Adaptive Cards in Microsoft Copilot Studio",
+    "file": "content/deliver-rich-agent-responses-adaptive-cards-copilot-studio/01-1-introduction.md",
+    "chars": 2065
+  },
+  {
+    "uid": "learn.wwl.deliver-rich-agent-responses-adaptive-cards-copilot-studio.configure-message-formatting",
+    "title": "Configure message formatting in agent topics",
+    "url": "https://learn.microsoft.com/en-us/training/modules/deliver-rich-agent-responses-adaptive-cards-copilot-studio/2-configure-message-formatting",
+    "module": "deliver-rich-agent-responses-adaptive-cards-copilot-studio",
+    "moduleTitle": "Deliver rich agent responses using Adaptive Cards in Microsoft Copilot Studio",
+    "file": "content/deliver-rich-agent-responses-adaptive-cards-copilot-studio/02-2-configure-message-formatting.md",
+    "chars": 6841
+  },
+  {
+    "uid": "learn.wwl.deliver-rich-agent-responses-adaptive-cards-copilot-studio.design-informational-adaptive-cards",
+    "title": "Design informational Adaptive Cards for agent responses",
+    "url": "https://learn.microsoft.com/en-us/training/modules/deliver-rich-agent-responses-adaptive-cards-copilot-studio/3-design-informational-adaptive-cards",
+    "module": "deliver-rich-agent-responses-adaptive-cards-copilot-studio",
+    "moduleTitle": "Deliver rich agent responses using Adaptive Cards in Microsoft Copilot Studio",
+    "file": "content/deliver-rich-agent-responses-adaptive-cards-copilot-studio/03-3-design-informational-adaptive-cards.md",
+    "chars": 9813
+  },
+  {
+    "uid": "learn.wwl.deliver-rich-agent-responses-adaptive-cards-copilot-studio.collect-input-adaptive-cards",
+    "title": "Collect user input with interactive Adaptive Cards",
+    "url": "https://learn.microsoft.com/en-us/training/modules/deliver-rich-agent-responses-adaptive-cards-copilot-studio/4-collect-input-adaptive-cards",
+    "module": "deliver-rich-agent-responses-adaptive-cards-copilot-studio",
+    "moduleTitle": "Deliver rich agent responses using Adaptive Cards in Microsoft Copilot Studio",
+    "file": "content/deliver-rich-agent-responses-adaptive-cards-copilot-studio/04-4-collect-input-adaptive-cards.md",
+    "chars": 8374
+  },
+  {
+    "uid": "learn.wwl.deliver-rich-agent-responses-adaptive-cards-copilot-studio.adaptive-cards-channel-considerations",
+    "title": "Apply channel-specific considerations for Adaptive Cards",
+    "url": "https://learn.microsoft.com/en-us/training/modules/deliver-rich-agent-responses-adaptive-cards-copilot-studio/5-adaptive-cards-channel-considerations",
+    "module": "deliver-rich-agent-responses-adaptive-cards-copilot-studio",
+    "moduleTitle": "Deliver rich agent responses using Adaptive Cards in Microsoft Copilot Studio",
+    "file": "content/deliver-rich-agent-responses-adaptive-cards-copilot-studio/05-5-adaptive-cards-channel-considerations.md",
+    "chars": 6565
+  },
+  {
+    "uid": "learn.wwl.deliver-rich-agent-responses-adaptive-cards-copilot-studio.knowledge-check",
+    "title": "Module assessment",
+    "url": "https://learn.microsoft.com/en-us/training/modules/deliver-rich-agent-responses-adaptive-cards-copilot-studio/6-knowledge-check",
+    "module": "deliver-rich-agent-responses-adaptive-cards-copilot-studio",
+    "moduleTitle": "Deliver rich agent responses using Adaptive Cards in Microsoft Copilot Studio",
+    "file": "content/deliver-rich-agent-responses-adaptive-cards-copilot-studio/06-6-knowledge-check.md",
+    "chars": 2566
+  },
+  {
+    "uid": "learn.wwl.deliver-rich-agent-responses-adaptive-cards-copilot-studio.summary",
+    "title": "Summary",
+    "url": "https://learn.microsoft.com/en-us/training/modules/deliver-rich-agent-responses-adaptive-cards-copilot-studio/7-summary",
+    "module": "deliver-rich-agent-responses-adaptive-cards-copilot-studio",
+    "moduleTitle": "Deliver rich agent responses using Adaptive Cards in Microsoft Copilot Studio",
+    "file": "content/deliver-rich-agent-responses-adaptive-cards-copilot-studio/07-7-summary.md",
+    "chars": 1728
+  },
+  {
+    "uid": "learn.wwl.delegate-agent-tasks-child-agents-copilot-studio.introduction",
+    "title": "Introduction",
+    "url": "https://learn.microsoft.com/en-us/training/modules/delegate-agent-tasks-child-agents-copilot-studio/1-introduction",
+    "module": "delegate-agent-tasks-child-agents-copilot-studio",
+    "moduleTitle": "Delegate agent tasks using child agents in Copilot Studio",
+    "file": "content/delegate-agent-tasks-child-agents-copilot-studio/01-1-introduction.md",
+    "chars": 1617
+  },
+  {
+    "uid": "learn.wwl.delegate-agent-tasks-child-agents-copilot-studio.understand-child-agents",
+    "title": "Understand child agents in Copilot Studio",
+    "url": "https://learn.microsoft.com/en-us/training/modules/delegate-agent-tasks-child-agents-copilot-studio/2-understand-child-agents",
+    "module": "delegate-agent-tasks-child-agents-copilot-studio",
+    "moduleTitle": "Delegate agent tasks using child agents in Copilot Studio",
+    "file": "content/delegate-agent-tasks-child-agents-copilot-studio/02-2-understand-child-agents.md",
+    "chars": 6163
+  },
+  {
+    "uid": "learn.wwl.delegate-agent-tasks-child-agents-copilot-studio.create-configure-child-agent",
+    "title": "Create and configure a child agent",
+    "url": "https://learn.microsoft.com/en-us/training/modules/delegate-agent-tasks-child-agents-copilot-studio/3-create-configure-child-agent",
+    "module": "delegate-agent-tasks-child-agents-copilot-studio",
+    "moduleTitle": "Delegate agent tasks using child agents in Copilot Studio",
+    "file": "content/delegate-agent-tasks-child-agents-copilot-studio/03-3-create-configure-child-agent.md",
+    "chars": 7355
+  },
+  {
+    "uid": "learn.wwl.delegate-agent-tasks-child-agents-copilot-studio.configure-child-agent-inputs-outputs-triggers",
+    "title": "Configure child agent inputs, outputs, and trigger behavior",
+    "url": "https://learn.microsoft.com/en-us/training/modules/delegate-agent-tasks-child-agents-copilot-studio/4-configure-child-agent-inputs-outputs-triggers",
+    "module": "delegate-agent-tasks-child-agents-copilot-studio",
+    "moduleTitle": "Delegate agent tasks using child agents in Copilot Studio",
+    "file": "content/delegate-agent-tasks-child-agents-copilot-studio/04-4-configure-child-agent-inputs-outputs-triggers.md",
+    "chars": 8508
+  },
+  {
+    "uid": "learn.wwl.delegate-agent-tasks-child-agents-copilot-studio.test-manage-child-agents",
+    "title": "Test and manage child agents",
+    "url": "https://learn.microsoft.com/en-us/training/modules/delegate-agent-tasks-child-agents-copilot-studio/5-test-manage-child-agents",
+    "module": "delegate-agent-tasks-child-agents-copilot-studio",
+    "moduleTitle": "Delegate agent tasks using child agents in Copilot Studio",
+    "file": "content/delegate-agent-tasks-child-agents-copilot-studio/05-5-test-manage-child-agents.md",
+    "chars": 5859
+  },
+  {
+    "uid": "learn.wwl.delegate-agent-tasks-child-agents-copilot-studio.knowledge-check",
+    "title": "Module assessment",
+    "url": "https://learn.microsoft.com/en-us/training/modules/delegate-agent-tasks-child-agents-copilot-studio/6-knowledge-check",
+    "module": "delegate-agent-tasks-child-agents-copilot-studio",
+    "moduleTitle": "Delegate agent tasks using child agents in Copilot Studio",
+    "file": "content/delegate-agent-tasks-child-agents-copilot-studio/06-6-knowledge-check.md",
+    "chars": 3493
+  },
+  {
+    "uid": "learn.wwl.delegate-agent-tasks-child-agents-copilot-studio.summary",
+    "title": "Summary",
+    "url": "https://learn.microsoft.com/en-us/training/modules/delegate-agent-tasks-child-agents-copilot-studio/7-summary",
+    "module": "delegate-agent-tasks-child-agents-copilot-studio",
+    "moduleTitle": "Delegate agent tasks using child agents in Copilot Studio",
+    "file": "content/delegate-agent-tasks-child-agents-copilot-studio/07-7-summary.md",
+    "chars": 1692
+  },
+  {
+    "uid": "learn.wwl.design-multi-agent-solutions-copilot-studio.introduction",
+    "title": "Introduction",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-multi-agent-solutions-copilot-studio/1-introduction",
+    "module": "design-multi-agent-solutions-copilot-studio",
+    "moduleTitle": "Design multi-agent solutions in Microsoft Copilot Studio",
+    "file": "content/design-multi-agent-solutions-copilot-studio/01-1-introduction.md",
+    "chars": 1745
+  },
+  {
+    "uid": "learn.wwl.design-multi-agent-solutions-copilot-studio.understand-multi-agent-architectures",
+    "title": "Understand multi-agent architectures in Copilot Studio",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-multi-agent-solutions-copilot-studio/2-understand-multi-agent-architectures",
+    "module": "design-multi-agent-solutions-copilot-studio",
+    "moduleTitle": "Design multi-agent solutions in Microsoft Copilot Studio",
+    "file": "content/design-multi-agent-solutions-copilot-studio/02-2-understand-multi-agent-architectures.md",
+    "chars": 6072
+  },
+  {
+    "uid": "learn.wwl.design-multi-agent-solutions-copilot-studio.design-agent-organization",
+    "title": "Design multi-agent solutions using child agents",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-multi-agent-solutions-copilot-studio/3-design-agent-organization",
+    "module": "design-multi-agent-solutions-copilot-studio",
+    "moduleTitle": "Design multi-agent solutions in Microsoft Copilot Studio",
+    "file": "content/design-multi-agent-solutions-copilot-studio/03-3-design-agent-organization.md",
+    "chars": 4504
+  },
+  {
+    "uid": "learn.wwl.design-multi-agent-solutions-copilot-studio.select-multi-agent-orchestration-pattern",
+    "title": "Design multi-agent solutions using connected agents",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-multi-agent-solutions-copilot-studio/4-select-multi-agent-orchestration-pattern",
+    "module": "design-multi-agent-solutions-copilot-studio",
+    "moduleTitle": "Design multi-agent solutions in Microsoft Copilot Studio",
+    "file": "content/design-multi-agent-solutions-copilot-studio/04-4-select-multi-agent-orchestration-pattern.md",
+    "chars": 11369
+  },
+  {
+    "uid": "learn.wwl.design-multi-agent-solutions-copilot-studio.knowledge-check",
+    "title": "Module assessment",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-multi-agent-solutions-copilot-studio/5-knowledge-check",
+    "module": "design-multi-agent-solutions-copilot-studio",
+    "moduleTitle": "Design multi-agent solutions in Microsoft Copilot Studio",
+    "file": "content/design-multi-agent-solutions-copilot-studio/05-5-knowledge-check.md",
+    "chars": 3265
+  },
+  {
+    "uid": "learn.wwl.design-multi-agent-solutions-copilot-studio.summary",
+    "title": "Summary",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-multi-agent-solutions-copilot-studio/6-summary",
+    "module": "design-multi-agent-solutions-copilot-studio",
+    "moduleTitle": "Design multi-agent solutions in Microsoft Copilot Studio",
+    "file": "content/design-multi-agent-solutions-copilot-studio/06-6-summary.md",
+    "chars": 2178
+  },
+  {
+    "uid": "learn.wwl.build-multi-agent-solutions-connected-agents-copilot-studio.introduction",
+    "title": "Introduction",
+    "url": "https://learn.microsoft.com/en-us/training/modules/build-multi-agent-solutions-connected-agents-copilot-studio/1-introduction",
+    "module": "build-multi-agent-solutions-connected-agents-copilot-studio",
+    "moduleTitle": "Build multi-agent solutions using connected agents in Copilot Studio",
+    "file": "content/build-multi-agent-solutions-connected-agents-copilot-studio/01-1-introduction.md",
+    "chars": 2185
+  },
+  {
+    "uid": "learn.wwl.build-multi-agent-solutions-connected-agents-copilot-studio.understand-connected-agents",
+    "title": "Understand connected agents in Copilot Studio",
+    "url": "https://learn.microsoft.com/en-us/training/modules/build-multi-agent-solutions-connected-agents-copilot-studio/2-understand-connected-agents",
+    "module": "build-multi-agent-solutions-connected-agents-copilot-studio",
+    "moduleTitle": "Build multi-agent solutions using connected agents in Copilot Studio",
+    "file": "content/build-multi-agent-solutions-connected-agents-copilot-studio/02-2-understand-connected-agents.md",
+    "chars": 6249
+  },
+  {
+    "uid": "learn.wwl.build-multi-agent-solutions-connected-agents-copilot-studio.connect-copilot-studio-agent",
+    "title": "Connect an existing Copilot Studio agent",
+    "url": "https://learn.microsoft.com/en-us/training/modules/build-multi-agent-solutions-connected-agents-copilot-studio/3-connect-copilot-studio-agent",
+    "module": "build-multi-agent-solutions-connected-agents-copilot-studio",
+    "moduleTitle": "Build multi-agent solutions using connected agents in Copilot Studio",
+    "file": "content/build-multi-agent-solutions-connected-agents-copilot-studio/03-3-connect-copilot-studio-agent.md",
+    "chars": 6727
+  },
+  {
+    "uid": "learn.wwl.build-multi-agent-solutions-connected-agents-copilot-studio.connect-foundry-agent",
+    "title": "Connect a Microsoft Foundry agent",
+    "url": "https://learn.microsoft.com/en-us/training/modules/build-multi-agent-solutions-connected-agents-copilot-studio/4-connect-foundry-agent",
+    "module": "build-multi-agent-solutions-connected-agents-copilot-studio",
+    "moduleTitle": "Build multi-agent solutions using connected agents in Copilot Studio",
+    "file": "content/build-multi-agent-solutions-connected-agents-copilot-studio/04-4-connect-foundry-agent.md",
+    "chars": 5456
+  },
+  {
+    "uid": "learn.wwl.build-multi-agent-solutions-connected-agents-copilot-studio.connect-fabric-data-agent",
+    "title": "Connect a Microsoft Fabric Data agent",
+    "url": "https://learn.microsoft.com/en-us/training/modules/build-multi-agent-solutions-connected-agents-copilot-studio/5-connect-fabric-data-agent",
+    "module": "build-multi-agent-solutions-connected-agents-copilot-studio",
+    "moduleTitle": "Build multi-agent solutions using connected agents in Copilot Studio",
+    "file": "content/build-multi-agent-solutions-connected-agents-copilot-studio/05-5-connect-fabric-data-agent.md",
+    "chars": 6394
+  },
+  {
+    "uid": "learn.wwl.build-multi-agent-solutions-connected-agents-copilot-studio.manage-test-connected-agent-solution",
+    "title": "Manage and test your connected agent solution",
+    "url": "https://learn.microsoft.com/en-us/training/modules/build-multi-agent-solutions-connected-agents-copilot-studio/6-manage-test-connected-agent-solution",
+    "module": "build-multi-agent-solutions-connected-agents-copilot-studio",
+    "moduleTitle": "Build multi-agent solutions using connected agents in Copilot Studio",
+    "file": "content/build-multi-agent-solutions-connected-agents-copilot-studio/06-6-manage-test-connected-agent-solution.md",
+    "chars": 6945
+  },
+  {
+    "uid": "learn.wwl.build-multi-agent-solutions-connected-agents-copilot-studio.knowledge-check",
+    "title": "Module assessment",
+    "url": "https://learn.microsoft.com/en-us/training/modules/build-multi-agent-solutions-connected-agents-copilot-studio/7-knowledge-check",
+    "module": "build-multi-agent-solutions-connected-agents-copilot-studio",
+    "moduleTitle": "Build multi-agent solutions using connected agents in Copilot Studio",
+    "file": "content/build-multi-agent-solutions-connected-agents-copilot-studio/07-7-knowledge-check.md",
+    "chars": 2961
+  },
+  {
+    "uid": "learn.wwl.build-multi-agent-solutions-connected-agents-copilot-studio.summary",
+    "title": "Summary",
+    "url": "https://learn.microsoft.com/en-us/training/modules/build-multi-agent-solutions-connected-agents-copilot-studio/8-summary",
+    "module": "build-multi-agent-solutions-connected-agents-copilot-studio",
+    "moduleTitle": "Build multi-agent solutions using connected agents in Copilot Studio",
+    "file": "content/build-multi-agent-solutions-connected-agents-copilot-studio/08-8-summary.md",
+    "chars": 2210
+  },
+  {
+    "uid": "learn.wwl.build-cross-platform-multi-agent-solutions-agent2agent-copilot-studio.introduction",
+    "title": "Introduction",
+    "url": "https://learn.microsoft.com/en-us/training/modules/build-cross-platform-multi-agent-solutions-agent2agent-copilot-studio/1-introduction",
+    "module": "build-cross-platform-multi-agent-solutions-agent2agent-copilot-studio",
+    "moduleTitle": "Build cross-platform multi-agent solutions using the Agent2Agent protocol in Microsoft Copilot Studio",
+    "file": "content/build-cross-platform-multi-agent-solutions-agent2agent-copilot-studio/01-1-introduction.md",
+    "chars": 2290
+  },
+  {
+    "uid": "learn.wwl.build-cross-platform-multi-agent-solutions-agent2agent-copilot-studio.understand-a2a-protocol",
+    "title": "Understand the Agent2Agent (A2A) protocol",
+    "url": "https://learn.microsoft.com/en-us/training/modules/build-cross-platform-multi-agent-solutions-agent2agent-copilot-studio/2-understand-a2a-protocol",
+    "module": "build-cross-platform-multi-agent-solutions-agent2agent-copilot-studio",
+    "moduleTitle": "Build cross-platform multi-agent solutions using the Agent2Agent protocol in Microsoft Copilot Studio",
+    "file": "content/build-cross-platform-multi-agent-solutions-agent2agent-copilot-studio/02-2-understand-a2a-protocol.md",
+    "chars": 7954
+  },
+  {
+    "uid": "learn.wwl.build-cross-platform-multi-agent-solutions-agent2agent-copilot-studio.connect-a2a-enabled-agent",
+    "title": "Connect a Copilot Studio agent to an A2A-enabled agent",
+    "url": "https://learn.microsoft.com/en-us/training/modules/build-cross-platform-multi-agent-solutions-agent2agent-copilot-studio/3-connect-a2a-enabled-agent",
+    "module": "build-cross-platform-multi-agent-solutions-agent2agent-copilot-studio",
+    "moduleTitle": "Build cross-platform multi-agent solutions using the Agent2Agent protocol in Microsoft Copilot Studio",
+    "file": "content/build-cross-platform-multi-agent-solutions-agent2agent-copilot-studio/03-3-connect-a2a-enabled-agent.md",
+    "chars": 6392
+  },
+  {
+    "uid": "learn.wwl.build-cross-platform-multi-agent-solutions-agent2agent-copilot-studio.test-validate-a2a-connection",
+    "title": "Test and validate an A2A agent connection",
+    "url": "https://learn.microsoft.com/en-us/training/modules/build-cross-platform-multi-agent-solutions-agent2agent-copilot-studio/4-test-validate-a2a-connection",
+    "module": "build-cross-platform-multi-agent-solutions-agent2agent-copilot-studio",
+    "moduleTitle": "Build cross-platform multi-agent solutions using the Agent2Agent protocol in Microsoft Copilot Studio",
+    "file": "content/build-cross-platform-multi-agent-solutions-agent2agent-copilot-studio/04-4-test-validate-a2a-connection.md",
+    "chars": 8364
+  },
+  {
+    "uid": "learn.wwl.build-cross-platform-multi-agent-solutions-agent2agent-copilot-studio.knowledge-check",
+    "title": "Module assessment",
+    "url": "https://learn.microsoft.com/en-us/training/modules/build-cross-platform-multi-agent-solutions-agent2agent-copilot-studio/5-knowledge-check",
+    "module": "build-cross-platform-multi-agent-solutions-agent2agent-copilot-studio",
+    "moduleTitle": "Build cross-platform multi-agent solutions using the Agent2Agent protocol in Microsoft Copilot Studio",
+    "file": "content/build-cross-platform-multi-agent-solutions-agent2agent-copilot-studio/05-5-knowledge-check.md",
+    "chars": 2285
+  },
+  {
+    "uid": "learn.wwl.build-cross-platform-multi-agent-solutions-agent2agent-copilot-studio.summary",
+    "title": "Summary",
+    "url": "https://learn.microsoft.com/en-us/training/modules/build-cross-platform-multi-agent-solutions-agent2agent-copilot-studio/6-summary",
+    "module": "build-cross-platform-multi-agent-solutions-agent2agent-copilot-studio",
+    "moduleTitle": "Build cross-platform multi-agent solutions using the Agent2Agent protocol in Microsoft Copilot Studio",
+    "file": "content/build-cross-platform-multi-agent-solutions-agent2agent-copilot-studio/06-6-summary.md",
+    "chars": 2458
+  },
+  {
+    "uid": "learn.wwl.ground-agents-enterprise-knowledge-connectors-azure-ai-search-copilot-studio.introduction",
+    "title": "Introduction",
+    "url": "https://learn.microsoft.com/en-us/training/modules/ground-agents-enterprise-knowledge-connectors-azure-ai-search-copilot-studio/1-introduction",
+    "module": "ground-agents-enterprise-knowledge-connectors-azure-ai-search-copilot-studio",
+    "moduleTitle": "Ground agents with enterprise knowledge using connectors and Azure AI Search in Microsoft Copilot Studio",
+    "file": "content/ground-agents-enterprise-knowledge-connectors-azure-ai-search-copilot-studio/01-1-introduction.md",
+    "chars": 1728
+  },
+  {
+    "uid": "learn.wwl.ground-agents-enterprise-knowledge-connectors-azure-ai-search-copilot-studio.choose-knowledge-source-approach",
+    "title": "Choose between Copilot connector and Power Platform connector knowledge sources",
+    "url": "https://learn.microsoft.com/en-us/training/modules/ground-agents-enterprise-knowledge-connectors-azure-ai-search-copilot-studio/2-choose-knowledge-source-approach",
+    "module": "ground-agents-enterprise-knowledge-connectors-azure-ai-search-copilot-studio",
+    "moduleTitle": "Ground agents with enterprise knowledge using connectors and Azure AI Search in Microsoft Copilot Studio",
+    "file": "content/ground-agents-enterprise-knowledge-connectors-azure-ai-search-copilot-studio/02-2-choose-knowledge-source-approach.md",
+    "chars": 6097
+  },
+  {
+    "uid": "learn.wwl.ground-agents-enterprise-knowledge-connectors-azure-ai-search-copilot-studio.add-copilot-connector-knowledge",
+    "title": "Add Copilot connectors as knowledge sources",
+    "url": "https://learn.microsoft.com/en-us/training/modules/ground-agents-enterprise-knowledge-connectors-azure-ai-search-copilot-studio/3-add-copilot-connector-knowledge",
+    "module": "ground-agents-enterprise-knowledge-connectors-azure-ai-search-copilot-studio",
+    "moduleTitle": "Ground agents with enterprise knowledge using connectors and Azure AI Search in Microsoft Copilot Studio",
+    "file": "content/ground-agents-enterprise-knowledge-connectors-azure-ai-search-copilot-studio/03-3-add-copilot-connector-knowledge.md",
+    "chars": 4577
+  },
+  {
+    "uid": "learn.wwl.ground-agents-enterprise-knowledge-connectors-azure-ai-search-copilot-studio.configure-realtime-knowledge-sources",
+    "title": "Configure Power Platform connectors as real-time knowledge sources",
+    "url": "https://learn.microsoft.com/en-us/training/modules/ground-agents-enterprise-knowledge-connectors-azure-ai-search-copilot-studio/4-configure-realtime-knowledge-sources",
+    "module": "ground-agents-enterprise-knowledge-connectors-azure-ai-search-copilot-studio",
+    "moduleTitle": "Ground agents with enterprise knowledge using connectors and Azure AI Search in Microsoft Copilot Studio",
+    "file": "content/ground-agents-enterprise-knowledge-connectors-azure-ai-search-copilot-studio/04-4-configure-realtime-knowledge-sources.md",
+    "chars": 5203
+  },
+  {
+    "uid": "learn.wwl.ground-agents-enterprise-knowledge-connectors-azure-ai-search-copilot-studio.connect-azure-ai-search",
+    "title": "Connect an agent to Azure AI Search",
+    "url": "https://learn.microsoft.com/en-us/training/modules/ground-agents-enterprise-knowledge-connectors-azure-ai-search-copilot-studio/5-connect-azure-ai-search",
+    "module": "ground-agents-enterprise-knowledge-connectors-azure-ai-search-copilot-studio",
+    "moduleTitle": "Ground agents with enterprise knowledge using connectors and Azure AI Search in Microsoft Copilot Studio",
+    "file": "content/ground-agents-enterprise-knowledge-connectors-azure-ai-search-copilot-studio/05-5-connect-azure-ai-search.md",
+    "chars": 7808
+  },
+  {
+    "uid": "learn.wwl.ground-agents-enterprise-knowledge-connectors-azure-ai-search-copilot-studio.knowledge-check",
+    "title": "Module assessment",
+    "url": "https://learn.microsoft.com/en-us/training/modules/ground-agents-enterprise-knowledge-connectors-azure-ai-search-copilot-studio/6-knowledge-check",
+    "module": "ground-agents-enterprise-knowledge-connectors-azure-ai-search-copilot-studio",
+    "moduleTitle": "Ground agents with enterprise knowledge using connectors and Azure AI Search in Microsoft Copilot Studio",
+    "file": "content/ground-agents-enterprise-knowledge-connectors-azure-ai-search-copilot-studio/06-6-knowledge-check.md",
+    "chars": 2449
+  },
+  {
+    "uid": "learn.wwl.ground-agents-enterprise-knowledge-connectors-azure-ai-search-copilot-studio.summary",
+    "title": "Summary",
+    "url": "https://learn.microsoft.com/en-us/training/modules/ground-agents-enterprise-knowledge-connectors-azure-ai-search-copilot-studio/7-summary",
+    "module": "ground-agents-enterprise-knowledge-connectors-azure-ai-search-copilot-studio",
+    "moduleTitle": "Ground agents with enterprise knowledge using connectors and Azure AI Search in Microsoft Copilot Studio",
+    "file": "content/ground-agents-enterprise-knowledge-connectors-azure-ai-search-copilot-studio/07-7-summary.md",
+    "chars": 1957
+  },
+  {
+    "uid": "learn.wwl.design-integration-strategies-agents-copilot-studio.introduction",
+    "title": "Introduction",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-enterprise-integration-strategies-agents-copilot-studio/1-introduction",
+    "module": "design-enterprise-integration-strategies-agents-copilot-studio",
+    "moduleTitle": "Design integration strategies for agents in Microsoft Copilot Studio",
+    "file": "content/design-enterprise-integration-strategies-agents-copilot-studio/01-1-introduction.md",
+    "chars": 2086
+  },
+  {
+    "uid": "learn.wwl.design-integration-strategies-agents-copilot-studio.explore-integration-landscape",
+    "title": "Explore the Copilot Studio integration landscape",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-enterprise-integration-strategies-agents-copilot-studio/2-explore-integration-landscape",
+    "module": "design-enterprise-integration-strategies-agents-copilot-studio",
+    "moduleTitle": "Design integration strategies for agents in Microsoft Copilot Studio",
+    "file": "content/design-enterprise-integration-strategies-agents-copilot-studio/02-2-explore-integration-landscape.md",
+    "chars": 8157
+  },
+  {
+    "uid": "learn.wwl.design-integration-strategies-agents-copilot-studio.compare-action-integration-patterns",
+    "title": "Compare action integration patterns",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-enterprise-integration-strategies-agents-copilot-studio/3-compare-action-integration-patterns",
+    "module": "design-enterprise-integration-strategies-agents-copilot-studio",
+    "moduleTitle": "Design integration strategies for agents in Microsoft Copilot Studio",
+    "file": "content/design-enterprise-integration-strategies-agents-copilot-studio/03-3-compare-action-integration-patterns.md",
+    "chars": 11304
+  },
+  {
+    "uid": "learn.wwl.design-integration-strategies-agents-copilot-studio.authenticate-govern-integrations",
+    "title": "Authenticate and govern agent integrations",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-enterprise-integration-strategies-agents-copilot-studio/4-authenticate-govern-integrations",
+    "module": "design-enterprise-integration-strategies-agents-copilot-studio",
+    "moduleTitle": "Design integration strategies for agents in Microsoft Copilot Studio",
+    "file": "content/design-enterprise-integration-strategies-agents-copilot-studio/04-4-authenticate-govern-integrations.md",
+    "chars": 8204
+  },
+  {
+    "uid": "learn.wwl.design-integration-strategies-agents-copilot-studio.select-integration-patterns",
+    "title": "Select integration patterns for enterprise scenarios",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-enterprise-integration-strategies-agents-copilot-studio/5-select-integration-patterns",
+    "module": "design-enterprise-integration-strategies-agents-copilot-studio",
+    "moduleTitle": "Design integration strategies for agents in Microsoft Copilot Studio",
+    "file": "content/design-enterprise-integration-strategies-agents-copilot-studio/05-5-select-integration-patterns.md",
+    "chars": 3983
+  },
+  {
+    "uid": "learn.wwl.design-integration-strategies-agents-copilot-studio.knowledge-check",
+    "title": "Module assessment",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-enterprise-integration-strategies-agents-copilot-studio/6-knowledge-check",
+    "module": "design-enterprise-integration-strategies-agents-copilot-studio",
+    "moduleTitle": "Design integration strategies for agents in Microsoft Copilot Studio",
+    "file": "content/design-enterprise-integration-strategies-agents-copilot-studio/06-6-knowledge-check.md",
+    "chars": 2688
+  },
+  {
+    "uid": "learn.wwl.design-integration-strategies-agents-copilot-studio.summary",
+    "title": "Summary",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-enterprise-integration-strategies-agents-copilot-studio/7-summary",
+    "module": "design-enterprise-integration-strategies-agents-copilot-studio",
+    "moduleTitle": "Design integration strategies for agents in Microsoft Copilot Studio",
+    "file": "content/design-enterprise-integration-strategies-agents-copilot-studio/07-7-summary.md",
+    "chars": 2240
+  },
+  {
+    "uid": "learn.wwl.integrate-agents-external-systems-mcp-copilot-studio.introduction",
+    "title": "Introduction",
+    "url": "https://learn.microsoft.com/en-us/training/modules/integrate-agents-external-systems-mcp-copilot-studio/1-introduction",
+    "module": "integrate-agents-external-systems-mcp-copilot-studio",
+    "moduleTitle": "Integrate agents with external systems via MCP in Microsoft Copilot Studio",
+    "file": "content/integrate-agents-external-systems-mcp-copilot-studio/01-1-introduction.md",
+    "chars": 1869
+  },
+  {
+    "uid": "learn.wwl.integrate-agents-external-systems-mcp-copilot-studio.understand-mcp-integration",
+    "title": "Understand MCP and its role in Copilot Studio integration",
+    "url": "https://learn.microsoft.com/en-us/training/modules/integrate-agents-external-systems-mcp-copilot-studio/2-understand-mcp-integration",
+    "module": "integrate-agents-external-systems-mcp-copilot-studio",
+    "moduleTitle": "Integrate agents with external systems via MCP in Microsoft Copilot Studio",
+    "file": "content/integrate-agents-external-systems-mcp-copilot-studio/02-2-understand-mcp-integration.md",
+    "chars": 7069
+  },
+  {
+    "uid": "learn.wwl.integrate-agents-external-systems-mcp-copilot-studio.connect-mcp-server",
+    "title": "Connect an agent to an existing MCP server",
+    "url": "https://learn.microsoft.com/en-us/training/modules/integrate-agents-external-systems-mcp-copilot-studio/3-connect-mcp-server",
+    "module": "integrate-agents-external-systems-mcp-copilot-studio",
+    "moduleTitle": "Integrate agents with external systems via MCP in Microsoft Copilot Studio",
+    "file": "content/integrate-agents-external-systems-mcp-copilot-studio/03-3-connect-mcp-server.md",
+    "chars": 5164
+  },
+  {
+    "uid": "learn.wwl.integrate-agents-external-systems-mcp-copilot-studio.configure-mcp-authentication",
+    "title": "Configure authentication for MCP server connections",
+    "url": "https://learn.microsoft.com/en-us/training/modules/integrate-agents-external-systems-mcp-copilot-studio/4-configure-mcp-authentication",
+    "module": "integrate-agents-external-systems-mcp-copilot-studio",
+    "moduleTitle": "Integrate agents with external systems via MCP in Microsoft Copilot Studio",
+    "file": "content/integrate-agents-external-systems-mcp-copilot-studio/04-4-configure-mcp-authentication.md",
+    "chars": 7380
+  },
+  {
+    "uid": "learn.wwl.integrate-agents-external-systems-mcp-copilot-studio.enable-manage-mcp-tools",
+    "title": "Enable and manage MCP tools on an agent",
+    "url": "https://learn.microsoft.com/en-us/training/modules/integrate-agents-external-systems-mcp-copilot-studio/5-enable-manage-mcp-tools",
+    "module": "integrate-agents-external-systems-mcp-copilot-studio",
+    "moduleTitle": "Integrate agents with external systems via MCP in Microsoft Copilot Studio",
+    "file": "content/integrate-agents-external-systems-mcp-copilot-studio/05-5-enable-manage-mcp-tools.md",
+    "chars": 6815
+  },
+  {
+    "uid": "learn.wwl.integrate-agents-external-systems-mcp-copilot-studio.knowledge-check",
+    "title": "Module assessment",
+    "url": "https://learn.microsoft.com/en-us/training/modules/integrate-agents-external-systems-mcp-copilot-studio/6-knowledge-check",
+    "module": "integrate-agents-external-systems-mcp-copilot-studio",
+    "moduleTitle": "Integrate agents with external systems via MCP in Microsoft Copilot Studio",
+    "file": "content/integrate-agents-external-systems-mcp-copilot-studio/06-6-knowledge-check.md",
+    "chars": 2355
+  },
+  {
+    "uid": "learn.wwl.integrate-agents-external-systems-mcp-copilot-studio.summary",
+    "title": "Summary",
+    "url": "https://learn.microsoft.com/en-us/training/modules/integrate-agents-external-systems-mcp-copilot-studio/7-summary",
+    "module": "integrate-agents-external-systems-mcp-copilot-studio",
+    "moduleTitle": "Integrate agents with external systems via MCP in Microsoft Copilot Studio",
+    "file": "content/integrate-agents-external-systems-mcp-copilot-studio/07-7-summary.md",
+    "chars": 1881
+  },
+  {
+    "uid": "learn.wwl.take-action-external-systems-connector-rest-api-tools-copilot-studio.introduction",
+    "title": "Introduction",
+    "url": "https://learn.microsoft.com/en-us/training/modules/take-action-external-systems-connector-rest-api-tools-copilot-studio/1-introduction",
+    "module": "take-action-external-systems-connector-rest-api-tools-copilot-studio",
+    "moduleTitle": "Take action in external systems using connector and REST API agent tools in Microsoft Copilot Studio",
+    "file": "content/take-action-external-systems-connector-rest-api-tools-copilot-studio/01-1-introduction.md",
+    "chars": 1769
+  },
+  {
+    "uid": "learn.wwl.take-action-external-systems-connector-rest-api-tools-copilot-studio.understand-connector-rest-api-tools",
+    "title": "Understand connector and REST API tools in Copilot Studio",
+    "url": "https://learn.microsoft.com/en-us/training/modules/take-action-external-systems-connector-rest-api-tools-copilot-studio/2-understand-connector-rest-api-tools",
+    "module": "take-action-external-systems-connector-rest-api-tools-copilot-studio",
+    "moduleTitle": "Take action in external systems using connector and REST API agent tools in Microsoft Copilot Studio",
+    "file": "content/take-action-external-systems-connector-rest-api-tools-copilot-studio/02-2-understand-connector-rest-api-tools.md",
+    "chars": 5611
+  },
+  {
+    "uid": "learn.wwl.take-action-external-systems-connector-rest-api-tools-copilot-studio.add-connector-tools",
+    "title": "Add prebuilt and custom connector tools to an agent",
+    "url": "https://learn.microsoft.com/en-us/training/modules/take-action-external-systems-connector-rest-api-tools-copilot-studio/3-add-connector-tools",
+    "module": "take-action-external-systems-connector-rest-api-tools-copilot-studio",
+    "moduleTitle": "Take action in external systems using connector and REST API agent tools in Microsoft Copilot Studio",
+    "file": "content/take-action-external-systems-connector-rest-api-tools-copilot-studio/03-3-add-connector-tools.md",
+    "chars": 6574
+  },
+  {
+    "uid": "learn.wwl.take-action-external-systems-connector-rest-api-tools-copilot-studio.configure-connector-authentication",
+    "title": "Configure authentication for connector tools",
+    "url": "https://learn.microsoft.com/en-us/training/modules/take-action-external-systems-connector-rest-api-tools-copilot-studio/4-configure-connector-authentication",
+    "module": "take-action-external-systems-connector-rest-api-tools-copilot-studio",
+    "moduleTitle": "Take action in external systems using connector and REST API agent tools in Microsoft Copilot Studio",
+    "file": "content/take-action-external-systems-connector-rest-api-tools-copilot-studio/04-4-configure-connector-authentication.md",
+    "chars": 4883
+  },
+  {
+    "uid": "learn.wwl.take-action-external-systems-connector-rest-api-tools-copilot-studio.add-rest-api-tool",
+    "title": "Add a REST API tool using an OpenAPI specification",
+    "url": "https://learn.microsoft.com/en-us/training/modules/take-action-external-systems-connector-rest-api-tools-copilot-studio/5-add-rest-api-tool",
+    "module": "take-action-external-systems-connector-rest-api-tools-copilot-studio",
+    "moduleTitle": "Take action in external systems using connector and REST API agent tools in Microsoft Copilot Studio",
+    "file": "content/take-action-external-systems-connector-rest-api-tools-copilot-studio/05-5-add-rest-api-tool.md",
+    "chars": 6302
+  },
+  {
+    "uid": "learn.wwl.take-action-external-systems-connector-rest-api-tools-copilot-studio.knowledge-check",
+    "title": "Module assessment",
+    "url": "https://learn.microsoft.com/en-us/training/modules/take-action-external-systems-connector-rest-api-tools-copilot-studio/6-knowledge-check",
+    "module": "take-action-external-systems-connector-rest-api-tools-copilot-studio",
+    "moduleTitle": "Take action in external systems using connector and REST API agent tools in Microsoft Copilot Studio",
+    "file": "content/take-action-external-systems-connector-rest-api-tools-copilot-studio/06-6-knowledge-check.md",
+    "chars": 2742
+  },
+  {
+    "uid": "learn.wwl.take-action-external-systems-connector-rest-api-tools-copilot-studio.summary",
+    "title": "Summary",
+    "url": "https://learn.microsoft.com/en-us/training/modules/take-action-external-systems-connector-rest-api-tools-copilot-studio/7-summary",
+    "module": "take-action-external-systems-connector-rest-api-tools-copilot-studio",
+    "moduleTitle": "Take action in external systems using connector and REST API agent tools in Microsoft Copilot Studio",
+    "file": "content/take-action-external-systems-connector-rest-api-tools-copilot-studio/07-7-summary.md",
+    "chars": 2067
+  },
+  {
+    "uid": "learn.wwl.automate-workflows-agent-flows-copilot-studio.introduction",
+    "title": "Introduction",
+    "url": "https://learn.microsoft.com/en-us/training/modules/automate-workflows-agent-flows-copilot-studio/1-introduction",
+    "module": "automate-workflows-agent-flows-copilot-studio",
+    "moduleTitle": "Automate workflows using agent flows in Copilot Studio",
+    "file": "content/automate-workflows-agent-flows-copilot-studio/01-1-introduction.md",
+    "chars": 1753
+  },
+  {
+    "uid": "learn.wwl.automate-workflows-agent-flows-copilot-studio.understand-agent-flows",
+    "title": "Understand agent flows in Copilot Studio",
+    "url": "https://learn.microsoft.com/en-us/training/modules/automate-workflows-agent-flows-copilot-studio/2-understand-agent-flows",
+    "module": "automate-workflows-agent-flows-copilot-studio",
+    "moduleTitle": "Automate workflows using agent flows in Copilot Studio",
+    "file": "content/automate-workflows-agent-flows-copilot-studio/02-2-understand-agent-flows.md",
+    "chars": 5918
+  },
+  {
+    "uid": "learn.wwl.automate-workflows-agent-flows-copilot-studio.agent-flow-scenarios",
+    "title": "Identify agent flow automation scenarios",
+    "url": "https://learn.microsoft.com/en-us/training/modules/automate-workflows-agent-flows-copilot-studio/3-agent-flow-scenarios",
+    "module": "automate-workflows-agent-flows-copilot-studio",
+    "moduleTitle": "Automate workflows using agent flows in Copilot Studio",
+    "file": "content/automate-workflows-agent-flows-copilot-studio/03-3-agent-flow-scenarios.md",
+    "chars": 5042
+  },
+  {
+    "uid": "learn.wwl.automate-workflows-agent-flows-copilot-studio.create-agent-flow",
+    "title": "Create an agent flow",
+    "url": "https://learn.microsoft.com/en-us/training/modules/automate-workflows-agent-flows-copilot-studio/4-create-agent-flow",
+    "module": "automate-workflows-agent-flows-copilot-studio",
+    "moduleTitle": "Automate workflows using agent flows in Copilot Studio",
+    "file": "content/automate-workflows-agent-flows-copilot-studio/04-4-create-agent-flow.md",
+    "chars": 9146
+  },
+  {
+    "uid": "learn.wwl.automate-workflows-agent-flows-copilot-studio.configure-actions-connectors",
+    "title": "Configure triggers, actions, and connectors",
+    "url": "https://learn.microsoft.com/en-us/training/modules/automate-workflows-agent-flows-copilot-studio/5-configure-actions-connectors",
+    "module": "automate-workflows-agent-flows-copilot-studio",
+    "moduleTitle": "Automate workflows using agent flows in Copilot Studio",
+    "file": "content/automate-workflows-agent-flows-copilot-studio/05-5-configure-actions-connectors.md",
+    "chars": 6145
+  },
+  {
+    "uid": "learn.wwl.automate-workflows-agent-flows-copilot-studio.control-agent-flow-logic",
+    "title": "Control agent flow logic",
+    "url": "https://learn.microsoft.com/en-us/training/modules/automate-workflows-agent-flows-copilot-studio/6-control-agent-flow-logic",
+    "module": "automate-workflows-agent-flows-copilot-studio",
+    "moduleTitle": "Automate workflows using agent flows in Copilot Studio",
+    "file": "content/automate-workflows-agent-flows-copilot-studio/06-6-control-agent-flow-logic.md",
+    "chars": 11571
+  },
+  {
+    "uid": "learn.wwl.automate-workflows-agent-flows-copilot-studio.manage-monitor-agent-flows",
+    "title": "Manage and monitor agent flows",
+    "url": "https://learn.microsoft.com/en-us/training/modules/automate-workflows-agent-flows-copilot-studio/7-manage-monitor-agent-flows",
+    "module": "automate-workflows-agent-flows-copilot-studio",
+    "moduleTitle": "Automate workflows using agent flows in Copilot Studio",
+    "file": "content/automate-workflows-agent-flows-copilot-studio/07-7-manage-monitor-agent-flows.md",
+    "chars": 7410
+  },
+  {
+    "uid": "learn.wwl.automate-workflows-agent-flows-copilot-studio.knowledge-check",
+    "title": "Module assessment",
+    "url": "https://learn.microsoft.com/en-us/training/modules/automate-workflows-agent-flows-copilot-studio/8-knowledge-check",
+    "module": "automate-workflows-agent-flows-copilot-studio",
+    "moduleTitle": "Automate workflows using agent flows in Copilot Studio",
+    "file": "content/automate-workflows-agent-flows-copilot-studio/08-8-knowledge-check.md",
+    "chars": 2700
+  },
+  {
+    "uid": "learn.wwl.automate-workflows-agent-flows-copilot-studio.summary",
+    "title": "Summary",
+    "url": "https://learn.microsoft.com/en-us/training/modules/automate-workflows-agent-flows-copilot-studio/9-summary",
+    "module": "automate-workflows-agent-flows-copilot-studio",
+    "moduleTitle": "Automate workflows using agent flows in Copilot Studio",
+    "file": "content/automate-workflows-agent-flows-copilot-studio/09-9-summary.md",
+    "chars": 2134
+  },
+  {
+    "uid": "learn.wwl.automate-desktop-web-tasks-computer-use-copilot-studio.introduction",
+    "title": "Introduction",
+    "url": "https://learn.microsoft.com/en-us/training/modules/automate-desktop-web-tasks-computer-use-copilot-studio/1-introduction",
+    "module": "automate-desktop-web-tasks-computer-use-copilot-studio",
+    "moduleTitle": "Automate desktop and web tasks with computer use in Copilot Studio",
+    "file": "content/automate-desktop-web-tasks-computer-use-copilot-studio/01-1-introduction.md",
+    "chars": 1581
+  },
+  {
+    "uid": "learn.wwl.automate-desktop-web-tasks-computer-use-copilot-studio.understand-computer-use",
+    "title": "Understand computer use in Copilot Studio",
+    "url": "https://learn.microsoft.com/en-us/training/modules/automate-desktop-web-tasks-computer-use-copilot-studio/2-understand-computer-use",
+    "module": "automate-desktop-web-tasks-computer-use-copilot-studio",
+    "moduleTitle": "Automate desktop and web tasks with computer use in Copilot Studio",
+    "file": "content/automate-desktop-web-tasks-computer-use-copilot-studio/02-2-understand-computer-use.md",
+    "chars": 4552
+  },
+  {
+    "uid": "learn.wwl.automate-desktop-web-tasks-computer-use-copilot-studio.evaluate-computer-use-scenarios",
+    "title": "Evaluate whether computer use fits your scenario",
+    "url": "https://learn.microsoft.com/en-us/training/modules/automate-desktop-web-tasks-computer-use-copilot-studio/3-evaluate-computer-use-scenarios",
+    "module": "automate-desktop-web-tasks-computer-use-copilot-studio",
+    "moduleTitle": "Automate desktop and web tasks with computer use in Copilot Studio",
+    "file": "content/automate-desktop-web-tasks-computer-use-copilot-studio/03-3-evaluate-computer-use-scenarios.md",
+    "chars": 5587
+  },
+  {
+    "uid": "learn.wwl.automate-desktop-web-tasks-computer-use-copilot-studio.configure-computer-use",
+    "title": "Configure computer use as an agent tool",
+    "url": "https://learn.microsoft.com/en-us/training/modules/automate-desktop-web-tasks-computer-use-copilot-studio/4-configure-computer-use",
+    "module": "automate-desktop-web-tasks-computer-use-copilot-studio",
+    "moduleTitle": "Automate desktop and web tasks with computer use in Copilot Studio",
+    "file": "content/automate-desktop-web-tasks-computer-use-copilot-studio/04-4-configure-computer-use.md",
+    "chars": 11682
+  },
+  {
+    "uid": "learn.wwl.automate-desktop-web-tasks-computer-use-copilot-studio.monitor-computer-use",
+    "title": "Monitor and supervise computer use execution",
+    "url": "https://learn.microsoft.com/en-us/training/modules/automate-desktop-web-tasks-computer-use-copilot-studio/5-monitor-computer-use",
+    "module": "automate-desktop-web-tasks-computer-use-copilot-studio",
+    "moduleTitle": "Automate desktop and web tasks with computer use in Copilot Studio",
+    "file": "content/automate-desktop-web-tasks-computer-use-copilot-studio/05-5-monitor-computer-use.md",
+    "chars": 8040
+  },
+  {
+    "uid": "learn.wwl.automate-desktop-web-tasks-computer-use-copilot-studio.knowledge-check",
+    "title": "Module assessment",
+    "url": "https://learn.microsoft.com/en-us/training/modules/automate-desktop-web-tasks-computer-use-copilot-studio/6-knowledge-check",
+    "module": "automate-desktop-web-tasks-computer-use-copilot-studio",
+    "moduleTitle": "Automate desktop and web tasks with computer use in Copilot Studio",
+    "file": "content/automate-desktop-web-tasks-computer-use-copilot-studio/06-6-knowledge-check.md",
+    "chars": 2068
+  },
+  {
+    "uid": "learn.wwl.automate-desktop-web-tasks-computer-use-copilot-studio.summary",
+    "title": "Summary",
+    "url": "https://learn.microsoft.com/en-us/training/modules/automate-desktop-web-tasks-computer-use-copilot-studio/7-summary",
+    "module": "automate-desktop-web-tasks-computer-use-copilot-studio",
+    "moduleTitle": "Automate desktop and web tasks with computer use in Copilot Studio",
+    "file": "content/automate-desktop-web-tasks-computer-use-copilot-studio/07-7-summary.md",
+    "chars": 1599
+  },
+  {
+    "uid": "learn-bizapps.implement-power-virtual-agents.1-introduction",
+    "title": "Introduction",
+    "url": "https://learn.microsoft.com/en-us/training/modules/implement-power-virtual-agents/1-introduction",
+    "module": "implement-power-virtual-agents",
+    "moduleTitle": "Manage agents in Microsoft Copilot Studio",
+    "file": "content/implement-power-virtual-agents/01-1-introduction.md",
+    "chars": 1752
+  },
+  {
+    "uid": "learn-bizapps.implement-power-virtual-agents.2-environments",
+    "title": "Environments in Microsoft Copilot Studio",
+    "url": "https://learn.microsoft.com/en-us/training/modules/implement-power-virtual-agents/2-environments",
+    "module": "implement-power-virtual-agents",
+    "moduleTitle": "Manage agents in Microsoft Copilot Studio",
+    "file": "content/implement-power-virtual-agents/02-2-environments.md",
+    "chars": 2704
+  },
+  {
+    "uid": "learn-bizapps.implement-power-virtual-agents.generative-ai",
+    "title": "Generative AI",
+    "url": "https://learn.microsoft.com/en-us/training/modules/implement-power-virtual-agents/generative-ai",
+    "module": "implement-power-virtual-agents",
+    "moduleTitle": "Manage agents in Microsoft Copilot Studio",
+    "file": "content/implement-power-virtual-agents/03-generative-ai.md",
+    "chars": 4979
+  },
+  {
+    "uid": "learn-bizapps.implement-power-virtual-agents.3-bot-topics",
+    "title": "Agent topics permissions",
+    "url": "https://learn.microsoft.com/en-us/training/modules/implement-power-virtual-agents/3-bot-topics",
+    "module": "implement-power-virtual-agents",
+    "moduleTitle": "Manage agents in Microsoft Copilot Studio",
+    "file": "content/implement-power-virtual-agents/04-3-bot-topics.md",
+    "chars": 1161
+  },
+  {
+    "uid": "learn-bizapps.implement-power-virtual-agents.4-bot-entities",
+    "title": "Agent entities and flow permissions",
+    "url": "https://learn.microsoft.com/en-us/training/modules/implement-power-virtual-agents/4-bot-entities",
+    "module": "implement-power-virtual-agents",
+    "moduleTitle": "Manage agents in Microsoft Copilot Studio",
+    "file": "content/implement-power-virtual-agents/05-4-bot-entities.md",
+    "chars": 916
+  },
+  {
+    "uid": "learn-bizapps.implement-power-virtual-agents.5-monitor",
+    "title": "Monitor and diagnose",
+    "url": "https://learn.microsoft.com/en-us/training/modules/implement-power-virtual-agents/5-monitor",
+    "module": "implement-power-virtual-agents",
+    "moduleTitle": "Manage agents in Microsoft Copilot Studio",
+    "file": "content/implement-power-virtual-agents/06-5-monitor.md",
+    "chars": 1286
+  },
+  {
+    "uid": "learn-bizapps.implement-power-virtual-agents.6-administer",
+    "title": "Administer and manage",
+    "url": "https://learn.microsoft.com/en-us/training/modules/implement-power-virtual-agents/6-administer",
+    "module": "implement-power-virtual-agents",
+    "moduleTitle": "Manage agents in Microsoft Copilot Studio",
+    "file": "content/implement-power-virtual-agents/07-6-administer.md",
+    "chars": 7389
+  },
+  {
+    "uid": "learn-bizapps.implement-power-virtual-agents.export-import-bots",
+    "title": "Export and import agents",
+    "url": "https://learn.microsoft.com/en-us/training/modules/implement-power-virtual-agents/export-import-bots",
+    "module": "implement-power-virtual-agents",
+    "moduleTitle": "Manage agents in Microsoft Copilot Studio",
+    "file": "content/implement-power-virtual-agents/08-export-import-bots.md",
+    "chars": 5158
+  },
+  {
+    "uid": "learn-bizapps.implement-power-virtual-agents.authentication",
+    "title": "Authentication",
+    "url": "https://learn.microsoft.com/en-us/training/modules/implement-power-virtual-agents/authentication",
+    "module": "implement-power-virtual-agents",
+    "moduleTitle": "Manage agents in Microsoft Copilot Studio",
+    "file": "content/implement-power-virtual-agents/09-authentication.md",
+    "chars": 6760
+  },
+  {
+    "uid": "learn-bizapps.implement-power-virtual-agents.7-check",
+    "title": "Check your knowledge",
+    "url": "https://learn.microsoft.com/en-us/training/modules/implement-power-virtual-agents/7-check",
+    "module": "implement-power-virtual-agents",
+    "moduleTitle": "Manage agents in Microsoft Copilot Studio",
+    "file": "content/implement-power-virtual-agents/10-7-check.md",
+    "chars": 2832
+  },
+  {
+    "uid": "learn-bizapps.implement-power-virtual-agents.8-summary",
+    "title": "Summary",
+    "url": "https://learn.microsoft.com/en-us/training/modules/implement-power-virtual-agents/8-summary",
+    "module": "implement-power-virtual-agents",
+    "moduleTitle": "Manage agents in Microsoft Copilot Studio",
+    "file": "content/implement-power-virtual-agents/11-8-summary.md",
+    "chars": 1204
+  },
+  {
+    "uid": "learn.wwl.evaluate-publish-manage-agents-copilot-studio.introduction",
+    "title": "Introduction",
+    "url": "https://learn.microsoft.com/en-us/training/modules/evaluate-publish-manage-agents-copilot-studio/1-introduction",
+    "module": "evaluate-publish-manage-agents-copilot-studio",
+    "moduleTitle": "Evaluate, publish, and manage agents in Microsoft Copilot Studio",
+    "file": "content/evaluate-publish-manage-agents-copilot-studio/01-1-introduction.md",
+    "chars": 1182
+  },
+  {
+    "uid": "learn.wwl.evaluate-publish-manage-agents-copilot-studio.plan-run-agent-evaluations",
+    "title": "Plan and run agent evaluations",
+    "url": "https://learn.microsoft.com/en-us/training/modules/evaluate-publish-manage-agents-copilot-studio/2-plan-run-agent-evaluations",
+    "module": "evaluate-publish-manage-agents-copilot-studio",
+    "moduleTitle": "Evaluate, publish, and manage agents in Microsoft Copilot Studio",
+    "file": "content/evaluate-publish-manage-agents-copilot-studio/02-2-plan-run-agent-evaluations.md",
+    "chars": 6356
+  },
+  {
+    "uid": "learn.wwl.evaluate-publish-manage-agents-copilot-studio.monitor-improve-agent",
+    "title": "Monitor and improve an agent",
+    "url": "https://learn.microsoft.com/en-us/training/modules/evaluate-publish-manage-agents-copilot-studio/3-monitor-improve-agent",
+    "module": "evaluate-publish-manage-agents-copilot-studio",
+    "moduleTitle": "Evaluate, publish, and manage agents in Microsoft Copilot Studio",
+    "file": "content/evaluate-publish-manage-agents-copilot-studio/03-3-monitor-improve-agent.md",
+    "chars": 4397
+  },
+  {
+    "uid": "learn.wwl.evaluate-publish-manage-agents-copilot-studio.publish-validate-channels",
+    "title": "Publish and validate in channels",
+    "url": "https://learn.microsoft.com/en-us/training/modules/evaluate-publish-manage-agents-copilot-studio/4-publish-validate-channels",
+    "module": "evaluate-publish-manage-agents-copilot-studio",
+    "moduleTitle": "Evaluate, publish, and manage agents in Microsoft Copilot Studio",
+    "file": "content/evaluate-publish-manage-agents-copilot-studio/04-4-publish-validate-channels.md",
+    "chars": 4572
+  },
+  {
+    "uid": "learn.wwl.evaluate-publish-manage-agents-copilot-studio.govern-agent-lifecycle-costs",
+    "title": "Govern agent lifecycle and costs",
+    "url": "https://learn.microsoft.com/en-us/training/modules/evaluate-publish-manage-agents-copilot-studio/5-govern-agent-lifecycle-costs",
+    "module": "evaluate-publish-manage-agents-copilot-studio",
+    "moduleTitle": "Evaluate, publish, and manage agents in Microsoft Copilot Studio",
+    "file": "content/evaluate-publish-manage-agents-copilot-studio/05-5-govern-agent-lifecycle-costs.md",
+    "chars": 5719
+  },
+  {
+    "uid": "learn.wwl.evaluate-publish-manage-agents-copilot-studio.exercise-evaluate-publish-support-agent",
+    "title": "Exercise - Evaluate and publish the Contoso support policy agent",
+    "url": "https://learn.microsoft.com/en-us/training/modules/evaluate-publish-manage-agents-copilot-studio/6-exercise-evaluate-publish-support-agent",
+    "module": "evaluate-publish-manage-agents-copilot-studio",
+    "moduleTitle": "Evaluate, publish, and manage agents in Microsoft Copilot Studio",
+    "file": "content/evaluate-publish-manage-agents-copilot-studio/06-6-exercise-evaluate-publish-support-agent.md",
+    "chars": 19564
+  },
+  {
+    "uid": "learn.wwl.evaluate-publish-manage-agents-copilot-studio.knowledge-check",
+    "title": "Module assessment",
+    "url": "https://learn.microsoft.com/en-us/training/modules/evaluate-publish-manage-agents-copilot-studio/7-knowledge-check",
+    "module": "evaluate-publish-manage-agents-copilot-studio",
+    "moduleTitle": "Evaluate, publish, and manage agents in Microsoft Copilot Studio",
+    "file": "content/evaluate-publish-manage-agents-copilot-studio/07-7-knowledge-check.md",
+    "chars": 2199
+  },
+  {
+    "uid": "learn.wwl.evaluate-publish-manage-agents-copilot-studio.summary",
+    "title": "Summary",
+    "url": "https://learn.microsoft.com/en-us/training/modules/evaluate-publish-manage-agents-copilot-studio/8-summary",
+    "module": "evaluate-publish-manage-agents-copilot-studio",
+    "moduleTitle": "Evaluate, publish, and manage agents in Microsoft Copilot Studio",
+    "file": "content/evaluate-publish-manage-agents-copilot-studio/08-8-summary.md",
+    "chars": 2641
+  }
+]

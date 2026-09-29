@@ -1,0 +1,1934 @@
+[
+  {
+    "id": "100-second-limit",
+    "term": "100-second limit",
+    "aliases": [
+      "100 seconds",
+      "timeout",
+      "times out"
+    ],
+    "definition": "Agent Flows müssen innerhalb von 100 Sekunden antworten; das Topic pausiert am Action-Knoten und wartet. Für lange Vorgänge (Dokumentgenerierung, mehrstufige Genehmigungen) startet der Flow die Hintergrundoperation, gibt sofort eine Job-ID per „Respond to the agent“ zurück und arbeitet danach asynchron weiter; ein Polling-Topic liefert später das Ergebnis.",
+    "source": {
+      "title": "Call agent flows from agent topics",
+      "url": "https://learn.microsoft.com/en-us/training/modules/take-action-agent-topics-tools-flows-copilot-studio/3-call-agent-flows-topics"
+    }
+  },
+  {
+    "id": "a2a",
+    "term": "A2A",
+    "aliases": [
+      "Agent2Agent",
+      "Agent2Agent protocol",
+      "A2A protocol",
+      "A2A agent",
+      "A2A-enabled agent",
+      "A2A protocol agent"
+    ],
+    "definition": "Offener Standard für Agent-zu-Agent-Delegation über Plattformgrenzen: Der Orchestrator übergibt eine Aufgabe (Task) an einen externen, opaken Agenten, der mit eigenem Reasoning und eigenen Tools arbeitet und eine agentengenerierte, kontextbezogene Antwort liefert – anders als ein Connector (Rohdaten) oder MCP (orchestratorgesteuerte Einzel-Tools). Wählen bei eigenständigen Agenten anderer Plattformen/Organisationen und wertvollem Multi-Turn-Kontext.",
+    "source": {
+      "title": "Understand the Agent2Agent (A2A) protocol",
+      "url": "https://learn.microsoft.com/en-us/training/modules/build-cross-platform-multi-agent-solutions-agent2agent-copilot-studio/2-understand-a2a-protocol"
+    }
+  },
+  {
+    "id": "a2a-authentication",
+    "term": "A2A authentication",
+    "aliases": [
+      "None authentication",
+      "API key authentication",
+      "OAuth 2.0 authentication",
+      "OAuth 2.0"
+    ],
+    "definition": "Authentifizierungsoptionen für A2A-Verbindungen: None (nur Sandbox/Entwicklung), API key (Headername oder Query-Parameter plus Schlüsselwert des Betreibers, z. B. X-Northwind-Key) und OAuth 2.0 (Client-ID, Client-Secret, Authorization-, Token- und Refresh-URL) für Unternehmensszenarien. Schlüssel und Secrets sind sensibel und gehören nicht in Topics oder Flows.",
+    "source": {
+      "title": "Connect a Copilot Studio agent to an A2A-enabled agent",
+      "url": "https://learn.microsoft.com/en-us/training/modules/build-cross-platform-multi-agent-solutions-agent2agent-copilot-studio/3-connect-a2a-enabled-agent"
+    }
+  },
+  {
+    "id": "access-control-allow-list",
+    "term": "access control allow list",
+    "aliases": [
+      "access control",
+      "allow list",
+      "allowlist"
+    ],
+    "definition": "Liste erlaubter URLs (mit Wildcards wie *.contoso.com) und Anwendungsnamen für ein Computer-Use-Tool – Teil jeder Tool-Konfiguration und primäre Verteidigung gegen Prompt Injection. Beschränkt die Interaktion, nicht die Navigation: Nicht gelistete Seiten können geöffnet werden, jede Interaktion damit schlägt fehl.",
+    "source": {
+      "title": "Configure computer use as an agent tool",
+      "url": "https://learn.microsoft.com/en-us/training/modules/automate-desktop-web-tasks-computer-use-copilot-studio/4-configure-computer-use"
+    }
+  },
+  {
+    "id": "agent-flow-actions",
+    "term": "action categories",
+    "aliases": [
+      "built-in tools",
+      "AI capabilities",
+      "human in the loop",
+      "Human in the loop",
+      "approval request",
+      "Request for Information",
+      "Control connector"
+    ],
+    "definition": "Vier Aktionskategorien in Agent Flows: Built-in tools (Schleifen, Verzweigungen, Datenoperationen, Datum/Zeit, Child Flows – der Control-Connector), Connectors (Microsoft 365, ServiceNow, Salesforce …), AI capabilities (Text generieren, Prompt ausführen, Dokumente verarbeiten, Antwort an den aufrufenden Agenten) und Human in the loop (Approval, Request for Information – pausieren den Flow bis zur menschlichen Eingabe).",
+    "source": {
+      "title": "Understand agent flows in Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/training/modules/automate-workflows-agent-flows-copilot-studio/2-understand-agent-flows"
+    }
+  },
+  {
+    "id": "action-submit",
+    "term": "Action.Submit",
+    "aliases": [
+      "Action.Execute",
+      "Submit button",
+      "actionSubmitId",
+      "data payload"
+    ],
+    "definition": "Schaltfläche einer Adaptive Card, die alle Eingaben als ein Payload an den Agenten sendet (Title anpassen, z. B. „Submit request“). Bei mehreren aufeinanderfolgenden Karten sollte das data-Payload einen eindeutigen Bezeichner enthalten, um Antworten der richtigen Karte zuzuordnen. Der Web-Kanal unterstützt Action.Execute nicht – Action.Submit verwenden.",
+    "source": {
+      "title": "Collect user input with interactive Adaptive Cards",
+      "url": "https://learn.microsoft.com/en-us/training/modules/deliver-rich-agent-responses-adaptive-cards-copilot-studio/4-collect-input-adaptive-cards"
+    }
+  },
+  {
+    "id": "activity-map",
+    "term": "activity map",
+    "aliases": [
+      "Show activity map when testing",
+      "Test your agent",
+      "test panel",
+      "test canvas",
+      "activity log"
+    ],
+    "definition": "Ansicht im Test-Bereich (Show activity map when testing) und in der Activity-Sektion des Agenten, die den Ausführungsplan des Orchestrators zeigt: welcher Child/Connected Agent gewählt wurde, welche Inputs er bekam, was er zurückgab, welche Tools liefen. Standardwerkzeug zur Validierung von Multi-Agent-Routing (falsche Zuordnung = Beschreibungsproblem) und zur Analyse von Computer-Use-Läufen (Transkript, Session replay).",
+    "source": {
+      "title": "Test and manage child agents",
+      "url": "https://learn.microsoft.com/en-us/training/modules/delegate-agent-tasks-child-agents-copilot-studio/5-test-manage-child-agents"
+    }
+  },
+  {
+    "id": "flow-monitoring",
+    "term": "Activity tab",
+    "aliases": [
+      "Overview tab",
+      "Analytics tab",
+      "savings rule",
+      "savings rules",
+      "run history"
+    ],
+    "definition": "Monitoring-Tabs eines veröffentlichten Agent Flows: Overview (Name, Beschreibung, Verbindungen, letzte Läufe, Flow aus-/einschalten, Savings rule), Activity (jeder Lauf mit Status und Dauer, Drill-through in Ein-/Ausgaben je Aktion) und Analytics (Trends: Gesamtläufe, Fehlerrate, Dauer). Savings rules quantifizieren Zeit-/Kostenersparnis je erfolgreichem Produktionslauf – nur für lösungsbasierte Flows, Testläufe zählen nicht.",
+    "source": {
+      "title": "Manage and monitor agent flows",
+      "url": "https://learn.microsoft.com/en-us/training/modules/automate-workflows-agent-flows-copilot-studio/7-manage-monitor-agent-flows"
+    }
+  },
+  {
+    "id": "adaptive-cards",
+    "term": "Adaptive Card",
+    "aliases": [
+      "Adaptive Cards",
+      "adaptive card",
+      "adaptive cards",
+      "Adaptive Card designer",
+      "card designer",
+      "Adaptive Cards Hub"
+    ],
+    "definition": "Offenes Kartenformat von Microsoft (JSON), das Teams, Outlook, Power Apps und andere Hosts nativ rendern. In Copilot Studio per visuellem Designer (Vorschau, Element-Toolbox, Eigenschaften) gebaut und bei Bedarf in der JSON-Ansicht verfeinert; Topic-Variablen werden per Power Fx gebunden. Zwei Rollen: informativ im Send-a-message-Knoten (Anzeige, Konversation läuft weiter) und interaktiv im Ask-with-Adaptive-Card-Knoten (Formular).",
+    "source": {
+      "title": "Design informational Adaptive Cards for agent responses",
+      "url": "https://learn.microsoft.com/en-us/training/modules/deliver-rich-agent-responses-adaptive-cards-copilot-studio/3-design-informational-adaptive-cards"
+    }
+  },
+  {
+    "id": "after-running",
+    "term": "After running",
+    "aliases": [
+      "Don't respond",
+      "Write the response with generative AI",
+      "Send specific response",
+      "Send an adaptive card"
+    ],
+    "definition": "Einstellung, was der Parent nach Abschluss eines Child Agents tut: Don't respond (Standard – Plan fortsetzen, Outputs fließen in den nächsten Schritt), Write the response with generative AI (natürliche Antwort aus den Outputs), Send specific response (feste Nachricht) oder Send an adaptive card (strukturierte Karte für tabellarische Ausgaben).",
+    "source": {
+      "title": "Configure child agent inputs, outputs, and trigger behavior",
+      "url": "https://learn.microsoft.com/en-us/training/modules/delegate-agent-tasks-child-agents-copilot-studio/4-configure-child-agent-inputs-outputs-triggers"
+    }
+  },
+  {
+    "id": "agent-author",
+    "term": "Agent author",
+    "aliases": [
+      "agent author",
+      "Agent contributor",
+      "Agent transcript viewer",
+      "Environment maker",
+      "Copilot Studio security roles"
+    ],
+    "definition": "Die drei Copilot-Studio-Sicherheitsrollen im Power Platform admin center: Agent author (Agenten erstellen), Agent contributor und Agent transcript viewer. Ein Nutzer ohne Rechte, mit dem ein Agent geteilt wird, erhält automatisch Environment maker (mit Hinweis). Zum Chatten mit einem Agenten ist keine Freigabe nötig; Sharing dient dem gemeinsamen Bearbeiten.",
+    "source": {
+      "title": "Administer and manage",
+      "url": "https://learn.microsoft.com/en-us/training/modules/implement-power-virtual-agents/6-administer"
+    }
+  },
+  {
+    "id": "agent-card",
+    "term": "agent card",
+    "aliases": [
+      "agent cards",
+      "/.well-known/agent.json",
+      "endpoint URL",
+      "A2A endpoint"
+    ],
+    "definition": "JSON-Discovery-Dokument eines A2A-Agenten unter {endpoint}/.well-known/agent.json mit Name, Zweck, Fähigkeiten und Kommunikationsendpunkt. Beim Eingeben der Endpoint-URL ruft Copilot Studio die Karte automatisch ab und füllt Name und Beschreibung; bleibt das leer, die URL im Browser prüfen und die Felder ggf. manuell eingeben.",
+    "source": {
+      "title": "Connect a Copilot Studio agent to an A2A-enabled agent",
+      "url": "https://learn.microsoft.com/en-us/training/modules/build-cross-platform-multi-agent-solutions-agent2agent-copilot-studio/3-connect-a2a-enabled-agent"
+    }
+  },
+  {
+    "id": "agent-flow",
+    "term": "agent flow",
+    "aliases": [
+      "agent flows",
+      "Flows page"
+    ],
+    "definition": "Deterministische, strukturierte Abfolge von Schritten (Trigger + Aktionen), die in Copilot Studio gebaut und verwaltet wird und über Copilot Credits nach Anzahl ausgeführter Aktionen abgerechnet wird – keine Power-Automate-Lizenz nötig. Nutzt dasselbe Connector-Ökosystem wie Cloud-Flows, lebt in Lösungen (Versionierung, Export/Import), kann aber nicht kopiert, geteilt oder mit Co-Ownern/Run-only-Rechten versehen werden. Als Tool aus Topics oder vom Orchestrator aufrufbar.",
+    "source": {
+      "title": "Understand agent flows in Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/training/modules/automate-workflows-agent-flows-copilot-studio/2-understand-agent-flows"
+    }
+  },
+  {
+    "id": "agent-redirect-node",
+    "term": "agent redirect node",
+    "aliases": [
+      "redirect node",
+      "redirect",
+      "Add an agent submenu",
+      "It's redirected to"
+    ],
+    "definition": "Topic-Knoten (Add node > Add an agent), der einen bestimmten Child Agent unbedingt aufruft und das beschreibungsbasierte Routing umgeht – z. B. nach Identitätsprüfung und Erfassung einer Kontonummer, die als Input übergeben wird. Nach Abschluss liegen die Outputs in Topic-Variablen und das Topic setzt beim nächsten Knoten fort (Hybrid: Topic sammelt, Child verarbeitet, Topic fährt fort). Fabric Data Agents lassen sich so nicht aufrufen.",
+    "source": {
+      "title": "Test and manage child agents",
+      "url": "https://learn.microsoft.com/en-us/training/modules/delegate-agent-tasks-child-agents-copilot-studio/5-test-manage-child-agents"
+    }
+  },
+  {
+    "id": "allow-agent-to-decide",
+    "term": "Allow agent to decide dynamically when to use this tool",
+    "aliases": [
+      "dynamic tool invocation",
+      "explicit invocation",
+      "tool conflict",
+      "tool conflicts"
+    ],
+    "definition": "Tool-Eigenschaft (Additional details). Ist sie aktiv und das Tool auch für den Orchestrator sichtbar, kann dieser es direkt aufrufen und so die Instructions eines Child Agents umgehen. Deaktiviert lässt sich das Tool nur explizit aufrufen – wenn ein Agent oder Topic es in seinen Anweisungen (per /) referenziert. Ressourcen sollten grundsätzlich beim spezifischsten Agenten liegen, der sie braucht.",
+    "source": {
+      "title": "Configure child agent inputs, outputs, and trigger behavior",
+      "url": "https://learn.microsoft.com/en-us/training/modules/delegate-agent-tasks-child-agents-copilot-studio/4-configure-child-agent-inputs-outputs-triggers"
+    }
+  },
+  {
+    "id": "allow-all",
+    "term": "Allow all",
+    "aliases": [
+      "Allow all toggle",
+      "selective tool enabling",
+      "least privilege"
+    ],
+    "definition": "Schalter am verbundenen MCP-Server: Ein (Standard) macht alle veröffentlichten Tools für den Agenten verfügbar – auch künftig neue; Aus zeigt Einzelschalter je Tool, neue Tools bleiben deaktiviert, bis ein Maker sie prüft. Aus verkleinert den Entscheidungsraum des Orchestrators und setzt das Prinzip der minimalen Rechte um; die Wahl ist eine Governance-Entscheidung abhängig vom Vertrauen in den Serverbetreiber.",
+    "source": {
+      "title": "Enable and manage MCP tools on an agent",
+      "url": "https://learn.microsoft.com/en-us/training/modules/integrate-agents-external-systems-mcp-copilot-studio/5-enable-manage-mcp-tools"
+    }
+  },
+  {
+    "id": "alm",
+    "term": "ALM",
+    "aliases": [
+      "application lifecycle management",
+      "lifecycle"
+    ],
+    "definition": "Application Lifecycle Management: wie ein Agent gebaut, getestet, veröffentlicht und aktualisiert wird – mit Lösungen, Umgebungsstrategie (Dev/Test/Prod), Environment variables und Connection references, Pipelines, DLP-Richtlinien, rollenbasiertem Zugriff/Sharing und Auditing (Erstellung, Änderung, Freigabe, Löschung im Power Platform admin center). Child Agents teilen den Lebenszyklus des Parents; Connected Agents haben einen eigenen.",
+    "source": {
+      "title": "Govern agent lifecycle and costs",
+      "url": "https://learn.microsoft.com/en-us/training/modules/evaluate-publish-manage-agents-copilot-studio/5-govern-agent-lifecycle-costs"
+    }
+  },
+  {
+    "id": "analytics",
+    "term": "Analytics",
+    "aliases": [
+      "analytics",
+      "Summary tab",
+      "Customer Satisfaction",
+      "Sessions tab",
+      "Billing tab",
+      "engagement rate",
+      "resolution rate",
+      "escalation rate",
+      "abandon rate"
+    ],
+    "definition": "Analysebereich klassischer Agenten: Summary (Sitzungen, Engagement-, Resolution-, Escalation-, Abandon-Rate), Customer Satisfaction (wirksamste Topics), Sessions (Rohdaten mit Transkripten und Ergebnis) und Billing (abrechenbare Sitzungen).",
+    "source": {
+      "title": "Administer and manage",
+      "url": "https://learn.microsoft.com/en-us/training/modules/implement-power-virtual-agents/6-administer"
+    }
+  },
+  {
+    "id": "app-registration",
+    "term": "app registration",
+    "aliases": [
+      "Client ID",
+      "Client secret",
+      "Redirect URI",
+      "token.botframework.com",
+      "Token exchange URL",
+      "Azure Active Directory v2"
+    ],
+    "definition": "Für manuelle Authentifizierung mit Entra ID wird im Azure-Portal eine App registriert (Redirect URI https://token.botframework.com/.auth/web/redirect, Plattform Web), ein Client Secret erzeugt und Application (client) ID plus Secret in Copilot Studio eingetragen (Service Provider Azure Active Directory v2). Token exchange URL ist optional für SSO; Scopes definieren den Zugriff angemeldeter Nutzer.",
+    "source": {
+      "title": "Authentication",
+      "url": "https://learn.microsoft.com/en-us/training/modules/implement-power-virtual-agents/authentication"
+    }
+  },
+  {
+    "id": "application-insights",
+    "term": "Application Insights",
+    "aliases": [
+      "Azure Monitor"
+    ],
+    "definition": "Azure-Monitoring-Dienst, in den Copilot Studio Telemetrie integriert: Die Aktivität vorgefertigter und benutzerdefinierter Connectors lässt sich darüber im Rahmen der Azure-Monitor-Integration überwachen – Laufzeit-Observability für Agenten außerhalb der Copilot-Studio-Analytics.",
+    "source": {
+      "title": "Compare action integration patterns",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-enterprise-integration-strategies-agents-copilot-studio/3-compare-action-integration-patterns"
+    }
+  },
+  {
+    "id": "ask-with-adaptive-card",
+    "term": "Ask with Adaptive Card",
+    "aliases": [
+      "Ask with Adaptive Card node",
+      "interactive Adaptive Card",
+      "interactive card",
+      "input elements",
+      "Input.Text",
+      "Input.Date",
+      "Input.ChoiceSet",
+      "Input.Toggle",
+      "Input.Number",
+      "Input.Time"
+    ],
+    "definition": "Topic-Knoten, der eine Adaptive Card als Formular präsentiert: Eingabeelemente Input.Text, Input.Number, Input.Date (YYYY-MM-DD), Input.Time (HH:MM), Input.Toggle (true/false) und Input.ChoiceSet (Dropdown/Radio) plus Action.Submit. Beim Absenden erzeugt Copilot Studio je Element eine Topic-Variable aus dessen ID (deshalb beschreibende camelCase-IDs wie leaveType). Mehrere Werte in einem Turn statt mehrerer Question-Knoten; Pflichtfelder über Required.",
+    "source": {
+      "title": "Collect user input with interactive Adaptive Cards",
+      "url": "https://learn.microsoft.com/en-us/training/modules/deliver-rich-agent-responses-adaptive-cards-copilot-studio/4-collect-input-adaptive-cards"
+    }
+  },
+  {
+    "id": "authenticated-channel",
+    "term": "authenticated channel",
+    "aliases": [
+      "anonymous channel",
+      "anonymous channels",
+      "unauthenticated channel"
+    ],
+    "definition": "Kanal, in dem Nutzer angemeldet sind (z. B. Teams, authentifizierter Web-Chat). Maker-provided credentials setzen einen authentifizierten Kanal voraus – für anonyme Kanäle erscheint die Option gar nicht, und ein Agent mit Maker-Anmeldedaten lässt sich nicht dorthin veröffentlichen. Copilot Connectors brauchen in authentifizierten Kanälen zusätzlich den Scope ExternalItem.Read.All.",
+    "source": {
+      "title": "Authenticate and govern agent integrations",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-enterprise-integration-strategies-agents-copilot-studio/4-authenticate-govern-integrations"
+    }
+  },
+  {
+    "id": "authenticated-user-profile",
+    "term": "authenticated user profile",
+    "aliases": [
+      "user profile",
+      "Manage profile and connections"
+    ],
+    "definition": "Die Identität, mit der eine Evaluation Wissensquellen und Tools aufruft. Sie sollte die Berechtigungen der Zielnutzer widerspiegeln – sonst bleiben Berechtigungsfehler in der Evaluation unsichtbar und tauchen erst bei veröffentlichten Nutzern auf.",
+    "source": {
+      "title": "Plan and run agent evaluations",
+      "url": "https://learn.microsoft.com/en-us/training/modules/evaluate-publish-manage-agents-copilot-studio/2-plan-run-agent-evaluations"
+    }
+  },
+  {
+    "id": "azure-ai-search",
+    "term": "Azure AI Search",
+    "aliases": [
+      "AI Search",
+      "vector index",
+      "integrated vectorization",
+      "semantic ranker",
+      "Create new connection"
+    ],
+    "definition": "Wissensquelle für einen organisationseigenen Vektorindex (Kontrolle über Embedding-Pipeline, Chunking, Relevanz-Tuning), z. B. einen Compliance-Dokumententresor. Stets über den Dialog „Create new connection“ anbinden – manuelle Eingabe von Endpoint und API-Key erzeugt eine fehlerhafte Umgebungsverbindung, die alle Agenten der Umgebung blockieren kann. Ein Index je Verbindung; unterstützt integrierte Vektorisierung; Semantic Ranker verbessert das Ranking natürlicher Anfragen (erst in Azure AI Search aktivieren, tierabhängig). VNet-Unterstützung über das Power Platform admin center.",
+    "source": {
+      "title": "Connect an agent to Azure AI Search",
+      "url": "https://learn.microsoft.com/en-us/training/modules/ground-agents-enterprise-knowledge-connectors-azure-ai-search-copilot-studio/5-connect-azure-ai-search"
+    }
+  },
+  {
+    "id": "billed-session",
+    "term": "billed session",
+    "aliases": [
+      "billable session",
+      "100 turns",
+      "60 minutes",
+      "30 minutes"
+    ],
+    "definition": "Eine abrechenbare Interaktion beginnt, wenn ein Nutzer-Topic ausgelöst wird, und endet nach 30 Minuten ohne neue Nachricht, nach 60 Minuten Gesamtdauer (die nächste Nachricht startet eine neue Sitzung) oder nach mehr als 100 Turns (ein Turn = ein Austausch Nutzer↔Agent; der 101. Turn startet eine neue).",
+    "source": {
+      "title": "Administer and manage",
+      "url": "https://learn.microsoft.com/en-us/training/modules/implement-power-virtual-agents/6-administer"
+    }
+  },
+  {
+    "id": "call-an-action",
+    "term": "Call an action",
+    "aliases": [
+      "entities",
+      "prebuilt entities",
+      "Dataverse tables in agents"
+    ],
+    "definition": "Klassische Möglichkeit, aus dem Authoring-Canvas einen Power-Automate-Flow aufzurufen – sichtbar sind nur Flows der Lösung. Agenten sehen Dataverse-Tabellen nicht direkt; der Weg führt über Flows. Vorgefertigte Entities helfen dem Agenten, Alter, Farben, Zahlen oder Namen in Nutzereingaben zu erkennen.",
+    "source": {
+      "title": "Agent entities and flow permissions",
+      "url": "https://learn.microsoft.com/en-us/training/modules/implement-power-virtual-agents/4-bot-entities"
+    }
+  },
+  {
+    "id": "carousel-list",
+    "term": "carousel",
+    "aliases": [
+      "list layout",
+      "carousel layout",
+      "List view"
+    ],
+    "definition": "Layout für mehrere Karten in einem Message-Knoten: Carousel zeigt Karten nebeneinander mit Navigationspfeilen, eine nach der anderen – für eigenständige Elemente, auf die man einzeln reagiert (Produktergebnisse); List stapelt alle vertikal – zum Vergleichen aller Optionen oder bei zwei bis drei Karten. Carousel-Rendering variiert je Kanal.",
+    "source": {
+      "title": "Design informational Adaptive Cards for agent responses",
+      "url": "https://learn.microsoft.com/en-us/training/modules/deliver-rich-agent-responses-adaptive-cards-copilot-studio/3-design-informational-adaptive-cards"
+    }
+  },
+  {
+    "id": "channel-detection",
+    "term": "channel detection",
+    "aliases": [
+      "card variants",
+      "channel variants"
+    ],
+    "definition": "Alternative Strategie für kanalübergreifende Agenten: Topic-Bedingungen leiten je Kanal zu einer eigenen Kartenversion (v1.6 für Web, v1.5 für Teams). Bringt Pflegeaufwand für zwei Definitionen und lohnt sich nur, wenn die v1.6-Layoutvorteile das rechtfertigen; empfohlen ist sonst Option 1: alle Karten in v1.5.",
+    "source": {
+      "title": "Apply channel-specific considerations for Adaptive Cards",
+      "url": "https://learn.microsoft.com/en-us/training/modules/deliver-rich-agent-responses-adaptive-cards-copilot-studio/5-adaptive-cards-channel-considerations"
+    }
+  },
+  {
+    "id": "child-agent",
+    "term": "child agent",
+    "aliases": [
+      "child agents",
+      "parent agent",
+      "Agents page",
+      "New child agent"
+    ],
+    "definition": "Leichtgewichtiger Agent innerhalb eines Parent-Agenten (Agents > Add an agent > New child agent) mit eigenen Instructions, Tools, Wissen, Inputs/Outputs und eigener Orchestrierung – „ein Topic behandelt ein Skript, ein Child Agent eine Domäne“. Teilt Umgebung, Lösung, Kontext und Lebenszyklus des Parents (kein separates Publish/ALM), hat eigene Tool-Limits und verkleinert die Routing-Oberfläche. Richtig, wenn ein Team alles besitzt und nichts separat veröffentlicht werden muss.",
+    "source": {
+      "title": "Understand child agents in Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/training/modules/delegate-agent-tasks-child-agents-copilot-studio/2-understand-child-agents"
+    }
+  },
+  {
+    "id": "classic-data",
+    "term": "Classic data",
+    "aliases": [
+      "Azure OpenAI on your data",
+      "Bing Custom Search",
+      "Bing Web Search"
+    ],
+    "definition": "Option im Data-source-Bereich des Generative-answers-Knotens, hinter der die Quellentypen Azure OpenAI on your data (Azure-AI-Search-Index über Azure OpenAI Service), Bing Web Search, Bing Custom Search und Custom data liegen, die nicht im Standard-Wissensquellen-Panel erscheinen.",
+    "source": {
+      "title": "Configure the generative answers node in a topic",
+      "url": "https://learn.microsoft.com/en-us/training/modules/generate-ai-powered-responses-generative-answers-copilot-studio/2-configure-generative-answers-node"
+    }
+  },
+  {
+    "id": "card-elements",
+    "term": "ColumnSet",
+    "aliases": [
+      "Container",
+      "TextBlock",
+      "Column element",
+      "layout elements",
+      "content elements",
+      "wrap",
+      "emphasis style",
+      "minHeight"
+    ],
+    "definition": "Adaptive-Card-Elemente: Layout – Container (gruppiert, Abstand/Hintergrund, z. B. style emphasis), ColumnSet (horizontale Spaltenzeile) und Column; Inhalt – TextBlock (Text mit Größe, Gewicht, wrap) und Image (URL). Faustregel: drei bis fünf Datenpunkte je Karte, vergleichbare Werte per ColumnSet nebeneinander. Eigenschaften wie wrap, spacing, style oder minHeight sind teils nur in der JSON-Ansicht erreichbar.",
+    "source": {
+      "title": "Design informational Adaptive Cards for agent responses",
+      "url": "https://learn.microsoft.com/en-us/training/modules/deliver-rich-agent-responses-adaptive-cards-copilot-studio/3-design-informational-adaptive-cards"
+    }
+  },
+  {
+    "id": "computer-use",
+    "term": "computer use",
+    "aliases": [
+      "Computer use",
+      "computer-use",
+      "computer-use tool",
+      "computer use tool",
+      "perception-reasoning-action loop"
+    ],
+    "definition": "Tool (Preview), mit dem ein Agent Web- und Desktop-Anwendungen wie ein Mensch bedient: Screenshot erfassen, überlegen, Aktion (Klick, Eingabe) – in einer Schleife bis zum Abschluss oder bis menschliche Eingabe nötig ist. Läuft auf einer Windows-Maschine, meist in autonomen Szenarien (bei Konversation werden Reasoning und Screenshots im Chat geteilt). Nur wenn kein API/Connector existiert; sonst Agent Flows. Nicht deterministisch (ca. 80 % Web, 35 % Desktop), nicht idempotent, anfällig für Prompt Injection; Modellwahl beeinflusst Kosten (5 bzw. 15 Credits je Schritt).",
+    "source": {
+      "title": "Understand computer use in Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/training/modules/automate-desktop-web-tasks-computer-use-copilot-studio/2-understand-computer-use"
+    }
+  },
+  {
+    "id": "flow-condition",
+    "term": "Condition action",
+    "aliases": [
+      "Switch",
+      "Switch action",
+      "parallel branch",
+      "parallel branches",
+      "Run after",
+      "Apply to each",
+      "Until",
+      "Until loop"
+    ],
+    "definition": "Kontrollstrukturen des Control-Connectors in Agent Flows: Condition (if/then/else mit True-/False-Zweig), Switch (benannter Zweig je Fall bei mehr als zwei Pfaden), parallele Zweige für unabhängige Aktionen (Zusammenführung über „Run after“, das auch Fehlerpfade ermöglicht), Apply to each (je Element einer Liste, sicher weil endlich) und Until (bis Bedingung wahr; immer Iterations- oder Zeitlimit setzen, sonst Endlosschleife).",
+    "source": {
+      "title": "Control agent flow logic",
+      "url": "https://learn.microsoft.com/en-us/training/modules/automate-workflows-agent-flows-copilot-studio/6-control-agent-flow-logic"
+    }
+  },
+  {
+    "id": "condition-node",
+    "term": "Condition node",
+    "aliases": [
+      "condition node",
+      "Condition nodes"
+    ],
+    "definition": "Topic-Knoten, der den Gesprächsfluss anhand von Variablenwerten verzweigt – etwa nach einer Klassifikation (Flagged → Eskalation), einem HTTP-Statuscode (200 → Ergebnis, sonst Fallback), einem leeren Kartenfeld oder einem Flow-Output wie RefundStatus. Das zentrale Werkzeug, um Tool-Ergebnisse in Routing zu übersetzen.",
+    "source": {
+      "title": "Retrieve and send data using the HTTP request node",
+      "url": "https://learn.microsoft.com/en-us/training/modules/take-action-agent-topics-tools-flows-copilot-studio/4-configure-http-request-node"
+    }
+  },
+  {
+    "id": "foundry-model-connection",
+    "term": "Connect a model from Microsoft Foundry",
+    "aliases": [
+      "Foundry model catalog",
+      "model deployment name",
+      "base model name",
+      "bring your own model"
+    ],
+    "definition": "Option im Modell-Dropdown des Prompt builders (+), um ein in Microsoft Foundry bereitgestelltes Modell (über 1.800 im Katalog, z. B. Llama, DeepSeek, GPT-4.5) für einen Prompt zu nutzen. Einzugeben sind Model deployment name und Base model name exakt wie in der Foundry-Ressource. Verursacht Foundry-Kosten und unterliegt Power-Platform-DLP-Richtlinien.",
+    "source": {
+      "title": "Author and configure custom prompts in topics",
+      "url": "https://learn.microsoft.com/en-us/training/modules/generate-ai-powered-responses-generative-answers-copilot-studio/5-author-custom-prompts-topics"
+    }
+  },
+  {
+    "id": "connected-agent",
+    "term": "connected agent",
+    "aliases": [
+      "connected agents",
+      "Connect to an external agent",
+      "external agent",
+      "Add an agent"
+    ],
+    "definition": "Separat veröffentlichter, unabhängig verwalteter Agent, an den ein Orchestrator Aufgaben delegiert – aus Sicht des Orchestrators „ein Tool mit Beschreibung“. Eigener Lebenszyklus, ggf. anderes Team oder andere Plattform, für mehrere Orchestratoren nutzbar. Verbindungsoptionen: Copilot-Studio-Agent (gleiche Umgebung), Microsoft Foundry agent, Fabric Data agent, Microsoft 365 Agents SDK agent (alle Preview) und A2A-Protokoll-Agent. Standardmäßig wird der Gesprächsverlauf mitgegeben (je Verbindung abschaltbar).",
+    "source": {
+      "title": "Understand connected agents in Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/training/modules/build-multi-agent-solutions-connected-agents-copilot-studio/2-understand-connected-agents"
+    }
+  },
+  {
+    "id": "connection",
+    "term": "connector connection",
+    "aliases": [
+      "Can use + share",
+      "share a connection",
+      "create a connection",
+      "existing connection",
+      "shared connection"
+    ],
+    "definition": "Gespeicherte Anmeldedaten, mit denen ein Connector-Tool mit dem externen Dienst kommuniziert; wird beim Hinzufügen erstellt oder aus bestehenden ausgewählt. Damit andere Maker die Integration bauen und testen können, wird die Verbindung in Power Apps unter Connections mit „Can use + share“ geteilt.",
+    "source": {
+      "title": "Configure authentication for connector tools",
+      "url": "https://learn.microsoft.com/en-us/training/modules/take-action-external-systems-connector-rest-api-tools-copilot-studio/4-configure-connector-authentication"
+    }
+  },
+  {
+    "id": "connection-reference",
+    "term": "connection reference",
+    "aliases": [
+      "connection references"
+    ],
+    "definition": "Lösungskomponente, über die jede Umgebung das passende Connector-Konto verwendet, wenn ein Agent zwischen Dev, Test und Prod bewegt wird – ergänzend zu Environment variables für unterschiedliche Werte. Früh einrichten; nach dem Release ist das Nachrüsten aufwendig und fehleranfällig.",
+    "source": {
+      "title": "Govern agent lifecycle and costs",
+      "url": "https://learn.microsoft.com/en-us/training/modules/evaluate-publish-manage-agents-copilot-studio/5-govern-agent-lifecycle-costs"
+    }
+  },
+  {
+    "id": "content-moderation",
+    "term": "content moderation",
+    "aliases": [
+      "Low – More creative",
+      "Medium – More balanced",
+      "High – More precise",
+      "Generative AI settings",
+      "Image input",
+      "Enhanced search results"
+    ],
+    "definition": "Einstellung unter Settings > Generative AI, wie streng generierte Antworten sein sollen: Low (kreativer, mehr Quellen, evtl. weniger relevant), Medium (ausgewogener), High (präzise, aber höhere Wahrscheinlichkeit, keine Antwort zu finden). Dort auch: Interaktionsmodus Classic vs. Generative, Image input (Bilder hochladen) und Enhanced search results (für Microsoft-365-Copilot-Tenants).",
+    "source": {
+      "title": "Generative AI",
+      "url": "https://learn.microsoft.com/en-us/training/modules/implement-power-virtual-agents/generative-ai"
+    }
+  },
+  {
+    "id": "context-id",
+    "term": "context ID",
+    "aliases": [
+      "contextId",
+      "Context IDs",
+      "A2A task",
+      "tasks",
+      "message content parts",
+      "A2A message payload"
+    ],
+    "definition": "Bausteine einer A2A-Nachricht: contextId (bindet alle Tasks einer Sitzung an dasselbe Gespräch – Multi-Turn über Agentengrenzen), Message-IDs (Nachverfolgbarkeit), Locale (Sprache), der komplette Gesprächsverlauf (standardmäßig) und Message Content Parts (Text, Tool-Ergebnisse, Metadaten). Tasks sind die Arbeitseinheit der Delegation. Der mitgesendete Verlauf ist ein Responsible-Use-Thema bei fremden Organisationen.",
+    "source": {
+      "title": "Test and validate an A2A agent connection",
+      "url": "https://learn.microsoft.com/en-us/training/modules/build-cross-platform-multi-agent-solutions-agent2agent-copilot-studio/4-test-validate-a2a-connection"
+    }
+  },
+  {
+    "id": "continue-on-error",
+    "term": "Continue on error",
+    "aliases": [
+      "Raise an error",
+      "On Error topic",
+      "On Error system topic",
+      "error handling mode",
+      "Request timeout"
+    ],
+    "definition": "Fehlerbehandlung des HTTP-Request-Knotens: Standard „Raise an error“ löst das System-Topic On Error aus und stoppt den Ablauf; „Continue on error“ lässt das Topic weiterlaufen und speichert Statuscode und Fehlerantwort in Variablen, die eine Condition prüft (200 = Erfolg, sonst Fallback-Nachricht). Request timeout: Standard 30.000 ms, bei langsamen APIs erhöhen.",
+    "source": {
+      "title": "Retrieve and send data using the HTTP request node",
+      "url": "https://learn.microsoft.com/en-us/training/modules/take-action-agent-topics-tools-flows-copilot-studio/4-configure-http-request-node"
+    }
+  },
+  {
+    "id": "control-maker-provided-credentials",
+    "term": "Control maker-provided credentials",
+    "aliases": [
+      "credential governance"
+    ],
+    "definition": "Admin-Einstellung im Power Platform admin center: Wird sie erzwungen, können Maker Tools nicht mehr mit ihren eigenen Anmeldedaten konfigurieren – alle Tool-Verbindungen müssen vom Endnutzer zur Laufzeit authentifiziert werden, sodass der Agent nur innerhalb der Rechte des jeweiligen Nutzers handelt.",
+    "source": {
+      "title": "Authenticate and govern agent integrations",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-enterprise-integration-strategies-agents-copilot-studio/4-authenticate-govern-integrations"
+    }
+  },
+  {
+    "id": "conversational-boosting",
+    "term": "Conversational boosting",
+    "aliases": [
+      "conversational boosting topic",
+      "generative answers as fallback",
+      "fallback"
+    ],
+    "definition": "System-Topic jedes Agenten, das läuft, wenn kein Topic zur Nutzereingabe passt. Mit generativen Antworten beantwortet es die Frage aus den konfigurierten Wissensquellen, statt zweimal um Umformulierung zu bitten und dann zu eskalieren – generative Antworten als Fallback oder als primäre Informationsquelle.",
+    "source": {
+      "title": "Generative AI",
+      "url": "https://learn.microsoft.com/en-us/training/modules/implement-power-virtual-agents/generative-ai"
+    }
+  },
+  {
+    "id": "convert-cloud-flow",
+    "term": "convert a cloud flow",
+    "aliases": [
+      "convert to agent flow",
+      "cloud flow",
+      "cloud flows",
+      "Power Automate cloud flow"
+    ],
+    "definition": "Ein Power-Automate-Cloud-Flow (Per-User-/Per-Process-Lizenz, in Power Automate verwaltet) lässt sich in einen Agent Flow umwandeln: Voraussetzung Copilot Credits in der Umgebung und Flow in einer Lösung; im Power-Automate-Portal Edit > Plan auf Copilot Studio > Save > Confirm. Die Konvertierung ist dauerhaft, weil die Abrechnungsänderung nicht rückgängig gemacht werden kann.",
+    "source": {
+      "title": "Manage and monitor agent flows",
+      "url": "https://learn.microsoft.com/en-us/training/modules/automate-workflows-agent-flows-copilot-studio/7-manage-monitor-agent-flows"
+    }
+  },
+  {
+    "id": "copilot-connector",
+    "term": "Copilot connector",
+    "aliases": [
+      "Copilot connectors",
+      "Graph connector",
+      "Graph connectors",
+      "Microsoft Graph connector",
+      "Copilot connectors gallery"
+    ],
+    "definition": "Früher Microsoft Graph Connector: ingestiert und indexiert externe Inhalte (Wissensdatenbanken, Wikis, Ticketarchive) semantisch in Microsoft Graph – „search and index“. Agenten finden Inhalte per semantischer Suche und zitieren einzelne Elemente. Über 100 vorgefertigte Connectors; eigene per Agents Toolkit/SDK/APIs. Muss vom Tenant-Admin im Microsoft 365 admin center konfiguriert werden; Maker wählen nur aus. Für statische bis langsam veränderliche Referenzinhalte; bei häufig wechselnden Daten drohen veraltete Antworten.",
+    "source": {
+      "title": "Choose between Copilot connector and Power Platform connector knowledge sources",
+      "url": "https://learn.microsoft.com/en-us/training/modules/ground-agents-enterprise-knowledge-connectors-azure-ai-search-copilot-studio/2-choose-knowledge-source-approach"
+    }
+  },
+  {
+    "id": "copilot-credits",
+    "term": "Copilot Credits",
+    "aliases": [
+      "Copilot credits",
+      "credits",
+      "credit consumption",
+      "capacity",
+      "Copilot Studio capacity",
+      "billing"
+    ],
+    "definition": "Abrechnungseinheit für Copilot-Studio-Aktivitäten: Nutzergespräche mit Modellaufruf, Wissensabruf mit semantischer Suche, modellgestützte Tool-/Workflow-Aufrufe, Evaluationsläufe, Agent-Flow-Aktionen, Computer-Use-Schritte (5/15 je Schritt), Prompt-Modelle (Basis-/Standard-/Premiumrate). Reines Authoring verbraucht keine Laufzeit-Credits. Admins überwachen Verbrauch und Kapazität im Power Platform admin center; erschöpfte Kapazität führt zu Kapazitätsfehlern.",
+    "source": {
+      "title": "Govern agent lifecycle and costs",
+      "url": "https://learn.microsoft.com/en-us/training/modules/evaluate-publish-manage-agents-copilot-studio/5-govern-agent-lifecycle-costs"
+    }
+  },
+  {
+    "id": "create-search-query",
+    "term": "Create search query",
+    "aliases": [
+      "Perform custom search",
+      "custom search node",
+      "topic-only tools"
+    ],
+    "definition": "Zwei nur im Topic verfügbare Tools für Wissensabruf: Create search query schreibt die letzte Nutzernachricht mit Gesprächskontext in eine strukturierte, angereicherte Suchanfrage um (z. B. „what about sick leave?“ wird vollständig); Perform custom search führt eine Suche gegen konfigurierte Quellen aus und liefert die rohen, nicht zusammengefassten Treffer als Variable – für Filterung, Geschäftslogik oder eigene Zusammenfassung vor der Antwort. Oft nacheinander genutzt.",
+    "source": {
+      "title": "Call tools from agent topics",
+      "url": "https://learn.microsoft.com/en-us/training/modules/take-action-agent-topics-tools-flows-copilot-studio/2-call-tools-topics"
+    }
+  },
+  {
+    "id": "custom-connector-620",
+    "term": "custom connector",
+    "aliases": [
+      "custom connectors",
+      "Can view permission",
+      "Can edit permission",
+      "Invite another user"
+    ],
+    "definition": "Low-Code-Wrapper um eine eigene REST-API (OpenAPI-Spezifikation), erstellt im Power Apps maker portal und danach in Copilot Studio, Power Automate, Power Apps und Logic Apps derselben Umgebung wiederverwendbar – der Vorteil gegenüber REST-API-Tools, wenn mehrere Agenten dieselbe API brauchen. Muss mit den Makern geteilt sein (Can view/Can edit unter Data > Custom connectors > Invite another user), sonst fehlt er in der Connector-Galerie.",
+    "source": {
+      "title": "Add prebuilt and custom connector tools to an agent",
+      "url": "https://learn.microsoft.com/en-us/training/modules/take-action-external-systems-connector-rest-api-tools-copilot-studio/3-add-connector-tools"
+    }
+  },
+  {
+    "id": "custom-data",
+    "term": "Custom data",
+    "aliases": [
+      "custom data source",
+      "custom knowledge source",
+      "Content column",
+      "ContentLocation",
+      "Title column"
+    ],
+    "definition": "Quellentyp des Generative-answers-Knotens für proprietäre APIs, Datenbanken oder Legacy-Systeme: Man ruft die Daten selbst ab (HTTP-Request-Knoten oder Power-Automate-Flow) und übergibt sie als Power-Fx-Tabelle mit den Spalten Content (Pflicht, Text für die Antwort), ContentLocation (Zitat-URL) und Title (Anzeigelabel). Nur die ersten drei Datensätze werden verwendet, positionsbasiert – die Abfrage muss vorher filtern und ranken.",
+    "source": {
+      "title": "Connect custom knowledge sources to a generative answers node",
+      "url": "https://learn.microsoft.com/en-us/training/modules/generate-ai-powered-responses-generative-answers-copilot-studio/3-connect-custom-knowledge-sources"
+    }
+  },
+  {
+    "id": "custom-instructions",
+    "term": "custom instructions",
+    "aliases": [
+      "custom instruction",
+      "prompt modification"
+    ],
+    "definition": "Freitext (bis 8.000 Zeichen, mit Topic-Variablen und Power Fx) im Data-source-Panel eines Generative-answers-Knotens, der Ton, Format und Umfang der Antwort steuert – etwa „formal, Aufzählungspunkte bei mehreren Schritten, nicht über die Quellen hinaus spekulieren“. Gilt nur für diesen Knoten. Wirksam sind nur beobachtbare, messbare Verhaltensvorgaben; „be helpful and professional“ ändert nichts.",
+    "source": {
+      "title": "Shape AI responses with custom instructions",
+      "url": "https://learn.microsoft.com/en-us/training/modules/generate-ai-powered-responses-generative-answers-copilot-studio/4-shape-responses-custom-instructions"
+    }
+  },
+  {
+    "id": "custom-prompt",
+    "term": "custom prompt",
+    "aliases": [
+      "custom prompts",
+      "prompt tool",
+      "prompt tools",
+      "AI prompt",
+      "AI prompts",
+      "Prompt builder",
+      "Prompt Builder"
+    ],
+    "definition": "Eigener Knotentyp (Tool), der eine strukturierte Reasoning-Aufgabe auf Eingaben des Topics ausführt – klassifizieren, extrahieren, zusammenfassen – ohne Wissensquellen zu durchsuchen. Erstellt im Prompt builder (Tools > Add a tool > New tool > Prompt) mit Instructions, Input-Variablen (z. B. {clauseText}), Modellwahl und Testbereich; im Topic als Tool-Knoten mit gemappten Variablen, Ausgabe als Topic-Variable für Bedingungen. Wiederverwendbar über Agenten, Topics, Workflows und Apps.",
+    "source": {
+      "title": "Author and configure custom prompts in topics",
+      "url": "https://learn.microsoft.com/en-us/training/modules/generate-ai-powered-responses-generative-answers-copilot-studio/5-author-custom-prompts-topics"
+    }
+  },
+  {
+    "id": "description",
+    "term": "description",
+    "aliases": [
+      "tool description",
+      "tool descriptions",
+      "agent description",
+      "routing signal"
+    ],
+    "definition": "Der natürlichsprachliche Text, aus dem der Orchestrator entscheidet, wann er ein Tool, einen Child/Connected Agent, eine Wissensquelle oder einen MCP-Server aufruft. Gute Beschreibungen sind spezifisch (Domäne, Anfragetypen), abgrenzend (keine Begriffe angrenzender Agenten) und in der Sprache der Nutzeranfragen formuliert. Vage Beschreibungen sind die häufigste Ursache für falsches oder ausbleibendes Routing; nach Tests verfeinern.",
+    "source": {
+      "title": "Connect an existing Copilot Studio agent",
+      "url": "https://learn.microsoft.com/en-us/training/modules/build-multi-agent-solutions-connected-agents-copilot-studio/3-connect-copilot-studio-agent"
+    }
+  },
+  {
+    "id": "description-based-routing",
+    "term": "description-based routing",
+    "aliases": [
+      "The agent chooses",
+      "dynamic routing",
+      "deterministic routing",
+      "explicit trigger",
+      "explicit triggers",
+      "trigger events"
+    ],
+    "definition": "Zwei Arten, wann ein Child Agent aufgerufen wird: „The agent chooses – Based on description“ (Standard; der Orchestrator matcht die Nutzernachricht gegen die Beschreibung, robust gegen Formulierungsvarianten) oder explizite Trigger-Events für deterministisches Verhalten: An activity occurs, A message is received, A custom client event occurs, The conversation changes, It's invoked, It's redirected to, The user is inactive for a while, A plan completes, An AI-generated response is about to be sent.",
+    "source": {
+      "title": "Create and configure a child agent",
+      "url": "https://learn.microsoft.com/en-us/training/modules/delegate-agent-tasks-child-agents-copilot-studio/3-create-configure-child-agent"
+    }
+  },
+  {
+    "id": "dlp",
+    "term": "DLP",
+    "aliases": [
+      "data loss prevention",
+      "DLP policy",
+      "DLP policies",
+      "Business data group",
+      "Non-business",
+      "Blocked",
+      "data groups"
+    ],
+    "definition": "Power-Platform-Richtlinien, mit denen Admins Connectors je Umgebung in die Gruppen Business, Non-business oder Blocked einteilen: Blocked ist für keinen Agenten nutzbar, Business und Non-business dürfen nicht kombiniert werden. Durchsetzung in Echtzeit beim Hinzufügen; ein in Dev erlaubter Connector kann in Prod blockiert sein – deshalb vor dem Design prüfen. DLP gilt auch für Real-time-Wissensquellen und Foundry-Modellverbindungen.",
+    "source": {
+      "title": "Authenticate and govern agent integrations",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-enterprise-integration-strategies-agents-copilot-studio/4-authenticate-govern-integrations"
+    }
+  },
+  {
+    "id": "dynamic-content",
+    "term": "dynamic content",
+    "aliases": [
+      "Dynamic content pane",
+      "Insert dynamic content",
+      "expressions",
+      "expression",
+      "fx",
+      "concat"
+    ],
+    "definition": "Ausgaben vorheriger Trigger und Aktionen, die in spätere Schritte eingefügt werden (Blitz-Symbol oder /) – das „Gedächtnis“ des Flows. Expressions (fx) transformieren Daten mit Funktionen (Werte verketten wie concat, Groß-/Kleinschreibung, Datum formatieren, Zeichenketten bauen); Copilot kann sie aus einer Beschreibung erzeugen. Beschreibende Aktionsnamen (Get requester profile statt Get user profile (V2)) machen den Picker lesbar.",
+    "source": {
+      "title": "Control agent flow logic",
+      "url": "https://learn.microsoft.com/en-us/training/modules/automate-workflows-agent-flows-copilot-studio/6-control-agent-flow-logic"
+    }
+  },
+  {
+    "id": "dynamically-fill-with-ai",
+    "term": "Dynamically fill with AI",
+    "aliases": [
+      "tool inputs",
+      "input mapping",
+      "tool configuration page"
+    ],
+    "definition": "Standardeinstellung für Tool-Inputs: Der Orchestrator befüllt Eingabewerte dynamisch aus dem Gesprächskontext. Alternativ lässt sich ein Input auf einen festen Wert, eine Variable oder eine Power-Fx-Formel setzen, wenn er konstant bleiben oder aus einer bekannten Quelle stammen soll. Weitere Felder der Tool-Konfiguration: Name (erscheint in Logs) und Beschreibung (Routing-Signal).",
+    "source": {
+      "title": "Add prebuilt and custom connector tools to an agent",
+      "url": "https://learn.microsoft.com/en-us/training/modules/take-action-external-systems-connector-rest-api-tools-copilot-studio/3-add-connector-tools"
+    }
+  },
+  {
+    "id": "enabled-toggle",
+    "term": "Enabled toggle",
+    "aliases": [
+      "Enabled",
+      "disable an agent",
+      "disabled agent",
+      "Disconnect agent",
+      "disconnect"
+    ],
+    "definition": "Schalter auf der Agents-Seite, der einen Child oder Connected Agent temporär aus der Rotation nimmt (keine Reaktion auf Nutzer/Trigger, kein Routing), die Konfiguration aber behält – für Wartungsfenster und gestaffelte Rollouts. Dagegen entfernt Delete (Child) bzw. Disconnect agent (Connected) dauerhaft; Redirect-Knoten auf gelöschte Agenten müssen angepasst werden, und Reconnect erfordert das komplette Neuanlegen.",
+    "source": {
+      "title": "Manage and test your connected agent solution",
+      "url": "https://learn.microsoft.com/en-us/training/modules/build-multi-agent-solutions-connected-agents-copilot-studio/6-manage-test-connected-agent-solution"
+    }
+  },
+  {
+    "id": "end-user-authentication",
+    "term": "end user authentication",
+    "aliases": [
+      "user-provided credentials",
+      "user provided credentials",
+      "maker-provided credentials",
+      "maker provided credentials",
+      "Credentials to use"
+    ],
+    "definition": "Zwei Anmeldemodi für Connector-Tools: End user authentication (Standard) – jeder Nutzer meldet sich beim ersten Aufruf mit eigenem Konto an und sieht nur, was er darf; Maker-provided credentials – alle Nutzer agieren als Maker (für geteilte Servicekonten oder um Reibung zu vermeiden). Maker-Anmeldedaten setzen einen authentifizierten Kanal voraus (nicht für anonyme Kanäle) und werden unter Details > Additional details > Credentials to use umgestellt.",
+    "source": {
+      "title": "Configure authentication for connector tools",
+      "url": "https://learn.microsoft.com/en-us/training/modules/take-action-external-systems-connector-rest-api-tools-copilot-studio/4-configure-connector-authentication"
+    }
+  },
+  {
+    "id": "environment",
+    "term": "environment",
+    "aliases": [
+      "environments",
+      "environment strategy",
+      "development environment",
+      "test environment",
+      "production environment"
+    ],
+    "definition": "Container für Agenten, Apps, Flows, Daten und Sicherheitsrollen in der Power Platform; ein neuer Agent entsteht in der aktuell gewählten Umgebung. Typische Strategie: getrennte Dev-/Test-/Prod-Umgebungen, zwischen denen Lösungen per Export/Import oder Pipeline wandern; Werte und Verbindungen unterscheiden sich je Umgebung (Environment variables, Connection references). Connected Agents müssen in derselben Umgebung liegen.",
+    "source": {
+      "title": "Environments in Microsoft Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/training/modules/implement-power-virtual-agents/2-environments"
+    }
+  },
+  {
+    "id": "environment-variable",
+    "term": "environment variable",
+    "aliases": [
+      "environment variables"
+    ],
+    "definition": "Lösungskomponente für Werte, die sich je Umgebung unterscheiden (z. B. SharePoint-URL) oder die nicht auf dem Canvas sichtbar sein dürfen (API-Keys, Bearer-Tokens in HTTP-Headern). Statt Literale im Knoten zu hinterlegen, wird die Umgebungsvariable referenziert – Anmeldedaten bleiben aus dem Canvas heraus und sind über Test/Produktion hinweg verwaltbar. Früh anlegen, nachträglich ist es aufwendig.",
+    "source": {
+      "title": "Retrieve and send data using the HTTP request node",
+      "url": "https://learn.microsoft.com/en-us/training/modules/take-action-agent-topics-tools-flows-copilot-studio/4-configure-http-request-node"
+    }
+  },
+  {
+    "id": "evaluate-tab",
+    "term": "Evaluate tab",
+    "aliases": [
+      "Evaluate",
+      "evaluation",
+      "evaluations",
+      "evaluation run",
+      "New evaluation",
+      "Preview tab",
+      "Preview"
+    ],
+    "definition": "Preview: interaktiver Chat für schnelle, informelle Checks (keine Metriken, nicht wiederholbar). Evaluate (produktionsreife Preview für Agenten mit GitHub-Copilot-Harness): führt ein gespeichertes Testset aus, bewertet die Antworten und speichert jeden Lauf separat – für Qualitäts-Baselines vor dem Release und Regressionsprüfung nach Änderungen an Instructions, Wissen, Tools oder Connected Agents. Jede Testkonversation verbraucht Copilot Credits – zu Meilensteinen ausführen.",
+    "source": {
+      "title": "Plan and run agent evaluations",
+      "url": "https://learn.microsoft.com/en-us/training/modules/evaluate-publish-manage-agents-copilot-studio/2-plan-run-agent-evaluations"
+    }
+  },
+  {
+    "id": "externalitem-read-all",
+    "term": "ExternalItem.Read.All",
+    "aliases": [
+      "Graph scope",
+      "manual authentication scope",
+      "Scopes field"
+    ],
+    "definition": "Microsoft-Graph-Scope, der in der manuellen Authentifizierung eines Kanals (Teams, authentifizierter Web-Chat) eingetragen werden muss, damit der Agent die von Copilot Connectors indexierten Elemente im Namen des angemeldeten Nutzers lesen darf. Fehlt er, liefert der Connector zur Laufzeit keine Inhalte – trotz korrekter Konfiguration.",
+    "source": {
+      "title": "Add Copilot connectors as knowledge sources",
+      "url": "https://learn.microsoft.com/en-us/training/modules/ground-agents-enterprise-knowledge-connectors-azure-ai-search-copilot-studio/3-add-copilot-connector-knowledge"
+    }
+  },
+  {
+    "id": "fabric-data-agent",
+    "term": "Fabric Data agent",
+    "aliases": [
+      "Fabric Data agents",
+      "Microsoft Fabric Data agent",
+      "Microsoft Fabric",
+      "OneLake",
+      "Fabric connection",
+      "F2 capacity"
+    ],
+    "definition": "In Microsoft Fabric veröffentlichter Analyse-Agent, der natürlichsprachliche Fragen in Abfragen über OneLake-Quellen übersetzt (SQL für Lakehouse/Warehouse, DAX für Power-BI-Semantic-Models, KQL für KQL-Datenbanken). Voraussetzungen: Fabric-Verbindung in der Umgebung, F2+ Kapazität (oder Power BI Premium P1+ mit Fabric), veröffentlichter Agent. Erzwingt die Fabric-Berechtigungen des Nutzers und Purview-Richtlinien. Nur über generative Orchestrierung erreichbar – kein Topic-Redirect; funktioniert nicht, wenn der Hauptagent in Microsoft 365 Copilot läuft. Preview.",
+    "source": {
+      "title": "Connect a Microsoft Fabric Data agent",
+      "url": "https://learn.microsoft.com/en-us/training/modules/build-multi-agent-solutions-connected-agents-copilot-studio/5-connect-fabric-data-agent"
+    }
+  },
+  {
+    "id": "flow-checker",
+    "term": "Flow checker",
+    "aliases": [
+      "flow checker",
+      "Version history",
+      "version history",
+      "Test pane"
+    ],
+    "definition": "Werkzeuge im Agent-Flow-Designer: Flow checker listet alle Fehler und Warnungen – Fehler blockieren Publish, Warnungen nicht; Version history speichert je Save einen Snapshot in Dataverse (Restore ohne Verlust späterer Arbeit); Test pane führt den Flow manuell oder mit einem echten Trigger-Ereignis aus (beide Zweige jeder Bedingung testen; Standardaktionen verbrauchen im Test keine Credits, Prompt Builder schon).",
+    "source": {
+      "title": "Manage and monitor agent flows",
+      "url": "https://learn.microsoft.com/en-us/training/modules/automate-workflows-agent-flows-copilot-studio/7-manage-monitor-agent-flows"
+    }
+  },
+  {
+    "id": "forall",
+    "term": "ForAll",
+    "aliases": [
+      "ForAll expression",
+      "Set variable node",
+      "Set variable"
+    ],
+    "definition": "Power-Fx-Funktion, mit der ein Set-variable-Knoten eine rohe JSON-Antwort (z. B. aus einem HTTP-Request-Knoten) in das vom Generative-answers-Knoten geforderte Tabellenformat umformt – Felder wie regulationText, sourceUrl, regulationTitle werden auf Content, ContentLocation und Title abgebildet.",
+    "source": {
+      "title": "Connect custom knowledge sources to a generative answers node",
+      "url": "https://learn.microsoft.com/en-us/training/modules/generate-ai-powered-responses-generative-answers-copilot-studio/3-connect-custom-knowledge-sources"
+    }
+  },
+  {
+    "id": "from-sample-data",
+    "term": "From Sample Data",
+    "aliases": [
+      "Get schema from sample JSON",
+      "response data type",
+      "response schema",
+      "Save user response as"
+    ],
+    "definition": "Einstellung des HTTP-Request-Knotens: Aus einer eingefügten Beispielantwort erzeugt Copilot Studio ein Power-Fx-Variablenschema, sodass Felder per Punktnotation (Topic.TrackingResponse.status) mit IntelliSense nutzbar sind. Die Antwort wird über „Save user response as“ in einer Variablen gespeichert; nur benötigte Felder verwenden.",
+    "source": {
+      "title": "Retrieve and send data using the HTTP request node",
+      "url": "https://learn.microsoft.com/en-us/training/modules/take-action-agent-topics-tools-flows-copilot-studio/4-configure-http-request-node"
+    }
+  },
+  {
+    "id": "general-quality",
+    "term": "General quality",
+    "aliases": [
+      "general quality score",
+      "evaluation method",
+      "test method",
+      "relevance",
+      "completeness",
+      "unsupported response"
+    ],
+    "definition": "Testmethode des Evaluate-Tabs: bewertet jede Antwort gegen objektive Qualitätsstandards wie Relevanz und Vollständigkeit (mit Teildimensionen) – ohne Vergleich mit den erwarteten Antworten. Signale: niedrige Relevanz → Instructions zu breit/eng; niedrige Vollständigkeit → Wissen fehlt/nicht abgerufen; nicht gestützte Antwort → Instructions/Wissen prüfen; falsche Fähigkeit → Tool-Beschreibung; falscher Agent → überlappende Beschreibungen; Delegationsfehler → Agent nicht veröffentlicht/geteilt/andere Umgebung; Capability-Fehler → Verbindung/Berechtigung.",
+    "source": {
+      "title": "Plan and run agent evaluations",
+      "url": "https://learn.microsoft.com/en-us/training/modules/evaluate-publish-manage-agents-copilot-studio/2-plan-run-agent-evaluations"
+    }
+  },
+  {
+    "id": "generative-answers-node",
+    "term": "generative answers node",
+    "aliases": [
+      "Create generative answers node",
+      "generative answers"
+    ],
+    "definition": "Knoten auf dem Topic-Canvas (Add node > Advanced > Generative answers), der konfigurierte Wissensquellen durchsucht und eine geerdete Antwort synthetisiert – „Was sagen unsere Inhalte dazu?“. Er läuft an einer definierten Stelle des Gesprächs, anders als Conversational Boosting, das agentenweit bei nicht erkanntem Topic feuert. Findet er nichts, antwortet er „keine Information gefunden“ statt auf allgemeines KI-Wissen zurückzufallen (außer AI general knowledge ist als Quelle enthalten).",
+    "source": {
+      "title": "Configure the generative answers node in a topic",
+      "url": "https://learn.microsoft.com/en-us/training/modules/generate-ai-powered-responses-generative-answers-copilot-studio/2-configure-generative-answers-node"
+    }
+  },
+  {
+    "id": "generative-orchestration",
+    "term": "generative orchestration",
+    "aliases": [
+      "AI orchestrator",
+      "classic orchestration",
+      "classic mode",
+      "Classic"
+    ],
+    "definition": "Standardmodus eines Agenten: Der Orchestrator wählt zur Laufzeit dynamisch das passende Tool, Topic, die Wissensquelle oder den Agenten – anhand der Nutzerabsicht, des Gesprächskontexts und der Namen/Beschreibungen. Deshalb sind Beschreibungen das wichtigste Routing-Signal. MCP-Tools laufen nur so; der klassische Modus (Classic) reagiert auf Trigger-Phrasen und ruft Aktionen nur aus Topics.",
+    "source": {
+      "title": "Understand MCP and its role in Copilot Studio integration",
+      "url": "https://learn.microsoft.com/en-us/training/modules/integrate-agents-external-systems-mcp-copilot-studio/2-understand-mcp-integration"
+    }
+  },
+  {
+    "id": "github-copilot-harness",
+    "term": "GitHub Copilot harness",
+    "aliases": [
+      "agent harness",
+      "harness"
+    ],
+    "definition": "Laufzeitumgebung („Harness“), auf der ein Copilot-Studio-Agent aufsetzt; Agenten mit dem GitHub-Copilot-Harness bringen den Preview-/Evaluate-/Monitor-Tab-Workflow mit und ziehen ihre Kosten aus dem Copilot-Credit-Guthaben der Organisation. Der Evaluate-Tab ist für diese Agenten in produktionsreifer Preview und nicht in jeder Umgebung verfügbar.",
+    "source": {
+      "title": "Plan and run agent evaluations",
+      "url": "https://learn.microsoft.com/en-us/training/modules/evaluate-publish-manage-agents-copilot-studio/2-plan-run-agent-evaluations"
+    }
+  },
+  {
+    "id": "computer-use-machines",
+    "term": "hosted browser",
+    "aliases": [
+      "Cloud PC pool",
+      "Cloud PC pools",
+      "Windows 365 for Agents",
+      "bring your own machine",
+      "BYO machine",
+      "registered machine",
+      "Machines section"
+    ],
+    "definition": "Maschinenoptionen für Computer Use: Hosted browser (Microsoft-verwaltet, Edge-Webautomatisierung, nur zum Experimentieren), Cloud PC pool (Windows 365 for Agents; empfohlen, automatisch provisioniert, Entra-joined/Intune-enrolled, Zugriff auf Organisationsressourcen; Preview; bis zu zwei Pools und 50 Freistunden; Provisionierung bis 30 Min.) und Bring your own machine (registrierte Windows-Maschine mit Power Automate for desktop ≥ 2.61, „Enable for computer use“; für installierte LOB-Software; Läufe werden sequenziell abgearbeitet). Credentials to use: Maker-provided (Standard) oder End user.",
+    "source": {
+      "title": "Configure computer use as an agent tool",
+      "url": "https://learn.microsoft.com/en-us/training/modules/automate-desktop-web-tasks-computer-use-copilot-studio/4-configure-computer-use"
+    }
+  },
+  {
+    "id": "human-supervision",
+    "term": "human supervision",
+    "aliases": [
+      "review request",
+      "review requests",
+      "reviewer",
+      "inline review card"
+    ],
+    "definition": "Computer Use kann pausieren und dem konfigurierten Reviewer eine Anfrage per Outlook-Mail senden (Agent-/Toolname, Link zur Activity Map, Frage); Antwort per Mail oder inline im Seitenpanel. Beruht auf probabilistischem Modellverhalten – kein Sicherheitsgarant, keine Garantie, dass vor jedem riskanten Schritt gefragt wird. Reviewer geben nie Passwörter oder persönliche Daten ein. Häufige Anfragen sind ein Designsignal für unklare Anweisungen.",
+    "source": {
+      "title": "Monitor and supervise computer use execution",
+      "url": "https://learn.microsoft.com/en-us/training/modules/automate-desktop-web-tasks-computer-use-copilot-studio/5-monitor-computer-use"
+    }
+  },
+  {
+    "id": "child-agent-inputs",
+    "term": "child agent inputs",
+    "aliases": [
+      "child agent input",
+      "child agent outputs",
+      "Should prompt user",
+      "reprompts",
+      "Action if no entity found",
+      "required input",
+      "structured inputs"
+    ],
+    "definition": "Strukturierte Werte, die ein Child Agent braucht (Inputs: Display name, Description, Data type, Required) bzw. zurückgibt (Outputs mit Name, Beschreibung, Typ). Standardmäßig erhält der Child nur die Nutzernachricht als Task; präzise Input-Beschreibungen helfen dem Parent, Werte aus dem Kontext zu liefern. Advanced-Optionen: Should prompt user (Child fragt selbst nach), Condition/Condition not met prompt (Validierung), How many reprompts, Action if no entity found. Bei Redirect landen Outputs automatisch in Topic-Variablen.",
+    "source": {
+      "title": "Configure child agent inputs, outputs, and trigger behavior",
+      "url": "https://learn.microsoft.com/en-us/training/modules/delegate-agent-tasks-child-agents-copilot-studio/4-configure-child-agent-inputs-outputs-triggers"
+    }
+  },
+  {
+    "id": "agent-flow-triggers",
+    "term": "Instant trigger",
+    "aliases": [
+      "instant",
+      "Scheduled trigger",
+      "scheduled",
+      "Automated trigger",
+      "automated",
+      "Manually trigger a flow",
+      "input parameters",
+      "trigger conditions",
+      "concurrency control",
+      "retry policy"
+    ],
+    "definition": "Trigger-Typen von Agent Flows: Instant (manuell oder von Agent/Flow/App aufgerufen; erlaubt Eingabeparameter Text, Yes/No, File, Email, Number, Date – optional markierbar, Text mit Werteliste), Scheduled (Zeitplan) und Automated (Ereignis in einem verbundenen System). Trigger-Einstellungen: Concurrency control (parallele Instanzen), Trigger conditions (Ausdrücke, die vor dem Auslösen wahr sein müssen – filtert Ereignisse, bevor der Flow startet) und Retry policy.",
+    "source": {
+      "title": "Configure triggers, actions, and connectors",
+      "url": "https://learn.microsoft.com/en-us/training/modules/automate-workflows-agent-flows-copilot-studio/5-configure-actions-connectors"
+    }
+  },
+  {
+    "id": "integration-categories",
+    "term": "integration categories",
+    "aliases": [
+      "tools, knowledge sources, and agents",
+      "integration landscape",
+      "integration approach"
+    ],
+    "definition": "Drei Integrationsarten in Copilot Studio, jeweils nach Zweck gewählt: Tools – der Agent tut etwas in einem externen System (Datensatz abrufen, Ticket aktualisieren, Benachrichtigung senden); Knowledge sources – der Agent beantwortet Fragen aus autoritativen Inhalten; Agents – der Agent delegiert spezialisiertes Reasoning an einen anderen Agenten. Die Kategorien sind additiv: ein Agent kombiniert typischerweise alle drei.",
+    "source": {
+      "title": "Explore the Copilot Studio integration landscape",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-enterprise-integration-strategies-agents-copilot-studio/2-explore-integration-landscape"
+    }
+  },
+  {
+    "id": "knowledge-source",
+    "term": "knowledge source",
+    "aliases": [
+      "knowledge sources",
+      "Add knowledge",
+      "Knowledge page",
+      "grounding",
+      "ground"
+    ],
+    "definition": "Inhalte und Daten, aus denen der Agent Antworten erdet (Integrationskategorie „Fragen beantworten“, im Gegensatz zu Tools = handeln und Agenten = Reasoning delegieren). Typen: SharePoint, Dataverse, Dateiuploads, öffentliche Websites, Copilot Connectors (indexiert, zitierbar), Power-Platform-Connectors als Real-time-Wissen (Preview), Azure AI Search (Vektorindex) und unstrukturierte Daten. Name und Beschreibung steuern, wann der Orchestrator eine Quelle heranzieht.",
+    "source": {
+      "title": "Explore the Copilot Studio integration landscape",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-enterprise-integration-strategies-agents-copilot-studio/2-explore-integration-landscape"
+    }
+  },
+  {
+    "id": "let-other-agents-connect",
+    "term": "Let other agents connect to and use this one",
+    "aliases": [
+      "connections enabled",
+      "accept connections"
+    ],
+    "definition": "Einstellung (Settings > General) am Zielagenten, ohne die er in der Verbindungsliste anderer Orchestratoren nicht erscheint – auch wenn er veröffentlicht ist. Weitere Voraussetzungen für eine Copilot-Studio-zu-Copilot-Studio-Verbindung: gleiche Power-Platform-Umgebung, mindestens eine veröffentlichte Version, Besitz oder Freigabe.",
+    "source": {
+      "title": "Connect an existing Copilot Studio agent",
+      "url": "https://learn.microsoft.com/en-us/training/modules/build-multi-agent-solutions-connected-agents-copilot-studio/3-connect-copilot-studio-agent"
+    }
+  },
+  {
+    "id": "local-description-copy",
+    "term": "local copy of the description",
+    "aliases": [
+      "local description",
+      "description sync",
+      "pass conversation history"
+    ],
+    "definition": "Beim Verbinden speichert der Orchestrator eine eigene Kopie der Beschreibung des Connected Agents und routet ausschließlich darauf. Änderungen am Quellagenten (neue Fähigkeiten, anderer Scope) synchronisieren nicht – die lokale Beschreibung muss manuell aktualisiert werden; lokale Änderungen betreffen andere Orchestratoren nicht. „Pass conversation history to this agent“ steuert, ob der Kontext mitgesendet wird.",
+    "source": {
+      "title": "Connect an existing Copilot Studio agent",
+      "url": "https://learn.microsoft.com/en-us/training/modules/build-multi-agent-solutions-connected-agents-copilot-studio/3-connect-copilot-studio-agent"
+    }
+  },
+  {
+    "id": "mcp",
+    "term": "MCP",
+    "aliases": [
+      "Model Context Protocol",
+      "MCP server",
+      "MCP servers",
+      "MCP tool",
+      "MCP tools",
+      "MCP onboarding wizard"
+    ],
+    "definition": "Offenes Protokoll, das standardisiert, wie Tools und Ressourcen beschrieben, entdeckt und aufgerufen werden. Ein MCP-Server veröffentlicht seine Fähigkeiten einmal; verbundene Agenten entdecken sie automatisch, und Änderungen des Betreibers propagieren ohne Neuveröffentlichung. Richtig, wenn viele Agenten dieselben Tools brauchen und ein Plattformteam den Server zentral betreibt. Einschränkungen: nur generative Orchestrierung (kein klassischer Modus), Topics können MCP nicht direkt aufrufen, Tool-Beschreibungen sind serverseitig und in Copilot Studio nicht editierbar, nur Streamable-HTTP-Transport. Anbindung: Tools > Add a tool > New tool > Model Context Protocol (Servername, Beschreibung, URL, Auth).",
+    "source": {
+      "title": "Understand MCP and its role in Copilot Studio integration",
+      "url": "https://learn.microsoft.com/en-us/training/modules/integrate-agents-external-systems-mcp-copilot-studio/2-understand-mcp-integration"
+    }
+  },
+  {
+    "id": "mcp-authentication",
+    "term": "MCP authentication",
+    "aliases": [
+      "Dynamic discovery",
+      "Dynamic Client Registration",
+      "DCR",
+      "Manual OAuth",
+      "callback URL",
+      "x-api-key"
+    ],
+    "definition": "Drei Typen für MCP-Verbindungen als Vertrauenshierarchie: None (Netzwerkperimeter; nicht für sensible Daten), API key (Type Header/Query und Parameter name; der Wert wird nicht vom Maker hinterlegt – jeder Nutzer gibt beim ersten Aufruf seinen eigenen Schlüssel ein) und OAuth 2.0 mit drei Sub-Typen: Dynamic discovery (DCR mit Discovery-Endpunkt, bevorzugt), Dynamic (DCR ohne Discovery – Authorization-/Token-URL manuell) und Manual (kein DCR – Client-ID, Secret, alle URLs, Scopes; Callback-URL beim Identitätsanbieter registrieren).",
+    "source": {
+      "title": "Configure authentication for MCP server connections",
+      "url": "https://learn.microsoft.com/en-us/training/modules/integrate-agents-external-systems-mcp-copilot-studio/4-configure-mcp-authentication"
+    }
+  },
+  {
+    "id": "mcp-resources",
+    "term": "MCP resources",
+    "aliases": [
+      "resources",
+      "MCP prompts",
+      "Resources section"
+    ],
+    "definition": "Neben Tools (aufrufbare Funktionen) stellen MCP-Server Ressourcen bereit – dateiähnliche Daten wie API-Antworten oder Richtliniendokumente. Sie sind nicht eigenständig aufrufbar; der Betreiber muss sie als Ausgabe eines MCP-Tools konfigurieren. Den dritten MCP-Komponententyp „Prompts“ unterstützt Copilot Studio nicht.",
+    "source": {
+      "title": "Enable and manage MCP tools on an agent",
+      "url": "https://learn.microsoft.com/en-us/training/modules/integrate-agents-external-systems-mcp-copilot-studio/5-enable-manage-mcp-tools"
+    }
+  },
+  {
+    "id": "message-node",
+    "term": "message node",
+    "aliases": [
+      "Send a message node",
+      "Send a message",
+      "formatting toolbar",
+      "message formatting"
+    ],
+    "definition": "Topic-Knoten zum Senden einer Antwort: Formatierungsleiste (fett, kursiv, Listen, Zeilenumbrüche), Variableneinfügung {x} (Topic-, globale, Systemvariablen wie System.User.DisplayName), Bilder/Videos (öffentliche URLs), Message variations, Quick replies und Adaptive Cards. Formatierung wird je Kanal unterschiedlich gerendert.",
+    "source": {
+      "title": "Configure message formatting in agent topics",
+      "url": "https://learn.microsoft.com/en-us/training/modules/deliver-rich-agent-responses-adaptive-cards-copilot-studio/2-configure-message-formatting"
+    }
+  },
+  {
+    "id": "message-variations",
+    "term": "message variations",
+    "aliases": [
+      "message variation",
+      "variations"
+    ],
+    "definition": "Mehrere Formulierungen für einen Message-Knoten, aus denen Copilot Studio bei jedem Durchlauf zufällig eine wählt, damit wiederholte Interaktionen weniger mechanisch wirken. Alle Varianten müssen dieselbe Kerninformation liefern und unterstützen Formatierung, Variablen und Bilder.",
+    "source": {
+      "title": "Configure message formatting in agent topics",
+      "url": "https://learn.microsoft.com/en-us/training/modules/deliver-rich-agent-responses-adaptive-cards-copilot-studio/2-configure-message-formatting"
+    }
+  },
+  {
+    "id": "metadata-storage-path",
+    "term": "metadata_storage_path",
+    "aliases": [
+      "citation URL",
+      "citations",
+      "citation field",
+      "inline citations"
+    ],
+    "definition": "Feld eines Azure-AI-Search-Index, das Copilot Studio zuerst als Zitat-URL prüft; fehlt es, wird ein anderes Feld mit vollständiger URL (z. B. source_url) verwendet. So enthält die Antwort einen klickbaren Link zum Originaldokument – Nutzer brauchen Zugriff auf die Ziel-URL. Zitate gibt es auch bei Copilot Connectors (indexierte Elemente), nicht aber bei Real-time-Connectors.",
+    "source": {
+      "title": "Connect an agent to Azure AI Search",
+      "url": "https://learn.microsoft.com/en-us/training/modules/ground-agents-enterprise-knowledge-connectors-azure-ai-search-copilot-studio/5-connect-azure-ai-search"
+    }
+  },
+  {
+    "id": "agents-sdk-agent",
+    "term": "Microsoft 365 Agents SDK agent",
+    "aliases": [
+      "Agents SDK",
+      "Microsoft 365 Agents SDK",
+      "Bot Framework skill",
+      "Bot Framework skills"
+    ],
+    "definition": "Verbindungsoption für in Code gebaute Agenten (Microsoft 365 Agents SDK, eigenes Hosting/Runtime, Anbindung über Messaging-Endpunkt; Preview). Davon zu unterscheiden sind Bot-Framework-Skills: bestehende Pro-Code-Konversationskomponenten (Bot Framework SDK), die als Knoten in Topics registriert werden – synchron, private Endpunkte, aber C#-Pflege, Azure-AI-Bot-Service-Kosten und ALM außerhalb der Power Platform.",
+    "source": {
+      "title": "Compare action integration patterns",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-enterprise-integration-strategies-agents-copilot-studio/3-compare-action-integration-patterns"
+    }
+  },
+  {
+    "id": "entra-id-integrated",
+    "term": "Microsoft Entra ID Integrated",
+    "aliases": [
+      "Entra ID Integrated",
+      "Access Key authentication",
+      "access key",
+      "service principal",
+      "client certificate"
+    ],
+    "definition": "Empfohlener Authentifizierungstyp für Azure AI Search: nutzt die Identität des angemeldeten Nutzers – keine Schlüsselrotation, passend zu den IAM-Praktiken der Organisation. Alternativen: Access Key (schnell, nicht produktiv, Rotation nötig), Client Certificate Auth (zertifikatsbasierte Identitäten), Service principal / Entra-ID-App-Registrierung (automatisierte bzw. Service-zu-Service-Verbindungen).",
+    "source": {
+      "title": "Connect an agent to Azure AI Search",
+      "url": "https://learn.microsoft.com/en-us/training/modules/ground-agents-enterprise-knowledge-connectors-azure-ai-search-copilot-studio/5-connect-azure-ai-search"
+    }
+  },
+  {
+    "id": "foundry-agent",
+    "term": "Microsoft Foundry agent",
+    "aliases": [
+      "Foundry agent",
+      "Foundry agents",
+      "Microsoft Foundry",
+      "Azure AI Foundry",
+      "project endpoint URL",
+      "agent ID"
+    ],
+    "definition": "In Microsoft Foundry gebauter und gehosteter Agent (feinabgestimmte Modelle, komplexe Reasoning-Ketten, mehrstufige Tool-Orchestrierung), der als Connected Agent angebunden wird (Preview): Verbindung über die Project endpoint URL und die eindeutige Agent ID aus dem Foundry-Portal, plus Name und Routing-Beschreibung. Muss im neuen Foundry-Portal erstellt sein – Agenten aus dem Legacy-Portal Azure AI Studio liefern 404. Die Agent ID lässt sich später ohne Neuanlage der Verbindung ändern.",
+    "source": {
+      "title": "Connect a Microsoft Foundry agent",
+      "url": "https://learn.microsoft.com/en-us/training/modules/build-multi-agent-solutions-connected-agents-copilot-studio/4-connect-foundry-agent"
+    }
+  },
+  {
+    "id": "prompt-model-categories",
+    "term": "Mini",
+    "aliases": [
+      "General model",
+      "Deep model",
+      "GPT-4.1 mini",
+      "GPT-5 reasoning",
+      "managed models",
+      "model category"
+    ],
+    "definition": "Modellkategorien im Prompt builder: Mini (Standard GPT-4.1 mini, Basisrate – schnelle, moderat komplexe Aufgaben wie Klassifikation), General (GPT-4.1, Standardrate – komplexe oder multimodale Aufgaben wie Bild-/Dokumentanalyse) und Deep (GPT-5 reasoning, Premiumrate – reasoning-intensive Aufgaben). Die Wahl beeinflusst Qualität und Copilot-Credit-Verbrauch; Tests mit jedem Kandidaten zeigen die nötige Stufe.",
+    "source": {
+      "title": "Author and configure custom prompts in topics",
+      "url": "https://learn.microsoft.com/en-us/training/modules/generate-ai-powered-responses-generative-answers-copilot-studio/5-author-custom-prompts-topics"
+    }
+  },
+  {
+    "id": "monitor-tab",
+    "term": "Monitor tab",
+    "aliases": [
+      "Monitor",
+      "monitoring",
+      "quality defect",
+      "runtime failure",
+      "permission failure",
+      "capacity failure",
+      "reactions",
+      "success rate"
+    ],
+    "definition": "Nach dem Publish verfügbar (Preview): zeigt Sitzungen, Engagement, Laufdauer, Erfolgsrate, Reaktionen, Tool-Nutzung und abgerechnete Copilot Credits. Probleme nach Typ trennen, bevor man etwas ändert: Quality defect (Instructions/Wissen – auf Preview reproduzieren, Evaluate ergänzen), Runtime failure (Verbindung/Konfiguration/Dienst), Permission failure (Nutzer ohne Ressourcenzugriff – mit typischem Nutzer testen), Capacity failure (Credits/Agentenlimit – Admin). Neue Szenarien als Evaluate-Konversationen aufnehmen.",
+    "source": {
+      "title": "Monitor and improve an agent",
+      "url": "https://learn.microsoft.com/en-us/training/modules/evaluate-publish-manage-agents-copilot-studio/3-monitor-improve-agent"
+    }
+  },
+  {
+    "id": "multi-agent-architecture",
+    "term": "multi-agent architecture",
+    "aliases": [
+      "multi-agent solution",
+      "multi-agent solutions",
+      "multi-agent",
+      "orchestrator agent",
+      "main agent",
+      "routing accuracy"
+    ],
+    "definition": "Mehrere Agenten koordinieren Aufgaben, die ein einzelner Agent nicht effizient bewältigt – in Copilot Studio als Child Agents (im Hauptagenten) und/oder Connected Agents (separat veröffentlicht). Wichtigstes Signal für den Umstieg: nachlassende Routing-Genauigkeit ab etwa 30–40 Aktionen (Topics, Tools, Agenten); weitere Gründe sind getrennte Team-Ownership, eigene Auth/Modell-/ALM-Anforderungen oder Wiederverwendung als Shared-Service-Agent. Kosten: Orchestrierungs-Hops (Latenz), größere Governance-Oberfläche. Für eine fokussierte FAQ-Lösung bleibt ein einzelner Agent richtig.",
+    "source": {
+      "title": "Understand multi-agent architectures in Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-multi-agent-solutions-copilot-studio/2-understand-multi-agent-architectures"
+    }
+  },
+  {
+    "id": "authentication-options",
+    "term": "No authentication",
+    "aliases": [
+      "Authenticate with Microsoft",
+      "Authenticate manually",
+      "Require users to sign in",
+      "Authenticate action",
+      "authentication setting",
+      "identity provider"
+    ],
+    "definition": "Drei Authentifizierungsoptionen eines Agenten (Settings > Security > Authentication; wirksam nach Publish): No authentication (jeder mit Link; nur öffentliche Ressourcen), Authenticate with Microsoft (Entra ID für Teams automatisch – nur Teams-Kanal; Standard für neue Agenten) und Authenticate manually (jeder OAuth2-Anbieter: Entra ID, Microsoft-Konto, Google, Facebook, eigener Dienst; für alle Kanäle). „Require users to sign in“ erzeugt ein System-Topic, das zu Beginn anmeldet und User.Id, User.DisplayName, User.Email, User.IsLoggedIn liefert; sonst die Authenticate-Aktion an beliebiger Stelle (einmal pro Sitzung).",
+    "source": {
+      "title": "Authentication",
+      "url": "https://learn.microsoft.com/en-us/training/modules/implement-power-virtual-agents/authentication"
+    }
+  },
+  {
+    "id": "node-level-sources",
+    "term": "node-level source",
+    "aliases": [
+      "node-level sources",
+      "agent-level source",
+      "agent-level sources",
+      "source priority"
+    ],
+    "definition": "Wissensquellen können am Agenten oder direkt an einem Generative-answers-Knoten konfiguriert werden. Knotenquellen haben für diesen Knoten Vorrang; Agentenquellen sind nur Fallback, wenn der Knoten keine eigenen hat. Zu viele Quellen am Knoten verwässern die Relevanz – auf die Domäne des Topics beschränken.",
+    "source": {
+      "title": "Configure the generative answers node in a topic",
+      "url": "https://learn.microsoft.com/en-us/training/modules/generate-ai-powered-responses-generative-answers-copilot-studio/2-configure-generative-answers-node"
+    }
+  },
+  {
+    "id": "orchestrator-instructions",
+    "term": "orchestrator instructions",
+    "aliases": [
+      "routing guidance",
+      "supplement description routing",
+      "instructions field"
+    ],
+    "definition": "Ergänzung zum beschreibungsbasierten Routing: Im Instructions-Feld des Orchestrators können Connected Agents namentlich genannt werden („Für Fragen zu Lieferantenausgaben an den Finance Data Agent delegieren“). Selektiv bei hartnäckiger Mehrdeutigkeit einsetzen – kein Ersatz für präzise Beschreibungen.",
+    "source": {
+      "title": "Manage and test your connected agent solution",
+      "url": "https://learn.microsoft.com/en-us/training/modules/build-multi-agent-solutions-connected-agents-copilot-studio/6-manage-test-connected-agent-solution"
+    }
+  },
+  {
+    "id": "orchestrator-subagent-pattern",
+    "term": "orchestrator/subagent pattern",
+    "aliases": [
+      "orchestrator subagent pattern",
+      "workflow-oriented pattern",
+      "workflow oriented pattern",
+      "serial workflow",
+      "concurrent workflow",
+      "coordination pattern"
+    ],
+    "definition": "Zwei Koordinationsmuster für Connected Agents: Beim Orchestrator/Subagent-Muster entscheidet ein Orchestrator zur Laufzeit dynamisch, welcher Spezialist die Anfrage bekommt – für offene, unvorhersehbare Szenarien (Routing, Beratung). Das workflow-orientierte Muster definiert die Reihenfolge vorab in einer Workflow-Engine (Power Automate, Logic Apps, Foundry-Workflows, Topics), seriell (Quality Gates, strikte Reihenfolge) oder parallel (Quorum/Voting) – deterministisch, auditierbar, mit Genehmigungsgates; für Compliance-Prozesse, bei denen kein Schritt übersprungen werden darf.",
+    "source": {
+      "title": "Design multi-agent solutions using connected agents",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-multi-agent-solutions-copilot-studio/4-select-multi-agent-orchestration-pattern"
+    }
+  },
+  {
+    "id": "pipelines",
+    "term": "Power Platform Pipelines",
+    "aliases": [
+      "pipeline",
+      "pipelines",
+      "deployment automation",
+      "deployment request"
+    ],
+    "definition": "Eingebaute Deployment-Automatisierung, die Lösungen zwischen Umgebungen bewegt und vor einem Release eine Genehmigung verlangen kann. Maker stellen Deployment-Anfragen und testen nach dem Deployment; konfiguriert wird die Pipeline typischerweise vom Admin oder IT-Team.",
+    "source": {
+      "title": "Govern agent lifecycle and costs",
+      "url": "https://learn.microsoft.com/en-us/training/modules/evaluate-publish-manage-agents-copilot-studio/5-govern-agent-lifecycle-costs"
+    }
+  },
+  {
+    "id": "prebuilt-connector",
+    "term": "prebuilt connector",
+    "aliases": [
+      "prebuilt connectors",
+      "connector tool",
+      "connector tools",
+      "Power Platform connector",
+      "Power Platform connectors",
+      "standard connector",
+      "premium connector",
+      "premium connectors"
+    ],
+    "definition": "Von Microsoft oder Partnern veröffentlichte Low-Code-Wrapper um Service-APIs (Teams, SharePoint, Dataverse, Dynamics 365, ServiceNow …) mit konkreten Aktionen als Tools; schnellster Weg, wenn ein Connector existiert – inkl. Fehlerbehandlung, Antwort-Parsing und Monitoring über Application Insights. Nachteil: große Ergebnismengen verlangsamen Antworten. Standard-Connectors sind in allen Copilot-Studio-Plänen enthalten, Premium-Connectors (z. B. Dataverse) brauchen eine Premium-Lizenz.",
+    "source": {
+      "title": "Add prebuilt and custom connector tools to an agent",
+      "url": "https://learn.microsoft.com/en-us/training/modules/take-action-external-systems-connector-rest-api-tools-copilot-studio/3-add-connector-tools"
+    }
+  },
+  {
+    "id": "mcp-catalog",
+    "term": "prebuilt Microsoft MCP connectors",
+    "aliases": [
+      "MCP catalog",
+      "Work IQ",
+      "Work IQ MCP",
+      "Work IQ Mail",
+      "Work IQ Calendar",
+      "Work IQ Teams"
+    ],
+    "definition": "Katalog fertiger MCP-Connectors für Microsoft-Dienste (Dataverse, Dynamics 365, Outlook, GitHub, Teams …) ohne Server-URL oder eigene Beschreibung – nur auswählen, autorisieren, hinzufügen. Dazu Work IQ MCP (Preview): Microsoft-veröffentlichte Server, die E-Mails, Kalender und Teams-Gespräche als Tools bereitstellen; brauchen eine Microsoft-365-Copilot-Lizenz und Freischaltung durch den Admin im Microsoft 365 admin center.",
+    "source": {
+      "title": "Connect an agent to an existing MCP server",
+      "url": "https://learn.microsoft.com/en-us/training/modules/integrate-agents-external-systems-mcp-copilot-studio/3-connect-mcp-server"
+    }
+  },
+  {
+    "id": "priority",
+    "term": "Priority",
+    "aliases": [
+      "priority field",
+      "execution order",
+      "Condition field"
+    ],
+    "definition": "Einstellungen unter „When will this be used?“ eines Child Agents: Condition (Kriterien vor dem Aufruf, z. B. nur in Teams; Builder oder Power Fx) und Priority bei mehreren Agenten/Topics auf demselben Event. Reihenfolge: zuerst „An activity occurs“, dann Message received/custom client event/conversation changes/invoked, zuletzt „The agent chooses“; innerhalb einer Stufe nach Erstellungsreihenfolge, sofern keine Priority (kleinere Zahl = höher) gesetzt ist.",
+    "source": {
+      "title": "Create and configure a child agent",
+      "url": "https://learn.microsoft.com/en-us/training/modules/delegate-agent-tasks-child-agents-copilot-studio/3-create-configure-child-agent"
+    }
+  },
+  {
+    "id": "question-node",
+    "term": "Question node",
+    "aliases": [
+      "question node",
+      "Question nodes"
+    ],
+    "definition": "Topic-Knoten, der genau einen Wert je Turn erfasst (Text, Zahl, Ja/Nein, Mehrfachauswahl) und die Konversation erst fortsetzt, wenn eine erkannte Option gewählt oder eingegeben wurde. Für mehrere zusammengehörige Werte in einem Schritt ist der Ask-with-Adaptive-Card-Knoten besser.",
+    "source": {
+      "title": "Collect user input with interactive Adaptive Cards",
+      "url": "https://learn.microsoft.com/en-us/training/modules/deliver-rich-agent-responses-adaptive-cards-copilot-studio/4-collect-input-adaptive-cards"
+    }
+  },
+  {
+    "id": "quick-replies",
+    "term": "quick replies",
+    "aliases": [
+      "quick reply",
+      "suggestion buttons"
+    ],
+    "definition": "Antippbare Vorschlagsbuttons unter einer Nachricht (Title, Text, Type: Nachricht senden, URL öffnen, anrufen, versteckte Nachricht). Sie führen, zwingen aber nicht – Nutzer können frei tippen; ein Question-Knoten dagegen erzwingt eine erkannte Auswahl. Manche Kanäle zeigen Quick Replies nicht oder nur begrenzt, daher nie als einzigen Weg zum Fortfahren einsetzen.",
+    "source": {
+      "title": "Configure message formatting in agent topics",
+      "url": "https://learn.microsoft.com/en-us/training/modules/deliver-rich-agent-responses-adaptive-cards-copilot-studio/2-configure-message-formatting"
+    }
+  },
+  {
+    "id": "real-time-knowledge",
+    "term": "real-time knowledge",
+    "aliases": [
+      "real-time connector",
+      "real-time connectors",
+      "real-time Power Platform connector",
+      "Power Platform connector knowledge source",
+      "connector knowledge source",
+      "live API approach"
+    ],
+    "definition": "Power-Platform-Connector als Wissensquelle (Preview): Jede Frage löst einen Live-API-Aufruf in das Quellsystem aus; es wird nichts nach Microsoft 365 repliziert, Copilot Studio indexiert nur Metadaten (Tabellen-/Spaltennamen). Läuft unter der Identität des Fragenden – Zugriffsrechte der Quelle gelten. Für transaktionale, häufig wechselnde Daten (Kontostände, Bestände, Ticketstatus) und wenn Replikation verboten ist. Keine Dokumentzitate; DLP bestimmt die Verfügbarkeit; Premium-Connectors brauchen Lizenz. Status In progress → Ready nach Metadaten-Indexierung.",
+    "source": {
+      "title": "Configure Power Platform connectors as real-time knowledge sources",
+      "url": "https://learn.microsoft.com/en-us/training/modules/ground-agents-enterprise-knowledge-connectors-azure-ai-search-copilot-studio/4-configure-realtime-knowledge-sources"
+    }
+  },
+  {
+    "id": "rest-api-tool",
+    "term": "REST API tool",
+    "aliases": [
+      "REST API tools",
+      "REST API",
+      "OpenAPI specification",
+      "OpenAPI v2",
+      "Swagger",
+      "OpenAPI v3",
+      "info object"
+    ],
+    "definition": "Tool (Preview, nicht produktiv), das direkt aus einer OpenAPI-v2-Spezifikation (JSON; v3 wird automatisch konvertiert) erstellt wird – ohne Connector-Verpackung. Beschreibung wird aus dem info-Objekt vorbefüllt und sollte präzisiert werden; Authentifizierung None, API key (Parameter label/name/location) oder OAuth 2.0; nur benötigte Endpunkte und Methoden als Aktionen auswählen. Liegt auf der Umgebungs-Tools-Seite (für andere Agenten nutzbar), aber nicht für Power Automate, Power Apps oder Logic Apps.",
+    "source": {
+      "title": "Add a REST API tool using an OpenAPI specification",
+      "url": "https://learn.microsoft.com/en-us/training/modules/take-action-external-systems-connector-rest-api-tools-copilot-studio/5-add-rest-api-tool"
+    }
+  },
+  {
+    "id": "rpa",
+    "term": "RPA",
+    "aliases": [
+      "Robotic Process Automation",
+      "desktop flow",
+      "desktop flows",
+      "Power Automate desktop",
+      "Power Automate for desktop"
+    ],
+    "definition": "Robotic Process Automation über Power-Automate-Desktop-Flows: vor Computer Use zu prüfen und die bessere Wahl bei stabiler Oberfläche und einfacher, regelbasierter Logik. Computer Use passt, wenn Oberflächen variieren, Entscheidungen vom Bildschirminhalt abhängen oder Selbstkorrektur nötig ist. Eine für Computer Use aktivierte Maschine verliert ihre Desktop-Flow-Funktion.",
+    "source": {
+      "title": "Compare action integration patterns",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-enterprise-integration-strategies-agents-copilot-studio/3-compare-action-integration-patterns"
+    }
+  },
+  {
+    "id": "schema-version",
+    "term": "schema version",
+    "aliases": [
+      "schema versions",
+      "v1.5",
+      "v1.6",
+      "version 1.5",
+      "version 1.6"
+    ],
+    "definition": "Jede Adaptive-Card-JSON deklariert eine version; jeder Kanal rendert nur bis zu einer Maximalversion: Microsoft Teams und Live Chat (Omnichannel) v1.5, Web-Kanal v1.6. Elemente neuerer Versionen scheitern stillschweigend oder die Karte fällt auf Text zurück – ohne Warnung im Designer. Der Test-Bereich rendert mit der Web-Engine (v1.6), der Authoring-Canvas rendert v1.6 gar nicht; deshalb im Zielkanal testen und bei Teams-Einsatz auf v1.5 designen.",
+    "source": {
+      "title": "Apply channel-specific considerations for Adaptive Cards",
+      "url": "https://learn.microsoft.com/en-us/training/modules/deliver-rich-agent-responses-adaptive-cards-copilot-studio/5-adaptive-cards-channel-considerations"
+    }
+  },
+  {
+    "id": "http-request-node",
+    "term": "Send HTTP request",
+    "aliases": [
+      "HTTP request node",
+      "Send HTTP request node",
+      "HTTP request"
+    ],
+    "definition": "Knoten (Add node > Advanced) für einen Ad-hoc-REST-Aufruf direkt auf dem Canvas: URL (statisch oder Power Fx, z. B. \"https://api…/tracking/\" & Topic.TrackingNumber), Methode (GET, POST, PATCH, PUT, DELETE), Header, Body (No Content, JSON Content, Raw content), Antwortschema aus Beispiel-JSON und Fehlerbehandlung. Geeignet, wenn kein Connector, keine OpenAPI-Spezifikation und kein MCP-Server existiert und die Integration in einem Topic bleibt; nicht über Agenten teilbar.",
+    "source": {
+      "title": "Retrieve and send data using the HTTP request node",
+      "url": "https://learn.microsoft.com/en-us/training/modules/take-action-agent-topics-tools-flows-copilot-studio/4-configure-http-request-node"
+    }
+  },
+  {
+    "id": "session-replay",
+    "term": "session replay",
+    "aliases": [
+      "Session replay",
+      "Export session logs",
+      "Credentials used",
+      "Websites and applications",
+      "activity map side panel"
+    ],
+    "definition": "Bereiche des Seitenpanels einer Computer-Use-Aktion in der Activity Map (verfügbar bei aktiviertem Dataverse-Logging): Session replay (Screenshotfolge), Activity (Aktionstyp, Koordinaten, Zeitstempel, Screenshot je Schritt), Summary (Dauer, Aktionszahl, Eskalationen, Maschinenname), Websites and applications (alle besuchten Ziele), Credentials used und Export session logs für Audits.",
+    "source": {
+      "title": "Monitor and supervise computer use execution",
+      "url": "https://learn.microsoft.com/en-us/training/modules/automate-desktop-web-tasks-computer-use-copilot-studio/5-monitor-computer-use"
+    }
+  },
+  {
+    "id": "solution",
+    "term": "solution",
+    "aliases": [
+      "solutions",
+      "managed solution",
+      "unmanaged solution",
+      "Add existing",
+      "Add required objects"
+    ],
+    "definition": "Träger für ALM: Ein Agent wird mit Subkomponenten (Topics, Entities, Flows, Verbindungen) in eine Lösung aufgenommen (Add existing > Agent; neue Topics später per „Add required objects“), als .zip exportiert (für Test/Prod als managed) und in der Zielumgebung importiert. Subkomponenten nicht in Power Apps manuell ändern, sonst scheitert der Export. Topics allein lassen sich nicht migrieren; auch Agent Flows und Custom Prompts sind lösungsfähig.",
+    "source": {
+      "title": "Export and import agents",
+      "url": "https://learn.microsoft.com/en-us/training/modules/implement-power-virtual-agents/export-import-bots"
+    }
+  },
+  {
+    "id": "teams-sso-limitation",
+    "term": "SSO limitation in Teams",
+    "aliases": [
+      "single sign-on",
+      "SSO",
+      "custom AD authentication",
+      "custom Active Directory authentication"
+    ],
+    "definition": "Verwendet ein in Teams bereitgestellter Agent benutzerdefinierte Active-Directory-Authentifizierung, wird für Connector-Tools kein Single Sign-on unterstützt: Nutzer müssen sich bei jedem Connector beim ersten Aufruf manuell anmelden, auch wenn SSO im Chat funktioniert. Bei der Planung berücksichtigen und Nutzern kommunizieren.",
+    "source": {
+      "title": "Configure authentication for connector tools",
+      "url": "https://learn.microsoft.com/en-us/training/modules/take-action-external-systems-connector-rest-api-tools-copilot-studio/4-configure-connector-authentication"
+    }
+  },
+  {
+    "id": "store-logs-in-dataverse",
+    "term": "Store logs in Dataverse",
+    "aliases": [
+      "advanced logging",
+      "log retention",
+      "verbosity",
+      "All data",
+      "Data without screenshots",
+      "Minimal",
+      "CUAOperation",
+      "Send audit logs to Microsoft Purview"
+    ],
+    "definition": "Einstellung im Power Platform admin center (Settings > Products > Features > Computer Use, Standard: an), die Computer-Use-Logs in Dataverse schreibt und das detaillierte Seitenpanel freischaltet. Verbosity: All data (mit Screenshots), Data without screenshots, Minimal. Standardaufbewahrung sieben Tage (0 oder -1 = unbegrenzt) – vor dem Go-live an Compliance anpassen. Unabhängig davon „Send audit logs to Microsoft Purview“ (Aktivität CUAOperation). Logs verbrauchen Datenbank-, Log- und Dateikapazität.",
+    "source": {
+      "title": "Monitor and supervise computer use execution",
+      "url": "https://learn.microsoft.com/en-us/training/modules/automate-desktop-web-tasks-computer-use-copilot-studio/5-monitor-computer-use"
+    }
+  },
+  {
+    "id": "stored-credentials",
+    "term": "Stored credentials",
+    "aliases": [
+      "stored credentials",
+      "Azure Key Vault",
+      "Power Platform internal storage",
+      "credential injection"
+    ],
+    "definition": "Bereich der Computer-Use-Konfiguration für Anmeldedaten der Zielanwendung – nie im Anweisungstext (sichtbar in Logs und Tests). Zwei Ablagen: Power Platform internal storage (Benutzername, verschlüsseltes Passwort, Domain/App-Name, ohne Vorkonfiguration) oder Azure Key Vault (produktiv: zentrale Verwaltung, unabhängige Rotation, Referenz auf Secret-Namen).",
+    "source": {
+      "title": "Configure computer use as an agent tool",
+      "url": "https://learn.microsoft.com/en-us/training/modules/automate-desktop-web-tasks-computer-use-copilot-studio/4-configure-computer-use"
+    }
+  },
+  {
+    "id": "streamable-http",
+    "term": "Streamable HTTP",
+    "aliases": [
+      "Streamable HTTP transport",
+      "SSE",
+      "Server-Sent Events",
+      "transport type"
+    ],
+    "definition": "Einziger von Copilot Studio unterstützter MCP-Transport; SSE (Server-Sent Events) wird seit August 2025 nicht mehr unterstützt. Ältere Server müssen vor der Anbindung migrieren – Transporttyp vorab beim Betreiber klären.",
+    "source": {
+      "title": "Connect an agent to an existing MCP server",
+      "url": "https://learn.microsoft.com/en-us/training/modules/integrate-agents-external-systems-mcp-copilot-studio/3-connect-mcp-server"
+    }
+  },
+  {
+    "id": "teams-and-copilot-channel",
+    "term": "Teams and Microsoft Copilot channel",
+    "aliases": [
+      "Teams + Microsoft 365",
+      "Make agent available in Microsoft Copilot",
+      "installation link",
+      "Submit to org catalog",
+      "app setup policy",
+      "preinstallation",
+      "Availability options",
+      "channel",
+      "channels"
+    ],
+    "definition": "Kanal, den man nach dem ersten Publish hinzufügt; mit „Make agent available in Microsoft Copilot“ ist der Agent in Teams und Microsoft Copilot verfügbar, ohne nur in Teams. Verteilungswege je Tenant-Richtlinie: Installationslink, Shared-user discovery (Built with Power Platform im App Store), organisationsweite Verfügbarkeit nach Admin-Freigabe (Submit to org catalog) und Preinstallation per Teams-App-Setup-Richtlinie. Nach Inhaltsänderungen erneut veröffentlichen.",
+    "source": {
+      "title": "Publish and validate in channels",
+      "url": "https://learn.microsoft.com/en-us/training/modules/evaluate-publish-manage-agents-copilot-studio/4-publish-validate-channels"
+    }
+  },
+  {
+    "id": "tenant-graph-grounding",
+    "term": "Tenant graph grounding with semantic search",
+    "aliases": [
+      "tenant graph grounding",
+      "semantic search setting"
+    ],
+    "definition": "Copilot-Studio-Einstellung, die der Admin in Tenants mit Microsoft-365-Copilot-Lizenz aktivieren kann; verbessert die Abrufqualität aus Copilot Connectors durch semantische Suche nach kontextuell relevanteren Ergebnissen.",
+    "source": {
+      "title": "Add Copilot connectors as knowledge sources",
+      "url": "https://learn.microsoft.com/en-us/training/modules/ground-agents-enterprise-knowledge-connectors-azure-ai-search-copilot-studio/3-add-copilot-connector-knowledge"
+    }
+  },
+  {
+    "id": "test-set",
+    "term": "test set",
+    "aliases": [
+      "test sets",
+      "test case",
+      "test cases",
+      "expected agent response",
+      "expected response"
+    ],
+    "definition": "Sammlung von Konversationen (Testfälle mit Nutzernachrichten und optionaler erwarteter Antwort) für den Evaluate-Tab. Mindestens je eine für: In-scope-Antwort, Mehrdeutigkeit/Klärung, Out-of-scope-Grenze, Eskalation, Delegation an einen Connected Agent und Delegationsgrenze (ähnliche Anfrage, die der Hauptagent selbst behandelt). Erwartete Antworten dienen nur der manuellen Prüfung.",
+    "source": {
+      "title": "Plan and run agent evaluations",
+      "url": "https://learn.microsoft.com/en-us/training/modules/evaluate-publish-manage-agents-copilot-studio/2-plan-run-agent-evaluations"
+    }
+  },
+  {
+    "id": "inactivity-trigger",
+    "term": "The user is inactive for a while",
+    "aliases": [
+      "inactivity trigger",
+      "proactive check-in"
+    ],
+    "definition": "Expliziter Child-Agent-Trigger, der nach einer konfigurierbaren Zeit ohne Nutzeraktivität feuert (Additional details) – z. B. nach fünf Minuten proaktiv fragen, ob noch Hilfe gebraucht wird. Mit beschreibungsbasiertem Routing allein nicht umsetzbar, weil das immer eine eingehende Nachricht voraussetzt.",
+    "source": {
+      "title": "Create and configure a child agent",
+      "url": "https://learn.microsoft.com/en-us/training/modules/delegate-agent-tasks-child-agents-copilot-studio/3-create-configure-child-agent"
+    }
+  },
+  {
+    "id": "tool",
+    "term": "agent tool",
+    "aliases": [
+      "Tools page",
+      "Add a tool",
+      "tool picker",
+      "agent-level tool",
+      "agent-level tools",
+      "topic-level tool",
+      "topic-level tools",
+      "tool node",
+      "tool types"
+    ],
+    "definition": "Fähigkeit, mit der ein Agent in externen Systemen handelt: Connectors (vorgefertigt/custom), Agent Flows, Prompts, REST APIs (Preview), MCP-Server, Computer Use (Preview), Bot-Framework-Skills. Auf der Tools-Seite des Agenten hinzugefügt, kann der Orchestrator ein Tool jederzeit automatisch aufrufen; in einem Topic-Knoten läuft es an einem definierten, kontrollierten Punkt. Ein-/Ausgaben werden auf Topic-Variablen gemappt.",
+    "source": {
+      "title": "Call tools from agent topics",
+      "url": "https://learn.microsoft.com/en-us/training/modules/take-action-agent-topics-tools-flows-copilot-studio/2-call-tools-topics"
+    }
+  },
+  {
+    "id": "topic",
+    "term": "authoring canvas",
+    "aliases": [
+      "topic canvas",
+      "custom topic",
+      "custom topics",
+      "system topic",
+      "system topics",
+      "Topic checker",
+      "Topics page",
+      "Topics list"
+    ],
+    "definition": "Diskreter Gesprächspfad eines Agenten, ohne Code auf dem Authoring-Canvas modelliert (Trigger, Fragen, Bedingungen, Nachrichten, Tools, Redirects). Ein Agent startet mit sieben Custom- und neun System-Topics (Kernfunktionen, nicht abschaltbar; z. B. Conversational boosting, On Error, Require user to sign in). Topics sind je Agent isoliert – Migration nur mit dem ganzen Agenten über eine Lösung. Der Topic checker zeigt Fehler auf dem Canvas.",
+    "source": {
+      "title": "Agent topics permissions",
+      "url": "https://learn.microsoft.com/en-us/training/modules/implement-power-virtual-agents/3-bot-topics"
+    }
+  },
+  {
+    "id": "topic-variable",
+    "term": "topic variable",
+    "aliases": [
+      "topic variables",
+      "Topic.",
+      "global variable",
+      "global variables",
+      "system variable",
+      "system variables"
+    ],
+    "definition": "Variablen in Copilot Studio: Topic-Variablen (Topic.OrderNumber) gelten innerhalb eines Topics und nehmen Tool-Outputs, HTTP-Antworten, Karten-Eingaben und Child-Agent-Outputs auf; globale Variablen gelten über Topics hinweg; Systemvariablen (System.User.DisplayName, User.Id, User.IsLoggedIn) liefert die Plattform. Per {x} in Nachrichten eingefügt, in Bedingungen geprüft und mit Power Fx transformiert.",
+    "source": {
+      "title": "Configure message formatting in agent topics",
+      "url": "https://learn.microsoft.com/en-us/training/modules/deliver-rich-agent-responses-adaptive-cards-copilot-studio/2-configure-message-formatting"
+    }
+  },
+  {
+    "id": "transcripts",
+    "term": "transcript",
+    "aliases": [
+      "transcripts",
+      "conversation transcripts",
+      "transcript correlation"
+    ],
+    "definition": "Jeder Connected Agent erzeugt eigene Gesprächstranskripte, getrennt vom Orchestrator. Für Debugging und Audit müssen beide korreliert werden – am besten schon vor dem Produktivbetrieb geplant. Child Agents erscheinen dagegen in derselben Session wie der Parent.",
+    "source": {
+      "title": "Manage and test your connected agent solution",
+      "url": "https://learn.microsoft.com/en-us/training/modules/build-multi-agent-solutions-connected-agents-copilot-studio/6-manage-test-connected-agent-solution"
+    }
+  },
+  {
+    "id": "trust-boundary",
+    "term": "trust boundary",
+    "aliases": [
+      "governance responsibilities",
+      "data flow appropriateness",
+      "responsible AI review"
+    ],
+    "definition": "Das Anbinden eines Agenten erweitert die Vertrauensgrenze der Lösung: Der Maker des Orchestrators bleibt verantwortlich für die Datenflüsse (inkl. Gesprächsverlauf), Qualitäts- und Responsible-AI-Standards des angebundenen Agenten, Berechtigungen/Freigaben durch das Besitzerteam und Observability. Vor Aufrufen mit Schreibzugriff auf ein System of Record: Genehmigungskontrollen, Data-Sharing-Vereinbarungen und Sicherheitsreviews sicherstellen.",
+    "source": {
+      "title": "Design multi-agent solutions using connected agents",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-multi-agent-solutions-copilot-studio/4-select-multi-agent-orchestration-pattern"
+    }
+  },
+  {
+    "id": "unsubmitted-card",
+    "term": "unsubmitted card",
+    "aliases": [
+      "dismissed card",
+      "unsubmitted cards"
+    ],
+    "definition": "Schließt ein Nutzer eine interaktive Karte ohne Absenden, bleiben die Ausgabevariablen leer. Deshalb direkt nach dem Ask-with-Adaptive-Card-Knoten ein Condition-Knoten, der mindestens das Pflichtfeld auf Leerwert prüft und in einen Behandlungszweig (Formular erneut anbieten) leitet – sonst entstehen schwer nachvollziehbare Fehler in Folgeknoten.",
+    "source": {
+      "title": "Collect user input with interactive Adaptive Cards",
+      "url": "https://learn.microsoft.com/en-us/training/modules/deliver-rich-agent-responses-adaptive-cards-copilot-studio/4-collect-input-adaptive-cards"
+    }
+  },
+  {
+    "id": "post-publish-validation",
+    "term": "validate as a published user",
+    "aliases": [
+      "post-publish validation",
+      "published user",
+      "connection failure",
+      "configuration gap"
+    ],
+    "definition": "Veröffentlichen beweist nicht, dass der Agent für alle funktioniert: mit einem Konto mit den Rechten typischer Nutzer testen (Authentifizierung, Wissensabruf, Zitate, Tool-/Workflow-Ausführung, Scope-Grenzen, Eskalation). Häufige Fehlerklassen: Permission failures (Nutzer ohne Zugriff auf SharePoint/Dataverse), Connection failures (Connector braucht Re-Authentifizierung für andere Identität) und Configuration gaps (andere Umgebung, Datenregion, Lizenzstufe). Verhindert die Tenant-Richtlinie die Installation, gilt der Agent nicht als verfügbar.",
+    "source": {
+      "title": "Publish and validate in channels",
+      "url": "https://learn.microsoft.com/en-us/training/modules/evaluate-publish-manage-agents-copilot-studio/4-publish-validate-channels"
+    }
+  },
+  {
+    "id": "web-channel-security",
+    "term": "Web channel security",
+    "aliases": [
+      "Direct Line",
+      "Direct Line secret",
+      "Direct Line token",
+      "Require secured access",
+      "Demo website",
+      "Custom website"
+    ],
+    "definition": "Neu erstellte Agenten sind über Demo website und Custom website für jeden erreichbar, der die Agent-ID kennt. Mit Direct-Line-basierter Sicherheit (Settings > Security > Web channel security > Require secured access) müssen Clients ein Secret oder ein daraus erzeugtes Token mitsenden; Zugriffe ohne diese Absicherung funktionieren nicht. Deaktivieren dauert bis zu zwei Stunden.",
+    "source": {
+      "title": "Administer and manage",
+      "url": "https://learn.microsoft.com/en-us/training/modules/implement-power-virtual-agents/6-administer"
+    }
+  },
+  {
+    "id": "when-an-agent-calls-the-flow",
+    "term": "When an agent calls the flow",
+    "aliases": [
+      "Run a flow from Copilot",
+      "Respond to the agent",
+      "Respond to agent",
+      "Asynchronous response",
+      "solution flow"
+    ],
+    "definition": "Voraussetzungen, damit ein Flow aus einem Topic aufrufbar ist: Trigger „When an agent calls the flow“ (sonst fehlt er im Tool-Picker), Aktion „Respond to the agent“ (gibt Outputs zurück; markiert die synchrone Grenze – danach laufen Aktionen asynchron bis 30 Tage), Asynchronous response = Off (Topic wartet auf die Outputs), deklarierte Ein-/Ausgabeparameter und Solution-Flow. Beim Anlegen als neues Tool werden Trigger und Antwortaktion automatisch ergänzt.",
+    "source": {
+      "title": "Call agent flows from agent topics",
+      "url": "https://learn.microsoft.com/en-us/training/modules/take-action-agent-topics-tools-flows-copilot-studio/3-call-agent-flows-topics"
+    }
+  }
+]

@@ -1,0 +1,810 @@
+[
+  {
+    "id": "ab620-034",
+    "type": "single-choice",
+    "skillArea": "integrate-extend",
+    "topic": "Child vs connected agents",
+    "difficulty": "medium",
+    "prompt": "One team owns a customer-service agent covering returns, shipping, and loyalty inquiries. Nothing needs to be published separately, but the agent now has more than 35 tools and routing accuracy is dropping. Which approach best addresses this?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Create child agents per domain so each holds its own tools and routing surface"
+      },
+      {
+        "id": "b",
+        "text": "Split the solution into three separately published connected agents that the same team maintains"
+      },
+      {
+        "id": "c",
+        "text": "Add more topics with trigger phrases for extra routing guidance"
+      },
+      {
+        "id": "d",
+        "text": "Connect a Foundry agent with a larger model for tool selection"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Child Agents passen, wenn ein Team die gesamte Lösung besitzt und nichts separat veröffentlicht werden muss. Sie haben eigene Tool-Limits je Orchestrierungsebene, gruppieren Tools und Wissen nach Domäne und verkleinern die Routing-Oberfläche des Orchestrators. Connected Agents lohnen sich erst bei getrennter Ownership oder eigenem Lebenszyklus.",
+    "source": {
+      "title": "Understand child agents in Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/training/modules/delegate-agent-tasks-child-agents-copilot-studio/2-understand-child-agents",
+      "quote": "Child agents work well when one team owns and manages the entire agent solution, when there's no need to publish subagents independently, and when the goal is to organize tools and knowledge logically within a single solution."
+    }
+  },
+  {
+    "id": "ab620-035",
+    "type": "single-choice",
+    "skillArea": "integrate-extend",
+    "topic": "Child agent descriptions",
+    "difficulty": "medium",
+    "prompt": "An Order Status child agent is described as \"Assists customers with any questions about purchases made on the website.\" Billing questions about recent charges are now routed to it. What change most directly fixes the routing?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Rewrite the description to scope it to order tracking and delivery status only"
+      },
+      {
+        "id": "b",
+        "text": "Add billing tools to the Order Status child agent so it can resolve them"
+      },
+      {
+        "id": "c",
+        "text": "Enable dynamic tool selection on every tool in the child agent so the orchestrator has more signals"
+      },
+      {
+        "id": "d",
+        "text": "Raise the child agent's Priority number so triggers fire earlier"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Bei description-based routing ist die Beschreibung das einzige Signal. Eine vage Beschreibung zieht Anfragen an, die der Agent nicht behandeln sollte. Die Beschreibung soll eine konkrete Domäne benennen, Query-Typ-Sprache nutzen und Begriffe vermeiden, die auch für angrenzende Domänen gelten.",
+    "source": {
+      "title": "Create and configure a child agent",
+      "url": "https://learn.microsoft.com/en-us/training/modules/delegate-agent-tasks-child-agents-copilot-studio/3-create-configure-child-agent",
+      "quote": "A vague description causes the agent to capture queries it shouldn't; an overly narrow one causes it to miss queries it should handle."
+    }
+  },
+  {
+    "id": "ab620-036",
+    "type": "single-choice",
+    "skillArea": "integrate-extend",
+    "topic": "Child agent triggers",
+    "difficulty": "hard",
+    "prompt": "After five minutes without a message, an order-management agent should proactively ask whether the customer still needs help, without waiting for the user to write. How can this be implemented?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A child agent triggered by The user is inactive for a while with a five-minute period"
+      },
+      {
+        "id": "b",
+        "text": "A child agent whose description mentions inactivity and check-ins"
+      },
+      {
+        "id": "c",
+        "text": "A topic with the trigger phrase \"are you still there\" and a redirect to a check-in child agent"
+      },
+      {
+        "id": "d",
+        "text": "A connected agent with A plan completes as its trigger"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Der Inaktivitäts-Trigger ist ein expliziter Trigger-Event: Der Child Agent feuert nach einer konfigurierbaren Zeit ohne Nutzeraktivität und kann proaktiv nachfragen. Beschreibungsbasiertes Routing braucht immer eine eingehende Nachricht und kann dieses Verhalten nicht abbilden.",
+    "source": {
+      "title": "Create and configure a child agent",
+      "url": "https://learn.microsoft.com/en-us/training/modules/delegate-agent-tasks-child-agents-copilot-studio/3-create-configure-child-agent",
+      "quote": "A child agent configured to fire after five minutes of inactivity can send a proactive check-in to ask whether the customer still needs help with their order, without waiting for the user to initiate a message. This kind of behavior isn't achievable through description-based routing alone."
+    }
+  },
+  {
+    "id": "ab620-037",
+    "type": "ordering",
+    "skillArea": "integrate-extend",
+    "topic": "Trigger execution order",
+    "difficulty": "hard",
+    "prompt": "Several child agents in one orchestrator respond to different event types. Arrange the trigger tiers in the order Copilot Studio fires them, from first to last.",
+    "items": [
+      {
+        "id": "i1",
+        "text": "An activity occurs"
+      },
+      {
+        "id": "i2",
+        "text": "Message received, custom client event, conversation changes, and invoked"
+      },
+      {
+        "id": "i3",
+        "text": "The agent chooses (description-based routing)"
+      }
+    ],
+    "correctOrder": [
+      "i1",
+      "i2",
+      "i3"
+    ],
+    "explanation": "Die eingebaute Reihenfolge: Zuerst „An activity occurs“, dann die Trigger Message received, custom client event, conversation changes und invoked, zuletzt die beschreibungsbasierte Auswahl „The agent chooses“. Innerhalb einer Stufe gilt Erstellungsreihenfolge, sofern keine explizite Priority (kleinere Zahl = höher) gesetzt ist.",
+    "source": {
+      "title": "Create and configure a child agent",
+      "url": "https://learn.microsoft.com/en-us/training/modules/delegate-agent-tasks-child-agents-copilot-studio/3-create-configure-child-agent",
+      "quote": "Within the same tier, agents fire in order of creation (oldest first) unless you set an explicit Priority number. A lower number means higher priority."
+    }
+  },
+  {
+    "id": "ab620-038",
+    "type": "single-choice",
+    "skillArea": "integrate-extend",
+    "topic": "Tool conflicts with child agents",
+    "difficulty": "hard",
+    "prompt": "A Get order details tool is referenced in an Order Status child agent's instructions but is also visible to the orchestrator. The orchestrator now sometimes calls the tool directly and returns raw data, skipping the child agent's instructions. What should you do?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Clear Allow agent to decide dynamically when to use this tool on the tool"
+      },
+      {
+        "id": "b",
+        "text": "Add the same tool to every other child agent so the orchestrator no longer prefers it"
+      },
+      {
+        "id": "c",
+        "text": "Move the tool invocation from the instructions into a redirect node"
+      },
+      {
+        "id": "d",
+        "text": "Change the child agent's trigger from description-based routing to It's redirected to"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Wird die dynamische Nutzung des Tools deaktiviert, kann es nur noch explizit aufgerufen werden – wenn ein Agent oder Topic es in seinen Anweisungen referenziert. Der Orchestrator leitet dann wie beabsichtigt an den Child Agent weiter, der das Tool aufruft.",
+    "source": {
+      "title": "Configure child agent inputs, outputs, and trigger behavior",
+      "url": "https://learn.microsoft.com/en-us/training/modules/delegate-agent-tasks-child-agents-copilot-studio/4-configure-child-agent-inputs-outputs-triggers",
+      "quote": "To prevent this, open the tool's detail page and clear the Allow agent to decide dynamically when to use this tool property in Additional details. This restricts the tool to explicit invocation: it can only be called when an agent or topic specifically references it in its instructions."
+    }
+  },
+  {
+    "id": "ab620-039",
+    "type": "single-choice",
+    "skillArea": "integrate-extend",
+    "topic": "Child agent inputs",
+    "difficulty": "medium",
+    "prompt": "An account-balance child agent requires an account ID. The parent orchestrator often cannot extract one from the conversation. Which input configuration makes the child agent collect the ID from the user itself?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Enable Should prompt user on the account ID input in its Advanced section"
+      },
+      {
+        "id": "b",
+        "text": "Mark the input as required and set Action if no entity found to continue empty"
+      },
+      {
+        "id": "c",
+        "text": "Add a validation condition with a reprompt message and three reprompts on the input"
+      },
+      {
+        "id": "d",
+        "text": "Set After running to Write the response with generative AI"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Im Advanced-Bereich eines Inputs legt „Should prompt user“ fest, dass der Child Agent den Nutzer direkt fragt, wenn der Parent den Wert nicht liefern kann. Condition/Reprompt regeln die Validierung, „Action if no entity found“ das Verhalten nach erschöpften Versuchen – beides ersetzt die Nachfrage nicht.",
+    "source": {
+      "title": "Configure child agent inputs, outputs, and trigger behavior",
+      "url": "https://learn.microsoft.com/en-us/training/modules/delegate-agent-tasks-child-agents-copilot-studio/4-configure-child-agent-inputs-outputs-triggers",
+      "quote": "Should prompt user: whether the child agent asks the user directly when the parent can't supply the value"
+    }
+  },
+  {
+    "id": "ab620-040",
+    "type": "matching",
+    "skillArea": "integrate-extend",
+    "topic": "Child agent After running options",
+    "difficulty": "medium",
+    "prompt": "Match each After running option of a child agent to the situation it suits best.",
+    "left": [
+      {
+        "id": "l1",
+        "text": "Don't respond"
+      },
+      {
+        "id": "l2",
+        "text": "Write the response with generative AI"
+      },
+      {
+        "id": "l3",
+        "text": "Send specific response"
+      },
+      {
+        "id": "l4",
+        "text": "Send an adaptive card"
+      }
+    ],
+    "right": [
+      {
+        "id": "r1",
+        "text": "The child's outputs feed a further step such as another child agent or a condition"
+      },
+      {
+        "id": "r2",
+        "text": "A natural-sounding reply should be composed from the child's output values"
+      },
+      {
+        "id": "r3",
+        "text": "A fixed, templated confirmation is sent regardless of what the child returned"
+      },
+      {
+        "id": "r4",
+        "text": "Tabular or detailed output such as a list of orders needs a visual layout"
+      }
+    ],
+    "correct": {
+      "l1": "r1",
+      "l2": "r2",
+      "l3": "r3",
+      "l4": "r4"
+    },
+    "explanation": "„Don't respond“ (Standard) lässt den Parent seinen Plan fortsetzen, ohne dem Nutzer zu antworten; generative KI formuliert aus den Outputs eine natürliche Antwort; „Send specific response“ ist eine feste Nachricht; „Send an adaptive card“ eignet sich für strukturierte, tabellarische Ausgaben.",
+    "source": {
+      "title": "Configure child agent inputs, outputs, and trigger behavior",
+      "url": "https://learn.microsoft.com/en-us/training/modules/delegate-agent-tasks-child-agents-copilot-studio/4-configure-child-agent-inputs-outputs-triggers",
+      "quote": "Don't respond (the default): The parent continues its orchestration plan without sending a message to the user. This is the right choice when the child's outputs feed into the next step: another child agent call, a condition check, or a further action."
+    }
+  },
+  {
+    "id": "ab620-041",
+    "type": "single-choice",
+    "skillArea": "integrate-extend",
+    "topic": "Agent redirect node",
+    "difficulty": "medium",
+    "prompt": "A topic verifies a customer's identity and collects an account number. It must then hand the number to a specific child agent every time, regardless of how the user phrased the request, and continue afterwards with the child's results. Which approach guarantees this?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Add an agent redirect node in the topic that passes the account number as an input"
+      },
+      {
+        "id": "b",
+        "text": "Use matching keywords in the trigger phrases and the child's description"
+      },
+      {
+        "id": "c",
+        "text": "Set the child agent's trigger to A message is received"
+      },
+      {
+        "id": "d",
+        "text": "Store the account number in a global variable and rely on description-based routing"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Der Agent-Redirect-Knoten ruft den Child Agent unbedingt auf, umgeht das beschreibungsbasierte Routing, übergibt Inputs direkt aus Topic-Variablen und legt die Outputs nach Abschluss automatisch in Topic-Variablen ab; das Topic setzt beim nächsten Knoten fort.",
+    "source": {
+      "title": "Test and manage child agents",
+      "url": "https://learn.microsoft.com/en-us/training/modules/delegate-agent-tasks-child-agents-copilot-studio/5-test-manage-child-agents",
+      "quote": "The node explicitly invokes that agent when the topic reaches that point, bypassing description-based routing."
+    }
+  },
+  {
+    "id": "ab620-042",
+    "type": "single-choice",
+    "skillArea": "test-manage",
+    "topic": "Child agent availability",
+    "difficulty": "easy",
+    "prompt": "A child agent depends on an inventory API that will be down for 48 hours of maintenance. The agent must stop receiving queries during that time and resume afterwards without reconfiguration. What should you do?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Turn the child agent off with the Enabled toggle until maintenance ends"
+      },
+      {
+        "id": "b",
+        "text": "Delete the child agent and recreate it after the maintenance window"
+      },
+      {
+        "id": "c",
+        "text": "Edit the description to remove all inventory-related terms for two days"
+      },
+      {
+        "id": "d",
+        "text": "Change the child agent's trigger to It's redirected to so no topic reaches it"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Der Enabled-Schalter nimmt den Child Agent aus der Rotation: Er reagiert weder auf Nutzer noch auf Trigger, der Orchestrator routet nicht mehr zu ihm, und das Wiedereinschalten stellt das Verhalten ohne weitere Änderungen her. Löschen ist endgültig und entfernt die komplette Konfiguration.",
+    "source": {
+      "title": "Test and manage child agents",
+      "url": "https://learn.microsoft.com/en-us/training/modules/delegate-agent-tasks-child-agents-copilot-studio/5-test-manage-child-agents",
+      "quote": "Turning a child agent off makes it inactive: the agent no longer responds to users or triggers, and the orchestrator won't route queries to it. Turning it back on restores normal behavior with no further changes required."
+    }
+  },
+  {
+    "id": "ab620-043",
+    "type": "single-choice",
+    "skillArea": "test-manage",
+    "topic": "Activity map",
+    "difficulty": "easy",
+    "prompt": "While testing a multi-agent solution, you need to see which child agent handled a prompt, which inputs it received, and what it returned. What should you enable?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Show activity map when testing in the Test your agent panel"
+      },
+      {
+        "id": "b",
+        "text": "Conversation transcripts export in the agent's Analytics page"
+      },
+      {
+        "id": "c",
+        "text": "Application Insights telemetry for the orchestrator"
+      },
+      {
+        "id": "d",
+        "text": "Verbose logging on each child agent's Overview page"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Mit „Show activity map when testing“ erscheint nach jeder Antwort die Activity Map mit dem Ausführungsplan des Orchestrators: gewählter Child Agent, übergebene Inputs, zurückgegebene Werte. Das ist das Standardwerkzeug für die Validierung von Routing in Multi-Agent-Lösungen.",
+    "source": {
+      "title": "Test and manage child agents",
+      "url": "https://learn.microsoft.com/en-us/training/modules/delegate-agent-tasks-child-agents-copilot-studio/5-test-manage-child-agents",
+      "quote": "When you enable Show activity map when testing, the activity map appears after each response, showing the orchestrator's execution plan in real time. You can see which child agent was selected, what inputs were passed to it, and what it returned."
+    }
+  },
+  {
+    "id": "ab620-044",
+    "type": "single-choice",
+    "skillArea": "integrate-extend",
+    "topic": "Multi-agent architecture signals",
+    "difficulty": "medium",
+    "prompt": "A support agent maintained by three different teams (billing, technical, account management) has passed 40 actions. Billing queries now sometimes trigger technical workflows, and one team's changes affect another team's behavior. Which characteristic most justifies moving to a multi-agent architecture?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Independent team ownership across distinct domains with separate release needs"
+      },
+      {
+        "id": "b",
+        "text": "The need for a larger language model to interpret the growing number of tool descriptions reliably"
+      },
+      {
+        "id": "c",
+        "text": "The requirement to publish the agent to more channels than a single agent supports"
+      },
+      {
+        "id": "d",
+        "text": "The number of knowledge sources exceeding the limit a single agent can index"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Neben nachlassender Routing-Genauigkeit (Faustregel 30–40 Aktionen) ist getrennte Team-Ownership ein klarer struktureller Grund: Jedes Domänenteam pflegt seinen Spezialagenten unabhängig, während ein Orchestrator die Anfragen verteilt. Schon eine klare organisatorische Grenze rechtfertigt die Trennung.",
+    "source": {
+      "title": "Understand multi-agent architectures in Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-multi-agent-solutions-copilot-studio/2-understand-multi-agent-architectures",
+      "quote": "Even one clear organizational boundary (like independent team ownership across three business domains) can be a valid reason to separate agents."
+    }
+  },
+  {
+    "id": "ab620-045",
+    "type": "single-choice",
+    "skillArea": "integrate-extend",
+    "topic": "Multi-agent tradeoffs",
+    "difficulty": "medium",
+    "prompt": "A maker worries that adding connected agents will make responses feel slower for end users. Which characteristic of the architecture is most directly relevant?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Each connected agent adds orchestration hops while the main agent delegates and waits"
+      },
+      {
+        "id": "b",
+        "text": "Each connected agent requires its own knowledge sources, which take longer to index and search"
+      },
+      {
+        "id": "c",
+        "text": "Connected agents share the main agent's tool limit, causing queuing when it is reached"
+      },
+      {
+        "id": "d",
+        "text": "Connected agents run with the parent's credentials, so token acquisition slows every request"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Jeder Connected Agent bedeutet zusätzliche Round-Trips: Der Hauptagent bestimmt den Zielagenten, dessen eigene Orchestrierungsschicht verarbeitet die Anfrage, und das Ergebnis wird eingebaut. Child Agents haben diese Latenz nicht, weil sie im selben Deployment und Kontext laufen.",
+    "source": {
+      "title": "Understand multi-agent architectures in Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-multi-agent-solutions-copilot-studio/2-understand-multi-agent-architectures",
+      "quote": "Every connected agent you add introduces orchestration hops: extra round-trips where the main agent identifies the right connected agent, and that connected agent's own orchestration layer processes the request. These extra hops add latency to the end-user experience."
+    }
+  },
+  {
+    "id": "ab620-046",
+    "type": "single-choice",
+    "skillArea": "integrate-extend",
+    "topic": "Orchestration patterns",
+    "difficulty": "medium",
+    "prompt": "Vendor contracts must pass three compliance checks in a fixed order and then go to a legal reviewer before sign-off. No step may be skipped or reordered, and a complete audit trail is required. Which coordination pattern fits?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Workflow-oriented, with the sequence defined by a workflow engine and an approval gate"
+      },
+      {
+        "id": "b",
+        "text": "Orchestrator/subagent, with the orchestrator deciding at runtime which compliance agent to call next"
+      },
+      {
+        "id": "c",
+        "text": "Concurrent compliance checks followed by dynamic routing to whichever legal reviewer is available first"
+      },
+      {
+        "id": "d",
+        "text": "Description-based routing among three child agents, each holding one compliance check"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Das workflow-orientierte Muster ist deterministisch: gleiche Eingaben, gleiche Schritte in gleicher Reihenfolge, jeder Schritt explizit und auditierbar, Human-in-the-loop über Genehmigungsgates. Beim Orchestrator/Subagent-Muster könnte der Orchestrator Schritte überspringen oder umsortieren.",
+    "source": {
+      "title": "Design multi-agent solutions using connected agents",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-multi-agent-solutions-copilot-studio/4-select-multi-agent-orchestration-pattern",
+      "quote": "Use the workflow-oriented pattern when your process has well-defined steps with strong dependencies, requires a complete audit trail, or involves compliance workloads where consistent outcomes aren't optional."
+    }
+  },
+  {
+    "id": "ab620-047",
+    "type": "matching",
+    "skillArea": "integrate-extend",
+    "topic": "Connection options",
+    "difficulty": "medium",
+    "prompt": "Match each connected-agent option to the scenario it is intended for.",
+    "left": [
+      {
+        "id": "l1",
+        "text": "Existing Copilot Studio agent"
+      },
+      {
+        "id": "l2",
+        "text": "Microsoft Foundry agent"
+      },
+      {
+        "id": "l3",
+        "text": "Microsoft Fabric Data agent"
+      },
+      {
+        "id": "l4",
+        "text": "A2A protocol agent"
+      }
+    ],
+    "right": [
+      {
+        "id": "r1",
+        "text": "An agent another team already publishes in the same environment with its own lifecycle"
+      },
+      {
+        "id": "r2",
+        "text": "A capability that needs specialized model or reasoning configuration beyond Copilot Studio"
+      },
+      {
+        "id": "r3",
+        "text": "Conversational queries over OneLake data built by a data engineering team"
+      },
+      {
+        "id": "r4",
+        "text": "A partner agent on a non-Microsoft platform that manages its own reasoning"
+      }
+    ],
+    "correct": {
+      "l1": "r1",
+      "l2": "r2",
+      "l3": "r3",
+      "l4": "r4"
+    },
+    "explanation": "Die Verbindungsoption folgt daraus, wo der Agent gebaut wurde: Copilot-Studio-Agent derselben Umgebung, Foundry für spezielle Modelle/Reasoning, Fabric Data Agent für OneLake-Daten, A2A für plattformfremde Partneragenten. Foundry, Fabric und Agents SDK sind Preview und nicht für Produktion gedacht.",
+    "source": {
+      "title": "Design multi-agent solutions using connected agents",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-multi-agent-solutions-copilot-studio/4-select-multi-agent-orchestration-pattern",
+      "quote": "Connecting to partner or cross-platform agents that manage their own reasoning and aren't hosted on Microsoft infrastructure"
+    }
+  },
+  {
+    "id": "ab620-048",
+    "type": "single-choice",
+    "skillArea": "integrate-extend",
+    "topic": "Connected agent governance",
+    "difficulty": "hard",
+    "prompt": "An orchestrator will delegate to a connected agent owned by another team that can modify records in a system of record. What must the orchestrator's maker verify before routing user traffic to it?",
+    "options": [
+      {
+        "id": "a",
+        "text": "That approval controls, data-sharing agreements, and security reviews are in place"
+      },
+      {
+        "id": "b",
+        "text": "That the connected agent is converted to a child agent under the parent"
+      },
+      {
+        "id": "c",
+        "text": "That conversation history forwarding is enabled for identity checks"
+      },
+      {
+        "id": "d",
+        "text": "That the connected agent shares the orchestrator's transcript store so no separate monitoring is needed"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Das Anbinden eines Agenten erweitert die Vertrauensgrenze der Lösung. Ein Connected Agent kann Zugriff auf Ressourcen haben, die der Orchestrator nicht hat; vor Aufrufen mit Schreibzugriff müssen explizite Genehmigungskontrollen existieren. Die Verantwortung für die Datenflüsse bleibt beim Maker des Orchestrators.",
+    "source": {
+      "title": "Design multi-agent solutions using connected agents",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-multi-agent-solutions-copilot-studio/4-select-multi-agent-orchestration-pattern",
+      "quote": "Before your orchestrator calls a connected agent with write access to any system of record, verify that approval controls, data-sharing agreements, and security reviews are in place."
+    }
+  },
+  {
+    "id": "ab620-049",
+    "type": "single-choice",
+    "skillArea": "integrate-extend",
+    "topic": "Connect an existing Copilot Studio agent",
+    "difficulty": "medium",
+    "prompt": "The Legal team's contract-compliance agent is published in the same environment as your orchestrator, yet it does not appear in the list when you choose Connect to an external agent > Copilot Studio. What is the most likely cause?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Let other agents connect to and use this one is not turned on in the target agent's settings"
+      },
+      {
+        "id": "b",
+        "text": "The target agent must first be exported as a solution and imported into your orchestrator"
+      },
+      {
+        "id": "c",
+        "text": "You must be added as a co-owner of the orchestrator before external agents are listed"
+      },
+      {
+        "id": "d",
+        "text": "The target agent needs a published A2A agent card before Copilot Studio can discover it"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Voraussetzungen: gleiche Umgebung, mindestens eine veröffentlichte Version, Besitz oder Freigabe und die Einstellung „Let other agents connect to and use this one“ am Zielagenten. Ohne diese Einstellung erscheint der Agent nicht in der Verbindungsliste, selbst wenn er veröffentlicht ist.",
+    "source": {
+      "title": "Connect an existing Copilot Studio agent",
+      "url": "https://learn.microsoft.com/en-us/training/modules/build-multi-agent-solutions-connected-agents-copilot-studio/3-connect-copilot-studio-agent",
+      "quote": "Without it, the agent won't appear as an option in the connection flow, even if it's published in the same environment."
+    }
+  },
+  {
+    "id": "ab620-050",
+    "type": "single-choice",
+    "skillArea": "integrate-extend",
+    "topic": "Connected agent descriptions",
+    "difficulty": "medium",
+    "prompt": "The Legal team broadened the scope of their connected agent and republished it. Your orchestrator still routes only the old kinds of questions to it. Why, and what should you do?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The orchestrator routes on a local copy of the description; update it manually"
+      },
+      {
+        "id": "b",
+        "text": "The connection caches the old version; disconnect and reconnect the agent"
+      },
+      {
+        "id": "c",
+        "text": "Conversation history forwarding is off, so new capabilities stay hidden"
+      },
+      {
+        "id": "d",
+        "text": "The Legal team must re-enable Let other agents connect to and use this one after every publish"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Beim Verbinden speichert der Orchestrator eine lokale Kopie der Beschreibung und nutzt diese fürs Routing – nicht die Live-Beschreibung des Zielagenten. Neue Fähigkeiten stehen beim Aufruf zwar bereit, die Routing-Beschreibung muss aber manuell aktualisiert werden.",
+    "source": {
+      "title": "Connect an existing Copilot Studio agent",
+      "url": "https://learn.microsoft.com/en-us/training/modules/build-multi-agent-solutions-connected-agents-copilot-studio/3-connect-copilot-studio-agent",
+      "quote": "The orchestrator's local copy of a connected agent's description doesn't sync automatically when the source agent is updated. If the connected agent's purpose or scope changes, update the description in the orchestrator manually to keep routing accurate."
+    }
+  },
+  {
+    "id": "ab620-051",
+    "type": "single-choice",
+    "skillArea": "integrate-extend",
+    "topic": "Foundry agent connection",
+    "difficulty": "medium",
+    "prompt": "You enter the project endpoint URL and agent ID provided by the Foundry team, but the connection fails with a 404 error. What is the most likely cause?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The agent was created in the legacy Azure AI Studio portal rather than the new Foundry portal"
+      },
+      {
+        "id": "b",
+        "text": "The endpoint URL expired, because Foundry endpoints are valid for 24 hours"
+      },
+      {
+        "id": "c",
+        "text": "A service principal with Foundry project permissions has not been created yet"
+      },
+      {
+        "id": "d",
+        "text": "The orchestrator's environment lacks a Microsoft Fabric connection required for Foundry agents"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Foundry-Agenten müssen im neuen Microsoft-Foundry-Portal erstellt und veröffentlicht sein. Agenten aus dem Legacy-Portal Azure AI Studio liefern beim Verbindungsversuch einen 404; das Foundry-Team muss den Agenten im neuen Portal neu anlegen.",
+    "source": {
+      "title": "Connect a Microsoft Foundry agent",
+      "url": "https://learn.microsoft.com/en-us/training/modules/build-multi-agent-solutions-connected-agents-copilot-studio/4-connect-foundry-agent",
+      "quote": "Agents created in the legacy portal return a 404 error when Copilot Studio attempts to connect to them."
+    }
+  },
+  {
+    "id": "ab620-052",
+    "type": "single-choice",
+    "skillArea": "integrate-extend",
+    "topic": "Foundry agent maintenance",
+    "difficulty": "easy",
+    "prompt": "The Foundry team replaced the vendor-risk agent with a new version that has a different agent ID. The orchestrator's name, description, and connection should stay unchanged. What should you do?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Open the connected Foundry agent's details page and update only the agent ID field"
+      },
+      {
+        "id": "b",
+        "text": "Disconnect the Foundry agent and recreate the full connection with the new ID"
+      },
+      {
+        "id": "c",
+        "text": "Create a second Foundry connection and disable the old agent with the Enabled toggle"
+      },
+      {
+        "id": "d",
+        "text": "Ask the Foundry team to reuse the previous agent ID for the new deployment"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Die Agent-ID lässt sich auf der Detailseite des verbundenen Foundry-Agenten ändern, ohne die Verbindung zu entfernen; Verbindungseinstellungen, Beschreibung und Name bleiben erhalten.",
+    "source": {
+      "title": "Connect a Microsoft Foundry agent",
+      "url": "https://learn.microsoft.com/en-us/training/modules/build-multi-agent-solutions-connected-agents-copilot-studio/4-connect-foundry-agent",
+      "quote": "If the Foundry team replaces the underlying agent with a new version that has a different agent ID, you can update the agent ID without removing and re-adding the full connection"
+    }
+  },
+  {
+    "id": "ab620-053",
+    "type": "single-choice",
+    "skillArea": "integrate-extend",
+    "topic": "Fabric Data agent routing",
+    "difficulty": "hard",
+    "prompt": "You connected a Fabric Data agent and built a topic that redirects all spend-data questions to it with an agent redirect node. In testing, those questions never reach the Fabric Data agent. What do you need to know?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Fabric Data agents are reached only through generative orchestration, never via a redirect node"
+      },
+      {
+        "id": "b",
+        "text": "Fabric Data agents require an F64 capacity or higher before topic redirect nodes are honored"
+      },
+      {
+        "id": "c",
+        "text": "Topic redirect nodes work only for child agents; connected agents need an Action node instead"
+      },
+      {
+        "id": "d",
+        "text": "The Fabric connection must be re-authenticated inside the topic before the redirect runs"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Das Routing zu einem Fabric Data Agent wird derzeit nur über generative Orchestrierung unterstützt; ein Agent-Redirect-Knoten aus einem Topic funktioniert nicht. Deshalb muss die Beschreibung so präzise sein, dass der Orchestrator Spend- und Lieferantenfragen ohne Topic-Hilfe zuverlässig zuordnet.",
+    "source": {
+      "title": "Connect a Microsoft Fabric Data agent",
+      "url": "https://learn.microsoft.com/en-us/training/modules/build-multi-agent-solutions-connected-agents-copilot-studio/5-connect-fabric-data-agent",
+      "quote": "Directing users to a Fabric Data agent from a topic using an agent redirect node is not currently supported."
+    }
+  },
+  {
+    "id": "ab620-054",
+    "type": "yes-no",
+    "skillArea": "integrate-extend",
+    "topic": "Fabric Data agent",
+    "difficulty": "medium",
+    "prompt": "A Finance team publishes a Fabric Data agent over procurement data and you connect it to your orchestrator. Evaluate each statement.",
+    "statements": [
+      {
+        "id": "s1",
+        "text": "The Fabric environment needs F2 or higher capacity, or Power BI Premium P1 or higher with Fabric enabled.",
+        "correct": true
+      },
+      {
+        "id": "s2",
+        "text": "Users can retrieve any data in the connected sources regardless of their own Fabric permissions.",
+        "correct": false
+      },
+      {
+        "id": "s3",
+        "text": "The agent translates questions into SQL, DAX, or KQL depending on the data source.",
+        "correct": true
+      },
+      {
+        "id": "s4",
+        "text": "The connection is generally available and recommended for production use.",
+        "correct": false
+      }
+    ],
+    "explanation": "Voraussetzungen sind eine Fabric-Verbindung, F2+ (oder P1+) Kapazität und ein veröffentlichter Fabric Data Agent. Der Agent erzwingt die Fabric-Berechtigungen des anfragenden Nutzers und respektiert Purview-Richtlinien. Er übersetzt in SQL (Lakehouse/Warehouse), DAX (Semantic Models) oder KQL. Die Anbindung ist Preview, nicht für Produktion.",
+    "source": {
+      "title": "Connect a Microsoft Fabric Data agent",
+      "url": "https://learn.microsoft.com/en-us/training/modules/build-multi-agent-solutions-connected-agents-copilot-studio/5-connect-fabric-data-agent",
+      "quote": "Fabric Data agents enforce the requesting user's Fabric permissions. Users can only retrieve data they have access to, regardless of how the question is phrased."
+    }
+  },
+  {
+    "id": "ab620-055",
+    "type": "single-choice",
+    "skillArea": "test-manage",
+    "topic": "Connected agent routing diagnosis",
+    "difficulty": "medium",
+    "prompt": "A query about vendor security incidents is routed to the contract-compliance connected agent instead of the vendor-risk Foundry agent. Both descriptions contain the word \"compliance.\" What most directly resolves the ambiguity?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Rewrite both descriptions with specific, non-overlapping language per domain"
+      },
+      {
+        "id": "b",
+        "text": "Add a topic that intercepts \"compliance\" and redirects to the Foundry agent"
+      },
+      {
+        "id": "c",
+        "text": "Add more tools to the vendor-risk agent so the orchestrator receives stronger routing signals"
+      },
+      {
+        "id": "d",
+        "text": "Disable conversation history forwarding on the contract-compliance connection"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Zeigt die Activity Map eine Fehlleitung, liegt ein Beschreibungsproblem vor, kein Verbindungsproblem. Beide Beschreibungen teilen sich „compliance“; präzise, nicht überlappende Formulierungen (Vertragsklauseln vs. Sicherheitslage, Risikoratings, Vorfälle) lösen das. Instruktionen am Orchestrator sind nur eine Ergänzung bei hartnäckiger Mehrdeutigkeit.",
+    "source": {
+      "title": "Manage and test your connected agent solution",
+      "url": "https://learn.microsoft.com/en-us/training/modules/build-multi-agent-solutions-connected-agents-copilot-studio/6-manage-test-connected-agent-solution",
+      "quote": "If the activity map shows a prompt routed to the wrong agent, you have a description problem—not a connection problem. The fix involves refining descriptions, not reconfiguring connections."
+    }
+  },
+  {
+    "id": "ab620-056",
+    "type": "single-choice",
+    "skillArea": "test-manage",
+    "topic": "Disable vs disconnect",
+    "difficulty": "easy",
+    "prompt": "The Finance team will update the semantic model behind a connected Fabric Data agent next week. You want to prevent failed spend queries during that window and restore the agent afterwards with a single action. What should you do?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Turn the connected agent off with the Enabled toggle and back on afterwards"
+      },
+      {
+        "id": "b",
+        "text": "Disconnect the agent and re-create the connection when the semantic model is ready"
+      },
+      {
+        "id": "c",
+        "text": "Remove spend-related terms from the orchestrator's instructions for the week"
+      },
+      {
+        "id": "d",
+        "text": "Export the orchestrator's solution and delete the Fabric connection reference"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Der Enabled-Schalter deaktiviert den Connected Agent temporär, behält die Konfiguration bei und stellt das Routing beim Wiedereinschalten sofort her. Disconnect entfernt den Agenten dauerhaft aus dem Orchestrator; ein erneutes Verbinden erfordert das komplette Anlegen der Verbindung.",
+    "source": {
+      "title": "Manage and test your connected agent solution",
+      "url": "https://learn.microsoft.com/en-us/training/modules/build-multi-agent-solutions-connected-agents-copilot-studio/6-manage-test-connected-agent-solution",
+      "quote": "If there's any possibility you'll reconnect later, disabling is safer. Configuration is preserved, and re-enabling takes a single toggle. Reconnecting after disconnecting requires re-creating the full connection from scratch."
+    }
+  }
+]

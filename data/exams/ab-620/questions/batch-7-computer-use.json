@@ -1,0 +1,448 @@
+[
+  {
+    "id": "ab620-114",
+    "type": "single-choice",
+    "skillArea": "integrate-extend",
+    "topic": "Computer use fit",
+    "difficulty": "medium",
+    "prompt": "An HR team must record attendance in a legacy web portal that has no API and no connector. The interface occasionally shows unexpected dialogs and the layout changes between releases. Which automation approach fits, and why?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Computer use, because it reasons from a fresh screenshot each cycle"
+      },
+      {
+        "id": "b",
+        "text": "An agent flow with the HTTP action, because deterministic flows are easier to maintain"
+      },
+      {
+        "id": "c",
+        "text": "A REST API tool from the portal's login page, because it exposes the form fields"
+      },
+      {
+        "id": "d",
+        "text": "A Copilot connector, because it indexes the portal content so the agent can submit records"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Computer Use arbeitet in einer Wahrnehmungs-Reasoning-Aktions-Schleife: Screenshot, Überlegung, Klick/Tastatur – bei jedem Zyklus frisch. So passt es sich an verschobene Layouts oder unerwartete Dialoge an, wo ein aufgezeichnetes Skript scheitert. Es ist die richtige Wahl, wenn UI-Interaktion der einzige Weg ist; existiert ein Connector, sind Agent Flows vorzuziehen.",
+    "source": {
+      "title": "Understand computer use in Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/training/modules/automate-desktop-web-tasks-computer-use-copilot-studio/2-understand-computer-use",
+      "quote": "Because each cycle starts fresh from a new screenshot, the agent can adapt when a page layout shifts or an unexpected dialog appears, rather than failing when a specific element isn't where a recorded script expects it."
+    }
+  },
+  {
+    "id": "ab620-115",
+    "type": "single-choice",
+    "skillArea": "integrate-extend",
+    "topic": "Computer use reliability",
+    "difficulty": "hard",
+    "prompt": "A team plans to automate data entry in an installed Windows desktop application with computer use and expects the same reliability they saw in a web-portal prototype. What should they factor into scenario selection?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Computer use is not deterministic; success rates are about 80% for web and 35% for desktop"
+      },
+      {
+        "id": "b",
+        "text": "Desktop applications run deterministically because they are hosted on a registered machine instead of a browser"
+      },
+      {
+        "id": "c",
+        "text": "Desktop tasks consume no Copilot Credits, so retries are free until the task succeeds"
+      },
+      {
+        "id": "d",
+        "text": "Desktop applications require the hosted browser, which has the highest success rate"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Computer Use ist nicht deterministisch: Derselbe Task kann je nach Interpretation des Bildschirms unterschiedlich ausgehen. Microsoft nennt Erfolgsraten von rund 80 % für webbasierte und 35 % für Desktop-Aufgaben – Desktop-Oberflächen variieren stärker. Präzise Anweisungen und gründliches Testen sind die Hauptmittel zur Verbesserung.",
+    "source": {
+      "title": "Evaluate whether computer use fits your scenario",
+      "url": "https://learn.microsoft.com/en-us/training/modules/automate-desktop-web-tasks-computer-use-copilot-studio/3-evaluate-computer-use-scenarios",
+      "quote": "Microsoft's documentation benchmarks success rates at approximately 80% for web-based tasks and 35% for desktop applications."
+    }
+  },
+  {
+    "id": "ab620-116",
+    "type": "single-choice",
+    "skillArea": "plan-configure",
+    "topic": "Computer use security",
+    "difficulty": "hard",
+    "prompt": "Security reviewers worry that hidden instructions on a visited web page could redirect a computer-use agent's behavior. Which configuration is the primary defense described in the learning content?",
+    "options": [
+      {
+        "id": "a",
+        "text": "An access control allow list of URLs and applications the model may interact with"
+      },
+      {
+        "id": "b",
+        "text": "Human supervision, which guarantees that a reviewer confirms every step before the agent executes it"
+      },
+      {
+        "id": "c",
+        "text": "Storing credentials in Azure Key Vault so injected instructions have no access"
+      },
+      {
+        "id": "d",
+        "text": "Selecting a premium model, which is trained to ignore on-screen instructions"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Prompt Injection ist ein Sicherheitsrisiko, weil der Agent aus dem Bildschirminhalt schließt. Die Zugriffskontroll-Allowlist begrenzt die Oberflächen, mit denen der Agent interagieren darf (Navigation bleibt möglich, Interaktion außerhalb der Liste schlägt fehl). Human Supervision ist probabilistisch und ausdrücklich kein Sicherheitsgarant.",
+    "source": {
+      "title": "Evaluate whether computer use fits your scenario",
+      "url": "https://learn.microsoft.com/en-us/training/modules/automate-desktop-web-tasks-computer-use-copilot-studio/3-evaluate-computer-use-scenarios",
+      "quote": "Configuring an access control allow list (covered in the next unit) is a primary defense, limiting the surfaces the agent can interact with and reducing the potential impact of malicious content."
+    }
+  },
+  {
+    "id": "ab620-117",
+    "type": "single-choice",
+    "skillArea": "integrate-extend",
+    "topic": "Computer use instructions",
+    "difficulty": "medium",
+    "prompt": "A computer-use tool submits attendance records. During a retry, it created a duplicate entry for the same employee and date. What should you change in the tool's instructions?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Add a pre-check for an existing entry with the same employee ID and date"
+      },
+      {
+        "id": "b",
+        "text": "Remove \"Proceed with each step without asking for confirmation\" so the model pauses"
+      },
+      {
+        "id": "c",
+        "text": "Hardcode the employee ID and date in the instructions instead of using inputs"
+      },
+      {
+        "id": "d",
+        "text": "Switch from a Cloud PC pool to the hosted browser to prevent duplicate runs"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Computer Use ist nicht idempotent: Läuft das Tool zweimal, können Daten doppelt eingereicht werden. Für schreibende Tools gehört ein Vorab-Check in die Anweisungen; bei kritischen oder irreversiblen Übermittlungen kann Human Supervision als Bestätigungsgate vor dem finalen Submit dienen.",
+    "source": {
+      "title": "Configure computer use as an agent tool",
+      "url": "https://learn.microsoft.com/en-us/training/modules/automate-desktop-web-tasks-computer-use-copilot-studio/4-configure-computer-use",
+      "quote": "Computer use is not idempotent: if the tool runs twice for the same task, it may submit data twice."
+    }
+  },
+  {
+    "id": "ab620-118",
+    "type": "single-choice",
+    "skillArea": "integrate-extend",
+    "topic": "Computer use inputs",
+    "difficulty": "easy",
+    "prompt": "The employee ID and attendance date differ on every run of a computer-use tool, but the steps are otherwise identical. How should you handle these values?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Define them as Inputs that the model substitutes at runtime"
+      },
+      {
+        "id": "b",
+        "text": "Create one computer-use tool per employee with the values in the instructions"
+      },
+      {
+        "id": "c",
+        "text": "Store them in the Stored credentials section so they are injected on sign-in"
+      },
+      {
+        "id": "d",
+        "text": "Pass them through the access control allow list as URL parameters"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Werte, die sich je Lauf ändern, werden als Inputs definiert (z. B. {employeeId}, {attendanceDate}); die Anweisungen bleiben fest, nur die Eingaben variieren. Stored credentials sind für Anmeldedaten, die Allowlist für erlaubte Websites/Anwendungen.",
+    "source": {
+      "title": "Configure computer use as an agent tool",
+      "url": "https://learn.microsoft.com/en-us/training/modules/automate-desktop-web-tasks-computer-use-copilot-studio/4-configure-computer-use",
+      "quote": "Inputs are named values the model substitutes at runtime, so a single set of instructions can handle different employees or dates without any changes."
+    }
+  },
+  {
+    "id": "ab620-119",
+    "type": "matching",
+    "skillArea": "integrate-extend",
+    "topic": "Computer use machines",
+    "difficulty": "medium",
+    "prompt": "Match each machine option for computer use to its intended use.",
+    "left": [
+      {
+        "id": "l1",
+        "text": "Hosted browser"
+      },
+      {
+        "id": "l2",
+        "text": "Cloud PC pool (Windows 365 for Agents)"
+      },
+      {
+        "id": "l3",
+        "text": "Bring your own machine"
+      }
+    ],
+    "right": [
+      {
+        "id": "r1",
+        "text": "Quick-start experimentation with basic Edge web automation; not for production or desktop apps"
+      },
+      {
+        "id": "r2",
+        "text": "Recommended default that provisions automatically, is Entra joined and Intune enrolled, and reaches organizational resources"
+      },
+      {
+        "id": "r3",
+        "text": "A registered Windows machine with installed line-of-business software or specific compliance configuration"
+      }
+    ],
+    "correct": {
+      "l1": "r1",
+      "l2": "r2",
+      "l3": "r3"
+    },
+    "explanation": "Der Hosted Browser ist ein Microsoft-verwalteter Einstieg ohne Setup; der Cloud-PC-Pool die empfohlene Option für die meisten Szenarien (Preview, bis zu zwei Pools und 50 Freistunden zum Testen, Provisionierung bis 30 Minuten); Bring your own machine für spezielle Software oder Compliance – erfordert Power Automate for desktop und deaktiviert Desktop-Flows auf der Maschine.",
+    "source": {
+      "title": "Configure computer use as an agent tool",
+      "url": "https://learn.microsoft.com/en-us/training/modules/automate-desktop-web-tasks-computer-use-copilot-studio/4-configure-computer-use",
+      "quote": "Cloud PC pools provision automatically without any infrastructure setup, are Entra joined and Intune enrolled, and support work or school account access to organizational resources like Microsoft 365 and SharePoint."
+    }
+  },
+  {
+    "id": "ab620-120",
+    "type": "single-choice",
+    "skillArea": "integrate-extend",
+    "topic": "Bring your own machine",
+    "difficulty": "hard",
+    "prompt": "You enable computer use on a registered Windows machine that already runs several desktop flows for the finance team. What happens, and what should you have done?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Existing desktop flow automation on that machine stops; dedicate a separate machine to computer use"
+      },
+      {
+        "id": "b",
+        "text": "Desktop flows and computer-use runs alternate; configure concurrency control to prioritize finance"
+      },
+      {
+        "id": "c",
+        "text": "Nothing changes, because computer use and desktop flows use separate runtimes on the same machine"
+      },
+      {
+        "id": "d",
+        "text": "Desktop flows are converted into computer-use tools automatically and need new instructions"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Das Aktivieren von Computer Use auf einer Maschine deaktiviert ihre Desktop-Flow-Funktionalität – laufende RPA-Automatisierungen stoppen. Deshalb eine Maschine ausschließlich für Computer Use vorsehen. Auf registrierten Maschinen werden Läufe zudem sequenziell in einer Warteschlange abgearbeitet.",
+    "source": {
+      "title": "Configure computer use as an agent tool",
+      "url": "https://learn.microsoft.com/en-us/training/modules/automate-desktop-web-tasks-computer-use-copilot-studio/4-configure-computer-use",
+      "quote": "Enabling computer use on a machine disables its desktop flow functionality. Any existing desktop flow automation running on that machine will stop. Dedicate a machine to computer use rather than enabling it on a machine that already runs desktop flows."
+    }
+  },
+  {
+    "id": "ab620-121",
+    "type": "single-choice",
+    "skillArea": "plan-configure",
+    "topic": "Computer use credentials",
+    "difficulty": "medium",
+    "prompt": "A production computer-use tool signs in to an HR portal with a service account. Credentials must be centrally managed and rotated independently of the tool. Where should the sign-in details be configured?",
+    "options": [
+      {
+        "id": "a",
+        "text": "In Stored credentials using Azure Key Vault, referencing secret names"
+      },
+      {
+        "id": "b",
+        "text": "In the instruction text as step 1, so the model types the username and password"
+      },
+      {
+        "id": "c",
+        "text": "In Stored credentials using Power Platform internal storage, which supports independent rotation of secrets"
+      },
+      {
+        "id": "d",
+        "text": "In the access control allow list next to the portal URL"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Anmeldedaten gehören nie in den Anweisungstext (sichtbar in Logs und Testausgaben), sondern in Stored credentials. Für Produktion mit zentraler Verwaltung und unabhängiger Rotation ist Azure Key Vault die bessere Wahl; die interne Power-Platform-Ablage braucht keine Vorkonfiguration, eignet sich aber eher für einfache Fälle.",
+    "source": {
+      "title": "Configure computer use as an agent tool",
+      "url": "https://learn.microsoft.com/en-us/training/modules/automate-desktop-web-tasks-computer-use-copilot-studio/4-configure-computer-use",
+      "quote": "Azure Key Vault — The better choice for production scenarios where credentials need central management and independent rotation."
+    }
+  },
+  {
+    "id": "ab620-122",
+    "type": "single-choice",
+    "skillArea": "integrate-extend",
+    "topic": "Computer use access control",
+    "difficulty": "medium",
+    "prompt": "You add hr.contoso.com to a computer-use tool's access control allow list. During a run the model opens an unrelated site. What is the actual behavior?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The model can still open the unlisted site, but interacting with it fails"
+      },
+      {
+        "id": "b",
+        "text": "The model is blocked from navigating to any URL that is not on the allow list"
+      },
+      {
+        "id": "c",
+        "text": "The run pauses and sends a review request to the reviewer's Outlook mailbox"
+      },
+      {
+        "id": "d",
+        "text": "The allow list applies to desktop applications, so websites are unaffected"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Die Zugriffskontrolle beschränkt die Interaktion, nicht die Navigation: Das Modell kann eine nicht gelistete Seite öffnen, jede Interaktion damit schlägt aber fehl. Wildcards decken Subdomains ab (*.contoso.com). Die Allowlist gehört zu jeder Tool-Konfiguration.",
+    "source": {
+      "title": "Configure computer use as an agent tool",
+      "url": "https://learn.microsoft.com/en-us/training/modules/automate-desktop-web-tasks-computer-use-copilot-studio/4-configure-computer-use",
+      "quote": "Note that access control restricts interaction, not navigation: the model can still open an unlisted site, but any attempt to interact with it fails."
+    }
+  },
+  {
+    "id": "ab620-123",
+    "type": "single-choice",
+    "skillArea": "plan-configure",
+    "topic": "Computer use cost",
+    "difficulty": "easy",
+    "prompt": "A computer-use task takes four steps per run. How many Copilot Credits does one run consume with a standard model versus a premium model?",
+    "options": [
+      {
+        "id": "a",
+        "text": "20 credits with a standard model and 60 with a premium model"
+      },
+      {
+        "id": "b",
+        "text": "4 credits with a standard model and 12 with a premium model"
+      },
+      {
+        "id": "c",
+        "text": "5 credits with a standard model and 15 with a premium model"
+      },
+      {
+        "id": "d",
+        "text": "40 credits with a standard model and 120 with a premium model"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Jeder Schritt kostet 5 Credits bei Standardmodellen und 15 bei Premiummodellen; ein Vier-Schritt-Task also 20 bzw. 60 Credits. Die Modellwahl ist damit auch eine Kostenentscheidung, die sich bei hohem Volumen deutlich summiert.",
+    "source": {
+      "title": "Configure computer use as an agent tool",
+      "url": "https://learn.microsoft.com/en-us/training/modules/automate-desktop-web-tasks-computer-use-copilot-studio/4-configure-computer-use",
+      "quote": "A 4-step task costs 20 credits at standard rates, or 60 at premium rates."
+    }
+  },
+  {
+    "id": "ab620-124",
+    "type": "single-choice",
+    "skillArea": "test-manage",
+    "topic": "Computer use monitoring",
+    "difficulty": "medium",
+    "prompt": "A computer-use run failed to save an attendance record. You want to see the screenshot and the screen coordinates of the exact element the model selected at the failing step. Where do you look?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The Activity section of the activity map side panel, with coordinates and a screenshot per step"
+      },
+      {
+        "id": "b",
+        "text": "The Analytics tab of the agent, which shows the failure rate, action count, and average duration per run"
+      },
+      {
+        "id": "c",
+        "text": "The Summary section of the side panel, which lists total duration, action count, and machine name"
+      },
+      {
+        "id": "d",
+        "text": "The Purview compliance portal under the CUAOperation activity term"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Im Seitenpanel der Activity Map protokolliert der Bereich Activity jede Aktion mit Typ, Bildschirmkoordinaten, Nutzerkontext, Zeitstempel und Screenshot – so lässt sich exakt sehen, welches Element getroffen wurde. Session replay zeigt die Screenshotfolge, Summary nur Kennzahlen. Voraussetzung: Store logs in Dataverse (Standard).",
+    "source": {
+      "title": "Monitor and supervise computer use execution",
+      "url": "https://learn.microsoft.com/en-us/training/modules/automate-desktop-web-tasks-computer-use-copilot-studio/5-monitor-computer-use",
+      "quote": "If the model selected the wrong element, the coordinates and screenshot pinpoint exactly what it targeted."
+    }
+  },
+  {
+    "id": "ab620-125",
+    "type": "single-choice",
+    "skillArea": "test-manage",
+    "topic": "Computer use logging",
+    "difficulty": "hard",
+    "prompt": "HR compliance requires computer-use run logs to be kept for a year, and audit events must appear in Microsoft Purview. What must an administrator configure before go-live?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Adjust the Dataverse log retention and enable Send audit logs to Microsoft Purview"
+      },
+      {
+        "id": "b",
+        "text": "Set verbosity to Minimal so logs are small enough to retain, and export the session logs manually each week"
+      },
+      {
+        "id": "c",
+        "text": "Disable Store logs in Dataverse so logs are written directly to Purview instead"
+      },
+      {
+        "id": "d",
+        "text": "Enable human supervision, which archives every reviewed step in Purview automatically"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Die Standardaufbewahrung der Dataverse-Logs beträgt sieben Tage (0 oder -1 = unbegrenzt) und sollte vor dem Go-live an die Richtlinie angepasst werden. „Send audit logs to Microsoft Purview“ ist eine unabhängige Option (Aktivität CUAOperation). Verbosity (All data / Data without screenshots / Minimal) beeinflusst den Speicherbedarf.",
+    "source": {
+      "title": "Monitor and supervise computer use execution",
+      "url": "https://learn.microsoft.com/en-us/training/modules/automate-desktop-web-tasks-computer-use-copilot-studio/5-monitor-computer-use",
+      "quote": "The default log retention period is seven days (10,080 minutes). For HR or compliance-sensitive scenarios, seven days may not meet your organization's data retention policy. Configure the retention period before go-live rather than after an incident."
+    }
+  },
+  {
+    "id": "ab620-126",
+    "type": "yes-no",
+    "skillArea": "test-manage",
+    "topic": "Human supervision",
+    "difficulty": "medium",
+    "prompt": "A computer-use tool is configured with a reviewer for human supervision. Evaluate each statement.",
+    "statements": [
+      {
+        "id": "s1",
+        "text": "Review requests are sent by Outlook email and can be answered inline in the activity map.",
+        "correct": true
+      },
+      {
+        "id": "s2",
+        "text": "Human supervision guarantees the agent pauses before every risky step.",
+        "correct": false
+      },
+      {
+        "id": "s3",
+        "text": "Reviewers should never submit passwords or credentials in response to a review request.",
+        "correct": true
+      },
+      {
+        "id": "s4",
+        "text": "Frequent review requests are a sign that the instructions are likely ambiguous.",
+        "correct": true
+      }
+    ],
+    "explanation": "Review-Anfragen kommen per Outlook-Mail (mit Link zur Activity Map) und lassen sich dort inline beantworten. Sie beruhen auf probabilistischem Modellverhalten – kein Fail-safe, keine Garantie. Sensible Daten gehören nie in Antworten. Häufige Anfragen sind ein Designsignal für unklare Anweisungen oder unerwartete UI-Zustände.",
+    "source": {
+      "title": "Monitor and supervise computer use execution",
+      "url": "https://learn.microsoft.com/en-us/training/modules/automate-desktop-web-tasks-computer-use-copilot-studio/5-monitor-computer-use",
+      "quote": "If review requests occur frequently, treat that as a design signal: the instructions are likely ambiguous, or the target system is presenting unexpected UI states."
+    }
+  }
+]

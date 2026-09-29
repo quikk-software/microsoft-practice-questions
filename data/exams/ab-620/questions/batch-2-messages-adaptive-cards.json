@@ -1,0 +1,434 @@
+[
+  {
+    "id": "ab620-021",
+    "type": "single-choice",
+    "skillArea": "plan-configure",
+    "topic": "Message node media",
+    "difficulty": "easy",
+    "prompt": "An HR agent's message node includes a process diagram, but employees only see a broken image in the chat. The diagram is stored in a SharePoint library that requires sign-in. What is the most likely cause?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The image is hosted behind authentication rather than at a public URL"
+      },
+      {
+        "id": "b",
+        "text": "Images must be embedded through an Adaptive Card, not the message node"
+      },
+      {
+        "id": "c",
+        "text": "The message node displays media when at least two cards form a carousel"
+      },
+      {
+        "id": "d",
+        "text": "The image title was left empty, so the channel suppresses the media card"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Bilder und Videos im Message-Knoten müssen unter einer öffentlich erreichbaren URL liegen; Dateien auf internen Servern oder hinter Authentifizierung kann der Agent nicht laden. Lösung: anonyme Freigabe in SharePoint oder Azure Blob Storage mit öffentlichem Lesezugriff.",
+    "source": {
+      "title": "Configure message formatting in agent topics",
+      "url": "https://learn.microsoft.com/en-us/training/modules/deliver-rich-agent-responses-adaptive-cards-copilot-studio/2-configure-message-formatting",
+      "quote": "Images and videos must be hosted at publicly accessible URLs. The agent can't reach files stored on internal servers or behind authentication."
+    }
+  },
+  {
+    "id": "ab620-022",
+    "type": "single-choice",
+    "skillArea": "plan-configure",
+    "topic": "Quick replies vs Question node",
+    "difficulty": "medium",
+    "prompt": "A topic must not continue until the employee has chosen one of three leave types, but the maker added the options as quick replies below a message node. Employees keep typing free text and the topic proceeds with no selection. What should the maker change?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Use a Question node with multiple-choice options so the topic cannot advance without a choice"
+      },
+      {
+        "id": "b",
+        "text": "Add a message variation per leave type so the options repeat"
+      },
+      {
+        "id": "c",
+        "text": "Convert the quick replies to Send a hidden message type so the selection is recorded automatically"
+      },
+      {
+        "id": "d",
+        "text": "Move the quick replies into an informational Adaptive Card"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Quick Replies sind Vorschläge, keine Pflicht – Nutzer können sie ignorieren und frei tippen. Der Question-Knoten erzwingt eine Auswahl und setzt die Konversation erst fort, wenn eine erkannte Option gewählt oder eingegeben wurde. Merksatz: Quick Replies zum Führen, Question-Knoten zum Einschränken.",
+    "source": {
+      "title": "Configure message formatting in agent topics",
+      "url": "https://learn.microsoft.com/en-us/training/modules/deliver-rich-agent-responses-adaptive-cards-copilot-studio/2-configure-message-formatting",
+      "quote": "The Question node enforces a choice—it doesn't advance the conversation until the employee selects or enters a recognized option. Use quick replies when you want to guide; use a Question node when you need to constrain."
+    }
+  },
+  {
+    "id": "ab620-023",
+    "type": "single-choice",
+    "skillArea": "plan-configure",
+    "topic": "Adaptive Card layouts",
+    "difficulty": "easy",
+    "prompt": "A message node returns three leave-balance cards (annual, sick, parental). Employees need to compare all three balances at once without navigating card by card. Which layout should you select?",
+    "options": [
+      {
+        "id": "a",
+        "text": "List, so the cards stack vertically and all balances are visible by scrolling"
+      },
+      {
+        "id": "b",
+        "text": "Carousel, so the cards sit side by side and are browsed with navigation arrows"
+      },
+      {
+        "id": "c",
+        "text": "Container with emphasis style, so the three balances render inside one card"
+      },
+      {
+        "id": "d",
+        "text": "Three separate message nodes, one per balance, chained with Go to step nodes"
+      }
+    ],
+    "correct": "a",
+    "explanation": "List stapelt alle Karten vertikal und eignet sich, wenn Nutzer alle Optionen gleichzeitig vergleichen sollen oder nur zwei bis drei Karten vorliegen. Carousel zeigt eine Karte nach der anderen – passend, wenn jede Karte ein eigenständiges Element ist, auf das man einzeln reagiert (z. B. Produktergebnisse).",
+    "source": {
+      "title": "Design informational Adaptive Cards for agent responses",
+      "url": "https://learn.microsoft.com/en-us/training/modules/deliver-rich-agent-responses-adaptive-cards-copilot-studio/3-design-informational-adaptive-cards",
+      "quote": "This layout is better when the user needs to compare all options at once, or when the response includes only two or three cards."
+    }
+  },
+  {
+    "id": "ab620-024",
+    "type": "single-choice",
+    "skillArea": "plan-configure",
+    "topic": "Adaptive Card data binding",
+    "difficulty": "medium",
+    "prompt": "A leave-balance card must show the remaining days returned by an HTTP request earlier in the topic, formatted with a unit label. What is the recommended way to get that value into the card?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Compute the formatted value into a topic variable earlier and reference it in the TextBlock"
+      },
+      {
+        "id": "b",
+        "text": "Write the formatting expression inline in the card JSON so the transformation happens at render time"
+      },
+      {
+        "id": "c",
+        "text": "Hardcode the current balance in the designer and update the card whenever the balance changes"
+      },
+      {
+        "id": "d",
+        "text": "Bind the raw HTTP response object to the card's data property and let the rendering host format the number"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Empfohlen ist, benötigte Werte früher im Topic in Topic-Variablen zu berechnen und diese in den Textfeldern der Karte zu referenzieren; Copilot Studio ersetzt den Ausdruck beim Rendern. Transformationen sollen nicht inline in der Karte stattfinden, sondern vorab in eine Variable fließen.",
+    "source": {
+      "title": "Design informational Adaptive Cards for agent responses",
+      "url": "https://learn.microsoft.com/en-us/training/modules/deliver-rich-agent-responses-adaptive-cards-copilot-studio/3-design-informational-adaptive-cards",
+      "quote": "If you need to manipulate a value before displaying it, such as formatting a number with a unit label, compute the result into a topic variable earlier in the topic flow and reference that variable in the card rather than attempting the transformation inline."
+    }
+  },
+  {
+    "id": "ab620-025",
+    "type": "single-choice",
+    "skillArea": "plan-configure",
+    "topic": "Ask with Adaptive Card",
+    "difficulty": "medium",
+    "prompt": "A leave request needs leave type, start date, end date, and reason. Collecting them with four Question nodes makes the conversation feel slow. The dates must be mandatory. Which design meets the requirement in one step?",
+    "options": [
+      {
+        "id": "a",
+        "text": "An Ask with Adaptive Card node with a ChoiceSet, two required Date inputs, and a multiline Text input"
+      },
+      {
+        "id": "b",
+        "text": "A Send a message node with an informational Adaptive Card that lists the four fields for the user to type back"
+      },
+      {
+        "id": "c",
+        "text": "A Question node with entity extraction that parses all four values from a single free-text answer"
+      },
+      {
+        "id": "d",
+        "text": "A message node with four quick replies, one per field, each opening a follow-up topic that stores the value"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Der Ask-with-Adaptive-Card-Knoten präsentiert alle Felder in einer Karte mit Eingabeelementen; beim Absenden landen alle Werte in Topic-Variablen – vier Turns werden zu einem. Pflichtfelder werden in den Eigenschaften als Required markiert. Informationskarten sammeln keine Eingaben.",
+    "source": {
+      "title": "Collect user input with interactive Adaptive Cards",
+      "url": "https://learn.microsoft.com/en-us/training/modules/deliver-rich-agent-responses-adaptive-cards-copilot-studio/4-collect-input-adaptive-cards",
+      "quote": "The employee sees a single card with all the fields at once, fills them in, and submits. The agent receives all values in one response, reducing four exchanges to one."
+    }
+  },
+  {
+    "id": "ab620-026",
+    "type": "single-choice",
+    "skillArea": "plan-configure",
+    "topic": "Adaptive Card output variables",
+    "difficulty": "easy",
+    "prompt": "After an Ask with Adaptive Card node, the condition that checks the leave type references Topic.input3, and makers keep mixing up which variable holds which field. What should you change in the card?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Give each input element a descriptive camelCase ID such as leaveType"
+      },
+      {
+        "id": "b",
+        "text": "Rename the output variables in the Variables pane after one submission"
+      },
+      {
+        "id": "c",
+        "text": "Add a Set variable node after the card that copies Topic.input3 into a global variable"
+      },
+      {
+        "id": "d",
+        "text": "Add a label property to each input element in the data payload"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Copilot Studio erzeugt je Eingabeelement automatisch eine Topic-Variable auf Basis der ID. Standard-IDs wie input1 ergeben Topic.input1 – korrekt, aber schwer zuzuordnen. Beschreibende camelCase-IDs (leaveType, startDate …) machen die Variablen in Bedingungen und Nachrichten eindeutig.",
+    "source": {
+      "title": "Collect user input with interactive Adaptive Cards",
+      "url": "https://learn.microsoft.com/en-us/training/modules/deliver-rich-agent-responses-adaptive-cards-copilot-studio/4-collect-input-adaptive-cards",
+      "quote": "Once a user submits the card, Copilot Studio automatically creates a topic variable for each input element based on its id."
+    }
+  },
+  {
+    "id": "ab620-027",
+    "type": "single-choice",
+    "skillArea": "plan-configure",
+    "topic": "Unsubmitted Adaptive Cards",
+    "difficulty": "medium",
+    "prompt": "Some employees close the leave-request card without submitting. Downstream nodes then fail with hard-to-trace errors because they expect populated variables. What should you add directly after the Ask with Adaptive Card node?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A Condition node that checks whether the required variables are blank"
+      },
+      {
+        "id": "b",
+        "text": "A Set variable node that assigns default values to every card variable"
+      },
+      {
+        "id": "c",
+        "text": "An Action.Execute button on the card so the payload is sent even when the card is dismissed"
+      },
+      {
+        "id": "d",
+        "text": "A second Ask with Adaptive Card node that re-displays the form"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Bei einer nicht abgesendeten Karte bleiben die Ausgabevariablen leer. Der Lernpfad verlangt deshalb unmittelbar nach dem Knoten einen Condition-Knoten, der mindestens das Pflichtfeld auf Leerwert prüft und in einen Behandlungszweig (z. B. Formular erneut anbieten) verzweigt, statt in Folgeknoten zu laufen.",
+    "source": {
+      "title": "Collect user input with interactive Adaptive Cards",
+      "url": "https://learn.microsoft.com/en-us/training/modules/deliver-rich-agent-responses-adaptive-cards-copilot-studio/4-collect-input-adaptive-cards",
+      "quote": "Always add a Condition node immediately after an Ask with Adaptive Card node to check whether the required variables contain values."
+    }
+  },
+  {
+    "id": "ab620-028",
+    "type": "single-choice",
+    "skillArea": "plan-configure",
+    "topic": "Dynamic ChoiceSet",
+    "difficulty": "hard",
+    "prompt": "Leave categories differ by region and are retrieved at runtime by an HTTP request into Topic.AvailableLeaveTypes. The Input.ChoiceSet on the leave-request card must show these categories. What must be true for the binding \"choices\": \"=Topic.AvailableLeaveTypes\" to work?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The variable must be a table with title and value columns"
+      },
+      {
+        "id": "b",
+        "text": "The variable must be a comma-separated text string of labels"
+      },
+      {
+        "id": "c",
+        "text": "The variable must be a record with Content and Title fields"
+      },
+      {
+        "id": "d",
+        "text": "The variable must be a global variable rather than a topic variable"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Für eine dynamische Auswahlliste wird das choices-Array in der Karten-JSON durch einen Power-Fx-Ausdruck ersetzt; die gebundene Variable muss eine Tabelle mit den Spalten title und value sein – das Format, das Input.ChoiceSet erwartet. Content/Title gehören zum Custom-data-Format des Generative-answers-Knotens.",
+    "source": {
+      "title": "Collect user input with interactive Adaptive Cards",
+      "url": "https://learn.microsoft.com/en-us/training/modules/deliver-rich-agent-responses-adaptive-cards-copilot-studio/4-collect-input-adaptive-cards",
+      "quote": "Topic.AvailableLeaveTypes must be a table with title and value columns—the format that Input.ChoiceSet expects."
+    }
+  },
+  {
+    "id": "ab620-029",
+    "type": "single-choice",
+    "skillArea": "plan-configure",
+    "topic": "Adaptive Card schema versions",
+    "difficulty": "medium",
+    "prompt": "A card renders perfectly in the Copilot Studio test pane but disappears or falls back to plain text when the published agent is opened in Microsoft Teams. The card JSON declares version 1.6. What is the most likely explanation?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Teams supports Adaptive Card schema only up to v1.5, so v1.6 elements fail or the card falls back to text"
+      },
+      {
+        "id": "b",
+        "text": "The card was built in the built-in designer, which outputs a JSON structure that the Teams client cannot parse"
+      },
+      {
+        "id": "c",
+        "text": "Teams requires cards to be published through a separate Teams app before they render"
+      },
+      {
+        "id": "d",
+        "text": "The test pane caches cards, so the Teams client is still showing an older version that was never published"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Teams und Live Chat unterstützen maximal Schema v1.5, der Web-Kanal v1.6. Der Test-Bereich rendert mit der Web-Engine (v1.6) und ist damit kein Beleg für Teams. Elemente einer neueren Version werden stillschweigend ignoriert oder die ganze Karte fällt auf Text zurück; der Designer warnt nicht.",
+    "source": {
+      "title": "Apply channel-specific considerations for Adaptive Cards",
+      "url": "https://learn.microsoft.com/en-us/training/modules/deliver-rich-agent-responses-adaptive-cards-copilot-studio/5-adaptive-cards-channel-considerations",
+      "quote": "The test pane in Copilot Studio renders Adaptive Cards using the web channel engine, which supports schema version 1.6. This makes it a reasonable proxy for web channel behavior, but not for Teams or Live Chat, where only v1.5 is supported."
+    }
+  },
+  {
+    "id": "ab620-030",
+    "type": "single-choice",
+    "skillArea": "plan-configure",
+    "topic": "Cross-channel card design",
+    "difficulty": "medium",
+    "prompt": "An HR agent is deployed to Microsoft Teams and to an internal web portal. The team wants predictable rendering with minimal maintenance. Which design strategy should they adopt?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Design every card to schema v1.5 and avoid v1.6-only elements"
+      },
+      {
+        "id": "b",
+        "text": "Design cards to v1.6 and use topic conditions to route each channel to its own card variant"
+      },
+      {
+        "id": "c",
+        "text": "Design cards to v1.6 and rely on the test pane to confirm rendering before publishing"
+      },
+      {
+        "id": "d",
+        "text": "Replace Action.Submit with Action.Execute so both channels handle button actions identically"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Option 1 (alle Karten auf v1.5) ist die empfohlene Strategie, sobald Teams oder Live Chat Teil der Zielgruppe sind: Sie eliminiert eine ganze Klasse von Rendering-Fehlern bei geringer Komplexität. Kanal-Erkennung mit zwei Kartenvarianten verdoppelt den Pflegeaufwand. Der Web-Kanal unterstützt Action.Execute nicht – Action.Submit ist die sichere Wahl.",
+    "source": {
+      "title": "Apply channel-specific considerations for Adaptive Cards",
+      "url": "https://learn.microsoft.com/en-us/training/modules/deliver-rich-agent-responses-adaptive-cards-copilot-studio/5-adaptive-cards-channel-considerations",
+      "quote": "If your agent is deployed to Microsoft Teams or Live Chat for any part of its audience, design all cards to v1.5. This design choice eliminates an entire category of rendering bugs and is the most common approach in production deployments."
+    }
+  },
+  {
+    "id": "ab620-031",
+    "type": "yes-no",
+    "skillArea": "plan-configure",
+    "topic": "Channel considerations",
+    "difficulty": "medium",
+    "prompt": "An agent that uses Adaptive Cards and quick replies will be published to the web channel and to Microsoft Teams. Evaluate each statement.",
+    "statements": [
+      {
+        "id": "s1",
+        "text": "The web channel does not support Action.Execute, so button actions should use Action.Submit.",
+        "correct": true
+      },
+      {
+        "id": "s2",
+        "text": "Some channels hide quick replies entirely, so a response must not depend on them to advance.",
+        "correct": true
+      },
+      {
+        "id": "s3",
+        "text": "The authoring canvas renders v1.6 cards, so canvas preview is sufficient for Teams validation.",
+        "correct": false
+      },
+      {
+        "id": "s4",
+        "text": "Carousel layouts render identically in every channel.",
+        "correct": false
+      }
+    ],
+    "explanation": "Der Web-Kanal unterstützt Action.Execute nicht. Quick Replies fehlen in manchen Kanälen komplett oder werden gekürzt – die Nachricht braucht einen Textpfad. Der Authoring-Canvas rendert v1.6-Karten gar nicht, nur der Test-Bereich; Teams muss im echten Kanal getestet werden. Carousel-Rendering variiert je Kanal.",
+    "source": {
+      "title": "Apply channel-specific considerations for Adaptive Cards",
+      "url": "https://learn.microsoft.com/en-us/training/modules/deliver-rich-agent-responses-adaptive-cards-copilot-studio/5-adaptive-cards-channel-considerations",
+      "quote": "The web channel has an additional restriction: it doesn't support Action.Execute. If your card uses Action.Execute for button actions, use Action.Submit instead to ensure compatibility on the web channel."
+    }
+  },
+  {
+    "id": "ab620-032",
+    "type": "single-choice",
+    "skillArea": "plan-configure",
+    "topic": "Adaptive Card design principles",
+    "difficulty": "easy",
+    "prompt": "A maker packs twelve data points into a single leave-balance Adaptive Card. Mobile users report the card is unreadable. Which design principle from the learning content addresses this?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Limit each card to three to five data points and align comparable values in columns"
+      },
+      {
+        "id": "b",
+        "text": "Set minHeight on the container so the card expands to fit all twelve data points on the screen"
+      },
+      {
+        "id": "c",
+        "text": "Switch the message node from list to carousel so each data point gets its own slide"
+      },
+      {
+        "id": "d",
+        "text": "Enable wrap on every TextBlock so long values no longer truncate with an ellipsis"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Kernprinzip: drei bis fünf Datenpunkte je Karte, sonst wird sie unlesbar – besonders mobil. ColumnSet ordnet vergleichbare Werte nebeneinander an. Wrap und minHeight sind Feinjustierungen in der JSON, lösen aber die Überladung nicht.",
+    "source": {
+      "title": "Design informational Adaptive Cards for agent responses",
+      "url": "https://learn.microsoft.com/en-us/training/modules/deliver-rich-agent-responses-adaptive-cards-copilot-studio/3-design-informational-adaptive-cards",
+      "quote": "A key design principle: limit each card to three to five data points. A card that tries to show everything becomes unreadable, especially on mobile."
+    }
+  },
+  {
+    "id": "ab620-033",
+    "type": "single-choice",
+    "skillArea": "plan-configure",
+    "topic": "Consecutive Adaptive Cards",
+    "difficulty": "hard",
+    "prompt": "A booking agent sends several Adaptive Cards in one conversation, including retries. Users occasionally press Submit on an earlier card, and the topic processes the wrong response. How should the maker make responses attributable?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Include a unique identifier in each Action.Submit data payload and validate it"
+      },
+      {
+        "id": "b",
+        "text": "Disable message variations so every card carries the same label"
+      },
+      {
+        "id": "c",
+        "text": "Replace Action.Submit with quick replies so only the latest message can advance the topic"
+      },
+      {
+        "id": "d",
+        "text": "Set the schema version to 1.6 so stale submissions are discarded"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Bei aufeinanderfolgenden Karten, Wiederholungen oder Unterbrechungen kann der Nutzer eine frühere Karte absenden. Der empfohlene Weg ist ein eindeutiger Bezeichner (z. B. actionSubmitId) im data-Payload jeder Submit-Aktion, der beim Verarbeiten geprüft wird, damit Agent oder Client wissen, von welcher Karte die Antwort stammt.",
+    "source": {
+      "title": "Collect user input with interactive Adaptive Cards",
+      "url": "https://learn.microsoft.com/en-us/training/modules/deliver-rich-agent-responses-adaptive-cards-copilot-studio/4-collect-input-adaptive-cards",
+      "quote": "To help your agent or custom client distinguish which card and action a response came from, include a unique identifier in each submit action's data payload and validate it when processing the response."
+    }
+  }
+]

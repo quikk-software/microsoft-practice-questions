@@ -1,0 +1,12 @@
+{
+  "learningPaths": [
+    "learn.wwl.design-agent-conversations-responses-topics-copilot-studio",
+    "learn.wwl.design-build-multi-agent-solutions-copilot-studio",
+    "learn.wwl.integrate-agents-enterprise-systems-copilot-studio",
+    "learn.wwl.automate-tasks-workflows-copilot-studio"
+  ],
+  "modules": [
+    "learn.wwl.evaluate-publish-manage-agents-copilot-studio",
+    "learn-bizapps.implement-power-virtual-agents"
+  ]
+}

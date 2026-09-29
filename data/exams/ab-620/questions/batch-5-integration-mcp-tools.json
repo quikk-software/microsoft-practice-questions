@@ -1,0 +1,797 @@
+[
+  {
+    "id": "ab620-073",
+    "type": "single-choice",
+    "skillArea": "plan-configure",
+    "topic": "Action integration patterns",
+    "difficulty": "medium",
+    "prompt": "A team must connect an agent to a proprietary internal API that no other agent will use. There is no connector, and the team wants minimal development effort. Which pattern fits?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A REST API tool created from the API's OpenAPI specification without connector packaging"
+      },
+      {
+        "id": "b",
+        "text": "A custom connector built in the Power Apps maker portal and shared across the environment"
+      },
+      {
+        "id": "c",
+        "text": "An MCP server that the platform team builds to expose the API centrally"
+      },
+      {
+        "id": "d",
+        "text": "An agent flow with HTTP actions that is called from the agent as a tool"
+      }
+    ],
+    "correct": "a",
+    "explanation": "REST-API-Tools bieten den direkten Weg, wenn kein Connector existiert und der Aufwand eines Custom Connectors für einen Einzelfall nicht gerechtfertigt ist. Der Custom Connector lohnt sich erst, wenn mehrere Agenten dieselbe API brauchen; MCP erst, wenn ein zentraler Tool-Server geplant ist.",
+    "source": {
+      "title": "Compare action integration patterns",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-enterprise-integration-strategies-agents-copilot-studio/3-compare-action-integration-patterns",
+      "quote": "If only one agent needs this API and connector packaging hasn't been prioritized, a REST API tool is a reasonable starting point. If multiple agents will need the same API in the future, a custom connector is the better investment."
+    }
+  },
+  {
+    "id": "ab620-074",
+    "type": "single-choice",
+    "skillArea": "plan-configure",
+    "topic": "Action integration patterns",
+    "difficulty": "medium",
+    "prompt": "A REST API tool was built for the loan-origination API. Now a Power Automate flow and a Power App also need the same API. Why is the existing REST API tool insufficient, and what should replace it?",
+    "options": [
+      {
+        "id": "a",
+        "text": "REST API tools are scoped to Copilot Studio; a custom connector is reusable across Power Platform"
+      },
+      {
+        "id": "b",
+        "text": "REST API tools support GET operations; a custom connector adds POST and PATCH support"
+      },
+      {
+        "id": "c",
+        "text": "REST API tools cannot use OAuth 2.0; a custom connector is required for authenticated APIs"
+      },
+      {
+        "id": "d",
+        "text": "REST API tools run in classic orchestration; a custom connector works with generative orchestration"
+      }
+    ],
+    "correct": "a",
+    "explanation": "REST-API-Tools stehen nur innerhalb von Copilot Studio zur Verfügung (über die Tools-Seite auch für andere Agenten), aber nicht als geteilte Ressource für Power Automate, Power Apps oder Logic Apps. Genau diese Wiederverwendbarkeit ist der Vorteil eines Custom Connectors.",
+    "source": {
+      "title": "Compare action integration patterns",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-enterprise-integration-strategies-agents-copilot-studio/3-compare-action-integration-patterns",
+      "quote": "They can be added to multiple agents via the Tools page, but they aren't available as a shared resource for Power Automate flows, Power Apps, or Azure Logic Apps the way custom connectors are."
+    }
+  },
+  {
+    "id": "ab620-075",
+    "type": "single-choice",
+    "skillArea": "plan-configure",
+    "topic": "Computer use vs RPA",
+    "difficulty": "hard",
+    "prompt": "A legacy system has no API. Its user interface is stable and the automation is straightforward and rule-based. Which approach does the learning content recommend evaluating first?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Robotic Process Automation with Power Automate desktop flows"
+      },
+      {
+        "id": "b",
+        "text": "Computer use configured as an agent tool on a Microsoft-hosted machine"
+      },
+      {
+        "id": "c",
+        "text": "A Bot Framework skill that wraps the legacy UI"
+      },
+      {
+        "id": "d",
+        "text": "An HTTP request node that scrapes the legacy web pages"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Vor Computer Use ist RPA über Power Automate Desktop-Flows zu prüfen: RPA ist die bessere Wahl bei stabiler Oberfläche und einfacher, regelbasierter Logik. Computer Use eignet sich, wenn Oberflächen variieren, Entscheidungen vom Bildschirminhalt abhängen oder Selbstkorrektur nötig ist; produktiv braucht es eine eigene (BYO) Maschine.",
+    "source": {
+      "title": "Compare action integration patterns",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-enterprise-integration-strategies-agents-copilot-studio/3-compare-action-integration-patterns",
+      "quote": "RPA is the better choice when the user interface is stable and the automation logic is straightforward and rule-based."
+    }
+  },
+  {
+    "id": "ab620-076",
+    "type": "single-choice",
+    "skillArea": "plan-configure",
+    "topic": "Agent flow licensing",
+    "difficulty": "medium",
+    "prompt": "Finance asks how an agent flow that runs thousands of times per month will be charged compared with the Power Automate cloud flows the team already runs. What should you tell them?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Agent flows consume Copilot Studio credits per action; cloud flows use Power Automate licensing"
+      },
+      {
+        "id": "b",
+        "text": "Agent flows are free within Copilot Studio; cloud flows are billed per run through Azure consumption meters"
+      },
+      {
+        "id": "c",
+        "text": "Both are billed identically through the Power Automate license of the flow owner"
+      },
+      {
+        "id": "d",
+        "text": "Agent flows require a Microsoft 365 Copilot license per user; cloud flows require no license"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Agent Flows werden über Copilot Studio nach Verbrauch (Anzahl ausgeführter Aktionen) abgerechnet und brauchen keine Power-Automate-Lizenz; Cloud-Flows laufen unter Per-User- oder Per-Process-Lizenzen. Das erwartete Volumen gehört deshalb in die Lizenzplanung.",
+    "source": {
+      "title": "Compare action integration patterns",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-enterprise-integration-strategies-agents-copilot-studio/3-compare-action-integration-patterns",
+      "quote": "Agent flows consume Copilot Studio credits based on usage — unlike Power Automate cloud flows, which run under per-user or per-process licensing — so factor expected volume into your licensing plan."
+    }
+  },
+  {
+    "id": "ab620-077",
+    "type": "single-choice",
+    "skillArea": "plan-configure",
+    "topic": "Credential modes and channels",
+    "difficulty": "medium",
+    "prompt": "A connector tool uses maker-provided credentials so all employees share one service account. Publishing the agent to the company's anonymous intranet portal fails. What is the most likely cause?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Agents that use maker-provided credentials publish only to authenticated channels"
+      },
+      {
+        "id": "b",
+        "text": "The intranet portal channel supports only user-provided credentials with single sign-on enabled"
+      },
+      {
+        "id": "c",
+        "text": "The environment's DLP policy blocks the connector on web channels"
+      },
+      {
+        "id": "d",
+        "text": "Maker-provided credentials require the connector to be a premium connector"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Maker-provided credentials setzen einen authentifizierten Kanal voraus; ein Agent mit Maker-Anmeldedaten kann nicht auf anonyme Kanäle veröffentlicht werden. Ist der Agent für einen anonymen Kanal konfiguriert, erscheint die Option in der Tool-Konfiguration gar nicht erst.",
+    "source": {
+      "title": "Authenticate and govern agent integrations",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-enterprise-integration-strategies-agents-copilot-studio/4-authenticate-govern-integrations",
+      "quote": "Maker-provided credentials require the agent to be deployed on an authenticated channel. You can't publish an agent that uses maker credentials to anonymous channels."
+    }
+  },
+  {
+    "id": "ab620-078",
+    "type": "single-choice",
+    "skillArea": "plan-configure",
+    "topic": "Credential modes",
+    "difficulty": "medium",
+    "prompt": "One agent submits IT tickets through a shared service account (employees have no accounts in the ITSM system) and sends Teams notifications that must appear from the individual employee. Which credential configuration is correct?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Maker-provided credentials for the ITSM connector and user-provided credentials for the Teams connector"
+      },
+      {
+        "id": "b",
+        "text": "User-provided credentials for the ITSM connector and maker-provided credentials for the Teams connector"
+      },
+      {
+        "id": "c",
+        "text": "Maker-provided credentials for both connectors, because the agent runs under one identity per conversation"
+      },
+      {
+        "id": "d",
+        "text": "User-provided credentials for both connectors, because Teams deployment requires SSO for every tool"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Beide Modelle können im selben Agenten koexistieren: Das ITSM-System nutzt ein geteiltes Servicekonto ohne Einzellogins → Maker-Anmeldedaten; Teams-Benachrichtigungen sollen von der Person kommen → Nutzer-Anmeldedaten, damit die Aktion an die Identität des Nutzers gebunden bleibt.",
+    "source": {
+      "title": "Authenticate and govern agent integrations",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-enterprise-integration-strategies-agents-copilot-studio/4-authenticate-govern-integrations",
+      "quote": "The Teams connector, by contrast, sends notifications on behalf of the employee. User-provided credentials keep that action tied to the current user's identity, ensuring messages appear to come from them rather than a shared service account."
+    }
+  },
+  {
+    "id": "ab620-079",
+    "type": "single-choice",
+    "skillArea": "plan-configure",
+    "topic": "DLP policies",
+    "difficulty": "medium",
+    "prompt": "A maker validated an integration in a developer environment. In production, adding the same premium connector fails immediately with a policy error. What explains this, and what should the maker do?",
+    "options": [
+      {
+        "id": "a",
+        "text": "DLP is enforced per environment; have the admin reclassify the connector or pick another pattern"
+      },
+      {
+        "id": "b",
+        "text": "Premium connectors need a production license key from the Copilot Studio admin center"
+      },
+      {
+        "id": "c",
+        "text": "The connection was not shared with Can use + share permission; share it from the developer environment"
+      },
+      {
+        "id": "d",
+        "text": "Production environments require maker-provided credentials; switch the connector's credential mode"
+      }
+    ],
+    "correct": "a",
+    "explanation": "DLP-Richtlinien klassifizieren Connectors je Umgebung als Business, Non-business oder Blocked und werden in Copilot Studio sofort durchgesetzt. Ein in der Entwicklungsumgebung erlaubter Connector kann in Produktion blockiert sein. Lösung: Admin zur Neuklassifizierung einbinden oder ein anderes Muster (z. B. REST-API-Tool) prüfen – idealerweise schon zur Designzeit.",
+    "source": {
+      "title": "Authenticate and govern agent integrations",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-enterprise-integration-strategies-agents-copilot-studio/4-authenticate-govern-integrations",
+      "quote": "When a needed connector is blocked, the maker needs to work with their admin to reclassify it under the appropriate data group, or evaluate an alternative pattern."
+    }
+  },
+  {
+    "id": "ab620-080",
+    "type": "yes-no",
+    "skillArea": "plan-configure",
+    "topic": "DLP data groups",
+    "difficulty": "medium",
+    "prompt": "Your Power Platform admin manages DLP policies for the environment that hosts your agents. Evaluate each statement.",
+    "statements": [
+      {
+        "id": "s1",
+        "text": "Connectors classified as Blocked cannot be used by any agent in that environment.",
+        "correct": true
+      },
+      {
+        "id": "s2",
+        "text": "An agent may combine Business and Non-business connectors in the same solution.",
+        "correct": false
+      },
+      {
+        "id": "s3",
+        "text": "With Control maker-provided credentials enforced, every tool connection must be authenticated by the end user at runtime.",
+        "correct": true
+      },
+      {
+        "id": "s4",
+        "text": "DLP violations are detected only when the agent is published, not while editing.",
+        "correct": false
+      }
+    ],
+    "explanation": "DLP-Gruppen: Blocked ist nirgends nutzbar; Business und Non-business dürfen nicht kombiniert werden. Die Durchsetzung erfolgt in Echtzeit beim Hinzufügen eines Connectors. Der zweite Hebel „Control maker-provided credentials“ verbietet Maker-Anmeldedaten, sodass Tools nur innerhalb der Rechte des jeweiligen Nutzers agieren.",
+    "source": {
+      "title": "Authenticate and govern agent integrations",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-enterprise-integration-strategies-agents-copilot-studio/4-authenticate-govern-integrations",
+      "quote": "Connectors classified as Blocked can't be used by any agent in that environment. Business and Non-business connectors can each be used individually, but they can't be combined — an agent can't use connectors from both groups together."
+    }
+  },
+  {
+    "id": "ab620-081",
+    "type": "single-choice",
+    "skillArea": "plan-configure",
+    "topic": "Teams SSO limitation",
+    "difficulty": "hard",
+    "prompt": "An agent deployed to Microsoft Teams uses custom Active Directory authentication and several connector tools. Users complain that they must sign in to each connector even though SSO works in the chat. What should the design have accounted for?",
+    "options": [
+      {
+        "id": "a",
+        "text": "With custom AD authentication in Teams, SSO is not supported for connectors"
+      },
+      {
+        "id": "b",
+        "text": "Teams requires maker-provided credentials for connectors, otherwise sign-in prompts appear"
+      },
+      {
+        "id": "c",
+        "text": "Connectors in Teams need the ExternalItem.Read.All scope before SSO can apply to them"
+      },
+      {
+        "id": "d",
+        "text": "Teams caches connector tokens for premium connectors; standard connectors prompt each time"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Die Kombination aus benutzerdefinierter AD-Authentifizierung und dem Teams-Kanal unterstützt kein SSO für Connectors: Nutzer melden sich bei jedem Connector beim ersten Aufruf manuell an, auch wenn SSO im Chat sonst funktioniert. Das ist bei der Planung einzukalkulieren und den Nutzern zu kommunizieren.",
+    "source": {
+      "title": "Configure authentication for connector tools",
+      "url": "https://learn.microsoft.com/en-us/training/modules/take-action-external-systems-connector-rest-api-tools-copilot-studio/4-configure-connector-authentication",
+      "quote": "When an agent is deployed to Microsoft Teams and uses custom Active Directory (AD) authentication, single sign-on (SSO) isn't supported for connector tools in that configuration."
+    }
+  },
+  {
+    "id": "ab620-082",
+    "type": "single-choice",
+    "skillArea": "integrate-extend",
+    "topic": "MCP fundamentals",
+    "difficulty": "medium",
+    "prompt": "A platform team wants tool definitions for five backend systems to be maintained centrally so that any change is reflected in every consuming agent without republishing them. Which integration approach delivers this?",
+    "options": [
+      {
+        "id": "a",
+        "text": "An MCP server owned by the platform team, to which each agent connects"
+      },
+      {
+        "id": "b",
+        "text": "A custom connector per backend system, shared to all makers with Can edit"
+      },
+      {
+        "id": "c",
+        "text": "REST API tools stored on the environment-level Tools page"
+      },
+      {
+        "id": "d",
+        "text": "A shared agent flow that wraps all five systems and returns a combined result"
+      }
+    ],
+    "correct": "a",
+    "explanation": "MCP standardisiert, wie Tools beschrieben, entdeckt und aufgerufen werden. Der Server veröffentlicht seine Fähigkeiten einmal; Änderungen an Tools oder Ressourcen propagieren automatisch zu allen verbundenen Agenten – ohne Anpassung oder Neuveröffentlichung je Agent. Connectors und REST-Tools müssen je Agent gepflegt werden.",
+    "source": {
+      "title": "Understand MCP and its role in Copilot Studio integration",
+      "url": "https://learn.microsoft.com/en-us/training/modules/integrate-agents-external-systems-mcp-copilot-studio/2-understand-mcp-integration",
+      "quote": "When the MCP server owner updates a tool or resource, such as changing a description, adding a parameter, or deprecating a function, Copilot Studio reflects those changes automatically across every connected agent. No per-agent updates or republication required."
+    }
+  },
+  {
+    "id": "ab620-083",
+    "type": "single-choice",
+    "skillArea": "integrate-extend",
+    "topic": "MCP constraints",
+    "difficulty": "hard",
+    "prompt": "A topic must call a backend system at a fixed point in a scripted conversation, with deterministic control regardless of phrasing. The backend is exposed only through an MCP server. What is the constraint, and what should you do?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Topics cannot call MCP servers; use a connector or REST API tool instead"
+      },
+      {
+        "id": "b",
+        "text": "MCP tools need classic orchestration; switch the agent to classic mode"
+      },
+      {
+        "id": "c",
+        "text": "MCP tool descriptions must be rewritten before a topic can reference them"
+      },
+      {
+        "id": "d",
+        "text": "MCP servers require SSE transport for topic calls; ask the owner to enable SSE"
+      }
+    ],
+    "correct": "a",
+    "explanation": "MCP-Tools werden ausschließlich über generative Orchestrierung aufgerufen; Topics können MCP-Server nicht direkt ansprechen. Für deterministische, topic-gesteuerte Aufrufe sind Connector- oder REST-API-Tools die richtige Wahl. Klassischer Modus unterstützt MCP nicht; SSE ist veraltet.",
+    "source": {
+      "title": "Understand MCP and its role in Copilot Studio integration",
+      "url": "https://learn.microsoft.com/en-us/training/modules/integrate-agents-external-systems-mcp-copilot-studio/2-understand-mcp-integration",
+      "quote": "MCP tools are invoked exclusively through generative orchestration. Topics can't call MCP servers directly."
+    }
+  },
+  {
+    "id": "ab620-084",
+    "type": "single-choice",
+    "skillArea": "integrate-extend",
+    "topic": "MCP tool descriptions",
+    "difficulty": "medium",
+    "prompt": "After connecting an MCP server, the orchestrator frequently picks the wrong tool because one tool is described only as \"performs a verification.\" What is the only way to fix this?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Ask the MCP server owner to improve the description on the server side"
+      },
+      {
+        "id": "b",
+        "text": "Edit the tool description in the server's Tools section in Copilot Studio"
+      },
+      {
+        "id": "c",
+        "text": "Add a topic that overrides the tool description with a trigger phrase"
+      },
+      {
+        "id": "d",
+        "text": "Rename the server connection so the orchestrator ignores the vague tool"
+      }
+    ],
+    "correct": "a",
+    "explanation": "MCP-Tool-Beschreibungen werden auf dem Server definiert und sind in Copilot Studio schreibgeschützt; es gibt keine Möglichkeit, sie zu überschreiben oder zu ergänzen. Deshalb gehört die Qualität der Beschreibungen zur Bewertung eines MCP-Servers vor der Anbindung.",
+    "source": {
+      "title": "Enable and manage MCP tools on an agent",
+      "url": "https://learn.microsoft.com/en-us/training/modules/integrate-agents-external-systems-mcp-copilot-studio/5-enable-manage-mcp-tools",
+      "quote": "If a description is insufficient, the only remediation path is to work with the MCP server owner to update it on the server side. There's no way to override or supplement tool descriptions within Copilot Studio."
+    }
+  },
+  {
+    "id": "ab620-085",
+    "type": "single-choice",
+    "skillArea": "integrate-extend",
+    "topic": "MCP transport",
+    "difficulty": "easy",
+    "prompt": "You enter the URL of an MCP server that was deployed in early 2025 and the connection fails. The server owner confirms it uses Server-Sent Events transport. What is required?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The server must migrate to Streamable HTTP before Copilot Studio can connect"
+      },
+      {
+        "id": "b",
+        "text": "The agent must switch to classic orchestration, which still supports the SSE transport type"
+      },
+      {
+        "id": "c",
+        "text": "The connection must use OAuth 2.0 Manual with an explicit refresh URL"
+      },
+      {
+        "id": "d",
+        "text": "The server description must be shortened so the discovery request succeeds"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Copilot Studio unterstützt für MCP nur den Transport Streamable HTTP; SSE wird seit August 2025 nicht mehr unterstützt. Ältere Server müssen zuerst migriert werden.",
+    "source": {
+      "title": "Connect an agent to an existing MCP server",
+      "url": "https://learn.microsoft.com/en-us/training/modules/integrate-agents-external-systems-mcp-copilot-studio/3-connect-mcp-server",
+      "quote": "If the server still uses SSE transport, the connection won't succeed — the server must migrate to Streamable HTTP first."
+    }
+  },
+  {
+    "id": "ab620-086",
+    "type": "single-choice",
+    "skillArea": "integrate-extend",
+    "topic": "MCP server description",
+    "difficulty": "medium",
+    "prompt": "In the MCP onboarding wizard, which field does the orchestrator read at runtime to decide whether the server is relevant to a user's request, and how should it be written?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Server description, written as a routing rule naming systems and request types"
+      },
+      {
+        "id": "b",
+        "text": "Server name, written as a short label that appears in the Tools list for makers and end users"
+      },
+      {
+        "id": "c",
+        "text": "Server URL, because the orchestrator infers the domain from the endpoint path"
+      },
+      {
+        "id": "d",
+        "text": "Parameter name, because it tells the orchestrator which header carries the intent"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Der Servername ist nur ein Label für Maker. Die Serverbeschreibung liest der Orchestrator zur Laufzeit; weil Tool-Beschreibungen vom Server vorgegeben sind, ist sie das primäre Routing-Signal für diesen Server – konkret formulieren, was der Server bereitstellt und wann er aufzurufen ist.",
+    "source": {
+      "title": "Connect an agent to an existing MCP server",
+      "url": "https://learn.microsoft.com/en-us/training/modules/integrate-agents-external-systems-mcp-copilot-studio/3-connect-mcp-server",
+      "quote": "Because tool descriptions are set on the server and can't be changed in Copilot Studio, the server description you write here becomes the orchestrator's primary signal for this server. Write it as a routing rule, not a label."
+    }
+  },
+  {
+    "id": "ab620-087",
+    "type": "single-choice",
+    "skillArea": "integrate-extend",
+    "topic": "MCP authentication",
+    "difficulty": "medium",
+    "prompt": "An MCP server requires an API key in a header named x-cs-apikey. Per-user credential scoping is acceptable. What does the maker configure, and where does the key value come from?",
+    "options": [
+      {
+        "id": "a",
+        "text": "API key with Type Header and Parameter name x-cs-apikey; users supply their own key"
+      },
+      {
+        "id": "b",
+        "text": "API key with the maker's key value stored in the connection so all users share one credential"
+      },
+      {
+        "id": "c",
+        "text": "OAuth 2.0 Manual with the key entered as the client secret"
+      },
+      {
+        "id": "d",
+        "text": "None, with the key added to the server URL as a query string"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Bei API key legen Type (Header/Query) und Parameter name nur fest, wie der Schlüssel übermittelt wird; der Wert selbst ist nicht Teil der Konfiguration. Nutzer geben beim ersten Aufruf ihren eigenen Schlüssel an, der für die Sitzung wiederverwendet wird – Anmeldedaten sind nutzerbezogen, nicht eingebettet.",
+    "source": {
+      "title": "Configure authentication for MCP server connections",
+      "url": "https://learn.microsoft.com/en-us/training/modules/integrate-agents-external-systems-mcp-copilot-studio/4-configure-mcp-authentication",
+      "quote": "The actual key value is never set by the maker in the connection settings. When users interact with the agent for the first time, they're prompted to provide their own API key."
+    }
+  },
+  {
+    "id": "ab620-088",
+    "type": "ordering",
+    "skillArea": "integrate-extend",
+    "topic": "OAuth 2.0 sub-types for MCP",
+    "difficulty": "hard",
+    "prompt": "Arrange the OAuth 2.0 sub-types for an MCP connection in the order the learning content recommends trying them, from first choice to last resort.",
+    "items": [
+      {
+        "id": "i1",
+        "text": "Dynamic discovery (server supports DCR with a discovery endpoint)"
+      },
+      {
+        "id": "i2",
+        "text": "Dynamic (server supports DCR without a discovery endpoint)"
+      },
+      {
+        "id": "i3",
+        "text": "Manual (identity provider does not support DCR)"
+      }
+    ],
+    "correctOrder": [
+      "i1",
+      "i2",
+      "i3"
+    ],
+    "explanation": "Reihenfolge: Dynamic discovery (Endpunkte und Registrierung automatisch), dann Dynamic (Authorization- und Token-URL manuell, Registrierung automatisch), zuletzt Manual (Client-ID, Secret, alle URLs, Scopes; Callback-URL beim Identitätsanbieter registrieren). Der Sub-Typ ist durch den Server bestimmt, nicht durch Präferenz.",
+    "source": {
+      "title": "Configure authentication for MCP server connections",
+      "url": "https://learn.microsoft.com/en-us/training/modules/integrate-agents-external-systems-mcp-copilot-studio/4-configure-mcp-authentication",
+      "quote": "Start with Dynamic discovery if the server supports DCR with a discovery endpoint."
+    }
+  },
+  {
+    "id": "ab620-089",
+    "type": "single-choice",
+    "skillArea": "integrate-extend",
+    "topic": "MCP tool scoping",
+    "difficulty": "medium",
+    "prompt": "An account-opening agent is connected to an MCP server that exposes 12 tools, but the workflow needs only four. The platform team may publish new tools at any time for unrelated workflows. Which configuration applies least privilege and keeps control over future tools?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Turn Allow all off and enable only the four required tools"
+      },
+      {
+        "id": "b",
+        "text": "Leave Allow all on and add instructions to ignore the other eight tools"
+      },
+      {
+        "id": "c",
+        "text": "Ask the server owner to remove the eight tools from the server"
+      },
+      {
+        "id": "d",
+        "text": "Create a second MCP connection that filters the server to the four tools by description"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Mit Allow all = Off erscheinen einzelne Schalter je Tool; nur die vier benötigten werden aktiviert. Neue Server-Tools bleiben deaktiviert, bis ein Maker sie prüft – volle Kontrolle statt automatischer Erweiterung. Das verkleinert auch den Entscheidungsraum des Orchestrators.",
+    "source": {
+      "title": "Enable and manage MCP tools on an agent",
+      "url": "https://learn.microsoft.com/en-us/training/modules/integrate-agents-external-systems-mcp-copilot-studio/5-enable-manage-mcp-tools",
+      "quote": "New tools appear in the list but remain disabled until a maker explicitly reviews and enables them."
+    }
+  },
+  {
+    "id": "ab620-090",
+    "type": "single-choice",
+    "skillArea": "integrate-extend",
+    "topic": "MCP resources",
+    "difficulty": "hard",
+    "prompt": "A maker sees several resources listed on a connected MCP server and expects the agent to read a policy document resource directly. The agent never accesses it. Why?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Resources are not independently callable; a tool must return them as output"
+      },
+      {
+        "id": "b",
+        "text": "Resources require the Allow all toggle before the orchestrator reads them"
+      },
+      {
+        "id": "c",
+        "text": "Resources are available when the server uses OAuth 2.0 Dynamic discovery"
+      },
+      {
+        "id": "d",
+        "text": "Resources are the MCP prompt component, which Copilot Studio does not support"
+      }
+    ],
+    "correct": "a",
+    "explanation": "MCP-Ressourcen (dateiähnliche Daten) kann der Agent nicht selbst aufrufen. Sie stehen nur zur Verfügung, wenn der Serverbetreiber sie als Ausgabe eines MCP-Tools konfiguriert und das Tool sie in seiner Antwort zurückgibt. Den MCP-Komponententyp „Prompts“ unterstützt Copilot Studio nicht.",
+    "source": {
+      "title": "Enable and manage MCP tools on an agent",
+      "url": "https://learn.microsoft.com/en-us/training/modules/integrate-agents-external-systems-mcp-copilot-studio/5-enable-manage-mcp-tools",
+      "quote": "For the agent to use a resource, the MCP server owner must configure it as an output of one of the MCP tools on the server."
+    }
+  },
+  {
+    "id": "ab620-091",
+    "type": "single-choice",
+    "skillArea": "integrate-extend",
+    "topic": "Work IQ MCP",
+    "difficulty": "medium",
+    "prompt": "An agent should reason over users' recent emails and calendar events without the organization building any server infrastructure. Which option does the learning content describe, and what does it require?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Work IQ MCP servers from the prebuilt catalog, with a Microsoft 365 Copilot license"
+      },
+      {
+        "id": "b",
+        "text": "A custom MCP server over Microsoft Graph, requiring an Azure app registration and Streamable HTTP hosting"
+      },
+      {
+        "id": "c",
+        "text": "The Outlook and Teams prebuilt connectors added as real-time knowledge sources with metadata indexing"
+      },
+      {
+        "id": "d",
+        "text": "A Copilot connector for Exchange configured in the Microsoft 365 admin center"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Work IQ Mail, Calendar und Teams sind von Microsoft veröffentlichte MCP-Server im Katalog: kein eigener Server, nur auswählen und verbinden. Sie sind Preview, brauchen zusätzlich zur Copilot-Studio-Lizenz eine Microsoft-365-Copilot-Lizenz, und der Admin muss die Server im Microsoft 365 admin center freischalten.",
+    "source": {
+      "title": "Understand MCP and its role in Copilot Studio integration",
+      "url": "https://learn.microsoft.com/en-us/training/modules/integrate-agents-external-systems-mcp-copilot-studio/2-understand-mcp-integration",
+      "quote": "A Microsoft 365 Copilot license is required to use them, and your organization's administrator must enable the specific Work IQ MCP servers in the Microsoft 365 admin center before they're available for agents to connect to."
+    }
+  },
+  {
+    "id": "ab620-092",
+    "type": "single-choice",
+    "skillArea": "integrate-extend",
+    "topic": "Connector tools",
+    "difficulty": "easy",
+    "prompt": "A connector tool is the only tool on an agent, its connection is valid, and yet the agent never invokes it when users clearly ask about the connected service. What is the most likely cause?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The tool's description is too generic for generative orchestration to match user requests"
+      },
+      {
+        "id": "b",
+        "text": "The agent must be republished before generative orchestration can see newly added tools"
+      },
+      {
+        "id": "c",
+        "text": "The connector is premium and the plan lacks premium access, so it is silently skipped"
+      },
+      {
+        "id": "d",
+        "text": "Inputs are set to Dynamically fill with AI, which prevents automatic invocation"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Der Orchestrator wählt Tools anhand von Name und Beschreibung. Eine vage Beschreibung („A service for employee data“) ist der häufigste Grund, warum ein Tool nicht aufgerufen wird. Die Beschreibung soll aus Sicht der Nutzeranfrage formuliert sein: was das Tool tut, welches System, welche Daten, Synonyme.",
+    "source": {
+      "title": "Understand connector and REST API tools in Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/training/modules/take-action-external-systems-connector-rest-api-tools-copilot-studio/2-understand-connector-rest-api-tools",
+      "quote": "The most common reason an agent fails to invoke the right tool is a weak or vague description."
+    }
+  },
+  {
+    "id": "ab620-093",
+    "type": "single-choice",
+    "skillArea": "integrate-extend",
+    "topic": "Custom connector sharing",
+    "difficulty": "medium",
+    "prompt": "A colleague built a custom connector for the CMDB in the Power Apps maker portal, but it does not appear in the connector gallery when you add a tool to the agent. What should you check?",
+    "options": [
+      {
+        "id": "a",
+        "text": "That the custom connector has been shared with you with Can view or Can edit permission"
+      },
+      {
+        "id": "b",
+        "text": "That the connector has been converted to a REST API tool on the environment Tools page"
+      },
+      {
+        "id": "c",
+        "text": "That generative orchestration is enabled, because custom connectors need it to be listed"
+      },
+      {
+        "id": "d",
+        "text": "That the connector uses OAuth 2.0, because API-key connectors are hidden from the gallery"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Damit ein Agent einen bestehenden Custom Connector nutzen kann, muss er mit den Makern geteilt sein (Can view oder Can edit) – ein Schritt, der außerhalb des Copilot-Studio-Workflows in make.powerapps.com unter Data > Custom connectors > Invite another user erfolgt und leicht vergessen wird.",
+    "source": {
+      "title": "Add prebuilt and custom connector tools to an agent",
+      "url": "https://learn.microsoft.com/en-us/training/modules/take-action-external-systems-connector-rest-api-tools-copilot-studio/3-add-connector-tools",
+      "quote": "For an agent to use a custom connector, other makers must have the connector shared with them using Can view (or Can edit) permission."
+    }
+  },
+  {
+    "id": "ab620-094",
+    "type": "single-choice",
+    "skillArea": "integrate-extend",
+    "topic": "REST API tool endpoints",
+    "difficulty": "easy",
+    "prompt": "An uploaded OpenAPI specification defines 14 endpoints, but the agent only needs to read time entries and submit time corrections. How should you select endpoints when creating the REST API tool?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Select only the two required endpoints to keep the tool surface minimal"
+      },
+      {
+        "id": "b",
+        "text": "Select all 14 endpoints so the orchestrator can choose the best action"
+      },
+      {
+        "id": "c",
+        "text": "Select the GET endpoints and exclude write operations to stay read-only"
+      },
+      {
+        "id": "d",
+        "text": "Select the endpoints alphabetically first and add the rest after testing"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Nicht alle Endpunkte der Spezifikation müssen Tool-Aktionen werden. Nur die benötigten auszuwählen hält die Tool-Oberfläche klein, verbessert die Orchestrierungsgenauigkeit und begrenzt unbeabsichtigten API-Zugriff. Für jede Aktion sind Name und Beschreibung spezifisch zu formulieren.",
+    "source": {
+      "title": "Add a REST API tool using an OpenAPI specification",
+      "url": "https://learn.microsoft.com/en-us/training/modules/take-action-external-systems-connector-rest-api-tools-copilot-studio/5-add-rest-api-tool",
+      "quote": "Select only the endpoints your agent's use cases require. A smaller, focused tool surface area improves orchestration accuracy and limits unintended access to the API."
+    }
+  },
+  {
+    "id": "ab620-095",
+    "type": "single-choice",
+    "skillArea": "integrate-extend",
+    "topic": "REST API tool specification",
+    "difficulty": "medium",
+    "prompt": "The employee-portal API only publishes an OpenAPI v3 specification in JSON. What happens when you upload it to create a REST API tool?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Copilot Studio converts it to v2 automatically and prepopulates the description"
+      },
+      {
+        "id": "b",
+        "text": "The upload is rejected until the team converts the file to Swagger v2 manually"
+      },
+      {
+        "id": "c",
+        "text": "The upload succeeds, but v3 write operations are dropped and GET endpoints remain"
+      },
+      {
+        "id": "d",
+        "text": "The specification is stored as a custom connector instead, because v3 requires the maker portal"
+      }
+    ],
+    "correct": "a",
+    "explanation": "REST-API-Tools erwarten OpenAPI v2 (Swagger) in JSON; eine v3-Spezifikation wird beim Upload automatisch nach v2 konvertiert. Die Tool-Beschreibung wird aus dem info-Objekt vorbefüllt und sollte danach für die Orchestrierung präzisiert werden.",
+    "source": {
+      "title": "Add a REST API tool using an OpenAPI specification",
+      "url": "https://learn.microsoft.com/en-us/training/modules/take-action-external-systems-connector-rest-api-tools-copilot-studio/5-add-rest-api-tool",
+      "quote": "If your specification is in OpenAPI v3, Copilot Studio automatically converts it to v2 during upload."
+    }
+  },
+  {
+    "id": "ab620-096",
+    "type": "single-choice",
+    "skillArea": "integrate-extend",
+    "topic": "Connectors as tools vs knowledge",
+    "difficulty": "easy",
+    "prompt": "One agent must answer questions about current inventory levels and also update inventory records. How should the same Power Platform connector be configured for these two needs?",
+    "options": [
+      {
+        "id": "a",
+        "text": "As a real-time knowledge source for questions and as a tool for updates"
+      },
+      {
+        "id": "b",
+        "text": "As a tool for both, because knowledge sources do not query live data"
+      },
+      {
+        "id": "c",
+        "text": "As a knowledge source for both, because tools do not read inventory data"
+      },
+      {
+        "id": "d",
+        "text": "As a Copilot connector for questions and an MCP tool for updates"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Power-Platform-Connectors haben zwei Rollen: Als Wissensquelle (Preview) fragen sie Live-Daten ab, um Antworten zu erden; als Tool führen sie Aktionen im externen System aus. Lesen zur Beantwortung → Knowledge; Datensatz ändern → Tool. Konfigurationspfad und Laufzeitverhalten unterscheiden sich.",
+    "source": {
+      "title": "Understand connector and REST API tools in Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/training/modules/take-action-external-systems-connector-rest-api-tools-copilot-studio/2-understand-connector-rest-api-tools",
+      "quote": "An agent looking up current inventory levels to answer a question uses a connector knowledge source. An agent updating an inventory record uses a connector tool."
+    }
+  }
+]

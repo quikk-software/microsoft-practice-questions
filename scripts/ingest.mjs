@@ -2,7 +2,11 @@
 // Markdown mit Quell-Metadaten unter data/exams/<slug>/content/.
 //
 // Aufruf: node scripts/ingest.mjs <exam-slug>
-// Quelle: data/exams/<slug>/sources.json  ->  { "learningPaths": ["learn.wwl. ..."] }
+// Quelle: data/exams/<slug>/sources.json
+//   -> { "learningPaths": ["learn.wwl. ..."], "modules": ["learn.wwl. ..."] }
+//   "modules" ist optional: Einzelmodule außerhalb der Lernpfade (z. B. wenn
+//   ein Study-Guide-Thema in keinem verlinkten Lernpfad vorkommt).
+// Ein Modul, das in mehreren Quellen vorkommt, wird nur einmal geladen.
 
 import fs from "node:fs";
 import path from "node:path";
@@ -49,20 +53,33 @@ async function fetchUnitMarkdown(unitUrl) {
 }
 
 const index = [];
+const seenModules = new Set();
 
-for (const pathUid of sources.learningPaths) {
+// Quellen: Lernpfade (mit ihren Modulen) plus optionale Einzelmodule
+const sourceGroups = [];
+for (const pathUid of sources.learningPaths ?? []) {
   const pathData = (await catalog({ uid: pathUid })).learningPaths?.[0];
   if (!pathData) {
     console.error(`Learning path not found: ${pathUid}`);
     continue;
   }
   console.log(`# ${pathData.title} (${pathData.modules.length} Module)`);
+  sourceGroups.push({ pathUid, moduleUids: pathData.modules });
+}
+if (sources.modules?.length) {
+  console.log(`# Einzelmodule (${sources.modules.length})`);
+  sourceGroups.push({ pathUid: "", moduleUids: sources.modules });
+}
 
-  const moduleData = (
-    await catalog({ uid: pathData.modules.join(",") })
-  ).modules;
+for (const { pathUid, moduleUids } of sourceGroups) {
+  const moduleData = (await catalog({ uid: moduleUids.join(",") })).modules;
 
   for (const mod of moduleData) {
+    if (seenModules.has(mod.uid)) {
+      console.log(`\n## ${mod.title} — bereits geladen, übersprungen`);
+      continue;
+    }
+    seenModules.add(mod.uid);
     const moduleUrl = mod.url.split("?")[0];
     const moduleSlug = moduleUrl.replace(/\/$/, "").split("/").pop();
     const modDir = path.join(contentDir, moduleSlug);

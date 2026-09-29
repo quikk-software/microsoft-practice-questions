@@ -1,0 +1,916 @@
+[
+  {
+    "id": "ab620-127",
+    "type": "single-choice",
+    "skillArea": "test-manage",
+    "topic": "Preview vs Evaluate",
+    "difficulty": "easy",
+    "prompt": "A maker wants to establish a quality baseline before releasing an agent and detect regressions after every significant change to instructions or knowledge. Which Copilot Studio capability should be used?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The Evaluate tab, which runs a saved test set and scores the responses"
+      },
+      {
+        "id": "b",
+        "text": "The Preview tab, which records quality metrics for each interactive chat session"
+      },
+      {
+        "id": "c",
+        "text": "The Monitor tab, which replays production conversations against the current instructions"
+      },
+      {
+        "id": "d",
+        "text": "The Activity tab, which lists every run with status and duration"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Der Preview-Tab ist für schnelle, informelle Checks – ohne Metriken und ohne wiederholbare Läufe. Der Evaluate-Tab führt ein gespeichertes Testset aus, bewertet die Antworten und speichert jeden Lauf separat, sodass sich Baseline und spätere Läufe vergleichen lassen.",
+    "source": {
+      "title": "Plan and run agent evaluations",
+      "url": "https://learn.microsoft.com/en-us/training/modules/evaluate-publish-manage-agents-copilot-studio/2-plan-run-agent-evaluations",
+      "quote": "Results from the Preview tab are informal because they don't record metrics or let you run the same set of inputs across multiple sessions."
+    }
+  },
+  {
+    "id": "ab620-128",
+    "type": "single-choice",
+    "skillArea": "test-manage",
+    "topic": "Test set design",
+    "difficulty": "medium",
+    "prompt": "You are building a test set for a support agent that delegates certain requests to a connected specialist agent. Which pair of conversations should the test set include to validate routing?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A request the main agent should delegate and a similar one it should handle itself"
+      },
+      {
+        "id": "b",
+        "text": "Two in-scope questions phrased differently so the specialist agent is invoked twice in a row"
+      },
+      {
+        "id": "c",
+        "text": "An out-of-scope request and its expected decline message for the specialist"
+      },
+      {
+        "id": "d",
+        "text": "A request with an expected response and the same request without one"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Für Connected Agents gehören positive und negative Routing-Tests ins Testset: eine Anfrage aus der Domäne des Spezialisten (soll delegiert werden) und eine ähnliche außerhalb (soll beim Hauptagenten bleiben). Weitere Szenariotypen: In-scope, Klärungsbedarf, Out-of-scope, Eskalation.",
+    "source": {
+      "title": "Plan and run agent evaluations",
+      "url": "https://learn.microsoft.com/en-us/training/modules/evaluate-publish-manage-agents-copilot-studio/2-plan-run-agent-evaluations",
+      "quote": "For a connected agent, include both positive and negative routing tests. Confirm that the main agent delegates requests in the specialist's domain and retains requests outside that domain."
+    }
+  },
+  {
+    "id": "ab620-129",
+    "type": "single-choice",
+    "skillArea": "test-manage",
+    "topic": "Evaluation method",
+    "difficulty": "medium",
+    "prompt": "A maker adds expected agent responses to every conversation in a test set and is surprised that the General quality score does not reflect how closely the actual answers match them. Why?",
+    "options": [
+      {
+        "id": "a",
+        "text": "General quality scores responses against relevance and completeness, not the expected text"
+      },
+      {
+        "id": "b",
+        "text": "Expected responses are compared when the user profile has administrator permissions"
+      },
+      {
+        "id": "c",
+        "text": "The expected responses must be written in the agent's instructions before they are compared"
+      },
+      {
+        "id": "d",
+        "text": "General quality compares responses only for connected-agent delegation conversations"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Die Testmethode General quality bewertet Antworten gegen objektive Qualitätsstandards (Relevanz, Vollständigkeit …) und vergleicht sie nicht mit den optionalen erwarteten Antworten. Diese dienen als Referenz für die eigene manuelle Prüfung.",
+    "source": {
+      "title": "Plan and run agent evaluations",
+      "url": "https://learn.microsoft.com/en-us/training/modules/evaluate-publish-manage-agents-copilot-studio/2-plan-run-agent-evaluations",
+      "quote": "General quality assessment evaluates responses against quality standards such as relevance and completeness. It doesn't compare responses against optional expected agent responses."
+    }
+  },
+  {
+    "id": "ab620-130",
+    "type": "single-choice",
+    "skillArea": "test-manage",
+    "topic": "Authenticated user profile",
+    "difficulty": "hard",
+    "prompt": "An evaluation run returns perfect scores, but published employees report access errors when the agent reads a SharePoint knowledge source. Which evaluation setting most likely caused the blind spot?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The authenticated user profile had broader permissions than the intended users"
+      },
+      {
+        "id": "b",
+        "text": "The test method was set to General quality instead of an expected-response comparison method"
+      },
+      {
+        "id": "c",
+        "text": "The test set contained in-scope conversations and no escalation scenario"
+      },
+      {
+        "id": "d",
+        "text": "The evaluation ran before the agent was published to a channel"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Das Authenticated user profile ist die Identität, mit der die Evaluation Wissensquellen und Tools aufruft. Es sollte die Berechtigungen der Zielnutzer widerspiegeln – sonst bleiben Berechtigungsfehler unentdeckt. Auch nach dem Publish gilt: mit einem Standardnutzerkonto validieren, nicht als Autor oder Admin.",
+    "source": {
+      "title": "Plan and run agent evaluations",
+      "url": "https://learn.microsoft.com/en-us/training/modules/evaluate-publish-manage-agents-copilot-studio/2-plan-run-agent-evaluations",
+      "quote": "Authenticated user profile: The user identity the evaluation uses when calling knowledge sources and tools. Select a profile that reflects the permissions of your intended users."
+    }
+  },
+  {
+    "id": "ab620-131",
+    "type": "matching",
+    "skillArea": "test-manage",
+    "topic": "Interpreting evaluation results",
+    "difficulty": "hard",
+    "prompt": "Match each evaluation signal to what the learning content says you should investigate.",
+    "left": [
+      {
+        "id": "l1",
+        "text": "Low completeness"
+      },
+      {
+        "id": "l2",
+        "text": "Wrong capability used"
+      },
+      {
+        "id": "l3",
+        "text": "Wrong agent selected"
+      },
+      {
+        "id": "l4",
+        "text": "Delegation failure"
+      }
+    ],
+    "right": [
+      {
+        "id": "r1",
+        "text": "Knowledge may be absent or not retrieved, so the response is partial"
+      },
+      {
+        "id": "r2",
+        "text": "The tool name or description may not match the scenario well enough"
+      },
+      {
+        "id": "r3",
+        "text": "Connected-agent descriptions overlap or conflict with the main agent's instructions"
+      },
+      {
+        "id": "r4",
+        "text": "The connected agent may be unpublished, unshared, unavailable, or in another environment"
+      }
+    ],
+    "correct": {
+      "l1": "r1",
+      "l2": "r2",
+      "l3": "r3",
+      "l4": "r4"
+    },
+    "explanation": "Die Ergebnistabelle ordnet Signale Ursachen zu: geringe Vollständigkeit → fehlendes/nicht abgerufenes Wissen; falsches Tool → Tool-Name/Beschreibung; falscher Agent → überlappende Beschreibungen; Delegationsfehler → Connected Agent nicht veröffentlicht, nicht geteilt oder in anderer Umgebung; Capability-Fehler → Verbindung/Berechtigung/Konfiguration.",
+    "source": {
+      "title": "Plan and run agent evaluations",
+      "url": "https://learn.microsoft.com/en-us/training/modules/evaluate-publish-manage-agents-copilot-studio/2-plan-run-agent-evaluations",
+      "quote": "The connected agent might be unpublished, unavailable, unshared, or in a different environment"
+    }
+  },
+  {
+    "id": "ab620-132",
+    "type": "single-choice",
+    "skillArea": "test-manage",
+    "topic": "Monitor tab issue types",
+    "difficulty": "medium",
+    "prompt": "After publication, the Monitor tab shows a falling success rate and one tool with repeated unsuccessful use, while response reactions remain positive. Which issue type is this, and where should you address it?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A runtime failure; review the affected capability and its connection or service status"
+      },
+      {
+        "id": "b",
+        "text": "A quality defect; reproduce on the Preview tab and refine the instructions"
+      },
+      {
+        "id": "c",
+        "text": "A capacity failure; ask an administrator to review Copilot Credit capacity"
+      },
+      {
+        "id": "d",
+        "text": "A permission failure; test with a typical user and review resource permissions"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Sinkende Erfolgsrate und wiederholte Tool-Fehlschläge deuten auf einen Runtime-Fehler (Verbindung, Konfiguration, externer Dienst). Vor jeder Änderung den Problemtyp bestimmen: Anweisungen zu bearbeiten behebt keine fehlenden Berechtigungen, und eine Verbindung zu ändern ergänzt kein fehlendes Wissen.",
+    "source": {
+      "title": "Monitor and improve an agent",
+      "url": "https://learn.microsoft.com/en-us/training/modules/evaluate-publish-manage-agents-copilot-studio/3-monitor-improve-agent",
+      "quote": "Choose the type of problem before you make a change. Editing instructions doesn't fix missing permissions, and changing a connection doesn't add missing knowledge."
+    }
+  },
+  {
+    "id": "ab620-133",
+    "type": "single-choice",
+    "skillArea": "test-manage",
+    "topic": "Improvement loop",
+    "difficulty": "medium",
+    "prompt": "The Monitor tab reveals a common question type that the original test set never anticipated. After fixing the instructions, what should the maker do to keep the fix from regressing later?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Add the scenario as a new Evaluate conversation and rerun the test set"
+      },
+      {
+        "id": "b",
+        "text": "Disable the Monitor tab until the next release so the metrics reset"
+      },
+      {
+        "id": "c",
+        "text": "Rely on the Preview tab, because production conversations cover the scenario"
+      },
+      {
+        "id": "d",
+        "text": "Republish the agent, which automatically converts monitored conversations into tests"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Erkenntnisse aus dem Monitor-Tab erweitern das Evaluationsset: Ein unerwartetes Szenario wird als neue Konversation aufgenommen; nach der Korrektur wird das Set erneut ausgeführt, um den Fix zu bestätigen und Regressionen auszuschließen. So spiegelt das Set mit der Zeit die reale Nutzung wider.",
+    "source": {
+      "title": "Monitor and improve an agent",
+      "url": "https://learn.microsoft.com/en-us/training/modules/evaluate-publish-manage-agents-copilot-studio/3-monitor-improve-agent",
+      "quote": "When the Monitor tab reveals a scenario you didn't anticipate, add it as a new conversation on the Evaluate tab. Over time, your evaluation set reflects actual agent use, not just the scenarios you originally planned for."
+    }
+  },
+  {
+    "id": "ab620-134",
+    "type": "single-choice",
+    "skillArea": "test-manage",
+    "topic": "Publishing to Teams and Copilot",
+    "difficulty": "easy",
+    "prompt": "A maker publishes an agent and adds the Teams and Microsoft Copilot channel but clears Make agent available in Microsoft Copilot. Where is the agent available?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Only in Microsoft Teams"
+      },
+      {
+        "id": "b",
+        "text": "Only in Microsoft Copilot"
+      },
+      {
+        "id": "c",
+        "text": "In both Teams and Microsoft Copilot"
+      },
+      {
+        "id": "d",
+        "text": "In neither until an administrator approves the submission"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Bleibt „Make agent available in Microsoft Copilot“ aktiviert, ist der Agent in Teams und Microsoft Copilot verfügbar; wird die Option entfernt, nur in Teams. Nach Inhaltsänderungen muss erneut veröffentlicht werden, damit verbundene Kanäle den aktuellen Stand erhalten.",
+    "source": {
+      "title": "Publish and validate in channels",
+      "url": "https://learn.microsoft.com/en-us/training/modules/evaluate-publish-manage-agents-copilot-studio/4-publish-validate-channels",
+      "quote": "If you clear this option, the agent is available only in Teams."
+    }
+  },
+  {
+    "id": "ab620-135",
+    "type": "single-choice",
+    "skillArea": "test-manage",
+    "topic": "Post-publish validation",
+    "difficulty": "medium",
+    "prompt": "An agent works perfectly for its author in Teams, but a standard employee gets access-denied errors on knowledge answers. Which post-publish failure category is this, and how should validation have been done?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A permission failure; validate with an account that has the intended users' permissions"
+      },
+      {
+        "id": "b",
+        "text": "A connection failure; reconfigure the connector to use maker-provided credentials for all users"
+      },
+      {
+        "id": "c",
+        "text": "A configuration gap; move the agent to the employee's data region"
+      },
+      {
+        "id": "d",
+        "text": "A capacity failure; request additional Copilot Credits from the administrator"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Veröffentlichen beweist nicht, dass der Agent für alle funktioniert. Fehlt einem Standardnutzer der Zugriff auf SharePoint, Dataverse oder eine andere Ressource, ist das ein Berechtigungsfehler. Deshalb immer mit einem Konto validieren, das die Rechte typischer Nutzer hat – nicht als Autor oder Admin.",
+    "source": {
+      "title": "Publish and validate in channels",
+      "url": "https://learn.microsoft.com/en-us/training/modules/evaluate-publish-manage-agents-copilot-studio/4-publish-validate-channels",
+      "quote": "Publishing doesn't prove that the agent works for everyone. Test it with an account that has the same permissions as its intended users."
+    }
+  },
+  {
+    "id": "ab620-136",
+    "type": "single-choice",
+    "skillArea": "test-manage",
+    "topic": "Distribution in Teams",
+    "difficulty": "medium",
+    "prompt": "An organization wants an approved agent to appear automatically, pinned, for every member of the support team in Teams without each person installing it. Which distribution path provides this?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Preinstallation via a Teams app setup policy configured by an administrator"
+      },
+      {
+        "id": "b",
+        "text": "An installation link copied from Availability options and sent to the team by email"
+      },
+      {
+        "id": "c",
+        "text": "Shared-user discovery in the Built with Power Platform section of the app store"
+      },
+      {
+        "id": "d",
+        "text": "Publishing the agent to the Demo website channel with Direct Line security"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Verteilungswege: Installationslink (für Nutzer mit Zugriff), Shared-user discovery im App Store, organisationsweite Verfügbarkeit nach Admin-Freigabe und Preinstallation – ein Teams-Admin installiert und pinnt den freigegebenen Agenten per App-Setup-Richtlinie für ausgewählte Nutzer. Alle Wege hängen von Tenant-Richtlinien ab.",
+    "source": {
+      "title": "Publish and validate in channels",
+      "url": "https://learn.microsoft.com/en-us/training/modules/evaluate-publish-manage-agents-copilot-studio/4-publish-validate-channels",
+      "quote": "Preinstallation: A Teams administrator can use an app setup policy to install and pin the approved agent for selected users."
+    }
+  },
+  {
+    "id": "ab620-137",
+    "type": "single-choice",
+    "skillArea": "test-manage",
+    "topic": "Environment variables and connection references",
+    "difficulty": "medium",
+    "prompt": "An agent's SharePoint knowledge URL and connector accounts differ between the development and production environments. Which ALM components let the same solution work in both without manual edits after deployment?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Environment variables for the values and connection references for the accounts"
+      },
+      {
+        "id": "b",
+        "text": "Global variables set in the On Conversation Start topic plus maker-provided credentials for every tool"
+      },
+      {
+        "id": "c",
+        "text": "Two separate solutions, one per environment, each with hardcoded values"
+      },
+      {
+        "id": "d",
+        "text": "A pipeline stage that rewrites the URLs in the topic canvas during import"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Environment variables speichern Werte, die sich je Umgebung unterscheiden (z. B. Site-URL); Connection references sorgen dafür, dass jede Umgebung das passende Connector-Konto verwendet. Beides früh einrichten – nachträglich ist es aufwendiger und fehleranfällig.",
+    "source": {
+      "title": "Govern agent lifecycle and costs",
+      "url": "https://learn.microsoft.com/en-us/training/modules/evaluate-publish-manage-agents-copilot-studio/5-govern-agent-lifecycle-costs",
+      "quote": "Environment variables store values that differ between environments, such as a site address."
+    }
+  },
+  {
+    "id": "ab620-138",
+    "type": "single-choice",
+    "skillArea": "test-manage",
+    "topic": "Pipelines",
+    "difficulty": "easy",
+    "prompt": "A maker finishes an agent in a development environment. Releases to production must require an approval step and be repeatable. Which mechanism moves the solution between environments?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Power Platform Pipelines, which can require approval before a release"
+      },
+      {
+        "id": "b",
+        "text": "The agent's Share dialog, which grants production users access"
+      },
+      {
+        "id": "c",
+        "text": "The Publish button, which pushes the agent to all environments"
+      },
+      {
+        "id": "d",
+        "text": "The Evaluate tab, which promotes a passing run to production"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Power Platform Pipelines transportieren Lösungen zwischen Umgebungen und können eine Genehmigung vor dem Release erzwingen. Maker stellen typischerweise Deployment-Anfragen und testen nach dem Deployment; konfiguriert wird die Pipeline von Admins bzw. IT.",
+    "source": {
+      "title": "Govern agent lifecycle and costs",
+      "url": "https://learn.microsoft.com/en-us/training/modules/evaluate-publish-manage-agents-copilot-studio/5-govern-agent-lifecycle-costs",
+      "quote": "Power Platform Pipelines move solutions between environments. A pipeline can also require approval before a release."
+    }
+  },
+  {
+    "id": "ab620-139",
+    "type": "single-choice",
+    "skillArea": "test-manage",
+    "topic": "Copilot Credits",
+    "difficulty": "medium",
+    "prompt": "A team runs a full evaluation after every minor instruction edit and notices Copilot Credit consumption climbing. What does the learning content recommend?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Run evaluations at key milestones and use Preview for quick checks"
+      },
+      {
+        "id": "b",
+        "text": "Disable the Evaluate tab, because author-run evaluations consume no credits"
+      },
+      {
+        "id": "c",
+        "text": "Move evaluations to the Monitor tab, which reads production data at no cost"
+      },
+      {
+        "id": "d",
+        "text": "Convert the agent to a classic agent so evaluations run without model invocations"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Jede Testkonversation einer Evaluation ruft das Sprachmodell auf und verbraucht Credits. Deshalb Evaluationen zu Meilensteinen planen und Testsets auf häufige Szenarien fokussieren; für schnelle Checks während der Entwicklung den Preview-Tab nutzen. Admins überwachen Kapazität im Power Platform admin center.",
+    "source": {
+      "title": "Govern agent lifecycle and costs",
+      "url": "https://learn.microsoft.com/en-us/training/modules/evaluate-publish-manage-agents-copilot-studio/5-govern-agent-lifecycle-costs",
+      "quote": "Run evaluations at key milestones—before initial release and after significant changes—rather than after every minor edit. Use the Preview tab for quick checks during development."
+    }
+  },
+  {
+    "id": "ab620-140",
+    "type": "single-choice",
+    "skillArea": "test-manage",
+    "topic": "Capacity failures",
+    "difficulty": "medium",
+    "prompt": "The Monitor tab shows unexpected failures that do not trace to any tool or connection error, and the agent sometimes returns capacity-related messages. What should the maker do?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Ask an administrator to check Copilot Credit balance and agent limits"
+      },
+      {
+        "id": "b",
+        "text": "Rewrite the agent's instructions to reduce the length of generated responses and save credits"
+      },
+      {
+        "id": "c",
+        "text": "Reconnect every knowledge source so their permissions are refreshed"
+      },
+      {
+        "id": "d",
+        "text": "Republish the agent to clear the cached conversation sessions"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Ist das Credit-Guthaben der Organisation erschöpft oder ein Agentenlimit erreicht (Capacity failure), antworten Agenten nicht mehr oder liefern Kapazitätsfehler. Solche Fehler ohne Tool-/Verbindungsbezug sind ein Fall für den Admin, der Kapazität und Limits im Power Platform admin center prüft.",
+    "source": {
+      "title": "Govern agent lifecycle and costs",
+      "url": "https://learn.microsoft.com/en-us/training/modules/evaluate-publish-manage-agents-copilot-studio/5-govern-agent-lifecycle-costs",
+      "quote": "If you see unexpected failures on the Monitor tab that don't trace to a specific tool or connection error, contact your administrator to check whether the issue is capacity-related."
+    }
+  },
+  {
+    "id": "ab620-141",
+    "type": "single-choice",
+    "skillArea": "test-manage",
+    "topic": "Export and import agents",
+    "difficulty": "easy",
+    "prompt": "A tested agent must move from the test environment to production, where makers should not be able to modify it directly. How should it be exported?",
+    "options": [
+      {
+        "id": "a",
+        "text": "As a managed solution exported from the Solutions area"
+      },
+      {
+        "id": "b",
+        "text": "As an unmanaged solution so production admins can adjust topics after import"
+      },
+      {
+        "id": "c",
+        "text": "As a .zip download of the agent from Copilot Studio's Settings page"
+      },
+      {
+        "id": "d",
+        "text": "As individual topics exported one by one and imported into a new agent"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Lösungen sind der ALM-Träger für Agenten: Agent (inkl. Topics, Entities, Flows) zur Lösung hinzufügen, exportieren, im Zielumfeld importieren. Für Test- und Produktionsumgebungen als managed exportieren. Einzelne Topics lassen sich nicht migrieren – nur der ganze Agent über eine Lösung.",
+    "source": {
+      "title": "Export and import agents",
+      "url": "https://learn.microsoft.com/en-us/training/modules/implement-power-virtual-agents/export-import-bots",
+      "quote": "If you're moving your agent to a test or production environment, you should export as a managed solution."
+    }
+  },
+  {
+    "id": "ab620-142",
+    "type": "single-choice",
+    "skillArea": "test-manage",
+    "topic": "Solutions and agent components",
+    "difficulty": "hard",
+    "prompt": "An agent is already in a solution. A maker creates three new topics in Copilot Studio. The next export is missing them. What should the maker do?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Open the solution, select the agent, and choose Add required objects"
+      },
+      {
+        "id": "b",
+        "text": "Open the solution and select New > Topic to recreate the three topics inside the solution"
+      },
+      {
+        "id": "c",
+        "text": "Nothing; new topics are added to the solution automatically on save"
+      },
+      {
+        "id": "d",
+        "text": "Export the topics from the Topics page and import them into the solution"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Werden nach dem Hinzufügen des Agenten weitere Komponenten wie Topics erstellt, müssen sie über „Add required objects“ am Agenten in der Lösung ergänzt werden. Subkomponenten sollten in Power Apps nicht manuell verändert oder entfernt werden, sonst kann der Export scheitern.",
+    "source": {
+      "title": "Export and import agents",
+      "url": "https://learn.microsoft.com/en-us/training/modules/implement-power-virtual-agents/export-import-bots",
+      "quote": "If you add more components to your agent, such as creating new topics, you can add these to the solution by selecting Add required objects from the agent in the solution as shown here."
+    }
+  },
+  {
+    "id": "ab620-143",
+    "type": "single-choice",
+    "skillArea": "test-manage",
+    "topic": "Copilot Studio security roles",
+    "difficulty": "medium",
+    "prompt": "A colleague needs to build agents in an environment where the Copilot Studio solutions are already installed, but they cannot create anything. Which security role must an administrator assign in the Power Platform admin center?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Agent author"
+      },
+      {
+        "id": "b",
+        "text": "Agent transcript viewer"
+      },
+      {
+        "id": "c",
+        "text": "Basic User"
+      },
+      {
+        "id": "d",
+        "text": "System Customizer"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Die Copilot-Studio-Rollen sind Agent author, Agent contributor und Agent transcript viewer. Wer in einer Umgebung Agenten bauen soll, bekommt Agent author (Settings > Users + permissions > Security roles > Members > Add people). Beim Teilen eines Agenten mit einem Nutzer ohne ausreichende Rechte wird zusätzlich Environment maker zugewiesen.",
+    "source": {
+      "title": "Environments in Microsoft Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/training/modules/implement-power-virtual-agents/2-environments",
+      "quote": "Assign yourself the security role of \"agent author\" in the environment."
+    }
+  },
+  {
+    "id": "ab620-144",
+    "type": "single-choice",
+    "skillArea": "plan-configure",
+    "topic": "Authentication options",
+    "difficulty": "medium",
+    "prompt": "An agent must require sign-in and be published to a custom website as well as Microsoft Teams. Which authentication option should you configure?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Authenticate manually with an OAuth2 provider such as Microsoft Entra ID"
+      },
+      {
+        "id": "b",
+        "text": "Authenticate with Microsoft, which sets up Entra ID automatically for all channels"
+      },
+      {
+        "id": "c",
+        "text": "No authentication, with web channel security enabled instead"
+      },
+      {
+        "id": "d",
+        "text": "Authenticate with Microsoft plus a Direct Line secret for the website"
+      }
+    ],
+    "correct": "a",
+    "explanation": "„Authenticate with Microsoft“ richtet Entra ID für Teams automatisch ein, macht aber nur den Teams-Kanal verfügbar. Für andere Kanäle mit Authentifizierung ist „Authenticate manually“ mit einem OAuth2-kompatiblen Anbieter (Entra ID, Microsoft-Konto, Google, Facebook, eigener Dienst) nötig. Änderungen wirken erst nach dem Publish.",
+    "source": {
+      "title": "Authentication",
+      "url": "https://learn.microsoft.com/en-us/training/modules/implement-power-virtual-agents/authentication",
+      "quote": "Only the Teams channel is available if you select this option. If you need to publish your agent to other channels but still want authentication for your agent, choose Authenticate manually."
+    }
+  },
+  {
+    "id": "ab620-145",
+    "type": "single-choice",
+    "skillArea": "plan-configure",
+    "topic": "Require users to sign in",
+    "difficulty": "medium",
+    "prompt": "With manual authentication configured, the maker selects Require users to sign in. What is the effect?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A system topic is created that prompts users to sign in at the start"
+      },
+      {
+        "id": "b",
+        "text": "A custom topic is created that can be disabled from the Topics page at any time"
+      },
+      {
+        "id": "c",
+        "text": "The Authenticate action becomes available in the Greeting topic only"
+      },
+      {
+        "id": "d",
+        "text": "The agent switches to the Teams-specific Authenticate with Microsoft mode"
+      }
+    ],
+    "correct": "a",
+    "explanation": "„Require users to sign in“ erzeugt das System-Topic „Require user to sign in“, das Nutzer zu Beginn der Konversation anmeldet und Variablen wie User.Id, User.DisplayName, User.Email und User.IsLoggedIn bereitstellt. Ohne diese Option kann die Authenticate-Aktion an beliebiger Stelle im Gespräch aufgerufen werden; Nutzer werden je Sitzung nur einmal angemeldet.",
+    "source": {
+      "title": "Authentication",
+      "url": "https://learn.microsoft.com/en-us/training/modules/implement-power-virtual-agents/authentication",
+      "quote": "Alternatively, you can select the Require users to sign in option, which creates a system topic for Require user to sign in. This prompts the user to sign in as soon as they begin the conversation with the agent."
+    }
+  },
+  {
+    "id": "ab620-146",
+    "type": "single-choice",
+    "skillArea": "plan-configure",
+    "topic": "Manual authentication setup",
+    "difficulty": "hard",
+    "prompt": "You register an app in Microsoft Entra ID for an agent's manual authentication. Which redirect URI must the app registration use?",
+    "options": [
+      {
+        "id": "a",
+        "text": "https://token.botframework.com/.auth/web/redirect with Web as the platform"
+      },
+      {
+        "id": "b",
+        "text": "https://copilotstudio.microsoft.com/.auth/callback with Single-page application as the platform"
+      },
+      {
+        "id": "c",
+        "text": "The agent's Demo website URL with Mobile and desktop as the platform"
+      },
+      {
+        "id": "d",
+        "text": "https://login.microsoftonline.com/common/oauth2/nativeclient with Public client as the platform"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Für die manuelle Authentifizierung wird eine App-Registrierung mit Redirect URI https://token.botframework.com/.auth/web/redirect (Plattform Web) angelegt; Client-ID und Client-Secret werden dann in Copilot Studio unter Settings > Security > Authentication mit Service Provider Azure Active Directory v2 eingetragen. Token exchange URL ist optional für SSO.",
+    "source": {
+      "title": "Authentication",
+      "url": "https://learn.microsoft.com/en-us/training/modules/implement-power-virtual-agents/authentication",
+      "quote": "The Redirect URI should be https://token.botframework.com/.auth/web/redirect with Web as the platform."
+    }
+  },
+  {
+    "id": "ab620-147",
+    "type": "single-choice",
+    "skillArea": "plan-configure",
+    "topic": "Web channel security",
+    "difficulty": "medium",
+    "prompt": "A sensitive agent is reachable through the Demo and Custom website channels by anyone who knows the agent ID. The organization wants only its own websites to be able to talk to the agent. What should be enabled?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Web channel security with Require secured access using Direct Line secrets or tokens"
+      },
+      {
+        "id": "b",
+        "text": "Authenticate with Microsoft, which removes the Demo website and Custom website channels"
+      },
+      {
+        "id": "c",
+        "text": "The Everyone in my organization access setting under Security"
+      },
+      {
+        "id": "d",
+        "text": "A DLP policy that blocks the Demo website connector in the environment"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Mit Direct-Line-basierter Sicherheit (Settings > Security > Web channel security > Require secured access) müssen Kanäle ihre Anfragen mit einem Secret oder einem daraus erzeugten Token authentifizieren; Zugriffe ohne diese Absicherung funktionieren nicht. Das Deaktivieren kann bis zu zwei Stunden dauern.",
+    "source": {
+      "title": "Administer and manage",
+      "url": "https://learn.microsoft.com/en-us/training/modules/implement-power-virtual-agents/6-administer",
+      "quote": "With Direct Line-based security, you can enable access to only the locations that you control by enabling secured access with Direct Line secrets or tokens."
+    }
+  },
+  {
+    "id": "ab620-148",
+    "type": "single-choice",
+    "skillArea": "test-manage",
+    "topic": "Billing sessions",
+    "difficulty": "hard",
+    "prompt": "Finance asks when a billed session for a classic agent ends. Which statement matches the learning content?",
+    "options": [
+      {
+        "id": "a",
+        "text": "After 30 minutes without a new message, after 60 minutes in total, or after 100 turns; only then does a new session begin"
+      },
+      {
+        "id": "b",
+        "text": "After 15 minutes without a new message, after 24 hours total, or after 50 turns"
+      },
+      {
+        "id": "c",
+        "text": "Only when the user explicitly closes the chat session in the client"
+      },
+      {
+        "id": "d",
+        "text": "When the agent escalates to a human agent, regardless of the session duration"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Eine abgerechnete Sitzung beginnt mit dem Auslösen eines Nutzer-Topics und endet, wenn 30 Minuten keine neue Nachricht kommt, wenn sie länger als 60 Minuten dauert (die nächste Nachricht startet eine neue Sitzung) oder nach mehr als 100 Turns (der 101. Turn startet eine neue).",
+    "source": {
+      "title": "Administer and manage",
+      "url": "https://learn.microsoft.com/en-us/training/modules/implement-power-virtual-agents/6-administer",
+      "quote": "The session has more than 100 turns. A turn is defined as one exchange between a user and the agent. The one-hundred-and-first turn starts a new session."
+    }
+  },
+  {
+    "id": "ab620-149",
+    "type": "single-choice",
+    "skillArea": "test-manage",
+    "topic": "Analytics",
+    "difficulty": "easy",
+    "prompt": "A stakeholder wants the engagement rate, resolution rate, escalation rate, and abandon rate of an agent over the last month. Which Analytics page provides this overview?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Summary"
+      },
+      {
+        "id": "b",
+        "text": "Sessions"
+      },
+      {
+        "id": "c",
+        "text": "Billing"
+      },
+      {
+        "id": "d",
+        "text": "Customer Satisfaction"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Der Summary-Tab zeigt Gesamtsitzungen, Engagement-, Resolution-, Escalation- und Abandon-Rate. Customer Satisfaction zeigt, welche Topics den größten Einfluss haben; Sessions liefert Rohdaten mit Transkripten; Billing die abrechenbaren Interaktionen.",
+    "source": {
+      "title": "Administer and manage",
+      "url": "https://learn.microsoft.com/en-us/training/modules/implement-power-virtual-agents/6-administer",
+      "quote": "Information such as total number of sessions, engagement rate, resolution rate, escalation rate, and abandon rate can help you to understand how effective the agent is and to determine the areas that need improvement."
+    }
+  },
+  {
+    "id": "ab620-150",
+    "type": "single-choice",
+    "skillArea": "test-manage",
+    "topic": "Monitor and diagnose topics",
+    "difficulty": "easy",
+    "prompt": "The Topics list shows a red error count next to one topic. What is the fastest way to find where the error originates?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Select the error count to open the canvas and read the Topic checker"
+      },
+      {
+        "id": "b",
+        "text": "Open the Sessions analytics page and download the raw transcripts for that topic"
+      },
+      {
+        "id": "c",
+        "text": "Export the agent as a solution and inspect the topic XML"
+      },
+      {
+        "id": "d",
+        "text": "Disable the topic and re-enable it to trigger a revalidation"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Status und Fehler werden am besten auf Topic-Ebene diagnostiziert: Die Topics-Liste zeigt Ein/Aus, Fehler und wer gerade bearbeitet; ein Klick auf die Fehlerzahl öffnet den Canvas, der Topic checker zeigt die Fehler und ihre Herkunft.",
+    "source": {
+      "title": "Monitor and diagnose",
+      "url": "https://learn.microsoft.com/en-us/training/modules/implement-power-virtual-agents/5-monitor",
+      "quote": "Selecting the status error number takes you to the canvas, which shows the two errors in the Topic checker feature."
+    }
+  },
+  {
+    "id": "ab620-151",
+    "type": "single-choice",
+    "skillArea": "test-manage",
+    "topic": "Sharing agents",
+    "difficulty": "easy",
+    "prompt": "A maker shares an agent with a colleague so they can co-edit it, and the colleague lacks sufficient environment permissions to run Copilot Studio. What happens?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The maker is notified that the Environment maker role is assigned to the colleague"
+      },
+      {
+        "id": "b",
+        "text": "Sharing fails until an administrator assigns the System Administrator role"
+      },
+      {
+        "id": "c",
+        "text": "The colleague receives view-only access until they accept an invitation email"
+      },
+      {
+        "id": "d",
+        "text": "The agent is exported as a solution and imported into the colleague's environment"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Beim Teilen eines Agenten mit einem Nutzer ohne ausreichende Umgebungsrechte wird die Rolle Environment maker zugewiesen, damit der Nutzer den Agenten bearbeiten kann – mit entsprechender Benachrichtigung. Zum bloßen Chatten mit dem Agenten ist keine Freigabe nötig.",
+    "source": {
+      "title": "Administer and manage",
+      "url": "https://learn.microsoft.com/en-us/training/modules/implement-power-virtual-agents/6-administer",
+      "quote": "When you're sharing the agent, if the specified user doesn't have sufficient permissions to use Microsoft Copilot Studio agent in the environment, you're notified that the Environment maker security role is assigned to the person so that they can use the agent."
+    }
+  },
+  {
+    "id": "ab620-152",
+    "type": "single-choice",
+    "skillArea": "integrate-extend",
+    "topic": "Application Insights",
+    "difficulty": "medium",
+    "prompt": "Operations wants runtime visibility into connector activity from published agents inside their existing Azure monitoring stack. Which capability does the learning content name for this?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Application Insights, via Copilot Studio's Azure Monitor integration"
+      },
+      {
+        "id": "b",
+        "text": "The Flow checker, which reports connector failures per run in the designer"
+      },
+      {
+        "id": "c",
+        "text": "Purview activity logging under the CUAOperation term"
+      },
+      {
+        "id": "d",
+        "text": "The Sessions analytics export, which includes connector telemetry"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Sowohl vorgefertigte als auch Custom Connectors bringen Fehlerbehandlung und Antwort-Parsing mit; ihre Aktivität lässt sich über Application Insights im Rahmen der Copilot-Studio-Integration mit Azure Monitor überwachen. Purview/CUAOperation betrifft Computer-Use-Auditlogs.",
+    "source": {
+      "title": "Compare action integration patterns",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-enterprise-integration-strategies-agents-copilot-studio/3-compare-action-integration-patterns",
+      "quote": "Both types include built-in error handling and response parsing, and connector activity can be monitored through Application Insights as part of Copilot Studio's integration with Azure Monitor."
+    }
+  },
+  {
+    "id": "ab620-153",
+    "type": "single-choice",
+    "skillArea": "plan-configure",
+    "topic": "Generative AI settings",
+    "difficulty": "medium",
+    "prompt": "A classic agent should answer unmatched questions from its knowledge sources instead of asking users to rephrase twice and then escalating. Which mechanism provides this?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Generative answers as a fallback via the Conversational boosting system topic"
+      },
+      {
+        "id": "b",
+        "text": "A custom prompt tool added to the Escalate system topic so it answers first"
+      },
+      {
+        "id": "c",
+        "text": "Content moderation set to Low so more sources are searched"
+      },
+      {
+        "id": "d",
+        "text": "Enhanced search results, which require a Microsoft 365 Copilot tenant"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Jeder Agent enthält das System-Topic Conversational boosting, das läuft, wenn kein Topic zur Nutzerfrage passt; mit generativen Antworten sucht es in den konfigurierten Wissensquellen. Content moderation (Low/Medium/High) steuert nur die Relevanzstrenge der Antworten.",
+    "source": {
+      "title": "Generative AI",
+      "url": "https://learn.microsoft.com/en-us/training/modules/implement-power-virtual-agents/generative-ai",
+      "quote": "All agents include a Conversational boosting topic. This topic runs when your agent is unable to identify a topic that addresses the user's question."
+    }
+  }
+]

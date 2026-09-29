@@ -1,0 +1,587 @@
+[
+  {
+    "id": "ab620-097",
+    "type": "single-choice",
+    "skillArea": "plan-configure",
+    "topic": "Agent flows vs cloud flows",
+    "difficulty": "easy",
+    "prompt": "A team wants to add deterministic automation to an agent without leaving Copilot Studio and without buying a Power Automate license per user. Which capability meets both requirements?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Agent flows, built in Copilot Studio and billed through Copilot Credits"
+      },
+      {
+        "id": "b",
+        "text": "Cloud flows, built in Power Automate and licensed per user or per process"
+      },
+      {
+        "id": "c",
+        "text": "Desktop flows, built in Power Automate Desktop and licensed per machine"
+      },
+      {
+        "id": "d",
+        "text": "Generative orchestration, which executes connector actions probabilistically without a defined sequence"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Agent Flows werden in Copilot Studio entworfen und verwaltet und nach Verbrauch (ausgeführte Aktionen) über Copilot Credits abgerechnet – ohne separate Power-Automate-Lizenz. Sie nutzen dasselbe Connector-Ökosystem wie Cloud-Flows, können aber nicht kopiert, geteilt oder mit Co-Ownern versehen werden.",
+    "source": {
+      "title": "Understand agent flows in Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/training/modules/automate-workflows-agent-flows-copilot-studio/2-understand-agent-flows",
+      "quote": "Agent flows, by contrast, are billed through Copilot Studio based on consumption, the number of actions that run. A separate Power Automate license is not required."
+    }
+  },
+  {
+    "id": "ab620-098",
+    "type": "matching",
+    "skillArea": "plan-configure",
+    "topic": "Agent flow trigger types",
+    "difficulty": "easy",
+    "prompt": "Match each agent flow trigger type to the scenario it fits.",
+    "left": [
+      {
+        "id": "l1",
+        "text": "Instant"
+      },
+      {
+        "id": "l2",
+        "text": "Scheduled"
+      },
+      {
+        "id": "l3",
+        "text": "Automated"
+      }
+    ],
+    "right": [
+      {
+        "id": "r1",
+        "text": "Started on demand by an agent, another flow, or a user"
+      },
+      {
+        "id": "r2",
+        "text": "Runs every morning at 8:00 AM to produce a daily report"
+      },
+      {
+        "id": "r3",
+        "text": "Runs when a new email lands in the shared support inbox"
+      }
+    ],
+    "correct": {
+      "l1": "r1",
+      "l2": "r2",
+      "l3": "r3"
+    },
+    "explanation": "Instant-Trigger werden manuell oder programmatisch (Agent, Flow, App) gestartet; Scheduled läuft nach Zeitplan; Automated reagiert auf Ereignisse in verbundenen Systemen. Flows mit dem Instant-Trigger „Run a flow from Copilot“ lassen sich direkt als Tool zu einem Agenten hinzufügen.",
+    "source": {
+      "title": "Understand agent flows in Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/training/modules/automate-workflows-agent-flows-copilot-studio/2-understand-agent-flows",
+      "quote": "Automated: Run in response to an event in a connected system, such as a new email arriving, a record being created in Dataverse, or a file being added to SharePoint."
+    }
+  },
+  {
+    "id": "ab620-099",
+    "type": "single-choice",
+    "skillArea": "plan-configure",
+    "topic": "Human in the loop",
+    "difficulty": "medium",
+    "prompt": "An agent flow must pause in the middle of an automated sequence until a manager decides whether to approve a purchase, then continue based on the decision. Which action category provides this?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Human in the loop actions such as an approval request"
+      },
+      {
+        "id": "b",
+        "text": "AI capabilities actions such as Run a prompt"
+      },
+      {
+        "id": "c",
+        "text": "Built-in tools such as an Until loop that polls a status field"
+      },
+      {
+        "id": "d",
+        "text": "Connector actions such as Post a message in Teams"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Human-in-the-loop-Aktionen (Approval, Request for Information) halten den Flow an, sammeln eine menschliche Entscheidung und setzen danach fort. Eine Teams-Nachricht informiert nur; ein Prompt entscheidet per KI; eine Until-Schleife ist ein Workaround mit Ressourcenverbrauch.",
+    "source": {
+      "title": "Understand agent flows in Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/training/modules/automate-workflows-agent-flows-copilot-studio/2-understand-agent-flows",
+      "quote": "Human in the loop: Actions that pause the flow and collect human input before continuing. Approval requests and Request for Information actions both work this way."
+    }
+  },
+  {
+    "id": "ab620-100",
+    "type": "multiple-choice",
+    "skillArea": "plan-configure",
+    "topic": "Agent flow fit",
+    "difficulty": "medium",
+    "prompt": "Which two characteristics indicate that a business process is a good candidate for an agent flow rather than AI-driven reasoning? (Choose two.)",
+    "options": [
+      {
+        "id": "a",
+        "text": "The same steps happen every time regardless of who starts the process"
+      },
+      {
+        "id": "b",
+        "text": "The process starts in response to a specific trigger such as a form submission"
+      },
+      {
+        "id": "c",
+        "text": "The right action depends on nuanced context that is hard to express as rules"
+      },
+      {
+        "id": "d",
+        "text": "The output should vary in tone depending on the user's mood"
+      },
+      {
+        "id": "e",
+        "text": "The process consists of a single step with no external systems"
+      }
+    ],
+    "correct": [
+      "a",
+      "b"
+    ],
+    "explanation": "Agent Flows passen zu Prozessen, die repetitiv, mehrstufig, vorhersagbar und ereignisgesteuert sind. Erfordert ein Prozess erhebliches Urteilsvermögen, das sich nicht als explizite Regeln fassen lässt, sind andere Ansätze (KI-Reasoning) besser geeignet.",
+    "source": {
+      "title": "Identify agent flow automation scenarios",
+      "url": "https://learn.microsoft.com/en-us/training/modules/automate-workflows-agent-flows-copilot-studio/3-agent-flow-scenarios",
+      "quote": "If a process requires significant judgment, where the right action depends on context that's hard to capture as explicit rules, other approaches may be a better fit."
+    }
+  },
+  {
+    "id": "ab620-101",
+    "type": "single-choice",
+    "skillArea": "plan-configure",
+    "topic": "Agent flow naming",
+    "difficulty": "easy",
+    "prompt": "A flow created from a natural-language prompt keeps its generated default name. It will be added to an agent as a tool. Why does the learning content recommend renaming it?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The flow name becomes the default tool name the orchestrator uses for routing"
+      },
+      {
+        "id": "b",
+        "text": "Flows with generated names fail publishing until the flow checker passes"
+      },
+      {
+        "id": "c",
+        "text": "Savings rules can only be attached to flows whose name contains the trigger"
+      },
+      {
+        "id": "d",
+        "text": "The name must match the solution name for the flow to appear in the tool picker"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Wird der Flow als Tool hinzugefügt, ist sein Name der Standard-Toolname. Der Orchestrator nutzt den Namen bei der Entscheidung, wann der Flow aufgerufen wird – ein klarer, spezifischer Name (Trigger + Zweck) wirkt sich direkt auf die Routing-Genauigkeit aus.",
+    "source": {
+      "title": "Create an agent flow",
+      "url": "https://learn.microsoft.com/en-us/training/modules/automate-workflows-agent-flows-copilot-studio/4-create-agent-flow",
+      "quote": "If you add this flow as a tool to a Copilot Studio agent, the flow name becomes the default tool name. The agent orchestrator uses the name to determine when to invoke the flow, so a clear, specific name directly affects how accurately the agent routes requests."
+    }
+  },
+  {
+    "id": "ab620-102",
+    "type": "single-choice",
+    "skillArea": "plan-configure",
+    "topic": "Input parameters",
+    "difficulty": "medium",
+    "prompt": "An agent flow with the When an agent calls the flow trigger must receive an order number and an optional customer note from the calling topic. How are these values passed?",
+    "options": [
+      {
+        "id": "a",
+        "text": "As input parameters on the instant trigger, with the note marked optional"
+      },
+      {
+        "id": "b",
+        "text": "As global variables set in the topic, which every agent flow in the environment can read automatically"
+      },
+      {
+        "id": "c",
+        "text": "As trigger conditions that filter which events start the flow"
+      },
+      {
+        "id": "d",
+        "text": "As Respond to the agent outputs configured on the trigger card"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Instant-Trigger erlauben Eingabeparameter (Text, Yes/No, File, Email, Number, Date), die vom aufrufenden Agenten, Flow oder Nutzer übergeben werden. Über das Ellipsen-Menü lässt sich ein Parameter als optional markieren; Textparameter können eine Dropdown-Liste erlaubter Werte haben.",
+    "source": {
+      "title": "Configure triggers, actions, and connectors",
+      "url": "https://learn.microsoft.com/en-us/training/modules/automate-workflows-agent-flows-copilot-studio/5-configure-actions-connectors",
+      "quote": "Select the ellipsis (...) to the right of an input parameter to mark it as optional. For Text parameters, you can also specify a drop-down list of allowed values."
+    }
+  },
+  {
+    "id": "ab620-103",
+    "type": "single-choice",
+    "skillArea": "plan-configure",
+    "topic": "Action naming",
+    "difficulty": "easy",
+    "prompt": "In a five-action flow, the dynamic content picker shows several tokens all labeled with connector defaults such as Get user profile (V2), and makers pick the wrong one. What would have prevented this?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Renaming each action with a descriptive label right after adding it"
+      },
+      {
+        "id": "b",
+        "text": "Using expressions instead of dynamic content, because they show the property path"
+      },
+      {
+        "id": "c",
+        "text": "Limiting the flow to three actions so the picker stays short"
+      },
+      {
+        "id": "d",
+        "text": "Running all actions in parallel branches so their outputs are grouped"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Aktionen erben Standardnamen des Connectors; in mehrstufigen Flows wird dadurch unklar, welcher Output zu welchem Schritt gehört. Beschreibende Namen erscheinen im Dynamic-Content-Picker aller Folgeschritte und machen die Konfiguration schneller und den Flow lesbar.",
+    "source": {
+      "title": "Configure triggers, actions, and connectors",
+      "url": "https://learn.microsoft.com/en-us/training/modules/automate-workflows-agent-flows-copilot-studio/5-configure-actions-connectors",
+      "quote": "Name each action before moving to the next. The names you assign appear in the dynamic content picker for all downstream actions, so descriptive names make every subsequent step faster to configure, especially when multiple actions use the same connector."
+    }
+  },
+  {
+    "id": "ab620-104",
+    "type": "single-choice",
+    "skillArea": "plan-configure",
+    "topic": "Trigger settings",
+    "difficulty": "medium",
+    "prompt": "A support-inbox flow should run only for emails from external senders, and it must not start for internal mail at all. Which trigger setting achieves this most efficiently?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A trigger condition expression that must evaluate to true before the trigger fires"
+      },
+      {
+        "id": "b",
+        "text": "A Condition action as the first step that terminates the flow for internal senders"
+      },
+      {
+        "id": "c",
+        "text": "Concurrency control set to one instance so internal mails are queued"
+      },
+      {
+        "id": "d",
+        "text": "A retry policy that skips runs whose sender domain matches the tenant"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Trigger conditions sind Ausdrücke, die vor dem Auslösen wahr sein müssen – sie filtern Ereignisse, bevor der Flow überhaupt startet. Eine Condition-Aktion würde den Flow starten und Aktionen verbrauchen. Concurrency control und Retry policy betreffen Parallelität bzw. Neustartverhalten.",
+    "source": {
+      "title": "Configure triggers, actions, and connectors",
+      "url": "https://learn.microsoft.com/en-us/training/modules/automate-workflows-agent-flows-copilot-studio/5-configure-actions-connectors",
+      "quote": "Trigger conditions: Expressions that must evaluate to true before the trigger fires, useful for filtering events before the flow runs."
+    }
+  },
+  {
+    "id": "ab620-105",
+    "type": "single-choice",
+    "skillArea": "plan-configure",
+    "topic": "Control structures",
+    "difficulty": "medium",
+    "prompt": "An escalation flow must route requests differently for four categories: hardware, software, network, and access. Which control structure should you use?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A Switch action from the Control connector with a named branch per category"
+      },
+      {
+        "id": "b",
+        "text": "Nested Condition actions, one inside the other, for each category"
+      },
+      {
+        "id": "c",
+        "text": "An Apply to each loop over the category list with a condition inside"
+      },
+      {
+        "id": "d",
+        "text": "Four parallel branches joined by a Run after configuration"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Eine Condition erzeugt genau zwei Zweige (True/False). Bei mehr als zwei Pfaden empfiehlt der Lernpfad die Switch-Aktion des Control-Connectors: Sie wertet einen Ausdruck aus und erzeugt je Fall einen benannten Zweig – ideal für Routing nach Kategorie, Priorität oder Abteilung.",
+    "source": {
+      "title": "Control agent flow logic",
+      "url": "https://learn.microsoft.com/en-us/training/modules/automate-workflows-agent-flows-copilot-studio/6-control-agent-flow-logic",
+      "quote": "If your scenario requires more than two paths, use the Switch action from the Control connector instead. Switch evaluates an expression and creates a named branch for each matching case, which is useful when routing flows based on request category, priority level, or department."
+    }
+  },
+  {
+    "id": "ab620-106",
+    "type": "single-choice",
+    "skillArea": "plan-configure",
+    "topic": "Error handling in agent flows",
+    "difficulty": "hard",
+    "prompt": "In an agent flow, sending the confirmation email and posting a Teams notification run in parallel branches. If the Teams post fails, the flow must still continue to a fallback logging action instead of stopping. Where is this implemented?",
+    "options": [
+      {
+        "id": "a",
+        "text": "In the Run after settings of the join action, referencing each branch's failure states"
+      },
+      {
+        "id": "b",
+        "text": "In the trigger's retry policy, which re-runs any failed branch before the flow continues to the join"
+      },
+      {
+        "id": "c",
+        "text": "In a Continue on error toggle on the Teams action card"
+      },
+      {
+        "id": "d",
+        "text": "In an Until loop that repeats the Teams post until it succeeds"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Die Run-after-Eigenschaft im Settings-Tab einer Aktion legt fest, nach welchen vorherigen Aktionen und Zuständen sie läuft. So werden parallele Zweige zusammengeführt und Fehlerpfade gebaut: Schlägt ein Zweig fehl, kann der Flow zu einer Fallback-Aktion routen statt komplett abzubrechen.",
+    "source": {
+      "title": "Control agent flow logic",
+      "url": "https://learn.microsoft.com/en-us/training/modules/automate-workflows-agent-flows-copilot-studio/6-control-agent-flow-logic",
+      "quote": "Configuring Run after on a join action is also how you implement error-handling paths. When a branch fails, the flow can route to a fallback action rather than stopping entirely."
+    }
+  },
+  {
+    "id": "ab620-107",
+    "type": "single-choice",
+    "skillArea": "plan-configure",
+    "topic": "Loops in agent flows",
+    "difficulty": "medium",
+    "prompt": "A flow must poll a ServiceNow ticket status until it becomes Resolved. A maker adds an Until loop with only the status condition. What must be added, and why?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A maximum iteration count or time limit, because the loop otherwise runs indefinitely"
+      },
+      {
+        "id": "b",
+        "text": "An Apply to each wrapper, because Until loops skip connector outputs"
+      },
+      {
+        "id": "c",
+        "text": "A parallel branch, because Until loops block the trigger from firing again"
+      },
+      {
+        "id": "d",
+        "text": "A Switch action, because Until loops support only equality comparisons"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Until wiederholt Aktionen, bis eine Bedingung wahr wird – ohne klare Abbruchbedingung läuft die Schleife endlos und verbraucht Ressourcen. Deshalb zusätzlich zur Bedingung immer eine maximale Iterationszahl oder ein Zeitlimit setzen. Apply to each ist bei endlichen Listen die sicherere Wahl.",
+    "source": {
+      "title": "Control agent flow logic",
+      "url": "https://learn.microsoft.com/en-us/training/modules/automate-workflows-agent-flows-copilot-studio/6-control-agent-flow-logic",
+      "quote": "An Until loop without a clear exit condition runs indefinitely and consumes resources. Always configure a maximum iteration count or a time limit in the loop's settings, in addition to the condition that ends the loop."
+    }
+  },
+  {
+    "id": "ab620-108",
+    "type": "single-choice",
+    "skillArea": "test-manage",
+    "topic": "Flow checker and publishing",
+    "difficulty": "easy",
+    "prompt": "The Publish option for an agent flow is unavailable. The Flow checker lists two errors and three warnings. What must happen before the flow can be published?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Both errors must be resolved; warnings do not block publishing"
+      },
+      {
+        "id": "b",
+        "text": "All errors and all warnings must be resolved before the option appears"
+      },
+      {
+        "id": "c",
+        "text": "The flow must be tested successfully once so the checker clears automatically"
+      },
+      {
+        "id": "d",
+        "text": "The flow must be added to a solution, which suppresses checker findings"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Ein Flow mit Fehlern kann nicht veröffentlicht werden – erst wenn alle Fehler behoben sind, wird Publish verfügbar. Warnungen blockieren nicht, weisen aber oft auf fehlende optionale Eingaben oder Konfigurationslücken hin, die zur Laufzeit Probleme verursachen können.",
+    "source": {
+      "title": "Manage and monitor agent flows",
+      "url": "https://learn.microsoft.com/en-us/training/modules/automate-workflows-agent-flows-copilot-studio/7-manage-monitor-agent-flows",
+      "quote": "All errors must be resolved before the Publish option becomes available. Warnings don't block publishing, but review them: they often signal missing optional inputs or configuration gaps that can cause unexpected behavior at runtime."
+    }
+  },
+  {
+    "id": "ab620-109",
+    "type": "single-choice",
+    "skillArea": "test-manage",
+    "topic": "Monitoring agent flows",
+    "difficulty": "easy",
+    "prompt": "You want to verify whether a specific run from yesterday completed without errors and inspect the inputs and outputs of each action in that run. Which monitoring tab do you use?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Activity, which lists individual runs and lets you drill into each action"
+      },
+      {
+        "id": "b",
+        "text": "Analytics, which shows total runs, failure rate, and average duration as trends over time"
+      },
+      {
+        "id": "c",
+        "text": "Overview, which shows name, description, connections, and savings rules"
+      },
+      {
+        "id": "d",
+        "text": "Flow checker, which scans the definition for configuration errors"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Der Activity-Tab listet jeden Lauf mit Status und Dauer; ein einzelner Lauf lässt sich Schritt für Schritt mit Ein- und Ausgaben durchgehen. Analytics zeigt Trends (Gesamtläufe, Fehlerrate, Dauer), Overview Stammdaten und Savings Rules.",
+    "source": {
+      "title": "Manage and monitor agent flows",
+      "url": "https://learn.microsoft.com/en-us/training/modules/automate-workflows-agent-flows-copilot-studio/7-manage-monitor-agent-flows",
+      "quote": "Activity: Lists every run with its status and duration. Select an individual run to step through each action's inputs and outputs for troubleshooting, using the same drill-through view available during testing."
+    }
+  },
+  {
+    "id": "ab620-110",
+    "type": "single-choice",
+    "skillArea": "test-manage",
+    "topic": "Savings rules",
+    "difficulty": "medium",
+    "prompt": "Leadership asks for evidence of the business value an agent flow delivers. You configure a savings rule, but the accumulated savings stay at zero after several successful test runs. Why?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Only production runs generate savings; successful test runs do not count"
+      },
+      {
+        "id": "b",
+        "text": "Savings rules require Application Insights to be connected to the environment"
+      },
+      {
+        "id": "c",
+        "text": "Savings rules apply to flows converted from Power Automate cloud flows"
+      },
+      {
+        "id": "d",
+        "text": "The Analytics tab must be opened once before the rule starts accumulating"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Savings Rules quantifizieren Zeit- oder Kostenersparnis je erfolgreichem Lauf und summieren über alle Läufe. Sie gibt es nur für lösungsbasierte Agent Flows, und nur Produktionsläufe zählen – Testläufe erzeugen keine Einsparungen.",
+    "source": {
+      "title": "Manage and monitor agent flows",
+      "url": "https://learn.microsoft.com/en-us/training/modules/automate-workflows-agent-flows-copilot-studio/7-manage-monitor-agent-flows",
+      "quote": "Savings rules are available only for solution-based agent flows. Successful test runs don't generate savings; only production runs do."
+    }
+  },
+  {
+    "id": "ab620-111",
+    "type": "single-choice",
+    "skillArea": "test-manage",
+    "topic": "Version history",
+    "difficulty": "easy",
+    "prompt": "A colleague's change to a shared agent flow broke production yesterday. You need the pre-change behavior back quickly without losing the versions saved since. What should you do?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Open Version history, select the version from before the change, and select Restore"
+      },
+      {
+        "id": "b",
+        "text": "Delete the flow and re-import the solution export from last week"
+      },
+      {
+        "id": "c",
+        "text": "Convert the flow back to a cloud flow to recover the earlier definition"
+      },
+      {
+        "id": "d",
+        "text": "Use the Test pane's Automatically option to replay the last working run"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Jeder Speichervorgang erzeugt einen versionierten Snapshot in Dataverse, gruppiert nach Datum und mit Markierung der aktuellen und veröffentlichten Version. Eine frühere Version lässt sich anzeigen und per Restore wiederherstellen – ohne die dazwischen entstandene Arbeit zu verlieren.",
+    "source": {
+      "title": "Manage and monitor agent flows",
+      "url": "https://learn.microsoft.com/en-us/training/modules/automate-workflows-agent-flows-copilot-studio/7-manage-monitor-agent-flows",
+      "quote": "Open the history, find the version from before the problem, and restore it in seconds—without losing the work done between then and now."
+    }
+  },
+  {
+    "id": "ab620-112",
+    "type": "single-choice",
+    "skillArea": "test-manage",
+    "topic": "Testing agent flows",
+    "difficulty": "medium",
+    "prompt": "A ticket flow passes the flow checker and a manual test where a ticket already exists. In production it silently fails for new requesters. Which testing practice from the learning content was skipped?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Testing both branches of every condition, including the False branch"
+      },
+      {
+        "id": "b",
+        "text": "Running the test with Automatically instead of Manually for real trigger data"
+      },
+      {
+        "id": "c",
+        "text": "Restoring the previous version before each test for a clean checker state"
+      },
+      {
+        "id": "d",
+        "text": "Configuring a savings rule so failed runs are surfaced in the Analytics tab"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Der Flow Checker prüft nur die Konfiguration, nicht das Verhalten. Deshalb beide Zweige jeder Bedingung testen – hier: ein Lauf mit vorhandenem Ticket und einer ohne. Der False-Zweig wird beim Testen am leichtesten übersprungen und fällt in Produktion am häufigsten still aus.",
+    "source": {
+      "title": "Manage and monitor agent flows",
+      "url": "https://learn.microsoft.com/en-us/training/modules/automate-workflows-agent-flows-copilot-studio/7-manage-monitor-agent-flows",
+      "quote": "The False branch is the most common place a flow fails quietly in production because it's the easiest branch to skip during testing."
+    }
+  },
+  {
+    "id": "ab620-113",
+    "type": "yes-no",
+    "skillArea": "test-manage",
+    "topic": "Convert cloud flow to agent flow",
+    "difficulty": "medium",
+    "prompt": "You plan to convert an existing Power Automate cloud flow into an agent flow. Evaluate each statement.",
+    "statements": [
+      {
+        "id": "s1",
+        "text": "The cloud flow must be in a solution before it can be converted.",
+        "correct": true
+      },
+      {
+        "id": "s2",
+        "text": "Copilot Credits must be allocated to the environment.",
+        "correct": true
+      },
+      {
+        "id": "s3",
+        "text": "The conversion can be reversed later by switching the plan back to Power Automate.",
+        "correct": false
+      },
+      {
+        "id": "s4",
+        "text": "Testing standard actions in the designer after conversion consumes Copilot Credits.",
+        "correct": false
+      }
+    ],
+    "explanation": "Voraussetzungen: Flow in einer Lösung und Copilot Credits in der Umgebung. Die Konvertierung (Plan auf Copilot Studio ändern) ist dauerhaft, weil sich die Abrechnungsänderung nicht rückgängig machen lässt. Tests von Standardaktionen im Designer verbrauchen keine Credits – nur Copilot-abgerechnete Aktionen wie Prompt Builder.",
+    "source": {
+      "title": "Manage and monitor agent flows",
+      "url": "https://learn.microsoft.com/en-us/training/modules/automate-workflows-agent-flows-copilot-studio/7-manage-monitor-agent-flows",
+      "quote": "Conversion is permanent and can't be reversed, because the change in billing plan can't be undone."
+    }
+  }
+]

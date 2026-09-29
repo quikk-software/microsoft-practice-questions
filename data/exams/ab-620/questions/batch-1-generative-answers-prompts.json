@@ -1,0 +1,686 @@
+[
+  {
+    "id": "ab620-001",
+    "type": "single-choice",
+    "skillArea": "plan-configure",
+    "topic": "Generative answers node",
+    "difficulty": "medium",
+    "prompt": "A wealth-management agent has agent-level knowledge sources covering all investment products. The premium-clients topic must answer only from a SharePoint site that holds the premium product catalog, while every other topic keeps using the broad sources. You add a generative answers node to the premium topic. What should you configure?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Add the premium SharePoint site as a node-level data source on the generative answers node"
+      },
+      {
+        "id": "b",
+        "text": "Remove the broad sources from the agent and add the premium site at the agent level"
+      },
+      {
+        "id": "c",
+        "text": "Add a custom instruction to the node that tells the model to ignore non-premium content"
+      },
+      {
+        "id": "d",
+        "text": "Create a condition node before the topic that filters the agent-level sources by client tier"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Quellen, die direkt am Generative-answers-Knoten konfiguriert sind, haben für diesen Knoten Vorrang; die Agenten-Quellen dienen nur als Fallback, wenn ein Knoten keine eigenen Quellen hat. So bleibt der Rest des Agenten bei den breiten Quellen. Custom Instructions steuern nur Ton, Format und Umfang, nicht die Quellenauswahl.",
+    "source": {
+      "title": "Configure the generative answers node in a topic",
+      "url": "https://learn.microsoft.com/en-us/training/modules/generate-ai-powered-responses-generative-answers-copilot-studio/2-configure-generative-answers-node",
+      "quote": "When a generative answers node has its own sources configured, those sources take priority over the agent-level sources for that node. Agent-level sources act as a fallback, used only when a node has no sources of its own."
+    }
+  },
+  {
+    "id": "ab620-002",
+    "type": "single-choice",
+    "skillArea": "plan-configure",
+    "topic": "Generative answers node",
+    "difficulty": "medium",
+    "prompt": "A topic uses a generative answers node scoped to a single SharePoint site. When a user asks about something the site does not cover, the agent replies that no information was found, and the conversation stalls. The business requires that this topic always gives the user a next step. What should you do?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Add a Condition node after the generative answers node that handles the no-answer case"
+      },
+      {
+        "id": "b",
+        "text": "Enable the Conversational boosting system topic for unmatched questions"
+      },
+      {
+        "id": "c",
+        "text": "Raise the number of node-level data sources so broader content is searched"
+      },
+      {
+        "id": "d",
+        "text": "Replace the generative answers node with a custom prompt that answers from the model's own training data"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Findet der Knoten keine relevanten Inhalte, liefert er eine „no information found“-Antwort und fällt nicht auf allgemeines KI-Wissen zurück (außer AI general knowledge ist als Quelle enthalten). Der empfohlene Weg ist ein Condition-Knoten nach dem Generative-answers-Knoten, der den Fall ohne Antwort mit Fallback-Nachricht oder Eskalation behandelt. Mehr Quellen verwässern die Relevanz.",
+    "source": {
+      "title": "Configure the generative answers node in a topic",
+      "url": "https://learn.microsoft.com/en-us/training/modules/generate-ai-powered-responses-generative-answers-copilot-studio/2-configure-generative-answers-node",
+      "quote": "For topics that must always return a useful response, add a Condition node after the generative answers node to handle the no-answer case with a fallback message or escalation path."
+    }
+  },
+  {
+    "id": "ab620-003",
+    "type": "single-choice",
+    "skillArea": "plan-configure",
+    "topic": "Custom data for generative answers",
+    "difficulty": "hard",
+    "prompt": "A compliance topic must answer from a proprietary regulatory API that has no connector. You call the API with an HTTP request node and receive a JSON array with fields body, link, and name. The generative answers node returns nothing useful. What must you change?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Reshape the array with a Set variable node into a Table with Content, ContentLocation, and Title"
+      },
+      {
+        "id": "b",
+        "text": "Map the JSON field names to the node's expected inputs in the Data source panel of the generative answers node properties"
+      },
+      {
+        "id": "c",
+        "text": "Change the HTTP request to return at least ten records so the model receives enough context to answer"
+      },
+      {
+        "id": "d",
+        "text": "Upload the API response as a document knowledge source so the node can index the regulation text"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Der Custom-data-Eintrag muss eine Power-Fx-Tabelle mit genau den Spalten Content (Pflicht), ContentLocation und Title sein – andere Strukturen akzeptiert der Knoten nicht. Deshalb wird die API-Antwort per Set-variable-Knoten und ForAll umgebaut. Mehr Datensätze helfen nicht: nur die ersten drei werden verwendet.",
+    "source": {
+      "title": "Connect custom knowledge sources to a generative answers node",
+      "url": "https://learn.microsoft.com/en-us/training/modules/generate-ai-powered-responses-generative-answers-copilot-studio/3-connect-custom-knowledge-sources",
+      "quote": "Regardless of whether you use an HTTP request or a flow, the variable that reaches the Custom data field must be a Table with Content, ContentLocation, and Title columns. The node doesn't accept other structures."
+    }
+  },
+  {
+    "id": "ab620-004",
+    "type": "single-choice",
+    "skillArea": "plan-configure",
+    "topic": "Custom data for generative answers",
+    "difficulty": "hard",
+    "prompt": "Your custom data source returns twenty regulation summaries to a generative answers node, but answers keep citing irrelevant regulations. Which design change addresses the root cause?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Filter and rank the results before returning them so only the three most relevant reach the node"
+      },
+      {
+        "id": "b",
+        "text": "Add a custom instruction telling the model to prefer the most relevant records in the supplied Table"
+      },
+      {
+        "id": "c",
+        "text": "Switch the node's data source from Custom data to Documents and upload all twenty summaries"
+      },
+      {
+        "id": "d",
+        "text": "Increase the Request timeout on the HTTP request node so the full result set arrives before the node synthesizes"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Der Knoten verwendet nur die ersten drei Datensätze der Tabelle, und die Auswahl ist positionsbasiert, nicht relevanzbasiert. Deshalb muss die Abfrage selbst filtern und sortieren – etwa indem die Nutzerfrage als Query-Parameter mitgegeben wird. Eine Anweisung an das Modell ändert nichts daran, welche drei Datensätze überhaupt ankommen.",
+    "source": {
+      "title": "Connect custom knowledge sources to a generative answers node",
+      "url": "https://learn.microsoft.com/en-us/training/modules/generate-ai-powered-responses-generative-answers-copilot-studio/3-connect-custom-knowledge-sources",
+      "quote": "Only the first three records in the Table are used to generate the response. If your HTTP request or flow returns more results, the additional records are ignored. The selection is positional, not relevance-based."
+    }
+  },
+  {
+    "id": "ab620-005",
+    "type": "single-choice",
+    "skillArea": "plan-configure",
+    "topic": "Custom data for generative answers",
+    "difficulty": "medium",
+    "prompt": "Custom data for a generative answers node must be assembled from three internal systems, with pagination and business rules applied before the records are ranked. Which retrieval approach should you choose?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A Power Automate flow that assembles the records and returns the formatted Table to the topic"
+      },
+      {
+        "id": "b",
+        "text": "An HTTP request node per system followed by a single Set variable node with a ForAll expression"
+      },
+      {
+        "id": "c",
+        "text": "A Perform custom search node that queries the three systems as configured knowledge sources"
+      },
+      {
+        "id": "d",
+        "text": "A Create search query node that rewrites the question so one API can return all three result sets"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Der Lernpfad empfiehlt den HTTP-Request-Knoten, wenn eine einzelne API-Antwort mit einer ForAll-Formel umgeformt werden kann. Sobald Daten aus mehreren Quellen aggregiert, paginiert oder mit Geschäftsregeln verarbeitet werden müssen, ist ein Power-Automate-Flow leichter zu bauen und zu warten; er liefert die Tabelle im geforderten Format zurück.",
+    "source": {
+      "title": "Connect custom knowledge sources to a generative answers node",
+      "url": "https://learn.microsoft.com/en-us/training/modules/generate-ai-powered-responses-generative-answers-copilot-studio/3-connect-custom-knowledge-sources",
+      "quote": "If the logic is more complex (aggregating data from multiple sources, handling pagination, or applying business rules), a Power Automate flow is easier to build and maintain."
+    }
+  },
+  {
+    "id": "ab620-006",
+    "type": "single-choice",
+    "skillArea": "plan-configure",
+    "topic": "Custom instructions",
+    "difficulty": "medium",
+    "prompt": "Relationship managers report that a generative answers node sometimes returns bullet points and sometimes prose, even though the custom instruction says \"Be helpful and professional.\" You need consistent bulleted output for multi-step answers without adding nodes. What should you do?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Rewrite the instruction to state exactly when bullet points apply"
+      },
+      {
+        "id": "b",
+        "text": "Move the instruction to the agent's general instructions"
+      },
+      {
+        "id": "c",
+        "text": "Replace the generative answers node with a custom prompt that specifies the bullet format in its instructions"
+      },
+      {
+        "id": "d",
+        "text": "Add a second generative answers node with a stricter instruction"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Custom Instructions wirken nur, wenn sie beobachtbare, messbare Verhaltensweisen beschreiben. „Be helpful and professional“ beschreibt eine Qualität, kein Verhalten – die Ausgabe sieht mit und ohne die Anweisung gleich aus. Inkonsistente Formate deuten darauf hin, dass das Format nicht spezifiziert ist; die Anweisung wird präzisiert, nicht der Knotentyp gewechselt.",
+    "source": {
+      "title": "Shape AI responses with custom instructions",
+      "url": "https://learn.microsoft.com/en-us/training/modules/generate-ai-powered-responses-generative-answers-copilot-studio/4-shape-responses-custom-instructions",
+      "quote": "If an agent sometimes uses bullet points and sometimes doesn't, the instruction probably doesn't specify a format. Rewrite it to define exactly when bullet points apply."
+    }
+  },
+  {
+    "id": "ab620-007",
+    "type": "yes-no",
+    "skillArea": "plan-configure",
+    "topic": "Custom instructions",
+    "difficulty": "medium",
+    "prompt": "You configure custom instructions on a generative answers node inside a support topic. For each statement, decide whether it is true.",
+    "statements": [
+      {
+        "id": "s1",
+        "text": "The instructions also apply to the agent's conversational boosting behavior.",
+        "correct": false
+      },
+      {
+        "id": "s2",
+        "text": "The instruction field accepts up to 8,000 characters and can include topic variables.",
+        "correct": true
+      },
+      {
+        "id": "s3",
+        "text": "A scope instruction can prevent the model from filling gaps with its general training data.",
+        "correct": true
+      },
+      {
+        "id": "s4",
+        "text": "The instructions change which knowledge sources the node searches.",
+        "correct": false
+      }
+    ],
+    "explanation": "Custom Instructions gelten nur für den Knoten, an dem sie konfiguriert sind – nicht für andere Knoten, Topics oder Conversational Boosting. Das Feld fasst bis zu 8.000 Zeichen und erlaubt Topic-Variablen und Power-Fx-Ausdrücke. Sie steuern Ton, Format und Umfang (inkl. Verbot von Spekulation über die Quellen hinaus), ändern aber nicht, was der Knoten sucht.",
+    "source": {
+      "title": "Shape AI responses with custom instructions",
+      "url": "https://learn.microsoft.com/en-us/training/modules/generate-ai-powered-responses-generative-answers-copilot-studio/4-shape-responses-custom-instructions",
+      "quote": "Custom instructions apply only to the generative answers node where you configure them. They don't affect other nodes in the same topic, other topics in the agent, or the agent's conversational boosting behavior."
+    }
+  },
+  {
+    "id": "ab620-008",
+    "type": "single-choice",
+    "skillArea": "plan-configure",
+    "topic": "Custom prompts",
+    "difficulty": "medium",
+    "prompt": "A legal-review topic must take a contract clause supplied by the user and return exactly one label (Standard, Non-standard, or Flagged) plus a one-sentence rationale, then branch on the label. No knowledge retrieval is involved. Which mechanism fits?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A custom prompt with an input variable for the clause, added as a tool node"
+      },
+      {
+        "id": "b",
+        "text": "A generative answers node with a custom instruction listing the three allowed labels"
+      },
+      {
+        "id": "c",
+        "text": "A Perform custom search node with the clause as the query and a condition on the results"
+      },
+      {
+        "id": "d",
+        "text": "A Question node with a multiple-choice option set that asks the user to classify the clause themselves"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Ein Custom Prompt führt eine strukturierte Reasoning-Aufgabe auf Eingaben aus, die das Topic liefert – klassifizieren, extrahieren, zusammenfassen –, ohne etwas zu suchen. Die drei Signale treffen zu: definierte Ausgabestruktur, Trennung von Wissensabruf, ggf. spezielles Modell. Der Generative-answers-Knoten beantwortet dagegen „Was sagen unsere Inhalte dazu?“.",
+    "source": {
+      "title": "Author and configure custom prompts in topics",
+      "url": "https://learn.microsoft.com/en-us/training/modules/generate-ai-powered-responses-generative-answers-copilot-studio/5-author-custom-prompts-topics",
+      "quote": "Custom prompts perform specific, structured reasoning tasks on input the topic provides. A custom prompt doesn't search anything."
+    }
+  },
+  {
+    "id": "ab620-009",
+    "type": "single-choice",
+    "skillArea": "integrate-extend",
+    "topic": "Foundry models in Prompt builder",
+    "difficulty": "medium",
+    "prompt": "A custom prompt must run on a domain-specialized open-source model that is not in the managed model list. The model is deployed in Microsoft Foundry. What do you enter in Prompt builder to use it?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The model deployment name and the base model name as shown in Foundry"
+      },
+      {
+        "id": "b",
+        "text": "The Azure subscription ID and the Foundry resource group"
+      },
+      {
+        "id": "c",
+        "text": "The REST endpoint URL and the Azure region of the deployment"
+      },
+      {
+        "id": "d",
+        "text": "The Foundry project name and an API key generated for the Copilot Studio connection"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Über „Connect a model from Microsoft Foundry“ im Modell-Dropdown werden Model deployment name und Base model name eingetragen, genau so, wie sie in der Foundry-Ressource stehen. Danach nutzt der Prompt immer dieses Modell. Zu beachten: Kosten der Foundry-Bereitstellung und DLP-Richtlinien der Power Platform.",
+    "source": {
+      "title": "Author and configure custom prompts in topics",
+      "url": "https://learn.microsoft.com/en-us/training/modules/generate-ai-powered-responses-generative-answers-copilot-studio/5-author-custom-prompts-topics",
+      "quote": "Model deployment name: the deployment name exactly as it appears in your Microsoft Foundry resource"
+    }
+  },
+  {
+    "id": "ab620-010",
+    "type": "matching",
+    "skillArea": "plan-configure",
+    "topic": "Prompt builder model categories",
+    "difficulty": "medium",
+    "prompt": "Match each Prompt builder model category to the task profile it is intended for.",
+    "left": [
+      {
+        "id": "l1",
+        "text": "Mini (default, basic rate)"
+      },
+      {
+        "id": "l2",
+        "text": "General (standard rate)"
+      },
+      {
+        "id": "l3",
+        "text": "Deep (premium rate)"
+      }
+    ],
+    "right": [
+      {
+        "id": "r1",
+        "text": "Moderately complex tasks where speed matters, such as classification or extraction"
+      },
+      {
+        "id": "r2",
+        "text": "Complex or multimodal tasks such as image and document analysis"
+      },
+      {
+        "id": "r3",
+        "text": "Reasoning-intensive tasks such as nuanced decision-making and data analysis"
+      }
+    ],
+    "correct": {
+      "l1": "r1",
+      "l2": "r2",
+      "l3": "r3"
+    },
+    "explanation": "GPT-4.1 mini ist Standard (Mini, Basisrate) und eignet sich für strukturierte Aufgaben, bei denen Geschwindigkeit zählt. General (z. B. GPT-4.1, Standardrate) für komplexe/multimodale Aufgaben; Deep (z. B. GPT-5 reasoning, Premiumrate) für reasoning-intensive Aufgaben. Tests mit jedem Kandidatenmodell zeigen, welches die nötige Qualität liefert.",
+    "source": {
+      "title": "Author and configure custom prompts in topics",
+      "url": "https://learn.microsoft.com/en-us/training/modules/generate-ai-powered-responses-generative-answers-copilot-studio/5-author-custom-prompts-topics",
+      "quote": "Mini: Cost-effective for moderately complex tasks where speed matters. GPT-4.1 mini is the default and falls into this category, billed at the basic rate."
+    }
+  },
+  {
+    "id": "ab620-011",
+    "type": "single-choice",
+    "skillArea": "plan-configure",
+    "topic": "Tools in topics",
+    "difficulty": "medium",
+    "prompt": "An order-status topic first collects an order number and must then look up the order in Dataverse, but only after that input is confirmed and only inside this topic. Where should the Dataverse connector tool be added?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Inside the topic as a node placed after the order number is collected"
+      },
+      {
+        "id": "b",
+        "text": "On the agent's Tools page so the orchestrator can invoke it whenever needed"
+      },
+      {
+        "id": "c",
+        "text": "In the Conversational boosting system topic so it runs for unmatched messages"
+      },
+      {
+        "id": "d",
+        "text": "As an agent-level tool with dynamic invocation disabled and a trigger phrase"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Wo ein Tool hinzugefügt wird, bestimmt, wann es läuft: Auf der Tools-Seite des Agenten kann der Orchestrator es jederzeit automatisch aufrufen; innerhalb eines Topic-Knotens läuft es an einem definierten, kontrollierten Punkt. Für eine Aktion an einem genauen Schritt eines bekannten Ablaufs ist Topic-Ebene richtig.",
+    "source": {
+      "title": "Call tools from agent topics",
+      "url": "https://learn.microsoft.com/en-us/training/modules/take-action-agent-topics-tools-flows-copilot-studio/2-call-tools-topics",
+      "quote": "Tools added inside a topic node run at a specific, controlled moment you define on the authoring canvas. Use topic-level tools when the action should happen at a precise step in a known flow."
+    }
+  },
+  {
+    "id": "ab620-012",
+    "type": "single-choice",
+    "skillArea": "plan-configure",
+    "topic": "Topic-only search tools",
+    "difficulty": "hard",
+    "prompt": "A topic must search configured knowledge sources, remove records that contain sensitive data, and only then feed the remaining results into a custom prompt for summarization. Which node gives you the processing stage between retrieval and response?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Perform custom search, which returns raw unsummarized results as an output variable"
+      },
+      {
+        "id": "b",
+        "text": "Generative answers, which retrieves and summarizes the configured sources in one step"
+      },
+      {
+        "id": "c",
+        "text": "Create search query, which rewrites the user message into an enriched query string"
+      },
+      {
+        "id": "d",
+        "text": "Send HTTP request, which calls the knowledge sources and stores the response schema"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Perform custom search liefert die Rohtreffer der konfigurierten Quellen als Variable, sodass Filterung, Geschäftslogik oder ein Prompt dazwischengeschaltet werden können. Der Generative-answers-Knoten fasst dagegen direkt zusammen; Create search query erzeugt nur eine kontextangereicherte Suchanfrage (oft als Vorstufe).",
+    "source": {
+      "title": "Call tools from agent topics",
+      "url": "https://learn.microsoft.com/en-us/training/modules/take-action-agent-topics-tools-flows-copilot-studio/2-call-tools-topics",
+      "quote": "Unlike the generative answers node, which retrieves and summarizes in one step, the custom search node separates retrieval from response, giving you a processing stage in between."
+    }
+  },
+  {
+    "id": "ab620-013",
+    "type": "single-choice",
+    "skillArea": "plan-configure",
+    "topic": "Connector tool authentication",
+    "difficulty": "medium",
+    "prompt": "A customer-facing agent uses a Dataverse connector tool to show customers their own orders. Each customer must only ever see orders their own account is authorized to access. Which credential setting should the tool use?",
+    "options": [
+      {
+        "id": "a",
+        "text": "End user authentication, so each user signs in with their own credentials"
+      },
+      {
+        "id": "b",
+        "text": "Maker-provided credentials, so every request runs as the maker"
+      },
+      {
+        "id": "c",
+        "text": "A service principal in an environment variable shared by all users"
+      },
+      {
+        "id": "d",
+        "text": "Anonymous access with the order number as the only filter in the connector action"
+      }
+    ],
+    "correct": "a",
+    "explanation": "End user authentication ist Standard: Beim ersten Aufruf meldet sich der Nutzer mit eigenen Anmeldedaten an und sieht nur Daten, auf die sein Konto Zugriff hat – passend, wenn Berechtigungen dem Nutzer folgen sollen. Maker-provided credentials lassen alle Nutzer als Maker agieren (für geteilte Ressourcen) und erfordern einen authentifizierten Kanal.",
+    "source": {
+      "title": "Call tools from agent topics",
+      "url": "https://learn.microsoft.com/en-us/training/modules/take-action-agent-topics-tools-flows-copilot-studio/2-call-tools-topics",
+      "quote": "Each user can only see data their account is authorized to access, which is appropriate when data should follow user-level permissions."
+    }
+  },
+  {
+    "id": "ab620-014",
+    "type": "multiple-choice",
+    "skillArea": "plan-configure",
+    "topic": "Agent flows called from topics",
+    "difficulty": "hard",
+    "prompt": "You built a refund flow in Power Automate, but it does not appear in the tool picker when you try to add it to a topic. Which two requirements could be missing? (Choose two.)",
+    "options": [
+      {
+        "id": "a",
+        "text": "The flow uses the When an agent calls the flow trigger"
+      },
+      {
+        "id": "b",
+        "text": "The flow is a solution flow"
+      },
+      {
+        "id": "c",
+        "text": "The flow has Asynchronous response turned on in Respond to the agent"
+      },
+      {
+        "id": "d",
+        "text": "The flow is shared with the agent's end users as run-only users"
+      },
+      {
+        "id": "e",
+        "text": "The flow uses a Recurrence trigger with a daily schedule"
+      }
+    ],
+    "correct": [
+      "a",
+      "b"
+    ],
+    "explanation": "Ein Flow ohne den Trigger „When an agent calls the flow“ erscheint nicht im Tool-Picker, und er muss ein Solution-Flow sein, um in Copilot Studio sichtbar zu sein. Zusätzlich braucht er die Aktion „Respond to the agent“ mit ausgeschalteter Asynchronous response sowie deklarierte Ein-/Ausgabeparameter. Freigabe an Endnutzer oder ein Recurrence-Trigger sind hier irrelevant.",
+    "source": {
+      "title": "Call agent flows from agent topics",
+      "url": "https://learn.microsoft.com/en-us/training/modules/take-action-agent-topics-tools-flows-copilot-studio/3-call-agent-flows-topics",
+      "quote": "This trigger makes the flow callable from a topic or the agent orchestrator. A flow without this trigger doesn't appear in the tool picker."
+    }
+  },
+  {
+    "id": "ab620-015",
+    "type": "single-choice",
+    "skillArea": "plan-configure",
+    "topic": "Agent flow timeout",
+    "difficulty": "hard",
+    "prompt": "An agent flow generates a large document, which regularly takes several minutes. Topics calling the flow time out. The customer must still receive the finished document later. How should you redesign the flow?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Return a job ID with Respond to the agent and place the long-running actions after that action"
+      },
+      {
+        "id": "b",
+        "text": "Enable Asynchronous response so the topic no longer waits"
+      },
+      {
+        "id": "c",
+        "text": "Raise the Request timeout on the topic's tool node from 30 seconds to the maximum allowed value"
+      },
+      {
+        "id": "d",
+        "text": "Convert the agent flow back into a cloud flow to avoid the limit"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Agent Flows müssen innerhalb von 100 Sekunden antworten. „Respond to the agent“ markiert die synchrone Grenze, muss aber nicht der letzte Knoten sein: Aktionen danach laufen asynchron bis zur 30-Tage-Grenze. Der Flow gibt also schnell eine Job-ID zurück, ein Polling-Topic oder eine Folgenachricht liefert später das Ergebnis. Asynchronous response muss für aufrufbare Flows aus sein.",
+    "source": {
+      "title": "Call agent flows from agent topics",
+      "url": "https://learn.microsoft.com/en-us/training/modules/take-action-agent-topics-tools-flows-copilot-studio/3-call-agent-flows-topics",
+      "quote": "For those scenarios, design the flow to start the background operation and immediately return a job ID or tracking reference to the topic."
+    }
+  },
+  {
+    "id": "ab620-016",
+    "type": "single-choice",
+    "skillArea": "plan-configure",
+    "topic": "HTTP request node",
+    "difficulty": "medium",
+    "prompt": "A carrier tracking API has no Power Platform connector, publishes no OpenAPI specification, and offers no MCP server. A single GET request with the tracking number in the URL is needed inside one topic. Which approach should you use?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A Send HTTP request node whose URL is built from the tracking number with Power Fx"
+      },
+      {
+        "id": "b",
+        "text": "A REST API tool generated from the carrier's endpoint documentation"
+      },
+      {
+        "id": "c",
+        "text": "An agent flow with an HTTP action that is called from the topic through a tool node"
+      },
+      {
+        "id": "d",
+        "text": "An MCP tool that wraps the carrier endpoint so the orchestrator can call it dynamically"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Der HTTP-Request-Knoten ist der direkte Weg für einen Ad-hoc-REST-Aufruf, wenn kein Connector existiert und die Integration eine einzelne, in sich geschlossene Anfrage in einem Topic ist. REST-API-Tools brauchen eine OpenAPI-Spezifikation, MCP-Tools einen MCP-Server; ein Agent Flow lohnt sich bei mehrstufiger oder wiederverwendbarer Logik.",
+    "source": {
+      "title": "Retrieve and send data using the HTTP request node",
+      "url": "https://learn.microsoft.com/en-us/training/modules/take-action-agent-topics-tools-flows-copilot-studio/4-configure-http-request-node",
+      "quote": "HTTP request node: an ad-hoc REST API call built directly on the authoring canvas — suitable when no connector exists and the integration is a single, self-contained request within one topic."
+    }
+  },
+  {
+    "id": "ab620-017",
+    "type": "single-choice",
+    "skillArea": "plan-configure",
+    "topic": "HTTP request node security",
+    "difficulty": "medium",
+    "prompt": "A Send HTTP request node needs a bearer token in the Authorization header. Several makers have access to the topic canvas, and the agent will be deployed to test and production. How should the token be supplied?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Store the token in an environment variable and reference that variable in the header value"
+      },
+      {
+        "id": "b",
+        "text": "Paste the token into the header value and restrict who can open the topic in Copilot Studio"
+      },
+      {
+        "id": "c",
+        "text": "Send the token in the JSON body instead of a header so it is not shown on the canvas"
+      },
+      {
+        "id": "d",
+        "text": "Store the token in a global variable that the On Conversation Start topic sets from a message node"
+      }
+    ],
+    "correct": "a",
+    "explanation": "API-Keys und Tokens dürfen nie als Literal in Header-Feldern stehen, weil jeder Maker mit Zugriff auf den Canvas sie sieht. Environment variables halten die Anmeldedaten aus dem Canvas heraus und sind je Umgebung (Test, Produktion) verwaltbar – genau das braucht ein Deployment über mehrere Umgebungen.",
+    "source": {
+      "title": "Retrieve and send data using the HTTP request node",
+      "url": "https://learn.microsoft.com/en-us/training/modules/take-action-agent-topics-tools-flows-copilot-studio/4-configure-http-request-node",
+      "quote": "Store credentials in environment variables and reference the environment variable in the header value field. This keeps credentials out of the canvas and makes them manageable across environments."
+    }
+  },
+  {
+    "id": "ab620-018",
+    "type": "single-choice",
+    "skillArea": "plan-configure",
+    "topic": "HTTP request error handling",
+    "difficulty": "medium",
+    "prompt": "When the carrier API is unavailable, the customer-facing conversation ends abruptly because the Send HTTP request node triggers the system On Error topic. Customers should instead see a friendly message with a next step. What should you configure?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Set Error handling to Continue on error and branch on the captured status code"
+      },
+      {
+        "id": "b",
+        "text": "Increase the Request timeout so the node waits for the API to recover"
+      },
+      {
+        "id": "c",
+        "text": "Edit the system On Error topic to display the raw error response body to the customer"
+      },
+      {
+        "id": "d",
+        "text": "Wrap the node in a redirect to a child agent whose description covers tracking failures"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Standardmäßig steht der Knoten auf „Raise an error“: Bei einem Fehler wird das System-Topic On Error ausgelöst und der Ablauf gestoppt. Mit „Continue on error“ läuft das Topic weiter; Statuscode und Fehlerantwort landen in Variablen, und eine Condition prüft z. B. auf 200 und leitet sonst zu einer Fallback-Nachricht.",
+    "source": {
+      "title": "Retrieve and send data using the HTTP request node",
+      "url": "https://learn.microsoft.com/en-us/training/modules/take-action-agent-topics-tools-flows-copilot-studio/4-configure-http-request-node",
+      "quote": "By default, the Send HTTP Request node uses Raise an error mode. When the request fails, the agent triggers the system On Error topic and stops the current flow."
+    }
+  },
+  {
+    "id": "ab620-019",
+    "type": "single-choice",
+    "skillArea": "plan-configure",
+    "topic": "HTTP request node",
+    "difficulty": "easy",
+    "prompt": "A POST request from a Send HTTP request node is accepted by the API, but the API ignores the JSON body. The body is configured as JSON Content. What is the most likely cause?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The Content-Type: application/json header is missing from the request"
+      },
+      {
+        "id": "b",
+        "text": "The response data type was not generated from a sample JSON payload"
+      },
+      {
+        "id": "c",
+        "text": "The node is set to Continue on error instead of the default Raise an error mode"
+      },
+      {
+        "id": "d",
+        "text": "The URL was entered as a static string instead of a Power Fx expression"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Wenn eine POST- oder PATCH-Anfrage angenommen wird, der Body aber stillschweigend verworfen wird, fehlt meist der Header Content-Type: application/json – die API kann den Body sonst nicht interpretieren. Das Response-Schema betrifft nur die Verarbeitung der Antwort.",
+    "source": {
+      "title": "Retrieve and send data using the HTTP request node",
+      "url": "https://learn.microsoft.com/en-us/training/modules/take-action-agent-topics-tools-flows-copilot-studio/4-configure-http-request-node",
+      "quote": "If you send a POST or PATCH request and the API silently rejects the body, check your headers. A missing Content-Type: application/json header might be the cause."
+    }
+  },
+  {
+    "id": "ab620-020",
+    "type": "single-choice",
+    "skillArea": "plan-configure",
+    "topic": "HTTP request response schema",
+    "difficulty": "easy",
+    "prompt": "After a Send HTTP request node returns tracking data, you want to reference the estimated delivery date in a message node with IntelliSense support. What must you do first?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Set Response data type to From Sample Data and paste a sample JSON response"
+      },
+      {
+        "id": "b",
+        "text": "Add a Parse JSON node from the Advanced menu after the HTTP request node"
+      },
+      {
+        "id": "c",
+        "text": "Declare the field as an output parameter of the topic in the topic details"
+      },
+      {
+        "id": "d",
+        "text": "Enable Continue on error so the response body is exposed as a variable"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Über „From Sample Data“ und „Get schema from sample JSON“ erzeugt Copilot Studio aus einer Beispielantwort ein Power-Fx-Variablenschema. Die Felder sind danach per Punktnotation (z. B. Topic.TrackingResponse.estimatedDelivery) mit IntelliSense nutzbar.",
+    "source": {
+      "title": "Retrieve and send data using the HTTP request node",
+      "url": "https://learn.microsoft.com/en-us/training/modules/take-action-agent-topics-tools-flows-copilot-studio/4-configure-http-request-node",
+      "quote": "Select Confirm. Copilot Studio generates a Power Fx variable schema from the sample. The response fields are now available with IntelliSense support in the Power Fx editor."
+    }
+  }
+]
