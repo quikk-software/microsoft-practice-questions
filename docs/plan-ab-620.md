@@ -82,4 +82,4 @@ Test and manage agents
 - Nicht im Material: Details zu „Plan identity strategy“ jenseits der
   Authentifizierungsoptionen/Anmeldemodi; „Design agents for internal or
   external audiences“ nur implizit über Kanal-/Auth-Entscheidungen
-- Kein Nachschlagewerk (compendium.md) angelegt — auf Wunsch wie bei AB-410
+- Nachschlagewerk `data/exams/ab-620/compendium.md` angelegt (2026-09-29, ~7.500 Wörter, 7 Kapitel, 34 TOC-Einträge, 15 Tabellen): Architektur (Orchestrierung · Topics · Tools · Knowledge · Agents) → Konversation (Topics, Generative answers vs. Custom prompts, Tools/Agent Flows/HTTP aus Topics, Nachrichten, Adaptive Cards) → Integration (Muster-Vergleich, Auth/DLP, MCP, Agent Flows, Computer Use) → Wissen (Copilot vs. Real-time Connector, Azure AI Search) → Multi-Agent (Child vs. Connected, Muster, Verbindungsoptionen, A2A) → Betrieb (Evaluate/Monitor, Publish, Verwaltung, ALM/Credits) → Entscheidungshilfen (Integration, Topic-Mechanismus, Fehlerbild → Stellschraube, Stolperfallen). SSR-Render geprüft (keine doppelten/fehlenden Anker).
