@@ -1,0 +1,859 @@
+[
+  {
+    "id": "ab100-028",
+    "type": "matching",
+    "skillArea": "plan",
+    "topic": "Generative vs classic orchestration",
+    "difficulty": "medium",
+    "prompt": "A maker asks how behaviors differ between generative and classic orchestration in Copilot Studio. Match each behavior to the orchestration mode it describes.",
+    "left": [
+      {
+        "id": "l1",
+        "text": "Topics are selected based on the description of their purpose"
+      },
+      {
+        "id": "l2",
+        "text": "Tools can only be called explicitly from within a topic"
+      },
+      {
+        "id": "l3",
+        "text": "Knowledge is used as a fallback when no topic matches"
+      },
+      {
+        "id": "l4",
+        "text": "The agent can automatically generate questions to fill missing inputs"
+      }
+    ],
+    "right": [
+      {
+        "id": "r1",
+        "text": "Generative orchestration"
+      },
+      {
+        "id": "r2",
+        "text": "Classic orchestration"
+      }
+    ],
+    "correct": {
+      "l1": "r1",
+      "l2": "r2",
+      "l3": "r2",
+      "l4": "r1"
+    },
+    "explanation": "Generativ: Topics, Child/Connected Agents und Tools werden anhand von Beschreibungen gewählt, Wissen proaktiv durchsucht, fehlende Inputs automatisch erfragt, Antworten generiert. Klassisch: Trigger-Phrasen, Tools nur aus Topics, Wissen als Fallback, Fragen und Nachrichten müssen in Topics authored werden.",
+    "source": {
+      "title": "Determine generative AI knowledge sources for agents built in Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/7-determine-generative-ai-knowledge-sources-agents-built-copilot-studio",
+      "quote": "Topics are selected based on matching a user query with trigger phrases."
+    }
+  },
+  {
+    "id": "ab100-029",
+    "type": "single-choice",
+    "skillArea": "plan",
+    "topic": "Knowledge source limits",
+    "difficulty": "hard",
+    "prompt": "A legal team wants to attach 40 SharePoint libraries, 8 uploaded document sets, and 12 public websites to one Copilot Studio agent in generative orchestration. Which constraint from the learning content should the architect raise?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Generative orchestration searches up to 25 knowledge sources, and at most 5 unstructured sources appear in retrieval at the same time"
+      },
+      {
+        "id": "b",
+        "text": "Public websites are not supported in generative orchestration, so the 12 sites have to be rebuilt as classic topics with trigger phrases"
+      },
+      {
+        "id": "c",
+        "text": "Uploaded documents are not indexed for semantic retrieval in Dataverse, so the 8 document sets have to move to an Azure AI Search index"
+      },
+      {
+        "id": "d",
+        "text": "SharePoint knowledge does not honor user permissions, so the 40 libraries have to be restricted to content that is public to the tenant"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Generative Orchestrierung kann bis zu 25 Wissensquellen durchsuchen (GPT-basierte Relevanzfilterung); bei unstrukturierten Daten gilt zudem maximal 500 Knowledge Objects je Agent und 5 unstrukturierte Quellen gleichzeitig im Retrieval. SharePoint-Wissen respektiert Berechtigungen, Uploads werden in Dataverse indexiert.",
+    "source": {
+      "title": "Determine generative AI knowledge sources for agents built in Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/7-determine-generative-ai-knowledge-sources-agents-built-copilot-studio",
+      "quote": "Maximum 5 unstructured sources per agent appearing simultaneously in retrieval"
+    }
+  },
+  {
+    "id": "ab100-030",
+    "type": "single-choice",
+    "skillArea": "plan",
+    "topic": "Selecting the knowledge architecture",
+    "difficulty": "medium",
+    "prompt": "A pharma company needs high-precision retrieval across a very large corpus of semi-structured research notes with scalable indexing. Which knowledge architecture does the learning content recommend?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Azure AI Search with semantic ranking"
+      },
+      {
+        "id": "b",
+        "text": "Public website knowledge"
+      },
+      {
+        "id": "c",
+        "text": "Classic topic embedding for low-complexity Q&A"
+      },
+      {
+        "id": "d",
+        "text": "Dataverse tables for structured queries"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Die Auswahlkriterien: Semi-strukturiert → Azure AI Search; hohe Präzision → Azure AI Search mit Semantic Ranking; große Inhaltsmengen mit skalierbarer Indexierung und Vektorsuche → Azure AI Search. Strukturierte Daten → Dataverse; einfache Q&A → Public Site oder klassisches Topic.",
+    "source": {
+      "title": "Determine generative AI knowledge sources for agents built in Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/7-determine-generative-ai-knowledge-sources-agents-built-copilot-studio",
+      "quote": "High precision → Azure AI Search with semantic ranking"
+    }
+  },
+  {
+    "id": "ab100-031",
+    "type": "single-choice",
+    "skillArea": "plan",
+    "topic": "Azure OpenAI on your data",
+    "difficulty": "hard",
+    "prompt": "A maker configures Azure OpenAI \"on your data\" inside a generative answers node and also keeps agent-level SharePoint sources. Which behavior does the learning content describe for this setup?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Node-level knowledge sources are prioritized over agent-level sources"
+      },
+      {
+        "id": "b",
+        "text": "Agent-level sources take precedence over the node because they are global to the agent"
+      },
+      {
+        "id": "c",
+        "text": "Both are merged and ranked purely by recency"
+      },
+      {
+        "id": "d",
+        "text": "The node is disabled until the agent-level sources are removed"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Azure OpenAI on your data läuft über klassische Verbindungen in Generative-Answers-Knoten, erstellt eine direkte Verbindung zur Azure-OpenAI-Ressource und priorisiert Knoten-Wissensquellen über Agentenquellen; außerdem erlaubt es Modellauswahl und Prompting-Parameter.",
+    "source": {
+      "title": "Determine generative AI knowledge sources for agents built in Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/7-determine-generative-ai-knowledge-sources-agents-built-copilot-studio",
+      "quote": "Prioritizes node-level knowledge sources over agent-level sources"
+    }
+  },
+  {
+    "id": "ab100-032",
+    "type": "single-choice",
+    "skillArea": "plan",
+    "topic": "Extend Copilot vs build custom agent",
+    "difficulty": "medium",
+    "prompt": "A case-management process needs complex decision flows, multi-step orchestration across external APIs, and system-wide triggers that run without user interaction. Which approach does the learning content recommend?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Build a custom agent, because the scenario needs autonomy, orchestration across tools and APIs, and external integration"
+      },
+      {
+        "id": "b",
+        "text": "Extend Microsoft 365 Copilot, because its built-in guardrails cover the governance that case management with external APIs requires"
+      },
+      {
+        "id": "c",
+        "text": "Extend Microsoft 365 Copilot with a connector, because data integration becomes simple once a connector exists"
+      },
+      {
+        "id": "d",
+        "text": "Use a prebuilt Copilot agent template, because case management is a standard productivity workflow in Teams"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Custom Agents sind angezeigt bei komplexer Domänenlogik, Orchestrierung über Tools/APIs/Agenten, Autonomie und systemweiten Triggern sowie Pflicht-Integration mit externen Systemen; Case Management und komplexe Entscheidungsflüsse werden explizit als Custom-Agent-Szenarien genannt. Copilot-Erweiterung passt bei Produktivitäts-Workflows in Microsoft-365-Apps mit einfacher Logik.",
+    "source": {
+      "title": "Determine when to build custom agents or extend Microsoft 365 Copilot",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/8-determine-build-custom-agents-extend-copilot",
+      "quote": "Case management and complex decision flows"
+    }
+  },
+  {
+    "id": "ab100-033",
+    "type": "yes-no",
+    "skillArea": "plan",
+    "topic": "Copilot extension vs custom agent attributes",
+    "difficulty": "medium",
+    "prompt": "A CIO compares extending Microsoft 365 Copilot with building a custom agent. Evaluate each statement against the platform capability comparison matrix.",
+    "statements": [
+      {
+        "id": "s1",
+        "text": "A Copilot extension offers low autonomy while a custom agent offers high autonomy.",
+        "correct": true
+      },
+      {
+        "id": "s2",
+        "text": "A Copilot extension can use any enterprise data, while a custom agent is limited to Microsoft 365 data.",
+        "correct": false
+      },
+      {
+        "id": "s3",
+        "text": "Governance is built in for a Copilot extension, while a custom agent requires custom governance.",
+        "correct": true
+      },
+      {
+        "id": "s4",
+        "text": "Both approaches provide full agent orchestration.",
+        "correct": false
+      }
+    ],
+    "explanation": "Matrix: Autonomy Low/High, Custom Logic Limited/Extensive, Data Variety Microsoft 365/Any enterprise data, Actions Simple/Complex + multi-step, Orchestration None-Implicit/Full, Governance Built-in/Custom required.",
+    "source": {
+      "title": "Determine when to build custom agents or extend Microsoft 365 Copilot",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/8-determine-build-custom-agents-extend-copilot",
+      "quote": "Enterprise-grade safety and Responsible AI guardrails"
+    }
+  },
+  {
+    "id": "ab100-034",
+    "type": "single-choice",
+    "skillArea": "plan",
+    "topic": "When custom AI models are justified",
+    "difficulty": "hard",
+    "prompt": "An insurer's claims-classification agent still shows persistent low precision and recall after prompt engineering, retrieval tuning, fine-tuning, and switching to an advanced catalog model, and wrong answers carry high business cost. According to the learning content, what does this evidence justify?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Creating a custom AI model, because off-the-shelf accuracy is insufficient despite the standard remedies"
+      },
+      {
+        "id": "b",
+        "text": "Abandoning the use case, because catalog models define the ceiling of achievable classification accuracy"
+      },
+      {
+        "id": "c",
+        "text": "Extending Microsoft 365 Copilot instead, because it inherits Microsoft's guardrails and claims data lives in email"
+      },
+      {
+        "id": "d",
+        "text": "Adding further knowledge sources until recall improves, since custom models are rarely cost-effective for insurers"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Custom Modeling ist gerechtfertigt, wenn Evaluationsmetriken trotz Prompt Engineering, Retrieval-Tuning, Fine-Tuning und fortgeschrittener Katalogmodelle signifikante Genauigkeitslücken zeigen; Indikatoren sind anhaltend niedrige Precision/Recall, hohes Risiko falscher Informationen und hohe Kosten falscher Antworten.",
+    "source": {
+      "title": "Determine when custom AI models should be created",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/9-determine-custom-ai-models-created",
+      "quote": "Persistent low precision/recall"
+    }
+  },
+  {
+    "id": "ab100-035",
+    "type": "single-choice",
+    "skillArea": "plan",
+    "topic": "Data requirements for custom models",
+    "difficulty": "medium",
+    "prompt": "A mid-sized company wants a custom model but has no labeled domain data, no MLOps engineers, and no retraining process. What does the learning content recommend as the better starting point?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Extend Microsoft 365 Copilot, because the prerequisites for custom model development are not met"
+      },
+      {
+        "id": "b",
+        "text": "Train the custom model on public data first and add internally labeled domain data in a later phase"
+      },
+      {
+        "id": "c",
+        "text": "Procure GPUs first so that the data pipeline can be built on dedicated hardware once labeling starts"
+      },
+      {
+        "id": "d",
+        "text": "Use a small language model, because SLMs can be domain-tuned without labeled data or MLOps"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Custom Models brauchen große Mengen hochwertiger gelabelter Domänendaten, Data Governance, eine wiederholbare Trainings-/Evaluations-/Deployment-Pipeline, Taxonomie, Retraining-Strategie und Data Scientists/MLOps. Fehlen diese, ist das Erweitern von Microsoft 365 Copilot oft der bessere Start.",
+    "source": {
+      "title": "Determine when custom AI models should be created",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/9-determine-custom-ai-models-created",
+      "quote": "If these requirements aren't yet met, extending Microsoft 365 Copilot is often the better starting point."
+    }
+  },
+  {
+    "id": "ab100-036",
+    "type": "single-choice",
+    "skillArea": "plan",
+    "topic": "Prompt library governance metadata",
+    "difficulty": "medium",
+    "prompt": "An AI Center of Excellence sets up an enterprise prompt library in GitHub Enterprise. Which metadata does the learning content require for each prompt?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Purpose, owner, version, last updated date, applicable systems, risk classification, and required grounding sources"
+      },
+      {
+        "id": "b",
+        "text": "Token count, model temperature, top-p, GPU type used during testing, and the average latency measured per run"
+      },
+      {
+        "id": "c",
+        "text": "The author's job title, department budget code, license SKU, cost center, and the date of the next contract renewal"
+      },
+      {
+        "id": "d",
+        "text": "The prompt text and a short title, because additional metadata slows down reuse and discourages contributions"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Governance-Metadaten je Prompt: Purpose, Owner, Version, Last updated date, Applicable systems (Copilot Studio, Azure Copilot …), Risk classification, Required grounding sources. Dazu kommen Qualitätsstandards, Review-/Approval-Workflow, Tests und Lifecycle-Management.",
+    "source": {
+      "title": "Provide guidelines for creating a prompt library",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/10-provide-guidelines-creating-prompt-library",
+      "quote": "Required grounding sources"
+    }
+  },
+  {
+    "id": "ab100-037",
+    "type": "single-choice",
+    "skillArea": "plan",
+    "topic": "Prompt library review workflow",
+    "difficulty": "easy",
+    "prompt": "Before a prompt is published to the enterprise library, who does the learning content say should review it?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Domain experts, responsible AI reviewers, and security or compliance teams"
+      },
+      {
+        "id": "b",
+        "text": "The prompt author together with the model vendor's support and success team"
+      },
+      {
+        "id": "c",
+        "text": "The executive sponsor and the AI Center of Excellence lead"
+      },
+      {
+        "id": "d",
+        "text": "End users, who rate prompts after release in the library"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Der Review-&-Approval-Workflow sieht Reviews durch Domain Experts, Responsible-AI-Reviewer und Security/Compliance vor; dazu Versionskontrolle, Tests über mehrere Inputs/Edge Cases/Modellversionen und Lifecycle-Management.",
+    "source": {
+      "title": "Provide guidelines for creating a prompt library",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/10-provide-guidelines-creating-prompt-library",
+      "quote": "Responsible AI reviewers"
+    }
+  },
+  {
+    "id": "ab100-038",
+    "type": "single-choice",
+    "skillArea": "plan",
+    "topic": "SLM use cases",
+    "difficulty": "medium",
+    "prompt": "A logistics company needs real-time decision support on warehouse handheld devices with intermittent connectivity and tight cost per inference. Which model strategy does the learning content favor?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A customized small language model for operationally constrained environments"
+      },
+      {
+        "id": "b",
+        "text": "A general large language model, because broad reasoning generalizes better to field conditions"
+      },
+      {
+        "id": "c",
+        "text": "RAG over a general cloud model, because edge inference is unsupported on handheld devices"
+      },
+      {
+        "id": "d",
+        "text": "Microsoft 365 Copilot extension, because handhelds are productivity devices"
+      }
+    ],
+    "correct": "a",
+    "explanation": "SLMs passen zu operativ eingeschränkten Umgebungen: Mobile/IoT/Edge, hohes Inferenzvolumen, Echtzeit-Entscheidungen, eingeschränkte Konnektivität. Die Model Selection Matrix nennt Latenzsensitivität hoch, Kostensensitivität hoch, Deployment Edge/IoT/On-prem → SLM.",
+    "source": {
+      "title": "Develop use cases for customized small language models",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/11-develop-use-cases-customized-small-language-models-solution",
+      "quote": "Scenarios with intermittent or restricted connectivity."
+    }
+  },
+  {
+    "id": "ab100-039",
+    "type": "multiple-choice",
+    "skillArea": "plan",
+    "topic": "SLM anti-patterns",
+    "difficulty": "hard",
+    "prompt": "A team proposes building a custom SLM for an internal policy Q&A bot and argues that SLMs are inherently safer and will stop incorrect answers. Which two anti-patterns from the learning content does this proposal exhibit? (Choose two.)",
+    "options": [
+      {
+        "id": "a",
+        "text": "Building a custom SLM when RAG over a general model would suffice"
+      },
+      {
+        "id": "b",
+        "text": "Treating SLMs as a silver bullet for incorrect information"
+      },
+      {
+        "id": "c",
+        "text": "Using an SLM for low-latency edge inference"
+      },
+      {
+        "id": "d",
+        "text": "Measuring the SLM with a success scorecard"
+      },
+      {
+        "id": "e",
+        "text": "Applying domain tuning with curated enterprise documents"
+      }
+    ],
+    "correct": [
+      "a",
+      "b"
+    ],
+    "explanation": "Anti-Patterns: Custom SLM, wo RAG über ein allgemeines Modell reicht; Unterschätzen von Datenkuration und Evaluation; SLMs als Allheilmittel gegen falsche Informationen; SLMs für breite kreative Aufgaben. Es ist laut Lerninhalt ein Irrtum, dass SLMs immer sicherer sind.",
+    "source": {
+      "title": "Develop use cases for customized small language models",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/11-develop-use-cases-customized-small-language-models-solution",
+      "quote": "Treating SLMs as a silver bullet for incorrect information"
+    }
+  },
+  {
+    "id": "ab100-040",
+    "type": "single-choice",
+    "skillArea": "plan",
+    "topic": "Prompt engineering patterns",
+    "difficulty": "easy",
+    "prompt": "A business analyst writes the prompt \"Summarize the project.\" and gets inconsistent output. Which rewrite applies the clarity and specificity guideline from the learning content?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Summarize the project kickoff meeting notes into three bullet points focused on risks, owners, and deadlines"
+      },
+      {
+        "id": "b",
+        "text": "Summarize the project in as much detail as possible using any available information from the kickoff meeting"
+      },
+      {
+        "id": "c",
+        "text": "Think step by step and summarize the project; include everything that might be relevant to the stakeholders"
+      },
+      {
+        "id": "d",
+        "text": "You are an experienced project manager; summarize the project for the steering committee in your own words"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Klarheit und Spezifität: direkte Aufgabenbeschreibung, offene Verben durch handlungsorientierte Beschreibungen ersetzen, Domänenbegriffe nennen. Das Beispiel in den Lerninhalten ist genau diese Umformulierung mit drei Stichpunkten zu Risiken, Ownern und Deadlines.",
+    "source": {
+      "title": "Provide prompt engineering guidelines and techniques",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/12-provide-prompt-engineering-guidelines-techniques",
+      "quote": "Replace open-ended verbs with actionable descriptions"
+    }
+  },
+  {
+    "id": "ab100-041",
+    "type": "ordering",
+    "skillArea": "plan",
+    "topic": "Prompt maturity model",
+    "difficulty": "medium",
+    "prompt": "Arrange the levels of the prompt maturity model from the learning content from least to most mature.",
+    "items": [
+      {
+        "id": "i1",
+        "text": "Simple questions with no structure"
+      },
+      {
+        "id": "i2",
+        "text": "Clear intent plus basic constraints"
+      },
+      {
+        "id": "i3",
+        "text": "Full pattern: instruction, context, and output"
+      },
+      {
+        "id": "i4",
+        "text": "Few-shot examples and formatting rules"
+      },
+      {
+        "id": "i5",
+        "text": "Reusable templates, version control, and a governed library"
+      }
+    ],
+    "correctOrder": [
+      "i1",
+      "i2",
+      "i3",
+      "i4",
+      "i5"
+    ],
+    "explanation": "Level 1 Basic → Level 2 Guided → Level 3 Structured → Level 4 Optimized → Level 5 Enterprise (wiederverwendbare Templates, Versionskontrolle, governed Library).",
+    "source": {
+      "title": "Provide prompt engineering guidelines and techniques",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/12-provide-prompt-engineering-guidelines-techniques",
+      "quote": "Reusable templates, version control, governed library"
+    }
+  },
+  {
+    "id": "ab100-042",
+    "type": "single-choice",
+    "skillArea": "plan",
+    "topic": "Prompt pitfalls",
+    "difficulty": "medium",
+    "prompt": "A reviewer flags an enterprise prompt that is three pages long, asks the model to show its reasoning on every trivial step, and includes customer account numbers as examples. Which pitfalls from the learning content apply?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Overly long prompts, overuse of chain-of-thought, and prompts that leak sensitive data"
+      },
+      {
+        "id": "b",
+        "text": "Missing role prompting, missing few-shot examples, and missing output format rules"
+      },
+      {
+        "id": "c",
+        "text": "Insufficient context, lack of constraints, and several conflicting instructions in one prompt"
+      },
+      {
+        "id": "d",
+        "text": "Use of action verbs and structured output, which reduce the model's creativity"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Zu vermeiden: überlange Prompts, widersprüchliche Anweisungen, fehlender Kontext, Überbeanspruchung von Chain-of-Thought, Prompts, die versehentlich sensible Daten preisgeben, und Prompts, die falsche Informationen provozieren.",
+    "source": {
+      "title": "Provide prompt engineering guidelines and techniques",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/12-provide-prompt-engineering-guidelines-techniques",
+      "quote": "Prompts that accidentally leak sensitive data"
+    }
+  },
+  {
+    "id": "ab100-043",
+    "type": "matching",
+    "skillArea": "plan",
+    "topic": "Business roles for AI workloads",
+    "difficulty": "medium",
+    "prompt": "An AI program suffers from several symptoms. Match each symptom to the missing role identified in the learning content.",
+    "left": [
+      {
+        "id": "l1",
+        "text": "Adoption has stalled and funding is not secured"
+      },
+      {
+        "id": "l2",
+        "text": "Solutions appear listless and disparate, with growing technical debt"
+      },
+      {
+        "id": "l3",
+        "text": "Workloads produce unreliable results and incorrect information"
+      },
+      {
+        "id": "l4",
+        "text": "Users do not adopt the new AI workflows"
+      }
+    ],
+    "right": [
+      {
+        "id": "r1",
+        "text": "Executive sponsor"
+      },
+      {
+        "id": "r2",
+        "text": "Product owner for AI workloads"
+      },
+      {
+        "id": "r3",
+        "text": "Business domain specialist"
+      },
+      {
+        "id": "r4",
+        "text": "Change management and skilling lead"
+      }
+    ],
+    "correct": {
+      "l1": "r1",
+      "l2": "r2",
+      "l3": "r3",
+      "l4": "r4"
+    },
+    "explanation": "Fehlender Executive Sponsor → stockende Adoption, keine Finanzierung; fehlender Product Owner → richtungslose, disparate Lösungen und technische Schulden; fehlende Domain Specialists → unzuverlässige Workloads; fehlender Change-Management-Lead → keine Nutzeradoption.",
+    "source": {
+      "title": "Identify key business user roles for AI workloads",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/13-identify-key-business-user-roles-ai-workloads",
+      "quote": "This can lead to technologies and solutions that appear listless and disparate which leads to a lack of adoption and increased technical debt within an organization."
+    }
+  },
+  {
+    "id": "ab100-044",
+    "type": "single-choice",
+    "skillArea": "plan",
+    "topic": "Regulatory evaluation framework",
+    "difficulty": "medium",
+    "prompt": "A global retailer deploys a customer-facing agent in several countries. Following the learning content's framework for evaluating regional and local requirements, what is the first step the architect should take?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Identify the jurisdictions where data is stored, processed, accessed, or transferred"
+      },
+      {
+        "id": "b",
+        "text": "Classify each customer-facing workload as high risk until the legal review is done"
+      },
+      {
+        "id": "c",
+        "text": "Map requirements directly to Azure Policy before knowing which regulations apply"
+      },
+      {
+        "id": "d",
+        "text": "Document the compliance package and obtain approval from the AI Center of Excellence"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Die sieben Schritte: 1 Jurisdiktionen identifizieren, 2 anwendbare Regelungen, 3 Risikoklasse (low/medium/high), 4 Datenanforderungen (Residency, Sovereignty, Access, Encryption, Logging), 5 KI-spezifische Pflichten, 6 Mapping auf Microsoft-Controls (Azure regional data boundaries, Purview, RAI dashboards, Content Safety, Azure Policy), 7 Dokumentation und Freigabe.",
+    "source": {
+      "title": "Evaluate regional and local AI data regulation compliance requirements",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/14-evaluate-regional-local-ai-data-regulation-compliance-requirements",
+      "quote": "Where is the data stored, processed, accessed, or transferred?"
+    }
+  },
+  {
+    "id": "ab100-045",
+    "type": "single-choice",
+    "skillArea": "plan",
+    "topic": "AI workload risk classification",
+    "difficulty": "easy",
+    "prompt": "According to the CoE guidance in the learning content, how should an agent that makes automated lending decisions in a regulated industry be classified?",
+    "options": [
+      {
+        "id": "a",
+        "text": "High risk"
+      },
+      {
+        "id": "b",
+        "text": "Medium risk"
+      },
+      {
+        "id": "c",
+        "text": "Low risk"
+      },
+      {
+        "id": "d",
+        "text": "Medium-high risk"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Risikostufen: Low (interne Produktivität), Medium (kundenorientiert), High (automatisierte Entscheidungen, regulierte Branchen).",
+    "source": {
+      "title": "Evaluate regional and local AI data regulation compliance requirements",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/14-evaluate-regional-local-ai-data-regulation-compliance-requirements",
+      "quote": "High risk (automated decisions, regulated industries)"
+    }
+  },
+  {
+    "id": "ab100-046",
+    "type": "single-choice",
+    "skillArea": "plan",
+    "topic": "AI CoE operating model progression",
+    "difficulty": "medium",
+    "prompt": "An AI Center of Excellence approves every AI project itself and is becoming a bottleneck as product teams mature. Which evolution does the learning content describe for this situation?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Progress from a centralized CoE through a hybrid stage to an advisory CoE where product teams own delivery"
+      },
+      {
+        "id": "b",
+        "text": "Dissolve the CoE, because organizations with mature product teams no longer need a central AI governance function"
+      },
+      {
+        "id": "c",
+        "text": "Keep full centralized control and project approval permanently, because loosening it leads to shadow AI"
+      },
+      {
+        "id": "d",
+        "text": "Move the CoE into the finance organization so that budget control replaces project-level technical approval"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Reifegrad-Progression: Centralized (volle Kontrolle, Projektfreigabe) → Hybrid (geteilte Verantwortung) → Advisory (CoE als Berater, Produktteams liefern, Governance in Plattformen eingebettet). Überzentralisierung erzeugt Engpässe, Untergovernance Shadow AI.",
+    "source": {
+      "title": "Include elements in a Microsoft AI Center of Excellence",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/15-include-elements-microsoft-ai-center-excellence",
+      "quote": "CoE acts as consultant, not gatekeeper"
+    }
+  },
+  {
+    "id": "ab100-047",
+    "type": "multiple-choice",
+    "skillArea": "plan",
+    "topic": "AI CoE failure modes",
+    "difficulty": "medium",
+    "prompt": "Which two failure modes does the learning content associate with a missing or inadequate AI Center of Excellence? (Choose two.)",
+    "options": [
+      {
+        "id": "a",
+        "text": "Undergovernance leading to shadow AI"
+      },
+      {
+        "id": "b",
+        "text": "Overcentralization leading to bottlenecks"
+      },
+      {
+        "id": "c",
+        "text": "Excessive use of managed identities"
+      },
+      {
+        "id": "d",
+        "text": "Too many evaluation gates in the ALM pipeline"
+      },
+      {
+        "id": "e",
+        "text": "Over-reliance on prebuilt connectors"
+      }
+    ],
+    "correct": [
+      "a",
+      "b"
+    ],
+    "explanation": "Risiken: Overcentralization → Bottlenecks, Undergovernance → Shadow AI, kein Executive Sponsor → stockende Adoption, keine Data Governance → Compliance-Risiko, CoE als Gatekeeper statt Enabler, fehlendes Change Management → geringe Adoption.",
+    "source": {
+      "title": "Include elements in a Microsoft AI Center of Excellence",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/15-include-elements-microsoft-ai-center-excellence",
+      "quote": "Undergovernance → shadow AI"
+    }
+  },
+  {
+    "id": "ab100-048",
+    "type": "single-choice",
+    "skillArea": "plan",
+    "topic": "CoE organizational placement",
+    "difficulty": "hard",
+    "prompt": "A company already runs a Cloud Center of Excellence and an Enterprise Architecture group. Leadership wants to create a standalone AI transformation function. What does the learning content advise?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A standalone function is recommended only when no supporting team exists; otherwise embed the AI CoE in the CCoE or architecture group"
+      },
+      {
+        "id": "b",
+        "text": "A standalone function is preferred, because it maximizes visibility and keeps the AI agenda independent of cloud and data priorities"
+      },
+      {
+        "id": "c",
+        "text": "Place the AI CoE inside the security operations center, because responsible AI and threat protection are reviewed by the same governance board"
+      },
+      {
+        "id": "d",
+        "text": "Create one AI CoE per business unit so that each unit can prioritize its own use cases without a central intake process"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Organisatorische Verankerung: im Cloud Center of Excellence, in der Data-/Enterprise-Architecture-Gruppe oder als eigenständige Funktion, die nur empfohlen wird, wenn kein unterstützendes Team existiert. Ziel: minimale Überlappung, hohe Kollaboration, klare Verantwortung.",
+    "source": {
+      "title": "Include elements in a Microsoft AI Center of Excellence",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/15-include-elements-microsoft-ai-center-excellence",
+      "quote": "As a standalone AI transformation function (recommended only when no supporting team exists)"
+    }
+  },
+  {
+    "id": "ab100-049",
+    "type": "single-choice",
+    "skillArea": "plan",
+    "topic": "Multi-app Dynamics 365 agent roles",
+    "difficulty": "medium",
+    "prompt": "A process spans Dynamics 365 Sales, Customer Service, and Finance and requires multi-step autonomous coordination. Which multi-agent pattern does the learning content describe for Dynamics 365?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A planner agent orchestrates the flow, worker agents retrieve domain information, and a reviewer agent validates against business rules"
+      },
+      {
+        "id": "b",
+        "text": "One agent per Dynamics 365 app with no shared context, each publishing to its own channel and handing off through email notifications"
+      },
+      {
+        "id": "c",
+        "text": "A single agent for case triage in Customer Service, because cross-app processes should avoid orchestration and rely on manual handoffs between apps"
+      },
+      {
+        "id": "d",
+        "text": "A moderator agent that collects votes on proposals from app-specific copilots and executes the majority decision in each app"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Für komplexe domänenübergreifende Prozesse über mehrere Dynamics-Apps: Planner (orchestriert), Worker (holen Domänendaten), Reviewer (prüft gegen Geschäftsregeln). Single-Agent bleibt bei linearen Workflows in einer Domäne.",
+    "source": {
+      "title": "Design AI solutions using multiple Dynamics 365 apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/16-design-ai-solutions-use-multiple-dynamics-365-apps",
+      "quote": "Reviewer agent → validate recommendations against business rules"
+    }
+  },
+  {
+    "id": "ab100-050",
+    "type": "single-choice",
+    "skillArea": "plan",
+    "topic": "Intent-driven multi-app design",
+    "difficulty": "hard",
+    "prompt": "An architect wants AI to route a request to the correct Dynamics 365 app without spreading custom workflow logic across apps. Which principle of intent-driven architecture in the learning content keeps integrations loosely coupled?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Use Dataverse event-based triggers while minimizing point-to-point integrations"
+      },
+      {
+        "id": "b",
+        "text": "Embed volatile, short-lived content in prompts so that each app has the current context"
+      },
+      {
+        "id": "c",
+        "text": "Create direct point-to-point calls between each pair of apps"
+      },
+      {
+        "id": "d",
+        "text": "Store AI insights in session memory rather than in structured entities"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Intent-driven: Intent Parsing, Context Routing, Adaptive Actions und Event-based Triggers über Dataverse-Events bei minimalen Point-to-Point-Integrationen. Multi-Session-Hinweise: Session-Metadaten nutzen, Insights in strukturierten Entitäten speichern, keine volatilen Inhalte in Prompts.",
+    "source": {
+      "title": "Design AI solutions using multiple Dynamics 365 apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/16-design-ai-solutions-use-multiple-dynamics-365-apps",
+      "quote": "Event-based triggers: Use Dataverse events while minimizing point-to-point integrations."
+    }
+  },
+  {
+    "id": "ab100-051",
+    "type": "single-choice",
+    "skillArea": "plan",
+    "topic": "User prompt training personas",
+    "difficulty": "easy",
+    "prompt": "An adoption lead designs prompt training. Which training focus does the learning content assign to power users and AI champions?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Advanced prompting, multi-step workflows, reusable prompt templates, and coaching peers"
+      },
+      {
+        "id": "b",
+        "text": "Reviewing AI-generated insights, understanding governance boundaries, and monitoring usage and outcomes"
+      },
+      {
+        "id": "c",
+        "text": "Basic prompting for summaries, drafting, and analysis, plus understanding limitations and responsible use"
+      },
+      {
+        "id": "d",
+        "text": "Voice-based prompting, inclusive design features, and using AI tools to support accessibility needs"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Personas: Everyday business users (Basis-Prompting, Grenzen), Power users/AI champions (fortgeschrittenes Prompting, Multi-Step, Templates, Coaching), Manager (Insights prüfen, Governance), Accessibility-fokussierte Nutzer (Voice, inklusives Design).",
+    "source": {
+      "title": "Design user prompt training for AI solution adoption",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/17-design-user-prompt-training-ai-solution-adoption",
+      "quote": "Creating reusable prompt templates"
+    }
+  }
+]

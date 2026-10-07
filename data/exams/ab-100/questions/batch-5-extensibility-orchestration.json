@@ -1,0 +1,1153 @@
+[
+  {
+    "id": "ab100-103",
+    "type": "single-choice",
+    "skillArea": "design",
+    "topic": "Custom models in Microsoft Foundry",
+    "difficulty": "medium",
+    "prompt": "A legal-services firm needs an AI model that follows domain-specific contract logic, must control exactly how data is processed and stored for sovereignty reasons, and expects very high inference volumes. Which approach does the learning content recommend and why?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A custom model in Microsoft Foundry, because domain-specific reasoning, data sovereignty, and high-volume cost optimization are its scenarios"
+      },
+      {
+        "id": "b",
+        "text": "A standard Copilot, because it already covers legal terminology and meets sovereignty requirements through the tenant's region settings"
+      },
+      {
+        "id": "c",
+        "text": "A public website knowledge source in Copilot Studio, because contract logic is retrieval-based and inference volume is unaffected"
+      },
+      {
+        "id": "d",
+        "text": "An agent feed in a model-driven app, because it surfaces contract insights without any model work or data residency concerns"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Geeignete Szenarien für Custom Models in Foundry: domänenspezifische Sprache und Logik (Legal, Healthcare, Finance), hochwirksame Entscheidungen, Daten-Souveränität und Governance, einzigartige Workflows sowie Kostenoptimierung bei hohem Inferenzvolumen (kleine spezialisierte Modelle).",
+    "source": {
+      "title": "Design AI solutions with custom models in Microsoft Foundry",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-extensibility-ai-solutions/2-design-ai-solutions-custom-models-microsoft-foundry",
+      "quote": "Custom models enable organizations to determine exactly how data is processed, stored, evaluated, and monitored."
+    }
+  },
+  {
+    "id": "ab100-104",
+    "type": "matching",
+    "skillArea": "design",
+    "topic": "Custom model paths",
+    "difficulty": "medium",
+    "prompt": "Match each requirement to the custom model path described in the learning content.",
+    "left": [
+      {
+        "id": "l1",
+        "text": "Adjust a foundation model's behavior with domain datasets without full retraining"
+      },
+      {
+        "id": "l2",
+        "text": "Deliver a lightweight task with speed and edge compatibility"
+      },
+      {
+        "id": "l3",
+        "text": "Combine a custom model with prebuilt copilots for augmented reasoning"
+      }
+    ],
+    "right": [
+      {
+        "id": "r1",
+        "text": "Fine-tuning foundation models"
+      },
+      {
+        "id": "r2",
+        "text": "Training domain-built small models"
+      },
+      {
+        "id": "r3",
+        "text": "Hybrid architectures"
+      }
+    ],
+    "correct": {
+      "l1": "r1",
+      "l2": "r2",
+      "l3": "r3"
+    },
+    "explanation": "Schritt 3 „Select the custom model path“: Fine-Tuning (Verhalten anpassen ohne Neutraining), domänenspezifische kleine Modelle (schnell, edge-fähig), Hybrid (Custom Model plus Prebuilt Copilots).",
+    "source": {
+      "title": "Design AI solutions with custom models in Microsoft Foundry",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-extensibility-ai-solutions/2-design-ai-solutions-custom-models-microsoft-foundry",
+      "quote": "Useful for lightweight tasks requiring speed and edge compatibility."
+    }
+  },
+  {
+    "id": "ab100-105",
+    "type": "single-choice",
+    "skillArea": "design",
+    "topic": "Operationalizing custom models",
+    "difficulty": "hard",
+    "prompt": "After deploying a custom model in Foundry, a team notices gradually declining accuracy and occasional unexpected outputs, but has no process to detect or respond. Which operational component from the learning content is missing?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Model monitoring and observability that tracks drift, degradation, latency, and unexpected outputs"
+      },
+      {
+        "id": "b",
+        "text": "A larger model catalog with more base models, so that the team can swap the model when accuracy drops"
+      },
+      {
+        "id": "c",
+        "text": "A SharePoint knowledge source attached to the model endpoint to refresh its context automatically"
+      },
+      {
+        "id": "d",
+        "text": "An Agent Builder declarative agent wrapping the model so that Microsoft 365 governance applies to it"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Operative Komponenten: Monitoring/Observability (Drift, Degradation, Friction, Latenz, unerwartete Outputs), Governance/Compliance, Versionierung und Lifecycle (Rollback), Deployment-Automatisierung (MLOps/GenAIOps).",
+    "source": {
+      "title": "Design AI solutions with custom models in Microsoft Foundry",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-extensibility-ai-solutions/2-design-ai-solutions-custom-models-microsoft-foundry",
+      "quote": "Track drift, performance degradation, user friction areas, latency, and unexpected model outputs."
+    }
+  },
+  {
+    "id": "ab100-106",
+    "type": "single-choice",
+    "skillArea": "design",
+    "topic": "Agent Builder in Microsoft 365 Copilot",
+    "difficulty": "easy",
+    "prompt": "A business team without developers wants a declarative agent for case triage inside Teams and Outlook. Which tool does the learning content describe as the easiest way to build it?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Agent Builder in Microsoft 365 Copilot, with guided configuration, declarative instructions, a test workspace, and publishing"
+      },
+      {
+        "id": "b",
+        "text": "Microsoft Foundry with the Python SDK, a hosted execution environment, and connected agents for the triage workflow"
+      },
+      {
+        "id": "c",
+        "text": "Visual Studio Code with code-based tools, custom orchestration logic, and source control for the agent components"
+      },
+      {
+        "id": "d",
+        "text": "Power Automate desktop flows with UI recording, which capture the triage steps and replay them inside Teams and Outlook on demand"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Agent Builder ist der einfachste Weg zu Custom Declarative Agents: Schritt-für-Schritt-Konfiguration, eingebauter Tool-Zugriff, deklarative Anweisungen, Test-Workspace, Publishing nach Microsoft 365.",
+    "source": {
+      "title": "Design agents in Microsoft 365 Copilot",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-extensibility-ai-solutions/3-design-agents-microsoft-365-copilot",
+      "quote": "Agent Builder in Microsoft 365 Copilot is the easiest way to build custom declarative agents."
+    }
+  },
+  {
+    "id": "ab100-107",
+    "type": "matching",
+    "skillArea": "design",
+    "topic": "Collaborative agent patterns in Microsoft 365",
+    "difficulty": "medium",
+    "prompt": "Match each collaborative workflow to the pattern named in the learning content for Microsoft 365 Copilot agents.",
+    "left": [
+      {
+        "id": "l1",
+        "text": "Agent A drafts, Agent B refines, then a user reviews"
+      },
+      {
+        "id": "l2",
+        "text": "Several agents score the same data and results are combined"
+      },
+      {
+        "id": "l3",
+        "text": "An agent keeps refining a summary until quality is met"
+      },
+      {
+        "id": "l4",
+        "text": "A primary agent delegates subtasks based on intent"
+      }
+    ],
+    "right": [
+      {
+        "id": "r1",
+        "text": "Sequential workflow"
+      },
+      {
+        "id": "r2",
+        "text": "Parallel evaluation"
+      },
+      {
+        "id": "r3",
+        "text": "Feedback-loop iteration"
+      },
+      {
+        "id": "r4",
+        "text": "Orchestrated interaction"
+      }
+    ],
+    "correct": {
+      "l1": "r1",
+      "l2": "r2",
+      "l3": "r3",
+      "l4": "r4"
+    },
+    "explanation": "Patterns for collaboration: Sequential (A → B → Review), Parallel evaluation (mehrere Agenten bewerten, Ergebnisse kombiniert), Feedback-loop iteration (Verfeinern bis Qualität erreicht), Orchestrated interaction (Primäragent delegiert). Klare Handoff-Regeln und Verantwortungsgrenzen sind Pflicht.",
+    "source": {
+      "title": "Design agents in Microsoft 365 Copilot",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-extensibility-ai-solutions/3-design-agents-microsoft-365-copilot",
+      "quote": "Feedback-loop iteration: An agent refines content such as drafts, insights, or summaries until quality is met."
+    }
+  },
+  {
+    "id": "ab100-108",
+    "type": "matching",
+    "skillArea": "design",
+    "topic": "Extensibility layers in Copilot Studio",
+    "difficulty": "hard",
+    "prompt": "Match each change request to the Copilot Studio extensibility layer it belongs to.",
+    "left": [
+      {
+        "id": "l1",
+        "text": "Add escalation rules and tighten the agent's allowed behaviors through prompt modification"
+      },
+      {
+        "id": "l2",
+        "text": "Add a reusable retrieval skill over enterprise content and an action skill through a connector"
+      },
+      {
+        "id": "l3",
+        "text": "Let the agent execute Power Automate flows and publish events to other applications"
+      },
+      {
+        "id": "l4",
+        "text": "Write code-based tools with custom orchestration logic under source control"
+      }
+    ],
+    "right": [
+      {
+        "id": "r1",
+        "text": "Instruction-level extensibility"
+      },
+      {
+        "id": "r2",
+        "text": "Skill and capability extensibility"
+      },
+      {
+        "id": "r3",
+        "text": "Integration extensibility"
+      },
+      {
+        "id": "r4",
+        "text": "Pro-code extensibility in Visual Studio Code"
+      }
+    ],
+    "correct": {
+      "l1": "r1",
+      "l2": "r2",
+      "l3": "r3",
+      "l4": "r4"
+    },
+    "explanation": "Vier Ebenen: Instruction-level (Zweck, Rolle, Constraints, Eskalation, Prompt Modification), Skill/Capability (Retrieval-, Action-, Workflow-Skills, modular und wiederverwendbar), Integration (Systems of Record, Flows, APIs, Events), Pro-Code in VS Code (Code-Tools, Orchestrierung, Source Control).",
+    "source": {
+      "title": "Design extensible agents in Microsoft Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-extensibility-ai-solutions/4-design-agent-extensibility-copilot-studio",
+      "quote": "Extensibility can be implemented at four layers:"
+    }
+  },
+  {
+    "id": "ab100-109",
+    "type": "single-choice",
+    "skillArea": "design",
+    "topic": "Architecting agent solutions framework",
+    "difficulty": "medium",
+    "prompt": "Microsoft's \"Architecting agent solutions\" guidance covers three areas. Which set does the learning content name?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Fit for purpose, operability, and trust, traceability, and transparency"
+      },
+      {
+        "id": "b",
+        "text": "Reliability, security, and cost optimization"
+      },
+      {
+        "id": "c",
+        "text": "Strategy, plan, ready, govern, secure, and manage"
+      },
+      {
+        "id": "d",
+        "text": "Fairness, transparency, accountability, inclusiveness, and reliability"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Das Framework deckt Fit for purpose, Operability und Trust/Traceability/Transparency ab und überschneidet sich bewusst nicht mit Azure WAF, Power Platform WAF oder NIST.",
+    "source": {
+      "title": "Design extensible agents in Microsoft Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-extensibility-ai-solutions/4-design-agent-extensibility-copilot-studio",
+      "quote": "This framework doesn't cover content already addressed by established standards such as Azure Well-Architected Framework, Power Platform Well-Architected, National Institute of Standards and Technology (NIST), or other recognized security frameworks."
+    }
+  },
+  {
+    "id": "ab100-110",
+    "type": "single-choice",
+    "skillArea": "design",
+    "topic": "MCP in Dynamics 365 Finance and Operations",
+    "difficulty": "medium",
+    "prompt": "A procurement agent must reason over vendors, approval chains, and financial dimensions in Dynamics 365 Finance and Operations with consistent business semantics. How does the learning content describe the role of MCP here?",
+    "options": [
+      {
+        "id": "a",
+        "text": "MCP is a structured contract that exposes F&O data entities, process metadata, domain models, and taxonomies to the agent"
+      },
+      {
+        "id": "b",
+        "text": "MCP is a replacement for Dataverse that stores the agent's conversation memory and approval history across sessions"
+      },
+      {
+        "id": "c",
+        "text": "MCP is a UI automation channel that clicks through F&O forms on behalf of the agent and reads the values from the screen"
+      },
+      {
+        "id": "d",
+        "text": "MCP is a licensing construct that meters Copilot credits per F&O user and enforces the vendor approval limits"
+      }
+    ],
+    "correct": "a",
+    "explanation": "MCP definiert als strukturierter Vertrag, welchen Kontext ein Agent nutzen darf und wie er zu interpretieren ist; in F&O exponiert es Datenentitäten (Kunden, Lieferanten, Produkte), Prozessmetadaten (Workflows, Status, Genehmigungsketten), Domänenmodelle (Finanzdimensionen, Ledger) und Lokalisierungsregeln.",
+    "source": {
+      "title": "Design extensible agents using MCP in Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-extensibility-ai-solutions/5-design-agent-extensibility-model-context-protocol-copilot-studio",
+      "quote": "MCP serves as a structured contract defining what context an agent can access and how that context should be interpreted."
+    }
+  },
+  {
+    "id": "ab100-111",
+    "type": "matching",
+    "skillArea": "design",
+    "topic": "MCP integration patterns",
+    "difficulty": "hard",
+    "prompt": "Match each business need to the MCP-enabled integration pattern described in the learning content.",
+    "left": [
+      {
+        "id": "l1",
+        "text": "Compliance-sensitive finance tasks must reflect authoritative business rules in real time"
+      },
+      {
+        "id": "l2",
+        "text": "Approvals should be driven, exceptions escalated, and status summarized within an existing process"
+      },
+      {
+        "id": "l3",
+        "text": "HR, Finance, and Supply Chain agents must reference standardized data across domains"
+      }
+    ],
+    "right": [
+      {
+        "id": "r1",
+        "text": "Context-driven reasoning"
+      },
+      {
+        "id": "r2",
+        "text": "Workflow-integrated agents"
+      },
+      {
+        "id": "r3",
+        "text": "Multi-agent collaboration via MCP"
+      }
+    ],
+    "correct": {
+      "l1": "r1",
+      "l2": "r2",
+      "l3": "r3"
+    },
+    "explanation": "Pattern A Context-driven reasoning (Echtzeit-Kontext, Compliance, Finance, Procurement), Pattern B Workflow-integrated (Approvals, Eskalation, Status), Pattern C Multi-agent via MCP (standardisierte Daten über Domänen).",
+    "source": {
+      "title": "Design extensible agents using MCP in Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-extensibility-ai-solutions/5-design-agent-extensibility-model-context-protocol-copilot-studio",
+      "quote": "Use MCP to standardize data each agent can reference, improving cross-domain collaboration (e.g., HR + Finance + Supply Chain AI processes)."
+    }
+  },
+  {
+    "id": "ab100-112",
+    "type": "single-choice",
+    "skillArea": "design",
+    "topic": "When to use Computer Use",
+    "difficulty": "medium",
+    "prompt": "A team wants to automate downloading invoices from a vendor portal that offers no API and then saving them to SharePoint. Which guidance from the learning content applies?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Computer Use fits because no API or connector exists, but it needs monitoring and fallback plans since UI changes can break it"
+      },
+      {
+        "id": "b",
+        "text": "Computer Use should be the default integration method for vendor portals, because it avoids connector licensing and API maintenance"
+      },
+      {
+        "id": "c",
+        "text": "Computer Use is unable to navigate websites or download files, so a custom connector against the portal's HTML is the required path"
+      },
+      {
+        "id": "d",
+        "text": "Computer Use requires a vision model fine-tuned on screenshots of the portal before it can locate the invoice download button"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Geeignet, wenn kein API/Connector existiert (Legacy, Vendor-Portale, Desktop-Apps), bei repetitiven UI-Aufgaben, App-übergreifenden Aufgaben und wenn menschenähnliches Reasoning nötig ist. Zuverlässigkeit: UI-Änderungen können Automation brechen, daher Monitoring, Fallback, nur bei fehlenden APIs.",
+    "source": {
+      "title": "Design agents to automate tasks in apps and websites with Computer Use in Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-extensibility-ai-solutions/6-design-agents-automate-tasks-apps-websites-computer-copilot-studio",
+      "quote": "Use Computer Use only when APIs are unavailable."
+    }
+  },
+  {
+    "id": "ab100-113",
+    "type": "single-choice",
+    "skillArea": "design",
+    "topic": "Designing Computer Use agents",
+    "difficulty": "medium",
+    "prompt": "A Computer Use agent fails intermittently because the target web page's layout shifts. Which design practice from the learning content improves reliability?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Use descriptive instructions such as \"Click the blue 'Submit' button\", validate results after each step, and handle errors gracefully"
+      },
+      {
+        "id": "b",
+        "text": "Remove the step-by-step plan from the instructions so that the agent can improvise freely whenever the page layout shifts or a dialog appears"
+      },
+      {
+        "id": "c",
+        "text": "Grant the agent access to each application and website so that blocked clicks no longer interrupt the automation run"
+      },
+      {
+        "id": "d",
+        "text": "Disable action logging and result validation between steps to reduce latency and give the page time to finish rendering"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Design for variability: beschreibende Anweisungen, Ergebnisse nach jedem Schritt validieren, Fehler elegant behandeln; Aufgaben klar definieren, in Schritte zerlegen, Kontext und Grenzen (erlaubte Apps, verbotene Aktionen, Zeit-/Retry-Limits) setzen; alle Aktionen für Audit loggen.",
+    "source": {
+      "title": "Design agents to automate tasks in apps and websites with Computer Use in Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-extensibility-ai-solutions/6-design-agents-automate-tasks-apps-websites-computer-copilot-studio",
+      "quote": "Use descriptive instructions, such as \"Click the blue 'Submit' button.\""
+    }
+  },
+  {
+    "id": "ab100-114",
+    "type": "single-choice",
+    "skillArea": "design",
+    "topic": "Deep reasoning",
+    "difficulty": "medium",
+    "prompt": "A finance agent must evaluate constraints and trade-offs across multi-stage scenario planning, while a separate FAQ agent handles high-volume simple questions. How should reasoning modes be assigned according to the learning content?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Deep reasoning for the finance agent's multi-step analysis; standard reasoning for the high-volume FAQ agent for fast, lower-compute answers"
+      },
+      {
+        "id": "b",
+        "text": "Deep reasoning for both agents, because it is more accurate for any task and the additional compute is negligible at FAQ volumes"
+      },
+      {
+        "id": "c",
+        "text": "Standard reasoning for both agents, because deep reasoning is unavailable in Copilot Studio and has to be built in Foundry"
+      },
+      {
+        "id": "d",
+        "text": "Deep reasoning for the FAQ agent to reduce fallback, and standard reasoning for the finance agent to keep scenario planning fast and cheap"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Standard Reasoning: konversationelle Antworten, Zusammenfassungen, einfache Berechnungen, hohes Volumen bei geringer Compute. Deep Reasoning (Preview): Multi-Step, komplexe Regeln, Analysen, Entscheidungsbäume, Szenarioplanung, Constraints/Trade-offs.",
+    "source": {
+      "title": "Design agent behaviors in Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-extensibility-ai-solutions/7-design-agent-behaviors-copilot-studio-reasoning-voice-mode",
+      "quote": "This mode provides fast responses and lower compute usage, suitable for high-volume use cases."
+    }
+  },
+  {
+    "id": "ab100-115",
+    "type": "single-choice",
+    "skillArea": "design",
+    "topic": "Voice mode design",
+    "difficulty": "easy",
+    "prompt": "An IVR agent built in Copilot Studio reads long multi-sentence policy paragraphs to callers and executes account changes without confirming. Which voice-design considerations from the learning content are violated?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Use short, clear phrasing, avoid long multi-sentence responses, and include confirmation steps and confidence checks before actions"
+      },
+      {
+        "id": "b",
+        "text": "Provide full written citations in each spoken response so that callers can verify the policy source before any change is made to the account"
+      },
+      {
+        "id": "c",
+        "text": "Disable interruptions and barge-in so that callers hear the complete response before the agent executes the requested action"
+      },
+      {
+        "id": "d",
+        "text": "Use deep reasoning for each utterance to maximize accuracy, and execute changes immediately once the intent is recognized"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Voice-Agenten: kurze klare Formulierungen, keine langen Mehrsatz-Antworten, Bestätigungsschritte, Design für Unterbrechungen und Rücksprünge, Confidence Checks vor Aktionen; Flow: sprechen → Intent → bestätigen/klären → ausführen → knappe gesprochene Ausgabe.",
+    "source": {
+      "title": "Design agent behaviors in Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-extensibility-ai-solutions/7-design-agent-behaviors-copilot-studio-reasoning-voice-mode",
+      "quote": "Include confidence checks before executing actions."
+    }
+  },
+  {
+    "id": "ab100-116",
+    "type": "single-choice",
+    "skillArea": "design",
+    "topic": "Instruction structure",
+    "difficulty": "medium",
+    "prompt": "An architect reviews an agent's instruction set that only contains a persona description. Which elements does the learning content's recommended instruction structure add?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Purpose, scope, tone and style, data boundaries, quality expectations, error handling, and escalation conditions"
+      },
+      {
+        "id": "b",
+        "text": "Model temperature, token limits, retry counts, timeout values, and the list of connectors the agent may call"
+      },
+      {
+        "id": "c",
+        "text": "Trigger phrases, entity lists, adaptive card JSON, condition nodes, and the system topics that handle errors and escalation"
+      },
+      {
+        "id": "d",
+        "text": "Cost center, license SKU, environment name, owner, risk classification, and the date of the next review"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Empfohlene Struktur: Purpose, Scope (was erlaubt ist), Tone and style, Data boundaries (erlaubte Quellen), Quality expectations, Error handling (Verhalten bei Unsicherheit), Escalation conditions (wann Mensch nötig).",
+    "source": {
+      "title": "Design agent behaviors in Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-extensibility-ai-solutions/7-design-agent-behaviors-copilot-studio-reasoning-voice-mode",
+      "quote": "Error handling: Explain how the agent should respond when unsure."
+    }
+  },
+  {
+    "id": "ab100-117",
+    "type": "yes-no",
+    "skillArea": "design",
+    "topic": "SharePoint and Teams agents",
+    "difficulty": "medium",
+    "prompt": "A site owner deploys a Copilot Studio agent on a SharePoint project site and in a Teams channel. Evaluate each statement against the learning content.",
+    "statements": [
+      {
+        "id": "s1",
+        "text": "When installed on a SharePoint site, the agent knows which site it is on and uses that site's content as its primary grounding source.",
+        "correct": true
+      },
+      {
+        "id": "s2",
+        "text": "The agent inherits user permissions and cannot access content the user cannot access.",
+        "correct": true
+      },
+      {
+        "id": "s3",
+        "text": "Teams agents cannot participate in group conversations; they answer only in one-to-one chats.",
+        "correct": false
+      },
+      {
+        "id": "s4",
+        "text": "Because grounding is automatic, no periodic review of SharePoint grounding content is needed.",
+        "correct": false
+      }
+    ],
+    "explanation": "SharePoint-Agenten kennen ihren Site-Kontext und nutzen ihn als primäre Grounding-Quelle; Microsoft-365-Grounding respektiert Berechtigungen über Microsoft Graph. Teams-Agenten unterstützen Gruppenkonversationen; Governance verlangt Versionskontrolle, Monitoring und periodische Reviews des Grounding-Inhalts.",
+    "source": {
+      "title": "Optimize solution design for agents in Microsoft 365",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-extensibility-ai-solutions/8-optimize-solution-design-agents-microsoft-365-teams-sharepoint",
+      "quote": "They cannot access content the user cannot access."
+    }
+  },
+  {
+    "id": "ab100-118",
+    "type": "matching",
+    "skillArea": "design",
+    "topic": "Dynamics 365 Customer Service AI capabilities",
+    "difficulty": "medium",
+    "prompt": "Match each capability in Dynamics 365 Customer Service and Contact Center to its description in the learning content.",
+    "left": [
+      {
+        "id": "l1",
+        "text": "Agent hub"
+      },
+      {
+        "id": "l2",
+        "text": "Customer Intent Agent"
+      },
+      {
+        "id": "l3",
+        "text": "Case Management Agent"
+      },
+      {
+        "id": "l4",
+        "text": "Copilot in Contact Center"
+      }
+    ],
+    "right": [
+      {
+        "id": "r1",
+        "text": "A one-stop hub for admins and supervisors to adopt autonomous agents, monitor impact, and make responsible decisions"
+      },
+      {
+        "id": "r2",
+        "text": "Autonomously discovers intents by analyzing past and current cases and conversations"
+      },
+      {
+        "id": "r3",
+        "text": "Automates the create, update, resolve, and close processes of cases"
+      },
+      {
+        "id": "r4",
+        "text": "Real-time assistance for representatives such as asking a question, composing an email, and summarizing a case"
+      }
+    ],
+    "correct": {
+      "l1": "r1",
+      "l2": "r2",
+      "l3": "r3",
+      "l4": "r4"
+    },
+    "explanation": "Drei KI-Kategorien: Agent Hub (Verwaltung/Monitoring autonomer Agenten), autonome Service-Agenten (Customer Intent, Case Management, Customer Knowledge Management, Quality Evaluation) und Copilot in Contact Center (Echtzeit-Assistenz).",
+    "source": {
+      "title": "Design AI solutions for Dynamics 365 Customer Service",
+      "url": "https://learn.microsoft.com/en-us/training/modules/orchestrate-configuration-prebuilt-agents-apps/3-design-ai-solutions-dynamics-365-apps-customer-experience-service",
+      "quote": "Customer Intent Agent: Autonomously discover intents by analyzing past and current cases and customer conversations"
+    }
+  },
+  {
+    "id": "ab100-119",
+    "type": "single-choice",
+    "skillArea": "design",
+    "topic": "AI experience models in Customer Service",
+    "difficulty": "medium",
+    "prompt": "A service director wants AI that proactively suggests actions while a representative is viewing a case form, rather than requiring the representative to open a chat. Which experience model from the learning content fits?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Embedded intelligent features that analyze page context inside case forms, timelines, and knowledge articles"
+      },
+      {
+        "id": "b",
+        "text": "The conversational sidecar Copilot that answers representative questions about cases and policies in a chat pane"
+      },
+      {
+        "id": "c",
+        "text": "Automated AI behaviors such as AI-driven case routing, sentiment tagging, and predictive escalation triggers"
+      },
+      {
+        "id": "d",
+        "text": "Multi-system orchestration with Field Service and Finance for refunds, dispatch, and escalations across apps"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Drei Erlebnismodelle: Conversational Copilot (Sidecar-Chat), Embedded Intelligent Features (im Case-Formular, Timeline, Knowledge; analysieren Seitenkontext und schlagen proaktiv vor) und Automated AI Behaviors (Routing, Sentiment-Tagging, Eskalations-Trigger).",
+    "source": {
+      "title": "Design AI solutions for Dynamics 365 Customer Service",
+      "url": "https://learn.microsoft.com/en-us/training/modules/orchestrate-configuration-prebuilt-agents-apps/3-design-ai-solutions-dynamics-365-apps-customer-experience-service",
+      "quote": "Embedded AI analyzes the page context and proactively suggests actions or insights."
+    }
+  },
+  {
+    "id": "ab100-120",
+    "type": "single-choice",
+    "skillArea": "design",
+    "topic": "Microsoft 365 agent readiness checklist",
+    "difficulty": "hard",
+    "prompt": "A business unit proposes a \"Compliance-Aware Content Redactor\" agent in Teams. Before green-lighting it, the architect works through the readiness checklist from the learning content. Which items belong to that checklist?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Business value with a definition of done, a runs-as identity model, labeled grounding scope, approval points, DLP and auditability, change control, telemetry, and support ownership"
+      },
+      {
+        "id": "b",
+        "text": "A list of competing vendors, the agent's marketing tagline, the preferred model provider, a training video, the Teams icon, the display name, and an estimate of the annual license cost"
+      },
+      {
+        "id": "c",
+        "text": "GPU quota, VNet design, private endpoint configuration, a fine-tuned redaction model, a vector index, and an MLOps pipeline for retraining the model"
+      },
+      {
+        "id": "d",
+        "text": "The licensing cost and the number of users, because Microsoft 365 agents inherit governance, DLP, auditability, and support from the tenant automatically"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Die Preflight-Checkliste: Business value, Identity & access (Runs-as, Least Privilege), Data scope (Corpus, Labels), Actions & tools (Fehlerpfade, Freigabepunkte), Security & compliance (DLP, eDiscovery, Logging), Change control (Versionierung, Rings, Rollback, Sunset), Measurement (Telemetrie), Support (Runbook, Ethik-Review). Dazu Lizenz- und Langfristkosten.",
+    "source": {
+      "title": "Propose Microsoft 365 agents for business scenarios",
+      "url": "https://learn.microsoft.com/en-us/training/modules/orchestrate-configuration-prebuilt-agents-apps/4-propose-microsoft-365-agents-business-scenarios",
+      "quote": "Treat an agent like a product, not a prompt—ship with a backlog, guardrails, and metrics."
+    }
+  },
+  {
+    "id": "ab100-121",
+    "type": "ordering",
+    "skillArea": "design",
+    "topic": "Agent design framework (five steps)",
+    "difficulty": "medium",
+    "prompt": "Arrange the five steps of the Microsoft 365 agent design framework in the order given by the learning content.",
+    "items": [
+      {
+        "id": "i1",
+        "text": "Frame the job to be done"
+      },
+      {
+        "id": "i2",
+        "text": "Map inputs, knowledge, and actions"
+      },
+      {
+        "id": "i3",
+        "text": "Define guardrails"
+      },
+      {
+        "id": "i4",
+        "text": "Prototype the critical path"
+      },
+      {
+        "id": "i5",
+        "text": "Operationalize"
+      }
+    ],
+    "correctOrder": [
+      "i1",
+      "i2",
+      "i3",
+      "i4",
+      "i5"
+    ],
+    "explanation": "Fünf Schritte: Job to be done (Ergebnis statt Toolschritte) → Inputs/Wissen/Aktionen → Guardrails (wer, welche Daten, Freigaben, Logging) → Happy-Path-Prototyp mit echten Artefakten → Operationalisieren (Telemetrie, Qualität, Kosten, Rollout-Rings).",
+    "source": {
+      "title": "Propose Microsoft 365 agents for business scenarios",
+      "url": "https://learn.microsoft.com/en-us/training/modules/orchestrate-configuration-prebuilt-agents-apps/4-propose-microsoft-365-agents-business-scenarios",
+      "quote": "Describe the recurring outcome the business needs, not the tool steps."
+    }
+  },
+  {
+    "id": "ab100-122",
+    "type": "single-choice",
+    "skillArea": "design",
+    "topic": "RACI for Microsoft 365 agents",
+    "difficulty": "medium",
+    "prompt": "In the baseline RACI for a Microsoft 365 agent proposal, which role is accountable for use case triage, guardrails and reviews, and telemetry and cost?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The product owner"
+      },
+      {
+        "id": "b",
+        "text": "The architect"
+      },
+      {
+        "id": "c",
+        "text": "Security and compliance"
+      },
+      {
+        "id": "d",
+        "text": "Support and operations"
+      }
+    ],
+    "correct": "a",
+    "explanation": "RACI-Baseline: Product Owner ist Accountable für Use Case Triage, Data Scoping, Guardrails & Reviews, Telemetrie & Kosten und Change Control; der Architekt ist Responsible für Triage, Connector-Setup, Telemetrie; Security/Compliance Responsible für Labels und Guardrails; Support/Ops Accountable für Tool-/Connector-Setup. Je Aufgabe gibt es genau einen Accountable.",
+    "source": {
+      "title": "Propose Microsoft 365 agents for business scenarios",
+      "url": "https://learn.microsoft.com/en-us/training/modules/orchestrate-configuration-prebuilt-agents-apps/4-propose-microsoft-365-agents-business-scenarios",
+      "quote": "There must be only one accountable stakeholder per task."
+    }
+  },
+  {
+    "id": "ab100-123",
+    "type": "single-choice",
+    "skillArea": "design",
+    "topic": "Pilot KPI targets",
+    "difficulty": "hard",
+    "prompt": "A pilot of a proposed Microsoft 365 agent reports a 55 percent human acceptance rate of first outputs and 3 policy violations per 1,000 runs. Against the starter KPI set in the learning content, how should the architect read these results?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Both miss the targets: quality should be at least 70 percent acceptance and safety at most 1 violation per 1,000 runs"
+      },
+      {
+        "id": "b",
+        "text": "Both meet the targets, since the pilot thresholds are 50 percent acceptance and 5 violations per 1,000 runs"
+      },
+      {
+        "id": "c",
+        "text": "Quality meets the target of 50 percent acceptance, but safety misses the limit of 1 violation per 1,000 runs"
+      },
+      {
+        "id": "d",
+        "text": "Safety meets the target of 5 violations per 1,000 runs, but quality misses the pilot threshold of 70 percent acceptance"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Starter-KPIs (Pilot): Adoption ≥ 30 % der Zielkohorte, Quality ≥ 70 % Akzeptanz des ersten Outputs, Speed ≥ 25 % Zeitersparnis, Safety ≤ 1 Verstoß je 1.000 Runs, Cost Baseline ± 10 %.",
+    "source": {
+      "title": "Propose Microsoft 365 agents for business scenarios",
+      "url": "https://learn.microsoft.com/en-us/training/modules/orchestrate-configuration-prebuilt-agents-apps/4-propose-microsoft-365-agents-business-scenarios",
+      "quote": "Human acceptance rate of first output"
+    }
+  },
+  {
+    "id": "ab100-124",
+    "type": "single-choice",
+    "skillArea": "design",
+    "topic": "Copilot for Sales prerequisites",
+    "difficulty": "medium",
+    "prompt": "Before enabling Microsoft 365 Copilot for Sales, which data and system prerequisites does the learning content say the architect must validate?",
+    "options": [
+      {
+        "id": "a",
+        "text": "CRM sources are connected and synchronized, opportunity and account fields are complete, sales documents carry sensitivity labels, and seller roles have visibility controls"
+      },
+      {
+        "id": "b",
+        "text": "A custom model is fine-tuned on historical deals, a vector index of proposals is built, and the sellers' mailboxes are migrated to a dedicated region"
+      },
+      {
+        "id": "c",
+        "text": "Sellers are granted global administrator rights so that Copilot can ground on each opportunity, and sensitivity labels are removed from proposals and contracts"
+      },
+      {
+        "id": "d",
+        "text": "Dynamics 365 Sales is replaced by a third-party CRM, because Copilot for Sales requires an external system of record and its own connector"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Prerequisites: verbundene, synchronisierte CRM-Quellen (Dynamics 365 Sales oder Drittanbieter-CRM), vollständige standardisierte Felder, Sensitivity Labels auf Verkaufsdokumenten, Rollen mit korrekter Sichtbarkeit. Konfiguration mit Least Privilege und Feld-Mapping für konsistentes Grounding.",
+    "source": {
+      "title": "Orchestrate and configure Microsoft 365 Copilot for sales and service",
+      "url": "https://learn.microsoft.com/en-us/training/modules/orchestrate-configuration-prebuilt-agents-apps/5-orchestrate-configuration-microsoft-365-copilot-sales-service",
+      "quote": "Seller roles have proper visibility controls to prevent unauthorized data exposure."
+    }
+  },
+  {
+    "id": "ab100-125",
+    "type": "single-choice",
+    "skillArea": "design",
+    "topic": "Operational guardrails for Copilot for Service",
+    "difficulty": "easy",
+    "prompt": "Copilot for Service drafts customer-facing emails. Which operational guardrail does the learning content require before such content leaves the organization?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Human review before sending externally generated content"
+      },
+      {
+        "id": "b",
+        "text": "Automatic sending once the sentiment score is positive"
+      },
+      {
+        "id": "c",
+        "text": "Removal of sensitivity labels so that emails are not blocked"
+      },
+      {
+        "id": "d",
+        "text": "Disabling audit trails for drafts to protect privacy"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Operational Guardrails: menschliche Prüfung vor externem Versand, eingeschränkte Aktionen für risikoreiche Datenkategorien, Versionierung/Rollback für Automationen, Telemetrie für Adoption, Drift und Missbrauch. Dazu Labels, DLP, Audit Trails und Residency.",
+    "source": {
+      "title": "Orchestrate and configure Microsoft 365 Copilot for sales and service",
+      "url": "https://learn.microsoft.com/en-us/training/modules/orchestrate-configuration-prebuilt-agents-apps/5-orchestrate-configuration-microsoft-365-copilot-sales-service",
+      "quote": "Human review required before sending externally generated content."
+    }
+  },
+  {
+    "id": "ab100-126",
+    "type": "matching",
+    "skillArea": "design",
+    "topic": "Power Platform AI feature selection",
+    "difficulty": "medium",
+    "prompt": "Using the feature selection matrix in the learning content, match each scenario to the Power Platform AI component that supports it.",
+    "left": [
+      {
+        "id": "l1",
+        "text": "Predict customer churn from organizational data"
+      },
+      {
+        "id": "l2",
+        "text": "Build a multi-turn conversational agent for a website"
+      },
+      {
+        "id": "l3",
+        "text": "Create a flow from a natural-language description of business intent"
+      },
+      {
+        "id": "l4",
+        "text": "Extract fields from invoices and receipts"
+      }
+    ],
+    "right": [
+      {
+        "id": "r1",
+        "text": "AI Builder custom model"
+      },
+      {
+        "id": "r2",
+        "text": "Copilot Studio"
+      },
+      {
+        "id": "r3",
+        "text": "Copilot in Power Automate"
+      },
+      {
+        "id": "r4",
+        "text": "AI Builder prebuilt model"
+      }
+    ],
+    "correct": {
+      "l1": "r1",
+      "l2": "r2",
+      "l3": "r3",
+      "l4": "r4"
+    },
+    "explanation": "Matrix: Prediction und Document Extraction → AI Builder (und AI Hub), Conversational Agent → Copilot Studio, Automation Creation und Text Generation → Copilot (und AI Hub). Prebuilt-Modelle decken Rechnungen/Belege ab, Custom-Modelle Prediction wie Churn.",
+    "source": {
+      "title": "Propose Microsoft Power Platform AI features",
+      "url": "https://learn.microsoft.com/en-us/training/modules/orchestrate-configuration-prebuilt-agents-apps/6-propose-microsoft-power-platform-ai-features-ai-hub",
+      "quote": "Prediction (e.g., churn, lead scoring)"
+    }
+  },
+  {
+    "id": "ab100-127",
+    "type": "single-choice",
+    "skillArea": "design",
+    "topic": "AI hub purpose",
+    "difficulty": "easy",
+    "prompt": "What is the purpose of the AI hub in Power Platform according to the learning content?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A unified workspace that centralizes AI features across Power Apps, Power Automate, and Copilot Studio in a governed environment"
+      },
+      {
+        "id": "b",
+        "text": "A marketplace for buying third-party language models and connectors, billed through the Power Platform admin center"
+      },
+      {
+        "id": "c",
+        "text": "A replacement for the Power Platform admin center that manages environments, licenses, and DLP policies for the AI features"
+      },
+      {
+        "id": "d",
+        "text": "A GPU cluster manager for custom model training that allocates compute to AI Builder and Copilot Studio workloads"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Der AI Hub zentralisiert KI-Funktionen über Power Apps, Power Automate und Copilot Studio, verwaltet Modelle, Connectors und Copilots governed, fördert konsistente, sichere Nutzung und bietet geführte Pfade.",
+    "source": {
+      "title": "Propose Microsoft Power Platform AI features",
+      "url": "https://learn.microsoft.com/en-us/training/modules/orchestrate-configuration-prebuilt-agents-apps/6-propose-microsoft-power-platform-ai-features-ai-hub",
+      "quote": "Centralize AI features across Power Apps, Power Automate, and Copilot Studio"
+    }
+  },
+  {
+    "id": "ab100-128",
+    "type": "matching",
+    "skillArea": "design",
+    "topic": "F&O agent interoperability",
+    "difficulty": "medium",
+    "prompt": "Match each user question in a Dynamics 365 Finance and Operations agent chat to the knowledge source or mechanism the learning content maps it to.",
+    "left": [
+      {
+        "id": "l1",
+        "text": "\"What is the current vendor credit limit?\""
+      },
+      {
+        "id": "l2",
+        "text": "\"What is the vendor's latest compliance certificate?\""
+      },
+      {
+        "id": "l3",
+        "text": "\"Can you update the vendor's payment terms?\""
+      }
+    ],
+    "right": [
+      {
+        "id": "r1",
+        "text": "F&O data"
+      },
+      {
+        "id": "r2",
+        "text": "SharePoint"
+      },
+      {
+        "id": "r3",
+        "text": "Plugin action"
+      }
+    ],
+    "correct": {
+      "l1": "r1",
+      "l2": "r2",
+      "l3": "r3"
+    },
+    "explanation": "Interoperabilität: Systemdaten aus F&O, externe Wissensquellen wie SharePoint für Dokumente, Copilot Client Plugins für Aktionen und Write-backs. Antworten können Quellen kombinieren („approved in F&O … certificate (SharePoint) expires in 30 days“).",
+    "source": {
+      "title": "Design interoperable agent experiences for Finance and Operations",
+      "url": "https://learn.microsoft.com/en-us/training/modules/orchestrate-configuration-prebuilt-agents-apps/7-design-interoperability-finance-operations-agent-chats-sources",
+      "quote": "Plugins allow the agent to \"reach out\" to other systems"
+    }
+  },
+  {
+    "id": "ab100-129",
+    "type": "single-choice",
+    "skillArea": "design",
+    "topic": "Knowledge sources for in-app help",
+    "difficulty": "hard",
+    "prompt": "A Dynamics 365 Finance team wants to enrich in-app help with task guides, validated process PDFs, and Dataverse virtual entities published from Finance and Operations. Which element should the architect reject according to the learning content?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The Dataverse virtual entities published from Finance and Operations, which are not recommended or unsupported"
+      },
+      {
+        "id": "b",
+        "text": "The task guides, because PDF, RTF, and Word files are the file types the Copilot Studio Knowledge tab can ingest"
+      },
+      {
+        "id": "c",
+        "text": "The process PDFs, because files are not ingested through Copilot Studio and must be converted to knowledge articles"
+      },
+      {
+        "id": "d",
+        "text": "The three sources together, because in-app help in Finance uses product documentation and does not use custom knowledge"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Unterstützt: PDF/RTF/Word mit validierten Prozessen, Knowledge Articles, Task Guides, Policy-Dokumente. Nicht empfohlen/unsupported: Dataverse Virtual Entities aus F&O, produktfremde Inhalte, sensible unklassifizierte Daten. Ingest über Copilot Studio (Agents → Knowledge → Add knowledge → Ready → Publish).",
+    "source": {
+      "title": "Recommend process knowledge sources for in-app help in Dynamics 365",
+      "url": "https://learn.microsoft.com/en-us/training/modules/orchestrate-configuration-prebuilt-agents-apps/8-process-knowledge-sources-dynamics-365-finance-supply-chain-management",
+      "quote": "Dataverse virtual entities published from Finance & Operations"
+    }
+  },
+  {
+    "id": "ab100-130",
+    "type": "single-choice",
+    "skillArea": "design",
+    "topic": "General knowledge in in-app help",
+    "difficulty": "medium",
+    "prompt": "For in-app help in Dynamics 365 Finance used by accountants for regulated month-end postings, should general LLM knowledge be enabled? What does the learning content advise?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Restrict it, because precision is critical for regulatory or financial workflows and validated knowledge should drive responses"
+      },
+      {
+        "id": "b",
+        "text": "Enable it, because general knowledge improves answer completeness and accountants can verify postings in the ledger anyway"
+      },
+      {
+        "id": "c",
+        "text": "Enable it for the sidecar chat and restrict it for embedded features, because the sidecar is used for exploratory questions only"
+      },
+      {
+        "id": "d",
+        "text": "It is irrelevant, because in-app help does not use language models and relies on the static product documentation"
+      }
+    ],
+    "correct": "a",
+    "explanation": "General Knowledge nur aktivieren, wenn erweiterte natürlichsprachliche Erklärungen nützen und Risiken bewertet sind; einschränken, wenn Präzision in regulatorischen oder finanziellen Workflows kritisch ist.",
+    "source": {
+      "title": "Recommend process knowledge sources for in-app help in Dynamics 365",
+      "url": "https://learn.microsoft.com/en-us/training/modules/orchestrate-configuration-prebuilt-agents-apps/8-process-knowledge-sources-dynamics-365-finance-supply-chain-management",
+      "quote": "Precision is critical for regulatory or financial workflows."
+    }
+  },
+  {
+    "id": "ab100-131",
+    "type": "matching",
+    "skillArea": "design",
+    "topic": "F&O AI experience models",
+    "difficulty": "medium",
+    "prompt": "Match each Dynamics 365 Finance and Supply Chain AI example to the experience model described in the learning content.",
+    "left": [
+      {
+        "id": "l1",
+        "text": "Generative help and natural-language chat with finance and operations data"
+      },
+      {
+        "id": "l2",
+        "text": "Purchase order change analysis shown inside a workspace page"
+      },
+      {
+        "id": "l3",
+        "text": "A role-specific copilot in Teams that automates across applications"
+      }
+    ],
+    "right": [
+      {
+        "id": "r1",
+        "text": "Sidecar"
+      },
+      {
+        "id": "r2",
+        "text": "Embedded"
+      },
+      {
+        "id": "r3",
+        "text": "Outside (external orchestration)"
+      }
+    ],
+    "correct": {
+      "l1": "r1",
+      "l2": "r2",
+      "l3": "r3"
+    },
+    "explanation": "Sidecar: Chat neben der App (Generative Help, Workflow-Zusammenfassungen, Chat mit Daten). Embedded: direkt in Workspace-Seiten (PO-Änderungsanalyse, Collections, Demand Planning). Outside: externe Agenten über Dataverse/APIs (Cross-App-Automation, Teams-Copilots).",
+    "source": {
+      "title": "Orchestrate AI features in Dynamics 365 Finance and Supply Chain",
+      "url": "https://learn.microsoft.com/en-us/training/modules/orchestrate-configuration-prebuilt-agents-apps/2-orchestrate-ai-features-dynamics-365-apps-finance-supply-chain",
+      "quote": "External agents interact with Finance and Supply Chain data beyond the application UI and help orchestrate across different apps and tasks."
+    }
+  },
+  {
+    "id": "ab100-132",
+    "type": "single-choice",
+    "skillArea": "design",
+    "topic": "F&O client plugins",
+    "difficulty": "hard",
+    "prompt": "A developer wants Copilot in Dynamics 365 Finance to invoke custom client logic from the chat. What does the learning content state about how such plugins are created?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Plugins must be created using the Copilot in Finance and Operations chatbot with an X++ method created in the application"
+      },
+      {
+        "id": "b",
+        "text": "Plugins are authored as Power Fx formulas inside a canvas app and registered with the sidecar through application context"
+      },
+      {
+        "id": "c",
+        "text": "Plugins are generated automatically from Dataverse virtual entities once the entity is published to the F&O environment"
+      },
+      {
+        "id": "d",
+        "text": "Plugins require a Foundry agent and the Python SDK, connected to the F&O chat through an Agents SDK messaging endpoint"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Client Plugins (Client Actions) sind Copilot-Plugins, die Client-Code im Kontext der F&O-Client-Experience aufrufen; sie werden über den Copilot-Chatbot mit einer X++-Methode in der Anwendung erstellt. Zusätzlich gibt es Application Context für Sidecar-Erlebnisse.",
+    "source": {
+      "title": "Orchestrate AI features in Dynamics 365 Finance and Supply Chain",
+      "url": "https://learn.microsoft.com/en-us/training/modules/orchestrate-configuration-prebuilt-agents-apps/2-orchestrate-ai-features-dynamics-365-apps-finance-supply-chain",
+      "quote": "Plugins must be created using the Copilot in Finance and Operation chatbot with an X++ method created in the application."
+    }
+  }
+]

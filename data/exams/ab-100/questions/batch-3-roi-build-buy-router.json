@@ -1,0 +1,534 @@
+[
+  {
+    "id": "ab100-052",
+    "type": "single-choice",
+    "skillArea": "plan",
+    "topic": "ROI vs TCO",
+    "difficulty": "easy",
+    "prompt": "A CFO asks why the architect presents total cost of ownership separately from return on investment in the AI business case. What does the learning content say?",
+    "options": [
+      {
+        "id": "a",
+        "text": "TCO and ROI answer very different questions, and separating them makes evaluations sharper and easier to communicate"
+      },
+      {
+        "id": "b",
+        "text": "TCO is relevant for custom models and Foundry workloads, so it is omitted from business cases for Copilot Studio agents"
+      },
+      {
+        "id": "c",
+        "text": "ROI already includes the lifecycle costs of development, deployment, and operations, so TCO is a redundant figure"
+      },
+      {
+        "id": "d",
+        "text": "TCO replaces ROI once the solution is in production, because the benefits are then tracked by the Savings calculator"
+      }
+    ],
+    "correct": "a",
+    "explanation": "TCO und ROI stehen in jedem Business Case nebeneinander, beantworten aber sehr unterschiedliche Fragen; klare Trennung macht Bewertungen schärfer, belastbarer und kommunizierbarer. TCO umfasst alle Kosten über den Lebenszyklus.",
+    "source": {
+      "title": "Evaluate ROI criteria for AI-powered solutions",
+      "url": "https://learn.microsoft.com/en-us/training/modules/evaluate-costs-benefits-ai-powered-business-solution/2-roi-criteria-ai-powered-business-solution-including-total-cost-ownership",
+      "quote": "When you separate them clearly, your AI evaluations become sharper, more defensible, and far easier to communicate to leadership."
+    }
+  },
+  {
+    "id": "ab100-053",
+    "type": "matching",
+    "skillArea": "plan",
+    "topic": "TCO cost categories",
+    "difficulty": "medium",
+    "prompt": "Match each cost item from an AI business case to the TCO category it belongs to according to the learning content.",
+    "left": [
+      {
+        "id": "l1",
+        "text": "Prompt engineering and agent design and testing"
+      },
+      {
+        "id": "l2",
+        "text": "Licensing and API usage costs"
+      },
+      {
+        "id": "l3",
+        "text": "Model retraining and prompt library maintenance"
+      },
+      {
+        "id": "l4",
+        "text": "Retiring outdated models and migrating to new architectures"
+      }
+    ],
+    "right": [
+      {
+        "id": "r1",
+        "text": "Development costs"
+      },
+      {
+        "id": "r2",
+        "text": "Deployment costs"
+      },
+      {
+        "id": "r3",
+        "text": "Operational costs"
+      },
+      {
+        "id": "r4",
+        "text": "Decommissioning costs"
+      }
+    ],
+    "correct": {
+      "l1": "r1",
+      "l2": "r2",
+      "l3": "r3",
+      "l4": "r4"
+    },
+    "explanation": "Development (Datenvorbereitung, Prompt Engineering, Design/Test, Integration), Deployment (Infrastruktur, Lizenzen, Security-Setup, API-Nutzung), Operational (Monitoring, Retraining, Prompt-Library-Pflege, Support, Training), Change Management (Skilling, Rollout, Prozessredesign), Decommissioning (Modelle stilllegen, Migration).",
+    "source": {
+      "title": "Evaluate ROI criteria for AI-powered solutions",
+      "url": "https://learn.microsoft.com/en-us/training/modules/evaluate-costs-benefits-ai-powered-business-solution/2-roi-criteria-ai-powered-business-solution-including-total-cost-ownership",
+      "quote": "Migrating to new architectures"
+    }
+  },
+  {
+    "id": "ab100-054",
+    "type": "single-choice",
+    "skillArea": "plan",
+    "topic": "Copilot Studio ROI analytics",
+    "difficulty": "medium",
+    "prompt": "A program manager wants to quantify productivity gains of a Copilot Studio agent with real usage data rather than estimates. Which metrics does the learning content say Copilot Studio ROI analytics provides?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Usage metrics such as sessions and active users, automation metrics such as completion rate, cost savings such as time saved, and quality metrics"
+      },
+      {
+        "id": "b",
+        "text": "Net present value, payback period, and cost-benefit ratio, computed automatically from license invoices, session counts, and the agent's connector usage"
+      },
+      {
+        "id": "c",
+        "text": "Session counts and session duration, while savings and quality must be estimated in a separate finance tool outside Copilot Studio"
+      },
+      {
+        "id": "d",
+        "text": "GPU utilization, token throughput, model drift indicators, and connector latency, aggregated per environment in the admin center"
+      }
+    ],
+    "correct": "a",
+    "explanation": "ROI Analytics liefert Usage (Sessions, aktive Nutzer, Dauer), Automation (Completion, Abandonment, Task Success), Cost Savings (geschätzte Zeit- und Kostenersparnis, weniger manuelle Arbeit) und Quality (Feedback, Fehlerrate, Eskalationen). NPV und Payback berechnet der Architekt im Bewertungsframework.",
+    "source": {
+      "title": "Evaluate ROI criteria for AI-powered solutions",
+      "url": "https://learn.microsoft.com/en-us/training/modules/evaluate-costs-benefits-ai-powered-business-solution/2-roi-criteria-ai-powered-business-solution-including-total-cost-ownership",
+      "quote": "These metrics help quantify both productivity gains and operational efficiency."
+    }
+  },
+  {
+    "id": "ab100-055",
+    "type": "single-choice",
+    "skillArea": "plan",
+    "topic": "Savings model inputs",
+    "difficulty": "hard",
+    "prompt": "An analyst builds the ROI model for an email-triage agent: 6 minutes saved per run, 20,000 successful runs per month, and a labor rate of 60 dollars per hour. The analyst also counts runs that were abandoned mid-way. Which correction does the learning content require?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Count only successful, resolved runs; the model yields 120,000 dollars of monthly savings for the 20,000 runs"
+      },
+      {
+        "id": "b",
+        "text": "Count every run including abandoned ones, because each invocation consumes labor time that the agent replaces"
+      },
+      {
+        "id": "c",
+        "text": "Replace minutes saved with average session duration, because time saved per run cannot be measured directly"
+      },
+      {
+        "id": "d",
+        "text": "Use the vendor's published productivity benchmark instead of internal telemetry to calibrate the minutes saved"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Inputs: Zeitersparnis je Run, erfolgreiche Runs im Zeitraum (nur gelöste Runs zählen), vollständig belasteter Stundensatz. Beispiel: 6 Minuten × 20.000 Runs × 60 $/h = 120.000 $ monatlich.",
+    "source": {
+      "title": "Create ROI analysis for a proposed AI solution",
+      "url": "https://learn.microsoft.com/en-us/training/modules/evaluate-costs-benefits-ai-powered-business-solution/3-create-roi-analysis-proposed-ai-solution-business-process",
+      "quote": "Successful runs in period (only resolved runs count)."
+    }
+  },
+  {
+    "id": "ab100-056",
+    "type": "single-choice",
+    "skillArea": "plan",
+    "topic": "Savings per run vs per tool",
+    "difficulty": "medium",
+    "prompt": "An agent uses four tools with very different time impacts: a lookup tool saves seconds, a document-generation tool saves twenty minutes. Which Savings configuration does the learning content recommend?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Savings per tool, which gives a granular estimate when an agent uses multiple tools with different impacts"
+      },
+      {
+        "id": "b",
+        "text": "Savings per run, which is designed for agents with many heterogeneous tools and a variable run path"
+      },
+      {
+        "id": "c",
+        "text": "No savings tracking, because admins can disable money-based savings and time savings are not convertible into currency later"
+      },
+      {
+        "id": "d",
+        "text": "Session duration from Analytics, because the Savings panel is unable to capture tool-level time differences"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Savings per run eignet sich bei vorhersehbarem Ablauf; Savings per tool liefert granulare Schätzungen, wenn ein Agent mehrere Tools mit unterschiedlichem Impact nutzt. Deaktiviert der Admin geldbasierte Savings, wird Zeit getrackt und extern in Währung umgerechnet.",
+    "source": {
+      "title": "Create ROI analysis for a proposed AI solution",
+      "url": "https://learn.microsoft.com/en-us/training/modules/evaluate-costs-benefits-ai-powered-business-solution/3-create-roi-analysis-proposed-ai-solution-business-process",
+      "quote": "Savings per tool (granular estimate when an agent uses multiple tools with different impacts)."
+    }
+  },
+  {
+    "id": "ab100-057",
+    "type": "single-choice",
+    "skillArea": "plan",
+    "topic": "ROI and payback formulas",
+    "difficulty": "hard",
+    "prompt": "An AI solution delivers an annual benefit of 486,000 dollars against a year-one TCO of 300,000 dollars. Using the formulas in the learning content, which statement is correct?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Net benefit is 186,000 dollars and ROI is about 62 percent"
+      },
+      {
+        "id": "b",
+        "text": "Net benefit is 486,000 dollars and ROI is about 162 percent"
+      },
+      {
+        "id": "c",
+        "text": "ROI is 38 percent because TCO is divided by benefit"
+      },
+      {
+        "id": "d",
+        "text": "ROI is undefined until the GPU hours consumed are known"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Net_Benefit = Annual_Benefit − Annual_TCO = 186.000 $; ROI % = Net_Benefit / Annual_TCO × 100 ≈ 62 %. Payback (Monate) = einmalige Kosten / monatlicher Nettonutzen. Das ist genau das Worked Example der Lerninhalte.",
+    "source": {
+      "title": "Create ROI analysis for a proposed AI solution",
+      "url": "https://learn.microsoft.com/en-us/training/modules/evaluate-costs-benefits-ai-powered-business-solution/3-create-roi-analysis-proposed-ai-solution-business-process",
+      "quote": "ROI % = Net_Benefit / Annual_TCO × 100"
+    }
+  },
+  {
+    "id": "ab100-058",
+    "type": "single-choice",
+    "skillArea": "plan",
+    "topic": "Sensitivity analysis",
+    "difficulty": "medium",
+    "prompt": "Stakeholders challenge a single-point ROI estimate. Which practice from the learning content should the architect add to the executive summary?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Optimistic, expected, and conservative cases that vary adoption rate, minutes saved per run, labor rates, and quality effects"
+      },
+      {
+        "id": "b",
+        "text": "A single best-case figure backed by a vendor whitepaper and the field studies on knowledge worker productivity"
+      },
+      {
+        "id": "c",
+        "text": "A decision to skip the eight-week pilot and scale immediately, so that uncertainty is resolved by production data"
+      },
+      {
+        "id": "d",
+        "text": "A breakdown of licensing by SKU and consumption tier, since licensing is the cost component with the widest range in the first year"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Sensitivity Bands: optimistisch/erwartet/konservativ durch Variation von Adoptionsrate, Minuten je Run, Stundensätzen und Qualitäts-/Rework-Effekten. So sehen Stakeholder Upside und Risiko; eigene Telemetrie bleibt maßgeblich.",
+    "source": {
+      "title": "Create ROI analysis for a proposed AI solution",
+      "url": "https://learn.microsoft.com/en-us/training/modules/evaluate-costs-benefits-ai-powered-business-solution/3-create-roi-analysis-proposed-ai-solution-business-process",
+      "quote": "Create optimistic / expected / conservative cases by varying:"
+    }
+  },
+  {
+    "id": "ab100-059",
+    "type": "matching",
+    "skillArea": "plan",
+    "topic": "Build, buy, or extend",
+    "difficulty": "medium",
+    "prompt": "Match each business situation to the sourcing path recommended in the learning content.",
+    "left": [
+      {
+        "id": "l1",
+        "text": "The AI capability defines competitive advantage and data sensitivity requires full internal control"
+      },
+      {
+        "id": "l2",
+        "text": "Processes are standardized, AI maturity is low, and rapid deployment with vendor support matters most"
+      },
+      {
+        "id": "l3",
+        "text": "The base model performs well but needs enterprise-specific knowledge via grounding data, connectors, or plugins"
+      }
+    ],
+    "right": [
+      {
+        "id": "r1",
+        "text": "Build"
+      },
+      {
+        "id": "r2",
+        "text": "Buy"
+      },
+      {
+        "id": "r3",
+        "text": "Extend"
+      }
+    ],
+    "correct": {
+      "l1": "r1",
+      "l2": "r2",
+      "l3": "r3"
+    },
+    "explanation": "Build bei Differenzierung, Compliance-Anforderungen, Datensensitivität und starker AI/ML-Kompetenz; Buy bei Standardprozessen, geringer Reife und Time-to-Value; Extend bei gutem Basismodell plus enterprise-spezifischer Anpassung durch Grounding, Connectors, Plugins.",
+    "source": {
+      "title": "Analyze whether to build, buy, or extend AI components",
+      "url": "https://learn.microsoft.com/en-us/training/modules/evaluate-costs-benefits-ai-powered-business-solution/4-analyze-whether-build-buy-extend-ai-components-business-solutions",
+      "quote": "The base model performs well but needs enterprise-specific adaptation"
+    }
+  },
+  {
+    "id": "ab100-060",
+    "type": "single-choice",
+    "skillArea": "plan",
+    "topic": "TCO by sourcing option",
+    "difficulty": "hard",
+    "prompt": "According to the TCO table in the learning content, which cost domain remains high for the Extend option even though most Extend costs are medium?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Data preparation"
+      },
+      {
+        "id": "b",
+        "text": "Infrastructure costs"
+      },
+      {
+        "id": "c",
+        "text": "Expertise costs"
+      },
+      {
+        "id": "d",
+        "text": "Development costs"
+      }
+    ],
+    "correct": "a",
+    "explanation": "TCO-Tabelle: Extend ist bei Infrastructure, Development, Expertise und Operations Medium, bei Data Preparation jedoch High, weil Grounding, Retriever, Embeddings und Indexierung trotz Plattform eigene Datenarbeit verlangen.",
+    "source": {
+      "title": "Analyze whether to build, buy, or extend AI components",
+      "url": "https://learn.microsoft.com/en-us/training/modules/evaluate-costs-benefits-ai-powered-business-solution/4-analyze-whether-build-buy-extend-ai-components-business-solutions",
+      "quote": "Grounding, retrievers, embeddings, indexing"
+    }
+  },
+  {
+    "id": "ab100-061",
+    "type": "ordering",
+    "skillArea": "plan",
+    "topic": "Build-buy-extend decision flow",
+    "difficulty": "medium",
+    "prompt": "Arrange these steps of the build-buy-extend decision framework in the order given by the learning content.",
+    "items": [
+      {
+        "id": "i1",
+        "text": "Define business requirements and business processes"
+      },
+      {
+        "id": "i2",
+        "text": "Determine strategic importance (differentiation vs commodity)"
+      },
+      {
+        "id": "i3",
+        "text": "Estimate TCO across the five cost domains"
+      },
+      {
+        "id": "i4",
+        "text": "Forecast ROI"
+      },
+      {
+        "id": "i5",
+        "text": "Score each option on a weighted model and select the best value-to-cost ratio"
+      }
+    ],
+    "correctOrder": [
+      "i1",
+      "i2",
+      "i3",
+      "i4",
+      "i5"
+    ],
+    "explanation": "Der Ablauf: Anforderungen → strategische Bedeutung → Vendor-Lösungen bewerten → Extend-Machbarkeit → Custom-Machbarkeit → TCO über fünf Domänen → ROI-Prognose → gewichtetes Scoring → Auswahl nach Value-to-Cost.",
+    "source": {
+      "title": "Analyze whether to build, buy, or extend AI components",
+      "url": "https://learn.microsoft.com/en-us/training/modules/evaluate-costs-benefits-ai-powered-business-solution/4-analyze-whether-build-buy-extend-ai-components-business-solutions",
+      "quote": "Select the approach with optimal value-to-cost ratio"
+    }
+  },
+  {
+    "id": "ab100-062",
+    "type": "single-choice",
+    "skillArea": "plan",
+    "topic": "Model router purpose",
+    "difficulty": "easy",
+    "prompt": "An application uses an LLM, an SLM, and a fine-tuned model behind separate endpoints, and developers struggle with integration complexity. What does the Azure AI Foundry model router provide according to the learning content?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A single unified endpoint that selects the best model per request based on routing rules, performance criteria, and constraints"
+      },
+      {
+        "id": "b",
+        "text": "A fine-tuning service that merges the three models into one distilled model with a single deployment and endpoint"
+      },
+      {
+        "id": "c",
+        "text": "A caching layer that stores prior responses so that models are called less often and integration code can be simplified"
+      },
+      {
+        "id": "d",
+        "text": "A licensing broker that selects the cheapest vendor contract per request and consolidates billing across the three model providers"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Der Model Router bietet einen einheitlichen Endpunkt für mehrere Modelle, intelligentes Routing nach Task-Typ, Fähigkeiten, Kosten, Latenz und eigenen Regeln sowie zentrale Governance (Versionierung, Monitoring, Analytics, Safety).",
+    "source": {
+      "title": "Implement a model router to intelligently route requests to the most suitable model",
+      "url": "https://learn.microsoft.com/en-us/training/modules/evaluate-costs-benefits-ai-powered-business-solution/5-implement-model-router-intelligently-route-requests-most-suitable-model",
+      "quote": "One endpoint for multiple models"
+    }
+  },
+  {
+    "id": "ab100-063",
+    "type": "matching",
+    "skillArea": "plan",
+    "topic": "Model router rule types",
+    "difficulty": "medium",
+    "prompt": "Match each routing need to the rule type the learning content describes for Azure AI Foundry.",
+    "left": [
+      {
+        "id": "l1",
+        "text": "Send every classification request to an SLM"
+      },
+      {
+        "id": "l2",
+        "text": "Split traffic between two models for an A/B test and gradual rollout"
+      },
+      {
+        "id": "l3",
+        "text": "Route to a backup model automatically if the primary fails"
+      },
+      {
+        "id": "l4",
+        "text": "Send specific traffic to an experimental version while most goes to the latest stable one"
+      }
+    ],
+    "right": [
+      {
+        "id": "r1",
+        "text": "Static rules"
+      },
+      {
+        "id": "r2",
+        "text": "Weighted routing"
+      },
+      {
+        "id": "r3",
+        "text": "Fallback routing"
+      },
+      {
+        "id": "r4",
+        "text": "Version-based routing"
+      }
+    ],
+    "correct": {
+      "l1": "r1",
+      "l2": "r2",
+      "l3": "r3",
+      "l4": "r4"
+    },
+    "explanation": "Static Rules („If task = classification → use SLM“), Weighted Routing (Traffic-Verteilung, A/B, Rollout), Fallback Routing (Backup bei Ausfall), Version-Based Routing (stabil vs. experimentell).",
+    "source": {
+      "title": "Implement a model router to intelligently route requests to the most suitable model",
+      "url": "https://learn.microsoft.com/en-us/training/modules/evaluate-costs-benefits-ai-powered-business-solution/5-implement-model-router-intelligently-route-requests-most-suitable-model",
+      "quote": "Useful for A/B testing and gradual rollout"
+    }
+  },
+  {
+    "id": "ab100-064",
+    "type": "single-choice",
+    "skillArea": "plan",
+    "topic": "Routing by complexity",
+    "difficulty": "medium",
+    "prompt": "A routing workshop defines complexity tiers for requests. Which mapping matches the learning content?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Simple tasks to an SLM, moderate tasks to a fine-tuned model, complex tasks to an LLM"
+      },
+      {
+        "id": "b",
+        "text": "Simple tasks to an LLM, moderate tasks to an SLM, complex tasks to a fine-tuned model"
+      },
+      {
+        "id": "c",
+        "text": "Simple tasks to the LLM, moderate tasks to an SLM, complex tasks to a reasoning model"
+      },
+      {
+        "id": "d",
+        "text": "Simple tasks to a fine-tuned model, moderate tasks to an LLM, complex tasks to an SLM"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Routing-Kriterium Komplexität: Simple → SLM, Moderate → Fine-tuned Model, Complex → LLM. Ziel: Kosten senken bei gleichbleibender Performance.",
+    "source": {
+      "title": "Implement a model router to intelligently route requests to the most suitable model",
+      "url": "https://learn.microsoft.com/en-us/training/modules/evaluate-costs-benefits-ai-powered-business-solution/5-implement-model-router-intelligently-route-requests-most-suitable-model",
+      "quote": "Moderate → fine tuned model"
+    }
+  },
+  {
+    "id": "ab100-065",
+    "type": "single-choice",
+    "skillArea": "plan",
+    "topic": "ROI categories",
+    "difficulty": "easy",
+    "prompt": "Which three ROI categories does the module summary in the learning content say AI solutions must be assessed across?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Financial (hard value), strategic or intangible (soft value), and time-based indicators"
+      },
+      {
+        "id": "b",
+        "text": "Licensing (fixed), infrastructure (variable), staffing (recurring), and change management costs"
+      },
+      {
+        "id": "c",
+        "text": "Accuracy, latency, and token efficiency, measured per release"
+      },
+      {
+        "id": "d",
+        "text": "Build, buy, and extend, scored on a weighted value-to-cost model"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Die Zusammenfassung nennt drei Kategorien: Financial (quantifizierbar: Einsparungen, Umsatz), Strategic/Intangible (Kundenzufriedenheit, Produktivität, Compliance) und Time-based (frühe Indikatoren wie schnellere Workflows).",
+    "source": {
+      "title": "Summary (Evaluate costs and benefits of AI solutions)",
+      "url": "https://learn.microsoft.com/en-us/training/modules/evaluate-costs-benefits-ai-powered-business-solution/7-summary",
+      "quote": "ROI for AI solutions must be assessed across three categories: financial (hard value), strategic/intangible (soft value), and time-based indicators."
+    }
+  }
+]

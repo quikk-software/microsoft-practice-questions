@@ -1,0 +1,53 @@
+{
+  "slug": "ab-100",
+  "code": "AB-100",
+  "title": "Microsoft Certified: Agentic AI Business Solutions Architect Expert",
+  "description": "Architecting agentic AI business solutions. Umfasst die Planung KI-gestützter Geschäftslösungen (Anforderungsanalyse, Grounding-Daten, KI-Strategie nach dem Cloud Adoption Framework, Multi-Agent-Design, Prompt-Bibliotheken, Center of Excellence, ROI und Build-buy-extend), das Design von Agenten und KI-Funktionen über Copilot Studio, Microsoft 365 Copilot, Microsoft Foundry und Dynamics 365 sowie die Bereitstellung: Monitoring und Tuning, Teststrategie, ALM für Agenten, Modelle und Daten sowie Responsible AI, Sicherheit, Governance und Compliance.",
+  "seo": {
+    "intro": [
+      "Die AB-100 ist Microsofts Expert-Zertifizierung für Solution Architects, die KI-gestützte Geschäftslösungen mit Agenten über Microsoft 365 Copilot, Copilot Studio, Microsoft Foundry, Power Platform und Dynamics 365 entwerfen. Geprüft werden drei Bereiche: die Planung KI-gestützter Geschäftslösungen (Anforderungen, Grounding-Daten, KI-Strategie und Adoption-Prozess, Multi-Agent-Architektur, Prompt-Bibliotheken, Center of Excellence, ROI und Build-buy-extend), das Design von KI und Agenten (Copilot in Dynamics 365, Task-, autonome und Prompt-Agenten, Foundry Tools, Topics, Well-Architected Framework, Erweiterbarkeit mit MCP und Computer Use, Orchestrierung vorgefertigter Agenten) sowie die Bereitstellung (Monitoring und Tuning, Teststrategie, ALM, Responsible AI, Sicherheit, Governance und Compliance).",
+      "Die Zertifizierung richtet sich an erfahrene Architektinnen und Architekten: Neben der Prüfung AB-100 ist mindestens eine Associate-Zertifizierung wie MB-280, PL-200 oder vergleichbare Vorkenntnisse Voraussetzung. Erwartet wird Erfahrung mit Dynamics 365, Power Platform, Copilot Studio und Azure-KI-Diensten sowie ein Verständnis für Geschäftsprozesse, Datenqualität, Lizenzierung und Governance.",
+      "Unser Fragen-Pool stammt vollständig aus dem offiziellen Microsoft-Learn-Lernpfad „Architect AI solutions for business productivity“ des Kurses AB-100T00. Die Fragen sind als Architekturszenarien aufgebaut — Anforderung, Randbedingung, Entscheidung — wie in der echten Prüfung. Nach jeder Antwort siehst du sofort, ob sie richtig war, bekommst eine Erklärung auf Deutsch, ein Glossar der Fachbegriffe und den wörtlichen Textausschnitt aus dem Lernmaterial, der die Antwort belegt."
+    ],
+    "faq": [
+      {
+        "question": "Welche Voraussetzungen hat die AB-100?",
+        "answer": "Die Expert-Zertifizierung verlangt neben der bestandenen Prüfung AB-100 mindestens eine Associate-Zertifizierung aus der von Microsoft genannten Liste, etwa MB-280 (Dynamics 365 Customer Experience Analyst) oder PL-200 (Power Platform Functional Consultant). Ohne diese Voraussetzung kannst du die Prüfung ablegen, erhältst den Expert-Titel aber erst mit der Associate-Zertifizierung."
+      },
+      {
+        "question": "Wie viele Fragen hat die AB-100-Prüfung?",
+        "answer": "Microsoft-Expert-Prüfungen umfassen typischerweise 40 bis 60 Fragen, oft mit Fallstudien. Unser Test-Examen stellt 40 Fragen aus dem Pool zusammen — überwiegend Szenariofragen mit Anforderung, Randbedingung und Architekturentscheidung. Jeder Durchlauf unterscheidet sich."
+      },
+      {
+        "question": "Wie viele Punkte braucht man zum Bestehen?",
+        "answer": "Wie bei allen Microsoft-Zertifizierungen sind 700 von 1000 Punkten zum Bestehen nötig. Unsere Auswertung nutzt dieselbe Skala und zeigt zusätzlich deine Leistung je Skill-Bereich."
+      },
+      {
+        "question": "Welche Themen werden geprüft?",
+        "answer": "Drei Bereiche: KI-gestützte Geschäftslösungen planen — Anforderungsanalyse, Grounding-Daten, KI-Strategie, Multi-Agent-Design, Prompt-Bibliotheken, Center of Excellence, ROI, Build-buy-extend, Model Router (25–30 %); KI-gestützte Geschäftslösungen designen — Copilot in Dynamics 365, Agententypen, Foundry Tools, Topics, Well-Architected Framework, Erweiterbarkeit mit MCP und Computer Use, Microsoft-365-Agenten, Power Platform AI Hub (25–30 %); KI-gestützte Geschäftslösungen bereitstellen — Monitoring und Tuning, Testen, ALM, Responsible AI, Sicherheit, Governance, Risikomanagement und Compliance (40–45 %)."
+      },
+      {
+        "question": "Worin unterscheidet sich die AB-100 von der AB-620?",
+        "answer": "Die AB-620 prüft das Bauen und Integrieren einzelner Agenten in Copilot Studio auf Associate-Niveau. Die AB-100 prüft auf Expert-Niveau Architekturentscheidungen über das gesamte Microsoft-Ökosystem: Welche Plattform, welcher Agententyp, welches Modell, welche Governance und welcher ALM-Prozess passen zu einer Geschäftsanforderung — inklusive Dynamics 365, Microsoft 365 Copilot und Microsoft Foundry."
+      },
+      {
+        "question": "Auf welchen Lernpfaden basieren die Fragen?",
+        "answer": "Auf dem offiziellen Lernpfad „Architect AI solutions for business productivity“ (Kurs AB-100T00) mit elf Modulen: Einführung, Anforderungsanalyse, KI-Strategie, Kosten und Nutzen, Agenten-Design, Erweiterbarkeit, Orchestrierung vorgefertigter Agenten, Monitoring und Tuning, Testen, ALM sowie Responsible AI, Sicherheit und Compliance."
+      },
+      {
+        "question": "Kostet dieses Test-Examen etwas?",
+        "answer": "Nein. Die Test-Examen sind kostenlos und ohne Anmeldung nutzbar. Ein Konto brauchst du nur für den gespeicherten Prüfungsverlauf, den Lern-Modus mit Fortschritt und die KI-Erklärungen mit deinem eigenen API-Key."
+      }
+    ]
+  },
+  "questionCount": 40,
+  "durationMinutes": 120,
+  "passScore": 700,
+  "maxScore": 1000,
+  "skillAreas": [
+    { "id": "plan", "name": "Plan AI-powered business solutions", "weight": 0.28 },
+    { "id": "design", "name": "Design AI-powered business solutions", "weight": 0.28 },
+    { "id": "deploy", "name": "Deploy AI-powered business solutions", "weight": 0.44 }
+  ],
+  "difficultyCurve": { "easy": 0.2, "medium": 0.45, "hard": 0.35 }
+}

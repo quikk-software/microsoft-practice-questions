@@ -1,0 +1,1346 @@
+[
+  {
+    "id": "ab100-160",
+    "type": "single-choice",
+    "skillArea": "deploy",
+    "topic": "ALM artifacts for AI data",
+    "difficulty": "medium",
+    "prompt": "An ALM plan for an AI solution versions only the agent definition. According to the learning content, which additional data artifacts must be treated as versioned, promotable ALM artifacts?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Training and evaluation datasets, grounding knowledge, prompt assets, policies and guardrails, and run telemetry"
+      },
+      {
+        "id": "b",
+        "text": "The production database backup and the agent's conversation transcripts, retained for the regulatory period"
+      },
+      {
+        "id": "c",
+        "text": "The Teams app manifest, icons, and publishing metadata, versioned together with the Copilot Studio solution package"
+      },
+      {
+        "id": "d",
+        "text": "The vendor's model weights and the model catalog entry, which must be re-downloaded for each environment"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Scope der „Daten“ im AI-ALM: Trainings-/Fine-Tuning-Datasets, Evaluations-/Golden-Sets, Grounding-Wissen, Prompt-Assets, Policies/Guardrails (DLP, Labels, Connectors, Action-Limits) und Run-Telemetrie plus Feedback.",
+    "source": {
+      "title": "Design an ALM process for data used in AI models and agents",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-alm-process-ai-powered-business-solutions/2-design-alm-process-data-used-ai-models-agents",
+      "quote": "Treat the following as versioned, promotable ALM artifacts:"
+    }
+  },
+  {
+    "id": "ab100-161",
+    "type": "single-choice",
+    "skillArea": "deploy",
+    "topic": "Red and gold datasets",
+    "difficulty": "medium",
+    "prompt": "A data engineer keeps editing the evaluation dataset in production to \"keep it fresh\". Which environment pattern from the learning content does this violate?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The red-gold pattern, where red data is mutable and experimental, gold datasets are frozen, and production uses gold only"
+      },
+      {
+        "id": "b",
+        "text": "The canary pattern, where new datasets are released to a small, isolated subset of users before the full rollout to production"
+      },
+      {
+        "id": "c",
+        "text": "The hybrid search pattern, where vector and keyword indexes are combined and re-ranked by a semantic ranker"
+      },
+      {
+        "id": "d",
+        "text": "The sidecar pattern, where the evaluation data sits next to the application and is refreshed on the same schedule"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Je Umgebung eigene Datenebenen: Dev (Red, veränderlich) → Test → Pre-Prod (Gold-Kandidaten) → Prod (nur Gold). Gold-Sets werden eingefroren mit Immutability-Attestierung; Promotion Gates verlangen Qualitätsreports, Bias-Checks, Lineage und Security-Signoff.",
+    "source": {
+      "title": "Design an ALM process for data used in AI models and agents",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-alm-process-ai-powered-business-solutions/2-design-alm-process-data-used-ai-models-agents",
+      "quote": "Red gold datasets pattern: red (mutable, experimental) vs. gold (frozen, promoted)."
+    }
+  },
+  {
+    "id": "ab100-162",
+    "type": "matching",
+    "skillArea": "deploy",
+    "topic": "ALM gate checks",
+    "difficulty": "hard",
+    "prompt": "Match each promotion gate in the AI data ALM process to the evidence the learning content requires.",
+    "left": [
+      {
+        "id": "l1",
+        "text": "Gate A to B (catalog and ownership)"
+      },
+      {
+        "id": "l2",
+        "text": "Gate B to C (data quality and lineage)"
+      },
+      {
+        "id": "l3",
+        "text": "Gate C to D (evaluation and safety)"
+      },
+      {
+        "id": "l4",
+        "text": "Gate D to E (compliance and residency)"
+      }
+    ],
+    "right": [
+      {
+        "id": "r1",
+        "text": "Data contract, catalog record, and label policy proof"
+      },
+      {
+        "id": "r2",
+        "text": "Profiling report, lineage graph, and version IDs"
+      },
+      {
+        "id": "r3",
+        "text": "Metrics pack, safety report, and model or data card"
+      },
+      {
+        "id": "r4",
+        "text": "Residency mapping, DLP rules, and approval memo"
+      }
+    ],
+    "correct": {
+      "l1": "r1",
+      "l2": "r2",
+      "l3": "r3",
+      "l4": "r4"
+    },
+    "explanation": "Gate-Tabelle: A→B Katalog/Ownership (Data Contract, Katalogeintrag, Label-Nachweis), B→C Qualität/Lineage (Profiling, Lineage-Graph, Versions-IDs), C→D Evaluation/Safety (Metrics Pack, Safety Report, Model/Data Card), D→E Compliance/Residency (Residency-Mapping, DLP, Approval), E→F Runtime Readiness (Dashboards, Alarme, Rollback, Budget Guard).",
+    "source": {
+      "title": "Design an ALM process for data used in AI models and agents",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-alm-process-ai-powered-business-solutions/2-design-alm-process-data-used-ai-models-agents",
+      "quote": "Metrics pack; safety report; model/data card"
+    }
+  },
+  {
+    "id": "ab100-163",
+    "type": "single-choice",
+    "skillArea": "deploy",
+    "topic": "Training data boundaries",
+    "difficulty": "easy",
+    "prompt": "During the Develop and Evaluate phase, a team wants to fine-tune directly on the production knowledge base to save time. What does the learning content state?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Train and iterate using Dev and Test data, evaluate on golden sets, and keep production knowledge out of training"
+      },
+      {
+        "id": "b",
+        "text": "Production data is preferred for fine-tuning because it is the most current and reflects real user behavior and vocabulary"
+      },
+      {
+        "id": "c",
+        "text": "Training on production knowledge is acceptable if canary runs with masked data follow before the release"
+      },
+      {
+        "id": "d",
+        "text": "Foundry agents may train on production knowledge, while Copilot Studio agents must use Dev and Test data"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Phase C: mit Dev/Test-Daten trainieren und iterieren, nie mit Produktionswissen; Evaluationssuiten (Accuracy, Safety, Robustness, Cost) auf Golden Sets; Model/Data Cards speichern.",
+    "source": {
+      "title": "Design an ALM process for data used in AI models and agents",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-alm-process-ai-powered-business-solutions/2-design-alm-process-data-used-ai-models-agents",
+      "quote": "Train/iterate using Dev/Test data; never train on production knowledge."
+    }
+  },
+  {
+    "id": "ab100-164",
+    "type": "single-choice",
+    "skillArea": "deploy",
+    "topic": "Residency decision tree",
+    "difficulty": "hard",
+    "prompt": "A regulated bank's Copilot feature needs cross-region capacity because in-region capacity is unavailable. Following the residency decision tree in the learning content, what should happen?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Check whether overflow is allowed for this workload tier; if yes, enable cross-region processing under admin control, else block or defer"
+      },
+      {
+        "id": "b",
+        "text": "Enable cross-region processing automatically for the feature, since availability outranks residency for productivity workloads in the tenant"
+      },
+      {
+        "id": "c",
+        "text": "Move the whole tenant to a geography with available capacity and migrate the mailbox region of the affected users"
+      },
+      {
+        "id": "d",
+        "text": "Disable the Copilot feature permanently for the bank, because any cross-region processing violates the residency policy"
+      }
+    ],
+    "correct": "a",
+    "explanation": "In regulierten Szenarien ist In-Region der Default; Overflow braucht explizite Freigabe. Entscheidungsbaum: In-Region-Kapazität vorhanden? Ja → lokal. Nein → Overflow für diese Workload-Stufe erlaubt? Ja → Cross-Region unter Admin-Kontrolle; sonst blockieren oder verschieben.",
+    "source": {
+      "title": "Design an ALM process for data used in AI models and agents",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-alm-process-ai-powered-business-solutions/2-design-alm-process-data-used-ai-models-agents",
+      "quote": "In regulated scenarios, set the default to in-region and require explicit approval to enable overflow processing."
+    }
+  },
+  {
+    "id": "ab100-165",
+    "type": "single-choice",
+    "skillArea": "deploy",
+    "topic": "Drift response in operations",
+    "difficulty": "medium",
+    "prompt": "In the Operate and Monitor phase, live metrics for an agent drift beyond the per-release baseline. What response does the learning content prescribe?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Auto-open an incident, route it to the data owner, and pause affected actions"
+      },
+      {
+        "id": "b",
+        "text": "Retrain the model immediately on live production prompts and redeploy it"
+      },
+      {
+        "id": "c",
+        "text": "Raise the drift threshold so that the alert stops firing and review it next quarter"
+      },
+      {
+        "id": "d",
+        "text": "Delete the baseline and start a new one from the current live data"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Baseline-Metriken je Release (Latenz p95, Erfolg, Token/€, Safety Flags); überschreitet Drift die Schwellen: Incident automatisch öffnen, an Data Owner routen, betroffene Aktionen pausieren; Evaluationssuiten regelmäßig gegen Golden Sets.",
+    "source": {
+      "title": "Design an ALM process for data used in AI models and agents",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-alm-process-ai-powered-business-solutions/2-design-alm-process-data-used-ai-models-agents",
+      "quote": "Compare live to baseline; if drift exceeds thresholds, auto-open an incident, route to data owner, and pause affected actions."
+    }
+  },
+  {
+    "id": "ab100-166",
+    "type": "yes-no",
+    "skillArea": "deploy",
+    "topic": "Copilot Studio ALM environment strategy",
+    "difficulty": "medium",
+    "prompt": "An architect designs the environment strategy for Copilot Studio agents, connectors, and actions. Evaluate each statement against the learning content.",
+    "statements": [
+      {
+        "id": "s1",
+        "text": "At least three environments are needed: Development, Test, and Production.",
+        "correct": true
+      },
+      {
+        "id": "s2",
+        "text": "Managed solutions should be used only in Test and Production, with no direct editing in Production.",
+        "correct": true
+      },
+      {
+        "id": "s3",
+        "text": "Knowledge sources should be added directly in Production to ensure they are current.",
+        "correct": false
+      },
+      {
+        "id": "s4",
+        "text": "Connectors should be published to Production before authentication flows are validated to speed up delivery.",
+        "correct": false
+      }
+    ],
+    "explanation": "Mindestens Dev/Test/Prod; keine Direktbearbeitung in Prod; Managed Solutions nur in Test/Prod; Solution Layering. Wissensquellen in Dev hinzufügen; Connector-Release: Author → Auth validieren → DLP → Security-Freigabe → Publish to Prod.",
+    "source": {
+      "title": "Design an ALM process for Copilot Studio agents, connectors, and actions",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-alm-process-ai-powered-business-solutions/3-design-alm-process-copilot-studio-agents-connectors-actions",
+      "quote": "Managed solutions only in Test and Prod"
+    }
+  },
+  {
+    "id": "ab100-167",
+    "type": "ordering",
+    "skillArea": "deploy",
+    "topic": "Connector release flow",
+    "difficulty": "easy",
+    "prompt": "Arrange the steps of the connector release flow from the learning content in order.",
+    "items": [
+      {
+        "id": "i1",
+        "text": "Author the connector"
+      },
+      {
+        "id": "i2",
+        "text": "Validate authentication"
+      },
+      {
+        "id": "i3",
+        "text": "Apply DLP"
+      },
+      {
+        "id": "i4",
+        "text": "Approve security"
+      },
+      {
+        "id": "i5",
+        "text": "Publish to Production"
+      }
+    ],
+    "correctOrder": [
+      "i1",
+      "i2",
+      "i3",
+      "i4",
+      "i5"
+    ],
+    "explanation": "Connector Release Flow: Author → Validate Auth → Apply DLP → Approve Security → Publish to Prod. Connectors werden nur in Dev gebaut und erst nach vollständigem Review in Prod veröffentlicht.",
+    "source": {
+      "title": "Design an ALM process for Copilot Studio agents, connectors, and actions",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-alm-process-ai-powered-business-solutions/3-design-alm-process-copilot-studio-agents-connectors-actions",
+      "quote": "Author → Validate Auth → Apply DLP → Approve Security → Publish to Prod"
+    }
+  },
+  {
+    "id": "ab100-168",
+    "type": "single-choice",
+    "skillArea": "deploy",
+    "topic": "Foundry agent promotion gates",
+    "difficulty": "hard",
+    "prompt": "A Foundry agent is about to be promoted from Test to Production. Which checks does the learning content assign to this second promotion gate?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Regression completion, compliance approval, performance and cost assessment, human validation of reasoning, and documentation of version and risk"
+      },
+      {
+        "id": "b",
+        "text": "Functional validation of core behaviors, initial safety and guardrail checks, and a review of the action, connector, and data source configuration"
+      },
+      {
+        "id": "c",
+        "text": "Verification of data source mappings, code or prompt quality review, and confirmation that the agent runs in the Dev environment"
+      },
+      {
+        "id": "d",
+        "text": "Selection of the Foundry model catalog entry, registration of the agent identity, and assignment of the agent owner in the registry"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Gate 1 (Dev → Test): funktionale Validierung, erste Safety-Checks, Datenquellen-Mapping, Connector-Review, Code-/Prompt-Qualität. Gate 2 (Test → Prod): Regression, Compliance-Freigabe, Performance/Kosten, menschliche Validierung des Reasonings, Dokumentation von Version, Abhängigkeiten, Risiko.",
+    "source": {
+      "title": "Design ALM processes for Microsoft Foundry agents",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-alm-process-ai-powered-business-solutions/4-design-alm-process-microsoft-foundry-agents",
+      "quote": "Human validation of agent reasoning"
+    }
+  },
+  {
+    "id": "ab100-169",
+    "type": "single-choice",
+    "skillArea": "deploy",
+    "topic": "Versioning Foundry agents",
+    "difficulty": "medium",
+    "prompt": "A team hot-fixes prompts of a Foundry agent directly in Production. Which versioning principle from the learning content is violated?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Treat each agent as a versioned artifact, keep production releases immutable, and promote only versioned bundles"
+      },
+      {
+        "id": "b",
+        "text": "Register the agent in the Microsoft 365 app catalog so that each prompt change is reviewed by the tenant admin first"
+      },
+      {
+        "id": "c",
+        "text": "Use the Python SDK instead of the portal, because portal edits are not tracked by the Foundry control plane"
+      },
+      {
+        "id": "d",
+        "text": "Store the prompts in SharePoint rather than in the agent, so that they can be edited without a redeployment"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Versioning Principles: Agent als versioniertes Artefakt, unveränderliche Produktions-Releases, Changelogs, nur versionierte Bundles promoten. Der Foundry Control Plane bietet zentrale Übersicht über Definitionen, Sicherheitskontext und Datenquellen.",
+    "source": {
+      "title": "Design ALM processes for Microsoft Foundry agents",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-alm-process-ai-powered-business-solutions/4-design-alm-process-microsoft-foundry-agents",
+      "quote": "Promote only versioned bundles across environments."
+    }
+  },
+  {
+    "id": "ab100-170",
+    "type": "single-choice",
+    "skillArea": "deploy",
+    "topic": "Model Card",
+    "difficulty": "medium",
+    "prompt": "In the Evaluation and Approval stage of the custom model ALM lifecycle, which artifact does the learning content require to document metrics, constraints, and recommended usage boundaries?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A Model Card"
+      },
+      {
+        "id": "b",
+        "text": "A Teams app manifest"
+      },
+      {
+        "id": "c",
+        "text": "A DLP policy export"
+      },
+      {
+        "id": "d",
+        "text": "A landing zone blueprint"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Evaluation & Approval: Genauigkeit, Relevanz, Zuverlässigkeit, Fehlerbehandlung, Kosten/Latenz/Throughput, Safety prüfen und eine Model Card mit Metriken, Constraints und Nutzungsgrenzen erstellen; die Gate-Checkliste verlangt die Model Card ausdrücklich.",
+    "source": {
+      "title": "Design an ALM process for custom AI models",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-alm-process-ai-powered-business-solutions/5-design-alm-process-custom-ai-models",
+      "quote": "Produce a Model Card containing metrics, constraints, and recommended usage boundaries."
+    }
+  },
+  {
+    "id": "ab100-171",
+    "type": "single-choice",
+    "skillArea": "deploy",
+    "topic": "Model retirement",
+    "difficulty": "easy",
+    "prompt": "A custom model no longer meets accuracy and cost expectations. Which retirement steps does the learning content prescribe?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Decommission the version, archive data, artifacts, and evaluation logs, and document the transition to the next version"
+      },
+      {
+        "id": "b",
+        "text": "Delete the artifacts and evaluation logs immediately to reduce storage cost and remove the model from the registry and catalog"
+      },
+      {
+        "id": "c",
+        "text": "Keep serving the model in production until a vendor replacement is purchased, and lower the accuracy threshold"
+      },
+      {
+        "id": "d",
+        "text": "Retrain the model on production prompts without re-evaluation and promote it directly to the production endpoint"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Retirement: Version stilllegen, Daten/Artefakte/Evaluationslogs archivieren, Übergangsplan zur nächsten Version dokumentieren. Audit Trails und Lineage bleiben für Compliance erhalten.",
+    "source": {
+      "title": "Design an ALM process for custom AI models",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-alm-process-ai-powered-business-solutions/5-design-alm-process-custom-ai-models",
+      "quote": "Archive data, artifacts, evaluation logs."
+    }
+  },
+  {
+    "id": "ab100-172",
+    "type": "single-choice",
+    "skillArea": "deploy",
+    "topic": "ALM for AI in Finance and Supply Chain",
+    "difficulty": "medium",
+    "prompt": "An ALM design for AI in Dynamics 365 Finance hard-codes the model endpoint and connection strings in the solution. Which key requirement from the learning content does this break?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Use environment variables for endpoints, model names, and connection strings"
+      },
+      {
+        "id": "b",
+        "text": "Train the model on live financial postings taken from the production ledger"
+      },
+      {
+        "id": "c",
+        "text": "Allow direct edits in Production for emergency fixes to the prompts"
+      },
+      {
+        "id": "d",
+        "text": "Share one curated dataset across Dev, Test, and Prod for consistency"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Key Requirements: keine Direktbearbeitung in Prod, Environment Variables für Endpunkte, Modellnamen und Connection Strings, getrennte Datenquellen inkl. synthetischer Testdaten. Gate 2 verlangt u. a. Residency-Review und Freigabe durch Architektur/Governance.",
+    "source": {
+      "title": "Design an ALM process for AI in Dynamics 365 Finance and Supply Chain",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-alm-process-ai-powered-business-solutions/6-design-alm-process-ai-dynamics-365-apps-finance-supply-chain",
+      "quote": "Use environment variables for endpoints, model names, and connection strings."
+    }
+  },
+  {
+    "id": "ab100-173",
+    "type": "single-choice",
+    "skillArea": "deploy",
+    "topic": "Guardrails for business-critical ERP processes",
+    "difficulty": "hard",
+    "prompt": "A Supply Chain AI agent can post journals and approve purchase orders. Which risk control from the learning content applies specifically to such business-critical processes?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Guardrails for business-critical processes such as posting journals and approving purchase orders, with DLP rules for AI actions"
+      },
+      {
+        "id": "b",
+        "text": "Removal of security roles for the agent identity so that journal postings and approvals are not blocked by permissions"
+      },
+      {
+        "id": "c",
+        "text": "Disabling data residency checks for ERP data, because supply chain postings have to be processed in the nearest region"
+      },
+      {
+        "id": "d",
+        "text": "Publishing Dataverse virtual entities as knowledge sources so that the agent can validate purchase orders before approval and posting"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Risk & Compliance Controls: Residency für Finanzdaten, Sensitivity Labels, DLP für AI-Aktionen und Guardrails für geschäftskritische Prozesse (Journalbuchungen, PO-Genehmigungen). Monitoring deckt Prediction Drift und Data Drift ab.",
+    "source": {
+      "title": "Design an ALM process for AI in Dynamics 365 Finance and Supply Chain",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-alm-process-ai-powered-business-solutions/6-design-alm-process-ai-dynamics-365-apps-finance-supply-chain",
+      "quote": "Guardrails for business-critical processes (e.g., posting journals, approving purchase orders)"
+    }
+  },
+  {
+    "id": "ab100-174",
+    "type": "single-choice",
+    "skillArea": "deploy",
+    "topic": "ALM for AI in customer engagement apps",
+    "difficulty": "medium",
+    "prompt": "Which environment tier does the learning content add for AI in Dynamics 365 customer experience and service apps beyond Dev, Test, and Prod, and what is it for?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Pre-Production (UAT) to validate business acceptance, performance, safety, and compliance against live-like queues and knowledge"
+      },
+      {
+        "id": "b",
+        "text": "A Sandbox tier where makers edit production data freely to reproduce customer issues before they are fixed in Dev"
+      },
+      {
+        "id": "c",
+        "text": "A Training tier where summarization and classification models are fine-tuned on live cases before promotion to Prod"
+      },
+      {
+        "id": "d",
+        "text": "A Marketing tier for customer demos, populated with anonymized cases and refreshed from production with each release wave"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Empfohlene Struktur: DEV (Prompts, Workflows, Mappings), TEST (realistische Datasets, Regression), PRE-PROD/UAT (Business Acceptance, Performance, Safety, Compliance mit live-ähnlichen Queues) und PROD. Deployment über Managed Solutions und Pipelines (Azure DevOps, GitHub Actions).",
+    "source": {
+      "title": "Design ALM processes for AI in Dynamics 365 apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-alm-process-ai-powered-business-solutions/7-design-alm-process-ai-dynamics-365-apps-customer-experience-service",
+      "quote": "Test integration with live-like customer service queues, interactions, and knowledge entities."
+    }
+  },
+  {
+    "id": "ab100-175",
+    "type": "single-choice",
+    "skillArea": "deploy",
+    "topic": "CAB reviews for AI releases",
+    "difficulty": "medium",
+    "prompt": "A high-risk AI release for Dynamics 365 Customer Service changes routing rules and case summarization prompts. Which audit and traceability control does the learning content require?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Change Advisory Board reviews for high-risk AI releases, with tracked prompt versions, decision logs, and mapping changes"
+      },
+      {
+        "id": "b",
+        "text": "Deployment by the maker alone without a review, provided that the prompt regression tests passed in the Test environment beforehand"
+      },
+      {
+        "id": "c",
+        "text": "An email announcement to the service managers after deployment, with a summary of the changed routing rules"
+      },
+      {
+        "id": "d",
+        "text": "A vendor sign-off instead of an internal review, because the routing rules are part of the Microsoft-managed solution"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Audit & Traceability: Prompt-Versionen, Entscheidungslogs, Mapping-Änderungen, Agent-Updates tracken; CAB-Reviews für risikoreiche AI-Releases. Dazu Responsible-AI-Controls (Least Privilege, DLP, Labels) und Residency.",
+    "source": {
+      "title": "Design ALM processes for AI in Dynamics 365 apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-alm-process-ai-powered-business-solutions/7-design-alm-process-ai-dynamics-365-apps-customer-experience-service",
+      "quote": "Establish CAB (Change Advisory Board) reviews for high-risk AI releases."
+    }
+  },
+  {
+    "id": "ab100-176",
+    "type": "single-choice",
+    "skillArea": "deploy",
+    "topic": "Agent identity and authentication",
+    "difficulty": "medium",
+    "prompt": "A helpdesk triage agent stores a service-account password in its configuration to call Azure resources. Which identity design from the learning content fixes this?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Assign a managed identity per agent and environment to remove secrets, with least-privilege roles at the narrowest scope"
+      },
+      {
+        "id": "b",
+        "text": "Share one global identity across the agents to simplify administration, and store its password in Azure Key Vault"
+      },
+      {
+        "id": "c",
+        "text": "Rotate the service-account password weekly and keep it in the agent's instructions so that the maker can update it"
+      },
+      {
+        "id": "d",
+        "text": "Grant the agent Owner rights on the subscription so that authorization does not fail, and review the audit log monthly"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Jeder Agent, jedes Tool und jede Pipeline bekommt eine eigene Identität je Umgebung mit Ownership-Metadaten; Managed Identities statt Secrets; Least Privilege auf engster Scope-Ebene; Separation of Duties (Maker, Publisher, Environment Admin, Security Admin).",
+    "source": {
+      "title": "Design security agents for Microsoft clouds",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-responsible-ai-security-governance-risk-management-compliance/2-design-security-agents",
+      "quote": "Prefer managed identities for agent-to-Azure authentication to remove secrets and simplify rotation."
+    }
+  },
+  {
+    "id": "ab100-177",
+    "type": "single-choice",
+    "skillArea": "deploy",
+    "topic": "On-behalf-of vs service identity",
+    "difficulty": "hard",
+    "prompt": "An agent reads tickets on behalf of the signed-in user but also runs a nightly summarization job as itself. Which authorization pattern does the learning content prescribe for the two modes?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Propagate the user's permissions when acting on behalf of a user; scope a service role with the required actions when acting as itself"
+      },
+      {
+        "id": "b",
+        "text": "Use the maker's personal credentials for both modes, because the maker already has access to the tickets and the summary location"
+      },
+      {
+        "id": "c",
+        "text": "Give the agent full tenant permissions so that both modes work without additional configuration, and restrict access in the instructions"
+      },
+      {
+        "id": "d",
+        "text": "Run the nightly job under the user who last signed in, so that the summarization inherits a real user's permissions each night"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Authorization Patterns: Least Privilege mit engen Rollen; bei Handeln im Namen eines Nutzers dessen Berechtigungen propagieren; bei Handeln als sich selbst eine Service-Rolle mit nur den nötigen Aktionen.",
+    "source": {
+      "title": "Design security agents for Microsoft clouds",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-responsible-ai-security-governance-risk-management-compliance/2-design-security-agents",
+      "quote": "When an agent acts on behalf of a user, propagate the user's permissions; when it acts as itself, scope a service role with only the actions the agent needs."
+    }
+  },
+  {
+    "id": "ab100-178",
+    "type": "multiple-choice",
+    "skillArea": "deploy",
+    "topic": "Security design checklist",
+    "difficulty": "medium",
+    "prompt": "Which two items from the learning content's agent security design checklist relate to threat protection and assurance? (Choose two.)",
+    "options": [
+      {
+        "id": "a",
+        "text": "AI-specific threat protection and output moderation enabled"
+      },
+      {
+        "id": "b",
+        "text": "Red team performed and open risks addressed"
+      },
+      {
+        "id": "c",
+        "text": "Prompt library stored in SharePoint"
+      },
+      {
+        "id": "d",
+        "text": "Model router configured with weighted routing"
+      },
+      {
+        "id": "e",
+        "text": "Savings calculator configured per tool"
+      }
+    ],
+    "correct": [
+      "a",
+      "b"
+    ],
+    "explanation": "Threat Protection & Assurance: KI-bewusste Bedrohungserkennung (Prompt-Manipulation, Leakage), Input-/Output-Filter, Red-Team-Bewertungen vor Produktion und nach großen Änderungen mit Release-Gate auf Findings, Incident Response mit Deaktivierung, Log-Erhalt und Drills.",
+    "source": {
+      "title": "Design security agents for Microsoft clouds",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-responsible-ai-security-governance-risk-management-compliance/2-design-security-agents",
+      "quote": "Run red team evaluations pre-production and after major changes; gate releases on findings closure."
+    }
+  },
+  {
+    "id": "ab100-179",
+    "type": "single-choice",
+    "skillArea": "deploy",
+    "topic": "Agent registry and ownership",
+    "difficulty": "easy",
+    "prompt": "Dozens of agents exist across environments and nobody can say who owns which one or what data each accesses. Which governance element does the learning content prescribe?",
+    "options": [
+      {
+        "id": "a",
+        "text": "An agent registry documenting purpose, environment, risk level, and data access, with an assigned owner and publishing approvals"
+      },
+      {
+        "id": "b",
+        "text": "A single shared identity for the agents so that ownership is unambiguous and each data access is attributed to one account and owner"
+      },
+      {
+        "id": "c",
+        "text": "Deleting every agent older than six months and requiring teams to rebuild the ones they still need in a new environment"
+      },
+      {
+        "id": "d",
+        "text": "A monthly newsletter listing new agents and their makers, so that teams can discover and reuse existing agents"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Accountability und Ownership: Agent Owner je Agent (Lifecycle, Sicherheitslage, Freigaben), Agent Registry (Zweck, Umgebung, Risiko, Datenzugriff), Publishing-Freigaben für Agenten mit sensiblen oder regulierten Daten.",
+    "source": {
+      "title": "Design governance models for AI agents",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-responsible-ai-security-governance-risk-management-compliance/3-design-governance-agents",
+      "quote": "Maintain an agent registry documenting purpose, environment, risk level, and data access."
+    }
+  },
+  {
+    "id": "ab100-180",
+    "type": "single-choice",
+    "skillArea": "deploy",
+    "topic": "Governing external integrations",
+    "difficulty": "medium",
+    "prompt": "An agent calls external APIs. Which rules does the learning content set for governing such integrations?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Allow only approved connectors and endpoints, validate authentication and scope, and ensure external data flows comply with policy"
+      },
+      {
+        "id": "b",
+        "text": "Allow any endpoint as long as it uses HTTPS and the agent's instructions list the systems it is permitted to call"
+      },
+      {
+        "id": "c",
+        "text": "Route all external calls through the maker's personal account so that every call is attributed to a named person"
+      },
+      {
+        "id": "d",
+        "text": "Disable logging for external calls to reduce noise, and review the connector usage report in the admin center once a quarter"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Govern external integrations: nur freigegebene Connectors/Endpunkte, Auth-Methoden und Scope validieren, externe Datenflüsse im Einklang mit Policy und Verträgen. Ergänzend Runtime Protection, Input-/Output-Filter und Integration in Security Monitoring.",
+    "source": {
+      "title": "Design governance models for AI agents",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-responsible-ai-security-governance-risk-management-compliance/3-design-governance-agents",
+      "quote": "Allow only approved connectors and endpoints."
+    }
+  },
+  {
+    "id": "ab100-181",
+    "type": "single-choice",
+    "skillArea": "deploy",
+    "topic": "Lifecycle governance",
+    "difficulty": "easy",
+    "prompt": "Which lifecycle policies does the learning content say must govern agents as they evolve?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Scheduled reviews for accuracy, freshness, and risk; criteria for archiving or retiring unused agents; controlled deployment pipelines"
+      },
+      {
+        "id": "b",
+        "text": "Unlimited retention of each agent version in production, so that any earlier behavior can be restored on request"
+      },
+      {
+        "id": "c",
+        "text": "Automatic promotion of any agent that passes a single functional test, so that teams are not slowed down by reviews"
+      },
+      {
+        "id": "d",
+        "text": "Annual replacement of the agents regardless of performance, so that outdated instructions and knowledge do not accumulate over time"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Lifecycle Policies: geplante Reviews (Genauigkeit, Datenfrische, Risiko), Kriterien für Archivierung/Retirement ungenutzter Agenten, kontrollierte Deployment-Pipelines; dazu Standard-Templates, Versionskontrolle und verpflichtende Pre-Publish-Checks.",
+    "source": {
+      "title": "Design governance models for AI agents",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-responsible-ai-security-governance-risk-management-compliance/3-design-governance-agents",
+      "quote": "Criteria for archiving or retiring unused agents."
+    }
+  },
+  {
+    "id": "ab100-182",
+    "type": "ordering",
+    "skillArea": "deploy",
+    "topic": "Model hardening blueprint",
+    "difficulty": "medium",
+    "prompt": "Arrange the steps of the model hardening blueprint from the learning content in order.",
+    "items": [
+      {
+        "id": "i1",
+        "text": "Secure compute"
+      },
+      {
+        "id": "i2",
+        "text": "Private endpoints"
+      },
+      {
+        "id": "i3",
+        "text": "Threat protection"
+      },
+      {
+        "id": "i4",
+        "text": "Validation pipeline"
+      },
+      {
+        "id": "i5",
+        "text": "Monitoring and drift detection"
+      }
+    ],
+    "correctOrder": [
+      "i1",
+      "i2",
+      "i3",
+      "i4",
+      "i5"
+    ],
+    "explanation": "Blueprint: 1 Secure Compute, 2 Private Endpoints, 3 Threat Protection, 4 Validation Pipeline, 5 Monitoring and Drift Detection. Dazu Managed Identities, RBAC, Datenminimierung, Verschlüsselung, Residency und DLP.",
+    "source": {
+      "title": "Design model security for responsible AI",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-responsible-ai-security-governance-risk-management-compliance/4-design-model-security",
+      "quote": "Continuously monitor model performance and identify data or model drift."
+    }
+  },
+  {
+    "id": "ab100-183",
+    "type": "single-choice",
+    "skillArea": "deploy",
+    "topic": "Model poisoning safeguards",
+    "difficulty": "hard",
+    "prompt": "A retraining pipeline ingests newly crawled documents automatically. Which safeguard against model drift and poisoning does the learning content require?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Track data lineage for all training sources and validate newly introduced data before using it in retraining"
+      },
+      {
+        "id": "b",
+        "text": "Retrain more frequently so that any bad data is diluted by the volume of correctly crawled documents"
+      },
+      {
+        "id": "c",
+        "text": "Disable anomaly detection during retraining to avoid false alarms caused by the new document distribution"
+      },
+      {
+        "id": "d",
+        "text": "Expose the training endpoint publicly so that partners can contribute documents directly to the retraining pipeline"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Model drift and poisoning safeguards: Lineage für alle Trainingsquellen, Validierung neuer Daten vor Retraining, automatisierte Anomalieerkennung im Modellverhalten. Infrastruktur: isolierte Netze, Private Endpoints, sichere Build-Pipelines.",
+    "source": {
+      "title": "Design model security for responsible AI",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-responsible-ai-security-governance-risk-management-compliance/4-design-model-security",
+      "quote": "Validate newly introduced data before using it in retraining pipelines."
+    }
+  },
+  {
+    "id": "ab100-184",
+    "type": "single-choice",
+    "skillArea": "deploy",
+    "topic": "Incident response for models",
+    "difficulty": "medium",
+    "prompt": "A model endpoint is suspected to be compromised. Which incident response steps does the learning content predefine for AI models?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Disable the compromised endpoint, preserve inference logs and model artifacts for forensics, and roll back to a prior version"
+      },
+      {
+        "id": "b",
+        "text": "Delete the inference logs and artifacts to prevent further leakage, and redeploy the same model version to a new endpoint"
+      },
+      {
+        "id": "c",
+        "text": "Keep the endpoint running until a root cause is confirmed, so that the forensic team can observe the attack in progress"
+      },
+      {
+        "id": "d",
+        "text": "Retrain the model immediately on the suspicious traffic so that it learns to reject the inputs, and skip the rollback"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Incident Response für Modelle: Schritte zum Deaktivieren des Endpunkts vordefinieren, Inferenzlogs und Artefakte für Forensik bewahren, Rollback-Prozeduren für frühere Versionen; Alerts in SOC-Workflows routen.",
+    "source": {
+      "title": "Design model security for responsible AI",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-responsible-ai-security-governance-risk-management-compliance/4-design-model-security",
+      "quote": "Preserve inference logs and model artifacts for forensic analysis."
+    }
+  },
+  {
+    "id": "ab100-185",
+    "type": "matching",
+    "skillArea": "deploy",
+    "topic": "AI vulnerability categories",
+    "difficulty": "medium",
+    "prompt": "Match each observed weakness to the AI vulnerability category defined in the learning content.",
+    "left": [
+      {
+        "id": "l1",
+        "text": "A user writes \"ignore previous instructions\" and the agent discloses restricted data"
+      },
+      {
+        "id": "l2",
+        "text": "Transcripts and memory stores hold unprotected sensitive data"
+      },
+      {
+        "id": "l3",
+        "text": "A misconfigured connector lets users escalate privileges through the agent"
+      },
+      {
+        "id": "l4",
+        "text": "Autonomous tool use runs without guardrails or rollback capability"
+      }
+    ],
+    "right": [
+      {
+        "id": "r1",
+        "text": "Prompt manipulation risks"
+      },
+      {
+        "id": "r2",
+        "text": "Data exposure vulnerabilities"
+      },
+      {
+        "id": "r3",
+        "text": "Identity, access, and RBAC gaps"
+      },
+      {
+        "id": "r4",
+        "text": "Agent and workflow-level vulnerabilities"
+      }
+    ],
+    "correct": {
+      "l1": "r1",
+      "l2": "r2",
+      "l3": "r3",
+      "l4": "r4"
+    },
+    "explanation": "Kategorien: Prompt Manipulation (Instruktionen überschreiben, täuschender Kontext, versteckte Anweisungen in Dateien), Model Behavior (Fabrikation, Toxizität, Bias), Data Exposure (Logs/Memory, zu weite Rechte), Identity/RBAC Gaps (Eskalation über Connectors), Agent/Workflow (ungesicherte Tool-Nutzung, fehlendes Audit/Rollback).",
+    "source": {
+      "title": "Analyze AI vulnerabilities and mitigations for prompt manipulation",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-responsible-ai-security-governance-risk-management-compliance/5-analyze-solution-ai-vulnerabilities-mitigations-prompt-manipulation",
+      "quote": "Escalate privileges through misconfigured connectors or plugins."
+    }
+  },
+  {
+    "id": "ab100-186",
+    "type": "multiple-choice",
+    "skillArea": "deploy",
+    "topic": "Input and output filtering",
+    "difficulty": "medium",
+    "prompt": "Users upload files that contain embedded instructions aimed at the agent. Which two mitigations from the learning content's input and output filtering guidance apply? (Choose two.)",
+    "options": [
+      {
+        "id": "a",
+        "text": "Strip unsafe HTML or embedded prompts"
+      },
+      {
+        "id": "b",
+        "text": "Limit the file types the AI may accept"
+      },
+      {
+        "id": "c",
+        "text": "Increase the model's context window so it can read the whole file"
+      },
+      {
+        "id": "d",
+        "text": "Grant the agent elevated privileges to process files faster"
+      },
+      {
+        "id": "e",
+        "text": "Disable safety filters on outputs to avoid false positives"
+      }
+    ],
+    "correct": [
+      "a",
+      "b"
+    ],
+    "explanation": "Input/Output Filtering: Code-Ausführungsversuche blockieren, unsicheres HTML oder eingebettete Prompts entfernen, Safety-Filter auf Outputs, erlaubte Dateitypen begrenzen. Layered Defense kombiniert Identität, Data Governance, Evaluation, Monitoring und Incident Response.",
+    "source": {
+      "title": "Analyze AI vulnerabilities and mitigations for prompt manipulation",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-responsible-ai-security-governance-risk-management-compliance/5-analyze-solution-ai-vulnerabilities-mitigations-prompt-manipulation",
+      "quote": "Strip unsafe HTML or embedded prompts."
+    }
+  },
+  {
+    "id": "ab100-187",
+    "type": "single-choice",
+    "skillArea": "deploy",
+    "topic": "Layered defense",
+    "difficulty": "easy",
+    "prompt": "Why does the learning content recommend a layered approach to mitigating AI vulnerabilities?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A layered approach reduces single-point failure risk by combining identity, data governance, evaluation, monitoring, and incident response"
+      },
+      {
+        "id": "b",
+        "text": "A single, well-tuned content filter on the model output is sufficient, because prompt attacks surface in the generated text sooner or later"
+      },
+      {
+        "id": "c",
+        "text": "Layered defenses eliminate the need for monitoring and incident response, because each layer blocks the attack before it lands"
+      },
+      {
+        "id": "d",
+        "text": "Managed identities alone block prompt injection, so the remaining layers mainly serve compliance documentation purposes"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Layered Defense: Identitäts-/Zugriffsgrenzen, sichere Data Governance, Modellevaluation und Tests, Monitoring/Anomalieerkennung, Incident-Response-Bereitschaft; so vermeidet man Single Points of Failure.",
+    "source": {
+      "title": "Analyze AI vulnerabilities and mitigations for prompt manipulation",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-responsible-ai-security-governance-risk-management-compliance/5-analyze-solution-ai-vulnerabilities-mitigations-prompt-manipulation",
+      "quote": "A layered approach reduces single-point failure risk"
+    }
+  },
+  {
+    "id": "ab100-188",
+    "type": "single-choice",
+    "skillArea": "deploy",
+    "topic": "Structured Responsible AI review",
+    "difficulty": "medium",
+    "prompt": "An architect leads a cross-disciplinary Responsible AI review of a customer-facing agent. Which review areas does the learning content's structured model include?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Purpose and intended use, data privacy and security, model and agent behavior, fairness and bias, transparency, validation tools, and oversight"
+      },
+      {
+        "id": "b",
+        "text": "A legal review of the terms of service, the data processing agreement with the model vendor, and the customer-facing disclaimer and consent text"
+      },
+      {
+        "id": "c",
+        "text": "A performance benchmark against competitor products, covering accuracy, latency, and cost per conversation for the same scenarios"
+      },
+      {
+        "id": "d",
+        "text": "A review of license costs, GPU utilization, and token consumption, with a recommendation on the model tier for the next quarter"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Strukturierter RAI-Review: Zweck/Intended Use, Daten/Privacy/Security, Modell- und Agentenverhalten (Fabrikation, Prompt-Adhärenz, Fallback), Fairness/Bias, Transparenz/UX (Offenlegung, Grenzen, Eskalation), RAI-Validierungstools, operative Oversight (Incident Plan, Drift, Governance Board, Sunset-Kriterien).",
+    "source": {
+      "title": "Review solution adherence to Responsible AI principles",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-responsible-ai-security-governance-risk-management-compliance/6-review-solution-adherence-responsible-ai-principles",
+      "quote": "Responsible AI is not a one-time review—it requires continuous monitoring."
+    }
+  },
+  {
+    "id": "ab100-189",
+    "type": "single-choice",
+    "skillArea": "deploy",
+    "topic": "Transparency in user experience",
+    "difficulty": "easy",
+    "prompt": "During a Responsible AI review, the team checks the agent's user interface. Which transparency requirements does the learning content list?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AI involvement is clearly communicated, users understand the limitations, documentation and escalation paths are accessible, and feedback is logged"
+      },
+      {
+        "id": "b",
+        "text": "The model name and version are hidden to protect intellectual property, while the agent's capabilities and limits are described in the help center"
+      },
+      {
+        "id": "c",
+        "text": "The agent presents itself as a human representative to increase trust, and the AI disclosure is placed in the terms of service"
+      },
+      {
+        "id": "d",
+        "text": "Feedback controls are disabled to keep the interface simple, and limitations are communicated through the onboarding training"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Transparency and user experience: KI-Beteiligung klar kommunizieren, Grenzen verständlich machen, Zugang zu Dokumentation, Verhaltensübersichten und Eskalationspfaden, Feedback-Logging für kontinuierliche Verbesserung.",
+    "source": {
+      "title": "Review solution adherence to Responsible AI principles",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-responsible-ai-security-governance-risk-management-compliance/6-review-solution-adherence-responsible-ai-principles",
+      "quote": "AI involvement is clearly communicated"
+    }
+  },
+  {
+    "id": "ab100-190",
+    "type": "single-choice",
+    "skillArea": "deploy",
+    "topic": "Data residency validation",
+    "difficulty": "medium",
+    "prompt": "A compliance team must confirm that a Copilot Studio agent keeps customer data in-region. Which validation points does the learning content list for Copilot Studio?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Where prompts are processed, whether unpublished agents and preview features follow different rules, how connector data is stored, and whether cross-region interactions occur"
+      },
+      {
+        "id": "b",
+        "text": "The physical location of the tenant admin, the region of the maker's Copilot Studio license, and the language settings of the agent's channels"
+      },
+      {
+        "id": "c",
+        "text": "The number of knowledge sources per agent, the size of each uploaded file, the retention period of the Dataverse tables used for grounding, and the channel list"
+      },
+      {
+        "id": "d",
+        "text": "The agent's icon and display name, the authentication provider, and the Teams app catalog in which the agent is published"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Copilot Studio setzt regionale Grenzen je Umgebungskonfiguration durch; Architekten prüfen Verarbeitungsort der Prompts, abweichende Regeln für unveröffentlichte/Preview-Features, Speicherung bei Connectors/Plugins und Cross-Region-Interaktionen. Purview-Labels und DLP ergänzen die Kontrolle.",
+    "source": {
+      "title": "Validate data residency and movement compliance",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-responsible-ai-security-governance-risk-management-compliance/7-validate-data-residency-movement-compliance",
+      "quote": "Whether unpublished agents and preview features follow different residency rules."
+    }
+  },
+  {
+    "id": "ab100-191",
+    "type": "single-choice",
+    "skillArea": "deploy",
+    "topic": "Purview for Microsoft 365 Copilot",
+    "difficulty": "medium",
+    "prompt": "A bank wants to stop sensitive data from being used in Microsoft 365 Copilot prompts or outputs and restrict cross-region transmission. Which Purview controls does the learning content recommend?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Sensitivity labels restricting cross-tenant or cross-region transmission, DLP rules preventing sensitive data in prompts or outputs, and auditing"
+      },
+      {
+        "id": "b",
+        "text": "A longer retention period for Copilot interaction logs and a monthly export of the prompts to the bank's data lake for review"
+      },
+      {
+        "id": "c",
+        "text": "A separate tenant per department with its own Microsoft 365 Copilot licenses and a dedicated Graph index"
+      },
+      {
+        "id": "d",
+        "text": "Disabling Microsoft Graph for the users so that Copilot can no longer ground on mail, files, or chats"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Purview: Sensitivity Labels gegen Cross-Tenant/Cross-Region-Übertragung, DLP-Regeln gegen sensible Daten in Prompts/Outputs, Auditing und Policy Insights prüfen, Residency der Copilot-Interaktionslogs validieren.",
+    "source": {
+      "title": "Validate data residency and movement compliance",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-responsible-ai-security-governance-risk-management-compliance/7-validate-data-residency-movement-compliance",
+      "quote": "Use data loss prevention (DLP) rules to prevent sensitive data from being used in AI prompts or outputs."
+    }
+  },
+  {
+    "id": "ab100-192",
+    "type": "single-choice",
+    "skillArea": "deploy",
+    "topic": "Retrieval access flow",
+    "difficulty": "hard",
+    "prompt": "An architect documents how grounding data reaches the model securely. Which retrieval access flow does the learning content describe?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Prompt, then policy check, then search index, then sanitization layer, then model context injection"
+      },
+      {
+        "id": "b",
+        "text": "Prompt, then model context injection, then search index, then policy check, then sanitization layer"
+      },
+      {
+        "id": "c",
+        "text": "Search index, then prompt, then policy check, then model context injection, then audit logging"
+      },
+      {
+        "id": "d",
+        "text": "Prompt directly to the model with the index attached as a tool, then sanitization of the output"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Retrieval Access Flow: Prompt → Policy Check → Search Index → Sanitization Layer → Model Context Injection. Jede Retrieval-Mechanik erzwingt Connector-Autorisierung, strukturierte Query-Filter, DLP/Labels und regionsgebundene Zugriffsregeln.",
+    "source": {
+      "title": "Design access controls for grounding data and model tuning",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-responsible-ai-security-governance-risk-management-compliance/8-design-access-controls-ground-data-model-tune",
+      "quote": "Retrieval Access Flow: Prompt → Policy Check → Search Index → Sanitization Layer → Model Context Injection"
+    }
+  },
+  {
+    "id": "ab100-193",
+    "type": "single-choice",
+    "skillArea": "deploy",
+    "topic": "Access controls for model tuning",
+    "difficulty": "medium",
+    "prompt": "A data scientist with production access adds a new dataset to a fine-tuning run and promotes the tuned model the same day. Which access requirements from the learning content are missing?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Segregated environments, approval workflows for new training datasets, verified lineage, security scanning of inputs, and restricted promotion"
+      },
+      {
+        "id": "b",
+        "text": "A larger GPU quota for the tuning job, a faster storage tier for the datasets, and a longer retention period for training logs"
+      },
+      {
+        "id": "c",
+        "text": "A public endpoint for the tuned model, a model card published to the catalog, and a notification to the data owner"
+      },
+      {
+        "id": "d",
+        "text": "Removal of sensitivity labels from the training data, a shared service account for the pipeline, and a weekly retraining schedule with auto-promotion"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Model Tuning Access Requirements: getrennte Umgebungen, Freigabe-Workflows für neue Trainingsdaten, dokumentierte Lineage, Security-Scanning der Inputs, eingeschränkte Promotion-Rechte. Guardrails: Blocklists, Sanitization, automatische Reviews, Anomalie-Alerts.",
+    "source": {
+      "title": "Design access controls for grounding data and model tuning",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-responsible-ai-security-governance-risk-management-compliance/8-design-access-controls-ground-data-model-tune",
+      "quote": "Restricted ability to promote new tuned models into production"
+    }
+  },
+  {
+    "id": "ab100-194",
+    "type": "single-choice",
+    "skillArea": "deploy",
+    "topic": "Audit log content",
+    "difficulty": "medium",
+    "prompt": "A compliance team wants audit trails for data changes to capture the full text of every ingested document. What does the learning content say about what logs should capture?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Logs must capture metadata, not content, to avoid unnecessary exposure of sensitive information"
+      },
+      {
+        "id": "b",
+        "text": "Logs must store the complete document content so that auditors can review each ingested record"
+      },
+      {
+        "id": "c",
+        "text": "Logs should remain mutable so that ingestion errors can be corrected by the data owner later"
+      },
+      {
+        "id": "d",
+        "text": "Logs are required for model changes; data changes are covered by the catalog's lineage graph"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Für Datenänderungen werden Ingestion, Schemaänderungen, Refresh-Zyklen, Label-Änderungen, Sanitization, regionsübergreifende Bewegungen und Zugriffe auditiert; Logs erfassen Metadaten statt Inhalte und sind unveränderlich, zeitgestempelt, rollenattribuiert und JSON-strukturiert.",
+    "source": {
+      "title": "Design audit trails for changes to models and data",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-responsible-ai-security-governance-risk-management-compliance/9-design-audit-trails-changes-models-data",
+      "quote": "Architects must ensure logs capture metadata, not content, to avoid unnecessary exposure of sensitive information."
+    }
+  },
+  {
+    "id": "ab100-195",
+    "type": "single-choice",
+    "skillArea": "deploy",
+    "topic": "Audit log retention patterns",
+    "difficulty": "hard",
+    "prompt": "Which retention pattern for audit logs does the learning content give for regulated workloads?",
+    "options": [
+      {
+        "id": "a",
+        "text": "12 to 24 months, with indefinite retention for incident-related archives"
+      },
+      {
+        "id": "b",
+        "text": "90 days, the same pattern as for low-risk workloads"
+      },
+      {
+        "id": "c",
+        "text": "30 days, to minimize storage cost for the audit workspace"
+      },
+      {
+        "id": "d",
+        "text": "No retention requirement, because audit logs are immutable by design"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Übliche Muster: 90 Tage für risikoarme Workloads, 12-24 Monate für regulierte Workloads, unbegrenzt für Incident-Archive; Anforderungen gemeinsam mit Legal, Compliance und InfoSec definieren.",
+    "source": {
+      "title": "Design audit trails for changes to models and data",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-responsible-ai-security-governance-risk-management-compliance/9-design-audit-trails-changes-models-data",
+      "quote": "12-24 months for regulated workloads"
+    }
+  },
+  {
+    "id": "ab100-196",
+    "type": "single-choice",
+    "skillArea": "deploy",
+    "topic": "Foundry control-plane auditing and tracing",
+    "difficulty": "medium",
+    "prompt": "An auditor needs to attribute a questionable response to a specific model version and see which tools were called. Which Foundry capabilities and tracing fields does the learning content name?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Foundry activity logs exportable to Azure Monitor, Log Analytics, or Sentinel, plus tracing fields such as correlation ID, model version, and tool usage"
+      },
+      {
+        "id": "b",
+        "text": "The Power Platform admin center's flow run history and the connector usage report, which attribute each action to a flow version"
+      },
+      {
+        "id": "c",
+        "text": "The Teams message export and the conversation transcript in Dataverse, which show the response together with the user's prompt"
+      },
+      {
+        "id": "d",
+        "text": "The ROI savings panel in Copilot Studio and the Analytics page, which list the tools used per session and the estimated time saved per run"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Foundry Activity Logs (Export nach Azure Monitor, Log Analytics, SIEM wie Sentinel) und Diagnostics/Tracing über Modellaufrufe, Pipelines, Tools; empfohlene Tracing-Felder: Correlation ID, Modellversion, nicht-sensible Input-Metadaten, Prompt-Kategorie, Latenz, Tool-Nutzung, Safety-Ergebnisse.",
+    "source": {
+      "title": "Design audit trails for changes to models and data",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-responsible-ai-security-governance-risk-management-compliance/9-design-audit-trails-changes-models-data",
+      "quote": "Attribution of requests to model versions"
+    }
+  },
+  {
+    "id": "ab100-197",
+    "type": "multiple-choice",
+    "skillArea": "deploy",
+    "topic": "Model lifecycle events to audit",
+    "difficulty": "medium",
+    "prompt": "Which two model lifecycle events does the learning content require to be audited? (Choose two.)",
+    "options": [
+      {
+        "id": "a",
+        "text": "Promotion of models between dev, test, and prod environments"
+      },
+      {
+        "id": "b",
+        "text": "Access attempts to model assets, including unauthorized requests"
+      },
+      {
+        "id": "c",
+        "text": "The number of knowledge sources in a Copilot Studio agent"
+      },
+      {
+        "id": "d",
+        "text": "The ROI payback period of the model"
+      },
+      {
+        "id": "e",
+        "text": "The color scheme of the Foundry portal"
+      }
+    ],
+    "correct": [
+      "a",
+      "b"
+    ],
+    "explanation": "Zu auditierende Modellereignisse: Registrierung neuer Versionen, Tuning-Operationen, Promotion zwischen Umgebungen, Rollbacks, Deployment-/Endpunkt-/Skalierungsänderungen und Zugriffsversuche inkl. unautorisierter Anfragen.",
+    "source": {
+      "title": "Design audit trails for changes to models and data",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-responsible-ai-security-governance-risk-management-compliance/9-design-audit-trails-changes-models-data",
+      "quote": "Access attempts to model assets, including unauthorized requests"
+    }
+  }
+]

@@ -1,0 +1,2013 @@
+[
+  {
+    "id": "ai-architect",
+    "term": "AI architect",
+    "aliases": [
+      "solution architect"
+    ],
+    "definition": "Rolle, die Geschäftsstrategie und technische Umsetzung verbindet: definiert Vision und Roadmap der KI-Einführung, sichert Datenbereitschaft und Governance, integriert KI-Dienste in Unternehmens-Workflows, setzt Responsible-AI-Prinzipien um und überwacht den Erfolg über KPIs.",
+    "source": {
+      "title": "Drive AI transformation with architect strategies",
+      "url": "https://learn.microsoft.com/en-us/training/modules/introduction-agentic-ai-business-solution-architecture/2-architect-role-ai-transformation-businesses"
+    }
+  },
+  {
+    "id": "ai-transformation-framework",
+    "term": "AI transformation framework",
+    "definition": "Strukturierter Ablauf der KI-Transformation: Business Goals → AI Strategy → Architecture Design → Implementation → Monitoring & Optimization. Ziele stehen vor Strategie, Strategie vor Architektur.",
+    "source": {
+      "title": "Drive AI transformation with architect strategies",
+      "url": "https://learn.microsoft.com/en-us/training/modules/introduction-agentic-ai-business-solution-architecture/2-architect-role-ai-transformation-businesses"
+    }
+  },
+  {
+    "id": "oob-agents",
+    "term": "Out-of-the-box AI agents",
+    "aliases": [
+      "OOB agents",
+      "prebuilt agents",
+      "prebuilt agent"
+    ],
+    "definition": "Vorgefertigte Agenten, Templates und Szenariobibliotheken in Copilot Studio, Microsoft 365 und Dynamics 365 für häufige Geschäftsszenarien. Sie verkürzen die Entwicklungszeit, folgen Microsofts Responsible-AI-Standards und sind für Microsoft 365 und Dynamics 365 skaliert; vor jedem Custom-Agent sollte geprüft werden, ob ein Prebuilt-Agent die Anforderung erfüllt.",
+    "source": {
+      "title": "Identify out-of-box Microsoft AI agents for business",
+      "url": "https://learn.microsoft.com/en-us/training/modules/introduction-agentic-ai-business-solution-architecture/6-identify-out-of-box-microsoft-ai-agents"
+    }
+  },
+  {
+    "id": "grounding",
+    "term": "Grounding",
+    "aliases": [
+      "grounded",
+      "grounding data"
+    ],
+    "definition": "Versorgung eines KI-Agenten mit vertrauenswürdigen, domänenspezifischen Organisationsdaten zur Laufzeit, damit Antworten korrekt, aktuell und nachvollziehbar sind und falsche Informationen reduziert werden. Grundlage sind freigegebene, zugriffskontrollierte Datenquellen, meist über RAG.",
+    "source": {
+      "title": "Review data for grounding accuracy, relevance, timeliness, cleanliness, and availability",
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-requirements-ai-powered-business-solutions/3-review-data-grounding-accuracy-relevance-timeliness-cleanliness-availability"
+    }
+  },
+  {
+    "id": "grounding-quality-dimensions",
+    "term": "Five dimensions of grounding data quality",
+    "aliases": [
+      "accuracy, relevance, timeliness, cleanliness, availability",
+      "timeliness",
+      "cleanliness",
+      "availability"
+    ],
+    "definition": "Accuracy (korrekt und verifiziert), Relevance (passt zum Use Case; sonst liefert die semantische Suche ähnliche, aber falsche Inhalte), Timeliness (aktuell), Cleanliness (strukturiert, ohne Duplikate und Rauschen) und Availability (zugänglich und indexiert gemäß Berechtigungen des Nutzers).",
+    "source": {
+      "title": "Review data for grounding accuracy, relevance, timeliness, cleanliness, and availability",
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-requirements-ai-powered-business-solutions/3-review-data-grounding-accuracy-relevance-timeliness-cleanliness-availability"
+    }
+  },
+  {
+    "id": "semantic-index",
+    "term": "Semantic index",
+    "aliases": [
+      "semantic indexing"
+    ],
+    "definition": "Microsoft-365-Index, der Unternehmensinhalte aus Microsoft Graph in lexikalische und semantische Repräsentationen abbildet und sich fortlaufend aktualisiert, wenn sich Inhalte ändern. Microsoft 365 Copilot braucht ihn, um Inhalte korrekt zu erden.",
+    "source": {
+      "title": "Review data for grounding accuracy, relevance, timeliness, cleanliness, and availability",
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-requirements-ai-powered-business-solutions/3-review-data-grounding-accuracy-relevance-timeliness-cleanliness-availability"
+    }
+  },
+  {
+    "id": "copilot-retrieval-api",
+    "term": "Copilot Retrieval API",
+    "aliases": [
+      "Retrieval API"
+    ],
+    "definition": "API, die relevante Textpassagen aus SharePoint, OneDrive und verbundenen Quellen abruft und dabei die Berechtigungen des Nutzers respektiert: Inhalte außerhalb seines Zugriffsbereichs werden nicht zurückgegeben.",
+    "source": {
+      "title": "Review data for grounding accuracy, relevance, timeliness, cleanliness, and availability",
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-requirements-ai-powered-business-solutions/3-review-data-grounding-accuracy-relevance-timeliness-cleanliness-availability"
+    }
+  },
+  {
+    "id": "rag-pipeline",
+    "term": "RAG pipeline",
+    "aliases": [
+      "RAG",
+      "Retrieval Augmented Generation",
+      "retrieval-augmented generation"
+    ],
+    "definition": "Produktionssystem für Retrieval Augmented Generation: Ingestion, Streaming, Cleaning, Chunking, Embedding, Indexing, Retrieval, Prompt Assembly, Orchestrierung und Monitoring, damit ein LLM beim Antworten abgerufenen Kontext nutzt. Vorteile: Echtzeit-Datenzugriff, Datenschutz, weniger falsche Informationen.",
+    "source": {
+      "title": "Organize business solution data for AI systems",
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-requirements-ai-powered-business-solutions/4-organize-business-solution-data-available-other-ai-systems"
+    }
+  },
+  {
+    "id": "azure-data-estate",
+    "term": "Azure data estate for AI",
+    "aliases": [
+      "data estate",
+      "intelligence layer"
+    ],
+    "definition": "Schichtenmodell: Operational Databases (strukturierte App-/Geschäftsdaten), Analytical Stores wie Lakehouse/Warehouse (kuratierte Daten für AI/ML), Intelligence Layer mit Azure AI Search und Vector Index (Grounding, Retrieval, semantische Suche) und AI Apps + Agents (Copilot, RAG-Apps, autonome Agenten).",
+    "source": {
+      "title": "Organize business solution data for AI systems",
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-requirements-ai-powered-business-solutions/4-organize-business-solution-data-available-other-ai-systems"
+    }
+  },
+  {
+    "id": "cloud-adoption-framework",
+    "term": "Cloud Adoption Framework",
+    "aliases": [
+      "CAF",
+      "CAF for AI"
+    ],
+    "definition": "Microsofts End-to-End-Rückgrat für die KI-Einführung auf Azure mit den Phasen Strategy, Plan, Ready, Govern, Secure und Manage. Es wird mit dem Agent-Lebenszyklus (Plan agents, Govern & secure agents, Build agents, Operate agents) vereint, um Risiko zu senken, Agent Sprawl zu verhindern und Wert schneller zu realisieren.",
+    "source": {
+      "title": "Implement AI adoption process with Azure",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/2-implement-ai-adoption-process-cloud-adoption-framework-azure"
+    }
+  },
+  {
+    "id": "agent-lifecycle",
+    "term": "Agent lifecycle",
+    "aliases": [
+      "agent adoption guidance",
+      "Plan agents",
+      "Operate agents"
+    ],
+    "definition": "Betriebsmodell für KI-Agenten aus der Agent-Adoption-Guidance: Plan agents, Govern & secure agents, Build agents, Operate agents. Es wird Phase für Phase auf die CAF-Phasen gemappt, mit Outputs wie Agent Technology Plan, Governance Charter, Data Access Model und Agent Ops Playbook.",
+    "source": {
+      "title": "Implement AI adoption process with Azure",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/2-implement-ai-adoption-process-cloud-adoption-framework-azure"
+    }
+  },
+  {
+    "id": "agent-sprawl",
+    "term": "Agent sprawl",
+    "definition": "Unkontrollierte Vermehrung von Agenten über Teams und Plattformen hinweg. Die Vereinigung von CAF und Agent-Lebenszyklus sowie ein Agent Registry mit Ownership sollen sie verhindern.",
+    "source": {
+      "title": "Implement AI adoption process with Azure",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/2-implement-ai-adoption-process-cloud-adoption-framework-azure"
+    }
+  },
+  {
+    "id": "agent-technology-plan",
+    "term": "Agent Technology Plan",
+    "aliases": [
+      "technology plan"
+    ],
+    "definition": "Output der Strategiephase: Entscheidungsbaum und Plattformwahl (SaaS-Agent vs. Foundry/Copilot Studio vs. Container) mit Guardrails und ersten TCO-/Aufwandsabwägungen.",
+    "source": {
+      "title": "Implement AI adoption process with Azure",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/2-implement-ai-adoption-process-cloud-adoption-framework-azure"
+    }
+  },
+  {
+    "id": "agent-readiness-criteria",
+    "term": "Agent readiness criteria",
+    "aliases": [
+      "readiness assessment"
+    ],
+    "definition": "In der Planungsphase definierte Kriterien, ob ein Agent produktionsreif werden kann: Datenverfügbarkeit, Governance-Reife, Identitätsmodell und Connectors.",
+    "source": {
+      "title": "Implement AI adoption process with Azure",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/2-implement-ai-adoption-process-cloud-adoption-framework-azure"
+    }
+  },
+  {
+    "id": "landing-zone",
+    "term": "Azure landing zone",
+    "aliases": [
+      "landing zones",
+      "landing zone"
+    ],
+    "definition": "Vorkonfigurierte, sichere und skalierbare Cloud-Umgebung als Grundlage für Workloads. In der Ready-Phase werden Landing Zones, Ressourcenorganisation und KI-Governance-Grenzen etabliert, etwa mit Management Groups für interne vs. externe Workloads.",
+    "source": {
+      "title": "Introduction (Design overall AI strategy for business solutions)",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/1-introduction"
+    }
+  },
+  {
+    "id": "saas-agent-first",
+    "term": "SaaS agent first principle",
+    "aliases": [
+      "SaaS agents",
+      "SaaS agent"
+    ],
+    "definition": "Entscheidungsprinzip des Technology-Plans: Erfüllt ein vorgefertigter SaaS-Agent die funktionalen Anforderungen, wird er genutzt; erst sonst wird zwischen Low-Code-Agenten (Copilot Studio) und Pro-Code-Agenten (Foundry, Container) entschieden.",
+    "source": {
+      "title": "Design AI agents for business solutions",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/3-design-strategy-building-ai-agents-business-solutions"
+    }
+  },
+  {
+    "id": "low-code-pro-code-agents",
+    "term": "Low-code and pro-code agents",
+    "aliases": [
+      "low-code agents",
+      "pro-code agents",
+      "pro-code",
+      "low-code"
+    ],
+    "definition": "Microsofts drei Agentenkategorien: SaaS-Agenten (sofortiger Wert, minimale Anpassung), Low-Code-Agenten (moderate Anpassung, schnelle Bereitstellung über Copilot Studio) und Pro-Code-Agenten (maximale Flexibilität für komplexe Logik über Foundry oder eigenes Modell-Hosting).",
+    "source": {
+      "title": "Design AI agents for business solutions",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/3-design-strategy-building-ai-agents-business-solutions"
+    }
+  },
+  {
+    "id": "gpus-containers",
+    "term": "GPUs and containers",
+    "aliases": [
+      "containers",
+      "IaaS"
+    ],
+    "definition": "Pro-Code-Hosting auf PaaS oder IaaS für volle Kontrolle über die Modellausführung: private, isolierte Compute, Bring-your-own-Modell-Hosting und strenge Compliance-Umgebungen mit eigener Netzwerk- und Isolationskonfiguration.",
+    "source": {
+      "title": "Design AI agents for business solutions",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/3-design-strategy-building-ai-agents-business-solutions"
+    }
+  },
+  {
+    "id": "microsoft-foundry",
+    "term": "Microsoft Foundry",
+    "aliases": [
+      "Foundry",
+      "Azure AI Foundry",
+      "Azure Foundry"
+    ],
+    "definition": "Pro-Code-Plattform (PaaS) zum Entwickeln, Bereitstellen und Verwalten von KI-Anwendungen und Agenten: deklarative oder code-first Agenten, gehostete Ausführungsumgebung, Modellkatalog (OpenAI, Anthropic, Meta, Mistral), Activity Protocol und Agent-zu-Agent-Interaktion. Passend für komplexe Orchestrierung, Multi-Agent-Workflows und tiefe Integration; verlangt explizite Governance, Evaluationspipelines und VNet/Private Endpoints.",
+    "source": {
+      "title": "Design AI agents for business solutions",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/3-design-strategy-building-ai-agents-business-solutions"
+    }
+  },
+  {
+    "id": "copilot-studio",
+    "term": "Copilot Studio",
+    "aliases": [
+      "Microsoft Copilot Studio"
+    ],
+    "definition": "Low-/No-Code-SaaS-Umgebung für Task-, Retrieval- und autonome Agenten mit vorgefertigten Connectors, Azure-AI-Search-Integration und eingebauten Responsible-AI-Funktionen. Agenten laufen in Microsofts sicherer SaaS-Grenze innerhalb des Microsoft-365-Tenants; Constraints wirken über Connector-Scoping, Anweisungen und Safety-Filter.",
+    "source": {
+      "title": "Define solution rules and constraints for AI components",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/6-define-solution-rules-constraints-building-ai-components"
+    }
+  },
+  {
+    "id": "single-vs-multi-agent",
+    "term": "Single-agent vs. multi-agent",
+    "aliases": [
+      "multi-agent",
+      "single agent",
+      "single-agent",
+      "multi-agent system",
+      "multi-agent systems"
+    ],
+    "definition": "Single-Agent bündelt Logik, reduziert Koordinationsaufwand und vereinfacht Governance – ideal bei begrenzter Domäne und Time-to-Value-Druck. Multi-Agent zerlegt Verantwortung auf spezialisierte Agenten, kostet aber Orchestrierung, Latenz an Übergaben und eine größere Sicherheitsfläche. Multi-Agent zuerst nur bei Sicherheits-/Compliance-Grenzen, getrennten Teams und Release-Zyklen, Expansion auf 3-5+ Funktionen oder abhängigen Workstreams.",
+    "source": {
+      "title": "Design a multi-agent solution",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/4-design-multi-agent-solution"
+    }
+  },
+  {
+    "id": "persona-switching",
+    "term": "Persona switching",
+    "definition": "Technik, mit der ein einzelner Agent je nach Aufgabe die Rolle wechselt. Zusammen mit besserem Retrieval, Policy Controls oder einem größeren Kontextfenster deckt sie viele vermeintliche Multi-Agent-Bedarfe ab.",
+    "source": {
+      "title": "Design a multi-agent solution",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/4-design-multi-agent-solution"
+    }
+  },
+  {
+    "id": "orchestration-patterns",
+    "term": "Orchestration patterns",
+    "aliases": [
+      "sequential orchestration",
+      "concurrent orchestration",
+      "group chat orchestration",
+      "handoff orchestration",
+      "Magentic orchestration",
+      "Magentic"
+    ],
+    "definition": "Muster des Microsoft Agent Framework SDK für kollaborierende Agenten: Sequential (deterministische Pipeline plan → enrich → verify → act), Concurrent (parallele Teilaufgaben, Ergebnisse aggregiert), Group chat (moderierte Diskussion mit Schiedsrichter-Agent), Handoff (Kontext und Kontrolle an Spezialist oder Mensch bei Eskalation) und Magentic (ein „Magnet“ zieht Expertenagenten zur Laufzeit hinzu). Orchestrierung ist als Workflow mit Zustand, Verzweigung und Fehlerbehandlung zu behandeln, nicht als brüchige Prompt-Kette.",
+    "source": {
+      "title": "Design a multi-agent solution",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/4-design-multi-agent-solution"
+    }
+  },
+  {
+    "id": "agent-framework-sdk",
+    "term": "Microsoft Agent Framework SDK",
+    "aliases": [
+      "Agent Framework"
+    ],
+    "definition": "SDK, das die Orchestrierungsmuster Sequential, Concurrent, Group chat, Handoff und Magentic bereitstellt und sich für zuverlässige, beobachtbare Multi-Agent-Workflows kombinieren lässt.",
+    "source": {
+      "title": "Design a multi-agent solution",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/4-design-multi-agent-solution"
+    }
+  },
+  {
+    "id": "connected-agents",
+    "term": "Connected agents",
+    "aliases": [
+      "connected agent"
+    ],
+    "definition": "In Foundry: Hauptagent mit Mission, Guardrails und Tooling plus verbundene Spezialagenten je Rolle (Planner, Researcher, Reviewer, Actuator) mit minimalen Anweisungen, scoped Permissions und klaren Inputs/Outputs. Design: Orchestrierungsmuster wählen, Schnittstellenverträge und State-Handoffs (IDs, Evidenz, Zitate) definieren, prototypisieren, iterieren und redundante Agenten entfernen.",
+    "source": {
+      "title": "Design a multi-agent solution",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/4-design-multi-agent-solution"
+    }
+  },
+  {
+    "id": "context-hygiene",
+    "term": "Context hygiene",
+    "aliases": [
+      "handoff payloads",
+      "handoff payload"
+    ],
+    "definition": "Prinzip, Übergabe-Payloads zwischen Agenten minimal zu halten (IDs statt Rohinhalt), um Kosten und Datenexposition zu steuern. Ergänzt Least Privilege je Agent, Observability an jeder Übergabe und Human-in-the-loop-Gates für riskante Aktionen.",
+    "source": {
+      "title": "Design a multi-agent solution",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/4-design-multi-agent-solution"
+    }
+  },
+  {
+    "id": "scenario-library",
+    "term": "Microsoft Scenario Library",
+    "aliases": [
+      "Scenario Library"
+    ],
+    "definition": "Microsofts Adoptionsbibliothek, die Funktionsbereiche wie IT, HR, Finance, Sales oder Operations mit Copilot-Fähigkeiten und Prozessen verknüpft und beim Identifizieren von Use Cases für Prebuilt-Agenten hilft.",
+    "source": {
+      "title": "Develop use cases for prebuilt Microsoft 365 Copilot agents",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/5-develop-use-cases-prebuilt-agents-solution"
+    }
+  },
+  {
+    "id": "retrieval-first",
+    "term": "Retrieval-first responses",
+    "aliases": [
+      "retrieval-first"
+    ],
+    "definition": "Antwortmodell von Prebuilt-Agenten: Die Antwort basiert primär auf abgerufenen Inhalten aus Microsoft 365. Die Feasibility-Prüfung verlangt, dass die Genauigkeitserwartung zu diesem Modell passt, die Daten in Microsoft 365 liegen, die Interaktion konversationell ist und keine Multi-Agent-Orchestrierung nötig ist.",
+    "source": {
+      "title": "Develop use cases for prebuilt Microsoft 365 Copilot agents",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/5-develop-use-cases-prebuilt-agents-solution"
+    }
+  },
+  {
+    "id": "behavior-envelope",
+    "term": "Behavior envelope",
+    "aliases": [
+      "behavior envelopes",
+      "solution rules",
+      "rules and constraints"
+    ],
+    "definition": "Explizite Definition dessen, was ein Agent darf und nicht darf („Agent may summarize“, „Agent may not decide“, „Agent may not execute financial transactions“), ergänzt um verbotene Verhaltensweisen gemäß Sicherheits-, Datenschutz- und Safety-Policies und strukturierte Anweisungen gegen unsichere Improvisation.",
+    "source": {
+      "title": "Define solution rules and constraints for AI components",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/6-define-solution-rules-constraints-building-ai-components"
+    }
+  },
+  {
+    "id": "foundry-tools",
+    "term": "Foundry Tools",
+    "aliases": [
+      "Foundry tool catalog",
+      "tool catalog"
+    ],
+    "definition": "Katalog aus Modellkatalogen, Tool-APIs, Orchestrierungs-Frameworks, Evaluationswerkzeugen und SDKs in Foundry. Kategorien für Agenten: Retrieval & Grounding (Vektor-/Hybridsuche), Data & Application Connectors, Workflow & Action, Reasoning/Planning und Specialized/Compute Tools (Azure Functions, ML-Modelle). Regeln: Least Privilege je Tool, Failure-Case-Tests, klare Eskalation, dokumentierte Integrationen.",
+    "source": {
+      "title": "Propose Foundry tools given a requirement",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/10-propose-foundry-tools-given-requirement"
+    }
+  },
+  {
+    "id": "unified-rule-framework",
+    "term": "Unified rule framework",
+    "definition": "Ein einziges Regelwerk, das je Plattform unterschiedlich angewendet wird: Data Access (Connector-Scoping in Copilot Studio vs. volle Kontrolle mit expliziten Grenzen in Foundry), Actions, Governance (plattformerzwungen vs. architektengeführt), Risk Level (low-medium vs. medium-high) und Evaluation (eingebaute Safety vs. Evaluationspipelines).",
+    "source": {
+      "title": "Define solution rules and constraints for AI components",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/6-define-solution-rules-constraints-building-ai-components"
+    }
+  },
+  {
+    "id": "generative-orchestration",
+    "term": "Generative orchestration",
+    "aliases": [
+      "generative orchestration mode",
+      "generative AI orchestration"
+    ],
+    "definition": "Orchestrierungsmodus in Copilot Studio, in dem ein LLM Topics, Tools, Child/Connected Agents und Wissen anhand ihrer Beschreibungen auswählt, fehlende Inputs automatisch erfragt und Antworten generiert. Erstellt automatisch das System-Topic „Conversational boosting“, durchsucht bis zu 25 Wissensquellen und kann optional allgemeines Wissen nutzen.",
+    "source": {
+      "title": "Determine generative AI knowledge sources for agents built in Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/7-determine-generative-ai-knowledge-sources-agents-built-copilot-studio"
+    }
+  },
+  {
+    "id": "classic-orchestration",
+    "term": "Classic orchestration",
+    "aliases": [
+      "classic mode"
+    ],
+    "definition": "Orchestrierungsmodus, in dem Topics über Trigger-Phrasen gewählt werden, Tools nur explizit aus Topics aufgerufen werden, Wissen als Fallback dient und Fragen sowie Antworten über Question- und Message-Knoten authored werden müssen.",
+    "source": {
+      "title": "Determine generative AI knowledge sources for agents built in Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/7-determine-generative-ai-knowledge-sources-agents-built-copilot-studio"
+    }
+  },
+  {
+    "id": "generative-answers",
+    "term": "Generative answers",
+    "aliases": [
+      "generative answers node",
+      "NLU Boost",
+      "NLU Boost node",
+      "conversational boosting"
+    ],
+    "definition": "Fähigkeit von Copilot Studio, Antworten dynamisch aus Wissensquellen zu synthetisieren, ohne dass ein Topic authored werden muss. Als Knoten in Topics einsetzbar; bei nicht erkanntem Topic dient sie als Fallback. Wissensquellen gelten auf Agenten-, Topic- oder Knotenebene.",
+    "source": {
+      "title": "Design prompt-driven agents using Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/9-design-prompt-response-agents"
+    }
+  },
+  {
+    "id": "knowledge-sources",
+    "term": "Knowledge sources",
+    "aliases": [
+      "knowledge source"
+    ],
+    "definition": "Quellen, die ein Copilot-Studio-Agent zum Erden nutzt: öffentliche Websites, hochgeladene Dokumente (in Dataverse indexiert), SharePoint, Dataverse-Tabellen, Enterprise Connectors (Microsoft Search) und Azure-OpenAI-verbundene Daten. Authentifizierung wird erzwungen: Nutzer sehen nur Inhalte, auf die sie Zugriff haben.",
+    "source": {
+      "title": "Determine generative AI knowledge sources for agents built in Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/7-determine-generative-ai-knowledge-sources-agents-built-copilot-studio"
+    }
+  },
+  {
+    "id": "unstructured-data-knowledge",
+    "term": "Unstructured data knowledge",
+    "aliases": [
+      "unstructured sources",
+      "unstructured data",
+      "500 knowledge objects",
+      "5 unstructured sources"
+    ],
+    "definition": "Dateien aus SharePoint, OneDrive, Salesforce, ServiceNow, Confluence oder Zendesk werden in Dataverse ingestiert, gechunkt und in Vektor-Embeddings umgewandelt – mit Berechtigungsprüfung je Nutzer zur Abfragezeit. Limits: maximal 500 Knowledge Objects je Agent und 5 unstrukturierte Quellen gleichzeitig im Retrieval; Synchronisation im Hintergrund.",
+    "source": {
+      "title": "Determine generative AI knowledge sources for agents built in Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/7-determine-generative-ai-knowledge-sources-agents-built-copilot-studio"
+    }
+  },
+  {
+    "id": "azure-openai-on-your-data",
+    "term": "Azure OpenAI on your data",
+    "aliases": [
+      "Azure OpenAI",
+      "Azure OpenAI Service"
+    ],
+    "definition": "Klassische Verbindung in Generative-Answers-Knoten zu einer Azure-OpenAI-Ressource, die Unternehmens-Embeddings mit Modell-Reasoning kombiniert, Knoten-Wissensquellen vor Agentenquellen priorisiert und Modellauswahl sowie Prompting-Parameter erlaubt. Geeignet für komplexes Reasoning und Langform-Antworten.",
+    "source": {
+      "title": "Determine generative AI knowledge sources for agents built in Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/7-determine-generative-ai-knowledge-sources-agents-built-copilot-studio"
+    }
+  },
+  {
+    "id": "azure-ai-search",
+    "term": "Azure AI Search",
+    "aliases": [
+      "AI Search",
+      "semantic ranking",
+      "semantic ranker"
+    ],
+    "definition": "Indexbasierte Wissensquelle für Vektor- und Hybridsuche mit Semantic Ranking, mehreren Authentifizierungsmethoden (Key, Zertifikat, Entra ID) und zitatfähigen Metadatenfeldern. Bevorzugt bei großen Inhaltsmengen, hoher Präzision, semi-strukturierten Daten und als Retrieval-Backbone für RAG-Pipelines mit Side-by-Side-Index-Rebuilds.",
+    "source": {
+      "title": "Determine generative AI knowledge sources for agents built in Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/7-determine-generative-ai-knowledge-sources-agents-built-copilot-studio"
+    }
+  },
+  {
+    "id": "extend-copilot-vs-custom-agent",
+    "term": "Extend Microsoft 365 Copilot vs. build custom agents",
+    "aliases": [
+      "Copilot extension",
+      "custom agent",
+      "custom agents",
+      "extend Copilot"
+    ],
+    "definition": "Copilot erweitern, wenn Kernfähigkeiten die Aufgabe weitgehend abdecken, das Szenario in Microsoft-365-Apps lebt, Daten dort liegen und Logik einfach bleibt (Connectors, Plugins, Wissensquellen; Governance eingebaut, geringe Autonomie). Custom Agents bauen bei komplexen Workflows, Orchestrierung über Tools/APIs/Agenten, Autonomie, externen Systemen oder Ausführung außerhalb von Microsoft 365 (volle Orchestrierung, eigene Governance).",
+    "source": {
+      "title": "Determine when to build custom agents or extend Microsoft 365 Copilot",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/8-determine-build-custom-agents-extend-copilot"
+    }
+  },
+  {
+    "id": "declarative-agent",
+    "term": "Declarative agent",
+    "aliases": [
+      "declarative agents",
+      "Agent Builder"
+    ],
+    "definition": "Instruktionsgesteuerter Microsoft-365-Copilot-Agent, der ohne Code über Agent Builder erstellt wird: geführte Konfiguration, eingebauter Tool-Zugriff, deklarative Anweisungen, Test-Workspace und Publishing an Zielgruppen in Microsoft 365.",
+    "source": {
+      "title": "Design agents in Microsoft 365 Copilot",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-extensibility-ai-solutions/3-design-agents-microsoft-365-copilot"
+    }
+  },
+  {
+    "id": "custom-ai-model",
+    "term": "Custom AI model",
+    "aliases": [
+      "custom models",
+      "custom model",
+      "catalog models",
+      "catalog model"
+    ],
+    "definition": "Eigens trainiertes oder feinabgestimmtes Modell statt Prebuilt-/Katalogmodell. Gerechtfertigt bei domänenspezifischer Intelligenz, unzureichender Off-the-shelf-Genauigkeit trotz Prompting, Retrieval-Tuning und Fine-Tuning, strengen Governance-/Compliance-Anforderungen, sehr hohem Volumen oder Multi-Agent-Reasoning. Voraussetzungen: große gelabelte Datenmengen, Governance, wiederholbare Pipeline, MLOps-Kompetenz.",
+    "source": {
+      "title": "Determine when custom AI models should be created",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/9-determine-custom-ai-models-created"
+    }
+  },
+  {
+    "id": "prompt-library",
+    "term": "Prompt library",
+    "aliases": [
+      "prompt libraries"
+    ],
+    "definition": "Kuratierte, governed Sammlung wiederverwendbarer Prompts (Templates für Summaries, Klassifikation, Transformation, Empfehlungen; Domänen-Prompts) mit Metadaten je Prompt: Purpose, Owner, Version, Last updated, Applicable systems, Risk classification, Required grounding sources. Governance: Versionskontrolle, Review durch Domain Experts/RAI/Security, Tests über Inputs, Edge Cases und Modellversionen, Lifecycle (Retire, Update, Drift-Monitoring). Ablage in SharePoint, GitHub Enterprise, Azure DevOps oder Copilot Studio.",
+    "source": {
+      "title": "Provide guidelines for creating a prompt library",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/10-provide-guidelines-creating-prompt-library"
+    }
+  },
+  {
+    "id": "prompt-patterns",
+    "term": "Prompt patterns",
+    "aliases": [
+      "instruction + context + output",
+      "role prompting",
+      "few-shot",
+      "few-shot prompting",
+      "chain-of-thought",
+      "multi-step prompts",
+      "multi-step prompt"
+    ],
+    "definition": "Standardisierte Muster: Instruction + Context + Output (Aufgabe, Daten/Constraints, Format), Few-shot (Beispiele), Role prompting („Act as a compliance analyst“), Multi-step (Extract → Analyze → Recommend → Summarize) und Chain-of-thought (Reasoning zeigen, bei Analyse und Troubleshooting; nicht übernutzen). Vier Säulen effektiver Prompts: Clarity, Context, Constraints, Output format.",
+    "source": {
+      "title": "Provide prompt engineering guidelines and techniques",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/12-provide-prompt-engineering-guidelines-techniques"
+    }
+  },
+  {
+    "id": "prompt-maturity-model",
+    "term": "Prompt maturity model",
+    "definition": "Fünf Stufen: Level 1 Basic (einfache Fragen), Level 2 Guided (Intent + Constraints), Level 3 Structured (Instruction + Context + Output), Level 4 Optimized (Few-shot, Formatregeln), Level 5 Enterprise (wiederverwendbare Templates, Versionskontrolle, governed Library).",
+    "source": {
+      "title": "Provide prompt engineering guidelines and techniques",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/12-provide-prompt-engineering-guidelines-techniques"
+    }
+  },
+  {
+    "id": "small-language-model",
+    "term": "Small language model",
+    "aliases": [
+      "SLM",
+      "SLMs",
+      "customized SLM",
+      "Phi-3",
+      "Phi3"
+    ],
+    "definition": "Leichtgewichtiges generatives Modell (z. B. Phi-3) für niedrige Latenz, kostenoptimierte Inferenz, Edge-/Embedded-Betrieb und spezialisiertes Reasoning, angepasst über Domain Tuning, Behavior Tuning oder Task-Optimierung. Kein Allheilmittel gegen falsche Informationen; Anti-Patterns: SLM statt RAG über ein allgemeines Modell, unterschätzte Datenkuration, breite kreative Aufgaben.",
+    "source": {
+      "title": "Develop use cases for customized small language models",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/11-develop-use-cases-customized-small-language-models-solution"
+    }
+  },
+  {
+    "id": "ai-center-of-excellence",
+    "term": "AI Center of Excellence",
+    "aliases": [
+      "AI CoE",
+      "CoE",
+      "Center of Excellence"
+    ],
+    "definition": "Organisationsfunktion, die KI-Reife vorantreibt, Governance und Responsible-AI-Guardrails etabliert, Praktiken standardisiert und Doppelarbeit verhindert. Elemente: Executive Sponsorship, eine accountable Leitung, multidisziplinäres Team (Strategie, Daten, ML, Governance, Security, Operations, Business), Funktionen von Strategie über Skilling, Standards, Intake/Priorisierung und Delivery-Support bis Betrieb. Verortung im CCoE oder der Data-/Architekturgruppe; Standalone nur ohne unterstützendes Team.",
+    "source": {
+      "title": "Include elements in a Microsoft AI Center of Excellence",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/15-include-elements-microsoft-ai-center-excellence"
+    }
+  },
+  {
+    "id": "coe-operating-model",
+    "term": "Centralized, hybrid, advisory CoE",
+    "aliases": [
+      "advisory CoE",
+      "centralized CoE",
+      "hybrid CoE"
+    ],
+    "definition": "Reifegrad-Progression eines AI CoE: Centralized (volle Governance-Kontrolle, Projektfreigabe, starke Delivery-Beteiligung) → Hybrid (geteilte Verantwortung, CoE hält Standards) → Advisory (CoE berät statt zu gatekeepen, Produktteams liefern, Governance ist in Plattformen eingebettet). Überzentralisierung erzeugt Engpässe, Untergovernance Shadow AI.",
+    "source": {
+      "title": "Include elements in a Microsoft AI Center of Excellence",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/15-include-elements-microsoft-ai-center-excellence"
+    }
+  },
+  {
+    "id": "shadow-ai",
+    "term": "Shadow AI",
+    "definition": "Ungegovernte KI-Nutzung, die entsteht, wenn ein AI CoE fehlt oder zu wenig Governance ausübt (Undergovernance). Gegenstück zur Überzentralisierung, die Bottlenecks erzeugt.",
+    "source": {
+      "title": "Include elements in a Microsoft AI Center of Excellence",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/15-include-elements-microsoft-ai-center-excellence"
+    }
+  },
+  {
+    "id": "ai-workload-roles",
+    "term": "Business user roles for AI workloads",
+    "aliases": [
+      "executive sponsor",
+      "product owner",
+      "business domain specialist",
+      "data owner",
+      "data steward",
+      "compliance officer",
+      "change management lead",
+      "skilling lead"
+    ],
+    "definition": "Rollen eines KI-Programms: Executive Sponsor (Richtung, Funding), AI-CoE-Lead (Koordination, Governance), Product Owner (Outcome, Roadmap), Business Domain Specialist (Grounding, Validierung, gelabelte Daten), Data Owner/Steward (Qualität, Zugriff, Lineage), Responsible-AI-/Compliance-Officer (Risiko, Ethik), Change-Management-/Skilling-Lead (Adoption). Fehlt eine Rolle, drohen stockende Adoption, richtungslose Lösungen, unzuverlässige Workloads oder fehlende Nutzung.",
+    "source": {
+      "title": "Identify key business user roles for AI workloads",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/13-identify-key-business-user-roles-ai-workloads"
+    }
+  },
+  {
+    "id": "ai-workload-personas",
+    "term": "AI workload personas",
+    "aliases": [
+      "MLOps engineer",
+      "AIOps engineer",
+      "AI engineer",
+      "data scientist",
+      "data engineer"
+    ],
+    "definition": "Technische Personas aus dem Azure Well-Architected Framework: AI Engineer (baut und evaluiert), Data Scientist (Modelle, Feature-Pipelines), Data Engineer (Datenassets), Application Developer (Integration) und MLOps/AIOps Engineer (Deployment, Automatisierung, Monitoring, Optimierung).",
+    "source": {
+      "title": "Identify key business user roles for AI workloads",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/13-identify-key-business-user-roles-ai-workloads"
+    }
+  },
+  {
+    "id": "risk-classification",
+    "term": "AI workload risk classification",
+    "aliases": [
+      "risk level",
+      "high risk",
+      "medium risk",
+      "low risk"
+    ],
+    "definition": "Risikostufen nach CoE-Guidance: Low (interne Produktivität), Medium (kundenorientiert), High (automatisierte Entscheidungen, regulierte Branchen). Teil des siebenstufigen Frameworks zur Bewertung regionaler und lokaler Regulierung (Jurisdiktionen → Regelungen → Risiko → Datenanforderungen → KI-Pflichten → Microsoft-Controls → Dokumentation).",
+    "source": {
+      "title": "Evaluate regional and local AI data regulation compliance requirements",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/14-evaluate-regional-local-ai-data-regulation-compliance-requirements"
+    }
+  },
+  {
+    "id": "ai-regulations",
+    "term": "AI-specific regulations",
+    "aliases": [
+      "EU AI Act",
+      "AIDA",
+      "data protection regulations",
+      "GDPR",
+      "LGPD",
+      "HIPAA",
+      "PCI DSS"
+    ],
+    "definition": "Regulatorische Domänen, die Architekten bewerten müssen: Datenschutzgesetze (CCPA/CPRA, LGPD, DPDP), KI-spezifische Regeln (EU AI Act, Canada AIDA, Singapore Framework, US Executive Orders) mit Risikoklassifizierung, Transparenz, menschlicher Aufsicht und Modellevaluation, branchenspezifische Vorgaben (HIPAA, FINRA/SEC/PCI DSS, FERPA, NIST) sowie lokale Vorschriften zu Biometrie, automatisierten Entscheidungen und Mitarbeiterüberwachung.",
+    "source": {
+      "title": "Evaluate regional and local AI data regulation compliance requirements",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/14-evaluate-regional-local-ai-data-regulation-compliance-requirements"
+    }
+  },
+  {
+    "id": "multi-session-app",
+    "term": "Multi-session apps",
+    "aliases": [
+      "multi-session",
+      "multisession"
+    ],
+    "definition": "Dynamics-365-Fähigkeit, komplexe Aufgaben über längere Zeiträume und mehrere Sitzungen zu bearbeiten. KI-Prozesse brauchen dafür zeitpersistenten Kontext: Session-Metadaten nutzen, Insights in strukturierten Entitäten speichern, keine volatilen Inhalte in Prompts, modulare Aufgaben.",
+    "source": {
+      "title": "Design AI solutions using multiple Dynamics 365 apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/16-design-ai-solutions-use-multiple-dynamics-365-apps"
+    }
+  },
+  {
+    "id": "intent-driven-architecture",
+    "term": "Intent-driven architecture",
+    "aliases": [
+      "intent parsing",
+      "context routing",
+      "intent-driven"
+    ],
+    "definition": "Architektur, in der KI das Nutzerziel ermittelt (Intent Parsing), es der richtigen Dynamics-365-App und Entität zuordnet (Context Routing), nächste Schritte regelbasiert anpasst (Adaptive Actions) und Dataverse-Events statt Point-to-Point-Integrationen nutzt. Reduziert verstreute Workflow-Logik und skaliert auf neue Prozesse.",
+    "source": {
+      "title": "Design AI solutions using multiple Dynamics 365 apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/16-design-ai-solutions-use-multiple-dynamics-365-apps"
+    }
+  },
+  {
+    "id": "planner-worker-reviewer",
+    "term": "Planner, worker, and reviewer agents",
+    "aliases": [
+      "planner agent",
+      "worker agent",
+      "reviewer agent",
+      "worker agents"
+    ],
+    "definition": "Multi-Agent-Muster für Prozesse über mehrere Dynamics-365-Apps: Der Planner orchestriert den Geschäftsfluss, Worker holen domänenspezifische Informationen, der Reviewer validiert Empfehlungen gegen Geschäftsregeln.",
+    "source": {
+      "title": "Design AI solutions using multiple Dynamics 365 apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/16-design-ai-solutions-use-multiple-dynamics-365-apps"
+    }
+  },
+  {
+    "id": "prompt-training-personas",
+    "term": "User personas for prompt training",
+    "aliases": [
+      "AI champions",
+      "power users",
+      "prompt playbook",
+      "prompt playbooks"
+    ],
+    "definition": "Zielgruppen eines Prompt-Trainings: Everyday Business Users (Basis-Prompting, Grenzen, verantwortungsvolle Nutzung), Power Users/AI Champions (fortgeschrittenes Prompting, Multi-Step, Templates, Coaching), Manager (Insights prüfen, Governance, Monitoring) und Accessibility-fokussierte Nutzer (Voice Prompting, inklusives Design). Assets: Prompt Playbooks, Prompt Library, Szenario-Übungen, In-App-Guidance.",
+    "source": {
+      "title": "Design user prompt training for AI solution adoption",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/17-design-user-prompt-training-ai-solution-adoption"
+    }
+  },
+  {
+    "id": "roi",
+    "term": "Return on investment",
+    "aliases": [
+      "ROI",
+      "ROI criteria",
+      "ROI analysis"
+    ],
+    "definition": "Bewertung des Geschäftswerts einer KI-Lösung über Produktivitätsgewinne, Kosteneinsparungen, Umsatzwirkung, Risikoreduktion und strategischen Wert; laut Modulzusammenfassung in drei Kategorien: financial (hard value), strategic/intangible (soft value) und time-based. Muss messbar, wiederholbar, outcome-aligned und in realer Nutzungsanalytik verankert sein. Formeln: Net_Benefit = Annual_Benefit − Annual_TCO; ROI % = Net_Benefit / Annual_TCO × 100; Payback = einmalige Kosten / monatlicher Nettonutzen.",
+    "source": {
+      "title": "Create ROI analysis for a proposed AI solution",
+      "url": "https://learn.microsoft.com/en-us/training/modules/evaluate-costs-benefits-ai-powered-business-solution/3-create-roi-analysis-proposed-ai-solution-business-process"
+    }
+  },
+  {
+    "id": "tco",
+    "term": "Total cost of ownership",
+    "aliases": [
+      "TCO",
+      "cost drivers",
+      "five cost domains"
+    ],
+    "definition": "Alle Kosten über den KI-Lebenszyklus: Development (Datenvorbereitung, Prompt Engineering, Design/Test, Integration), Deployment (Infrastruktur, Lizenzen, Security, API-Nutzung), Operational (Monitoring, Retraining, Prompt-Library, Support, Training), Change Management und Decommissioning. Alternativ fünf Kostendomänen: Infrastructure, Development & Integration, Data Quality & Preparation, Expertise & Staffing, Operations & Licensing. TCO und ROI beantworten unterschiedliche Fragen und werden getrennt ausgewiesen.",
+    "source": {
+      "title": "Evaluate ROI criteria for AI-powered solutions",
+      "url": "https://learn.microsoft.com/en-us/training/modules/evaluate-costs-benefits-ai-powered-business-solution/2-roi-criteria-ai-powered-business-solution-including-total-cost-ownership"
+    }
+  },
+  {
+    "id": "savings-calculator",
+    "term": "Savings calculator",
+    "aliases": [
+      "Savings",
+      "savings per run",
+      "savings per tool",
+      "ROI analytics",
+      "Copilot Studio ROI analytics",
+      "savings analytics"
+    ],
+    "definition": "Copilot-Studio-Analytics zur Schätzung und Verfolgung von Zeit- oder Geldersparnis: Savings per run (vorhersehbarer Ablauf) oder Savings per tool (granular bei mehreren Tools mit unterschiedlichem Impact). Inputs: Minuten je Run, erfolgreiche Runs (nur gelöste zählen), voll belasteter Stundensatz. Admins können geldbasierte Savings deaktivieren; dann Zeit tracken und extern umrechnen. ROI Analytics liefert zudem Usage-, Automation-, Cost-Savings- und Quality-Metriken.",
+    "source": {
+      "title": "Create ROI analysis for a proposed AI solution",
+      "url": "https://learn.microsoft.com/en-us/training/modules/evaluate-costs-benefits-ai-powered-business-solution/3-create-roi-analysis-proposed-ai-solution-business-process"
+    }
+  },
+  {
+    "id": "sensitivity-analysis",
+    "term": "Sensitivity analysis",
+    "aliases": [
+      "sensitivity bands",
+      "optimistic / expected / conservative"
+    ],
+    "definition": "Optimistische, erwartete und konservative ROI-Fälle durch Variation von Adoptionsrate, Minuten je Run, Stundensätzen und Qualitäts-/Rework-Effekten. Zeigt Stakeholdern Upside und Risiko; Feldstudien dienen nur als Richtungsanker, eigene Telemetrie bleibt maßgeblich.",
+    "source": {
+      "title": "Create ROI analysis for a proposed AI solution",
+      "url": "https://learn.microsoft.com/en-us/training/modules/evaluate-costs-benefits-ai-powered-business-solution/3-create-roi-analysis-proposed-ai-solution-business-process"
+    }
+  },
+  {
+    "id": "build-buy-extend",
+    "term": "Build, buy, or extend",
+    "aliases": [
+      "build vs. buy",
+      "build-buy-extend"
+    ],
+    "definition": "Sourcing-Entscheidung für KI-Komponenten: Build (tiefe Anpassung, Kontrolle über Daten/IP, Differenzierung; hohe Kosten, lange Dauer), Buy (Time-to-Value, Standardprozesse, geringe Reife; Lock-in, begrenzte Erweiterbarkeit) und Extend (bestehende Plattform wie Copilot, Copilot Studio oder Foundry per Grounding, Connectors, Plugins anpassen; ausgewogen, Data Preparation bleibt hoch). Ablauf: Anforderungen → strategische Bedeutung → Vendor-/Extend-/Custom-Machbarkeit → TCO → ROI → gewichtetes Scoring → Value-to-Cost.",
+    "source": {
+      "title": "Analyze whether to build, buy, or extend AI components",
+      "url": "https://learn.microsoft.com/en-us/training/modules/evaluate-costs-benefits-ai-powered-business-solution/4-analyze-whether-build-buy-extend-ai-components-business-solutions"
+    }
+  },
+  {
+    "id": "model-router",
+    "term": "Model router",
+    "aliases": [
+      "model routing",
+      "routing rules",
+      "weighted routing",
+      "fallback routing",
+      "version-based routing",
+      "static rules"
+    ],
+    "definition": "Einheitlicher Endpunkt in Azure AI Foundry, der Anfragen regel- oder metadatenbasiert an das passendste Modell leitet (Task-Typ, Komplexität: simple → SLM, moderate → fine-tuned, complex → LLM, Kosten, Latenz). Regeltypen: Static („If task = classification → use SLM“), Weighted (A/B, Rollout), Fallback (Backup bei Ausfall), Version-based (stabil vs. experimentell). Zentrale Governance mit Versionierung, Monitoring und Safety.",
+    "source": {
+      "title": "Implement a model router to intelligently route requests to the most suitable model",
+      "url": "https://learn.microsoft.com/en-us/training/modules/evaluate-costs-benefits-ai-powered-business-solution/5-implement-model-router-intelligently-route-requests-most-suitable-model"
+    }
+  },
+  {
+    "id": "responsible-ai-principles",
+    "term": "Responsible AI principles",
+    "aliases": [
+      "Responsible AI",
+      "RAI",
+      "Fairness",
+      "Reliability & Safety",
+      "Privacy & Security",
+      "Inclusiveness",
+      "Transparency",
+      "Accountability",
+      "responsible AI tenets"
+    ],
+    "definition": "Microsofts sechs Tenets: Fairness (gerechte Ergebnisse), Reliability & Safety (validiert, überwacht, keine unsicheren Outputs), Privacy & Security (Datenschutz, sichere Modelle), Inclusiveness (barrierefrei), Transparency (nachvollziehbare Logik und Datennutzung) und Accountability (Menschen bleiben verantwortlich; Guardrails, Governance, Oversight). Über Design, Development, Deployment und Operations hinweg anzuwenden.",
+    "source": {
+      "title": "Define core tenets of responsible AI guidelines for AI business solutions",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/2-define-core-tenets-responsible-ai-guidelines-ai-business-solutions"
+    }
+  },
+  {
+    "id": "business-terms",
+    "term": "Business terms",
+    "aliases": [
+      "business terminology",
+      "business vocabulary"
+    ],
+    "definition": "Standardisiertes Vokabular einer Organisation (Produkt-/Servicenamen, SLA-Stufen, Teams, Fallklassifikationen, Ergebnisbegriffe), in Dynamics 365 Customer Service vor allem in Dataverse-Feldern, Option Sets und Klassifikationsmetadaten gespeichert. Copilot liest sie direkt für Konversations- und Fallzusammenfassungen; fehlende Zuordnung führt zu vagen Summaries, falschen Kategorien und falschen nächsten Schritten.",
+    "source": {
+      "title": "Design business terms for Copilot in Dynamics 365 Customer Service",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/3-design-business-terms-copilot-dynamics-365-apps-customer-experience-service"
+    }
+  },
+  {
+    "id": "conversation-summary-format",
+    "term": "Conversation summary structure",
+    "aliases": [
+      "structured format",
+      "paragraph format",
+      "conversation summaries",
+      "case summaries",
+      "case summary"
+    ],
+    "definition": "Konfigurierbare Copilot-Zusammenfassungen in Customer Service: Paragraph Format (ein zusammenhängender Absatz, schnelle Übersicht) oder Structured Format (vordefinierte Abschnitte wie Customer Issue, Actions Taken, Pending Items, Next Steps, Resolution Status; Admins wählen Felder; ideal für strenge Dokumentationsstandards und regulierte Branchen).",
+    "source": {
+      "title": "Design business terms for Copilot in Dynamics 365 Customer Service",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/3-design-business-terms-copilot-dynamics-365-apps-customer-experience-service"
+    }
+  },
+  {
+    "id": "copilot-customization-areas",
+    "term": "Copilot customization areas",
+    "aliases": [
+      "prompt and output customization",
+      "data scope",
+      "surface integration",
+      "field configuration"
+    ],
+    "definition": "Vier Bereiche zur Anpassung von Copilot in Dynamics 365 Sales und Customer Service: Business Terms & Domain Language, Prompt & Output Customization (Ton, Struktur, Pflichtfelder, zu vermeidende Begriffe), Data Scope & Field Configuration (Felder, Entitäten, Wissensquellen) und Surface Integration (Formulare, Konversationsfenster, Timelines, Dashboards). Datenumfang begrenzen, Outputs prüfen, menschliche Validierung sicherstellen.",
+    "source": {
+      "title": "Design customizations for Copilot in Dynamics 365 apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/4-design-customizations-copilot-dynamics-365-apps-customer-experience-service"
+    }
+  },
+  {
+    "id": "custom-connector-sales",
+    "term": "Custom connector for Copilot in Dynamics 365 Sales",
+    "aliases": [
+      "custom connector",
+      "custom connectors",
+      "connector action",
+      "Copilot action",
+      "on-behalf-of",
+      "OBO",
+      "Enable onbehalfoflogin"
+    ],
+    "definition": "Brücke zwischen externen APIs, Dynamics 365 Sales und Copilot-Studio-Actions (Production-ready Preview): in einer Umgebung mit Dynamics 365 erstellen (Default-Umgebung nicht unterstützt), OAuth 2.0 mit Microsoft Entra ID und zwei App-Registrierungen, für automatisierte Anmeldung Enable onbehalfoflogin = true. Action in Copilot Studio erstellen, publishen, vom Admin freischalten; Sichtbarkeit bis zu 7 Tage; Zertifizierung optional für organisationsweite Verfügbarkeit.",
+    "source": {
+      "title": "Design connectors for Copilot in Dynamics 365 Sales",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/5-design-connectors-copilot-dynamics-365-sales"
+    }
+  },
+  {
+    "id": "agent-context",
+    "term": "Agent context",
+    "aliases": [
+      "contact center channels",
+      "omnichannel",
+      "workstream",
+      "workstreams"
+    ],
+    "definition": "Strukturierte Daten, die einen KI-Agenten in Dynamics 365 Contact Center informieren: Kundenidentität, Fallhistorie, Kanal, Transkript, Routing-Queues, Skills (Felder wie CaseID, CustomerType, Channel, IssueCategory, SentimentScore). Nur benötigte Attribute exponieren (Genauigkeit, weniger Rauschen, Datenschutz). Verhalten an Voice-, Messaging- und Persistent-Chat-Workstreams ausrichten; Kanäle: Voice, Live Chat, Digital Messaging, Omnichannel Widget.",
+    "source": {
+      "title": "Design AI agents for Dynamics 365 Contact Center",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/6-design-agents-integration-dynamics-365-contact-center-channels"
+    }
+  },
+  {
+    "id": "task-agent",
+    "term": "Task agent",
+    "aliases": [
+      "task agents",
+      "task-focused agent"
+    ],
+    "definition": "Copilot-Studio-Agent, der konkrete Aktionen für Nutzer ausführt. Komponenten: Goals (actionable, observable, testable), Skills (Language Understanding, Data Interpretation, Planning, Execution), Actions (Connectors, Custom Connectors, APIs, Dataverse, Cloud Flows – jeweils mit Inputs, Output-Schema, Auth, Fehlerregeln), Knowledge, Context, Safety & Rules („Never override a customer's credit limit“).",
+    "source": {
+      "title": "Design task agents in Microsoft Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/7-design-task-agents"
+    }
+  },
+  {
+    "id": "autonomous-agent",
+    "term": "Autonomous agent",
+    "aliases": [
+      "autonomous agents",
+      "autonomous service agents"
+    ],
+    "definition": "Agent, der Aufgaben eigenständig anhand von Zielen, Kontext und Anweisungen ausführt. Komponenten in Copilot Studio: Goals, Triggers (Nutzereingabe, Systemänderung, Zeitplan), Instructions („If the customer is VIP, escalate the ticket immediately“), Knowledge Sources, Actions, Publishing (z. B. Teams). Best Practices: einfacher Use Case, saubere Anweisungen, begrenzte Wissensquellen, wiederholte Tests, Monitoring.",
+    "source": {
+      "title": "Design autonomous agents in Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/8-design-autonomous-agents"
+    }
+  },
+  {
+    "id": "system-topics",
+    "term": "System topics",
+    "aliases": [
+      "system topic",
+      "fallback topic",
+      "fallback",
+      "disambiguation"
+    ],
+    "definition": "Eingebaute Topics für Greeting, Escalation, Fallback, End of Conversation, Multiple Topics Matched (Disambiguation) und Error Handling, die automatisch auslösen und für Konsistenz sorgen. Der Fallback soll das Missverständnis bestätigen, Alternativen oder eine Übergabe an Menschen anbieten und Feedback erfassen – aber nicht starke Intent-Erkennung ersetzen.",
+    "source": {
+      "title": "Design topics for Copilot Studio, including fallback",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/12-design-topics-copilot-studio-fallback"
+    }
+  },
+  {
+    "id": "condition-nodes",
+    "term": "Condition nodes",
+    "aliases": [
+      "condition node",
+      "conditions and branching"
+    ],
+    "definition": "Knoten zur Verzweigung des Dialogs anhand von Variablen, Vergleichen, Operatoren, AND/OR-Logik und mehreren Zweigen (if, elseif, else), z. B. VIP vs. Standardkunde; für fortgeschrittene Logik mit Power Fx.",
+    "source": {
+      "title": "Design prompt-driven agents using Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/9-design-prompt-response-agents"
+    }
+  },
+  {
+    "id": "event-triggers",
+    "term": "Event triggers",
+    "aliases": [
+      "event trigger",
+      "triggers"
+    ],
+    "definition": "Mechanismus, mit dem Agenten ohne Nutzer-Prompt auf Ereignisse reagieren (Datei hochgeladen, Task abgeschlossen, Dataverse-Zeile hinzugefügt, Zeitplan). Trigger übergeben Payloads mit Daten, Anweisungen und Ausführungskontext, ermöglichen autonome Workflows, müssen explizit autorisiert werden und können die Abrechnung beeinflussen.",
+    "source": {
+      "title": "Design prompt-driven agents using Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/9-design-prompt-response-agents"
+    }
+  },
+  {
+    "id": "topic-types",
+    "term": "Topic types",
+    "aliases": [
+      "topics",
+      "trigger phrases",
+      "trigger phrase",
+      "instructional topic",
+      "action topic",
+      "informational topic",
+      "reusable topic"
+    ],
+    "definition": "Topics sind Bausteine der Konversationslogik in Copilot Studio (Trigger-Phrasen, Message-, Question-Knoten, Conditions, Actions). Typen: Instructional (führt durch Aufgabe), Action (automatisierter Schritt), Informational (strukturierte Information), System (Greeting, Escalation, Fallback) und Reusable (geteilte Logik wie Authentifizierung).",
+    "source": {
+      "title": "Design topics for Copilot Studio, including fallback",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/12-design-topics-copilot-studio-fallback"
+    }
+  },
+  {
+    "id": "generative-pages",
+    "term": "Generative pages",
+    "aliases": [
+      "generative page",
+      "code-first",
+      "code-first extensions",
+      "PCF",
+      "PCF controls"
+    ],
+    "definition": "Model-driven-App-Seiten in Power Apps, die aus einer natürlichsprachlichen Beschreibung erzeugt werden (Layout, Bindings, Formulare aus Dataverse-Daten). Code-first-Entwickler erweitern sie mit JavaScript-Event-Handlern, PCF-Controls, Dataverse-Logik, wiederverwendbaren Komponenten und sicheren Datenpipelines – für komplexe Regeln, individuelle UI, Integration, Performance und Compliance.",
+    "source": {
+      "title": "Propose code first generative pages and agent feed applications",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/11-propose-code-first-generative-pages-agent-feed-applications"
+    }
+  },
+  {
+    "id": "agent-feed",
+    "term": "Agent feed",
+    "aliases": [
+      "agent-driven app",
+      "agent feeds"
+    ],
+    "definition": "KI-Schicht in Apps, die Kontext, Nutzeraktionen und Datensätze überwacht und direkt in der App Zusammenfassungen, Handlungsvorschläge („follow-up with this customer“), Anomalie-Benachrichtigungen, kontextuelle Insights, geführte Schritte und Automatisierungs-Trigger liefert. Kombiniert mit Generative Pages und Code-first für intelligente, schnell gebaute Enterprise-Apps.",
+    "source": {
+      "title": "Propose code first generative pages and agent feed applications",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/11-propose-code-first-generative-pages-agent-feed-applications"
+    }
+  },
+  {
+    "id": "hybrid-search",
+    "term": "Hybrid search",
+    "aliases": [
+      "hybrid retrieval",
+      "vector search",
+      "keyword search",
+      "semantic reranking",
+      "top K"
+    ],
+    "definition": "Kombination aus Vektorabfrage, Keyword-Suche und semantischem Reranking, die laut Lerninhalt in der Regel die zuverlässigsten Retrieval-Ergebnisse liefert. RAG-Orchestrierung holt die Top-K-Passagen gefiltert (Produkt, Region, Rolle) und baut einen Prompt mit Quellenzitaten; Top K und Token-Budgets begrenzen.",
+    "source": {
+      "title": "Design data processing workflows for grounded AI",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/13-design-data-processing-ai-models-ground"
+    }
+  },
+  {
+    "id": "chunking",
+    "term": "Chunking",
+    "aliases": [
+      "chunks",
+      "chunk size",
+      "embeddings",
+      "embedding"
+    ],
+    "definition": "Zerlegen von Dokumenten in Abschnitte, deren Größe zum Kontextfenster des Modells und zu semantischen Grenzen passt; schlechtes Chunking erhöht Kosten und senkt Antwortqualität. Embeddings sind die Vektorrepräsentationen der Chunks für semantische und hybride Suche.",
+    "source": {
+      "title": "Design data processing workflows for grounded AI",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/13-design-data-processing-ai-models-ground"
+    }
+  },
+  {
+    "id": "index-strategy",
+    "term": "Index strategy",
+    "aliases": [
+      "index topology",
+      "single index",
+      "side-by-side rebuild",
+      "side-by-side rebuilds",
+      "freshness schedule",
+      "searchable, filterable, sortable"
+    ],
+    "definition": "Grounding-Daten in einen Suchindex externalisieren statt Live-Systeme je Turn abzufragen; Felder nur als searchable, filterable, sortable oder retrievable markieren, wenn genutzt (sonst Größe und Kosten); ein Index als Default, Aufteilung bei getrennten Zielgruppen, Compliance-Grenzen oder Abfragemustern; Freshness SLO-basiert mit Side-by-Side-Rebuilds vor dem Cutover.",
+    "source": {
+      "title": "Design data processing workflows for grounded AI",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/13-design-data-processing-ai-models-ground"
+    }
+  },
+  {
+    "id": "ai-builder-grounded-prompts",
+    "term": "AI Builder grounded prompts",
+    "aliases": [
+      "grounded prompts",
+      "AI Builder"
+    ],
+    "definition": "Low-Code-Option, mit der Prompts Antworten auf Basis von Dataverse-Daten erzeugen und in Power Apps, Power Automate und Copilot Studio wiederverwendet werden (Lizenz- und Umgebungsvoraussetzungen). AI Builder bietet außerdem vorgefertigte Modelle (Dokumentverarbeitung, Objekterkennung, Klassifikation, Sentiment, Rechnungs-/Belegextraktion) und Custom-Modelle (Prediction, Klassifikation, Entity Extraction) mit eigenem Modell-Lebenszyklus.",
+    "source": {
+      "title": "Design data processing workflows for grounded AI",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/13-design-data-processing-ai-models-ground"
+    }
+  },
+  {
+    "id": "power-apps-copilot",
+    "term": "Copilot in Power Apps Studio",
+    "aliases": [
+      "Power Apps Copilot",
+      "plans",
+      "plan designer"
+    ],
+    "definition": "Maker beschreiben Änderungen in natürlicher Sprache: Felder zu Dataverse-Tabellen hinzufügen, Validierung ändern, Screens aus Daten generieren, Beziehungen und Business Rules anpassen. Plans strukturieren Geschäftsprozesse vor dem App-Bau; Copilot schlägt daraus Screens, Entitäten, Workflows und Datenoperationen vor. Abschließend Datenzugriff, erlaubte Aktionen, DLP-Grenzen und Governance validieren.",
+    "source": {
+      "title": "Design business processes with AI in Power Apps canvas apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/14-design-business-process-include-ai-components-power-apps-canvas-app"
+    }
+  },
+  {
+    "id": "power-platform-waf",
+    "term": "Power Platform Well-Architected Framework",
+    "aliases": [
+      "Well-Architected Framework",
+      "WAF",
+      "Power Platform Well-Architected",
+      "five pillars",
+      "experience optimization",
+      "performance efficiency",
+      "operational excellence"
+    ],
+    "definition": "Fünf Säulen für intelligente Workloads: Reliability (Retries, Failover, resiliente Dataverse-Architektur), Security (Least Privilege via Entra ID, DLP, sichere Connectors), Operational Excellence (Admin-Center-Analytics, ALM mit Azure DevOps/GitHub, Alerts), Performance Efficiency (Dataverse für hohes Volumen, Azure Functions, Concurrency) und Experience Optimization (UX-Konsistenz, Copilot-Workflows, Barrierefreiheit). Abgeleitet vom Azure WAF, dessen Säule Cost Optimization hier über Lizenzierung und Compute-Offloading abgebildet wird.",
+    "source": {
+      "title": "Apply the Microsoft Power Platform Well-Architected Framework to intelligent application workloads",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/15-apply-power-platform-well-architected-framework"
+    }
+  },
+  {
+    "id": "nlu-clu-generative",
+    "term": "Standard NLU, CLU, and generative orchestration",
+    "aliases": [
+      "standard NLU",
+      "NLU",
+      "Conversational Language Understanding",
+      "CLU",
+      "Azure CLU"
+    ],
+    "definition": "Drei Wege der Sprachverarbeitung in Copilot Studio: Standard NLU (Intents/Entities auf Regeln und Trainingsdaten; hohe Präzision, geringe Variabilität, deterministisch, regulierte Prozesse), Azure CLU (trainierbare Klassifikationsmodelle für variierende Formulierungen in klaren Topic-Grenzen, Entity-Extraktion, Retraining, mehrsprachig) und Generative AI Orchestration (LLM für unstrukturierte Eingaben, Zusammenfassung, Generierung, Grounding, Multi-Turn; rechenintensiver). Mit NLU/CLU starten, generativ nur bei Bedarf, Grounding und Guardrails immer.",
+    "source": {
+      "title": "Determine the use of standard natural language processing",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/16-determine-use-standard-natural-language-processing"
+    }
+  },
+  {
+    "id": "agent-flows",
+    "term": "Agent flows",
+    "aliases": [
+      "agent flow",
+      "cloud flows",
+      "cloud flow",
+      "Power Automate cloud flow"
+    ],
+    "definition": "Automatisierungen, die nativ in Copilot Studio laufen und Agenten um Systemintegration und Geschäftslogik erweitern: Trigger (manuell, Zeitplan, Systemereignis, anderer Agent) und Actions (E-Mail, Daten aktualisieren, abrufen). Unterschiede zu Power Automate Cloud Flows: Abrechnung über Copilot-Studio-Nachrichtenkapazität statt Power-Automate-Lizenz, Erstellung per natürlicher Sprache plus visuellem Designer, Fokus auf KI-gestützte konversationelle Automatisierung. Modular halten: ein Flow je Hauptaufgabe.",
+    "source": {
+      "title": "Design agents and agent flows with Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/17-design-agent-flows-copilot-studio"
+    }
+  },
+  {
+    "id": "prompt-actions",
+    "term": "Prompt actions",
+    "aliases": [
+      "prompt action",
+      "Prompt Coach",
+      "Prompt Coach template"
+    ],
+    "definition": "Wiederverwendbare Instruktionsblöcke in Copilot Studio, die festlegen, wie ein Agent antwortet, reasoned und handelt (Typen: Transform, Summarize, Extract, Generate, Classify). Das Prompt-Coach-Template strukturiert sie in Goal, Context, Instructions/Rules, optionale Examples und Output Format; Constraints wie Wortlimits, Pflichtfelder und ausgeschlossene Inhalte halten Output vorhersehbar. Einsetzbar in Topics, Agent Flows, Fallback-Logik und Geschäftsprozessen.",
+    "source": {
+      "title": "Design prompt actions in Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/18-design-prompt-actions-copilot-studio"
+    }
+  },
+  {
+    "id": "success-criteria-adoption-goals",
+    "term": "Success criteria and adoption goals",
+    "aliases": [
+      "success criteria",
+      "adoption goals",
+      "north-star objectives",
+      "northstar"
+    ],
+    "definition": "Erfolgskriterien definieren, welche Outcomes eine KI-Lösung liefern soll (Business Value, Operational Efficiency, User Experience, Quality & Accuracy, Risk & Compliance, Scalability) und müssen business-aligned, messbar, outcome-driven, zeitlich begrenzt und machbar sein. Adoptionsziele definieren, wie die Organisation sie annimmt und skaliert: organisatorische, Daten- und technische Readiness sowie Nutzeradoption. CAF-AI-Plan: Business Outcomes, messbare Szenarien, Feasibility, Programm-Governance.",
+    "source": {
+      "title": "Define success criteria and adoption goals for AI business solutions",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/19-define-success-criteria-adoption-goals"
+    }
+  },
+  {
+    "id": "custom-model-path",
+    "term": "Custom model paths in Foundry",
+    "aliases": [
+      "fine-tuning",
+      "fine-tuned model",
+      "fine-tuned models",
+      "domain-built small models",
+      "hybrid architectures",
+      "bring your own model",
+      "BYOM"
+    ],
+    "definition": "Optionen für Custom Models: Fine-Tuning von Foundation-Modellen mit Domänendaten ohne Neutraining, Training domänenspezifischer kleiner Modelle (schnell, edge-fähig) und hybride Architekturen (Custom Model plus Prebuilt Copilots). Foundry liefert Modellkatalog, Trainings-/Fine-Tuning-Pipelines, Agent-Integration, Responsible-AI-Controls und Deployment-Topologien (gehostet, Private Networking, AKS). Betrieb: Monitoring (Drift, Degradation, Latenz), Governance, Versionierung/Rollback, MLOps/GenAIOps.",
+    "source": {
+      "title": "Design AI solutions with custom models in Microsoft Foundry",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-extensibility-ai-solutions/2-design-ai-solutions-custom-models-microsoft-foundry"
+    }
+  },
+  {
+    "id": "collaborative-agent-patterns",
+    "term": "Collaborative agent patterns",
+    "aliases": [
+      "sequential workflow",
+      "parallel evaluation",
+      "feedback-loop iteration",
+      "orchestrated interaction"
+    ],
+    "definition": "Muster für Microsoft-365-Copilot-Agenten in mehrstufigen Workflows: Sequential workflow (Agent A → Agent B → Nutzerreview), Parallel evaluation (mehrere Agenten bewerten, Ergebnisse kombiniert), Feedback-loop iteration (Verfeinern bis Qualität erreicht) und Orchestrated interaction (Primäragent delegiert nach Intent). Klare Handoff-Regeln und Verantwortungsgrenzen sind Pflicht.",
+    "source": {
+      "title": "Design agents in Microsoft 365 Copilot",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-extensibility-ai-solutions/3-design-agents-microsoft-365-copilot"
+    }
+  },
+  {
+    "id": "extensibility-layers",
+    "term": "Extensibility layers",
+    "aliases": [
+      "instruction-level extensibility",
+      "skill extensibility",
+      "integration extensibility",
+      "pro-code extensibility",
+      "prompt modification"
+    ],
+    "definition": "Vier Ebenen der Agentenerweiterung in Copilot Studio: Instruction-level (Zweck, Rolle, Constraints, Action-Muster, Eskalation; Prompt Modification ohne Neubau), Skill/Capability (Retrieval-, Action-, Workflow-Skills, Domänenwissen; modular und wiederverwendbar), Integration (Dynamics 365, Microsoft 365, Flows, APIs, Events; Least Privilege, konsistente Entitäten) und Pro-Code in Visual Studio Code (Code-Tools, Orchestrierung, Source Control). Muster: modulare Agenten, Multi-Agent-Kollaboration, Domain-Context.",
+    "source": {
+      "title": "Design extensible agents in Microsoft Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-extensibility-ai-solutions/4-design-agent-extensibility-copilot-studio"
+    }
+  },
+  {
+    "id": "architecting-agent-solutions",
+    "term": "Architecting agent solutions",
+    "aliases": [
+      "fit for purpose",
+      "operability",
+      "trust, traceability, and transparency"
+    ],
+    "definition": "Microsofts Prinzipien- und Pattern-Sammlung für sichere, zuverlässige Copilot-Agenten mit den Bereichen Fit for purpose, Operability sowie Trust, Traceability und Transparency. Sie standardisiert Terminologie und Bewertungskriterien und deckt bewusst nichts ab, was Azure WAF, Power Platform WAF oder NIST bereits regeln.",
+    "source": {
+      "title": "Design extensible agents in Microsoft Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-extensibility-ai-solutions/4-design-agent-extensibility-copilot-studio"
+    }
+  },
+  {
+    "id": "mcp",
+    "term": "Model Context Protocol",
+    "aliases": [
+      "MCP",
+      "MCP-enabled agents",
+      "MCP server"
+    ],
+    "definition": "Standardisierter Vertrag, der definiert, welchen Kontext ein Agent nutzen darf und wie er interpretiert wird; in Dynamics 365 Finance & Operations exponiert MCP Datenentitäten (Kunden, Lieferanten, Produkte), Prozessmetadaten (Workflows, Status, Genehmigungsketten), Domänenmodelle (Finanzdimensionen, Ledger) und Taxonomien. Patterns: Context-driven reasoning, Workflow-integrated agents, Multi-agent collaboration via MCP. Governance: Least Privilege, Kontextgrenzen, Logging, AI-CoE-Ownership.",
+    "source": {
+      "title": "Design extensible agents using MCP in Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-extensibility-ai-solutions/5-design-agent-extensibility-model-context-protocol-copilot-studio"
+    }
+  },
+  {
+    "id": "computer-use",
+    "term": "Computer Use",
+    "aliases": [
+      "computer use agent",
+      "UI automation"
+    ],
+    "definition": "Copilot-Studio-Fähigkeit, Apps und Websites wie ein Mensch zu bedienen (klicken, tippen, scrollen, Text lesen) über Vision und Reasoning: Anfrage → UI-Analyse → Schritt-für-Schritt-Plan → Aktionen → Validierung. Geeignet, wenn kein API/Connector existiert (Legacy, Vendor-Portale, Desktop-Apps), bei repetitiven UI-Aufgaben oder App-übergreifend. Design: klare Aufgabe, Kontext und Grenzen (erlaubte Apps, verbotene Aktionen, Limits), Schritte, beschreibende Anweisungen, Validierung je Schritt. UI-Änderungen können Automation brechen: Monitoring, Fallback, nur ohne API.",
+    "source": {
+      "title": "Design agents to automate tasks in apps and websites with Computer Use in Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-extensibility-ai-solutions/6-design-agents-automate-tasks-apps-websites-computer-copilot-studio"
+    }
+  },
+  {
+    "id": "deep-reasoning",
+    "term": "Deep reasoning",
+    "aliases": [
+      "standard reasoning",
+      "reasoning modes",
+      "reasoning model"
+    ],
+    "definition": "Reasoning-Modi in Copilot Studio: Standard Reasoning (konversationelle Antworten, Zusammenfassungen, einfache Berechnungen; schnell, geringe Compute, hohes Volumen) und Deep Reasoning (Preview; Multi-Step-Aufgaben, komplexe Regeln, Analysen, Entscheidungsbäume, Szenarioplanung, Constraints und Trade-offs in Finance, Compliance, Engineering).",
+    "source": {
+      "title": "Design agent behaviors in Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-extensibility-ai-solutions/7-design-agent-behaviors-copilot-studio-reasoning-voice-mode"
+    }
+  },
+  {
+    "id": "voice-mode",
+    "term": "Voice mode and IVR",
+    "aliases": [
+      "voice mode",
+      "IVR",
+      "interactive voice response",
+      "voice agents"
+    ],
+    "definition": "Sprachbasierte Interaktion von Copilot-Studio-Agenten (Customer-Service-IVR, Field-Technician-Support, Routing, HR/IT-Self-Service). Regeln: kurze klare Formulierungen, keine langen Mehrsatz-Antworten, Bestätigungsschritte, Design für Unterbrechungen und Rücksprünge, Confidence Checks vor Aktionen; Flow: sprechen → Intent → bestätigen/klären → ausführen → knappe gesprochene Ausgabe.",
+    "source": {
+      "title": "Design agent behaviors in Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-extensibility-ai-solutions/7-design-agent-behaviors-copilot-studio-reasoning-voice-mode"
+    }
+  },
+  {
+    "id": "instruction-structure",
+    "term": "Instruction structure",
+    "aliases": [
+      "instruction set",
+      "instruction layer"
+    ],
+    "definition": "Empfohlener Aufbau von Agentenanweisungen: Purpose, Scope (erlaubt/nicht erlaubt), Tone and style, Data boundaries (erlaubte Quellen), Quality expectations, Error handling (Verhalten bei Unsicherheit) und Escalation conditions. Verhalten wird aus Instructions, Knowledge, Actions/Tools und Policies/Constraints geformt.",
+    "source": {
+      "title": "Design agent behaviors in Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-extensibility-ai-solutions/7-design-agent-behaviors-copilot-studio-reasoning-voice-mode"
+    }
+  },
+  {
+    "id": "sharepoint-teams-agents",
+    "term": "SharePoint and Teams agents",
+    "aliases": [
+      "SharePoint agent",
+      "SharePoint agents",
+      "Teams agent",
+      "Teams agents",
+      "Microsoft 365 grounding"
+    ],
+    "definition": "In Copilot Studio gebaute Microsoft-365-Agenten, die in Teams (Chats, Kanäle, Gruppenkonversationen, Workflows) und SharePoint (Seiten, Bibliotheken, Listen, News) arbeiten. Auf einer Site installiert, kennen sie ihren Site-Kontext und nutzen ihn als primäre Grounding-Quelle; Microsoft-365-Grounding über Graph respektiert Nutzerberechtigungen. Governance: Versionskontrolle, Monitoring, periodische Reviews des Grounding-Inhalts, AI-CoE-Alignment.",
+    "source": {
+      "title": "Optimize solution design for agents in Microsoft 365",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-extensibility-ai-solutions/8-optimize-solution-design-agents-microsoft-365-teams-sharepoint"
+    }
+  },
+  {
+    "id": "agent-hub",
+    "term": "Agent hub",
+    "aliases": [
+      "Customer Intent Agent",
+      "Case Management Agent",
+      "Quality Evaluation Agent",
+      "Customer Knowledge Management Agent"
+    ],
+    "definition": "Zentrale in Dynamics 365 Contact Center und Customer Service, über die Admins und Supervisoren autonome Agenten sicher einführen, Wirkung überwachen und Entscheidungen treffen. Autonome Service-Agenten: Customer Intent Agent (entdeckt Intents aus Fällen und Gesprächen), Case Management Agent (automatisiert Create, Update, Resolve, Close), Customer Knowledge Management Agent und Quality Evaluation Agent. Dazu Copilot in Contact Center mit Echtzeit-Assistenz.",
+    "source": {
+      "title": "Design AI solutions for Dynamics 365 Customer Service",
+      "url": "https://learn.microsoft.com/en-us/training/modules/orchestrate-configuration-prebuilt-agents-apps/3-design-ai-solutions-dynamics-365-apps-customer-experience-service"
+    }
+  },
+  {
+    "id": "ai-experience-models",
+    "term": "Sidecar, embedded, and automated AI experiences",
+    "aliases": [
+      "sidecar",
+      "sidecar Copilot",
+      "embedded AI",
+      "embedded intelligent features",
+      "automated AI behaviors",
+      "outside orchestration",
+      "external orchestration"
+    ],
+    "definition": "Erlebnismodelle für KI in Dynamics 365: Sidecar/Conversational (Chat neben der App: Fragen, Zusammenfassungen, Chat mit Daten, Generative Help), Embedded (direkt in Formularen, Timelines, Workspace-Seiten; analysiert Seitenkontext und schlägt proaktiv vor, z. B. PO-Änderungsanalyse) und Automated/Outside (Routing, Sentiment-Tagging, Eskalations-Trigger bzw. externe Agenten über Dataverse/APIs, Cross-App-Automation, Teams-Copilots).",
+    "source": {
+      "title": "Orchestrate AI features in Dynamics 365 Finance and Supply Chain",
+      "url": "https://learn.microsoft.com/en-us/training/modules/orchestrate-configuration-prebuilt-agents-apps/2-orchestrate-ai-features-dynamics-365-apps-finance-supply-chain"
+    }
+  },
+  {
+    "id": "agent-readiness-checklist",
+    "term": "Agent readiness checklist",
+    "aliases": [
+      "readiness checklist",
+      "runs-as",
+      "Agent Management Essentials"
+    ],
+    "definition": "Preflight-Liste vor dem Vorschlag eines Microsoft-365-Agenten: Business value (Owner, Nutzer, messbares Outcome, Definition of Done), Identity & access (Runs-as-Modell, Least Privilege), Data scope (Corpus, Labels, Zugriff), Actions & tools (Fehlerpfade, Freigabepunkte), Security & compliance (DLP, eDiscovery, Logging), Change control (Versionierung, Rollout-Rings, Rollback, Sunset), Measurement (Telemetrie) und Support (Runbook, Ethik-Review). Ergänzt um Agent Management Essentials und Lizenz-/Langfristkosten. Leitsatz: „Treat an agent like a product, not a prompt.“",
+    "source": {
+      "title": "Propose Microsoft 365 agents for business scenarios",
+      "url": "https://learn.microsoft.com/en-us/training/modules/orchestrate-configuration-prebuilt-agents-apps/4-propose-microsoft-365-agents-business-scenarios"
+    }
+  },
+  {
+    "id": "raci",
+    "term": "RACI matrix",
+    "aliases": [
+      "RACI",
+      "RACI chart",
+      "Responsible, Accountable, Consulted, Informed",
+      "accountable"
+    ],
+    "definition": "Projektwerkzeug zur Zuordnung von Verantwortlichkeiten: Responsible (führt aus), Accountable (letztverantwortlich; genau einer je Aufgabe), Consulted (Fachexperten, zweiseitig), Informed (einseitig informiert). Baseline für Microsoft-365-Agenten: Product Owner accountable für Triage, Data Scoping, Guardrails, Telemetrie und Change Control; Architekt responsible für Triage, Connector-Setup, Telemetrie; Security/Compliance responsible für Labels und Guardrails.",
+    "source": {
+      "title": "Propose Microsoft 365 agents for business scenarios",
+      "url": "https://learn.microsoft.com/en-us/training/modules/orchestrate-configuration-prebuilt-agents-apps/4-propose-microsoft-365-agents-business-scenarios"
+    }
+  },
+  {
+    "id": "starter-kpi-set",
+    "term": "Starter KPI set for agent pilots",
+    "aliases": [
+      "pilot KPIs",
+      "acceptance rate",
+      "human acceptance rate"
+    ],
+    "definition": "Messgrößen für Agenten-Piloten: Adoption (wöchentlich aktive Nutzer ≥ 30 % der Zielkohorte), Quality (menschliche Akzeptanz des ersten Outputs ≥ 70 %), Speed (mediane Zeitersparnis je Task ≥ 25 %), Safety (Policy-Verstöße je 1.000 Runs ≤ 1) und Cost (Token/Verbrauch je erfolgreichem Outcome Baseline ± 10 %).",
+    "source": {
+      "title": "Propose Microsoft 365 agents for business scenarios",
+      "url": "https://learn.microsoft.com/en-us/training/modules/orchestrate-configuration-prebuilt-agents-apps/4-propose-microsoft-365-agents-business-scenarios"
+    }
+  },
+  {
+    "id": "copilot-for-sales-service",
+    "term": "Microsoft 365 Copilot for Sales and Service",
+    "aliases": [
+      "Copilot for Sales",
+      "Copilot for Service"
+    ],
+    "definition": "Copilot-Erlebnisse für Verkäufer und Service-Mitarbeiter: Kontext aus E-Mails, CRM, Meetings und Dokumenten abrufen, Interaktionen zusammenfassen, Antworten/Angebote/Lösungsschritte generieren, Workflows über Power Platform orchestrieren. Voraussetzungen: synchronisierte CRM-Quellen, vollständige standardisierte Felder, Sensitivity Labels, rollenbasierte Sichtbarkeit; Guardrails: Labels, DLP, Audit Trails, Residency, menschliche Prüfung vor externem Versand, Versionierung/Rollback, Telemetrie.",
+    "source": {
+      "title": "Orchestrate and configure Microsoft 365 Copilot for sales and service",
+      "url": "https://learn.microsoft.com/en-us/training/modules/orchestrate-configuration-prebuilt-agents-apps/5-orchestrate-configuration-microsoft-365-copilot-sales-service"
+    }
+  },
+  {
+    "id": "ai-hub",
+    "term": "AI hub",
+    "aliases": [
+      "AI Hub",
+      "Power Platform AI features"
+    ],
+    "definition": "Zentraler Arbeitsbereich in Power Platform, der KI-Funktionen über Power Apps, Power Automate und Copilot Studio bündelt, Modelle, Connectors und Copilots governed verwaltet und geführte Pfade für KI-Apps und -Flows bietet. Feature-Matrix: Textgenerierung und Automation-Erstellung → Copilot/AI Hub; Prediction und Dokumentextraktion → AI Builder/AI Hub; Conversational Agent → Copilot Studio.",
+    "source": {
+      "title": "Propose Microsoft Power Platform AI features",
+      "url": "https://learn.microsoft.com/en-us/training/modules/orchestrate-configuration-prebuilt-agents-apps/6-propose-microsoft-power-platform-ai-features-ai-hub"
+    }
+  },
+  {
+    "id": "copilot-client-plugins",
+    "term": "Copilot client plugins",
+    "aliases": [
+      "client plugins",
+      "client plugin",
+      "client actions",
+      "X++",
+      "application context"
+    ],
+    "definition": "Plugins für Copilot in Dynamics 365 Finance & Operations, die Client-Code im Kontext der Client-Experience aufrufen: Daten abrufen, Aktionen ausführen, Workflows auslösen, externe Systeme einbinden, nach F&O zurückschreiben. Sie werden über den Copilot-Chatbot mit einer X++-Methode in der Anwendung erstellt und müssen F&O-Sicherheitsrollen respektieren. Application Context liefert dem Sidecar den Arbeitskontext des Nutzers.",
+    "source": {
+      "title": "Orchestrate AI features in Dynamics 365 Finance and Supply Chain",
+      "url": "https://learn.microsoft.com/en-us/training/modules/orchestrate-configuration-prebuilt-agents-apps/2-orchestrate-ai-features-dynamics-365-apps-finance-supply-chain"
+    }
+  },
+  {
+    "id": "in-app-help-knowledge",
+    "term": "Knowledge sources for in-app help",
+    "aliases": [
+      "in-app help",
+      "generative help",
+      "general knowledge"
+    ],
+    "definition": "Copilot-gestützte Hilfe in Dynamics 365 Finance und Supply Chain, angereichert über Copilot Studio (Agents → Knowledge → Add knowledge → Ready → Publish). Unterstützt: PDF/RTF/Word mit validierten Prozessen, Knowledge Articles, Task Guides, Policy-Dokumente. Nicht empfohlen/unsupported: Dataverse Virtual Entities aus F&O, produktfremde Inhalte, sensible unklassifizierte Daten. General Knowledge (LLM) nur aktivieren, wenn Nutzen den Risiken standhält; bei regulatorischen/finanziellen Workflows einschränken. Governance: Versionierung, Labels/DLP, Review je Release Wave.",
+    "source": {
+      "title": "Recommend process knowledge sources for in-app help in Dynamics 365",
+      "url": "https://learn.microsoft.com/en-us/training/modules/orchestrate-configuration-prebuilt-agents-apps/8-process-knowledge-sources-dynamics-365-finance-supply-chain-management"
+    }
+  },
+  {
+    "id": "monitoring-layers",
+    "term": "Multilayered monitoring",
+    "aliases": [
+      "operational health",
+      "usage insights",
+      "quality and output accuracy",
+      "monitoring operating model",
+      "threshold alerts"
+    ],
+    "definition": "Monitoring von Agenten über fünf Ebenen: Operational Health (Uptime, Fehler, Throttling, Verzögerungen), Performance Metrics (Antwortzeiten, Erfolgsraten, Tool-Zuverlässigkeit, Workflow-Abschluss), Quality & Output Accuracy, Usage Insights (Volumen, Adoption, Feature-Nutzung) und Risk/Compliance/Security (Guardrail-Verstöße, sensible Daten, Anomalien). Operating Model: Rollen, Incident-Workflows, standardisierte Metriken mit Baseline, Log-Review-Kadenz, Change Management; Guardrails und Schwellen-Alerts; regelmäßige Qualitätsevaluationen.",
+    "source": {
+      "title": "Recommend process tools for monitoring agents",
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-monitor-tune-ai-powered-business-solutions/2-recommend-process-tools-monitoring-agents"
+    }
+  },
+  {
+    "id": "monitoring-tools",
+    "term": "Monitoring tools for AI agents",
+    "aliases": [
+      "Azure Monitor",
+      "Log Analytics",
+      "KQL",
+      "Microsoft 365 Admin Analytics",
+      "Power Platform Admin Center",
+      "Power Platform admin center",
+      "Copilot analytics",
+      "observability platform"
+    ],
+    "definition": "Empfohlene Toolsets: Azure Monitor (Telemetrie, Dashboards, Alerts, Log Analytics, KQL für Diagnosen), Microsoft 365 Admin Analytics (Nutzung, Adoption, Abteilungen mit geringer Nutzung), Copilot & Agent Dashboards (Aufrufe, Task-Trends, Queries, Guardrail-Events), Power Platform Admin Center (Umgebungsgesundheit, Connector-Limits, Flow-Telemetrie, DLP-Auswirkung), Foundry-/Observability-Plattformen (Single Pane of Glass) und eigene Power-BI-Dashboards.",
+    "source": {
+      "title": "Recommend process tools for monitoring agents",
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-monitor-tune-ai-powered-business-solutions/2-recommend-process-tools-monitoring-agents"
+    }
+  },
+  {
+    "id": "backlog-categories",
+    "term": "Backlog categories",
+    "aliases": [
+      "backlog",
+      "backlog analysis",
+      "impact-effort matrix",
+      "user feedback funnel"
+    ],
+    "definition": "Strukturierung von Backlog und Nutzerfeedback nach Domänen: Accuracy & Reasoning, Knowledge, Performance, User Experience, Integration und Governance & Compliance; Priorisierung über eine Impact-Effort-Matrix; Feedback-Signale nach Häufigkeit, Schwere und Sentiment. Feedback-to-Improvement-Pipeline: konsolidieren → an Strategie ausrichten → messbare Outcomes → Releases → validieren → Drift/Regression überwachen.",
+    "source": {
+      "title": "Analyze backlog and user feedback for AI agent usage",
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-monitor-tune-ai-powered-business-solutions/3-analyze-backlog-user-feedback-ai-agent-usage"
+    }
+  },
+  {
+    "id": "conversation-transcripts",
+    "term": "Conversation transcripts",
+    "aliases": [
+      "transcripts",
+      "transcript review",
+      "transcript analysis"
+    ],
+    "definition": "Gesprächsprotokolle, die Root Causes sichtbar machen, die in Telemetrie fehlen: missverstandene Intents, Abbruchstellen, falsche Reasoning-Schritte, fehlendes Wissen, nötige menschliche Eingriffe. Review-Framework: Nutzerziel → Systeminterpretation → Output vs. Erwartung → Friction Points → Verbesserungen (Wissen, Verhalten, Workflow).",
+    "source": {
+      "title": "Apply AI-based tools to analyze, identify issues, and perform tuning",
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-monitor-tune-ai-powered-business-solutions/4-apply-ai-based-tools-analyze-identify-issues-perform-tuning"
+    }
+  },
+  {
+    "id": "tuning-strategies",
+    "term": "Tuning strategies",
+    "aliases": [
+      "knowledge tuning",
+      "behavioral tuning",
+      "performance tuning",
+      "governance-aligned tuning",
+      "tuning"
+    ],
+    "definition": "Vier Tuning-Ebenen: Knowledge (Inhalte ergänzen, aktualisieren, strukturieren), Behavioral (Orchestrierung, klärende Anweisungen, Fallback-Strategien), Performance (Connectors, unnötige Schritte, Payloads) und Governance-aligned (DLP, Labels, Zugriffsregeln prüfen; Logging/Auditing nach Änderungen intakt). Issue Mapping: falsche Antworten → Wissen; langsam → Workflow; blockiert → Governance; unerwartet → Instructions; Restarts → Integration.",
+    "source": {
+      "title": "Apply AI-based tools to analyze, identify issues, and perform tuning",
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-monitor-tune-ai-powered-business-solutions/4-apply-ai-based-tools-analyze-identify-issues-perform-tuning"
+    }
+  },
+  {
+    "id": "performance-metrics",
+    "term": "Agent performance metrics",
+    "aliases": [
+      "operational metrics",
+      "quality and reasoning metrics",
+      "user-centered metrics",
+      "task completion rate",
+      "abandonment rate",
+      "knowledge coverage",
+      "action effectiveness",
+      "throughput",
+      "error rate"
+    ],
+    "definition": "Baseline-Indikatoren: Operational (Latenz, Throughput, Fehlerrate, Ressourcen-/Token-Verbrauch), Quality & Reasoning (Response Accuracy, Knowledge Coverage, Action Effectiveness) und User-Centered (Satisfaction, Abandonment Rate, Task Completion Rate – der beste Indikator für Nutzererfolg).",
+    "source": {
+      "title": "Monitor AI agent performance metrics",
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-monitor-tune-ai-powered-business-solutions/5-monitor-agent-performance-metrics"
+    }
+  },
+  {
+    "id": "model-drift",
+    "term": "Model drift",
+    "aliases": [
+      "drift",
+      "data drift",
+      "prediction drift",
+      "drift detection",
+      "drift indicators"
+    ],
+    "definition": "Verschiebung modellgetriebenen Verhaltens über die Zeit trotz stabiler Agentenlogik: veränderte Antwortmuster, sinkende Genauigkeit bei wiederkehrenden Aufgaben, mehr Halluzinationen oder Off-Topic. Data Drift = Eingabeverteilung weicht von Trainingsdaten ab; Prediction Drift = Genauigkeit ändert sich. Baselines je Release, Schwellen, automatisches Incident-Routing an den Data Owner, Re-Evaluation gegen Golden Sets.",
+    "source": {
+      "title": "Monitor AI agent performance metrics",
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-monitor-tune-ai-powered-business-solutions/5-monitor-agent-performance-metrics"
+    }
+  },
+  {
+    "id": "telemetry",
+    "term": "Telemetry",
+    "aliases": [
+      "operational telemetry",
+      "behavioral telemetry",
+      "model-level telemetry",
+      "token usage",
+      "token consumption",
+      "performance signal map"
+    ],
+    "definition": "Echtzeitdaten über Systemverhalten in vier Kategorien: Operational (Latenz, Throughput, Fehler, Throttling), Model-level (Token-Nutzung/Kosten, Konsistenz, Drift), Behavioral (Zufriedenheit, Abschluss, Prompt-Muster, Abbrüche) und Governance (Guardrail-Eingriffe, blockierte Aktionen, Label-Konflikte). Muster statt Einzelereignisse; Signal Map: Latenz → Workflow/Cache; Token → Prompt-Muster; Fehler → Abhängigkeiten; Qualität → Wissen; Guardrails → Governance. Diagnose: Baseline → Anomalien → Korrelation → Root Cause → Tuning → Validierung.",
+    "source": {
+      "title": "Interpret telemetry data to tune AI performance",
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-monitor-tune-ai-powered-business-solutions/6-interpret-telemetry-data-performance-model-tuning"
+    }
+  },
+  {
+    "id": "agent-testing-framework",
+    "term": "Agent testing framework",
+    "aliases": [
+      "test plan",
+      "scenario-based testing",
+      "performance and reliability testing",
+      "safety and compliance testing",
+      "usability testing",
+      "testing blueprint"
+    ],
+    "definition": "Strukturierter Testprozess vor Produktion: Testziel, Testplan (Scope, Daten, Rollen, messbare Erfolgskriterien), Testarten Scenario-based (reale Workflows, mehrdeutige Eingaben, Multi-Turn), Performance/Reliability (Last, lange Interaktionen, Concurrency), Safety/Compliance (sensible Daten, RBAC, DLP, Ablehnung verbotener Anweisungen) und Usability. Metriken: Accuracy, Response Time, Success/Failure Rate, Token Efficiency, Satisfaction, Conversation Quality, Knowledge Coverage, Stability, Load, Guardrail Compliance. Lifecycle: Planning → Scenario Design → Execution → Measurement → Analysis → Tuning → Re-Test → Approval → Deployment.",
+    "source": {
+      "title": "Recommend process metrics for testing AI agents",
+      "url": "https://learn.microsoft.com/en-us/training/modules/manage-testing-ai-powered-business-solutions/2-recommend-process-metrics-test-agents"
+    }
+  },
+  {
+    "id": "model-validation-criteria",
+    "term": "Validation criteria for custom models",
+    "aliases": [
+      "validation criteria",
+      "incorrect information rate",
+      "grounding integrity",
+      "consistency of reasoning",
+      "resilience",
+      "operational validation"
+    ],
+    "definition": "Quantitativ: Accuracy Rate, Latenz, Throughput, Fehlerrate, Token Efficiency, Drift-Indikatoren. Qualitativ: Relevance & Completeness, Consistency of Reasoning, Grounding Integrity (nur freigegebenes Wissen), UX-Qualität. Safety: RBAC, DLP, verbotene Inhalte, Auditierbarkeit, Human-in-the-loop. Operativ: Scalability, Resilience (Erholung von Fehlern/Timeouts), Integration Reliability, Monitoring Support. Beispielschwellen: Latenz < 2 s, Accuracy ≥ 90 %, Incorrect Information ≤ 3 %, Guardrail Violations 0, Satisfaction ≥ 4,5/5.",
+    "source": {
+      "title": "Create validation criteria for custom AI models",
+      "url": "https://learn.microsoft.com/en-us/training/modules/manage-testing-ai-powered-business-solutions/3-create-validation-criteria-custom-ai-models"
+    }
+  },
+  {
+    "id": "prompt-validation",
+    "term": "Prompt validation",
+    "aliases": [
+      "prompt validation lifecycle",
+      "A/B prompt testing",
+      "A/B testing",
+      "prompt quality metrics"
+    ],
+    "definition": "Prüfung von Copilot-Prompts als wiederverwendbare Systemkomponenten: Outcome-Erwartung definieren, Klarheit („Would two different users interpret this the same way?“), Grounding, Constraints (Ton, Länge, Format, Ausschlüsse), Sicherheit, Multi-Szenario-Tests. Metriken: Accuracy, Consistency, Relevance, Format Compliance, Tone Alignment; weniger Re-Prompts und Klärungen. Methoden: A/B Prompt Testing, Szenario-Tests über Nutzertypen, strukturierte Checkliste. Muster: Goal + Context + Constraints, Aktionsverben, „what not to include“.",
+    "source": {
+      "title": "Validate effective Copilot prompt best practices",
+      "url": "https://learn.microsoft.com/en-us/training/modules/manage-testing-ai-powered-business-solutions/4-validate-effective-copilot-prompt-best-practices"
+    }
+  },
+  {
+    "id": "e2e-testing",
+    "term": "End-to-end test scenarios",
+    "aliases": [
+      "E2E",
+      "end-to-end testing",
+      "E2E testing",
+      "order-to-cash",
+      "case-to-resolution"
+    ],
+    "definition": "Tests, die den gesamten Geschäftsprozess über mehrere Dynamics-365-Apps validieren (z. B. Order-to-Cash: Sales → Finance → Customer Service; Case-to-Resolution: Customer Service → Field Service) statt einzelner Module: Datensync über Entitäten, KI-Vorhersagen aus Multi-App-Daten, Automationen, Connectors, Sicherheitsrollen. Struktur: Preconditions, Schritte, AI-Aktion, Cross-App-Datenbewegung, Post-Condition, Ausnahme-/Negativtests; funktionale, nicht-funktionale und Outcome-Validierung.",
+    "source": {
+      "title": "Design end-to-end test scenarios for AI solutions using multiple Dynamics 365 apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/manage-testing-ai-powered-business-solutions/5-design-test-scenarios-ai-solutions-multiple-dynamics-365-apps"
+    }
+  },
+  {
+    "id": "test-case-blueprint",
+    "term": "Test case blueprint",
+    "aliases": [
+      "test case template",
+      "Copilot-generated test cases",
+      "test maturity ladder",
+      "regression triggers"
+    ],
+    "definition": "Vorlage, mit der Copilot vorhersehbare, hochwertige Testfälle erzeugt: Test ID, Purpose, Preconditions, Inputs, Steps, Expected Results, Edge Case Variations, Dependencies. Prompts mit Goal, Context, Constraints, Quality Expectations; Review nach Completeness, Accuracy, Clarity, Maintainability. Skalierung: Prompt-Bibliothek, Versionskontrolle, CI/CD-Integration, Regression-Trigger; Reifeleiter von Ad-hoc bis Enterprise-Governance.",
+    "source": {
+      "title": "Build a strategy for creating test cases using Copilot",
+      "url": "https://learn.microsoft.com/en-us/training/modules/manage-testing-ai-powered-business-solutions/6-build-strategy-creating-test-cases-using-copilot"
+    }
+  },
+  {
+    "id": "alm",
+    "term": "Application lifecycle management",
+    "aliases": [
+      "ALM",
+      "ALM process",
+      "ALM processes",
+      "promotion gates",
+      "promotion gate",
+      "managed solutions",
+      "managed solution",
+      "solution layering",
+      "Dev → Test → Prod"
+    ],
+    "definition": "Disziplinierter Lebenszyklus für KI-Lösungen über Code, Daten, Prompts, Connectors und Modellkonfigurationen hinweg mit getrennten Umgebungen (Dev → Test → Pre-Prod → Prod), Versionierung, Lineage, Sensitivity Labels, Evaluationsgates und Residency-Anforderungen. Copilot Studio: mindestens Dev/Test/Prod, keine Direktbearbeitung in Prod, Managed Solutions nur in Test/Prod, Solution Layering, Source Control für exportierte Lösungen, Release-Kadenz, Rollback.",
+    "source": {
+      "title": "Design an ALM process for Copilot Studio agents, connectors, and actions",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-alm-process-ai-powered-business-solutions/3-design-alm-process-copilot-studio-agents-connectors-actions"
+    }
+  },
+  {
+    "id": "ai-data-alm-artifacts",
+    "term": "AI data ALM artifacts",
+    "aliases": [
+      "golden sets",
+      "golden set",
+      "golden datasets",
+      "evaluation datasets",
+      "data contract",
+      "data contracts",
+      "lineage",
+      "data catalog"
+    ],
+    "definition": "Als versionierte, promotbare Artefakte zu behandeln: Trainings-/Fine-Tuning-Datasets, Evaluations-/Golden-Sets für Regressionstests, Grounding-Wissen, Prompt-Assets, Policies/Guardrails und Run-Telemetrie mit Feedback. Phasen: Plan & Catalog (Data Contract, Labels) → Ingest & Prepare (Profiling, Lineage, Schema-Versionen, Hashes) → Develop & Evaluate (nie auf Produktionswissen trainieren) → Stage & Approve (Reviews, Canary, Gold einfrieren) → Deploy & Serve → Operate & Monitor → Evolve & Retire.",
+    "source": {
+      "title": "Design an ALM process for data used in AI models and agents",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-alm-process-ai-powered-business-solutions/2-design-alm-process-data-used-ai-models-agents"
+    }
+  },
+  {
+    "id": "red-gold-datasets",
+    "term": "Red and gold datasets",
+    "aliases": [
+      "red-gold pattern",
+      "gold datasets",
+      "red data",
+      "gold data",
+      "immutability attestation"
+    ],
+    "definition": "Umgebungsmuster für KI-Daten: Red = veränderliche, experimentelle Daten in Dev; Gold = eingefrorene, promovierte Datasets mit Immutability-Attestierung in Pre-Prod/Prod. Produktion läuft nur auf Gold; Promotion Gates verlangen Qualitätsreports, Bias-Checks, Lineage und Security-Signoff.",
+    "source": {
+      "title": "Design an ALM process for data used in AI models and agents",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-alm-process-ai-powered-business-solutions/2-design-alm-process-data-used-ai-models-agents"
+    }
+  },
+  {
+    "id": "canary-testing",
+    "term": "Canary testing",
+    "aliases": [
+      "canary runs",
+      "canary"
+    ],
+    "definition": "Risikoarme Deployment-Strategie, die neuen Code oder neue Daten zuerst an eine kleine, isolierte Teilmenge von Nutzern oder Servern freigibt, um Probleme vor dem vollständigen Rollout zu erkennen; in der Stage-&-Approve-Phase mit maskierten, produktionsähnlichen Daten.",
+    "source": {
+      "title": "Design an ALM process for data used in AI models and agents",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-alm-process-ai-powered-business-solutions/2-design-alm-process-data-used-ai-models-agents"
+    }
+  },
+  {
+    "id": "data-residency",
+    "term": "Data residency",
+    "aliases": [
+      "residency",
+      "data sovereignty",
+      "cross-region",
+      "in-region",
+      "data movement",
+      "overflow processing"
+    ],
+    "definition": "Geografischer Speicher- und Verarbeitungsort von Kundendaten. Für Copilot und Power Platform dokumentieren, wo Prompts/Outputs verarbeitet werden und wann Cross-Region-Kapazität nötig ist; in regulierten Szenarien In-Region als Default und Overflow nur mit expliziter Freigabe (Entscheidungsbaum: Kapazität vorhanden? sonst Overflow für Workload-Stufe erlaubt? sonst blockieren/verschieben). Copilot Studio: Verarbeitungsort der Prompts, Regeln für unveröffentlichte/Preview-Features, Speicherung bei Connectors/Plugins, Cross-Region-Interaktionen prüfen; Purview-Labels und DLP ergänzen.",
+    "source": {
+      "title": "Validate data residency and movement compliance",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-responsible-ai-security-governance-risk-management-compliance/7-validate-data-residency-movement-compliance"
+    }
+  },
+  {
+    "id": "foundry-control-plane",
+    "term": "Foundry control plane",
+    "aliases": [
+      "control plane",
+      "Foundry activity logs",
+      "activity logs",
+      "diagnostics",
+      "tracing",
+      "correlation ID"
+    ],
+    "definition": "Zentrale Steuerebene in Foundry für Agentendefinitionen, Sicherheitskontext, Datenquellen und Laufzeitverhalten über Umgebungen hinweg. Audit: Activity Logs (Export nach Azure Monitor, Log Analytics, SIEM wie Sentinel) und Diagnostics/Tracing über Modellaufrufe, Pipelines und Tools; empfohlene Tracing-Felder: Correlation ID, Modellversion, nicht-sensible Input-Metadaten, Prompt-Kategorie, Latenz, Tool-Nutzung, Safety-Ergebnisse.",
+    "source": {
+      "title": "Design audit trails for changes to models and data",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-responsible-ai-security-governance-risk-management-compliance/9-design-audit-trails-changes-models-data"
+    }
+  },
+  {
+    "id": "model-card",
+    "term": "Model Card",
+    "aliases": [
+      "model cards",
+      "model/data card",
+      "data card"
+    ],
+    "definition": "Dokument aus der Evaluations- und Freigabephase eines Custom Models mit Metriken, Constraints und empfohlenen Nutzungsgrenzen; Pflichtbestandteil der Gate-Checkliste (Datenqualität, Metriken, Safety, Model Card, Governance-Freigaben, Rollback-Plan) und Teil der ALM-Dokumentation neben Data Contracts und Risk Assessments.",
+    "source": {
+      "title": "Design an ALM process for custom AI models",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-alm-process-ai-powered-business-solutions/5-design-alm-process-custom-ai-models"
+    }
+  },
+  {
+    "id": "hyperparameters",
+    "term": "Hyperparameters",
+    "definition": "Externe Konfigurationseinstellungen wie Lernrate, Batch-Größe oder Netzwerkschichten, die Struktur und Verhalten eines ML-Modells vor dem Training festlegen; als Model Work Product zu dokumentieren und zu versionieren.",
+    "source": {
+      "title": "Design an ALM process for AI in Dynamics 365 Finance and Supply Chain",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-alm-process-ai-powered-business-solutions/6-design-alm-process-ai-dynamics-365-apps-finance-supply-chain"
+    }
+  },
+  {
+    "id": "environment-variables",
+    "term": "Environment variables",
+    "aliases": [
+      "environment variable",
+      "connection references"
+    ],
+    "definition": "Lösungsbestandteile, die umgebungsspezifische Werte wie Endpunkte, Modellnamen, Connection Strings, API-Keys oder Vektorindex-Referenzen aus der Konfiguration herauslösen, damit dieselbe Lösung durch Dev, Test und Prod wandern kann; Teil der Release-Readiness-Checkliste.",
+    "source": {
+      "title": "Design an ALM process for AI in Dynamics 365 Finance and Supply Chain",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-alm-process-ai-powered-business-solutions/6-design-alm-process-ai-dynamics-365-apps-finance-supply-chain"
+    }
+  },
+  {
+    "id": "cab",
+    "term": "Change Advisory Board",
+    "aliases": [
+      "CAB",
+      "CAB approval",
+      "CAB reviews"
+    ],
+    "definition": "Gremium, das risikoreiche KI-Releases (z. B. geänderte Routing-Regeln oder Summarization-Prompts) vor der Produktion prüft; Teil von Audit & Traceability neben getrackten Prompt-Versionen, Entscheidungslogs, Mapping-Änderungen und Agent-Updates sowie der Gate-D→E-Freigabe im Daten-ALM.",
+    "source": {
+      "title": "Design ALM processes for AI in Dynamics 365 apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-alm-process-ai-powered-business-solutions/7-design-alm-process-ai-dynamics-365-apps-customer-experience-service"
+    }
+  },
+  {
+    "id": "managed-identity",
+    "term": "Managed identity",
+    "aliases": [
+      "managed identities",
+      "agent identity",
+      "least privilege",
+      "least-privilege",
+      "separation of duties"
+    ],
+    "definition": "Secret-freie Azure-Identität je Agent, Tool, Pipeline oder Modell-Endpunkt und je Umgebung, mit Ownership-Metadaten, Rotation und Least-Privilege-Rollen auf engster Scope-Ebene. Autorisierung: im Namen eines Nutzers dessen Berechtigungen propagieren, als Agent selbst eine Service-Rolle nur mit nötigen Aktionen. Separation of Duties zwischen Maker, Publisher, Environment Admin und Security Admin mit Freigaben für Produktion und risikoreiche Fähigkeiten.",
+    "source": {
+      "title": "Design security agents for Microsoft clouds",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-responsible-ai-security-governance-risk-management-compliance/2-design-security-agents"
+    }
+  },
+  {
+    "id": "dlp-sensitivity-labels",
+    "term": "DLP policies and sensitivity labels",
+    "aliases": [
+      "DLP",
+      "data loss prevention",
+      "sensitivity labels",
+      "sensitivity label",
+      "Purview",
+      "Microsoft Purview"
+    ],
+    "definition": "Data-Loss-Prevention-Richtlinien beschränken Connectors, Aktionen und Datenbewegung; Sensitivity Labels klassifizieren Wissensquellen und steuern, wie Informationen durch Agentenantworten wandern (höchstes Label anzeigen, Cross-Tenant/Cross-Region-Übertragung einschränken). Microsoft Purview liefert Labeling, DLP für Prompts und Outputs, Auditing und Policy Insights für Microsoft 365 Copilot.",
+    "source": {
+      "title": "Design security agents for Microsoft clouds",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-responsible-ai-security-governance-risk-management-compliance/2-design-security-agents"
+    }
+  },
+  {
+    "id": "red-teaming",
+    "term": "Red teaming",
+    "aliases": [
+      "red team",
+      "adversarial testing",
+      "AI threat protection",
+      "threat protection"
+    ],
+    "definition": "Adversariale Bewertung von Agenten vor der Produktion und nach größeren Änderungen; Releases werden erst nach Schließen der Findings freigegeben. Ergänzt KI-spezifische Threat Protection (Prompt-Manipulation, Leakage-Versuche, riskante Outputs), Input-/Output-Filter (Sanitizing, Größenlimits, Moderation) und Incident Response (Agent schnell deaktivieren, Logs sichern, Stakeholder informieren, Drills).",
+    "source": {
+      "title": "Design security agents for Microsoft clouds",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-responsible-ai-security-governance-risk-management-compliance/2-design-security-agents"
+    }
+  },
+  {
+    "id": "agent-registry",
+    "term": "Agent registry",
+    "aliases": [
+      "agent inventory",
+      "agent owner",
+      "AI asset inventory"
+    ],
+    "definition": "Autoritativer Katalog aller Agenten mit Owner, Version, Umgebung, Zweck, Risikostufe und Datenzugriff. Governance-Prinzip Accountability: ein Agent Owner je Agent (Lifecycle, Sicherheitslage, Freigaben), Publishing-Freigaben für Agenten mit sensiblen oder regulierten Daten, Ressourcen-Tagging für Kostenattribution.",
+    "source": {
+      "title": "Design governance models for AI agents",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-responsible-ai-security-governance-risk-management-compliance/3-design-governance-agents"
+    }
+  },
+  {
+    "id": "a2a",
+    "term": "Agent-to-Agent protocol",
+    "aliases": [
+      "A2A",
+      "Agent2Agent"
+    ],
+    "definition": "Offener Standard für kontrollierte Delegation und Kontextfreigabe zwischen Agenten; neben MCP (strukturierter Tool-/Datenzugriff) Teil der Entwicklungs- und Interoperabilitätsstandards, die ein Architekt dokumentiert (erlaubte externe Endpunkte freigeben).",
+    "source": {
+      "title": "Design security agents for Microsoft clouds",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-responsible-ai-security-governance-risk-management-compliance/2-design-security-agents"
+    }
+  },
+  {
+    "id": "model-hardening-blueprint",
+    "term": "Model hardening blueprint",
+    "aliases": [
+      "model security",
+      "model hardening",
+      "private endpoints",
+      "private endpoint",
+      "model poisoning",
+      "poisoning"
+    ],
+    "definition": "Fünf Schritte zur Absicherung von Modellen: Secure Compute, Private Endpoints, Threat Protection, Validation Pipeline, Monitoring and Drift Detection. Dazu Managed Identities und RBAC, getrennte Dev/Test/Prod-Endpunkte, Datenminimierung und Redaktion, Verschlüsselung und Residency, DLP auf Antworten, Lineage und Validierung neuer Daten gegen Poisoning, Incident Response (Endpunkt deaktivieren, Logs/Artefakte sichern, Rollback).",
+    "source": {
+      "title": "Design model security for responsible AI",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-responsible-ai-security-governance-risk-management-compliance/4-design-model-security"
+    }
+  },
+  {
+    "id": "prompt-manipulation",
+    "term": "Prompt manipulation",
+    "aliases": [
+      "prompt injection",
+      "prompt-injection",
+      "jailbreak",
+      "hidden instructions",
+      "embedded prompts"
+    ],
+    "definition": "Versuche, ein Modell von sicherem Verhalten abzubringen: Systemanweisungen überschreiben („ignore previous instructions“), täuschender Kontext, mehrstufige Koerzion, versteckte Anweisungen in Text, HTML oder Dateien. Folgen: Preisgabe sensibler Daten, unbeabsichtigte Aktionen, falsche Outputs, manipulierte Automationen. Mitigation: AI-Activity-Monitoring, regelmäßige Modellevaluation, Least Privilege und Managed Identities, Input-/Output-Filter (Code blockieren, HTML/eingebettete Prompts entfernen, Dateitypen begrenzen), Layered Defense.",
+    "source": {
+      "title": "Analyze AI vulnerabilities and mitigations for prompt manipulation",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-responsible-ai-security-governance-risk-management-compliance/5-analyze-solution-ai-vulnerabilities-mitigations-prompt-manipulation"
+    }
+  },
+  {
+    "id": "layered-defense",
+    "term": "Layered defense",
+    "aliases": [
+      "defense in depth",
+      "defense-in-depth",
+      "layered mitigations"
+    ],
+    "definition": "Mehrschichtiger Schutz gegen KI-Schwachstellen ohne Single Point of Failure: Identitäts- und Zugriffsgrenzen, sichere Data Governance, Modellevaluation und Tests, Monitoring und Anomalieerkennung sowie Incident-Response-Bereitschaft.",
+    "source": {
+      "title": "Analyze AI vulnerabilities and mitigations for prompt manipulation",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-responsible-ai-security-governance-risk-management-compliance/5-analyze-solution-ai-vulnerabilities-mitigations-prompt-manipulation"
+    }
+  },
+  {
+    "id": "rai-review",
+    "term": "Responsible AI review",
+    "aliases": [
+      "RAI review",
+      "RAI validation",
+      "structured review"
+    ],
+    "definition": "Wiederholbarer, interdisziplinärer Review (Engineering, Legal, Data Science, Compliance) entlang der sechs Prinzipien: Zweck und Intended Use, Daten/Privacy/Security (Klassifikation, Minimierung, Retention, PII), Modell-/Agentenverhalten (Fabrikation, Prompt-Adhärenz, Fallback), Fairness/Bias, Transparenz/UX (KI-Offenlegung, Grenzen, Eskalation, Feedback-Logging), RAI-Validierungstools und operative Oversight (Incident Plan, Drift, Governance Board, Sunset-Kriterien).",
+    "source": {
+      "title": "Review solution adherence to Responsible AI principles",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-responsible-ai-security-governance-risk-management-compliance/6-review-solution-adherence-responsible-ai-principles"
+    }
+  },
+  {
+    "id": "retrieval-access-flow",
+    "term": "Retrieval access flow",
+    "aliases": [
+      "access controls for grounding data",
+      "grounding data access",
+      "sanitization layer",
+      "model tuning access"
+    ],
+    "definition": "Zugriffskette für Grounding-Daten: Prompt → Policy Check → Search Index → Sanitization Layer → Model Context Injection, mit Connector-Autorisierung, strukturierten Query-Filtern, DLP/Labels und regionsgebundenen Regeln. Prinzipien: Least Privilege by default, rollenbezogene Datenpartitionen, Ownership, Auditierbarkeit. Model Tuning: getrennte Umgebungen, Freigabe neuer Trainingsdaten, Lineage, Security-Scanning, eingeschränkte Promotion; Guardrails wie Blocklists, Sanitization-Pipelines, Anomalie-Alerts.",
+    "source": {
+      "title": "Design access controls for grounding data and model tuning",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-responsible-ai-security-governance-risk-management-compliance/8-design-access-controls-ground-data-model-tune"
+    }
+  },
+  {
+    "id": "audit-trails",
+    "term": "Audit trails",
+    "aliases": [
+      "audit trail",
+      "audit logs",
+      "audit log",
+      "immutable logs",
+      "retention policies"
+    ],
+    "definition": "Kontinuierliche, unveränderliche, in die Control Plane integrierte Nachweise, wer was wann an Modellen, Daten, Prompts, Konfigurationen und Workflows geändert hat. Modellereignisse: Registrierung, Tuning, Promotion, Rollback, Deployment, Zugriffsversuche. Datenereignisse: Ingestion, Schema, Refresh, Label-Änderungen, Sanitization, Cross-Region-Bewegung, Zugriffe. Logs erfassen Metadaten statt Inhalte, sind zeitgestempelt, rollenattribuiert und JSON-strukturiert. Retention: 90 Tage (low risk), 12-24 Monate (reguliert), unbegrenzt für Incident-Archive.",
+    "source": {
+      "title": "Design audit trails for changes to models and data",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-responsible-ai-security-governance-risk-management-compliance/9-design-audit-trails-changes-models-data"
+    }
+  }
+]

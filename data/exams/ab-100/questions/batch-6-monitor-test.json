@@ -1,0 +1,1073 @@
+[
+  {
+    "id": "ab100-133",
+    "type": "matching",
+    "skillArea": "deploy",
+    "topic": "Monitoring layers",
+    "difficulty": "medium",
+    "prompt": "Match each monitoring observation to the layer of the multilayered monitoring approach described in the learning content.",
+    "left": [
+      {
+        "id": "l1",
+        "text": "Throttling conditions and processing delays"
+      },
+      {
+        "id": "l2",
+        "text": "Tool invocation reliability and workflow completion"
+      },
+      {
+        "id": "l3",
+        "text": "Generated actions deviate from expected business rules"
+      },
+      {
+        "id": "l4",
+        "text": "Guardrail violations and suspicious activity spikes"
+      }
+    ],
+    "right": [
+      {
+        "id": "r1",
+        "text": "Operational health"
+      },
+      {
+        "id": "r2",
+        "text": "Performance metrics"
+      },
+      {
+        "id": "r3",
+        "text": "Quality and output accuracy"
+      },
+      {
+        "id": "r4",
+        "text": "Risk, compliance, and security"
+      }
+    ],
+    "correct": {
+      "l1": "r1",
+      "l2": "r2",
+      "l3": "r3",
+      "l4": "r4"
+    },
+    "explanation": "Fünf Ebenen: Operational Health (Uptime, Fehler, Throttling), Performance Metrics (Antwortzeiten, Erfolgsraten, Tool-Zuverlässigkeit), Quality & Output Accuracy, Usage Insights (Volumen, Adoption) und Risk/Compliance/Security (Guardrails, sensible Daten, Anomalien).",
+    "source": {
+      "title": "Recommend process tools for monitoring agents",
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-monitor-tune-ai-powered-business-solutions/2-recommend-process-tools-monitoring-agents",
+      "quote": "Response times, success rates of actions, tool invocation reliability, workflow completion metrics."
+    }
+  },
+  {
+    "id": "ab100-134",
+    "type": "matching",
+    "skillArea": "deploy",
+    "topic": "Monitoring tools",
+    "difficulty": "medium",
+    "prompt": "Match each monitoring need to the tool the learning content recommends.",
+    "left": [
+      {
+        "id": "l1",
+        "text": "KQL-based diagnostics of connector failures and latency with alert rules"
+      },
+      {
+        "id": "l2",
+        "text": "Departments with low adoption and week-over-week engagement trends"
+      },
+      {
+        "id": "l3",
+        "text": "Environment health, connector limits, flow telemetry, and DLP rule impact"
+      },
+      {
+        "id": "l4",
+        "text": "A single-pane-of-glass view unifying multisystem logs and model execution insights"
+      }
+    ],
+    "right": [
+      {
+        "id": "r1",
+        "text": "Azure Monitor with Log Analytics"
+      },
+      {
+        "id": "r2",
+        "text": "Microsoft 365 Admin Analytics"
+      },
+      {
+        "id": "r3",
+        "text": "Power Platform Admin Center"
+      },
+      {
+        "id": "r4",
+        "text": "A Foundry or organizational observability platform"
+      }
+    ],
+    "correct": {
+      "l1": "r1",
+      "l2": "r2",
+      "l3": "r3",
+      "l4": "r4"
+    },
+    "explanation": "Azure Monitor: Telemetrie, Dashboards, Alerts, Log Analytics, KQL. M365 Admin Analytics: Nutzung und Adoption. Copilot & Agent Dashboards: Aufruffrequenz, Task-Trends. Power Platform Admin Center: Umgebungsgesundheit, Connector-Limits, Flow-Telemetrie, DLP. Observability-Plattformen: zentrale Sicht.",
+    "source": {
+      "title": "Recommend process tools for monitoring agents",
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-monitor-tune-ai-powered-business-solutions/2-recommend-process-tools-monitoring-agents",
+      "quote": "Build KQL-based queries for deep diagnostics."
+    }
+  },
+  {
+    "id": "ab100-135",
+    "type": "single-choice",
+    "skillArea": "deploy",
+    "topic": "Monitoring operating model",
+    "difficulty": "medium",
+    "prompt": "An enterprise has dashboards for its agents but incidents go unaddressed because nobody knows who owns them, and metrics are defined differently per team. Which component of the monitoring operating model in the learning content is missing?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Defined roles, standardized metric definitions with a baseline, incident response workflows, and a log review cadence"
+      },
+      {
+        "id": "b",
+        "text": "More GPU capacity for the agents' models and a higher token budget, so that latency-related incidents disappear"
+      },
+      {
+        "id": "c",
+        "text": "A larger prompt library with more templates and a prompt-review board, so that output quality incidents are reduced over time"
+      },
+      {
+        "id": "d",
+        "text": "Replacing Azure Monitor with a shared spreadsheet so that each team records incidents in the same place"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Das Monitoring Operating Model umfasst definierte Rollen (Ops, Product Owner, Data Engineers, Architekten), Incident-Response-Workflows, standardisierte Metriken mit Baseline, Log-Review-Kadenz, Change Management/Versionierung und dokumentierte Erwartungen an Agentenverhalten.",
+    "source": {
+      "title": "Recommend process tools for monitoring agents",
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-monitor-tune-ai-powered-business-solutions/2-recommend-process-tools-monitoring-agents",
+      "quote": "A strong operational model ensures consistency, ownership, and accountability."
+    }
+  },
+  {
+    "id": "ab100-136",
+    "type": "matching",
+    "skillArea": "deploy",
+    "topic": "Backlog categorization",
+    "difficulty": "medium",
+    "prompt": "Match each backlog item to the backlog category defined in the learning content.",
+    "left": [
+      {
+        "id": "l1",
+        "text": "Misinterpreted queries and missing context"
+      },
+      {
+        "id": "l2",
+        "text": "Outdated docs and missing domain articles"
+      },
+      {
+        "id": "l3",
+        "text": "API failures and broken actions"
+      },
+      {
+        "id": "l4",
+        "text": "Data access blocked and DLP alerts"
+      }
+    ],
+    "right": [
+      {
+        "id": "r1",
+        "text": "Accuracy"
+      },
+      {
+        "id": "r2",
+        "text": "Knowledge"
+      },
+      {
+        "id": "r3",
+        "text": "Integration"
+      },
+      {
+        "id": "r4",
+        "text": "Governance"
+      }
+    ],
+    "correct": {
+      "l1": "r1",
+      "l2": "r2",
+      "l3": "r3",
+      "l4": "r4"
+    },
+    "explanation": "Backlog-Kategorien: Accuracy & Reasoning, Knowledge, Performance (Latenz, Throttling), UX (verwirrende Flows), Integration (API, Connector-Limits) und Governance & Compliance (Guardrails, DLP).",
+    "source": {
+      "title": "Analyze backlog and user feedback for AI agent usage",
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-monitor-tune-ai-powered-business-solutions/3-analyze-backlog-user-feedback-ai-agent-usage",
+      "quote": "Integration Issues: API failures, connector limits, data access problems"
+    }
+  },
+  {
+    "id": "ab100-137",
+    "type": "single-choice",
+    "skillArea": "deploy",
+    "topic": "Using conversation transcripts",
+    "difficulty": "medium",
+    "prompt": "Telemetry shows a rising abandonment rate for a procurement agent, but the raw metrics do not explain why. Which source does the learning content recommend to find the root cause?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Conversation transcripts, which reveal misunderstood intent, abandonment points, incorrect reasoning, and missing knowledge"
+      },
+      {
+        "id": "b",
+        "text": "License consumption reports from the admin center, which show which users stopped using the agent and when"
+      },
+      {
+        "id": "c",
+        "text": "The model vendor's release notes, which list behavior changes that could explain the rise in abandoned procurement sessions"
+      },
+      {
+        "id": "d",
+        "text": "GPU utilization graphs and connector latency charts, which show whether slow responses are driving users away"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Transkripte zeigen Missverständnisse, Abbruchstellen, falsche Reasoning-Schritte, fehlendes Wissen und Fälle mit menschlichem Eingriff; Architekten extrahieren Failure Paths, mappen auf Root Causes und leiten Wissens-, Guardrail- oder Action-Anpassungen ab.",
+    "source": {
+      "title": "Analyze backlog and user feedback for AI agent usage",
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-monitor-tune-ai-powered-business-solutions/3-analyze-backlog-user-feedback-ai-agent-usage",
+      "quote": "Where users abandoned a flow"
+    }
+  },
+  {
+    "id": "ab100-138",
+    "type": "single-choice",
+    "skillArea": "deploy",
+    "topic": "Feedback-to-improvement pipeline",
+    "difficulty": "easy",
+    "prompt": "After consolidating backlog items and user feedback, what does the learning content say the architect should do before deploying improvement releases?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Align items to enterprise strategy and define measurable outcomes"
+      },
+      {
+        "id": "b",
+        "text": "Deploy each item immediately to maximize responsiveness to users"
+      },
+      {
+        "id": "c",
+        "text": "Discard low-volume feedback regardless of its severity"
+      },
+      {
+        "id": "d",
+        "text": "Freeze knowledge sources so that drift is prevented"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Feedback-to-Improvement-Pipeline: konsolidieren → an Strategie ausrichten → messbare Outcomes definieren → Releases erstellen und deployen → Verbesserungen validieren → Drift und Regression überwachen.",
+    "source": {
+      "title": "Analyze backlog and user feedback for AI agent usage",
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-monitor-tune-ai-powered-business-solutions/3-analyze-backlog-user-feedback-ai-agent-usage",
+      "quote": "Align items to enterprise strategy"
+    }
+  },
+  {
+    "id": "ab100-139",
+    "type": "matching",
+    "skillArea": "deploy",
+    "topic": "Issue mapping and tuning",
+    "difficulty": "medium",
+    "prompt": "Match each issue theme to the required tuning in the AI issue mapping chart from the learning content.",
+    "left": [
+      {
+        "id": "l1",
+        "text": "Incorrect responses caused by a knowledge gap"
+      },
+      {
+        "id": "l2",
+        "text": "Slow execution caused by workflow complexity"
+      },
+      {
+        "id": "l3",
+        "text": "Blocked actions caused by governance"
+      },
+      {
+        "id": "l4",
+        "text": "Unexpected behavior caused by model logic"
+      }
+    ],
+    "right": [
+      {
+        "id": "r1",
+        "text": "Add or update content"
+      },
+      {
+        "id": "r2",
+        "text": "Optimize steps"
+      },
+      {
+        "id": "r3",
+        "text": "Adjust roles or labels"
+      },
+      {
+        "id": "r4",
+        "text": "Refine agent instructions"
+      }
+    ],
+    "correct": {
+      "l1": "r1",
+      "l2": "r2",
+      "l3": "r3",
+      "l4": "r4"
+    },
+    "explanation": "AI Issue Mapping Chart: Incorrect responses → Knowledge gap → Content; Slow execution → Workflow complexity → Schritte optimieren; Blocked actions → Governance → Rollen/Labels; Unexpected behavior → Model logic → Instructions; Frequent restarts → Integration → API/Connector.",
+    "source": {
+      "title": "Apply AI-based tools to analyze, identify issues, and perform tuning",
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-monitor-tune-ai-powered-business-solutions/4-apply-ai-based-tools-analyze-identify-issues-perform-tuning",
+      "quote": "Refine agent instructions"
+    }
+  },
+  {
+    "id": "ab100-140",
+    "type": "ordering",
+    "skillArea": "deploy",
+    "topic": "Transcript review framework",
+    "difficulty": "medium",
+    "prompt": "Arrange the steps of the transcript review framework from the learning content in order.",
+    "items": [
+      {
+        "id": "i1",
+        "text": "Identify the triggering user goal"
+      },
+      {
+        "id": "i2",
+        "text": "Review system interpretation"
+      },
+      {
+        "id": "i3",
+        "text": "Compare output versus expected behavior"
+      },
+      {
+        "id": "i4",
+        "text": "Mark friction points"
+      },
+      {
+        "id": "i5",
+        "text": "Propose knowledge, behavior, or workflow improvements"
+      }
+    ],
+    "correctOrder": [
+      "i1",
+      "i2",
+      "i3",
+      "i4",
+      "i5"
+    ],
+    "explanation": "Transcript Review Framework: Nutzerziel → Systeminterpretation → Output vs. Erwartung → Friction Points markieren → Verbesserungen vorschlagen (Wissen, Verhalten, Workflow).",
+    "source": {
+      "title": "Apply AI-based tools to analyze, identify issues, and perform tuning",
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-monitor-tune-ai-powered-business-solutions/4-apply-ai-based-tools-analyze-identify-issues-perform-tuning",
+      "quote": "Compare output vs. expected behavior"
+    }
+  },
+  {
+    "id": "ab100-141",
+    "type": "single-choice",
+    "skillArea": "deploy",
+    "topic": "Governance-aligned tuning",
+    "difficulty": "hard",
+    "prompt": "After tuning an agent's knowledge and instructions, a team plans to ship the change immediately. Which governance-aligned tuning requirement from the learning content must still be verified?",
+    "options": [
+      {
+        "id": "a",
+        "text": "That logging and auditing remain intact and that DLP, sensitivity labels, and access rules still align with compliance"
+      },
+      {
+        "id": "b",
+        "text": "That the agent now uses a larger model to compensate for governance overhead introduced by the new instructions"
+      },
+      {
+        "id": "c",
+        "text": "That the guardrails are temporarily disabled during a measurement window to capture the agent's raw performance"
+      },
+      {
+        "id": "d",
+        "text": "That the change bypasses the test environment and goes straight to production to shorten the lead time"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Tuning-Ebenen: Knowledge, Behavioral, Performance und Governance-Aligned Tuning (DLP, Labels, Zugriffsregeln prüfen; Fähigkeiten mit Compliance abgleichen; Logging/Auditing nach Änderungen sicherstellen).",
+    "source": {
+      "title": "Apply AI-based tools to analyze, identify issues, and perform tuning",
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-monitor-tune-ai-powered-business-solutions/4-apply-ai-based-tools-analyze-identify-issues-perform-tuning",
+      "quote": "Ensure logging and auditing remain intact after changes."
+    }
+  },
+  {
+    "id": "ab100-142",
+    "type": "matching",
+    "skillArea": "deploy",
+    "topic": "Performance metric dimensions",
+    "difficulty": "easy",
+    "prompt": "Match each metric to the dimension in the baseline performance indicator set from the learning content.",
+    "left": [
+      {
+        "id": "l1",
+        "text": "Token consumption and compute utilization"
+      },
+      {
+        "id": "l2",
+        "text": "Completion of multistep tasks as intended"
+      },
+      {
+        "id": "l3",
+        "text": "Drop-off during agent workflows"
+      }
+    ],
+    "right": [
+      {
+        "id": "r1",
+        "text": "Operational metrics"
+      },
+      {
+        "id": "r2",
+        "text": "Quality and reasoning metrics"
+      },
+      {
+        "id": "r3",
+        "text": "User-centered metrics"
+      }
+    ],
+    "correct": {
+      "l1": "r1",
+      "l2": "r2",
+      "l3": "r3"
+    },
+    "explanation": "Operational: Latenz, Throughput, Fehlerrate, Ressourcen-/Token-Verbrauch. Quality & Reasoning: Response Accuracy, Knowledge Coverage, Action Effectiveness. User-Centered: Satisfaction, Abandonment Rate, Task Completion Rate.",
+    "source": {
+      "title": "Monitor AI agent performance metrics",
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-monitor-tune-ai-powered-business-solutions/5-monitor-agent-performance-metrics",
+      "quote": "Abandonment Rate - Dropoff during agent workflows."
+    }
+  },
+  {
+    "id": "ab100-143",
+    "type": "single-choice",
+    "skillArea": "deploy",
+    "topic": "Model drift signals",
+    "difficulty": "medium",
+    "prompt": "An agent's logic has not changed, yet recurring tasks show declining accuracy and more off-topic responses over several weeks. Which phenomenon does the learning content describe, and what should be monitored?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Model drift, indicated by shifts in response patterns, declining accuracy in recurring tasks, and more hallucination"
+      },
+      {
+        "id": "b",
+        "text": "Connector throttling, indicated by HTTP 429 responses, rising latency, and failed tool invocations in the run logs of the agent"
+      },
+      {
+        "id": "c",
+        "text": "License exhaustion, indicated by blocked sessions, capacity warnings in the admin center, and shorter conversations"
+      },
+      {
+        "id": "d",
+        "text": "DLP enforcement, indicated by blocked connectors, policy alerts, and fallback responses when actions are denied"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Auch bei stabiler Agentenlogik kann modellgetriebenes Verhalten driften: veränderte Antwortmuster, sinkende Genauigkeit bei wiederkehrenden Aufgaben, mehr Halluzinationen oder Off-Topic. Zusätzlich Token-Verbrauch und Reliability-Indikatoren beobachten.",
+    "source": {
+      "title": "Monitor AI agent performance metrics",
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-monitor-tune-ai-powered-business-solutions/5-monitor-agent-performance-metrics",
+      "quote": "Even when agent logic is stable, model-driven behavior can shift over time."
+    }
+  },
+  {
+    "id": "ab100-144",
+    "type": "single-choice",
+    "skillArea": "deploy",
+    "topic": "Best indicator of user success",
+    "difficulty": "easy",
+    "prompt": "Which user-centered metric does the module summary in the learning content call the best indicator of user success?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Task completion rate"
+      },
+      {
+        "id": "b",
+        "text": "Session count"
+      },
+      {
+        "id": "c",
+        "text": "Token consumption"
+      },
+      {
+        "id": "d",
+        "text": "Number of knowledge sources"
+      }
+    ],
+    "correct": "a",
+    "explanation": "User-centered metrics: Satisfaction, Abandonment Rate und Task Completion Rate, wobei letztere als bester Indikator für Nutzererfolg gilt.",
+    "source": {
+      "title": "Ensure reliable AI agent operations",
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-monitor-tune-ai-powered-business-solutions/8-module-summary",
+      "quote": "User centered metrics: satisfaction, abandonment rate, and task completion rate (the best indicator of user success)."
+    }
+  },
+  {
+    "id": "ab100-145",
+    "type": "matching",
+    "skillArea": "deploy",
+    "topic": "Performance signal map",
+    "difficulty": "medium",
+    "prompt": "Match each telemetry signal to the architect action in the performance signal map from the learning content.",
+    "left": [
+      {
+        "id": "l1",
+        "text": "Latency increase from model overload or connector lag"
+      },
+      {
+        "id": "l2",
+        "text": "High token usage from verbose outputs"
+      },
+      {
+        "id": "l3",
+        "text": "Error spike from an integration or API failure"
+      },
+      {
+        "id": "l4",
+        "text": "Quality drop from model drift or missing context"
+      }
+    ],
+    "right": [
+      {
+        "id": "r1",
+        "text": "Optimize the workflow and cache data"
+      },
+      {
+        "id": "r2",
+        "text": "Adjust prompt patterns"
+      },
+      {
+        "id": "r3",
+        "text": "Validate dependencies"
+      },
+      {
+        "id": "r4",
+        "text": "Update knowledge sources"
+      }
+    ],
+    "correct": {
+      "l1": "r1",
+      "l2": "r2",
+      "l3": "r3",
+      "l4": "r4"
+    },
+    "explanation": "Performance Signal Map: Latency → Workflow optimieren/cachen; Token Usage → Prompt-Muster; Error Spike → Abhängigkeiten validieren; Quality Drop → Wissensquellen; Guardrail Triggers → Governance-Regeln anpassen.",
+    "source": {
+      "title": "Interpret telemetry data to tune AI performance",
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-monitor-tune-ai-powered-business-solutions/6-interpret-telemetry-data-performance-model-tuning",
+      "quote": "Solution architects should focus on patterns, not isolated events."
+    }
+  },
+  {
+    "id": "ab100-146",
+    "type": "ordering",
+    "skillArea": "deploy",
+    "topic": "Telemetry-driven diagnosis workflow",
+    "difficulty": "medium",
+    "prompt": "Arrange the steps of the telemetry-driven diagnostic flow from the learning content.",
+    "items": [
+      {
+        "id": "i1",
+        "text": "Monitor key metrics to gather a baseline"
+      },
+      {
+        "id": "i2",
+        "text": "Identify anomalies"
+      },
+      {
+        "id": "i3",
+        "text": "Correlate related signals"
+      },
+      {
+        "id": "i4",
+        "text": "Determine root cause"
+      },
+      {
+        "id": "i5",
+        "text": "Apply targeted tuning"
+      },
+      {
+        "id": "i6",
+        "text": "Validate improvements by comparing before and after"
+      }
+    ],
+    "correctOrder": [
+      "i1",
+      "i2",
+      "i3",
+      "i4",
+      "i5",
+      "i6"
+    ],
+    "explanation": "Diagnostic Flow: Baseline → Anomalien → Signale korrelieren → Root Cause (Modell, Integration oder Prompt) → gezieltes Tuning → Validierung durch Vorher-Nachher-Vergleich.",
+    "source": {
+      "title": "Interpret telemetry data to tune AI performance",
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-monitor-tune-ai-powered-business-solutions/6-interpret-telemetry-data-performance-model-tuning",
+      "quote": "Compare beforeandafter telemetry patterns to ensure successful tuning."
+    }
+  },
+  {
+    "id": "ab100-147",
+    "type": "single-choice",
+    "skillArea": "deploy",
+    "topic": "Structured test plan",
+    "difficulty": "easy",
+    "prompt": "A QA lead drafts a test plan for a new agent that lists only the features to be tested. Which elements does the learning content say a complete agent testing plan must include?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Test scope, test data, test roles, and measurable success criteria"
+      },
+      {
+        "id": "b",
+        "text": "The list of topics, their trigger phrases, and the fallback topic"
+      },
+      {
+        "id": "c",
+        "text": "GPU quota, VNet design, model deployment names, and endpoint URLs"
+      },
+      {
+        "id": "d",
+        "text": "A marketing plan, a training video, and the executive sponsor's sign-off"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Testplan: Test Scope (Features, Workflows, Kanäle, Szenarien), Test Data (repräsentative Prompts, realistische Kontexte), Test Roles (wer testet, validiert, dokumentiert), Success Criteria (messbare Schwellen für Genauigkeit, Geschwindigkeit, Sicherheit, Usability).",
+    "source": {
+      "title": "Recommend process metrics for testing AI agents",
+      "url": "https://learn.microsoft.com/en-us/training/modules/manage-testing-ai-powered-business-solutions/2-recommend-process-metrics-test-agents",
+      "quote": "Success Criteria - measurable thresholds for accuracy, speed, safety, and usability."
+    }
+  },
+  {
+    "id": "ab100-148",
+    "type": "matching",
+    "skillArea": "deploy",
+    "topic": "Testing types for AI agents",
+    "difficulty": "medium",
+    "prompt": "Match each test activity to the testing type defined in the learning content.",
+    "left": [
+      {
+        "id": "l1",
+        "text": "Validate multi-turn reasoning with ambiguous and incomplete inputs from real workflows"
+      },
+      {
+        "id": "l2",
+        "text": "Run high request volumes, long interactions, and concurrent sessions"
+      },
+      {
+        "id": "l3",
+        "text": "Confirm the agent rejects disallowed instructions and respects DLP rules"
+      },
+      {
+        "id": "l4",
+        "text": "Check whether answers are concise and whether users understand how to prompt"
+      }
+    ],
+    "right": [
+      {
+        "id": "r1",
+        "text": "Scenario-based testing"
+      },
+      {
+        "id": "r2",
+        "text": "Performance and reliability testing"
+      },
+      {
+        "id": "r3",
+        "text": "Safety and compliance testing"
+      },
+      {
+        "id": "r4",
+        "text": "Usability testing"
+      }
+    ],
+    "correct": {
+      "l1": "r1",
+      "l2": "r2",
+      "l3": "r3",
+      "l4": "r4"
+    },
+    "explanation": "Vier Testarten: Scenario-based (reale Workflows, mehrdeutige Eingaben, Multi-Turn), Performance/Reliability (Last, lange Interaktionen, Concurrency), Safety/Compliance (sensible Daten, RBAC, DLP, Ablehnung verbotener Anweisungen), Usability (Klarheit, Hilfe, Prompt-Verständnis).",
+    "source": {
+      "title": "Recommend process metrics for testing AI agents",
+      "url": "https://learn.microsoft.com/en-us/training/modules/manage-testing-ai-powered-business-solutions/2-recommend-process-metrics-test-agents",
+      "quote": "Rejection of disallowed instructions."
+    }
+  },
+  {
+    "id": "ab100-149",
+    "type": "single-choice",
+    "skillArea": "deploy",
+    "topic": "Why AI testing differs",
+    "difficulty": "easy",
+    "prompt": "A test manager wants to reuse the deterministic regression suite from a classic CRM project for a generative agent. Why does the learning content say this is insufficient?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AI systems generate probabilistic outputs and rely on dynamic data sources, so traditional testing is not enough"
+      },
+      {
+        "id": "b",
+        "text": "Generative agents are not testable before production, because their behavior is defined by the model vendor"
+      },
+      {
+        "id": "c",
+        "text": "Regression suites are valid for Power Automate flows and topics, but agents are validated by user feedback alone"
+      },
+      {
+        "id": "d",
+        "text": "Agents are tested by the model vendor, and the organization is responsible for the CRM logic and the data"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Weil KI-Systeme probabilistische Outputs erzeugen und von dynamischen Datenquellen abhängen, reichen traditionelle Testmethoden nicht; nötig sind strukturierte Evaluationen über Szenarien, Datenquellen, Eingaben und Umgebungen.",
+    "source": {
+      "title": "Introduction (Manage testing AI-powered business solutions)",
+      "url": "https://learn.microsoft.com/en-us/training/modules/manage-testing-ai-powered-business-solutions/1-introduction",
+      "quote": "Because AI systems generate probabilistic outputs and rely on dynamic data sources, traditional testing methods aren't sufficient."
+    }
+  },
+  {
+    "id": "ab100-150",
+    "type": "single-choice",
+    "skillArea": "deploy",
+    "topic": "Validation thresholds for custom models",
+    "difficulty": "hard",
+    "prompt": "A custom model's validation report shows 92 percent accuracy, a 5 percent incorrect-information rate, zero guardrail violations, and 1.8-second latency. Against the example validation metrics in the learning content, which criterion fails?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The incorrect-information rate, which should be at most 3 percent"
+      },
+      {
+        "id": "b",
+        "text": "Accuracy, which should be at least 95 percent correctness"
+      },
+      {
+        "id": "c",
+        "text": "Latency, which should stay below 1 second at the 95th percentile"
+      },
+      {
+        "id": "d",
+        "text": "Guardrail violations, which may be up to 2 per evaluation run"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Beispiel-Schwellen: Latenz < 2 Sekunden, Throughput p95 stabil, Accuracy ≥ 90 %, Incorrect Information Rate ≤ 3 %, Guardrail Violations 0, Sensitive Output Detection 100 % blockiert, Token-Nutzung auf Baseline-Niveau, Satisfaction ≥ 4,5/5.",
+    "source": {
+      "title": "Create validation criteria for custom AI models",
+      "url": "https://learn.microsoft.com/en-us/training/modules/manage-testing-ai-powered-business-solutions/3-create-validation-criteria-custom-ai-models",
+      "quote": "Incorrect Information Rate"
+    }
+  },
+  {
+    "id": "ab100-151",
+    "type": "single-choice",
+    "skillArea": "deploy",
+    "topic": "Qualitative validation criteria",
+    "difficulty": "medium",
+    "prompt": "A custom model passes every numeric threshold but reviewers notice it sometimes cites documents outside the approved corpus and skips logical steps. Which qualitative validation criteria from the learning content capture these issues?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Grounding integrity and consistency of reasoning"
+      },
+      {
+        "id": "b",
+        "text": "Throughput and token efficiency under peak load conditions"
+      },
+      {
+        "id": "c",
+        "text": "Latency and error rates across the workflows"
+      },
+      {
+        "id": "d",
+        "text": "Scalability and resilience of the integration"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Qualitative Kriterien: Relevance & Completeness, Consistency of Reasoning (logische Schritte entlang der Workflows), Grounding Integrity (nur freigegebenes Organisationswissen), User Experience Quality. Quantitativ sind Accuracy, Latenz, Throughput, Fehlerrate, Token-Effizienz, Drift.",
+    "source": {
+      "title": "Create validation criteria for custom AI models",
+      "url": "https://learn.microsoft.com/en-us/training/modules/manage-testing-ai-powered-business-solutions/3-create-validation-criteria-custom-ai-models",
+      "quote": "Does the model use approved organizational knowledge?"
+    }
+  },
+  {
+    "id": "ab100-152",
+    "type": "single-choice",
+    "skillArea": "deploy",
+    "topic": "Operational validation",
+    "difficulty": "medium",
+    "prompt": "Which operational validation area from the learning content checks that a custom model recovers from timeouts and dependency interruptions?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Resilience"
+      },
+      {
+        "id": "b",
+        "text": "Scalability"
+      },
+      {
+        "id": "c",
+        "text": "Integration reliability"
+      },
+      {
+        "id": "d",
+        "text": "Monitoring support"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Operative Validierung: Scalability (stabil bei wechselnder Last), Resilience (Erholung von Fehlern, Timeouts, Abhängigkeitsausfällen), Integration Reliability (APIs, Connectors, Orchestrierung) und Monitoring Support (ausreichende Telemetrie).",
+    "source": {
+      "title": "Create validation criteria for custom AI models",
+      "url": "https://learn.microsoft.com/en-us/training/modules/manage-testing-ai-powered-business-solutions/3-create-validation-criteria-custom-ai-models",
+      "quote": "Resilience - Recovery from errors, timeouts, or dependency interruptions."
+    }
+  },
+  {
+    "id": "ab100-153",
+    "type": "single-choice",
+    "skillArea": "deploy",
+    "topic": "Prompt clarity validation",
+    "difficulty": "easy",
+    "prompt": "Which validation question does the learning content propose to check the clarity and specificity of an enterprise Copilot prompt?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Would two different users interpret this the same way?"
+      },
+      {
+        "id": "b",
+        "text": "Does the prompt stay under the recommended 500 words?"
+      },
+      {
+        "id": "c",
+        "text": "Does the prompt name the model version it was tested with?"
+      },
+      {
+        "id": "d",
+        "text": "Has the prompt been translated into each supported language?"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Validierungsschritte: Outcome-Erwartung definieren, Klarheit prüfen („Would two different users interpret this the same way?“), Grounding bewerten, Constraints validieren, auf Sicherheit prüfen, Multi-Szenario-Tests.",
+    "source": {
+      "title": "Validate effective Copilot prompt best practices",
+      "url": "https://learn.microsoft.com/en-us/training/modules/manage-testing-ai-powered-business-solutions/4-validate-effective-copilot-prompt-best-practices",
+      "quote": "A good validation question: \"Would two different users interpret this the same way?\""
+    }
+  },
+  {
+    "id": "ab100-154",
+    "type": "single-choice",
+    "skillArea": "deploy",
+    "topic": "A/B prompt testing",
+    "difficulty": "medium",
+    "prompt": "Two candidate prompts for an executive-summary task differ only in whether they add a \"what not to include\" exclusion list. Which validation method does the learning content recommend to decide between them, and what should be compared?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A/B prompt testing comparing output accuracy, clarity, relevance, and required follow-up prompts"
+      },
+      {
+        "id": "b",
+        "text": "Load testing comparing throughput and latency of both prompts at peak concurrency"
+      },
+      {
+        "id": "c",
+        "text": "Red teaming comparing jailbreak resistance of both prompts against adversarial inputs and injections"
+      },
+      {
+        "id": "d",
+        "text": "A user poll in which executives vote on which prompt reads better in the summary"
+      }
+    ],
+    "correct": "a",
+    "explanation": "A/B Prompt Testing vergleicht zwei Varianten nach Genauigkeit, Klarheit, Relevanz und nötigen Folge-Prompts; ergänzend Szenario-Tests über Nutzertypen und eine strukturierte Checkliste.",
+    "source": {
+      "title": "Validate effective Copilot prompt best practices",
+      "url": "https://learn.microsoft.com/en-us/training/modules/manage-testing-ai-powered-business-solutions/4-validate-effective-copilot-prompt-best-practices",
+      "quote": "Use two variations of the same prompt and compare:"
+    }
+  },
+  {
+    "id": "ab100-155",
+    "type": "single-choice",
+    "skillArea": "deploy",
+    "topic": "End-to-end testing across Dynamics 365 apps",
+    "difficulty": "medium",
+    "prompt": "An AI-assisted order-to-cash process spans Dynamics 365 Sales, Finance, and Supply Chain. The test lead proposes validating each app's AI feature in isolation. What does the learning content require instead?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Validate the entire business process end to end, including data sync, automations, connectors, security roles, and AI actions"
+      },
+      {
+        "id": "b",
+        "text": "Test the Sales app alone, because the lead is created there and the downstream apps inherit the validated data"
+      },
+      {
+        "id": "c",
+        "text": "Skip integration testing, because the Dynamics 365 apps share one Dataverse database and sync does not fail"
+      },
+      {
+        "id": "d",
+        "text": "Test the AI prediction service alone, because the apps are Microsoft-maintained and covered by the vendor's regression suite"
+      }
+    ],
+    "correct": "a",
+    "explanation": "E2E-Tests validieren den gesamten Prozess (z. B. Order-to-Cash, Case-to-Resolution), nicht einzelne Module: Datensync über Entitäten, Automationen, Connectors, Sicherheitsrollen, AI-Aktionen, Ausnahmepfade und Post-Condition-Validierung.",
+    "source": {
+      "title": "Design end-to-end test scenarios for AI solutions using multiple Dynamics 365 apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/manage-testing-ai-powered-business-solutions/5-design-test-scenarios-ai-solutions-multiple-dynamics-365-apps",
+      "quote": "Testing must validate the entire business process, not the individual modules alone."
+    }
+  },
+  {
+    "id": "ab100-156",
+    "type": "yes-no",
+    "skillArea": "deploy",
+    "topic": "E2E test scenario structure",
+    "difficulty": "medium",
+    "prompt": "A tester designs an E2E scenario for a multi-app AI solution. Evaluate each statement against the learning content.",
+    "statements": [
+      {
+        "id": "s1",
+        "text": "The scenario should include preconditions, step-by-step execution, the AI action triggered, cross-app data movement, post-condition validation, and exception paths.",
+        "correct": true
+      },
+      {
+        "id": "s2",
+        "text": "Non-functional validation includes latency across apps and failure recovery.",
+        "correct": true
+      },
+      {
+        "id": "s3",
+        "text": "Negative tests are unnecessary because AI handles unexpected inputs automatically.",
+        "correct": false
+      },
+      {
+        "id": "s4",
+        "text": "Only structured data scenarios need to be covered; unstructured data is out of scope.",
+        "correct": false
+      }
+    ],
+    "explanation": "Die Szenariostruktur umfasst Preconditions, Schritte, AI-Aktion, Cross-App-Datenbewegung, Post-Condition und Exception/Negative Tests; Non-functional: Latenz, Fehlerbehandlung, Konsistenz. Best Practices: strukturierte und unstrukturierte Daten, Normal- und Stresslast, regulatorische Constraints.",
+    "source": {
+      "title": "Design end-to-end test scenarios for AI solutions using multiple Dynamics 365 apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/manage-testing-ai-powered-business-solutions/5-design-test-scenarios-ai-solutions-multiple-dynamics-365-apps",
+      "quote": "Include both structured and unstructured data scenarios."
+    }
+  },
+  {
+    "id": "ab100-157",
+    "type": "single-choice",
+    "skillArea": "deploy",
+    "topic": "Test case blueprint for Copilot",
+    "difficulty": "medium",
+    "prompt": "Copilot-generated test cases vary wildly in format and omit boundary conditions. Which remedy does the learning content prescribe?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Provide a test case template in the prompt with test ID, purpose, preconditions, inputs, steps, expected results, edge cases, and dependencies"
+      },
+      {
+        "id": "b",
+        "text": "Ask Copilot to generate tests without any constraints or template, so that it can propose more creative scenarios and unusual edge cases on its own"
+      },
+      {
+        "id": "c",
+        "text": "Stop using Copilot for test generation and write each case manually, because generated cases are hard to validate for completeness"
+      },
+      {
+        "id": "d",
+        "text": "Generate the tests after the production deployment, so that Copilot can base them on real transcripts instead of requirements"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Copilot arbeitet am besten mit konsistenten Mustern; der Blueprint (Test ID, Purpose, Preconditions, Inputs, Steps, Expected Results, Edge Case Variations, Dependencies) im Prompt liefert vorhersehbare, hochwertige Testfälle. Dazu Prompts mit Goal, Context, Constraints und Quality Expectations.",
+    "source": {
+      "title": "Build a strategy for creating test cases using Copilot",
+      "url": "https://learn.microsoft.com/en-us/training/modules/manage-testing-ai-powered-business-solutions/6-build-strategy-creating-test-cases-using-copilot",
+      "quote": "Providing this template in the prompt ensures Copilot outputs predictable, high-quality test cases."
+    }
+  },
+  {
+    "id": "ab100-158",
+    "type": "single-choice",
+    "skillArea": "deploy",
+    "topic": "Scaling Copilot-driven testing",
+    "difficulty": "hard",
+    "prompt": "A team wants Copilot-generated test cases to stay current as requirements change across releases. Which practices does the learning content list for automating and scaling the strategy?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Maintain a reusable prompt library, version prompts and templates, integrate Copilot output into CI/CD, and regenerate tests on regression triggers"
+      },
+      {
+        "id": "b",
+        "text": "Regenerate the complete test set manually once a year during the annual release, and archive the previous set for audit purposes"
+      },
+      {
+        "id": "c",
+        "text": "Store the prompts in chat history and rely on Copilot's memory of previous sessions to keep the generated tests consistent across releases"
+      },
+      {
+        "id": "d",
+        "text": "Disable regression testing, because generated test cases are self-updating whenever the underlying requirements change"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Skalierung: wiederverwendbare Prompt-Bibliothek, Versionskontrolle für Prompts und Templates, Integration in CI/CD, Regression-Trigger für Neugenerierung. Die Reifeleiter reicht von Ad-hoc-Prompting bis zur unternehmensweiten Prompt-Governance.",
+    "source": {
+      "title": "Build a strategy for creating test cases using Copilot",
+      "url": "https://learn.microsoft.com/en-us/training/modules/manage-testing-ai-powered-business-solutions/6-build-strategy-creating-test-cases-using-copilot",
+      "quote": "Use regression triggers to request Copilot to generate updated tests when requirements change."
+    }
+  },
+  {
+    "id": "ab100-159",
+    "type": "single-choice",
+    "skillArea": "deploy",
+    "topic": "Validating generated test cases",
+    "difficulty": "easy",
+    "prompt": "Which four review dimensions does the learning content give for validating Copilot-generated test cases?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Completeness, accuracy, clarity, and maintainability"
+      },
+      {
+        "id": "b",
+        "text": "Cost, latency, throughput, and drift indicators"
+      },
+      {
+        "id": "c",
+        "text": "Fairness, inclusiveness, transparency, and accountability"
+      },
+      {
+        "id": "d",
+        "text": "Build, buy, extend, and retire decision criteria"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Review: Completeness (alle Akzeptanzkriterien, Workflows, Grenz-/Fehlerfälle), Accuracy (Logik entspricht Regeln, gültige Preconditions), Clarity (ausführbare Schritte, messbare Ergebnisse), Maintainability (wiederverwendbar, konsistente Namen).",
+    "source": {
+      "title": "Build a strategy for creating test cases using Copilot",
+      "url": "https://learn.microsoft.com/en-us/training/modules/manage-testing-ai-powered-business-solutions/6-build-strategy-creating-test-cases-using-copilot",
+      "quote": "Boundary and failure conditions included."
+    }
+  }
+]

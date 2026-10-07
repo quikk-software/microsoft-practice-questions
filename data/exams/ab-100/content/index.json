@@ -1,0 +1,1055 @@
+[
+  {
+    "uid": "learn.wwl.design-alm-process-ai-powered-business-solutions.introduction",
+    "title": "Introduction",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-alm-process-ai-powered-business-solutions/1-introduction",
+    "module": "design-alm-process-ai-powered-business-solutions",
+    "moduleTitle": "Design ALM process for AI-powered business solutions",
+    "file": "content/design-alm-process-ai-powered-business-solutions/01-1-introduction.md",
+    "chars": 1888
+  },
+  {
+    "uid": "learn.wwl.design-alm-process-ai-powered-business-solutions.design-alm-process-data-used-ai-models-agents",
+    "title": "Design an ALM process for data used in AI models and agents",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-alm-process-ai-powered-business-solutions/2-design-alm-process-data-used-ai-models-agents",
+    "module": "design-alm-process-ai-powered-business-solutions",
+    "moduleTitle": "Design ALM process for AI-powered business solutions",
+    "file": "content/design-alm-process-ai-powered-business-solutions/02-2-design-alm-process-data-used-ai-models-agents.md",
+    "chars": 9399
+  },
+  {
+    "uid": "learn.wwl.design-alm-process-ai-powered-business-solutions.design-alm-process-copilot-studio-agents-connectors-actions",
+    "title": "Design an ALM process for Copilot Studio agents, connectors, and actions",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-alm-process-ai-powered-business-solutions/3-design-alm-process-copilot-studio-agents-connectors-actions",
+    "module": "design-alm-process-ai-powered-business-solutions",
+    "moduleTitle": "Design ALM process for AI-powered business solutions",
+    "file": "content/design-alm-process-ai-powered-business-solutions/03-3-design-alm-process-copilot-studio-agents-connectors-actions.md",
+    "chars": 6385
+  },
+  {
+    "uid": "learn.wwl.design-alm-process-ai-powered-business-solutions.design-alm-process-microsoft-foundry-agents",
+    "title": "Design ALM processes for Microsoft Foundry agents",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-alm-process-ai-powered-business-solutions/4-design-alm-process-microsoft-foundry-agents",
+    "module": "design-alm-process-ai-powered-business-solutions",
+    "moduleTitle": "Design ALM process for AI-powered business solutions",
+    "file": "content/design-alm-process-ai-powered-business-solutions/04-4-design-alm-process-microsoft-foundry-agents.md",
+    "chars": 5055
+  },
+  {
+    "uid": "learn.wwl.design-alm-process-ai-powered-business-solutions.design-alm-process-custom-ai-models",
+    "title": "Design an ALM process for custom AI models",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-alm-process-ai-powered-business-solutions/5-design-alm-process-custom-ai-models",
+    "module": "design-alm-process-ai-powered-business-solutions",
+    "moduleTitle": "Design ALM process for AI-powered business solutions",
+    "file": "content/design-alm-process-ai-powered-business-solutions/05-5-design-alm-process-custom-ai-models.md",
+    "chars": 6814
+  },
+  {
+    "uid": "learn.wwl.design-alm-process-ai-powered-business-solutions.design-alm-process-ai-dynamics-365-apps-finance-supply-chain",
+    "title": "Design an ALM process for AI in Dynamics 365 Finance and Supply Chain",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-alm-process-ai-powered-business-solutions/6-design-alm-process-ai-dynamics-365-apps-finance-supply-chain",
+    "module": "design-alm-process-ai-powered-business-solutions",
+    "moduleTitle": "Design ALM process for AI-powered business solutions",
+    "file": "content/design-alm-process-ai-powered-business-solutions/06-6-design-alm-process-ai-dynamics-365-apps-finance-supply-chain.md",
+    "chars": 6600
+  },
+  {
+    "uid": "learn.wwl.design-alm-process-ai-powered-business-solutions.design-alm-process-ai-dynamics-365-apps-customer-experience-service",
+    "title": "Design ALM processes for AI in Dynamics 365 apps",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-alm-process-ai-powered-business-solutions/7-design-alm-process-ai-dynamics-365-apps-customer-experience-service",
+    "module": "design-alm-process-ai-powered-business-solutions",
+    "moduleTitle": "Design ALM process for AI-powered business solutions",
+    "file": "content/design-alm-process-ai-powered-business-solutions/07-7-design-alm-process-ai-dynamics-365-apps-customer-experience-service.md",
+    "chars": 6502
+  },
+  {
+    "uid": "learn.wwl.design-alm-process-ai-powered-business-solutions.knowledge-check",
+    "title": "Module assessment",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-alm-process-ai-powered-business-solutions/8-knowledge-check",
+    "module": "design-alm-process-ai-powered-business-solutions",
+    "moduleTitle": "Design ALM process for AI-powered business solutions",
+    "file": "content/design-alm-process-ai-powered-business-solutions/08-8-knowledge-check.md",
+    "chars": 552
+  },
+  {
+    "uid": "learn.wwl.design-alm-process-ai-powered-business-solutions.summary",
+    "title": "Summary",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-alm-process-ai-powered-business-solutions/9-summary",
+    "module": "design-alm-process-ai-powered-business-solutions",
+    "moduleTitle": "Design ALM process for AI-powered business solutions",
+    "file": "content/design-alm-process-ai-powered-business-solutions/09-9-summary.md",
+    "chars": 1568
+  },
+  {
+    "uid": "learn.wwl.design-extensibility-ai-solutions.introduction",
+    "title": "Introduction",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-extensibility-ai-solutions/1-introduction",
+    "module": "design-extensibility-ai-solutions",
+    "moduleTitle": "Design extensibility of AI solutions",
+    "file": "content/design-extensibility-ai-solutions/01-1-introduction.md",
+    "chars": 1252
+  },
+  {
+    "uid": "learn.wwl.design-extensibility-ai-solutions.design-ai-solutions-custom-models-microsoft-foundry",
+    "title": "Design AI solutions with custom models in Microsoft Foundry",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-extensibility-ai-solutions/2-design-ai-solutions-custom-models-microsoft-foundry",
+    "module": "design-extensibility-ai-solutions",
+    "moduleTitle": "Design extensibility of AI solutions",
+    "file": "content/design-extensibility-ai-solutions/02-2-design-ai-solutions-custom-models-microsoft-foundry.md",
+    "chars": 5984
+  },
+  {
+    "uid": "learn.wwl.design-extensibility-ai-solutions.design-agents-microsoft-365-copilot",
+    "title": "Design agents in Microsoft 365 Copilot",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-extensibility-ai-solutions/3-design-agents-microsoft-365-copilot",
+    "module": "design-extensibility-ai-solutions",
+    "moduleTitle": "Design extensibility of AI solutions",
+    "file": "content/design-extensibility-ai-solutions/03-3-design-agents-microsoft-365-copilot.md",
+    "chars": 6036
+  },
+  {
+    "uid": "learn.wwl.design-extensibility-ai-solutions.design-agent-extensibility-copilot-studio",
+    "title": "Design extensible agents in Microsoft Copilot Studio",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-extensibility-ai-solutions/4-design-agent-extensibility-copilot-studio",
+    "module": "design-extensibility-ai-solutions",
+    "moduleTitle": "Design extensibility of AI solutions",
+    "file": "content/design-extensibility-ai-solutions/04-4-design-agent-extensibility-copilot-studio.md",
+    "chars": 6839
+  },
+  {
+    "uid": "learn.wwl.design-extensibility-ai-solutions.design-agent-extensibility-model-context-protocol-copilot-studio",
+    "title": "Design extensible agents using MCP in Copilot Studio",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-extensibility-ai-solutions/5-design-agent-extensibility-model-context-protocol-copilot-studio",
+    "module": "design-extensibility-ai-solutions",
+    "moduleTitle": "Design extensibility of AI solutions",
+    "file": "content/design-extensibility-ai-solutions/05-5-design-agent-extensibility-model-context-protocol-copilot-studio.md",
+    "chars": 3693
+  },
+  {
+    "uid": "learn.wwl.design-extensibility-ai-solutions.design-agents-automate-tasks-apps-websites-computer-copilot-studio",
+    "title": "Design agents to automate tasks in apps and websites with Computer Use in Copilot Studio",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-extensibility-ai-solutions/6-design-agents-automate-tasks-apps-websites-computer-copilot-studio",
+    "module": "design-extensibility-ai-solutions",
+    "moduleTitle": "Design extensibility of AI solutions",
+    "file": "content/design-extensibility-ai-solutions/06-6-design-agents-automate-tasks-apps-websites-computer-copilot-studio.md",
+    "chars": 4591
+  },
+  {
+    "uid": "learn.wwl.design-extensibility-ai-solutions.design-agent-behaviors-copilot-studio-reasoning-voice-mode",
+    "title": "Design agent behaviors in Copilot Studio",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-extensibility-ai-solutions/7-design-agent-behaviors-copilot-studio-reasoning-voice-mode",
+    "module": "design-extensibility-ai-solutions",
+    "moduleTitle": "Design extensibility of AI solutions",
+    "file": "content/design-extensibility-ai-solutions/07-7-design-agent-behaviors-copilot-studio-reasoning-voice-mode.md",
+    "chars": 5562
+  },
+  {
+    "uid": "learn.wwl.design-extensibility-ai-solutions.optimize-solution-design-agents-microsoft-365-teams-sharepoint",
+    "title": "Optimize solution design for agents in Microsoft 365",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-extensibility-ai-solutions/8-optimize-solution-design-agents-microsoft-365-teams-sharepoint",
+    "module": "design-extensibility-ai-solutions",
+    "moduleTitle": "Design extensibility of AI solutions",
+    "file": "content/design-extensibility-ai-solutions/08-8-optimize-solution-design-agents-microsoft-365-teams-sharepoint.md",
+    "chars": 5272
+  },
+  {
+    "uid": "learn.wwl.design-extensibility-ai-solutions.knowledge-check",
+    "title": "Module assessment",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-extensibility-ai-solutions/9-knowledge-check",
+    "module": "design-extensibility-ai-solutions",
+    "moduleTitle": "Design extensibility of AI solutions",
+    "file": "content/design-extensibility-ai-solutions/09-9-knowledge-check.md",
+    "chars": 1401
+  },
+  {
+    "uid": "learn.wwl.design-extensibility-ai-solutions.summary",
+    "title": "Summary",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-extensibility-ai-solutions/10-summary",
+    "module": "design-extensibility-ai-solutions",
+    "moduleTitle": "Design extensibility of AI solutions",
+    "file": "content/design-extensibility-ai-solutions/10-10-summary.md",
+    "chars": 2906
+  },
+  {
+    "uid": "learn.wwl.analyze-monitor-tune-ai-powered-business-solutions.introduction",
+    "title": "Introduction",
+    "url": "https://learn.microsoft.com/en-us/training/modules/analyze-monitor-tune-ai-powered-business-solutions/1-introduction",
+    "module": "analyze-monitor-tune-ai-powered-business-solutions",
+    "moduleTitle": "Monitor, analyze, and tune AI agents",
+    "file": "content/analyze-monitor-tune-ai-powered-business-solutions/01-1-introduction.md",
+    "chars": 2485
+  },
+  {
+    "uid": "learn.wwl.analyze-monitor-tune-ai-powered-business-solutions.recommend-process-tools-monitoring-agents",
+    "title": "Recommend process tools for monitoring agents",
+    "url": "https://learn.microsoft.com/en-us/training/modules/analyze-monitor-tune-ai-powered-business-solutions/2-recommend-process-tools-monitoring-agents",
+    "module": "analyze-monitor-tune-ai-powered-business-solutions",
+    "moduleTitle": "Monitor, analyze, and tune AI agents",
+    "file": "content/analyze-monitor-tune-ai-powered-business-solutions/02-2-recommend-process-tools-monitoring-agents.md",
+    "chars": 6334
+  },
+  {
+    "uid": "learn.wwl.analyze-monitor-tune-ai-powered-business-solutions.analyze-backlog-user-feedback-ai-agent-usage",
+    "title": "Analyze backlog and user feedback for AI agent usage",
+    "url": "https://learn.microsoft.com/en-us/training/modules/analyze-monitor-tune-ai-powered-business-solutions/3-analyze-backlog-user-feedback-ai-agent-usage",
+    "module": "analyze-monitor-tune-ai-powered-business-solutions",
+    "moduleTitle": "Monitor, analyze, and tune AI agents",
+    "file": "content/analyze-monitor-tune-ai-powered-business-solutions/03-3-analyze-backlog-user-feedback-ai-agent-usage.md",
+    "chars": 5943
+  },
+  {
+    "uid": "learn.wwl.analyze-monitor-tune-ai-powered-business-solutions.apply-ai-based-tools-analyze-identify-issues-perform-tuning",
+    "title": "Apply AI-based tools to analyze, identify issues, and perform tuning",
+    "url": "https://learn.microsoft.com/en-us/training/modules/analyze-monitor-tune-ai-powered-business-solutions/4-apply-ai-based-tools-analyze-identify-issues-perform-tuning",
+    "module": "analyze-monitor-tune-ai-powered-business-solutions",
+    "moduleTitle": "Monitor, analyze, and tune AI agents",
+    "file": "content/analyze-monitor-tune-ai-powered-business-solutions/04-4-apply-ai-based-tools-analyze-identify-issues-perform-tuning.md",
+    "chars": 5023
+  },
+  {
+    "uid": "learn.wwl.analyze-monitor-tune-ai-powered-business-solutions.monitor-agent-performance-metrics",
+    "title": "Monitor AI agent performance metrics",
+    "url": "https://learn.microsoft.com/en-us/training/modules/analyze-monitor-tune-ai-powered-business-solutions/5-monitor-agent-performance-metrics",
+    "module": "analyze-monitor-tune-ai-powered-business-solutions",
+    "moduleTitle": "Monitor, analyze, and tune AI agents",
+    "file": "content/analyze-monitor-tune-ai-powered-business-solutions/05-5-monitor-agent-performance-metrics.md",
+    "chars": 5493
+  },
+  {
+    "uid": "learn.wwl.analyze-monitor-tune-ai-powered-business-solutions.interpret-telemetry-data-performance-model-tuning",
+    "title": "Interpret telemetry data to tune AI performance",
+    "url": "https://learn.microsoft.com/en-us/training/modules/analyze-monitor-tune-ai-powered-business-solutions/6-interpret-telemetry-data-performance-model-tuning",
+    "module": "analyze-monitor-tune-ai-powered-business-solutions",
+    "moduleTitle": "Monitor, analyze, and tune AI agents",
+    "file": "content/analyze-monitor-tune-ai-powered-business-solutions/06-6-interpret-telemetry-data-performance-model-tuning.md",
+    "chars": 5042
+  },
+  {
+    "uid": "learn.wwl.analyze-monitor-tune-ai-powered-business-solutions.knowledge-check",
+    "title": "Module assessment",
+    "url": "https://learn.microsoft.com/en-us/training/modules/analyze-monitor-tune-ai-powered-business-solutions/7-knowledge-check",
+    "module": "analyze-monitor-tune-ai-powered-business-solutions",
+    "moduleTitle": "Monitor, analyze, and tune AI agents",
+    "file": "content/analyze-monitor-tune-ai-powered-business-solutions/07-7-knowledge-check.md",
+    "chars": 910
+  },
+  {
+    "uid": "learn.wwl.analyze-monitor-tune-ai-powered-business-solutions.module-summary",
+    "title": "Ensure reliable AI agent operations",
+    "url": "https://learn.microsoft.com/en-us/training/modules/analyze-monitor-tune-ai-powered-business-solutions/8-module-summary",
+    "module": "analyze-monitor-tune-ai-powered-business-solutions",
+    "moduleTitle": "Monitor, analyze, and tune AI agents",
+    "file": "content/analyze-monitor-tune-ai-powered-business-solutions/08-8-module-summary.md",
+    "chars": 3666
+  },
+  {
+    "uid": "learn.wwl.introduction-agentic-ai-business-solution-architecture.introduction",
+    "title": "Introduction",
+    "url": "https://learn.microsoft.com/en-us/training/modules/introduction-agentic-ai-business-solution-architecture/1-introduction",
+    "module": "introduction-agentic-ai-business-solution-architecture",
+    "moduleTitle": "Introduction to agentic AI business solutions",
+    "file": "content/introduction-agentic-ai-business-solution-architecture/01-1-introduction.md",
+    "chars": 1927
+  },
+  {
+    "uid": "learn.wwl.introduction-agentic-ai-business-solution-architecture.architect-role-ai-transformation-businesses",
+    "title": "Drive AI transformation with architect strategies",
+    "url": "https://learn.microsoft.com/en-us/training/modules/introduction-agentic-ai-business-solution-architecture/2-architect-role-ai-transformation-businesses",
+    "module": "introduction-agentic-ai-business-solution-architecture",
+    "moduleTitle": "Introduction to agentic AI business solutions",
+    "file": "content/introduction-agentic-ai-business-solution-architecture/02-2-architect-role-ai-transformation-businesses.md",
+    "chars": 3039
+  },
+  {
+    "uid": "learn.wwl.introduction-agentic-ai-business-solution-architecture.microsoft-ai-technologies-overview",
+    "title": "Explore Microsoft AI technologies for business",
+    "url": "https://learn.microsoft.com/en-us/training/modules/introduction-agentic-ai-business-solution-architecture/3-microsoft-ai-technologies-overview",
+    "module": "introduction-agentic-ai-business-solution-architecture",
+    "moduleTitle": "Introduction to agentic AI business solutions",
+    "file": "content/introduction-agentic-ai-business-solution-architecture/03-3-microsoft-ai-technologies-overview.md",
+    "chars": 2731
+  },
+  {
+    "uid": "learn.wwl.introduction-agentic-ai-business-solution-architecture.microsoft-ai-technologies-business-solutions",
+    "title": "Identify Microsoft AI technologies for business solutions",
+    "url": "https://learn.microsoft.com/en-us/training/modules/introduction-agentic-ai-business-solution-architecture/4-microsoft-ai-technologies-business-solutions",
+    "module": "introduction-agentic-ai-business-solution-architecture",
+    "moduleTitle": "Introduction to agentic AI business solutions",
+    "file": "content/introduction-agentic-ai-business-solution-architecture/04-4-microsoft-ai-technologies-business-solutions.md",
+    "chars": 2392
+  },
+  {
+    "uid": "learn.wwl.introduction-agentic-ai-business-solution-architecture.identify-out-of-box-microsoft-ai-agent-resources",
+    "title": "Identify out-of-box Microsoft AI agent resources for business solutions",
+    "url": "https://learn.microsoft.com/en-us/training/modules/introduction-agentic-ai-business-solution-architecture/5-identify-out-of-box-microsoft-ai-agent-resources",
+    "module": "introduction-agentic-ai-business-solution-architecture",
+    "moduleTitle": "Introduction to agentic AI business solutions",
+    "file": "content/introduction-agentic-ai-business-solution-architecture/05-5-identify-out-of-box-microsoft-ai-agent-resources.md",
+    "chars": 2679
+  },
+  {
+    "uid": "learn.wwl.introduction-agentic-ai-business-solution-architecture.identify-out-of-box-microsoft-ai-agents",
+    "title": "Identify out-of-box Microsoft AI agents for business",
+    "url": "https://learn.microsoft.com/en-us/training/modules/introduction-agentic-ai-business-solution-architecture/6-identify-out-of-box-microsoft-ai-agents",
+    "module": "introduction-agentic-ai-business-solution-architecture",
+    "moduleTitle": "Introduction to agentic AI business solutions",
+    "file": "content/introduction-agentic-ai-business-solution-architecture/06-6-identify-out-of-box-microsoft-ai-agents.md",
+    "chars": 2783
+  },
+  {
+    "uid": "learn.wwl.introduction-agentic-ai-business-solution-architecture.knowledge-check",
+    "title": "Module assessment",
+    "url": "https://learn.microsoft.com/en-us/training/modules/introduction-agentic-ai-business-solution-architecture/7-knowledge-check",
+    "module": "introduction-agentic-ai-business-solution-architecture",
+    "moduleTitle": "Introduction to agentic AI business solutions",
+    "file": "content/introduction-agentic-ai-business-solution-architecture/07-7-knowledge-check.md",
+    "chars": 994
+  },
+  {
+    "uid": "learn.wwl.introduction-agentic-ai-business-solution-architecture.summary",
+    "title": "Summary",
+    "url": "https://learn.microsoft.com/en-us/training/modules/introduction-agentic-ai-business-solution-architecture/8-summary",
+    "module": "introduction-agentic-ai-business-solution-architecture",
+    "moduleTitle": "Introduction to agentic AI business solutions",
+    "file": "content/introduction-agentic-ai-business-solution-architecture/08-8-summary.md",
+    "chars": 2595
+  },
+  {
+    "uid": "learn.wwl.manage-testing-ai-powered-business-solutions.introduction",
+    "title": "Introduction",
+    "url": "https://learn.microsoft.com/en-us/training/modules/manage-testing-ai-powered-business-solutions/1-introduction",
+    "module": "manage-testing-ai-powered-business-solutions",
+    "moduleTitle": "Manage testing AI-powered business solutions",
+    "file": "content/manage-testing-ai-powered-business-solutions/01-1-introduction.md",
+    "chars": 1549
+  },
+  {
+    "uid": "learn.wwl.manage-testing-ai-powered-business-solutions.recommend-process-metrics-test-agents",
+    "title": "Recommend process metrics for testing AI agents",
+    "url": "https://learn.microsoft.com/en-us/training/modules/manage-testing-ai-powered-business-solutions/2-recommend-process-metrics-test-agents",
+    "module": "manage-testing-ai-powered-business-solutions",
+    "moduleTitle": "Manage testing AI-powered business solutions",
+    "file": "content/manage-testing-ai-powered-business-solutions/02-2-recommend-process-metrics-test-agents.md",
+    "chars": 5505
+  },
+  {
+    "uid": "learn.wwl.manage-testing-ai-powered-business-solutions.create-validation-criteria-custom-ai-models",
+    "title": "Create validation criteria for custom AI models",
+    "url": "https://learn.microsoft.com/en-us/training/modules/manage-testing-ai-powered-business-solutions/3-create-validation-criteria-custom-ai-models",
+    "module": "manage-testing-ai-powered-business-solutions",
+    "moduleTitle": "Manage testing AI-powered business solutions",
+    "file": "content/manage-testing-ai-powered-business-solutions/03-3-create-validation-criteria-custom-ai-models.md",
+    "chars": 4780
+  },
+  {
+    "uid": "learn.wwl.manage-testing-ai-powered-business-solutions.validate-effective-copilot-prompt-best-practices",
+    "title": "Validate effective Copilot prompt best practices",
+    "url": "https://learn.microsoft.com/en-us/training/modules/manage-testing-ai-powered-business-solutions/4-validate-effective-copilot-prompt-best-practices",
+    "module": "manage-testing-ai-powered-business-solutions",
+    "moduleTitle": "Manage testing AI-powered business solutions",
+    "file": "content/manage-testing-ai-powered-business-solutions/04-4-validate-effective-copilot-prompt-best-practices.md",
+    "chars": 5657
+  },
+  {
+    "uid": "learn.wwl.manage-testing-ai-powered-business-solutions.design-test-scenarios-ai-solutions-multiple-dynamics-365-apps",
+    "title": "Design end-to-end test scenarios for AI solutions using multiple Dynamics 365 apps",
+    "url": "https://learn.microsoft.com/en-us/training/modules/manage-testing-ai-powered-business-solutions/5-design-test-scenarios-ai-solutions-multiple-dynamics-365-apps",
+    "module": "manage-testing-ai-powered-business-solutions",
+    "moduleTitle": "Manage testing AI-powered business solutions",
+    "file": "content/manage-testing-ai-powered-business-solutions/05-5-design-test-scenarios-ai-solutions-multiple-dynamics-365-apps.md",
+    "chars": 4947
+  },
+  {
+    "uid": "learn.wwl.manage-testing-ai-powered-business-solutions.build-strategy-creating-test-cases-using-copilot",
+    "title": "Build a strategy for creating test cases using Copilot",
+    "url": "https://learn.microsoft.com/en-us/training/modules/manage-testing-ai-powered-business-solutions/6-build-strategy-creating-test-cases-using-copilot",
+    "module": "manage-testing-ai-powered-business-solutions",
+    "moduleTitle": "Manage testing AI-powered business solutions",
+    "file": "content/manage-testing-ai-powered-business-solutions/06-6-build-strategy-creating-test-cases-using-copilot.md",
+    "chars": 5192
+  },
+  {
+    "uid": "learn.wwl.manage-testing-ai-powered-business-solutions.knowledge-check",
+    "title": "Module assessment",
+    "url": "https://learn.microsoft.com/en-us/training/modules/manage-testing-ai-powered-business-solutions/7-knowledge-check",
+    "module": "manage-testing-ai-powered-business-solutions",
+    "moduleTitle": "Manage testing AI-powered business solutions",
+    "file": "content/manage-testing-ai-powered-business-solutions/07-7-knowledge-check.md",
+    "chars": 1307
+  },
+  {
+    "uid": "learn.wwl.manage-testing-ai-powered-business-solutions.summary",
+    "title": "Summary",
+    "url": "https://learn.microsoft.com/en-us/training/modules/manage-testing-ai-powered-business-solutions/8-summary",
+    "module": "manage-testing-ai-powered-business-solutions",
+    "moduleTitle": "Manage testing AI-powered business solutions",
+    "file": "content/manage-testing-ai-powered-business-solutions/08-8-summary.md",
+    "chars": 1965
+  },
+  {
+    "uid": "learn.wwl.analyze-requirements-ai-powered-business-solutions.introduction",
+    "title": "Introduction",
+    "url": "https://learn.microsoft.com/en-us/training/modules/analyze-requirements-ai-powered-business-solutions/1-introduction",
+    "module": "analyze-requirements-ai-powered-business-solutions",
+    "moduleTitle": "Analyze requirements for AI-powered business solutions",
+    "file": "content/analyze-requirements-ai-powered-business-solutions/01-1-introduction.md",
+    "chars": 2520
+  },
+  {
+    "uid": "learn.wwl.analyze-requirements-ai-powered-business-solutions.assess-use-agents-task-automation-data-analytics-decision-making",
+    "title": "Assess the use of agents in task automation, data analytics, and decision-making",
+    "url": "https://learn.microsoft.com/en-us/training/modules/analyze-requirements-ai-powered-business-solutions/2-assess-use-agents-task-automation-data-analytics-decision-making",
+    "module": "analyze-requirements-ai-powered-business-solutions",
+    "moduleTitle": "Analyze requirements for AI-powered business solutions",
+    "file": "content/analyze-requirements-ai-powered-business-solutions/02-2-assess-use-agents-task-automation-data-analytics-decision-making.md",
+    "chars": 4542
+  },
+  {
+    "uid": "learn.wwl.analyze-requirements-ai-powered-business-solutions.review-data-grounding-accuracy-relevance-timeliness-cleanliness-availability",
+    "title": "Review data for grounding accuracy, relevance, timeliness, cleanliness, and availability",
+    "url": "https://learn.microsoft.com/en-us/training/modules/analyze-requirements-ai-powered-business-solutions/3-review-data-grounding-accuracy-relevance-timeliness-cleanliness-availability",
+    "module": "analyze-requirements-ai-powered-business-solutions",
+    "moduleTitle": "Analyze requirements for AI-powered business solutions",
+    "file": "content/analyze-requirements-ai-powered-business-solutions/03-3-review-data-grounding-accuracy-relevance-timeliness-cleanliness-availability.md",
+    "chars": 5290
+  },
+  {
+    "uid": "learn.wwl.analyze-requirements-ai-powered-business-solutions.organize-business-solution-data-available-other-ai-systems",
+    "title": "Organize business solution data for AI systems",
+    "url": "https://learn.microsoft.com/en-us/training/modules/analyze-requirements-ai-powered-business-solutions/4-organize-business-solution-data-available-other-ai-systems",
+    "module": "analyze-requirements-ai-powered-business-solutions",
+    "moduleTitle": "Analyze requirements for AI-powered business solutions",
+    "file": "content/analyze-requirements-ai-powered-business-solutions/04-4-organize-business-solution-data-available-other-ai-systems.md",
+    "chars": 5966
+  },
+  {
+    "uid": "learn.wwl.analyze-requirements-ai-powered-business-solutions.knowledge-check",
+    "title": "Module assessment",
+    "url": "https://learn.microsoft.com/en-us/training/modules/analyze-requirements-ai-powered-business-solutions/5-knowledge-check",
+    "module": "analyze-requirements-ai-powered-business-solutions",
+    "moduleTitle": "Analyze requirements for AI-powered business solutions",
+    "file": "content/analyze-requirements-ai-powered-business-solutions/05-5-knowledge-check.md",
+    "chars": 1221
+  },
+  {
+    "uid": "learn.wwl.analyze-requirements-ai-powered-business-solutions.summary",
+    "title": "Summary",
+    "url": "https://learn.microsoft.com/en-us/training/modules/analyze-requirements-ai-powered-business-solutions/6-summary",
+    "module": "analyze-requirements-ai-powered-business-solutions",
+    "moduleTitle": "Analyze requirements for AI-powered business solutions",
+    "file": "content/analyze-requirements-ai-powered-business-solutions/06-6-summary.md",
+    "chars": 2617
+  },
+  {
+    "uid": "learn.wwl.design-ai-agents-business-solutions.introduction",
+    "title": "Introduction",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/1-introduction",
+    "module": "design-ai-agents-business-solutions",
+    "moduleTitle": "Design AI agents for business solutions",
+    "file": "content/design-ai-agents-business-solutions/01-1-introduction.md",
+    "chars": 1915
+  },
+  {
+    "uid": "learn.wwl.design-ai-agents-business-solutions.define-core-tenets-responsible-ai-guidelines-ai-business-solutions",
+    "title": "Define core tenets of responsible AI guidelines for AI business solutions",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/2-define-core-tenets-responsible-ai-guidelines-ai-business-solutions",
+    "module": "design-ai-agents-business-solutions",
+    "moduleTitle": "Design AI agents for business solutions",
+    "file": "content/design-ai-agents-business-solutions/02-2-define-core-tenets-responsible-ai-guidelines-ai-business-solutions.md",
+    "chars": 3522
+  },
+  {
+    "uid": "learn.wwl.design-ai-agents-business-solutions.design-business-terms-copilot-dynamics-365-apps-customer-experience-service",
+    "title": "Design business terms for Copilot in Dynamics 365 Customer Service",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/3-design-business-terms-copilot-dynamics-365-apps-customer-experience-service",
+    "module": "design-ai-agents-business-solutions",
+    "moduleTitle": "Design AI agents for business solutions",
+    "file": "content/design-ai-agents-business-solutions/03-3-design-business-terms-copilot-dynamics-365-apps-customer-experience-service.md",
+    "chars": 8916
+  },
+  {
+    "uid": "learn.wwl.design-ai-agents-business-solutions.design-customizations-copilot-dynamics-365-apps-customer-experience-service",
+    "title": "Design customizations for Copilot in Dynamics 365 apps",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/4-design-customizations-copilot-dynamics-365-apps-customer-experience-service",
+    "module": "design-ai-agents-business-solutions",
+    "moduleTitle": "Design AI agents for business solutions",
+    "file": "content/design-ai-agents-business-solutions/04-4-design-customizations-copilot-dynamics-365-apps-customer-experience-service.md",
+    "chars": 4167
+  },
+  {
+    "uid": "learn.wwl.design-ai-agents-business-solutions.design-connectors-copilot-dynamics-365-sales",
+    "title": "Design connectors for Copilot in Dynamics 365 Sales",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/5-design-connectors-copilot-dynamics-365-sales",
+    "module": "design-ai-agents-business-solutions",
+    "moduleTitle": "Design AI agents for business solutions",
+    "file": "content/design-ai-agents-business-solutions/05-5-design-connectors-copilot-dynamics-365-sales.md",
+    "chars": 4084
+  },
+  {
+    "uid": "learn.wwl.design-ai-agents-business-solutions.design-agents-integration-dynamics-365-contact-center-channels",
+    "title": "Design AI agents for Dynamics 365 Contact Center",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/6-design-agents-integration-dynamics-365-contact-center-channels",
+    "module": "design-ai-agents-business-solutions",
+    "moduleTitle": "Design AI agents for business solutions",
+    "file": "content/design-ai-agents-business-solutions/06-6-design-agents-integration-dynamics-365-contact-center-channels.md",
+    "chars": 4860
+  },
+  {
+    "uid": "learn.wwl.design-ai-agents-business-solutions.design-task-agents",
+    "title": "Design task agents in Microsoft Copilot Studio",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/7-design-task-agents",
+    "module": "design-ai-agents-business-solutions",
+    "moduleTitle": "Design AI agents for business solutions",
+    "file": "content/design-ai-agents-business-solutions/07-7-design-task-agents.md",
+    "chars": 4571
+  },
+  {
+    "uid": "learn.wwl.design-ai-agents-business-solutions.design-autonomous-agents",
+    "title": "Design autonomous agents in Copilot Studio",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/8-design-autonomous-agents",
+    "module": "design-ai-agents-business-solutions",
+    "moduleTitle": "Design AI agents for business solutions",
+    "file": "content/design-ai-agents-business-solutions/08-8-design-autonomous-agents.md",
+    "chars": 3782
+  },
+  {
+    "uid": "learn.wwl.design-ai-agents-business-solutions.design-prompt-response-agents",
+    "title": "Design prompt-driven agents using Copilot Studio",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/9-design-prompt-response-agents",
+    "module": "design-ai-agents-business-solutions",
+    "moduleTitle": "Design AI agents for business solutions",
+    "file": "content/design-ai-agents-business-solutions/09-9-design-prompt-response-agents.md",
+    "chars": 4503
+  },
+  {
+    "uid": "learn.wwl.design-ai-agents-business-solutions.propose-foundry-tools-given-requirement",
+    "title": "Propose Foundry tools given a requirement",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/10-propose-foundry-tools-given-requirement",
+    "module": "design-ai-agents-business-solutions",
+    "moduleTitle": "Design AI agents for business solutions",
+    "file": "content/design-ai-agents-business-solutions/10-10-propose-foundry-tools-given-requirement.md",
+    "chars": 4815
+  },
+  {
+    "uid": "learn.wwl.design-ai-agents-business-solutions.propose-code-first-generative-pages-agent-feed-applications",
+    "title": "Propose code first generative pages and agent feed applications",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/11-propose-code-first-generative-pages-agent-feed-applications",
+    "module": "design-ai-agents-business-solutions",
+    "moduleTitle": "Design AI agents for business solutions",
+    "file": "content/design-ai-agents-business-solutions/11-11-propose-code-first-generative-pages-agent-feed-applications.md",
+    "chars": 4615
+  },
+  {
+    "uid": "learn.wwl.design-ai-agents-business-solutions.design-topics-copilot-studio-fallback",
+    "title": "Design topics for Copilot Studio, including fallback",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/12-design-topics-copilot-studio-fallback",
+    "module": "design-ai-agents-business-solutions",
+    "moduleTitle": "Design AI agents for business solutions",
+    "file": "content/design-ai-agents-business-solutions/12-12-design-topics-copilot-studio-fallback.md",
+    "chars": 4446
+  },
+  {
+    "uid": "learn.wwl.design-ai-agents-business-solutions.design-data-processing-ai-models-ground",
+    "title": "Design data processing workflows for grounded AI",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/13-design-data-processing-ai-models-ground",
+    "module": "design-ai-agents-business-solutions",
+    "moduleTitle": "Design AI agents for business solutions",
+    "file": "content/design-ai-agents-business-solutions/13-13-design-data-processing-ai-models-ground.md",
+    "chars": 5554
+  },
+  {
+    "uid": "learn.wwl.design-ai-agents-business-solutions.design-business-process-include-ai-components-power-apps-canvas-app",
+    "title": "Design business processes with AI in Power Apps canvas apps",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/14-design-business-process-include-ai-components-power-apps-canvas-app",
+    "module": "design-ai-agents-business-solutions",
+    "moduleTitle": "Design AI agents for business solutions",
+    "file": "content/design-ai-agents-business-solutions/14-14-design-business-process-include-ai-components-power-apps-canvas-app.md",
+    "chars": 4695
+  },
+  {
+    "uid": "learn.wwl.design-ai-agents-business-solutions.apply-power-platform-well-architected-framework",
+    "title": "Apply the Microsoft Power Platform Well-Architected Framework to intelligent application workloads",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/15-apply-power-platform-well-architected-framework",
+    "module": "design-ai-agents-business-solutions",
+    "moduleTitle": "Design AI agents for business solutions",
+    "file": "content/design-ai-agents-business-solutions/15-15-apply-power-platform-well-architected-framework.md",
+    "chars": 5122
+  },
+  {
+    "uid": "learn.wwl.design-ai-agents-business-solutions.determine-use-standard-natural-language-processing",
+    "title": "Determine the use of standard natural language processing",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/16-determine-use-standard-natural-language-processing",
+    "module": "design-ai-agents-business-solutions",
+    "moduleTitle": "Design AI agents for business solutions",
+    "file": "content/design-ai-agents-business-solutions/16-16-determine-use-standard-natural-language-processing.md",
+    "chars": 4746
+  },
+  {
+    "uid": "learn.wwl.design-ai-agents-business-solutions.design-agent-flows-copilot-studio",
+    "title": "Design agents and agent flows with Copilot Studio",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/17-design-agent-flows-copilot-studio",
+    "module": "design-ai-agents-business-solutions",
+    "moduleTitle": "Design AI agents for business solutions",
+    "file": "content/design-ai-agents-business-solutions/17-17-design-agent-flows-copilot-studio.md",
+    "chars": 4677
+  },
+  {
+    "uid": "learn.wwl.design-ai-agents-business-solutions.design-prompt-actions-copilot-studio",
+    "title": "Design prompt actions in Copilot Studio",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/18-design-prompt-actions-copilot-studio",
+    "module": "design-ai-agents-business-solutions",
+    "moduleTitle": "Design AI agents for business solutions",
+    "file": "content/design-ai-agents-business-solutions/18-18-design-prompt-actions-copilot-studio.md",
+    "chars": 4365
+  },
+  {
+    "uid": "learn.wwl.design-ai-agents-business-solutions.define-success-criteria-adoption-goals",
+    "title": "Define success criteria and adoption goals for AI business solutions",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/19-define-success-criteria-adoption-goals",
+    "module": "design-ai-agents-business-solutions",
+    "moduleTitle": "Design AI agents for business solutions",
+    "file": "content/design-ai-agents-business-solutions/19-19-define-success-criteria-adoption-goals.md",
+    "chars": 4473
+  },
+  {
+    "uid": "learn.wwl.design-ai-agents-business-solutions.knowledge-check",
+    "title": "Module assessment",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/20-knowledge-check",
+    "module": "design-ai-agents-business-solutions",
+    "moduleTitle": "Design AI agents for business solutions",
+    "file": "content/design-ai-agents-business-solutions/20-20-knowledge-check.md",
+    "chars": 1283
+  },
+  {
+    "uid": "learn.wwl.design-ai-agents-business-solutions.summary",
+    "title": "Summarize AI agent design for business solutions",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/21-summary",
+    "module": "design-ai-agents-business-solutions",
+    "moduleTitle": "Design AI agents for business solutions",
+    "file": "content/design-ai-agents-business-solutions/21-21-summary.md",
+    "chars": 2814
+  },
+  {
+    "uid": "learn.wwl.orchestrate-configuration-prebuilt-agents-apps.introduction",
+    "title": "Introduction",
+    "url": "https://learn.microsoft.com/en-us/training/modules/orchestrate-configuration-prebuilt-agents-apps/1-introduction",
+    "module": "orchestrate-configuration-prebuilt-agents-apps",
+    "moduleTitle": "Orchestrate configuration of prebuilt agents and apps",
+    "file": "content/orchestrate-configuration-prebuilt-agents-apps/01-1-introduction.md",
+    "chars": 2222
+  },
+  {
+    "uid": "learn.wwl.orchestrate-configuration-prebuilt-agents-apps.design-ai-solutions-dynamics-365-apps-customer-experience-service",
+    "title": "Design AI solutions for Dynamics 365 Customer Service",
+    "url": "https://learn.microsoft.com/en-us/training/modules/orchestrate-configuration-prebuilt-agents-apps/3-design-ai-solutions-dynamics-365-apps-customer-experience-service",
+    "module": "orchestrate-configuration-prebuilt-agents-apps",
+    "moduleTitle": "Orchestrate configuration of prebuilt agents and apps",
+    "file": "content/orchestrate-configuration-prebuilt-agents-apps/02-3-design-ai-solutions-dynamics-365-apps-customer-experience-service.md",
+    "chars": 6889
+  },
+  {
+    "uid": "learn.wwl.orchestrate-configuration-prebuilt-agents-apps.propose-microsoft-365-agents-business-scenarios",
+    "title": "Propose Microsoft 365 agents for business scenarios",
+    "url": "https://learn.microsoft.com/en-us/training/modules/orchestrate-configuration-prebuilt-agents-apps/4-propose-microsoft-365-agents-business-scenarios",
+    "module": "orchestrate-configuration-prebuilt-agents-apps",
+    "moduleTitle": "Orchestrate configuration of prebuilt agents and apps",
+    "file": "content/orchestrate-configuration-prebuilt-agents-apps/03-4-propose-microsoft-365-agents-business-scenarios.md",
+    "chars": 13658
+  },
+  {
+    "uid": "learn.wwl.orchestrate-configuration-prebuilt-agents-apps.orchestrate-configuration-microsoft-365-copilot-sales-service",
+    "title": "Orchestrate and configure Microsoft 365 Copilot for sales and service",
+    "url": "https://learn.microsoft.com/en-us/training/modules/orchestrate-configuration-prebuilt-agents-apps/5-orchestrate-configuration-microsoft-365-copilot-sales-service",
+    "module": "orchestrate-configuration-prebuilt-agents-apps",
+    "moduleTitle": "Orchestrate configuration of prebuilt agents and apps",
+    "file": "content/orchestrate-configuration-prebuilt-agents-apps/04-5-orchestrate-configuration-microsoft-365-copilot-sales-service.md",
+    "chars": 5348
+  },
+  {
+    "uid": "learn.wwl.orchestrate-configuration-prebuilt-agents-apps.propose-microsoft-power-platform-ai-features-ai-hub",
+    "title": "Propose Microsoft Power Platform AI features",
+    "url": "https://learn.microsoft.com/en-us/training/modules/orchestrate-configuration-prebuilt-agents-apps/6-propose-microsoft-power-platform-ai-features-ai-hub",
+    "module": "orchestrate-configuration-prebuilt-agents-apps",
+    "moduleTitle": "Orchestrate configuration of prebuilt agents and apps",
+    "file": "content/orchestrate-configuration-prebuilt-agents-apps/05-6-propose-microsoft-power-platform-ai-features-ai-hub.md",
+    "chars": 5075
+  },
+  {
+    "uid": "learn.wwl.orchestrate-configuration-prebuilt-agents-apps.design-interoperability-finance-operations-agent-chats-sources",
+    "title": "Design interoperable agent experiences for Finance and Operations",
+    "url": "https://learn.microsoft.com/en-us/training/modules/orchestrate-configuration-prebuilt-agents-apps/7-design-interoperability-finance-operations-agent-chats-sources",
+    "module": "orchestrate-configuration-prebuilt-agents-apps",
+    "moduleTitle": "Orchestrate configuration of prebuilt agents and apps",
+    "file": "content/orchestrate-configuration-prebuilt-agents-apps/06-7-design-interoperability-finance-operations-agent-chats-sources.md",
+    "chars": 4898
+  },
+  {
+    "uid": "learn.wwl.orchestrate-configuration-prebuilt-agents-apps.process-knowledge-sources-dynamics-365-finance-supply-chain-management",
+    "title": "Recommend process knowledge sources for in-app help in Dynamics 365",
+    "url": "https://learn.microsoft.com/en-us/training/modules/orchestrate-configuration-prebuilt-agents-apps/8-process-knowledge-sources-dynamics-365-finance-supply-chain-management",
+    "module": "orchestrate-configuration-prebuilt-agents-apps",
+    "moduleTitle": "Orchestrate configuration of prebuilt agents and apps",
+    "file": "content/orchestrate-configuration-prebuilt-agents-apps/07-8-process-knowledge-sources-dynamics-365-finance-supply-chain-management.md",
+    "chars": 4890
+  },
+  {
+    "uid": "learn.wwl.orchestrate-configuration-prebuilt-agents-apps.orchestrate-ai-features-dynamics-365-apps-finance-supply-chain",
+    "title": "Orchestrate AI features in Dynamics 365 Finance and Supply Chain",
+    "url": "https://learn.microsoft.com/en-us/training/modules/orchestrate-configuration-prebuilt-agents-apps/2-orchestrate-ai-features-dynamics-365-apps-finance-supply-chain",
+    "module": "orchestrate-configuration-prebuilt-agents-apps",
+    "moduleTitle": "Orchestrate configuration of prebuilt agents and apps",
+    "file": "content/orchestrate-configuration-prebuilt-agents-apps/08-2-orchestrate-ai-features-dynamics-365-apps-finance-supply-chain.md",
+    "chars": 6622
+  },
+  {
+    "uid": "learn.wwl.orchestrate-configuration-prebuilt-agents-apps.knowledge-check",
+    "title": "Module assessment",
+    "url": "https://learn.microsoft.com/en-us/training/modules/orchestrate-configuration-prebuilt-agents-apps/9-knowledge-check",
+    "module": "orchestrate-configuration-prebuilt-agents-apps",
+    "moduleTitle": "Orchestrate configuration of prebuilt agents and apps",
+    "file": "content/orchestrate-configuration-prebuilt-agents-apps/09-9-knowledge-check.md",
+    "chars": 1536
+  },
+  {
+    "uid": "learn.wwl.orchestrate-configuration-prebuilt-agents-apps.summary",
+    "title": "Summary",
+    "url": "https://learn.microsoft.com/en-us/training/modules/orchestrate-configuration-prebuilt-agents-apps/10-summary",
+    "module": "orchestrate-configuration-prebuilt-agents-apps",
+    "moduleTitle": "Orchestrate configuration of prebuilt agents and apps",
+    "file": "content/orchestrate-configuration-prebuilt-agents-apps/10-10-summary.md",
+    "chars": 2776
+  },
+  {
+    "uid": "learn.wwl.design-responsible-ai-security-governance-risk-management-compliance.introduction",
+    "title": "Introduction",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-responsible-ai-security-governance-risk-management-compliance/1-introduction",
+    "module": "design-responsible-ai-security-governance-risk-management-compliance",
+    "moduleTitle": "Design responsible AI security, governance, risk management, and compliance",
+    "file": "content/design-responsible-ai-security-governance-risk-management-compliance/01-1-introduction.md",
+    "chars": 1385
+  },
+  {
+    "uid": "learn.wwl.design-responsible-ai-security-governance-risk-management-compliance.design-security-agents",
+    "title": "Design security agents for Microsoft clouds",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-responsible-ai-security-governance-risk-management-compliance/2-design-security-agents",
+    "module": "design-responsible-ai-security-governance-risk-management-compliance",
+    "moduleTitle": "Design responsible AI security, governance, risk management, and compliance",
+    "file": "content/design-responsible-ai-security-governance-risk-management-compliance/02-2-design-security-agents.md",
+    "chars": 8531
+  },
+  {
+    "uid": "learn.wwl.design-responsible-ai-security-governance-risk-management-compliance.design-governance-agents",
+    "title": "Design governance models for AI agents",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-responsible-ai-security-governance-risk-management-compliance/3-design-governance-agents",
+    "module": "design-responsible-ai-security-governance-risk-management-compliance",
+    "moduleTitle": "Design responsible AI security, governance, risk management, and compliance",
+    "file": "content/design-responsible-ai-security-governance-risk-management-compliance/03-3-design-governance-agents.md",
+    "chars": 5667
+  },
+  {
+    "uid": "learn.wwl.design-responsible-ai-security-governance-risk-management-compliance.design-model-security",
+    "title": "Design model security for responsible AI",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-responsible-ai-security-governance-risk-management-compliance/4-design-model-security",
+    "module": "design-responsible-ai-security-governance-risk-management-compliance",
+    "moduleTitle": "Design responsible AI security, governance, risk management, and compliance",
+    "file": "content/design-responsible-ai-security-governance-risk-management-compliance/04-4-design-model-security.md",
+    "chars": 5423
+  },
+  {
+    "uid": "learn.wwl.design-responsible-ai-security-governance-risk-management-compliance.analyze-solution-ai-vulnerabilities-mitigations-prompt-manipulation",
+    "title": "Analyze AI vulnerabilities and mitigations for prompt manipulation",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-responsible-ai-security-governance-risk-management-compliance/5-analyze-solution-ai-vulnerabilities-mitigations-prompt-manipulation",
+    "module": "design-responsible-ai-security-governance-risk-management-compliance",
+    "moduleTitle": "Design responsible AI security, governance, risk management, and compliance",
+    "file": "content/design-responsible-ai-security-governance-risk-management-compliance/05-5-analyze-solution-ai-vulnerabilities-mitigations-prompt-manipulation.md",
+    "chars": 6184
+  },
+  {
+    "uid": "learn.wwl.design-responsible-ai-security-governance-risk-management-compliance.review-solution-adherence-responsible-ai-principles",
+    "title": "Review solution adherence to Responsible AI principles",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-responsible-ai-security-governance-risk-management-compliance/6-review-solution-adherence-responsible-ai-principles",
+    "module": "design-responsible-ai-security-governance-risk-management-compliance",
+    "moduleTitle": "Design responsible AI security, governance, risk management, and compliance",
+    "file": "content/design-responsible-ai-security-governance-risk-management-compliance/06-6-review-solution-adherence-responsible-ai-principles.md",
+    "chars": 5408
+  },
+  {
+    "uid": "learn.wwl.design-responsible-ai-security-governance-risk-management-compliance.validate-data-residency-movement-compliance",
+    "title": "Validate data residency and movement compliance",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-responsible-ai-security-governance-risk-management-compliance/7-validate-data-residency-movement-compliance",
+    "module": "design-responsible-ai-security-governance-risk-management-compliance",
+    "moduleTitle": "Design responsible AI security, governance, risk management, and compliance",
+    "file": "content/design-responsible-ai-security-governance-risk-management-compliance/07-7-validate-data-residency-movement-compliance.md",
+    "chars": 4552
+  },
+  {
+    "uid": "learn.wwl.design-responsible-ai-security-governance-risk-management-compliance.design-access-controls-ground-data-model-tune",
+    "title": "Design access controls for grounding data and model tuning",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-responsible-ai-security-governance-risk-management-compliance/8-design-access-controls-ground-data-model-tune",
+    "module": "design-responsible-ai-security-governance-risk-management-compliance",
+    "moduleTitle": "Design responsible AI security, governance, risk management, and compliance",
+    "file": "content/design-responsible-ai-security-governance-risk-management-compliance/08-8-design-access-controls-ground-data-model-tune.md",
+    "chars": 4023
+  },
+  {
+    "uid": "learn.wwl.design-responsible-ai-security-governance-risk-management-compliance.design-audit-trails-changes-models-data",
+    "title": "Design audit trails for changes to models and data",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-responsible-ai-security-governance-risk-management-compliance/9-design-audit-trails-changes-models-data",
+    "module": "design-responsible-ai-security-governance-risk-management-compliance",
+    "moduleTitle": "Design responsible AI security, governance, risk management, and compliance",
+    "file": "content/design-responsible-ai-security-governance-risk-management-compliance/09-9-design-audit-trails-changes-models-data.md",
+    "chars": 4861
+  },
+  {
+    "uid": "learn.wwl.design-responsible-ai-security-governance-risk-management-compliance.knowledge-check",
+    "title": "Module assessment",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-responsible-ai-security-governance-risk-management-compliance/10-knowledge-check",
+    "module": "design-responsible-ai-security-governance-risk-management-compliance",
+    "moduleTitle": "Design responsible AI security, governance, risk management, and compliance",
+    "file": "content/design-responsible-ai-security-governance-risk-management-compliance/10-10-knowledge-check.md",
+    "chars": 996
+  },
+  {
+    "uid": "learn.wwl.design-responsible-ai-security-governance-risk-management-compliance.summary",
+    "title": "Summary",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-responsible-ai-security-governance-risk-management-compliance/11-summary",
+    "module": "design-responsible-ai-security-governance-risk-management-compliance",
+    "moduleTitle": "Design responsible AI security, governance, risk management, and compliance",
+    "file": "content/design-responsible-ai-security-governance-risk-management-compliance/11-11-summary.md",
+    "chars": 2442
+  },
+  {
+    "uid": "learn.wwl.design-overall-ai-strategy-business-solutions.introduction",
+    "title": "Introduction",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/1-introduction",
+    "module": "design-overall-ai-strategy-business-solutions",
+    "moduleTitle": "Design overall AI strategy for business solutions",
+    "file": "content/design-overall-ai-strategy-business-solutions/01-1-introduction.md",
+    "chars": 3602
+  },
+  {
+    "uid": "learn.wwl.design-overall-ai-strategy-business-solutions.implement-ai-adoption-process-cloud-adoption-framework-azure",
+    "title": "Implement AI adoption process with Azure",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/2-implement-ai-adoption-process-cloud-adoption-framework-azure",
+    "module": "design-overall-ai-strategy-business-solutions",
+    "moduleTitle": "Design overall AI strategy for business solutions",
+    "file": "content/design-overall-ai-strategy-business-solutions/02-2-implement-ai-adoption-process-cloud-adoption-framework-azure.md",
+    "chars": 9809
+  },
+  {
+    "uid": "learn.wwl.design-overall-ai-strategy-business-solutions.design-strategy-building-ai-agents-business-solutions",
+    "title": "Design AI agents for business solutions",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/3-design-strategy-building-ai-agents-business-solutions",
+    "module": "design-overall-ai-strategy-business-solutions",
+    "moduleTitle": "Design overall AI strategy for business solutions",
+    "file": "content/design-overall-ai-strategy-business-solutions/03-3-design-strategy-building-ai-agents-business-solutions.md",
+    "chars": 7335
+  },
+  {
+    "uid": "learn.wwl.design-overall-ai-strategy-business-solutions.design-multi-agent-solution",
+    "title": "Design a multi-agent solution",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/4-design-multi-agent-solution",
+    "module": "design-overall-ai-strategy-business-solutions",
+    "moduleTitle": "Design overall AI strategy for business solutions",
+    "file": "content/design-overall-ai-strategy-business-solutions/04-4-design-multi-agent-solution.md",
+    "chars": 9818
+  },
+  {
+    "uid": "learn.wwl.design-overall-ai-strategy-business-solutions.develop-use-cases-prebuilt-agents-solution",
+    "title": "Develop use cases for prebuilt Microsoft 365 Copilot agents",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/5-develop-use-cases-prebuilt-agents-solution",
+    "module": "design-overall-ai-strategy-business-solutions",
+    "moduleTitle": "Design overall AI strategy for business solutions",
+    "file": "content/design-overall-ai-strategy-business-solutions/05-5-develop-use-cases-prebuilt-agents-solution.md",
+    "chars": 6310
+  },
+  {
+    "uid": "learn.wwl.design-overall-ai-strategy-business-solutions.define-solution-rules-constraints-building-ai-components",
+    "title": "Define solution rules and constraints for AI components",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/6-define-solution-rules-constraints-building-ai-components",
+    "module": "design-overall-ai-strategy-business-solutions",
+    "moduleTitle": "Design overall AI strategy for business solutions",
+    "file": "content/design-overall-ai-strategy-business-solutions/06-6-define-solution-rules-constraints-building-ai-components.md",
+    "chars": 7470
+  },
+  {
+    "uid": "learn.wwl.design-overall-ai-strategy-business-solutions.determine-generative-ai-knowledge-sources-agents-built-copilot-studio",
+    "title": "Determine generative AI knowledge sources for agents built in Copilot Studio",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/7-determine-generative-ai-knowledge-sources-agents-built-copilot-studio",
+    "module": "design-overall-ai-strategy-business-solutions",
+    "moduleTitle": "Design overall AI strategy for business solutions",
+    "file": "content/design-overall-ai-strategy-business-solutions/07-7-determine-generative-ai-knowledge-sources-agents-built-copilot-studio.md",
+    "chars": 9046
+  },
+  {
+    "uid": "learn.wwl.design-overall-ai-strategy-business-solutions.determine-build-custom-agents-extend-copilot",
+    "title": "Determine when to build custom agents or extend Microsoft 365 Copilot",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/8-determine-build-custom-agents-extend-copilot",
+    "module": "design-overall-ai-strategy-business-solutions",
+    "moduleTitle": "Design overall AI strategy for business solutions",
+    "file": "content/design-overall-ai-strategy-business-solutions/08-8-determine-build-custom-agents-extend-copilot.md",
+    "chars": 5837
+  },
+  {
+    "uid": "learn.wwl.design-overall-ai-strategy-business-solutions.determine-custom-ai-models-created",
+    "title": "Determine when custom AI models should be created",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/9-determine-custom-ai-models-created",
+    "module": "design-overall-ai-strategy-business-solutions",
+    "moduleTitle": "Design overall AI strategy for business solutions",
+    "file": "content/design-overall-ai-strategy-business-solutions/09-9-determine-custom-ai-models-created.md",
+    "chars": 6015
+  },
+  {
+    "uid": "learn.wwl.design-overall-ai-strategy-business-solutions.provide-guidelines-creating-prompt-library",
+    "title": "Provide guidelines for creating a prompt library",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/10-provide-guidelines-creating-prompt-library",
+    "module": "design-overall-ai-strategy-business-solutions",
+    "moduleTitle": "Design overall AI strategy for business solutions",
+    "file": "content/design-overall-ai-strategy-business-solutions/10-10-provide-guidelines-creating-prompt-library.md",
+    "chars": 4694
+  },
+  {
+    "uid": "learn.wwl.design-overall-ai-strategy-business-solutions.develop-use-cases-customized-small-language-models-solution",
+    "title": "Develop use cases for customized small language models",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/11-develop-use-cases-customized-small-language-models-solution",
+    "module": "design-overall-ai-strategy-business-solutions",
+    "moduleTitle": "Design overall AI strategy for business solutions",
+    "file": "content/design-overall-ai-strategy-business-solutions/11-11-develop-use-cases-customized-small-language-models-solution.md",
+    "chars": 6489
+  },
+  {
+    "uid": "learn.wwl.design-overall-ai-strategy-business-solutions.provide-prompt-engineering-guidelines-techniques",
+    "title": "Provide prompt engineering guidelines and techniques",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/12-provide-prompt-engineering-guidelines-techniques",
+    "module": "design-overall-ai-strategy-business-solutions",
+    "moduleTitle": "Design overall AI strategy for business solutions",
+    "file": "content/design-overall-ai-strategy-business-solutions/12-12-provide-prompt-engineering-guidelines-techniques.md",
+    "chars": 7283
+  },
+  {
+    "uid": "learn.wwl.design-overall-ai-strategy-business-solutions.identify-key-business-user-roles-ai-workloads",
+    "title": "Identify key business user roles for AI workloads",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/13-identify-key-business-user-roles-ai-workloads",
+    "module": "design-overall-ai-strategy-business-solutions",
+    "moduleTitle": "Design overall AI strategy for business solutions",
+    "file": "content/design-overall-ai-strategy-business-solutions/13-13-identify-key-business-user-roles-ai-workloads.md",
+    "chars": 7146
+  },
+  {
+    "uid": "learn.wwl.design-overall-ai-strategy-business-solutions.evaluate-regional-local-ai-data-regulation-compliance-requirements",
+    "title": "Evaluate regional and local AI data regulation compliance requirements",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/14-evaluate-regional-local-ai-data-regulation-compliance-requirements",
+    "module": "design-overall-ai-strategy-business-solutions",
+    "moduleTitle": "Design overall AI strategy for business solutions",
+    "file": "content/design-overall-ai-strategy-business-solutions/14-14-evaluate-regional-local-ai-data-regulation-compliance-requirements.md",
+    "chars": 6150
+  },
+  {
+    "uid": "learn.wwl.design-overall-ai-strategy-business-solutions.include-elements-microsoft-ai-center-excellence",
+    "title": "Include elements in a Microsoft AI Center of Excellence",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/15-include-elements-microsoft-ai-center-excellence",
+    "module": "design-overall-ai-strategy-business-solutions",
+    "moduleTitle": "Design overall AI strategy for business solutions",
+    "file": "content/design-overall-ai-strategy-business-solutions/15-15-include-elements-microsoft-ai-center-excellence.md",
+    "chars": 6011
+  },
+  {
+    "uid": "learn.wwl.design-overall-ai-strategy-business-solutions.design-ai-solutions-use-multiple-dynamics-365-apps",
+    "title": "Design AI solutions using multiple Dynamics 365 apps",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/16-design-ai-solutions-use-multiple-dynamics-365-apps",
+    "module": "design-overall-ai-strategy-business-solutions",
+    "moduleTitle": "Design overall AI strategy for business solutions",
+    "file": "content/design-overall-ai-strategy-business-solutions/16-16-design-ai-solutions-use-multiple-dynamics-365-apps.md",
+    "chars": 5422
+  },
+  {
+    "uid": "learn.wwl.design-overall-ai-strategy-business-solutions.design-user-prompt-training-ai-solution-adoption",
+    "title": "Design user prompt training for AI solution adoption",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/17-design-user-prompt-training-ai-solution-adoption",
+    "module": "design-overall-ai-strategy-business-solutions",
+    "moduleTitle": "Design overall AI strategy for business solutions",
+    "file": "content/design-overall-ai-strategy-business-solutions/17-17-design-user-prompt-training-ai-solution-adoption.md",
+    "chars": 5512
+  },
+  {
+    "uid": "learn.wwl.design-overall-ai-strategy-business-solutions.knowledge-check",
+    "title": "Module assessment",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/18-knowledge-check",
+    "module": "design-overall-ai-strategy-business-solutions",
+    "moduleTitle": "Design overall AI strategy for business solutions",
+    "file": "content/design-overall-ai-strategy-business-solutions/18-18-knowledge-check.md",
+    "chars": 1309
+  },
+  {
+    "uid": "learn.wwl.design-overall-ai-strategy-business-solutions.summary",
+    "title": "Summary",
+    "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/19-summary",
+    "module": "design-overall-ai-strategy-business-solutions",
+    "moduleTitle": "Design overall AI strategy for business solutions",
+    "file": "content/design-overall-ai-strategy-business-solutions/19-19-summary.md",
+    "chars": 2748
+  },
+  {
+    "uid": "learn.wwl.evaluate-costs-benefits-ai-powered-business-solution.introduction",
+    "title": "Introduction",
+    "url": "https://learn.microsoft.com/en-us/training/modules/evaluate-costs-benefits-ai-powered-business-solution/1-introduction",
+    "module": "evaluate-costs-benefits-ai-powered-business-solution",
+    "moduleTitle": "Evaluate costs and benefits of AI solutions",
+    "file": "content/evaluate-costs-benefits-ai-powered-business-solution/01-1-introduction.md",
+    "chars": 2847
+  },
+  {
+    "uid": "learn.wwl.evaluate-costs-benefits-ai-powered-business-solution.roi-criteria-ai-powered-business-solution-including-total-cost-ownership",
+    "title": "Evaluate ROI criteria for AI-powered solutions",
+    "url": "https://learn.microsoft.com/en-us/training/modules/evaluate-costs-benefits-ai-powered-business-solution/2-roi-criteria-ai-powered-business-solution-including-total-cost-ownership",
+    "module": "evaluate-costs-benefits-ai-powered-business-solution",
+    "moduleTitle": "Evaluate costs and benefits of AI solutions",
+    "file": "content/evaluate-costs-benefits-ai-powered-business-solution/02-2-roi-criteria-ai-powered-business-solution-including-total-cost-ownership.md",
+    "chars": 6658
+  },
+  {
+    "uid": "learn.wwl.evaluate-costs-benefits-ai-powered-business-solution.create-roi-analysis-proposed-ai-solution-business-process",
+    "title": "Create ROI analysis for a proposed AI solution",
+    "url": "https://learn.microsoft.com/en-us/training/modules/evaluate-costs-benefits-ai-powered-business-solution/3-create-roi-analysis-proposed-ai-solution-business-process",
+    "module": "evaluate-costs-benefits-ai-powered-business-solution",
+    "moduleTitle": "Evaluate costs and benefits of AI solutions",
+    "file": "content/evaluate-costs-benefits-ai-powered-business-solution/03-3-create-roi-analysis-proposed-ai-solution-business-process.md",
+    "chars": 8140
+  },
+  {
+    "uid": "learn.wwl.evaluate-costs-benefits-ai-powered-business-solution.analyze-whether-build-buy-extend-ai-components-business-solutions",
+    "title": "Analyze whether to build, buy, or extend AI components",
+    "url": "https://learn.microsoft.com/en-us/training/modules/evaluate-costs-benefits-ai-powered-business-solution/4-analyze-whether-build-buy-extend-ai-components-business-solutions",
+    "module": "evaluate-costs-benefits-ai-powered-business-solution",
+    "moduleTitle": "Evaluate costs and benefits of AI solutions",
+    "file": "content/evaluate-costs-benefits-ai-powered-business-solution/04-4-analyze-whether-build-buy-extend-ai-components-business-solutions.md",
+    "chars": 6000
+  },
+  {
+    "uid": "learn.wwl.evaluate-costs-benefits-ai-powered-business-solution.implement-model-router-intelligently-route-requests-most-suitable-model",
+    "title": "Implement a model router to intelligently route requests to the most suitable model",
+    "url": "https://learn.microsoft.com/en-us/training/modules/evaluate-costs-benefits-ai-powered-business-solution/5-implement-model-router-intelligently-route-requests-most-suitable-model",
+    "module": "evaluate-costs-benefits-ai-powered-business-solution",
+    "moduleTitle": "Evaluate costs and benefits of AI solutions",
+    "file": "content/evaluate-costs-benefits-ai-powered-business-solution/05-5-implement-model-router-intelligently-route-requests-most-suitable-model.md",
+    "chars": 4594
+  },
+  {
+    "uid": "learn.wwl.evaluate-costs-benefits-ai-powered-business-solution.knowledge-check",
+    "title": "Module assessment",
+    "url": "https://learn.microsoft.com/en-us/training/modules/evaluate-costs-benefits-ai-powered-business-solution/6-knowledge-check",
+    "module": "evaluate-costs-benefits-ai-powered-business-solution",
+    "moduleTitle": "Evaluate costs and benefits of AI solutions",
+    "file": "content/evaluate-costs-benefits-ai-powered-business-solution/06-6-knowledge-check.md",
+    "chars": 1171
+  },
+  {
+    "uid": "learn.wwl.evaluate-costs-benefits-ai-powered-business-solution.summary",
+    "title": "Summary",
+    "url": "https://learn.microsoft.com/en-us/training/modules/evaluate-costs-benefits-ai-powered-business-solution/7-summary",
+    "module": "evaluate-costs-benefits-ai-powered-business-solution",
+    "moduleTitle": "Evaluate costs and benefits of AI solutions",
+    "file": "content/evaluate-costs-benefits-ai-powered-business-solution/07-7-summary.md",
+    "chars": 2848
+  }
+]

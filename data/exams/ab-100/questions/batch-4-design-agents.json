@@ -1,0 +1,1453 @@
+[
+  {
+    "id": "ab100-066",
+    "type": "matching",
+    "skillArea": "design",
+    "topic": "Responsible AI tenets",
+    "difficulty": "easy",
+    "prompt": "Match each design requirement to the Microsoft Responsible AI tenet it serves.",
+    "left": [
+      {
+        "id": "l1",
+        "text": "Users must understand what data the agent relies on and how decisions are made"
+      },
+      {
+        "id": "l2",
+        "text": "People, not machines, remain responsible for AI outcomes through governance and oversight"
+      },
+      {
+        "id": "l3",
+        "text": "The agent must work for people of all abilities without creating barriers"
+      },
+      {
+        "id": "l4",
+        "text": "The system is validated regularly and designed to prevent unsafe outputs"
+      }
+    ],
+    "right": [
+      {
+        "id": "r1",
+        "text": "Transparency"
+      },
+      {
+        "id": "r2",
+        "text": "Accountability"
+      },
+      {
+        "id": "r3",
+        "text": "Inclusiveness"
+      },
+      {
+        "id": "r4",
+        "text": "Reliability and safety"
+      }
+    ],
+    "correct": {
+      "l1": "r1",
+      "l2": "r2",
+      "l3": "r3",
+      "l4": "r4"
+    },
+    "explanation": "Die sechs Tenets: Fairness, Reliability & Safety, Privacy & Security, Inclusiveness, Transparency, Accountability. Transparenz = verständliche Logik und Datennutzung; Accountability = menschliche Verantwortung und Oversight; Inclusiveness = barrierefrei; Reliability & Safety = validiert, überwacht, keine unsicheren Outputs.",
+    "source": {
+      "title": "Define core tenets of responsible AI guidelines for AI business solutions",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/2-define-core-tenets-responsible-ai-guidelines-ai-business-solutions",
+      "quote": "People—not machines—are responsible for AI outcomes."
+    }
+  },
+  {
+    "id": "ab100-067",
+    "type": "single-choice",
+    "skillArea": "design",
+    "topic": "Responsible AI across the lifecycle",
+    "difficulty": "medium",
+    "prompt": "A project plan lists fairness testing, security reviews, and transparency documentation. In which lifecycle stage does the learning content place these activities?",
+    "options": [
+      {
+        "id": "a",
+        "text": "During development, together with the first evaluation runs"
+      },
+      {
+        "id": "b",
+        "text": "During design, where risks and expected users are defined"
+      },
+      {
+        "id": "c",
+        "text": "During deployment, alongside pre-production validation"
+      },
+      {
+        "id": "d",
+        "text": "During operations, as part of retraining and policy updates"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Design: Risiken, Nutzer, Sicherheitsszenarien definieren. Development: Fairness-Tests, Security Reviews, Transparenz-Dokumentation. Deployment: Human Oversight, Pre-Production-Validierung, Monitoring. Operations: kontinuierliche Verbesserung.",
+    "source": {
+      "title": "Define core tenets of responsible AI guidelines for AI business solutions",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/2-define-core-tenets-responsible-ai-guidelines-ai-business-solutions",
+      "quote": "Apply fairness testing, security reviews, and transparency documentation"
+    }
+  },
+  {
+    "id": "ab100-068",
+    "type": "single-choice",
+    "skillArea": "design",
+    "topic": "Business terms for Copilot in Customer Service",
+    "difficulty": "medium",
+    "prompt": "Supervisors complain that Copilot case summaries in Dynamics 365 Customer Service use outdated category names and miss the organization's SLA tiers. Where does the learning content say business terms are primarily stored and read by Copilot?",
+    "options": [
+      {
+        "id": "a",
+        "text": "In Dataverse fields, option sets, and classification metadata, which Copilot reads directly when generating summaries"
+      },
+      {
+        "id": "b",
+        "text": "In a separate prompt library in SharePoint that Copilot queries at runtime whenever a summary is generated for a case"
+      },
+      {
+        "id": "c",
+        "text": "In the Azure OpenAI deployment's system prompt, configured by the tenant admin for each Customer Service environment"
+      },
+      {
+        "id": "d",
+        "text": "In Teams channel descriptions and wiki pages, which Copilot indexes through Microsoft Graph and uses for summarization"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Business Terms sind das standardisierte Vokabular der Organisation; in Dynamics 365 Customer Service liegen sie vor allem in Dataverse-Feldern, Option Sets und Klassifikationsmetadaten, die Copilot direkt für Zusammenfassungen und Empfehlungen liest.",
+    "source": {
+      "title": "Design business terms for Copilot in Dynamics 365 Customer Service",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/3-design-business-terms-copilot-dynamics-365-apps-customer-experience-service",
+      "quote": "In Dynamics 365 Customer Service, business terms are primarily stored in Dataverse fields, option sets, and classification metadata."
+    }
+  },
+  {
+    "id": "ab100-069",
+    "type": "single-choice",
+    "skillArea": "design",
+    "topic": "Conversation summary structure",
+    "difficulty": "medium",
+    "prompt": "A regulated insurer needs every Copilot conversation summary in Customer Service to contain the same sections (customer issue, actions taken, pending items, next steps, resolution status) to reduce variability between agents. Which configuration does the learning content recommend?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Structured format, where admins select which fields and data points Copilot includes in predefined sections"
+      },
+      {
+        "id": "b",
+        "text": "Paragraph format, which produces a cohesive narrative and is intended for organizations with strict documentation standards"
+      },
+      {
+        "id": "c",
+        "text": "Disable conversation summaries for the regulated queues and rely on manual agent notes with a mandatory template"
+      },
+      {
+        "id": "d",
+        "text": "Map each legacy field to the summary so that Copilot has maximum context and can fill the sections consistently"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Structured Format zerlegt die Zusammenfassung in vordefinierte Abschnitte, Admins wählen Felder, ideal für strenge Dokumentationsstandards und regulierte Branchen; Paragraph Format liefert einen Fließtext für schnelle Übersicht. Legacy-Felder, die den Prozess nicht mehr abbilden, sollen ausgeschlossen werden.",
+    "source": {
+      "title": "Design business terms for Copilot in Dynamics 365 Customer Service",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/3-design-business-terms-copilot-dynamics-365-apps-customer-experience-service",
+      "quote": "Ideal for organizations with strict documentation standards or regulated industries"
+    }
+  },
+  {
+    "id": "ab100-070",
+    "type": "matching",
+    "skillArea": "design",
+    "topic": "Copilot customization areas",
+    "difficulty": "medium",
+    "prompt": "Match each customization change for Copilot in Dynamics 365 apps to the customization area it belongs to.",
+    "left": [
+      {
+        "id": "l1",
+        "text": "Define SLA tiers and region-specific product names"
+      },
+      {
+        "id": "l2",
+        "text": "Require an empathetic tone and a summary-plus-next-steps structure in drafts"
+      },
+      {
+        "id": "l3",
+        "text": "Limit which case fields and knowledge sources Copilot can reference"
+      },
+      {
+        "id": "l4",
+        "text": "Show Copilot output in case forms and agent dashboards"
+      }
+    ],
+    "right": [
+      {
+        "id": "r1",
+        "text": "Business terms and domain language"
+      },
+      {
+        "id": "r2",
+        "text": "Prompt and output customization"
+      },
+      {
+        "id": "r3",
+        "text": "Data scope and field configuration"
+      },
+      {
+        "id": "r4",
+        "text": "Surface integration within Dynamics 365"
+      }
+    ],
+    "correct": {
+      "l1": "r1",
+      "l2": "r2",
+      "l3": "r3",
+      "l4": "r4"
+    },
+    "explanation": "Vier Anpassungsbereiche: Business Terms (Vokabular), Prompt Settings (Ton, Struktur, Pflichtfelder, zu vermeidende Begriffe), Data Scope (Felder, Entitäten, Wissensquellen) und Surface Integration (Formulare, Timelines, Dashboards).",
+    "source": {
+      "title": "Design customizations for Copilot in Dynamics 365 apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/4-design-customizations-copilot-dynamics-365-apps-customer-experience-service",
+      "quote": "Customization allows organizations to tune Copilot's behavior in four key areas:"
+    }
+  },
+  {
+    "id": "ab100-071",
+    "type": "single-choice",
+    "skillArea": "design",
+    "topic": "Limiting data scope",
+    "difficulty": "easy",
+    "prompt": "A service manager wants Copilot to reference every available CRM field \"so it never misses anything\". Which best practice from the learning content argues against this?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Limit data scope to necessary fields for better precision and reduced noise"
+      },
+      {
+        "id": "b",
+        "text": "Expand data scope continuously, because more referenced fields improve accuracy"
+      },
+      {
+        "id": "c",
+        "text": "Disable human oversight once the data scope has been completed and validated"
+      },
+      {
+        "id": "d",
+        "text": "Freeze prompts once they are approved so output stays stable as strategies evolve"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Best Practices: mit Agenten-Workflows starten, Business Terms konsistent halten, Outputs regelmäßig prüfen, Datenumfang auf nötige Felder begrenzen, Prompts aktualisieren, menschliche Validierung sicherstellen.",
+    "source": {
+      "title": "Design customizations for Copilot in Dynamics 365 apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/4-design-customizations-copilot-dynamics-365-apps-customer-experience-service",
+      "quote": "Limit data scope - to necessary fields for better precision and reduced noise."
+    }
+  },
+  {
+    "id": "ab100-072",
+    "type": "yes-no",
+    "skillArea": "design",
+    "topic": "Custom connectors for Copilot in Dynamics 365 Sales",
+    "difficulty": "hard",
+    "prompt": "A developer plans a custom connector so Copilot in Dynamics 365 Sales can pull insights from a third-party pricing API. Evaluate each statement against the learning content.",
+    "statements": [
+      {
+        "id": "s1",
+        "text": "The connector must be created in an environment with Dynamics 365 apps enabled; the default environment is not supported.",
+        "correct": true
+      },
+      {
+        "id": "s2",
+        "text": "Authentication uses OAuth 2.0 with Microsoft Entra ID, and the connector and backend rely on two app registrations.",
+        "correct": true
+      },
+      {
+        "id": "s3",
+        "text": "Once the Copilot action is published, it appears in the Sales experience immediately for all users.",
+        "correct": false
+      },
+      {
+        "id": "s4",
+        "text": "Certification of the connector and plugin is mandatory before any user can access the action.",
+        "correct": false
+      }
+    ],
+    "explanation": "Pflicht: Umgebung mit Dynamics 365 (Default nicht unterstützt), OAuth 2.0 mit Entra ID und zwei App-Registrierungen, Action in Copilot Studio erstellen/publishen und vom Admin freischalten lassen. Actions können bis zu 7 Tage brauchen; Zertifizierung ist optional für organisationsweite Verfügbarkeit.",
+    "source": {
+      "title": "Design connectors for Copilot in Dynamics 365 Sales",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/5-design-connectors-copilot-dynamics-365-sales",
+      "quote": "Actions may take up to 7 days to appear in the Sales experience."
+    }
+  },
+  {
+    "id": "ab100-073",
+    "type": "single-choice",
+    "skillArea": "design",
+    "topic": "On-behalf-of login for plugins",
+    "difficulty": "hard",
+    "prompt": "Sellers should not be prompted to sign in separately when a Copilot plugin calls the backend through the custom connector. Which setting does the learning content specify to enable automated authentication?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Set Enable onbehalfoflogin to true so the plugin uses on-behalf-of tokens"
+      },
+      {
+        "id": "b",
+        "text": "Use API-key authentication instead of OAuth 2.0 so no user token is needed"
+      },
+      {
+        "id": "c",
+        "text": "Register a single app registration shared by the connector and the backend"
+      },
+      {
+        "id": "d",
+        "text": "Create the connector in the default environment where single sign-on is automatic"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Für automatisierte Authentifizierung mit OBO-Tokens bei Plugins ist Enable onbehalfoflogin = true zu setzen. Grundlage bleiben OAuth 2.0, Entra ID und zwei App-Registrierungen für den Token-Austausch.",
+    "source": {
+      "title": "Design connectors for Copilot in Dynamics 365 Sales",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/5-design-connectors-copilot-dynamics-365-sales",
+      "quote": "To enable automated authentication (OBO tokens) for plugins, set: Enable onbehalfoflogin = true."
+    }
+  },
+  {
+    "id": "ab100-074",
+    "type": "single-choice",
+    "skillArea": "design",
+    "topic": "Agent context in Contact Center",
+    "difficulty": "medium",
+    "prompt": "A Dynamics 365 Contact Center team configures agent context for an AI agent on the live chat channel. The CRM has 300 customer attributes. What does the learning content recommend about which attributes to expose?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Include only the needed attributes to improve accuracy, reduce noise, and meet privacy standards"
+      },
+      {
+        "id": "b",
+        "text": "Expose the full set of 300 attributes so the agent can reason over the complete customer profile"
+      },
+      {
+        "id": "c",
+        "text": "Expose no attributes and let the agent ask the customer for each detail it needs"
+      },
+      {
+        "id": "d",
+        "text": "Expose attributes on the voice channel alone, because chat does not carry context"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Agent Context umfasst Identität, Fallhistorie, Kanal, Transkript, Routing-Queues; Felder wie CaseID, CustomerType, Channel, IssueCategory, SentimentScore. Es sollen nur benötigte Attribute exponiert werden: Genauigkeit, weniger Rauschen, Datenschutz, Least Privilege.",
+    "source": {
+      "title": "Design AI agents for Dynamics 365 Contact Center",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/6-design-agents-integration-dynamics-365-contact-center-channels",
+      "quote": "Only the needed attributes should be included to improve accuracy, reduce noise, and meet privacy standards."
+    }
+  },
+  {
+    "id": "ab100-075",
+    "type": "matching",
+    "skillArea": "design",
+    "topic": "Contact Center channels and AI",
+    "difficulty": "medium",
+    "prompt": "Match each Dynamics 365 Contact Center channel to the AI integration opportunity the learning content lists for it.",
+    "left": [
+      {
+        "id": "l1",
+        "text": "Voice"
+      },
+      {
+        "id": "l2",
+        "text": "Live chat"
+      },
+      {
+        "id": "l3",
+        "text": "Digital messaging such as SMS and WhatsApp"
+      },
+      {
+        "id": "l4",
+        "text": "Omnichannel widget"
+      }
+    ],
+    "right": [
+      {
+        "id": "r1",
+        "text": "Real-time call summarization, transcription, intent extraction, automated actions"
+      },
+      {
+        "id": "r2",
+        "text": "Suggested replies, contextual answers, knowledge article retrieval, escalation triggers"
+      },
+      {
+        "id": "r3",
+        "text": "Automated conversational flows, routing, sentiment detection"
+      },
+      {
+        "id": "r4",
+        "text": "Embedded AI assistant with workflow guidance and customer insights"
+      }
+    ],
+    "correct": {
+      "l1": "r1",
+      "l2": "r2",
+      "l3": "r3",
+      "l4": "r4"
+    },
+    "explanation": "Die Kanaltabelle ordnet Voice Echtzeit-Zusammenfassung/Transkription/Intent zu, Live Chat Antwortvorschläge und Wissensartikel, Digital Messaging automatisierte Flows, Routing und Sentiment, dem Omnichannel Widget den eingebetteten Assistenten.",
+    "source": {
+      "title": "Design AI agents for Dynamics 365 Contact Center",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/6-design-agents-integration-dynamics-365-contact-center-channels",
+      "quote": "Automated conversational flows, routing, sentiment detection"
+    }
+  },
+  {
+    "id": "ab100-076",
+    "type": "matching",
+    "skillArea": "design",
+    "topic": "Task agent components",
+    "difficulty": "medium",
+    "prompt": "Match each element of a Copilot Studio task agent design to the architecture component it represents.",
+    "left": [
+      {
+        "id": "l1",
+        "text": "\"Submit a support ticket with priority levels\""
+      },
+      {
+        "id": "l2",
+        "text": "Extract intent, interpret data, plan steps, execute"
+      },
+      {
+        "id": "l3",
+        "text": "Create a case through a Dataverse operation or cloud flow"
+      },
+      {
+        "id": "l4",
+        "text": "\"Always ask before submitting an order\""
+      }
+    ],
+    "right": [
+      {
+        "id": "r1",
+        "text": "Goal"
+      },
+      {
+        "id": "r2",
+        "text": "Skills"
+      },
+      {
+        "id": "r3",
+        "text": "Action"
+      },
+      {
+        "id": "r4",
+        "text": "Safety rule"
+      }
+    ],
+    "correct": {
+      "l1": "r1",
+      "l2": "r2",
+      "l3": "r3",
+      "l4": "r4"
+    },
+    "explanation": "Task-Agent-Komponenten: Goals (Mission, actionable/observable/testable), Skills (Language Understanding, Data Interpretation, Planning, Execution), Actions (Connectors, APIs, Dataverse, Cloud Flows mit Inputs, Output-Schema, Auth, Fehlerregeln), Knowledge, Context, Safety & Rules.",
+    "source": {
+      "title": "Design task agents in Microsoft Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/7-design-task-agents",
+      "quote": "\"Always ask before submitting an order.\""
+    }
+  },
+  {
+    "id": "ab100-077",
+    "type": "single-choice",
+    "skillArea": "design",
+    "topic": "Action requirements",
+    "difficulty": "medium",
+    "prompt": "A maker adds a \"Create follow-up task\" action to a task agent but defines only the API endpoint. What does the learning content say each action requires?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Input parameters, an output schema, authentication, and error handling rules"
+      },
+      {
+        "id": "b",
+        "text": "A display name, a trigger phrase, and a fallback message"
+      },
+      {
+        "id": "c",
+        "text": "A dedicated child agent, a Teams channel, a publishing step, and a trigger"
+      },
+      {
+        "id": "d",
+        "text": "A fine-tuned model, a vector index, and a Dataverse table"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Jede Action braucht Input-Parameter, Output-Schema, Authentifizierung und Error-Handling-Regeln; Actions entstehen über Power-Platform-Connectors, Custom Connectors, APIs, Dataverse-Operationen oder Cloud Flows.",
+    "source": {
+      "title": "Design task agents in Microsoft Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/7-design-task-agents",
+      "quote": "Error handling rules"
+    }
+  },
+  {
+    "id": "ab100-078",
+    "type": "single-choice",
+    "skillArea": "design",
+    "topic": "Autonomous agent components",
+    "difficulty": "easy",
+    "prompt": "An onboarding agent should start automatically when a new hire record is created in Dataverse and escalate VIP tickets immediately. Which two components of an autonomous agent in Copilot Studio capture these requirements?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A trigger for the record event and an instruction for the VIP escalation rule"
+      },
+      {
+        "id": "b",
+        "text": "A goal for the record event and a knowledge source for the escalation rule"
+      },
+      {
+        "id": "c",
+        "text": "An action for the record event and a publishing step for the VIP escalation rule"
+      },
+      {
+        "id": "d",
+        "text": "A knowledge source for the record event and a goal for the escalation rule"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Komponenten: Goals (Ziel), Triggers (Ereignisse wie Systemänderungen, Zeitpläne), Instructions (Geschäftsregeln wie „If the customer is VIP, escalate the ticket immediately“), Knowledge, Actions, Publishing (z. B. nach Teams).",
+    "source": {
+      "title": "Design autonomous agents in Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/8-design-autonomous-agents",
+      "quote": "Events that cause the agent to start, such as user input, system changes, or scheduled prompts."
+    }
+  },
+  {
+    "id": "ab100-079",
+    "type": "single-choice",
+    "skillArea": "design",
+    "topic": "Autonomous agent best practices",
+    "difficulty": "medium",
+    "prompt": "An autonomous agent gives inconsistent answers after a maker attached 30 loosely related SharePoint sites. Which best practice from the learning content was violated?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Limit the number of knowledge sources to maintain accuracy"
+      },
+      {
+        "id": "b",
+        "text": "Publish the agent to Teams before testing the business logic"
+      },
+      {
+        "id": "c",
+        "text": "Start with the most complex use case to prove the value early"
+      },
+      {
+        "id": "d",
+        "text": "Avoid user-feedback monitoring so the agent is not biased by it"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Best Practices für autonome Agenten: einfacher, wertvoller Use Case, saubere strukturierte Anweisungen, begrenzte Zahl Wissensquellen, geprüfte und aktuelle Grounding-Quellen, wiederholte Tests vor Publish, Monitoring und Feedback.",
+    "source": {
+      "title": "Design autonomous agents in Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/8-design-autonomous-agents",
+      "quote": "Limit the number of knowledge sources to maintain accuracy"
+    }
+  },
+  {
+    "id": "ab100-080",
+    "type": "matching",
+    "skillArea": "design",
+    "topic": "Prompt-driven agent mechanisms",
+    "difficulty": "medium",
+    "prompt": "Match each conversational requirement to the Copilot Studio mechanism the learning content recommends.",
+    "left": [
+      {
+        "id": "l1",
+        "text": "Answer a question not covered by any topic from the knowledge base"
+      },
+      {
+        "id": "l2",
+        "text": "Handle greeting, fallback, escalation, and disambiguation consistently"
+      },
+      {
+        "id": "l3",
+        "text": "Branch the dialog differently for VIP versus standard customers"
+      },
+      {
+        "id": "l4",
+        "text": "React when a Dataverse row is added, without a user prompt"
+      }
+    ],
+    "right": [
+      {
+        "id": "r1",
+        "text": "Generative answers (NLU Boost) node"
+      },
+      {
+        "id": "r2",
+        "text": "System topics"
+      },
+      {
+        "id": "r3",
+        "text": "Condition nodes"
+      },
+      {
+        "id": "r4",
+        "text": "Event triggers"
+      }
+    ],
+    "correct": {
+      "l1": "r1",
+      "l2": "r2",
+      "l3": "r3",
+      "l4": "r4"
+    },
+    "explanation": "Die Mechanismus-Tabelle: Generative Answers bei Fragen außerhalb der Topics, System Topics für Greeting/Fallback/Escalation/Errors/Disambiguation, Condition Nodes für Verzweigungen nach Variablen, Event Triggers für ereignisgetriebene, autonome Aktionen.",
+    "source": {
+      "title": "Design prompt-driven agents using Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/9-design-prompt-response-agents",
+      "quote": "Agent must react to events rather than user queries"
+    }
+  },
+  {
+    "id": "ab100-081",
+    "type": "single-choice",
+    "skillArea": "design",
+    "topic": "Event triggers and billing",
+    "difficulty": "hard",
+    "prompt": "A finance team wants a scheduled recurrence trigger that makes an agent send a daily summary without any user prompt. Which caveat from the learning content should the architect include in the design review?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Triggers must be explicitly authorized and may impact billing consumption"
+      },
+      {
+        "id": "b",
+        "text": "Triggers are unable to call connectors, so the summary has to be sent manually"
+      },
+      {
+        "id": "c",
+        "text": "Triggers are available in classic orchestration and not in generative mode"
+      },
+      {
+        "id": "d",
+        "text": "Triggers replace the system topics and disable the fallback topic"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Event Triggers (Datei hochgeladen, Task abgeschlossen, Dataverse-Zeile, Zeitplan) übergeben Payloads mit Daten, Anweisungen und Ausführungskontext und ermöglichen autonome Workflows; sie müssen explizit autorisiert werden und können den Verbrauch beeinflussen.",
+    "source": {
+      "title": "Design prompt-driven agents using Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/9-design-prompt-response-agents",
+      "quote": "Triggers must be explicitly authorized and may impact billing consumption"
+    }
+  },
+  {
+    "id": "ab100-082",
+    "type": "matching",
+    "skillArea": "design",
+    "topic": "Foundry tool categories",
+    "difficulty": "medium",
+    "prompt": "Match each requirement to the Azure AI Foundry tool category the learning content recommends.",
+    "left": [
+      {
+        "id": "l1",
+        "text": "Retrieve policies and guidelines from enterprise documents"
+      },
+      {
+        "id": "l2",
+        "text": "Read and write records in Dynamics, SAP, or ServiceNow"
+      },
+      {
+        "id": "l3",
+        "text": "Run a lightweight transformation or scoring step before returning results"
+      },
+      {
+        "id": "l4",
+        "text": "Decompose a task into steps and choose the next safe action"
+      }
+    ],
+    "right": [
+      {
+        "id": "r1",
+        "text": "Retrieval and grounding tools such as vector and hybrid search"
+      },
+      {
+        "id": "r2",
+        "text": "Data and application connectors such as REST or Dynamics connectors"
+      },
+      {
+        "id": "r3",
+        "text": "Compute tools such as Azure Functions and ML model tools"
+      },
+      {
+        "id": "r4",
+        "text": "Reasoning tools such as planners and rule evaluators"
+      }
+    ],
+    "correct": {
+      "l1": "r1",
+      "l2": "r2",
+      "l3": "r3",
+      "l4": "r4"
+    },
+    "explanation": "Kategorien: Retrieval & Grounding (Vektor-/Hybridsuche), App & Data Connectors (REST, Dynamics), Workflow & Action (Power Automate, Custom Actions), Compute (Azure Functions, ML Tools), Reasoning (Planner, Regel-Evaluatoren).",
+    "source": {
+      "title": "Propose Foundry tools given a requirement",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/10-propose-foundry-tools-given-requirement",
+      "quote": "Azure Functions (lightweight compute tasks)"
+    }
+  },
+  {
+    "id": "ab100-083",
+    "type": "single-choice",
+    "skillArea": "design",
+    "topic": "Tool selection goals",
+    "difficulty": "easy",
+    "prompt": "When proposing Foundry tools for a requirement, which selection goals does the learning content emphasize?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Meet the requirement with minimal complexity, ensure security and compliance, reuse enterprise systems, and support grounded outputs"
+      },
+      {
+        "id": "b",
+        "text": "Maximize the number of tools attached to the agent so that it can handle any future request without a redesign of the tool set or its instructions"
+      },
+      {
+        "id": "c",
+        "text": "Prefer custom-coded tools over native connectors to avoid vendor dependency, even where a connector already covers the system"
+      },
+      {
+        "id": "d",
+        "text": "Choose tools that bypass enterprise systems and query source databases directly, to reduce latency and integration overhead"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Ziel der Tool-Auswahl: Anforderung mit minimaler Komplexität erfüllen, Sicherheit und Compliance sicherstellen, bestehende Unternehmenssysteme nutzen, Integrationsaufwand reduzieren, genaue, geerdete Outputs unterstützen.",
+    "source": {
+      "title": "Propose Foundry tools given a requirement",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/10-propose-foundry-tools-given-requirement",
+      "quote": "Meet the requirement with minimal complexity"
+    }
+  },
+  {
+    "id": "ab100-084",
+    "type": "single-choice",
+    "skillArea": "design",
+    "topic": "Generative pages and agent feed",
+    "difficulty": "medium",
+    "prompt": "A sales operations team needs a customer overview page built rapidly, plus in-app next-best-action suggestions, and developers must add complex validation logic not expressible through prompts. Which combination does the learning content recommend?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Generative pages for rapid creation, an agent feed for insight-driven guidance, and code-first enhancements for the complex logic"
+      },
+      {
+        "id": "b",
+        "text": "Code-first development alone, because generative pages are not extensible and an agent feed is limited to canvas apps"
+      },
+      {
+        "id": "c",
+        "text": "Generative pages alone, because the generative engine also produces the validation logic and the next-best-action suggestions"
+      },
+      {
+        "id": "d",
+        "text": "An agent feed alone, which generates the page layout, the validation rules, and the in-app suggestions from the Dataverse schema and security roles"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Generative Pages für schnelle datengetriebene Screens, Agent Feed für dynamische Insights und Next-Best-Actions, Code-first (JavaScript, PCF, Dataverse-Logik) zum Erweitern oder Überschreiben generierter UI; bei High-Volume-Automatisierung alle drei kombinieren.",
+    "source": {
+      "title": "Propose code first generative pages and agent feed applications",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/11-propose-code-first-generative-pages-agent-feed-applications",
+      "quote": "Implement logic not expressible through prompts alone"
+    }
+  },
+  {
+    "id": "ab100-085",
+    "type": "single-choice",
+    "skillArea": "design",
+    "topic": "Agent feed capabilities",
+    "difficulty": "easy",
+    "prompt": "What does an agent feed add to a model-driven app according to the learning content?",
+    "options": [
+      {
+        "id": "a",
+        "text": "An AI-powered layer that monitors app context and records and surfaces summaries, anomaly notifications, and next-best actions"
+      },
+      {
+        "id": "b",
+        "text": "A natural-language page designer that replaces the maker studio and generates layouts, bindings, and forms from a single prompt"
+      },
+      {
+        "id": "c",
+        "text": "A scheduled export of Dataverse records to Fabric that feeds a lakehouse for analytics and reporting on app usage"
+      },
+      {
+        "id": "d",
+        "text": "A PCF control library for custom layouts, event handlers, and security-aware data pipelines in model-driven apps"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Der Agent Feed ist eine KI-Schicht in der App: Zusammenfassungen, Handlungsvorschläge („follow-up with this customer“), Anomalie-Benachrichtigungen, kontextuelle Insights, geführte Schritte und Automatisierungs-Trigger, basierend auf Kontext, Nutzeraktionen und Datensätzen.",
+    "source": {
+      "title": "Propose code first generative pages and agent feed applications",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/11-propose-code-first-generative-pages-agent-feed-applications",
+      "quote": "The agent monitors app context, user actions, and records."
+    }
+  },
+  {
+    "id": "ab100-086",
+    "type": "single-choice",
+    "skillArea": "design",
+    "topic": "Fallback topic design",
+    "difficulty": "medium",
+    "prompt": "Analytics show 35 percent of conversations end in the fallback topic, which simply says \"Sorry\" and ends. Which two corrections does the learning content imply?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Make fallback acknowledge the misunderstanding, offer alternatives or a human handoff, capture feedback, and add topics"
+      },
+      {
+        "id": "b",
+        "text": "Remove the fallback topic entirely so that users have to rephrase until a topic matches, and log the failed attempts"
+      },
+      {
+        "id": "c",
+        "text": "Route each fallback to generative answers with general knowledge enabled, so that no conversation ends unanswered"
+      },
+      {
+        "id": "d",
+        "text": "Raise the trigger-phrase matching thresholds so fewer topics fire, which keeps the fallback cleaner and easier to analyze"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Ein guter Fallback bestätigt das Missverständnis, bietet Alternativen, optional eine menschliche Übergabe und sammelt Feedback. Fallback darf starke Intent-Erkennung nicht ersetzen; die häufigsten Szenarien sollten Topics abdecken.",
+    "source": {
+      "title": "Design topics for Copilot Studio, including fallback",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/12-design-topics-copilot-studio-fallback",
+      "quote": "Fallback shouldn't replace strong intent recognition."
+    }
+  },
+  {
+    "id": "ab100-087",
+    "type": "matching",
+    "skillArea": "design",
+    "topic": "Topic types",
+    "difficulty": "easy",
+    "prompt": "Match each example to the topic type defined in the learning content.",
+    "left": [
+      {
+        "id": "l1",
+        "text": "\"Reset MFA method\" guides the user through a task"
+      },
+      {
+        "id": "l2",
+        "text": "\"Create support ticket\" runs an automated step"
+      },
+      {
+        "id": "l3",
+        "text": "\"Business hours\" provides structured information"
+      },
+      {
+        "id": "l4",
+        "text": "Authentication logic shared across topics"
+      }
+    ],
+    "right": [
+      {
+        "id": "r1",
+        "text": "Instructional topic"
+      },
+      {
+        "id": "r2",
+        "text": "Action topic"
+      },
+      {
+        "id": "r3",
+        "text": "Informational topic"
+      },
+      {
+        "id": "r4",
+        "text": "Reusable topic"
+      }
+    ],
+    "correct": {
+      "l1": "r1",
+      "l2": "r2",
+      "l3": "r3",
+      "l4": "r4"
+    },
+    "explanation": "Topic-Typen: Instructional (führt durch Aufgabe), Action (automatisierter Schritt), Informational (strukturierte Info), System (Greeting, Escalation, Fallback), Reusable (geteilte Logik wie Authentifizierung).",
+    "source": {
+      "title": "Design topics for Copilot Studio, including fallback",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/12-design-topics-copilot-studio-fallback",
+      "quote": "Create shared topics for authentication, FAQs, and repeated logic."
+    }
+  },
+  {
+    "id": "ab100-088",
+    "type": "yes-no",
+    "skillArea": "design",
+    "topic": "Grounding data pipeline design",
+    "difficulty": "hard",
+    "prompt": "An architect designs the ingestion-to-retrieval pipeline for a grounded AI solution on Azure AI Search. Evaluate each design decision against the learning content.",
+    "statements": [
+      {
+        "id": "s1",
+        "text": "Hybrid retrieval combining vector, keyword, and semantic reranking generally yields the most reliable results.",
+        "correct": true
+      },
+      {
+        "id": "s2",
+        "text": "Marking every index field as searchable, filterable, sortable, and retrievable is recommended for flexibility.",
+        "correct": false
+      },
+      {
+        "id": "s3",
+        "text": "Querying live systems on every conversational turn is preferred over an externalized search index.",
+        "correct": false
+      },
+      {
+        "id": "s4",
+        "text": "A single index is the default; split indexes only when audiences, compliance boundaries, or query patterns differ.",
+        "correct": true
+      }
+    ],
+    "explanation": "Hybrid Search bevorzugt; Feld-Capabilities nur setzen, wenn genutzt (sonst Größe und Kosten); in einen Suchindex externalisieren statt Live-Abfragen je Turn; Single Index als Default, Split bei getrennten Zielgruppen/Compliance; Freshness SLO-basiert mit Side-by-Side-Rebuilds; Zitate für Provenance.",
+    "source": {
+      "title": "Design data processing workflows for grounded AI",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/13-design-data-processing-ai-models-ground",
+      "quote": "Mark fields as searchable, filterable, sortable, and retrievable only when you'll use them; extra capabilities increase size and cost."
+    }
+  },
+  {
+    "id": "ab100-089",
+    "type": "single-choice",
+    "skillArea": "design",
+    "topic": "Chunking strategy",
+    "difficulty": "medium",
+    "prompt": "A RAG solution returns incomplete answers and consumes many tokens per query. The documents were split into fixed 200-character chunks regardless of structure. Which guidance from the learning content addresses the root cause?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Choose chunk sizes that fit the model's context window and the documents' semantic boundaries"
+      },
+      {
+        "id": "b",
+        "text": "Increase top K from 5 to 50 so that more fragments reach the model in each prompt"
+      },
+      {
+        "id": "c",
+        "text": "Switch from hybrid retrieval to keyword search alone to reduce the number of tokens per query and per answer"
+      },
+      {
+        "id": "d",
+        "text": "Remove citations from the grounded prompt to shorten the output and save tokens"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Chunking muss zum Kontextfenster und zu semantischen Grenzen passen; schlechtes Chunking erhöht Kosten und senkt Antwortqualität. Die Tabelle empfiehlt semantische Chunks in Modellkontextgröße und das Begrenzen von Top K und Token-Budgets.",
+    "source": {
+      "title": "Design data processing workflows for grounded AI",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/13-design-data-processing-ai-models-ground",
+      "quote": "Poor chunking increases cost and reduces answer quality."
+    }
+  },
+  {
+    "id": "ab100-090",
+    "type": "single-choice",
+    "skillArea": "design",
+    "topic": "Low-code grounding with AI Builder",
+    "difficulty": "medium",
+    "prompt": "A low-code team wants prompts that generate responses based on Dataverse data and reuse them in Power Apps, Power Automate, and Copilot Studio. Which platform option does the learning content name?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AI Builder grounded prompts over Dataverse data"
+      },
+      {
+        "id": "b",
+        "text": "Foundry IQ with a custom embedding pipeline"
+      },
+      {
+        "id": "c",
+        "text": "Azure AI Search with side-by-side index rebuilds"
+      },
+      {
+        "id": "d",
+        "text": "A fine-tuned custom model in Microsoft Foundry"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Für Low-Code-Szenarien: AI Builder grounded prompts erzeugen Antworten auf Basis von Dataverse-Daten und lassen sich in Power Apps, Power Automate und Copilot Studio wiederverwenden (Lizenz- und Umgebungsvoraussetzungen beachten).",
+    "source": {
+      "title": "Design data processing workflows for grounded AI",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/13-design-data-processing-ai-models-ground",
+      "quote": "For low-code scenarios, AI Builder grounded prompts let you generate responses based on Dataverse data and reuse prompts in Power Apps, Power Automate, and Copilot Studio."
+    }
+  },
+  {
+    "id": "ab100-091",
+    "type": "single-choice",
+    "skillArea": "design",
+    "topic": "AI in canvas app business processes",
+    "difficulty": "medium",
+    "prompt": "A field-inspection canvas app has an error-prone manual data-entry step and users struggle to navigate the form. Following the learning content's placement chart, which AI components fit these two steps?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AI-generated form fields or natural-language edits for data capture, and a Copilot assistant for navigation and help"
+      },
+      {
+        "id": "b",
+        "text": "A custom Foundry model for data capture and a Power BI dashboard embedded in the app for navigation and help"
+      },
+      {
+        "id": "c",
+        "text": "An autonomous agent that replaces the data-entry screen and a system topic that guides users through the inspection form"
+      },
+      {
+        "id": "d",
+        "text": "A DLP policy that validates captured data and an agent feed that explains the navigation to inspectors"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Die Chart „Where to place AI“: Data Capture → AI-generierte Felder; Evaluation → Copilot-Vorschläge; Document Creation → AI-Text; Navigation & Help → Copilot-Assistent; Data Updates → Natural-Language-Edit; Workflow Automation → AI-initiierte Aktionen.",
+    "source": {
+      "title": "Design business processes with AI in Power Apps canvas apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/14-design-business-process-include-ai-components-power-apps-canvas-app",
+      "quote": "Reduce training effort"
+    }
+  },
+  {
+    "id": "ab100-092",
+    "type": "single-choice",
+    "skillArea": "design",
+    "topic": "Governance for Copilot in canvas apps",
+    "difficulty": "easy",
+    "prompt": "In the final step of designing a canvas-app business process with AI components, what does the learning content say the architect must validate?",
+    "options": [
+      {
+        "id": "a",
+        "text": "What data the AI can access, which actions Copilot may perform, DLP boundaries, and internal governance compliance"
+      },
+      {
+        "id": "b",
+        "text": "The number of screens generated, the color theme, and the accessibility score of each Copilot-generated control"
+      },
+      {
+        "id": "c",
+        "text": "That Copilot has unrestricted access to the tables and connectors, so that generated logic is complete and consistent"
+      },
+      {
+        "id": "d",
+        "text": "That the app no longer requires human review of generated text, because the validation logic was produced by Copilot"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Schritt 5 „Validate security and governance“: Datenzugriff der KI, erlaubte Copilot-Aktionen, DLP-Grenzen und Einhaltung interner Governance.",
+    "source": {
+      "title": "Design business processes with AI in Power Apps canvas apps",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/14-design-business-process-include-ai-components-power-apps-canvas-app",
+      "quote": "Data loss prevention (DLP) boundaries"
+    }
+  },
+  {
+    "id": "ab100-093",
+    "type": "matching",
+    "skillArea": "design",
+    "topic": "Power Platform Well-Architected pillars",
+    "difficulty": "medium",
+    "prompt": "Match each design decision for an intelligent workload to the Power Platform Well-Architected pillar it serves.",
+    "left": [
+      {
+        "id": "l1",
+        "text": "Retry policies and failover paths in Power Automate"
+      },
+      {
+        "id": "l2",
+        "text": "ALM with Azure DevOps and proactive performance alerts"
+      },
+      {
+        "id": "l3",
+        "text": "Offloading intensive tasks to Azure Functions and right-sizing concurrency"
+      },
+      {
+        "id": "l4",
+        "text": "Accessibility compliance and Copilot-assisted workflows for ease of use"
+      }
+    ],
+    "right": [
+      {
+        "id": "r1",
+        "text": "Reliability"
+      },
+      {
+        "id": "r2",
+        "text": "Operational excellence"
+      },
+      {
+        "id": "r3",
+        "text": "Performance efficiency"
+      },
+      {
+        "id": "r4",
+        "text": "Experience optimization"
+      }
+    ],
+    "correct": {
+      "l1": "r1",
+      "l2": "r2",
+      "l3": "r3",
+      "l4": "r4"
+    },
+    "explanation": "Fünf Säulen des Power Platform WAF: Reliability, Security, Operational Excellence, Performance Efficiency, Experience Optimization. Im Unterschied zum Azure WAF ersetzt Experience Optimization die Säule Cost Optimization.",
+    "source": {
+      "title": "Apply the Microsoft Power Platform Well-Architected Framework to intelligent application workloads",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/15-apply-power-platform-well-architected-framework",
+      "quote": "Deliver meaningful experiences that help users achieve successful outcomes."
+    }
+  },
+  {
+    "id": "ab100-094",
+    "type": "single-choice",
+    "skillArea": "design",
+    "topic": "Azure WAF vs Power Platform WAF",
+    "difficulty": "hard",
+    "prompt": "A reviewer notes that the Azure Well-Architected Framework includes a pillar that the Power Platform Well-Architected Framework lists differently. Which pillar appears in the Azure framework but not among the five Power Platform pillars named in the learning content?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Cost optimization"
+      },
+      {
+        "id": "b",
+        "text": "Security"
+      },
+      {
+        "id": "c",
+        "text": "Reliability"
+      },
+      {
+        "id": "d",
+        "text": "Operational excellence"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Azure WAF: Reliability, Security, Cost Optimization, Operational Excellence, Performance Efficiency. Power Platform WAF: Reliability, Security, Operational Excellence, Performance Efficiency, Experience Optimization. Kostenaspekte werden in der Mapping-Tabelle über effiziente Lizenzierung und Compute-Offloading abgebildet.",
+    "source": {
+      "title": "Apply the Microsoft Power Platform Well-Architected Framework to intelligent application workloads",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/15-apply-power-platform-well-architected-framework",
+      "quote": "Azure WAF focuses on optimizing cloud workloads around Reliability, Security, Cost Optimization, Operational Excellence, and Performance Efficiency."
+    }
+  },
+  {
+    "id": "ab100-095",
+    "type": "matching",
+    "skillArea": "design",
+    "topic": "NLU, CLU, or generative orchestration",
+    "difficulty": "medium",
+    "prompt": "Match each scenario to the language-understanding approach the learning content recommends in Copilot Studio.",
+    "left": [
+      {
+        "id": "l1",
+        "text": "A call-center bot must recognize fixed phrases like \"Reset password\" with deterministic routing for a regulated process"
+      },
+      {
+        "id": "l2",
+        "text": "A field-service bot must understand dozens of ways to report the same problem and extract device type and location"
+      },
+      {
+        "id": "l3",
+        "text": "A sales assistant summarizes CRM records, answers long-form questions from knowledge articles, and drafts emails"
+      }
+    ],
+    "right": [
+      {
+        "id": "r1",
+        "text": "Standard NLU"
+      },
+      {
+        "id": "r2",
+        "text": "Azure Conversational Language Understanding"
+      },
+      {
+        "id": "r3",
+        "text": "Generative AI orchestration"
+      }
+    ],
+    "correct": {
+      "l1": "r1",
+      "l2": "r2",
+      "l3": "r3"
+    },
+    "explanation": "Standard NLU: hohe Präzision, geringe Variabilität, deterministisch. CLU: variierende Sprache in klaren Topic-Grenzen, Entity-Extraktion, Retraining. Generative Orchestrierung: unstrukturierte Eingaben, Zusammenfassung, Generierung, Grounding, Multi-Turn.",
+    "source": {
+      "title": "Determine the use of standard natural language processing",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/16-determine-use-standard-natural-language-processing",
+      "quote": "A field service bot must understand dozens of ways to report the same problem"
+    }
+  },
+  {
+    "id": "ab100-096",
+    "type": "single-choice",
+    "skillArea": "design",
+    "topic": "Cost of generative orchestration",
+    "difficulty": "easy",
+    "prompt": "A maker wants to enable generative orchestration for every agent by default. Which best practice from the learning content should temper this?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Start with NLU or CLU where tasks are structured and use generative only when needed, as it is more compute intensive"
+      },
+      {
+        "id": "b",
+        "text": "Generative orchestration is cheaper than NLU because it needs no trained intents, so it should be the default for agents"
+      },
+      {
+        "id": "c",
+        "text": "Generative orchestration does not need grounding for enterprise answers, so it can be enabled before knowledge is added"
+      },
+      {
+        "id": "d",
+        "text": "Guardrails such as instructions and topic triggers become unnecessary once generative orchestration is enabled"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Best Practices: bei strukturierten Aufgaben mit NLU/CLU starten, generativ nur bei Bedarf; Grounding immer aktivieren; Guardrails (Instructions, Actions, Topic Trigger) nutzen; Kosten und Performance abwägen, da generative Orchestrierung rechenintensiver ist.",
+    "source": {
+      "title": "Determine the use of standard natural language processing",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/16-determine-use-standard-natural-language-processing",
+      "quote": "Evaluate cost and performance: generative orchestration is more powerful but more compute intensive"
+    }
+  },
+  {
+    "id": "ab100-097",
+    "type": "yes-no",
+    "skillArea": "design",
+    "topic": "Agent flows vs cloud flows",
+    "difficulty": "medium",
+    "prompt": "A procurement team compares agent flows in Copilot Studio with Power Automate cloud flows. Evaluate each statement against the learning content.",
+    "statements": [
+      {
+        "id": "s1",
+        "text": "Agent flows do not require a Power Automate license and use Copilot Studio message capacity.",
+        "correct": true
+      },
+      {
+        "id": "s2",
+        "text": "Agent flows can be created by natural-language prompting and refined in a visual designer.",
+        "correct": true
+      },
+      {
+        "id": "s3",
+        "text": "Agent flows cannot connect to Dynamics 365 or Dataverse.",
+        "correct": false
+      },
+      {
+        "id": "s4",
+        "text": "Cloud flows are the recommended choice for AI-driven conversational automation.",
+        "correct": false
+      }
+    ],
+    "explanation": "Vergleichstabelle: Agent Flow nutzt Copilot-Studio-Kapazität (keine Power-Automate-Lizenz), Trigger per Nachricht/Zeitplan/Event, ideal für KI-gestützte konversationelle Automatisierung, natürlichsprachlich plus visueller Canvas; Cloud Flows für Enterprise-Integrationsautomatisierung. Agent Flows verbinden Forms, Dynamics 365, Dataverse, E-Mail, APIs.",
+    "source": {
+      "title": "Design agents and agent flows with Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/17-design-agent-flows-copilot-studio",
+      "quote": "Uses Copilot Studio message capacity"
+    }
+  },
+  {
+    "id": "ab100-098",
+    "type": "single-choice",
+    "skillArea": "design",
+    "topic": "Agent flow modularity",
+    "difficulty": "easy",
+    "prompt": "A maker builds one giant agent flow that handles form confirmation, CRM updates, escalations, and weekly reporting. Which best practice from the learning content does this violate?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Keep flows modular with one flow per major task or automation"
+      },
+      {
+        "id": "b",
+        "text": "Use natural language prompting exclusively for production flows"
+      },
+      {
+        "id": "c",
+        "text": "Test agent and flow interactions separately rather than together"
+      },
+      {
+        "id": "d",
+        "text": "Write long agent instructions to cover each branch of the flow"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Best Practices: klares Geschäftsszenario, knappe Anweisungen, natürlichsprachliches Prototyping mit Verfeinerung im Designer, Agent und Flow gemeinsam testen, Analytics überwachen, Flows modular halten (ein Flow je Hauptaufgabe).",
+    "source": {
+      "title": "Design agents and agent flows with Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/17-design-agent-flows-copilot-studio",
+      "quote": "Keep flows modular - one flow per major task or automation"
+    }
+  },
+  {
+    "id": "ab100-099",
+    "type": "matching",
+    "skillArea": "design",
+    "topic": "Prompt action types",
+    "difficulty": "easy",
+    "prompt": "Match each scenario to the prompt action type described in the learning content.",
+    "left": [
+      {
+        "id": "l1",
+        "text": "Create a professional rewrite of a customer message"
+      },
+      {
+        "id": "l2",
+        "text": "Pull the order number and issue type out of a request"
+      },
+      {
+        "id": "l3",
+        "text": "Identify a request as billing, onboarding, or support"
+      },
+      {
+        "id": "l4",
+        "text": "Draft an email response to a customer"
+      }
+    ],
+    "right": [
+      {
+        "id": "r1",
+        "text": "Transform"
+      },
+      {
+        "id": "r2",
+        "text": "Extract"
+      },
+      {
+        "id": "r3",
+        "text": "Classify"
+      },
+      {
+        "id": "r4",
+        "text": "Generate"
+      }
+    ],
+    "correct": {
+      "l1": "r1",
+      "l2": "r2",
+      "l3": "r3",
+      "l4": "r4"
+    },
+    "explanation": "Prompt-Action-Typen: Transform (umschreiben), Summarize (zusammenfassen), Extract (Entitäten/Felder), Generate (neuer Text), Classify (kategorisieren).",
+    "source": {
+      "title": "Design prompt actions in Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/18-design-prompt-actions-copilot-studio",
+      "quote": "Identify request as billing, onboarding, or support"
+    }
+  },
+  {
+    "id": "ab100-100",
+    "type": "single-choice",
+    "skillArea": "design",
+    "topic": "Prompt Coach structure",
+    "difficulty": "medium",
+    "prompt": "A team's prompt actions produce inconsistent, speculative output. The architect introduces the Prompt Coach template. Which structure does the learning content describe for it?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Goal, context, instructions or rules, optional examples, and output format"
+      },
+      {
+        "id": "b",
+        "text": "Model name, temperature, top-p, max tokens, and stop sequences"
+      },
+      {
+        "id": "c",
+        "text": "Trigger phrases, condition nodes, message nodes, and entity types"
+      },
+      {
+        "id": "d",
+        "text": "Purpose, owner, version, risk classification, applicable systems, and date"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Core Prompt Coach Structure: Goal (was erreicht werden muss), Context (Daten, Szenario), Instructions/Rules (Ton, Constraints, erlaubte Inhalte), Examples (optional), Output Format (exakte Struktur). Constraints wie Wortlimits und ausgeschlossene Inhalte (keine Spekulation) halten Output vorhersehbar.",
+    "source": {
+      "title": "Design prompt actions in Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/18-design-prompt-actions-copilot-studio",
+      "quote": "Excluded content (no speculation, no unverified data)"
+    }
+  },
+  {
+    "id": "ab100-101",
+    "type": "single-choice",
+    "skillArea": "design",
+    "topic": "Success criteria categories",
+    "difficulty": "medium",
+    "prompt": "A steering committee defines success for an AI triage solution as \"users like it\". Which rewrite meets the success-criteria requirements in the learning content?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Reduce case processing time by 40 percent within two quarters, with recommendation accuracy of at least 85 percent"
+      },
+      {
+        "id": "b",
+        "text": "Deploy the agent to the whole customer-service organization as soon as the pilot ends, and measure adoption after the first year"
+      },
+      {
+        "id": "c",
+        "text": "Achieve a positive impression among executives and service managers, confirmed in the quarterly business review"
+      },
+      {
+        "id": "d",
+        "text": "Use the newest model available in the catalog and keep the agent updated with each Dynamics 365 release wave"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Erfolgskriterien müssen business-aligned, messbar, outcome-driven, zeitlich begrenzt und mit verfügbaren Daten machbar sein; Beispiele sind 40 % weniger Bearbeitungszeit (Business Value) und ≥ 85 % Empfehlungsgenauigkeit (Quality & Accuracy).",
+    "source": {
+      "title": "Define success criteria and adoption goals for AI business solutions",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/19-define-success-criteria-adoption-goals",
+      "quote": "Reduction in processing time by 40%"
+    }
+  },
+  {
+    "id": "ab100-102",
+    "type": "single-choice",
+    "skillArea": "design",
+    "topic": "Success criteria vs adoption goals",
+    "difficulty": "easy",
+    "prompt": "How does the learning content distinguish success criteria from adoption goals?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Success criteria define the outcomes the solution should deliver; adoption goals define how the organization embraces and scales them"
+      },
+      {
+        "id": "b",
+        "text": "Success criteria are technical thresholds owned by engineering, while adoption goals are financial targets owned by finance"
+      },
+      {
+        "id": "c",
+        "text": "Adoption goals are set by the platform vendor's adoption framework, while success criteria are defined by the AI Center of Excellence"
+      },
+      {
+        "id": "d",
+        "text": "They are synonyms used interchangeably in the Cloud Adoption Framework, both describing measurable business outcomes"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Success Criteria = welche Outcomes (Business Value, Effizienz, UX, Qualität, Risiko, Skalierung); Adoption Goals = wie die Organisation sie annimmt und skaliert (organisatorische, Daten-, technische Readiness, Nutzeradoption).",
+    "source": {
+      "title": "Define success criteria and adoption goals for AI business solutions",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-agents-business-solutions/19-define-success-criteria-adoption-goals",
+      "quote": "Adoption goals guide how the organization will embrace and scale those outcomes."
+    }
+  }
+]

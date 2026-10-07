@@ -1,0 +1,1037 @@
+[
+  {
+    "id": "ab100-001",
+    "type": "single-choice",
+    "skillArea": "plan",
+    "topic": "Architect role in AI transformation",
+    "difficulty": "easy",
+    "prompt": "A manufacturing company has approved an AI program but has no roadmap, no data readiness assessment, and no KPIs. The CIO asks what the solution architect should own first. Which responsibility set matches the learning content's definition of the AI architect role?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Define the adoption vision and roadmap, ensure data readiness and governance, integrate AI with workflows, apply responsible AI, and set KPIs"
+      },
+      {
+        "id": "b",
+        "text": "Select and license the models, negotiate vendor contracts, author the organization's prompt library, and deliver user training for each department"
+      },
+      {
+        "id": "c",
+        "text": "Build custom machine learning models in Azure Machine Learning ahead of documented business goals, then derive the program KPIs from measured model accuracy"
+      },
+      {
+        "id": "d",
+        "text": "Hand roadmap and governance to the data science team and concentrate on infrastructure sizing, network isolation, and landing zone cost control"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Die Lerninhalte definieren die Kernverantwortung des AI Architects als Vision & Roadmap, Datenarchitektur (Readiness und Governance), Integration mit Unternehmens-Workflows, Security & Ethics (Responsible AI) und Performance Monitoring über KPIs. Modellbau oder Training allein sind nicht die Architektenrolle; der Prozess startet bei Business-Zielen, nicht bei Modellen.",
+    "source": {
+      "title": "Introduction (Introduction to agentic AI business solutions)",
+      "url": "https://learn.microsoft.com/en-us/training/modules/introduction-agentic-ai-business-solution-architecture/1-introduction",
+      "quote": "Key responsibilities of an AI architect include defining the AI adoption vision and roadmap, ensuring data readiness and governance, integrating AI services with enterprise workflows, implementing responsible AI principles such as fairness and transparency, and monitoring performance through clear KPIs."
+    }
+  },
+  {
+    "id": "ab100-002",
+    "type": "ordering",
+    "skillArea": "plan",
+    "topic": "AI transformation framework",
+    "difficulty": "easy",
+    "prompt": "A steering committee wants the AI transformation to be systematic and outcome-driven. Arrange the stages of the AI transformation framework described in the learning content in the order they occur.",
+    "items": [
+      {
+        "id": "i1",
+        "text": "Define business goals"
+      },
+      {
+        "id": "i2",
+        "text": "Develop the AI strategy"
+      },
+      {
+        "id": "i3",
+        "text": "Design the architecture"
+      },
+      {
+        "id": "i4",
+        "text": "Implement the solution"
+      },
+      {
+        "id": "i5",
+        "text": "Monitor and optimize"
+      }
+    ],
+    "correctOrder": [
+      "i1",
+      "i2",
+      "i3",
+      "i4",
+      "i5"
+    ],
+    "explanation": "Das Framework läuft von Business Goals über AI Strategy und Architecture Design zur Implementation und endet bei Monitoring & Optimization. Entscheidend für die Prüfung: Ziele stehen vor Strategie, Strategie vor Architektur.",
+    "source": {
+      "title": "Drive AI transformation with architect strategies",
+      "url": "https://learn.microsoft.com/en-us/training/modules/introduction-agentic-ai-business-solution-architecture/2-architect-role-ai-transformation-businesses",
+      "quote": "Flow: Business Goals → AI Strategy → Architecture Design → Implementation → Monitoring & Optimization"
+    }
+  },
+  {
+    "id": "ab100-003",
+    "type": "single-choice",
+    "skillArea": "plan",
+    "topic": "Out-of-the-box agent resources",
+    "difficulty": "easy",
+    "prompt": "A retailer wants customer-service automation within weeks and has no AI engineers. The architect recommends starting with Microsoft's out-of-the-box agent resources. Which benefit does the learning content attribute to prebuilt agents that justifies this recommendation?",
+    "options": [
+      {
+        "id": "a",
+        "text": "They reduce development time, follow responsible AI practices, and scale across Microsoft 365 and Dynamics 365"
+      },
+      {
+        "id": "b",
+        "text": "They make it unnecessary to define business outcomes before the tooling is selected, since the scenario is already fixed"
+      },
+      {
+        "id": "c",
+        "text": "They provide full control over model execution on private, isolated compute that the organization operates itself"
+      },
+      {
+        "id": "d",
+        "text": "They replace Azure AI services in compliance-sensitive workloads because their governance is handled by Microsoft"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Prebuilt-Agenten senken Entwicklungszeit, folgen Microsofts Responsible-AI-Standards und sind für Microsoft 365 und Dynamics 365 skaliert. Business Outcomes bleiben trotzdem der erste Schritt, und volle Kontrolle über die Ausführung ist das Merkmal von GPUs/Containern, nicht von Prebuilt-Agenten.",
+    "source": {
+      "title": "Identify out-of-box Microsoft AI agents for business",
+      "url": "https://learn.microsoft.com/en-us/training/modules/introduction-agentic-ai-business-solution-architecture/6-identify-out-of-box-microsoft-ai-agents",
+      "quote": "Faster Deployment: Reduce development time with ready-to-use agents."
+    }
+  },
+  {
+    "id": "ab100-004",
+    "type": "single-choice",
+    "skillArea": "plan",
+    "topic": "Agents in task automation",
+    "difficulty": "medium",
+    "prompt": "An operations director lists candidate agent use cases: drafting emails, summarizing Teams threads, triggering multi-step approval processes, and answering questions over enterprise data. Which tool mapping matches the learning content's examples of agent-driven task automation?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Communication via Microsoft 365 Copilot, process automation via Copilot Studio and Power Automate, knowledge retrieval via Copilot Search and Graph grounding"
+      },
+      {
+        "id": "b",
+        "text": "Communication via Power Automate, process automation via Microsoft 365 Copilot, knowledge retrieval via Azure Machine Learning and a custom vector index"
+      },
+      {
+        "id": "c",
+        "text": "Communication, documentation, and knowledge retrieval via Azure OpenAI Service directly, with Copilot Studio reserved for documentation, reporting, and meeting recaps"
+      },
+      {
+        "id": "d",
+        "text": "Communication via Copilot Studio, process automation via Loop and OneNote, knowledge retrieval via Word templates and Dynamics 365 dashboards"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Die Tabelle in den Lerninhalten ordnet Kommunikation Microsoft 365 Copilot zu, Prozessautomatisierung Copilot Studio und Power Automate und Wissensabruf Copilot Search mit Graph Grounding. Dokumentation läuft über Word, OneNote, Loop und Microsoft 365 Copilot.",
+    "source": {
+      "title": "Assess the use of agents in task automation, data analytics, and decision-making",
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-requirements-ai-powered-business-solutions/2-assess-use-agents-task-automation-data-analytics-decision-making",
+      "quote": "Trigger workflows and multi-step tasks"
+    }
+  },
+  {
+    "id": "ab100-005",
+    "type": "single-choice",
+    "skillArea": "plan",
+    "topic": "Agents in decision-making",
+    "difficulty": "medium",
+    "prompt": "A finance leadership team wants agents to support strategic decisions but worries about replacing human judgment. Which design principle from the learning content should the architect apply when scoping agent use?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Use agent automation to reduce repetitive work rather than to replace critical thinking, and keep refining prompts, workflows, and data inputs"
+      },
+      {
+        "id": "b",
+        "text": "Let agents take final strategic decisions autonomously once their recommendation accuracy exceeds the human baseline in a pilot"
+      },
+      {
+        "id": "c",
+        "text": "Restrict agents to document drafting and summarization, because decision support and risk identification fall outside the scope of generative AI in the enterprise"
+      },
+      {
+        "id": "d",
+        "text": "Turn off performance monitoring after go-live so that leadership decisions are not influenced by the agent's usage data"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Agenten liefern Entscheidungsinputs wie Szenario-Empfehlungen und Risikoerkennung; die Best Practices verlangen aber, Automatisierung für repetitive Arbeit einzusetzen, nicht als Ersatz für kritisches Denken, und Performance laufend zu überwachen.",
+    "source": {
+      "title": "Assess the use of agents in task automation, data analytics, and decision-making",
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-requirements-ai-powered-business-solutions/2-assess-use-agents-task-automation-data-analytics-decision-making",
+      "quote": "Use agent automation to reduce repetitive work, not replace critical thinking."
+    }
+  },
+  {
+    "id": "ab100-006",
+    "type": "matching",
+    "skillArea": "plan",
+    "topic": "Grounding data quality dimensions",
+    "difficulty": "medium",
+    "prompt": "A data steward reviews the knowledge corpus for an HR agent. Match each observed problem to the grounding data quality dimension it violates.",
+    "left": [
+      {
+        "id": "l1",
+        "text": "Policy PDFs contain duplicated sections and inconsistent formatting"
+      },
+      {
+        "id": "l2",
+        "text": "The agent retrieves conceptually similar but contextually wrong content"
+      },
+      {
+        "id": "l3",
+        "text": "Benefit tables still show last year's contribution limits"
+      },
+      {
+        "id": "l4",
+        "text": "Users cannot see answers because documents sit in a library they are not permitted to access"
+      }
+    ],
+    "right": [
+      {
+        "id": "r1",
+        "text": "Cleanliness"
+      },
+      {
+        "id": "r2",
+        "text": "Relevance"
+      },
+      {
+        "id": "r3",
+        "text": "Timeliness"
+      },
+      {
+        "id": "r4",
+        "text": "Availability"
+      }
+    ],
+    "correct": {
+      "l1": "r1",
+      "l2": "r2",
+      "l3": "r3",
+      "l4": "r4"
+    },
+    "explanation": "Die fünf Dimensionen: Accuracy (korrekt und verifiziert), Relevance (passt zum Use Case, sonst liefert die semantische Suche ähnliche, aber falsche Inhalte), Timeliness (aktuell), Cleanliness (strukturiert, ohne Duplikate und Rauschen) und Availability (zugänglich und indexiert gemäß Berechtigungen).",
+    "source": {
+      "title": "Review data for grounding accuracy, relevance, timeliness, cleanliness, and availability",
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-requirements-ai-powered-business-solutions/3-review-data-grounding-accuracy-relevance-timeliness-cleanliness-availability",
+      "quote": "When data is irrelevant, semantic search may retrieve conceptually similar—but contextually wrong—content."
+    }
+  },
+  {
+    "id": "ab100-007",
+    "type": "single-choice",
+    "skillArea": "plan",
+    "topic": "Grounding and the Retrieval API",
+    "difficulty": "medium",
+    "prompt": "A compliance officer asks whether an agent grounded on SharePoint could surface a confidential merger document to an employee who lacks access to it. Which statement from the learning content answers this?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The Copilot Retrieval API respects permissions and will not return content beyond a user's access scope"
+      },
+      {
+        "id": "b",
+        "text": "Semantic indexing removes permission metadata, so access must be enforced in the agent's instructions"
+      },
+      {
+        "id": "c",
+        "text": "Grounding data is copied into the model, so document permissions no longer apply after indexing"
+      },
+      {
+        "id": "d",
+        "text": "Dataverse sources enforce permissions at retrieval time, while SharePoint sources are readable by any authenticated user of the agent"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Availability bedeutet: Agenten erden Antworten nur auf Daten, auf die der Nutzer Zugriff hat. Die Retrieval API honoriert Berechtigungen und gibt keine Inhalte außerhalb des Zugriffsbereichs zurück.",
+    "source": {
+      "title": "Review data for grounding accuracy, relevance, timeliness, cleanliness, and availability",
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-requirements-ai-powered-business-solutions/3-review-data-grounding-accuracy-relevance-timeliness-cleanliness-availability",
+      "quote": "The Retrieval API respects permissions and will not return content beyond a user's access scope."
+    }
+  },
+  {
+    "id": "ab100-008",
+    "type": "single-choice",
+    "skillArea": "plan",
+    "topic": "Semantic index timeliness",
+    "difficulty": "easy",
+    "prompt": "A policy team updates documents weekly and asks whether the grounding layer for Microsoft 365 Copilot will reflect changes without a manual reindex. What does the learning content state?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The semantic index in Microsoft 365 continuously updates as content changes"
+      },
+      {
+        "id": "b",
+        "text": "The semantic index is rebuilt during quarterly tenant maintenance windows"
+      },
+      {
+        "id": "c",
+        "text": "Changes require the Retrieval API to be re-registered for each updated document"
+      },
+      {
+        "id": "d",
+        "text": "Documents stored in Dataverse are refreshed automatically, others are not"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Timeliness wird im Microsoft-365-Umfeld durch den semantischen Index gestützt, der sich fortlaufend aktualisiert, wenn sich Inhalte ändern.",
+    "source": {
+      "title": "Review data for grounding accuracy, relevance, timeliness, cleanliness, and availability",
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-requirements-ai-powered-business-solutions/3-review-data-grounding-accuracy-relevance-timeliness-cleanliness-availability",
+      "quote": "The semantic index in Microsoft 365 continuously updates as content changes, ensuring the grounding layer reflects the latest documents, conversations, and knowledge."
+    }
+  },
+  {
+    "id": "ab100-009",
+    "type": "single-choice",
+    "skillArea": "plan",
+    "topic": "Organizing data for AI systems",
+    "difficulty": "medium",
+    "prompt": "A conglomerate stores customer data in CRM, logs in a data lake, and documents across departmental file shares. Several AI systems (Copilot, custom RAG apps, autonomous agents) need the same data. Which best practice from the learning content addresses this situation most directly?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Centralize the data in Azure, Dataverse, or Fabric and expose it through several access paths such as APIs, search indexes, and Graph connectors"
+      },
+      {
+        "id": "b",
+        "text": "Give each AI system its own private replica of each source, so that the systems do not contend for the same data and can be tuned and governed separately"
+      },
+      {
+        "id": "c",
+        "text": "Keep the data in the departmental file shares and let each agent crawl them directly at query time to avoid building a central platform"
+      },
+      {
+        "id": "d",
+        "text": "Defer governance and labeling until the first AI system is in production, so that delivery of the initial use case is not slowed down"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Die Best Practices verlangen zentralisierte Daten (Azure, Dataverse, Fabric), Normalisierung, semantische Indexierung, mehrere Zugriffspfade (APIs, Suchindizes, RAG-Pipelines, Graph Connectors, SQL-Endpunkte) und frühe Governance mit Purview.",
+    "source": {
+      "title": "Organize business solution data for AI systems",
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-requirements-ai-powered-business-solutions/4-organize-business-solution-data-available-other-ai-systems",
+      "quote": "Use Azure, Dataverse, or Fabric to avoid scattered data silos."
+    }
+  },
+  {
+    "id": "ab100-010",
+    "type": "yes-no",
+    "skillArea": "plan",
+    "topic": "RAG pipelines",
+    "difficulty": "medium",
+    "prompt": "An architect proposes a production RAG pipeline so that a custom app can use retrieved enterprise context. Evaluate each statement against the learning content.",
+    "statements": [
+      {
+        "id": "s1",
+        "text": "A RAG pipeline covers ingestion, cleaning, chunking, embedding, indexing, retrieval, prompt assembly, orchestration, and monitoring.",
+        "correct": true
+      },
+      {
+        "id": "s2",
+        "text": "RAG pipelines give LLM solutions real-time data access while preserving data privacy.",
+        "correct": true
+      },
+      {
+        "id": "s3",
+        "text": "RAG eliminates the need to curate or clean source data because the model filters noise at inference time.",
+        "correct": false
+      },
+      {
+        "id": "s4",
+        "text": "Vector search capability is unavailable in Azure SQL and Cosmos DB, so a separate vector database is mandatory.",
+        "correct": false
+      }
+    ],
+    "explanation": "Die RAG-Pipeline umfasst alle genannten Schritte und bringt Echtzeit-Datenzugriff, Datenschutz und weniger falsche Informationen. Saubere Daten bleiben Voraussetzung (Cleanliness), und Azure SQL sowie Cosmos DB unterstützen laut Lerninhalt Vektordaten bzw. native Vektorsuche.",
+    "source": {
+      "title": "Organize business solution data for AI systems",
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-requirements-ai-powered-business-solutions/4-organize-business-solution-data-available-other-ai-systems",
+      "quote": "Empowering LLM solutions with real-time data access"
+    }
+  },
+  {
+    "id": "ab100-011",
+    "type": "single-choice",
+    "skillArea": "plan",
+    "topic": "Azure data estate layers",
+    "difficulty": "hard",
+    "prompt": "In an Azure data estate designed for AI, which layer is responsible for enabling grounding, retrieval, and semantic search?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The intelligence layer with Azure AI Search and a vector index"
+      },
+      {
+        "id": "b",
+        "text": "The operational databases that store app and business data"
+      },
+      {
+        "id": "c",
+        "text": "The analytical lakehouse or warehouse that curates data for ML"
+      },
+      {
+        "id": "d",
+        "text": "The AI apps and agents layer such as Copilot and RAG apps"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Die Schichten: Operational Databases (strukturierte App-/Geschäftsdaten), Analytical Stores (kuratierte Daten für AI/ML), Intelligence Layer mit Search und Vector Index (Grounding, Retrieval, semantische Suche) und AI Apps + Agents.",
+    "source": {
+      "title": "Organize business solution data for AI systems",
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-requirements-ai-powered-business-solutions/4-organize-business-solution-data-available-other-ai-systems",
+      "quote": "Enable grounding, retrieval, semantic search"
+    }
+  },
+  {
+    "id": "ab100-012",
+    "type": "matching",
+    "skillArea": "plan",
+    "topic": "CAF phases and agent lifecycle",
+    "difficulty": "hard",
+    "prompt": "A program office wants to unify the Cloud Adoption Framework AI phases with the agent lifecycle. Match each CAF phase to the agent lifecycle stage and its typical output described in the learning content.",
+    "left": [
+      {
+        "id": "l1",
+        "text": "AI strategy"
+      },
+      {
+        "id": "l2",
+        "text": "AI ready"
+      },
+      {
+        "id": "l3",
+        "text": "Govern AI and secure AI"
+      },
+      {
+        "id": "l4",
+        "text": "Manage AI"
+      }
+    ],
+    "right": [
+      {
+        "id": "r1",
+        "text": "Plan agents: AI strategy brief plus an Agent Technology Plan with platform choice"
+      },
+      {
+        "id": "r2",
+        "text": "Govern and secure agents (foundation): landing zones, an agent governance charter, and a data access model"
+      },
+      {
+        "id": "r3",
+        "text": "Govern and secure agents (enforcement): policy set, risk register, and security controls for data, models, and endpoints"
+      },
+      {
+        "id": "r4",
+        "text": "Operate agents: AI operations baseline and an Agent Ops playbook with SLOs and deprecation rules"
+      }
+    ],
+    "correct": {
+      "l1": "r1",
+      "l2": "r2",
+      "l3": "r3",
+      "l4": "r4"
+    },
+    "explanation": "Die Lerninhalte mappen Strategy auf Plan agents (Agent Technology Plan), Ready auf die Governance-Grundlage (Landing Zones, Governance Charter, Data Access Model), Govern/Secure auf die Durchsetzung (Policy Set, Risk Register, Security Controls) und Manage auf Operate agents (Operations Baseline, Agent Ops Playbook).",
+    "source": {
+      "title": "Implement AI adoption process with Azure",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/2-implement-ai-adoption-process-cloud-adoption-framework-azure",
+      "quote": "AI operations baseline (observability, incident response, cost/usage reports) and Agent Ops playbook (SLOs, retraining rules, deprecation)"
+    }
+  },
+  {
+    "id": "ab100-013",
+    "type": "single-choice",
+    "skillArea": "plan",
+    "topic": "Agent readiness criteria",
+    "difficulty": "medium",
+    "prompt": "During the AI plan phase, a team wants to move a Copilot Studio proof of concept toward production. Which readiness criteria does the learning content say should be defined at this stage?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Data availability, governance readiness, identity model, and connectors"
+      },
+      {
+        "id": "b",
+        "text": "Token pricing, GPU quota, context window size, and a list of competing vendor products"
+      },
+      {
+        "id": "c",
+        "text": "The final marketing name of the agent and its Teams icon"
+      },
+      {
+        "id": "d",
+        "text": "A fully trained custom model and a completed red-team report"
+      }
+    ],
+    "correct": "a",
+    "explanation": "In Phase B (AI plan ⇄ Plan agents) werden Agent-Readiness-Kriterien definiert: Datenverfügbarkeit, Governance-Reife, Identitätsmodell und Connectors. Red Teaming und Modelle gehören in spätere Phasen.",
+    "source": {
+      "title": "Implement AI adoption process with Azure",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/2-implement-ai-adoption-process-cloud-adoption-framework-azure",
+      "quote": "Define agent readiness criteria (data availability, governance readiness, identity model, connectors)"
+    }
+  },
+  {
+    "id": "ab100-014",
+    "type": "single-choice",
+    "skillArea": "plan",
+    "topic": "Why unify CAF and agent lifecycle",
+    "difficulty": "easy",
+    "prompt": "A governance lead questions why the architect insists on layering the agent adoption guidance on top of the Cloud Adoption Framework instead of using CAF alone. Which risk does the learning content name as a reason to unify both?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Agent sprawl across teams and platforms"
+      },
+      {
+        "id": "b",
+        "text": "Vendor lock-in to a single model provider"
+      },
+      {
+        "id": "c",
+        "text": "Excessive landing zone cost for small workloads"
+      },
+      {
+        "id": "d",
+        "text": "Loss of Well-Architected Framework alignment"
+      }
+    ],
+    "correct": "a",
+    "explanation": "CAF liefert das End-to-End-Rückgrat; die Agent-Adoption-Guidance ergänzt das Betriebsmodell für Agenten. Die Vereinigung reduziert Risiko, verhindert Agent Sprawl und beschleunigt die Wertrealisierung.",
+    "source": {
+      "title": "Implement AI adoption process with Azure",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/2-implement-ai-adoption-process-cloud-adoption-framework-azure",
+      "quote": "Aligning these frameworks reduces risk, prevents \"agent sprawl,\" and accelerates value realization."
+    }
+  },
+  {
+    "id": "ab100-015",
+    "type": "single-choice",
+    "skillArea": "plan",
+    "topic": "SaaS agent first principle",
+    "difficulty": "medium",
+    "prompt": "A sales organization asks for an agent that summarizes opportunities and drafts follow-ups inside Outlook. A developer proposes building it in Microsoft Foundry from scratch. According to the technology decision framework in the learning content, what should the architect do first?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Check whether a SaaS agent already meets the functional requirements and use it if so"
+      },
+      {
+        "id": "b",
+        "text": "Approve the Foundry build because pro-code gives maximum flexibility for any future need"
+      },
+      {
+        "id": "c",
+        "text": "Start with GPUs and containers so the organization owns the full technology stack"
+      },
+      {
+        "id": "d",
+        "text": "Build a Copilot Studio agent and a Foundry agent in parallel and keep the faster one"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Das Entscheidungsprinzip lautet „SaaS agent first“: Erfüllt ein SaaS-Agent die funktionalen Anforderungen, wird er genutzt; erst sonst wird zwischen Low-Code (Copilot Studio) und Pro-Code (Foundry) entschieden.",
+    "source": {
+      "title": "Design AI agents for business solutions",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/3-design-strategy-building-ai-agents-business-solutions",
+      "quote": "If yes, use it. If no, determine whether low-code or pro-code custom agents are needed."
+    }
+  },
+  {
+    "id": "ab100-016",
+    "type": "matching",
+    "skillArea": "plan",
+    "topic": "Agent platform comparison",
+    "difficulty": "medium",
+    "prompt": "Match each solution approach from the agent architecture comparison chart to the scenario it is best for.",
+    "left": [
+      {
+        "id": "l1",
+        "text": "SaaS agents"
+      },
+      {
+        "id": "l2",
+        "text": "Microsoft Copilot Studio"
+      },
+      {
+        "id": "l3",
+        "text": "Microsoft Foundry"
+      },
+      {
+        "id": "l4",
+        "text": "GPUs and containers"
+      }
+    ],
+    "right": [
+      {
+        "id": "r1",
+        "text": "Personal productivity with minimal customization for immediate value"
+      },
+      {
+        "id": "r2",
+        "text": "Process transformation with fast low-code development and SaaS security"
+      },
+      {
+        "id": "r3",
+        "text": "Strategic transformation with deep integration and custom logic"
+      },
+      {
+        "id": "r4",
+        "text": "Compliance-sensitive workloads needing private networking and full control of the stack"
+      }
+    ],
+    "correct": {
+      "l1": "r1",
+      "l2": "r2",
+      "l3": "r3",
+      "l4": "r4"
+    },
+    "explanation": "SaaS-Agenten decken persönliche Produktivität ab, Copilot Studio die Prozesstransformation (Low/No-Code), Foundry die strategische Transformation (Pro-Code, tiefe Integration) und GPUs/Container compliance-sensitive oder stark angepasste Workloads mit voller Kontrolle.",
+    "source": {
+      "title": "Design AI agents for business solutions",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/3-design-strategy-building-ai-agents-business-solutions",
+      "quote": "Process transformation. Enables fast development with minimal coding and SaaS security."
+    }
+  },
+  {
+    "id": "ab100-017",
+    "type": "single-choice",
+    "skillArea": "plan",
+    "topic": "Pro-code IaaS hosting",
+    "difficulty": "medium",
+    "prompt": "A defense contractor must run its agent's model on private, isolated compute with bring-your-own model hosting under strict compliance rules. Which platform tier does the learning content recommend?",
+    "options": [
+      {
+        "id": "a",
+        "text": "GPUs and containers (pro-code, IaaS)"
+      },
+      {
+        "id": "b",
+        "text": "Microsoft 365 Copilot (SaaS)"
+      },
+      {
+        "id": "c",
+        "text": "Copilot Studio (low-code or no-code, SaaS)"
+      },
+      {
+        "id": "d",
+        "text": "Prebuilt Dynamics 365 copilots"
+      }
+    ],
+    "correct": "a",
+    "explanation": "GPUs & Container sind vorgesehen, wenn volle Kontrolle über die Modellausführung, private isolierte Compute oder BYO-Modell-Hosting in strengen Compliance-Umgebungen nötig ist.",
+    "source": {
+      "title": "Design AI agents for business solutions",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/3-design-strategy-building-ai-agents-business-solutions",
+      "quote": "Strict compliance environments require BYO model hosting"
+    }
+  },
+  {
+    "id": "ab100-018",
+    "type": "single-choice",
+    "skillArea": "plan",
+    "topic": "Single-agent vs multi-agent decision",
+    "difficulty": "medium",
+    "prompt": "A product owner wants to launch a bounded HR FAQ agent quickly and proposes a three-agent design \"for future flexibility\". Based on the learning content, how should the architect respond?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Start with a single agent; many multi-agent needs can be met with persona switching, better retrieval, policy controls, or a larger context window"
+      },
+      {
+        "id": "b",
+        "text": "Accept the three-agent design, because modularity lowers cost and latency and makes the solution easier to govern and to extend from the start"
+      },
+      {
+        "id": "c",
+        "text": "Require at least five agents, since the roadmap might expand across functions and refactoring later would be more expensive"
+      },
+      {
+        "id": "d",
+        "text": "Adopt the multi-agent design provided the team owns a Foundry subscription, because Copilot Studio supports a single agent per solution"
+      }
+    ],
+    "correct": "a",
+    "explanation": "„Start simple, scale when the evidence requires it.“ Multi-Agent erst bei Sicherheits-/Compliance-Grenzen, getrennten Teams und Release-Zyklen, klarer Expansion auf 3-5+ Funktionen oder mehreren abhängigen Workstreams. Multi-Agent bringt Orchestrierungsaufwand, Latenz und größere Sicherheitsfläche.",
+    "source": {
+      "title": "Design a multi-agent solution",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/4-design-multi-agent-solution",
+      "quote": "Many \"multi-agent\" needs can be met with persona switching, improved retrieval, policy controls, or a larger context window."
+    }
+  },
+  {
+    "id": "ab100-019",
+    "type": "multiple-choice",
+    "skillArea": "plan",
+    "topic": "When to choose multi-agent first",
+    "difficulty": "hard",
+    "prompt": "Which two conditions does the learning content list as reasons to choose a multi-agent architecture from the start? (Choose two.)",
+    "options": [
+      {
+        "id": "a",
+        "text": "The solution must cross security or compliance boundaries such as strict data classifications or separation of duties"
+      },
+      {
+        "id": "b",
+        "text": "Multiple teams own distinct knowledge, data, or release cycles that benefit from decoupled agents"
+      },
+      {
+        "id": "c",
+        "text": "The domain is bounded and time-to-value is the critical constraint"
+      },
+      {
+        "id": "d",
+        "text": "Operating costs must be minimized in the first release"
+      },
+      {
+        "id": "e",
+        "text": "The team prefers Copilot Studio over Microsoft Foundry"
+      }
+    ],
+    "correct": [
+      "a",
+      "b"
+    ],
+    "explanation": "Multi-Agent zuerst, wenn Sicherheits-/Compliance-Grenzen überschritten werden, mehrere Teams eigene Daten und Release-Zyklen haben, die Roadmap 3-5+ Funktionen verlangt oder Aktionen mit Abhängigkeiten über mehrere Workstreams laufen. Bounded Domain, Time-to-Value und minimale Kosten sprechen für Single-Agent.",
+    "source": {
+      "title": "Design a multi-agent solution",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/4-design-multi-agent-solution",
+      "quote": "Multiple teams own distinct knowledge, data, or release cycles that benefit from decoupled agents."
+    }
+  },
+  {
+    "id": "ab100-020",
+    "type": "matching",
+    "skillArea": "plan",
+    "topic": "Orchestration patterns",
+    "difficulty": "hard",
+    "prompt": "An architect designs collaboration between agents with the Microsoft Agent Framework SDK. Match each requirement to the orchestration pattern described in the learning content.",
+    "left": [
+      {
+        "id": "l1",
+        "text": "A deterministic staged pipeline: plan, enrich, verify, act"
+      },
+      {
+        "id": "l2",
+        "text": "Independent subtasks run in parallel and results are reconciled"
+      },
+      {
+        "id": "l3",
+        "text": "Agents contribute proposals and a moderator agent arbitrates"
+      },
+      {
+        "id": "l4",
+        "text": "Context and control pass to a specialist or a human when a threshold triggers escalation"
+      },
+      {
+        "id": "l5",
+        "text": "The right expert agents are pulled in dynamically at runtime"
+      }
+    ],
+    "right": [
+      {
+        "id": "r1",
+        "text": "Sequential orchestration"
+      },
+      {
+        "id": "r2",
+        "text": "Concurrent orchestration"
+      },
+      {
+        "id": "r3",
+        "text": "Group chat orchestration"
+      },
+      {
+        "id": "r4",
+        "text": "Handoff orchestration"
+      },
+      {
+        "id": "r5",
+        "text": "Magentic orchestration"
+      }
+    ],
+    "correct": {
+      "l1": "r1",
+      "l2": "r2",
+      "l3": "r3",
+      "l4": "r4",
+      "l5": "r5"
+    },
+    "explanation": "Sequential = deterministische Pipeline; Concurrent = parallele Agenten mit Aggregation; Group chat = moderierte Diskussion mit Schiedsrichter-Agent; Handoff = Übergabe an Spezialist oder Mensch bei Eskalation; Magentic = dynamische Spezialisierung, ein „Magnet“ zieht Expertenagenten zur Laufzeit hinzu.",
+    "source": {
+      "title": "Design a multi-agent solution",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/4-design-multi-agent-solution",
+      "quote": "Pattern for dynamic specialization where a \"magnet\" pulls in the right expert agents at runtime."
+    }
+  },
+  {
+    "id": "ab100-021",
+    "type": "single-choice",
+    "skillArea": "plan",
+    "topic": "Platform roles in multi-agent solutions",
+    "difficulty": "medium",
+    "prompt": "A multi-agent solution needs a domain assistant for productivity inflow, a business workflow agent with connectors and guardrails, and an integration agent with pro-code tools and custom evaluations. Which platform-to-role mapping matches the reference architecture in the learning content?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Domain assistant on Microsoft 365 Copilot, workflow agent on Copilot Studio, integration agent on Foundry"
+      },
+      {
+        "id": "b",
+        "text": "Domain assistant on Foundry, workflow agent on Microsoft 365 Copilot, integration agent on Copilot Studio"
+      },
+      {
+        "id": "c",
+        "text": "Domain assistant, workflow agent, and integration agent on Copilot Studio to avoid cross-platform orchestration"
+      },
+      {
+        "id": "d",
+        "text": "Domain assistant on Copilot Studio, workflow agent on Foundry, integration agent on Microsoft 365 Copilot"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Die Platform-Role-Mapping-Tabelle: Domain assistant → Microsoft 365 Copilot (sofortiger Wert im Arbeitsfluss), Business workflow agent → Copilot Studio (schnelle Iteration, Connectors, Guardrails), Integration/orchestration agent → Foundry (Pro-Code-Tools, komplexe Flows, eigene Evaluationen).",
+    "source": {
+      "title": "Design a multi-agent solution",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/4-design-multi-agent-solution",
+      "quote": "Pro-code tools, complex flows, custom evaluations"
+    }
+  },
+  {
+    "id": "ab100-022",
+    "type": "single-choice",
+    "skillArea": "plan",
+    "topic": "Context hygiene in handoffs",
+    "difficulty": "hard",
+    "prompt": "A reviewer finds that a planner agent forwards entire customer records and documents to each worker agent at every handoff, driving up cost and exposure. Which principle from the learning content should the architect apply?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Keep handoff payloads minimal by passing IDs instead of raw content"
+      },
+      {
+        "id": "b",
+        "text": "Give each worker agent the same broad credentials so no data has to be passed"
+      },
+      {
+        "id": "c",
+        "text": "Replace the orchestration with prompt-to-prompt daisy chains to shrink payloads"
+      },
+      {
+        "id": "d",
+        "text": "Merge the workers into the planner so that no handoffs are needed anymore"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Context hygiene: Handoff-Payloads minimal halten (IDs statt Rohinhalt) steuert Kosten und Exposure. Least Privilege pro Agent gilt weiterhin; Prompt-zu-Prompt-Ketten sind laut Reliability-Tipp brüchig und nicht beobachtbar.",
+    "source": {
+      "title": "Design a multi-agent solution",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/4-design-multi-agent-solution",
+      "quote": "Keep handoff payloads minimal (IDs over raw content) to manage cost and exposure."
+    }
+  },
+  {
+    "id": "ab100-023",
+    "type": "single-choice",
+    "skillArea": "plan",
+    "topic": "Prebuilt agent feasibility",
+    "difficulty": "medium",
+    "prompt": "An architect evaluates whether an HR policy assistant can be delivered with a prebuilt Microsoft 365 Copilot agent. Which set of feasibility checks does the learning content prescribe?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The data exists in Microsoft 365, the interaction is conversational, no advanced multi-agent orchestration is needed, and retrieval-first accuracy is acceptable"
+      },
+      {
+        "id": "b",
+        "text": "The team has Foundry expertise, a custom model has been trained, the data lives outside Microsoft 365, and the interaction is driven by system events rather than chat"
+      },
+      {
+        "id": "c",
+        "text": "The use case needs autonomous triggers, writes to external systems, deterministic multi-step logic, and accuracy beyond retrieval-first responses"
+      },
+      {
+        "id": "d",
+        "text": "A GPU quota is approved, a vector database is provisioned, the data has been labeled, and an MLOps pipeline is available for retraining"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Feasibility Evaluation für Prebuilt-Agenten: Daten in Microsoft 365, konversationelles Interaktionsmodell, keine fortgeschrittene Multi-Agent-Orchestrierung, Genauigkeitserwartung passt zu Retrieval-first-Antworten.",
+    "source": {
+      "title": "Develop use cases for prebuilt Microsoft 365 Copilot agents",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/5-develop-use-cases-prebuilt-agents-solution",
+      "quote": "Output accuracy expectations align with retrieval-first responses"
+    }
+  },
+  {
+    "id": "ab100-024",
+    "type": "single-choice",
+    "skillArea": "plan",
+    "topic": "Identifying high-value prebuilt use cases",
+    "difficulty": "easy",
+    "prompt": "Which analysis factors does the learning content list for identifying high-value prebuilt agent use cases?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Task repetitiveness, knowledge intensity, pain points, and ROI KPIs impacted"
+      },
+      {
+        "id": "b",
+        "text": "Model parameter count, GPU availability, token price, and context window size"
+      },
+      {
+        "id": "c",
+        "text": "Number of connectors, DLP policy count, environment count, and license SKU"
+      },
+      {
+        "id": "d",
+        "text": "Executive sponsor seniority, budget size, vendor roadmap, and release cadence"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Kandidaten werden nach Wiederholhäufigkeit der Aufgabe, Wissensintensität, Pain Points (Verzögerungen, Fehler, Engpässe) und beeinflussten ROI-KPIs (gesparte Stunden, Ticketvolumen, Durchlaufzeit) bewertet.",
+    "source": {
+      "title": "Develop use cases for prebuilt Microsoft 365 Copilot agents",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/5-develop-use-cases-prebuilt-agents-solution",
+      "quote": "Task repetitiveness: How often the task occurs per user per week"
+    }
+  },
+  {
+    "id": "ab100-025",
+    "type": "matching",
+    "skillArea": "plan",
+    "topic": "Unified rule framework across platforms",
+    "difficulty": "hard",
+    "prompt": "An architect defines one rule set and applies it differently per platform. Match each rule category to how it applies in Copilot Studio versus Microsoft Foundry according to the learning content.",
+    "left": [
+      {
+        "id": "l1",
+        "text": "Data access"
+      },
+      {
+        "id": "l2",
+        "text": "Governance"
+      },
+      {
+        "id": "l3",
+        "text": "Evaluation"
+      },
+      {
+        "id": "l4",
+        "text": "Risk level"
+      }
+    ],
+    "right": [
+      {
+        "id": "r1",
+        "text": "Strict connector scoping in Copilot Studio; full control with explicit boundaries in Foundry"
+      },
+      {
+        "id": "r2",
+        "text": "Platform-enforced in Copilot Studio; architect-led and customizable in Foundry"
+      },
+      {
+        "id": "r3",
+        "text": "Built-in safety in Copilot Studio; evaluation pipelines required in Foundry"
+      },
+      {
+        "id": "r4",
+        "text": "Low to medium in Copilot Studio; medium to high in Foundry"
+      }
+    ],
+    "correct": {
+      "l1": "r1",
+      "l2": "r2",
+      "l3": "r3",
+      "l4": "r4"
+    },
+    "explanation": "Die Tabelle „Unified rule framework“: Data Access (Connector-Scoping vs. volle Kontrolle), Actions (leichte Automatisierung vs. tiefe Tool-Integration), Governance (plattformerzwungen vs. architektengeführt), Risk (low-medium vs. medium-high), Evaluation (eingebaut vs. Pipelines nötig).",
+    "source": {
+      "title": "Define solution rules and constraints for AI components",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/6-define-solution-rules-constraints-building-ai-components",
+      "quote": "Solution architects must define a single set of rules, then apply them differently across platforms."
+    }
+  },
+  {
+    "id": "ab100-026",
+    "type": "single-choice",
+    "skillArea": "plan",
+    "topic": "Behavior envelopes",
+    "difficulty": "medium",
+    "prompt": "A bank wants an agent to help relationship managers but must guarantee it never executes payments. Which rule type from the learning content captures this constraint?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A behavior envelope with explicit boundaries such as \"Agent may summarize\" and \"Agent may not execute financial transactions\""
+      },
+      {
+        "id": "b",
+        "text": "A networking constraint that restricts external tool calls to allowed domains and requires API isolation for sensitive integrations"
+      },
+      {
+        "id": "c",
+        "text": "An operational constraint that sets SLOs for latency and throughput and mandates rollback and failsafe procedures for the agent"
+      },
+      {
+        "id": "d",
+        "text": "A data movement constraint that keeps conversations ephemeral and prevents persistent storage of messages unless compliance requires it"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Behavior envelopes definieren, was ein Agent darf und nicht darf, mit expliziten Grenzen wie „Agent may not execute financial transactions“; hochriskante Aufgaben verlangen zusätzlich Human-in-the-loop-Checkpoints.",
+    "source": {
+      "title": "Define solution rules and constraints for AI components",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/6-define-solution-rules-constraints-building-ai-components",
+      "quote": "\"Agent may not execute financial transactions\""
+    }
+  },
+  {
+    "id": "ab100-027",
+    "type": "single-choice",
+    "skillArea": "plan",
+    "topic": "Environment and networking constraints",
+    "difficulty": "medium",
+    "prompt": "A pharmaceutical company plans a Foundry-based agent for confidential research workloads. Which environment and networking constraints does the learning content attach to Foundry in this situation?",
+    "options": [
+      {
+        "id": "a",
+        "text": "An architected deployment environment with VNet, private endpoints, and region constraints, using private networking for confidential workloads"
+      },
+      {
+        "id": "b",
+        "text": "Operation inside the Microsoft 365 tenant boundary with per-environment isolation handled by the platform, exactly as for Copilot Studio agents"
+      },
+      {
+        "id": "c",
+        "text": "No additional constraints, because Foundry agents execute within Microsoft's secure SaaS boundary with built-in safety filters"
+      },
+      {
+        "id": "d",
+        "text": "A single shared environment for development and production with public endpoints, to simplify key management and model updates"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Copilot Studio und Microsoft 365 Copilot laufen innerhalb der Microsoft-365-Tenant-Grenze; Foundry verlangt eine architektierte Umgebung (VNet, Private Endpoints, Regionsbeschränkungen) und für vertrauliche Workloads privates Networking. Dev/Test/Prod sind zu trennen.",
+    "source": {
+      "title": "Define solution rules and constraints for AI components",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-overall-ai-strategy-business-solutions/6-define-solution-rules-constraints-building-ai-components",
+      "quote": "Foundry: Requires architected deployment environment (VNet, private endpoints, region constraints)."
+    }
+  }
+]
